@@ -1,0 +1,65 @@
+{
+  "status": "COMPLETE",
+  "one_physical_world": true,
+  "world": "demo_three",
+  "measurement_sim_start_s": 124.148,
+  "measurement_sim_end_s": 154.137,
+  "requested_duration_s": 30.0,
+  "roles": {
+    "pid": {
+      "samples": 1499,
+      "failure": null,
+      "route_completed": null,
+      "route_completion_time_s": null,
+      "mission_events": []
+    },
+    "hybrid": {
+      "samples": 1499,
+      "failure": null,
+      "route_completed": null,
+      "route_completion_time_s": null,
+      "mission_events": []
+    },
+    "direct": {
+      "samples": 1499,
+      "failure": null,
+      "route_completed": null,
+      "route_completion_time_s": null,
+      "mission_events": []
+    }
+  },
+  "shared_force_vector_and_sequence_requested": true,
+  "actual_force_tick_identity": "VERIFY_PER_MODEL_FORCE_PHYSICS_LOGS",
+  "control_cadence_gate": {
+    "status": "PASS",
+    "target_hz": 50.0,
+    "minimum_expected_slot_fraction": 0.95,
+    "missed_slots": 1,
+    "roles": {
+      "pid": {
+        "samples": 1499,
+        "expected_slots": 1500,
+        "coverage": 0.9993333333333333,
+        "passed": true
+      },
+      "hybrid": {
+        "samples": 1499,
+        "expected_slots": 1500,
+        "coverage": 0.9993333333333333,
+        "passed": true
+      },
+      "direct": {
+        "samples": 1499,
+        "expected_slots": 1500,
+        "coverage": 0.9993333333333333,
+        "passed": true
+      }
+    },
+    "common_fresh_position_and_attitude_barrier": true,
+    "no_duplicate_observation_forwards": true
+  },
+  "scene_worker_pid": 394,
+  "new_training_steps": 0,
+  "scientific_matrix_updated": false,
+  "wall_seconds": 189.70641322400024
+}

@@ -1,0 +1,52 @@
+{
+  "scope": "New three-drone presentation harness development; full raw local archives retained; no best-run selection among valid route/hover attempts",
+  "model_updates_during_demo_work": 0,
+  "attempts": [
+    {
+      "id": "integration01",
+      "classification": "startup_infrastructure_failure",
+      "reason": "Installed ArduPilot parameter is MAV_SYSID, not SYSID_THISMAV; normal prearming did not pass. No learned flight comparison."
+    },
+    {
+      "id": "integration02",
+      "classification": "launcher_failure",
+      "reason": "WSL PE interpreter exec format; no simulation started."
+    },
+    {
+      "id": "integration03",
+      "classification": "capture_infrastructure_failure",
+      "reason": "Initial Qt window resized during X11 capture; stopped before measurement."
+    },
+    {
+      "id": "integration04",
+      "classification": "smoke_not_formal_comparison",
+      "reason": "5s nominal hover, about27Hz; all three flew. Retained and led to shared50Hz cadence fix."
+    },
+    {
+      "id": "integration05",
+      "classification": "public_package_smoke",
+      "reason": "5s nominal hover,250 commands each,20760 auditchecks; not a route or wind ranking."
+    },
+    {
+      "id": "gazebo_route_strong_20261115_194412",
+      "classification": "invalid_route_infrastructure_attempt",
+      "reason": "Jittered scene-publication clock repeatedly reset .5s waypoint dwell; all three remained at goal0. Fixed using raw measurement clock without changing thresholds. Extra boundary slot2000 also corrected. All original records preserved; no scientific ranking.",
+      "original_audit_sha256": "1388dd11094bb8ddd201a0a8c283cf521fd362ca9f1ddd74855abc216ece054c",
+      "original_summary_sha256": "841039eafa00684360bf4c13276410fb5bc951e3590667f294fcfbc44d7b3126"
+    },
+    {
+      "id": "gazebo_route_strong_20261115_195558",
+      "classification": "valid_demonstration",
+      "public_data": "route",
+      "independent_audit": "PASS",
+      "all_controller_failures_preserved": true
+    },
+    {
+      "id": "gazebo_hover_gust_20261115_195924",
+      "classification": "valid_demonstration",
+      "public_data": "hover",
+      "independent_audit": "PASS",
+      "all_controller_failures_preserved": true
+    }
+  ]
+}

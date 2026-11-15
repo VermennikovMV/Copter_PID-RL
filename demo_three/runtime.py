@@ -82,6 +82,7 @@ def main():
     parser.add_argument('--output',type=Path,required=True);parser.add_argument('--scenario',choices=['nominal','force_strong','gust'],default='force_strong')
     parser.add_argument('--mission',choices=['hover','route'],default='route');parser.add_argument('--seed',type=int,choices=[83301,84001],default=83301)
     parser.add_argument('--duration',type=float);parser.add_argument('--gui',action='store_true');parser.add_argument('--record',action='store_true')
+    parser.add_argument('--wp-radius',type=float,default=.25,help='Shared 3D waypoint radius in metres; dwell remains 0.5 seconds')
     parser.add_argument('--start-file',type=Path,help='After READY, hold all3 until this file exists')
     parser.add_argument('--finish-hold-s',type=float,default=3.)
     parser.add_argument('--public-root',type=Path);parser.add_argument('--ardupilot',type=Path,default=Path.home()/'vkr_sim/ardupilot')
@@ -90,8 +91,12 @@ def main():
     args=parser.parse_args();out=args.output.resolve();duration=args.duration or (40. if args.mission=='route' else 30.)
     if args.public_root is None and DATA_ROOT!=ROOT and (ROOT/'models/phase29_public_inference.json').is_file():args.public_root=ROOT
     if not 0<duration<=60:parser.error('Presentation measurement must be in (0,60] seconds')
+    from demo_three.mission import acceptance_spec
+    try:mission_acceptance=acceptance_spec(args.wp_radius)
+    except ValueError as exc:parser.error(str(exc))
     plan=dict(schema='shared-world-three-demo-v1.0',world='demo_three',partition='demo_three',vehicles=VEHICLES,
         scenario=args.scenario,seed=args.seed,mission=args.mission,duration_s=duration,physical_world_count=1,
+        mission_acceptance=mission_acceptance,
         public_root=str(args.public_root) if args.public_root else None,task_scope='visual demo only; no research-matrix or new-training claim',
         common_clock='Gazebo sim_time after all-three takeoff/settle and optional capture gate',new_training_steps=0,
         direct_interface='unchanged motor actuator proxy; not stock MAVLink deployment',original_model_lineage=PINS)
@@ -108,7 +113,7 @@ def main():
     plan['control_asset_identity']=controls['identity']
     out.mkdir(parents=True);write_json(out/'plan.json',plan)
     snapshot=out/'source_snapshot';snapshot.mkdir()
-    for file in (Path(__file__),ROOT/'demo_three/assets.py',ROOT/'demo_three/adapters.py',ROOT/'demo_three/sitl.py',ROOT/'demo_three/telemetry.py',ROOT/'demo_three/scene.py',DATA_ROOT/'sim_direct/proxy.py',DATA_ROOT/'sim_joint/thrust_adapter.py',DATA_ROOT/'quadrl/protocol.py'):
+    for file in (Path(__file__),ROOT/'demo_three/assets.py',ROOT/'demo_three/adapters.py',ROOT/'demo_three/mission.py',ROOT/'demo_three/sitl.py',ROOT/'demo_three/telemetry.py',ROOT/'demo_three/scene.py',DATA_ROOT/'sim_direct/proxy.py',DATA_ROOT/'sim_joint/thrust_adapter.py',DATA_ROOT/'quadrl/protocol.py'):
         target=snapshot/(file.parent.name+'_'+file.name);shutil.copy2(file,target)
     queue_path=DATA_ROOT/'artifacts/refinement/joint_v2/.gazebo_native_queue.lock';queue_path.parent.mkdir(parents=True,exist_ok=True)
     lock=queue_path.open('a+')
@@ -149,7 +154,7 @@ def main():
             vehicles.append(VehicleController(spec,out,policy=hybrid if spec['role']=='hybrid' else direct if spec['role']=='direct' else None,
                 proxy=proxy if spec['role']=='direct' else None,calibration=calibration))
         write_json(out/'manifest.json',dict(plan=plan,controller_pid=os.getpid(),one_scene_worker_pid=worker.pid,
-            scene_command=scene_args,hybrid=hybrid_meta,SITL_pids=[p.pid for p in processes[2:]],source_sha256={str(p.relative_to(ROOT)):sha(p) for p in (Path(__file__),ROOT/'demo_three/adapters.py',ROOT/'demo_three/sitl.py')}))
+            scene_command=scene_args,hybrid=hybrid_meta,SITL_pids=[p.pid for p in processes[2:]],source_sha256={str(p.relative_to(ROOT)):sha(p) for p in (Path(__file__),ROOT/'demo_three/adapters.py',ROOT/'demo_three/mission.py',ROOT/'demo_three/sitl.py')}))
         message('Three SITL processes started; normal arming and takeoff.')
         with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
             futures={pool.submit(v.connect_and_takeoff,profile):v for v in vehicles}
@@ -201,7 +206,7 @@ def main():
             scene_command(out,force_seq,[0.,0.,0.],vehicles,None);time.sleep(.02)
         gate_log.close()
         state=read_json(out/'SCENE_STATE.json');sim_t0=float(state['sim_time'])+.1
-        for v in vehicles:v.drain();v.begin(args.mission,sim_t0)
+        for v in vehicles:v.drain();v.begin(args.mission,sim_t0,args.wp_radius)
         start_receipt=dict(world_sim_time=sim_t0,world='demo_three',wall_time=time.time(),
             qualified_start_gate=gate,common_force_schedule=scenario_spec(args.scenario,args.seed),
             mission_epoch_boot_ms=None,mission_epoch_boot_s=None,

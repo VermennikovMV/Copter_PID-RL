@@ -1,0 +1,233 @@
+{
+  "status": "COMPLETE",
+  "one_physical_world": true,
+  "world": "demo_three",
+  "measurement_sim_start_s": 72.31899999999999,
+  "measurement_sim_end_s": 112.299,
+  "requested_duration_s": 40.0,
+  "roles": {
+    "pid": {
+      "samples": 2000,
+      "failure": null,
+      "route_completed": true,
+      "route_completion_time_s": 9.46,
+      "mission_events": [
+        {
+          "type": "goal_reached",
+          "goal_index": 0,
+          "time_s": 0.5,
+          "dwell_started_s": 0.0,
+          "target": [
+            0.0,
+            0.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 1,
+          "time_s": 2.66,
+          "dwell_started_s": 2.158,
+          "target": [
+            2.0,
+            0.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 2,
+          "time_s": 4.8580000000000005,
+          "dwell_started_s": 4.358,
+          "target": [
+            2.0,
+            2.0,
+            3.5
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 3,
+          "time_s": 7.2780000000000005,
+          "dwell_started_s": 6.76,
+          "target": [
+            0.0,
+            2.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 4,
+          "time_s": 9.46,
+          "dwell_started_s": 8.96,
+          "target": [
+            0.0,
+            0.0,
+            3.0
+          ]
+        }
+      ]
+    },
+    "hybrid": {
+      "samples": 2000,
+      "failure": null,
+      "route_completed": true,
+      "route_completion_time_s": 8.418000000000001,
+      "mission_events": [
+        {
+          "type": "goal_reached",
+          "goal_index": 0,
+          "time_s": 0.5,
+          "dwell_started_s": 0.0,
+          "target": [
+            0.0,
+            0.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 1,
+          "time_s": 2.278,
+          "dwell_started_s": 1.778,
+          "target": [
+            2.0,
+            0.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 2,
+          "time_s": 4.358,
+          "dwell_started_s": 3.84,
+          "target": [
+            2.0,
+            2.0,
+            3.5
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 3,
+          "time_s": 6.42,
+          "dwell_started_s": 5.92,
+          "target": [
+            0.0,
+            2.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 4,
+          "time_s": 8.418000000000001,
+          "dwell_started_s": 7.918,
+          "target": [
+            0.0,
+            0.0,
+            3.0
+          ]
+        }
+      ]
+    },
+    "direct": {
+      "samples": 2000,
+      "failure": null,
+      "route_completed": true,
+      "route_completion_time_s": 11.318,
+      "mission_events": [
+        {
+          "type": "goal_reached",
+          "goal_index": 0,
+          "time_s": 0.5,
+          "dwell_started_s": 0.0,
+          "target": [
+            0.0,
+            0.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 1,
+          "time_s": 2.378,
+          "dwell_started_s": 1.8780000000000001,
+          "target": [
+            2.0,
+            0.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 2,
+          "time_s": 6.84,
+          "dwell_started_s": 6.34,
+          "target": [
+            2.0,
+            2.0,
+            3.5
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 3,
+          "time_s": 9.32,
+          "dwell_started_s": 8.82,
+          "target": [
+            0.0,
+            2.0,
+            3.0
+          ]
+        },
+        {
+          "type": "goal_reached",
+          "goal_index": 4,
+          "time_s": 11.318,
+          "dwell_started_s": 10.818,
+          "target": [
+            0.0,
+            0.0,
+            3.0
+          ]
+        }
+      ]
+    }
+  },
+  "shared_force_vector_and_sequence_requested": true,
+  "actual_force_tick_identity": "VERIFY_PER_MODEL_FORCE_PHYSICS_LOGS",
+  "control_cadence_gate": {
+    "status": "PASS",
+    "target_hz": 50.0,
+    "minimum_expected_slot_fraction": 0.95,
+    "missed_slots": 0,
+    "roles": {
+      "pid": {
+        "samples": 2000,
+        "expected_slots": 2000,
+        "coverage": 1.0,
+        "passed": true
+      },
+      "hybrid": {
+        "samples": 2000,
+        "expected_slots": 2000,
+        "coverage": 1.0,
+        "passed": true
+      },
+      "direct": {
+        "samples": 2000,
+        "expected_slots": 2000,
+        "coverage": 1.0,
+        "passed": true
+      }
+    },
+    "common_fresh_position_and_attitude_barrier": true,
+    "no_duplicate_observation_forwards": true
+  },
+  "scene_worker_pid": 388,
+  "new_training_steps": 0,
+  "scientific_matrix_updated": false,
+  "wall_seconds": 179.841739427
+}

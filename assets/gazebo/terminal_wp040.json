@@ -1,0 +1,14 @@
+{
+  "source": "Actual owned X11 xterm window; real keyboard events launched the actual 0.40 m route experiment",
+  "video": "terminal_wp040.mp4",
+  "sha256": "f5ce7da73a5c6e763a2bb205e6114b4450e11bbb8335352d238c0c7a506aa01c",
+  "bytes": 1357964,
+  "raw_capture_receipt_sha256": "5609d8808db73d858688ceaaa7e0416f9c62bea15cc12817c5feb9083ce042f4",
+  "input_events_sha256": "307db5ead8b782c0df2e0ab821747b232fb6dc64c1068faafa289e0468a76bba",
+  "source_window_pid": 8176,
+  "capture_script_sha256": "fef8c0325fcb9a52ec307d5a996b1eeb3bcde5f493351ca7d31f502ce4db212f",
+  "duration_seconds": 288.706,
+  "changes": "Byte-exact copy of terminal launch recording; no synthetic output, cuts or speed changes",
+  "command": "python3 demo_three/present.py route --wp-radius 4e-1 --manual-start",
+  "recorded_case": "gazebo_route_strong_20261115_223508"
+}

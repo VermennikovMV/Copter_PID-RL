@@ -18,6 +18,7 @@ jobs:
       - run: python -I -B scripts/check_local_package.py
       - run: python -I -B scripts/replay_controllers.py --controller all
       - run: python -I -B -m unittest discover -s qa -p test_research_evidence.py -v
+      - run: python -I -B -m unittest discover -s qa -p test_demo_mission.py -v
       - run: python scripts/cpu_smoke.py
       - run: python -I -B -m unittest discover -s v2/tests -p test_joint_research_preflight_v1.py -v
       - run: python scripts/quickstart.py --seconds 2 --mission hover --scenario nominal

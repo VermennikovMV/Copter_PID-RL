@@ -5,7 +5,7 @@ from pathlib import Path
 import time
 import numpy as np
 from pymavlink import mavutil
-from quadrl.protocol import Mission
+from demo_three.mission import DemoMission
 from demo_three.telemetry import Telemetry,command,send_position
 from sim_joint.thrust_adapter import body_collective_to_preboost
 
@@ -78,8 +78,8 @@ class VehicleController:
     def drain(self):self.rec.drain()
     def hold(self):
         send_position(self.conn,np.array([0.,0.,3.])+self.origin,self.rec.boot_s,self.yaw)
-    def begin(self,mission,sim_t0):
-        self.mission=Mission(mission);self.previous.fill(0);self.last_boot=None;self.last_input_pair=None
+    def begin(self,mission,sim_t0,waypoint_radius_m=.25):
+        self.mission=DemoMission(mission,waypoint_radius_m);self.previous.fill(0);self.last_boot=None;self.last_input_pair=None
         self.mission_epoch_boot_ms=None
         if self.policy:self.policy.reset(self.yaw)
         self.rec.event('common_measurement_start',world_sim_time=sim_t0,receive_cutoff=self.rec.n,yaw_reference=self.yaw)
@@ -131,6 +131,7 @@ class VehicleController:
         if action is not None:self.previous=action.astype(np.float32)
         event=self.mission.update(mission_time_s,pos)
         item=dict(world_sim_time=world_sim_time,measurement_t=elapsed,mav_boot_s=self.rec.boot_s,control_dt_s=dt,role=self.role,
+            waypoint_radius_m=self.mission.waypoint_radius_m,arrival_dwell_s=self.mission.acceptance['arrival_dwell_s'],
             observation_boot_s=sample_boot_s,dt_source='max_actual_position_attitude_boot_ms',
             mission_epoch_boot_ms=self.mission_epoch_boot_ms,mission_epoch_boot_s=self.mission_epoch_boot_ms*.001,
             mission_time_s=mission_time_s,mission_clock_source='actual_sensor_pair_relative_to_one_common_raw_epoch',

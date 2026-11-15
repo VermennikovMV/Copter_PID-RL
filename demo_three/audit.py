@@ -39,6 +39,8 @@ ENU = np.array([[0., 1., 0.], [1., 0., 0.], [0., 0., -1.]])
 NN_TOL = 2e-5
 COORDINATE_TOL_M = .25
 TRUTH_MAX_TIME_GAP_S = .060001
+FROZEN_PROTOCOL_SHA = "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473"
+MISSION_ACCEPTANCE_RULE = "shared across PID, hybrid and direct; measured 3D distance"
 
 
 def sha(path):
@@ -153,7 +155,31 @@ def verify_mission_sample_clock(row, epoch_ms, position_message, attitude_messag
                 role + ":fixed_epoch_and_raw_sensor_mission_clock_every_row")
 
 
-def recompute_route(rows, mission, audit, role):
+def mission_acceptance(plan, audit):
+    metadata = plan.get("mission_acceptance")
+    if metadata is None:
+        return .25, False
+    value = metadata["waypoint_radius_m"]
+    valid = isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) and 0. < value <= 1.
+    audit.check(valid, "explicit_finite_waypoint_radius_in_zero_to_one_metre")
+    if not valid:
+        raise ValueError("Invalid declared waypoint acceptance radius")
+    audit.check(metadata["arrival_dwell_s"] == .5 and metadata["measurement_gap_limit_s"] == .03
+                and metadata["hover_recovery_radius_m"] == .25 and metadata["rule"] == MISSION_ACCEPTANCE_RULE,
+                "only_waypoint_radius_changes_dwell_gap_and_hover_recovery_unchanged")
+    return float(value), True
+
+
+def verify_waypoint_acceptance_row(row, radius, explicit, audit, role):
+    if explicit:
+        audit.check(row.get("waypoint_radius_m") == radius and row.get("arrival_dwell_s") == .5,
+                    role + ":same_declared_waypoint_radius_and_half_second_dwell")
+    else:
+        audit.check("waypoint_radius_m" not in row and "arrival_dwell_s" not in row,
+                    role + ":legacy_radius_default_has_no_unbound_new_radius_fields")
+
+
+def recompute_route(rows, mission, audit, role, waypoint_radius_m=.25):
     """Independently reconstruct ordered dwell and PRE-active finite segments."""
     index, inside, previous, completion = 0, None, None, None
     events, active, distances, weights, gap = [], [], [], [], 0.
@@ -172,7 +198,7 @@ def recompute_route(rows, mission, audit, role):
         if mission == "route" and completion is None:
             if previous is not None and width > .03000000001:
                 inside = None
-            if np.linalg.norm(p - POINTS[index]) > .25:
+            if np.linalg.norm(p - POINTS[index]) > waypoint_radius_m:
                 inside = None
             else:
                 if inside is None:
@@ -422,8 +448,10 @@ def force_audit(out, manifest, events, t0, duration, audit):
 
 def audit_run(out, audit):
     plan = audit.read(out / "plan.json")
+    waypoint_radius, acceptance_explicit = mission_acceptance(plan, audit)
     summary = audit.read(out / "complete.json")
     manifest = audit.read(out / "manifest.json")
+    audit.check(manifest["plan"] == plan, "actual_manifest_binds_same_complete_plan_and_mission_rules")
     scene = audit.read(out / "gazebo_manifest.json")
     start = audit.read(out / "MEASUREMENT_START.json")
     ready = audit.read(out / "READY.json")
@@ -475,10 +503,17 @@ def audit_run(out, audit):
         source_hash = next(value for key, value in scene["sources"].items() if key.endswith("/" + filename))
         audit.bind(assets / filename, source_hash)
     source_snapshot = out / "source_snapshot"
+    audit.bind(source_snapshot / "quadrl_protocol.py", FROZEN_PROTOCOL_SHA)
     for relative, expected in manifest["source_sha256"].items():
         original = Path(str(relative).replace("\\", "/"))
         snapshot = source_snapshot / (original.parent.name + "_" + original.name)
         audit.bind(snapshot, expected)
+    mission_source_sha = None
+    if acceptance_explicit:
+        entries = [value for key, value in manifest["source_sha256"].items()
+                   if str(key).replace("\\", "/").endswith("demo_three/mission.py")]
+        audit.check(len(entries) == 1, "explicit_demo_mission_implementation_has_one_actual_source_binding")
+        mission_source_sha = audit.bind(source_snapshot / "demo_three_mission.py", entries[0] if len(entries) == 1 else None)
     force_ledger, force_off = force_audit(out, scene, events, t0, duration, audit)
     force_off_mission = None if force_off is None else force_off + t0 - epoch_world
     expected_events = start["common_force_schedule"]["force_events"]
@@ -613,6 +648,7 @@ def audit_run(out, audit):
         tr = truth_by_name[name]
         tt = [r["sim_time"] for r in tr]
         for row in rows:
+            verify_waypoint_acceptance_row(row, waypoint_radius, acceptance_explicit, audit, role)
             t = row["measurement_t"]
             audit.check(row["role"] == role and abs(row["world_sim_time"] - t0 - t) < 1e-8 and t >= 0., role + ":world_clock_association")
             audit.check(previous_t is None or t > previous_t, role + ":strict_sim_time")
@@ -688,7 +724,7 @@ def audit_run(out, audit):
         audit.check(max(coordinate_errors) <= COORDINATE_TOL_M, role + ":task_to_world_translation", max(coordinate_errors))
         audit.check(obs_error <= NN_TOL and nn_error <= NN_TOL, role + ":independent_numpy_encoder_and_NN", {"observation": obs_error, "NN": nn_error})
         audit.check(len(rows) == summary["roles"][role]["samples"], role + ":actual_count")
-        geometry = recompute_route(rows, plan["mission"], audit, role)
+        geometry = recompute_route(rows, plan["mission"], audit, role, waypoint_radius_m=waypoint_radius)
         reported_time = summary["roles"][role]["route_completion_time_s"]
         audit.check((reported_time is None) == (geometry["route_completion_time_s"] is None) and
                     (reported_time is None or abs(reported_time - geometry["route_completion_time_s"]) < 1e-8), role + ":independent_completion_time")
@@ -732,7 +768,13 @@ def audit_run(out, audit):
     return {"schema": "independent-shared-world-three-demo-audit-v1.0", "run": str(out),
             "scope": "fresh shared-world demonstration only; no old metrics or applicability acceptance inherited",
             "scenario": plan["scenario"], "mission": plan["mission"], "seed": plan["seed"],
-            "prospective_two_case_protocol": formal_demo_case(plan), "control_cadence_verification": cadence,
+            "prospective_two_case_protocol": formal_demo_case(plan) and waypoint_radius == .25,
+            "waypoint_radius_sensitivity": waypoint_radius != .25,
+            "mission_acceptance": {"waypoint_radius_m": waypoint_radius, "arrival_dwell_s": .5,
+                                   "measurement_gap_limit_s": .03, "hover_recovery_radius_m": .25,
+                                   "explicit_plan_metadata": acceptance_explicit, "mission_implementation_sha256": mission_source_sha,
+                                   "frozen_protocol_sha256": FROZEN_PROTOCOL_SHA},
+            "control_cadence_verification": cadence,
             "actual_new_world_runs": 1, "actual_new_aircraft_attempts": 3, "new_optimizer_steps": 0,
             "qualified_common_start": qualified_start, "physical_mass_kg_by_model": physical_masses,
             "replay_code_root": str(code_root), "PID_document_is_explicit_public_projection": pid_projected,

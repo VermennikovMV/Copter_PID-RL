@@ -1,0 +1,480 @@
+{
+  "schema": "independent-shared-world-three-demo-audit-v1.0",
+  "run": "@session/flight",
+  "scope": "fresh shared-world demonstration only; no old metrics or applicability acceptance inherited",
+  "scenario": "force_strong",
+  "mission": "route",
+  "seed": 83301,
+  "prospective_two_case_protocol": false,
+  "waypoint_radius_sensitivity": true,
+  "mission_acceptance": {
+    "waypoint_radius_m": 0.4,
+    "arrival_dwell_s": 0.5,
+    "measurement_gap_limit_s": 0.03,
+    "hover_recovery_radius_m": 0.25,
+    "explicit_plan_metadata": true,
+    "mission_implementation_sha256": "d661a490e6f7ac7fced13a826e0aacde5382b253f6caac6aef8e0bac8486c605",
+    "frozen_protocol_sha256": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473"
+  },
+  "control_cadence_verification": {
+    "required_for_formal_demo": true,
+    "schedule_archived": true,
+    "target_hz": 50.0,
+    "minimum_slot_fraction": 0.95,
+    "expected_slots_each": 2000,
+    "actual_coverage_by_role": {
+      "pid": 0.998,
+      "hybrid": 0.998,
+      "direct": 0.998
+    },
+    "executed_common_slots": 1996,
+    "explicit_missed_slots": 4,
+    "passed": true
+  },
+  "actual_new_world_runs": 1,
+  "actual_new_aircraft_attempts": 3,
+  "new_optimizer_steps": 0,
+  "qualified_common_start": {
+    "READY": {
+      "stable_since_sim_time": 33.843,
+      "qualified_at_sim_time": 34.858,
+      "span_s": 1.0149999999999935,
+      "gate_samples": 98,
+      "maximum_goal0_error_m": 0.005000002384185631,
+      "maximum_speed_mps": 0.00427972150760312,
+      "maximum_pairwise_task_position_spread_m": 0.009999990463256836
+    },
+    "MEASUREMENT_START": {
+      "stable_since_sim_time": 215.251,
+      "qualified_at_sim_time": 216.253,
+      "span_s": 1.0019999999999811,
+      "gate_samples": 45,
+      "maximum_goal0_error_m": 0.005000002384185631,
+      "maximum_speed_mps": 0.0037005219605522697,
+      "maximum_pairwise_task_position_spread_m": 0.009999990463256836
+    }
+  },
+  "physical_mass_kg_by_model": {
+    "iris_pid": 1.75,
+    "iris_hybrid": 1.75,
+    "iris_direct": 1.75
+  },
+  "replay_code_root": "@code",
+  "PID_document_is_explicit_public_projection": true,
+  "calibration_document_is_explicit_public_projection": true,
+  "unused_standard_MAV_missing_values": {
+    "@session/flight/pid/mavlink.jsonl:HOME_POSITION.q[0]": 2,
+    "@session/flight/pid/mavlink.jsonl:HOME_POSITION.q[1]": 2,
+    "@session/flight/pid/mavlink.jsonl:HOME_POSITION.q[2]": 2,
+    "@session/flight/pid/mavlink.jsonl:HOME_POSITION.q[3]": 2,
+    "@session/flight/hybrid/mavlink.jsonl:HOME_POSITION.q[0]": 2,
+    "@session/flight/hybrid/mavlink.jsonl:HOME_POSITION.q[1]": 2,
+    "@session/flight/hybrid/mavlink.jsonl:HOME_POSITION.q[2]": 2,
+    "@session/flight/hybrid/mavlink.jsonl:HOME_POSITION.q[3]": 2,
+    "@session/flight/direct/mavlink.jsonl:HOME_POSITION.q[0]": 2,
+    "@session/flight/direct/mavlink.jsonl:HOME_POSITION.q[1]": 2,
+    "@session/flight/direct/mavlink.jsonl:HOME_POSITION.q[2]": 2,
+    "@session/flight/direct/mavlink.jsonl:HOME_POSITION.q[3]": 2
+  },
+  "roles": {
+    "pid": {
+      "rmse_position_m": 0.6591728788504531,
+      "penalized_rmse_position_m": 0.6590080745103419,
+      "altitude_drop_m": 0.48500000715255753,
+      "heading_rmse_deg": 0.3787114660224502,
+      "heading_peak_deg": 2.15974380848529,
+      "survived": true,
+      "failure": null,
+      "recovery_applicable": false,
+      "recovery_time_s": null,
+      "recovery_confirmed_at_s": null,
+      "recovery_censored": null,
+      "actual_force_off_s": 20.233000000000004,
+      "duration_s": 39.980000000000004,
+      "horizon_s": 40.0,
+      "failure_remainder_error_m": 4.0,
+      "weighting": "preceding control interval; preserved 4m failed remainder",
+      "route_completed": true,
+      "route_completion_time_s": 9.162,
+      "restricted_route_time_s": 9.162,
+      "goal_events": [
+        {
+          "goal_index": 0,
+          "time_s": 0.7000000000000001
+        },
+        {
+          "goal_index": 1,
+          "time_s": 2.742
+        },
+        {
+          "goal_index": 2,
+          "time_s": 4.8420000000000005
+        },
+        {
+          "goal_index": 3,
+          "time_s": 7.1000000000000005
+        },
+        {
+          "goal_index": 4,
+          "time_s": 9.162
+        }
+      ],
+      "active_geometry_rows": 420,
+      "maximum_control_gap_s": 0.040000000000000036,
+      "finite_active_segment_rmse_m": 0.15537898647277515,
+      "finite_active_segment_peak_m": 0.35988891074947305,
+      "geometry_complete": true,
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.742,
+          "finite_outgoing_peak_m": 0.22837964199571142
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.8420000000000005,
+          "finite_outgoing_peak_m": 0.33942789670704365
+        },
+        {
+          "corner": 3,
+          "transition_s": 7.1000000000000005,
+          "finite_outgoing_peak_m": 0.19977890824492733
+        }
+      ],
+      "actual_commands": 1996,
+      "encoder_max_error": 0.0,
+      "NN_max_error": 0.0,
+      "task_world_error_max_m": 0.045367894316639526,
+      "task_world_error_RMS_m": 0.012054554771089009,
+      "truth_association_max_gap_s": 0.008000000000009777,
+      "actual_commands_per_requested_second": 49.9,
+      "actual_interval_frequency_hz": 49.899949974987486,
+      "metric_clock": "explicit_actual_sensor_pair_minus_epoch",
+      "fifty_hz_within_five_percent": true
+    },
+    "hybrid": {
+      "rmse_position_m": 0.5695952338471774,
+      "penalized_rmse_position_m": 0.5694536806479935,
+      "altitude_drop_m": 0.5349999594688417,
+      "heading_rmse_deg": 0.7600571979854313,
+      "heading_peak_deg": 4.556685572693136,
+      "survived": true,
+      "failure": null,
+      "recovery_applicable": false,
+      "recovery_time_s": null,
+      "recovery_confirmed_at_s": null,
+      "recovery_censored": null,
+      "actual_force_off_s": 20.233000000000004,
+      "duration_s": 39.980000000000004,
+      "horizon_s": 40.0,
+      "failure_remainder_error_m": 4.0,
+      "weighting": "preceding control interval; preserved 4m failed remainder",
+      "route_completed": true,
+      "route_completion_time_s": 7.861,
+      "restricted_route_time_s": 7.861,
+      "goal_events": [
+        {
+          "goal_index": 0,
+          "time_s": 0.7000000000000001
+        },
+        {
+          "goal_index": 1,
+          "time_s": 2.382
+        },
+        {
+          "goal_index": 2,
+          "time_s": 4.242
+        },
+        {
+          "goal_index": 3,
+          "time_s": 6.0600000000000005
+        },
+        {
+          "goal_index": 4,
+          "time_s": 7.861
+        }
+      ],
+      "active_geometry_rows": 355,
+      "maximum_control_gap_s": 0.040000000000000036,
+      "finite_active_segment_rmse_m": 0.1012206776576647,
+      "finite_active_segment_peak_m": 0.21875422262406663,
+      "geometry_complete": true,
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.382,
+          "finite_outgoing_peak_m": 0.15061349491542986
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.242,
+          "finite_outgoing_peak_m": 0.21875422262406663
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.0600000000000005,
+          "finite_outgoing_peak_m": 0.1634812420785947
+        }
+      ],
+      "actual_commands": 1996,
+      "encoder_max_error": 0.0,
+      "NN_max_error": 0.0,
+      "task_world_error_max_m": 0.045177874443448895,
+      "task_world_error_RMS_m": 0.012137126949986914,
+      "truth_association_max_gap_s": 0.008000000000009777,
+      "actual_commands_per_requested_second": 49.9,
+      "actual_interval_frequency_hz": 49.899949974987486,
+      "metric_clock": "explicit_actual_sensor_pair_minus_epoch",
+      "fifty_hz_within_five_percent": true
+    },
+    "direct": {
+      "rmse_position_m": 0.5986724638142213,
+      "penalized_rmse_position_m": 0.5985227874274609,
+      "altitude_drop_m": 0.5049999880790712,
+      "heading_rmse_deg": 0.6777493524204921,
+      "heading_peak_deg": 2.5836168106398185,
+      "survived": true,
+      "failure": null,
+      "recovery_applicable": false,
+      "recovery_time_s": null,
+      "recovery_confirmed_at_s": null,
+      "recovery_censored": null,
+      "actual_force_off_s": 20.233000000000004,
+      "duration_s": 39.980000000000004,
+      "horizon_s": 40.0,
+      "failure_remainder_error_m": 4.0,
+      "weighting": "preceding control interval; preserved 4m failed remainder",
+      "route_completed": true,
+      "route_completion_time_s": 8.222,
+      "restricted_route_time_s": 8.222,
+      "goal_events": [
+        {
+          "goal_index": 0,
+          "time_s": 0.7000000000000001
+        },
+        {
+          "goal_index": 1,
+          "time_s": 2.482
+        },
+        {
+          "goal_index": 2,
+          "time_s": 4.282
+        },
+        {
+          "goal_index": 3,
+          "time_s": 6.32
+        },
+        {
+          "goal_index": 4,
+          "time_s": 8.222
+        }
+      ],
+      "active_geometry_rows": 373,
+      "maximum_control_gap_s": 0.040000000000000036,
+      "finite_active_segment_rmse_m": 0.16223037303220497,
+      "finite_active_segment_peak_m": 0.3211040153550558,
+      "geometry_complete": true,
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.482,
+          "finite_outgoing_peak_m": 0.18673739962810335
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.282,
+          "finite_outgoing_peak_m": 0.3211040153550558
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.32,
+          "finite_outgoing_peak_m": 0.19992399621776832
+        }
+      ],
+      "actual_commands": 1996,
+      "encoder_max_error": 0.0,
+      "NN_max_error": 0.0,
+      "task_world_error_max_m": 0.04407045037759259,
+      "task_world_error_RMS_m": 0.012926750684904464,
+      "truth_association_max_gap_s": 0.008000000000009777,
+      "actual_commands_per_requested_second": 49.9,
+      "actual_interval_frequency_hz": 49.899949974987486,
+      "metric_clock": "explicit_actual_sensor_pair_minus_epoch",
+      "fifty_hz_within_five_percent": true
+    }
+  },
+  "controller_failures_preserved": {},
+  "all_three_survived": true,
+  "minimum_pair_distance_m": {
+    "iris_pid:iris_hybrid": 2.3953792152592475,
+    "iris_pid:iris_direct": 6.579499874991215,
+    "iris_hybrid:iris_direct": 3.7830835886558316
+  },
+  "collision_avoidance_guarantee": false,
+  "actual_common_force_ledger": [
+    {
+      "seq": 0,
+      "sim_time": 28.854,
+      "measurement_t": -187.49899999999997,
+      "iteration": 28854,
+      "force_enu_N": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "seq": 1,
+      "sim_time": 216.363,
+      "measurement_t": 0.010000000000019327,
+      "iteration": 216363,
+      "force_enu_N": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "seq": 2,
+      "sim_time": 221.301,
+      "measurement_t": 4.9480000000000075,
+      "iteration": 221301,
+      "force_enu_N": [
+        2.61331047917283,
+        -1.1521643960622598,
+        0
+      ]
+    },
+    {
+      "seq": 3,
+      "sim_time": 236.591,
+      "measurement_t": 20.238000000000028,
+      "iteration": 236591,
+      "force_enu_N": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "seq": 4,
+      "sim_time": 256.349,
+      "measurement_t": 39.99600000000001,
+      "iteration": 256349,
+      "force_enu_N": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "actual_final_force_off_s": 20.238000000000028,
+  "actual_final_force_off_mission_clock_s": 20.233000000000004,
+  "mission_clock_epoch": {
+    "boot_ms": 216307,
+    "observer_world_anchor_s": 216.358,
+    "force_time_mapping": "actual world force tick minus recorded observer world epoch anchor; sensor reception latency is not claimed zero"
+  },
+  "coordinate_evidence_tolerance_m": 0.25,
+  "NN_evidence_tolerance": 2e-05,
+  "wire_scope": "actual send arguments and proxy output replayed; PCAP preserved, not decoded by this auditor",
+  "scientific_table_updated": false,
+  "own_new_environment_steps": 0,
+  "own_new_simulator_steps": 0,
+  "own_backward_calls": 0,
+  "own_optimizer_steps": 0,
+  "own_NN_scope": "archived measured states only; one selected mean replay per archived NN command",
+  "status": "PASS",
+  "integrity_passed": true,
+  "checks": 160313,
+  "failed_checks": [],
+  "input_sha256": {
+    "@session/flight/plan.json": "2b5ac9ff84ed776293f18168e7235a03f7839ae0a254bbbd78c1138cfa129989",
+    "@session/flight/complete.json": "e997ac51809ed469b117c085d74cc2df42bf3597dbf9c74b8d0e501c2b7c704b",
+    "@session/flight/manifest.json": "87550363e005293f4dbed645c16ded91a5276446fa569626455fdf7bd9f8707a",
+    "@session/flight/gazebo_manifest.json": "ff3f9d79f165a574b2ef064130f8aef1615cd72652a515ed4dd81d3263ab15d7",
+    "@session/flight/MEASUREMENT_START.json": "858dbb3f70d16735a4c42849d56c9ea39182123a7effc8f9537b5bdf25766310",
+    "@session/flight/READY.json": "47bc70e3aa4a677584c0b94b50d31266dba3a919ca0ce49603f39e9c08767d8d",
+    "@session/flight/start_gate.jsonl": "828a14eb093289ee98b59bb17c3394dd698db826a3ae306ce2912e2f74f80a41",
+    "@session/flight/scene_events.jsonl": "06ec918aab3f992dd98ff83815cd8b3fa1a424bf2010faa9484f2e171bd1dc82",
+    "@session/flight/gazebo_assets/world.sdf": "ac3238080c8c8e5840f1fd830c2331596c91eb459ffdf0f40cbc081f1a40429b",
+    "@session/flight/gazebo_assets/iris_body_pid/model.sdf": "758cae1a151043fd35309349e646c5bf9c48eb6ab8d938c7d2af08ee4dd51c66",
+    "@session/flight/gazebo_assets/iris_pid/model.sdf": "48b7d1374e2e5080cb5d9e9a9cebbaaa4426c59a4092a20de19cdec4f4a1e035",
+    "@session/flight/gazebo_assets/iris_body_hybrid/model.sdf": "b052e7184f170fb34a1b4b0c67caed8123960c8a8aea73c380b050eebc09f898",
+    "@session/flight/gazebo_assets/iris_hybrid/model.sdf": "94ca11c82a06e98efc218f4eb5d02b9a55c5c478bc254ea5bf4b7e491cff3943",
+    "@session/flight/gazebo_assets/iris_body_direct/model.sdf": "abd0c3087d56a98491074a149470fa991d4e8fe414bfa6f6d4489146752280ba",
+    "@session/flight/gazebo_assets/iris_direct/model.sdf": "82252ab786e2e340948142a2bb2c66c6054ebf1a086dfaa8aa21db8cbaee37e7",
+    "@session/flight/gazebo_assets/iris_with_standoffs/model.sdf": "2c4e8ccf4385f329af905cce1cbceff96656da4ace9353c0ec6ca09df3c442d0",
+    "@session/flight/gazebo_assets/GroupForceSystem.cc": "dc345e710ca91f2d838f4bd9155b905c5dca86096401df76c45ca39307526695",
+    "@session/flight/gazebo_assets/libThreeDroneForceSystem.so": "f7bb1b5d44657f04e2c45dba224eb1cceafad4f9b7cc9d594c3f8297f24cd82b",
+    "@session/flight/source_snapshot/quadrl_protocol.py": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473",
+    "@session/flight/source_snapshot/demo_three_runtime.py": "0652676aaa397a4fd7bc1b472ef3e0ae8a9e0abe2cc403b3f97828827d0d3bc5",
+    "@session/flight/source_snapshot/demo_three_adapters.py": "45ef5f571433aba0dc03d27dc8ed22cccbf7ef1073755070ca81bfb1d2f8181e",
+    "@session/flight/source_snapshot/demo_three_mission.py": "d661a490e6f7ac7fced13a826e0aacde5382b253f6caac6aef8e0bac8486c605",
+    "@session/flight/source_snapshot/demo_three_sitl.py": "aead9ca037a561fc18810adf87813e612c37ec35b854a7eb5cad64ad93b7c040",
+    "@session/flight/force_physics_iris_pid.jsonl": "2e984256b4a148c7e84aacff42eb9ff19f17c14e165063d02c7632c4080340cb",
+    "@session/flight/force_physics_iris_hybrid.jsonl": "f2505d8b1aa9c4631e6451cc75004890dcce48983f146db10dc9fff7f60dbc71",
+    "@session/flight/force_physics_iris_direct.jsonl": "d16f80a908b74b17bfdc4279bab14725ea8853e88503d05c8c99574691b3f744",
+    "@session/flight/groundtruth.jsonl": "3ba5644fdd679b7d9dbc0ed6e596853722a3cb8713a4e5e08755e4b2cbb65700",
+    "@session/flight/source_snapshot/model_inputs.json": "5dc4a6a202cebf0b69a41c936b262c729a7da702d951ce3dc0933de0e560f5a8",
+    "@session/flight/source_snapshot/models/direct111.npz": "5d0d19e02c30c62ed3a0efdcf003d8b6b635ae1eea9b1d32b4737836c46ff900",
+    "@session/flight/source_snapshot/models/calibration.json": "2757f7baf65cbcdb220d3c305dc471ad24c3ea74dbaaa5a4888f98dd3c022a31",
+    "@session/flight/source_snapshot/models/pid.json": "d126d067034a5948852fd3759fb56efef000b0483111f4e3b60aa64cbeb4cee5",
+    "@session/flight/source_snapshot/models/phase_bundle.json": "ba7681e4d260606a4d382e4c94b7f8da918b52aaaedd29e179ce32a68a3cd36d",
+    "@session/flight/source_snapshot/models/F0.npz": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+    "@session/flight/source_snapshot/models/route_final.npz": "ce86bb56d7e0f5c1775266d4a45cd3417e979303d27cc662a58e8070bf34e345",
+    "@session/flight/source_snapshot/models/source68.npz": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+    "@code/quadrl_phase_expert_inference_v1/policy.py": "55afc699bda8835460509636760f6a90d1532050b457e566ed11677237a5e1c5",
+    "@code/quadrl_route_basis_v14/__init__.py": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+    "@code/quadrl_route_memory_v20/__init__.py": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+    "@code/quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "@code/quadrl_path_v7/policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "@code/quadrl_route_basis_v14/policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "@code/quadrl_path_v7/__init__.py": "b22e00e0881e1e451cb15fcacd53c45b5bb2581ea31045977b90c0db785e1510",
+    "@code/quadrl_route_memory_v20/policy.py": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+    "@session/flight/pid/commands.jsonl": "7bd8437b8203ae5e1f23847a54d0a6a296bb0d6a9b6a404b71a5dcbd3f3e16f8",
+    "@session/flight/pid/parameter_readback.json": "766473abe1487b96bd2206b3051abcdd5dc8f536ff260f5c2efd92fed7629195",
+    "@session/flight/pid/connection_identity.json": "c44ff7b5b70c89c562bb5ac0fcad1f8a097e3b456dac327399b4cdbf0f620a8a",
+    "@session/flight/pid/sitl_launch.json": "bd02e26594b43d77b8dc1955ab85ea04a4df41e09061512333b40462b7698b78",
+    "@session/flight/pid/experiment.parm": "407212ccca2d813da581adf5f63925d81eb374acf56c79f4e393e6447495aa80",
+    "@session/flight/pid/mavlink.jsonl": "5cd5a4bacde93ffaeb5f47297fe8e41614206ee8252fcefa0631e70d55d3cb88",
+    "@session/flight/pid/events.jsonl": "0d28477ad3324f62d728730c1c9a68000b3f7818d692ac9d8bf62d256d89a014",
+    "@session/flight/hybrid/commands.jsonl": "02ed6c054fbc443f5e33f42d708fb6de9c09443aaa553aad238c7b52ac2bc5b8",
+    "@session/flight/hybrid/parameter_readback.json": "73f65a97a8b6a47e3b9b214717dbd18b1cbf47205b86d481b3c463fd70330017",
+    "@session/flight/hybrid/connection_identity.json": "6970ab4c0932dca957ded1c9e869d85455a2099be611cecfa49b390d3755bf0b",
+    "@session/flight/hybrid/sitl_launch.json": "28cbc80673d889456b5714e9790866e5cd823226d017bc103fd647da7f3de4b3",
+    "@session/flight/hybrid/experiment.parm": "80c94af92c8a42954352e8e94970542d19cc4cedb6a56c190004af9cf5cc56bc",
+    "@session/flight/hybrid/mavlink.jsonl": "4f5b29f1b15cf7a395924aab70cd0fb50afc389417d922bd0371341307662c54",
+    "@session/flight/hybrid/events.jsonl": "fdb3350a88135f65d583082f85b5c7de36b487d60cb07233c457089fd34d50f2",
+    "@session/flight/direct/commands.jsonl": "952245a6f07bf342d2e9a5fe3992d72807a2c1c36bc3e384bfb0d05e4660046e",
+    "@session/flight/direct/parameter_readback.json": "77b50dfa1a6eba5636b7655d5f4da39d56c5c69eab9d44a7fedd98cdb9608c09",
+    "@session/flight/direct/connection_identity.json": "ccbc1ab00b097e08edd40e2e67d3f4cc82e5e362a6ca391338b7a693b3c18ba3",
+    "@session/flight/direct/sitl_launch.json": "81d46f9336f9e032e9a90f2fba5debcda15bf5c5bc236066e78d2560e17a4032",
+    "@session/flight/direct/experiment.parm": "06c24a9121275c74f931beff458904239e6ad64c5144f5ab62f449eda6fdfaab",
+    "@session/flight/direct/mavlink.jsonl": "d130bff0374586d86dd0ef40b184443b4ad8557c1ccc731249cca8a79a7757d1",
+    "@session/flight/direct/events.jsonl": "46a0ccd9e3cd3c2f48677c0f5ea3a662931d61b33019b056c5bfd6b370477072",
+    "@session/flight/direct/actuators.jsonl": "250c64dee289046a4255fae0a7871c2023da095c67bb47a572589f3305fc1671",
+    "@session/flight/direct/physics.jsonl": "c97a4dc04a98540164772294e02388e25e8bde061c03ce450fbc12d86c97c290",
+    "@session/flight/network_capture_finished.json": "31f23fc3e55dcdfb9492cd6d6799ec9a7d66f6acc82c5cd5d0fd3e42598f6e19",
+    "@session/flight/network.pcap.gz": "b8f7380ea7bda2ac82518c952b8e9074fac465ce4a0fca2afffbc718c227383c",
+    "@session/flight/control_schedule.jsonl": "9b2757a1645ba11930b28ad92a96a5bcecb0785dc0e229ba4fde81f2b463ce67"
+  },
+  "auditor_sha256": "3545e7fa040622129f9e39f20fb94d72da79ee504831d7fd4b22b1f3ebee933b",
+  "_projection": {
+    "original_sha256": "b1767c7bdacc5a4e8e890b7fd2e99731d9487ec79e0549c441cb6b4a5bf7a61c",
+    "changed_fields": [
+      "/input_sha256",
+      "/replay_code_root",
+      "/run",
+      "/unused_standard_MAV_missing_values"
+    ],
+    "kind": "PUBLIC_DISPLAY_PROJECTION_NOT_ORIGINAL_GUARD_BYTES",
+    "integrity_is_not_scientific_acceptance": true,
+    "symbolic_roots": {
+      "@session": "original complete presentation session",
+      "@code": "byte-bound inference source root",
+      "@project": "source project root",
+      "@external": "opaque original-path identifier; original bytes bound by digest"
+    }
+  }
+}

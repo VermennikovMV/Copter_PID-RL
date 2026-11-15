@@ -1,0 +1,6 @@
+sequence,world_sim_time_s,measurement_time_s,mission_time_s,physics_iteration,force_x_N,force_y_N,force_z_N,original_event_json
+0,28.727,-43.591999999999985,,28727,0,0,0,"{""seq"":0,""sim_time"":28.727,""measurement_t"":-43.591999999999985,""iteration"":28727,""force_enu_N"":[0,0,0]}"
+1,72.341,0.02200000000000557,,72341,0,0,0,"{""seq"":1,""sim_time"":72.341,""measurement_t"":0.02200000000000557,""iteration"":72341,""force_enu_N"":[0,0,0]}"
+2,77.245,4.926000000000016,,77245,2.61331047917283,-1.1521643960622598,0,"{""seq"":2,""sim_time"":77.245,""measurement_t"":4.926000000000016,""iteration"":77245,""force_enu_N"":[2.61331047917283,-1.1521643960622598,0]}"
+3,92.559,20.24000000000001,,92559,0,0,0,"{""seq"":3,""sim_time"":92.559,""measurement_t"":20.24000000000001,""iteration"":92559,""force_enu_N"":[0,0,0]}"
+4,112.322,40.003000000000014,,112322,0,0,0,"{""seq"":4,""sim_time"":112.322,""measurement_t"":40.003000000000014,""iteration"":112322,""force_enu_N"":[0,0,0]}"

@@ -20,6 +20,11 @@ V29 — сборка F0-hover и реально обученного v28-route e
 actual PPO Adam updates; сборка0SGD. Старые successful cells не наследуются.
 На каждый отсчёт вычисляется только выбранный expert.
 
+Два эксперта Hybrid phase29 и Direct111 имеют разную историю и накопленный
+бюджет обучения. Измерения сравнивают эти конкретные системы и не доказывают
+превосходство архитектуры при равном обучении.
+[Бюджеты и происхождение весов](docs/training_comparison.md).
+
 [Path77 original card](docs/model_cards/path77.md) ·
 [Diagnostic80 card](models/DIAGNOSTIC80_CARD.md) ·
 [Direct implementation](reference_manual/architecture.md) ·

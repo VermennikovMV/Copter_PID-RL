@@ -342,8 +342,16 @@ def main():
     output = args.output.resolve()
     if output.exists():
         parser.error('Use a fresh output; existing exports are preserved')
-    if output.name != args.name or output.parent.name != 'shared_world' or output.parent.parent.name != 'results':
-        parser.error('Output layout must be results/shared_world/<name>')
+    original_layout = output.name == args.name and output.parent.name == 'shared_world' and output.parent.parent.name == 'results'
+    radius_layout = (args.name == 'route' and output.name in ('r025', 'r040')
+                     and output.parent.name == 'waypoint_radius' and output.parent.parent.name == 'results')
+    if not (original_layout or radius_layout):
+        parser.error('Use results/shared_world/<name> or results/waypoint_radius/r025|r040')
+    if radius_layout:
+        plan = json.loads((args.session.resolve() / 'flight/plan.json').read_text(encoding='utf-8'))
+        expected_radius = {'r025': .25, 'r040': .40}[output.name]
+        if plan.get('mission_acceptance', {}).get('waypoint_radius_m') != expected_radius:
+            parser.error('Output radius label does not match the recorded mission contract')
     try:
         blobs, counts = prepare(args.session.resolve(), args.name)
     except (Rejected, OSError, KeyError, TypeError, ValueError) as exc:

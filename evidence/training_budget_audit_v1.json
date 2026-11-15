@@ -1,0 +1,640 @@
+{
+  "schema": "training-budget-provenance-v1.0",
+  "status": "PASS_FILE_PROVENANCE_AND_BUDGET_RECONSTRUCTION_ONLY",
+  "created_utc": "2026-11-15T19:34:35.677003+00:00",
+  "scope": "Exact Direct111 and two fixed phase29 actors used in shared-world demonstrations; not a matched-budget architecture experiment",
+  "new_training_steps": 0,
+  "new_optimizer_steps": 0,
+  "new_environment_steps": 0,
+  "new_NN_forward_rows": 0,
+  "models": {
+    "direct111": {
+      "sha256": "5d0d19e02c30c62ed3a0efdcf003d8b6b635ae1eea9b1d32b4737836c46ff900",
+      "actor_dimensions": [
+        74,
+        128,
+        128,
+        4
+      ],
+      "actor_parameters": 26628,
+      "actors_stored": 1,
+      "actions": "four normalized motor commands",
+      "research_relative_path": "artifacts/training/main_direct_seed111_v2/best_policy.npz",
+      "public_relative_path": "v2/artifacts/training/main_direct_seed111_v2/best_policy.npz"
+    },
+    "F0": {
+      "sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+      "actor_dimensions": [
+        80,
+        128,
+        128,
+        4
+      ],
+      "actor_parameters": 27396,
+      "actions": "collective thrust and three body rates",
+      "research_relative_path": "artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/zero_route_integral/policy.npz",
+      "public_relative_path": "v2/artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/zero_route_integral/policy.npz"
+    },
+    "route_FINAL": {
+      "sha256": "ce86bb56d7e0f5c1775266d4a45cd3417e979303d27cc662a58e8070bf34e345",
+      "actor_dimensions": [
+        80,
+        128,
+        128,
+        4
+      ],
+      "actor_parameters": 27396,
+      "actions": "collective thrust and three body rates",
+      "research_relative_path": "artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/final.npz",
+      "public_relative_path": "v2/artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/final.npz"
+    }
+  },
+  "direct_selected": {
+    "training_seed": 111,
+    "checkpoint": "checkpoint_2000000",
+    "collected_environment_steps": 2000000,
+    "completed_rollout_cycles": 244,
+    "environment_steps_used_in_completed_updates": 1998848,
+    "not_yet_used_collected_steps": 1152,
+    "PPO_optimizer_updates": 15616,
+    "offline_anchor_optimizer_updates": 4880,
+    "BC": {
+      "teacher_samples": 138134,
+      "fit_samples": 108551,
+      "holdout_samples": 29583,
+      "epochs_spent": 35,
+      "optimizer_updates_spent": 3745,
+      "restored_best_epoch": 29,
+      "teacher_episodes": 96,
+      "teacher_seeds": [
+        4001,
+        4096
+      ]
+    },
+    "full_completed_run": {
+      "environment_steps": 3006464,
+      "rollout_cycles": 367,
+      "PPO_optimizer_updates": 23488,
+      "offline_anchor_optimizer_updates": 7340,
+      "reported_wall_seconds": 2431.5638801270006,
+      "wall_scope": "Includes BC and validation; not pure optimizer compute",
+      "final_model_is_selected": false
+    },
+    "selected_callback_reported_wall_seconds": 1496.1082831189997
+  },
+  "hybrid_BC": {
+    "teacher_samples": 144000,
+    "fit_samples": 114000,
+    "holdout_samples": 30000,
+    "epochs_spent": 35,
+    "optimizer_updates_spent": 3920,
+    "restored_best_epoch": 35,
+    "teacher_episodes": 96,
+    "teacher_seeds": [
+      2001,
+      2096
+    ],
+    "ancestor_is_BC_only_archive": "692af0b3c31e6020fb5faa5dd8e8c7a6aef446e220f9b6c8cebc0bc49b59eb17",
+    "original_main_hybrid_3M_PPO_not_in_this_ancestry": true
+  },
+  "hybrid_training_stages": [
+    {
+      "stage": "hybrid_wind_specialist",
+      "selected_actor_collected_steps": 1048576,
+      "selected_actor_update_used_steps": 1040384,
+      "selected_actor_PPO_updates": 8128,
+      "critic_only_steps": 131072,
+      "critic_only_updates": 1024,
+      "full_run_actor_steps": 1048576,
+      "full_run_actor_PPO_updates": 8192,
+      "selected_phase": "checkpoint_1048576_before_current_update",
+      "actor_seed": 9111,
+      "critic_seed": 9171,
+      "evidence": [
+        "wind_config",
+        "wind_selection",
+        "wind_complete"
+      ]
+    },
+    {
+      "stage": "hybrid_geometry",
+      "selected_actor_collected_steps": 2097152,
+      "selected_actor_update_used_steps": 2097152,
+      "selected_actor_PPO_updates": 16384,
+      "critic_only_steps": 131072,
+      "critic_only_updates": 1024,
+      "full_run_actor_steps": 2097152,
+      "full_run_actor_PPO_updates": 16384,
+      "selected_phase": "final",
+      "actor_seed": 9611,
+      "critic_seed": 9511,
+      "evidence": [
+        "geometry_config",
+        "geometry_complete",
+        "geometry_selection"
+      ]
+    },
+    {
+      "stage": "hybrid_path77",
+      "selected_actor_collected_steps": 262144,
+      "selected_actor_update_used_steps": 262144,
+      "selected_actor_PPO_updates": 2048,
+      "critic_only_steps": 131072,
+      "critic_only_updates": 1024,
+      "full_run_actor_steps": 262144,
+      "full_run_actor_PPO_updates": 2048,
+      "selected_phase": "final",
+      "actor_seed": 9611,
+      "critic_seed": 9511,
+      "evidence": [
+        "path_config",
+        "path_complete"
+      ]
+    },
+    {
+      "stage": "hybrid_w8_control",
+      "selected_actor_collected_steps": 262144,
+      "selected_actor_update_used_steps": 262144,
+      "selected_actor_PPO_updates": 2048,
+      "critic_only_steps": 131072,
+      "critic_only_updates": 1024,
+      "full_run_actor_steps": 262144,
+      "full_run_actor_PPO_updates": 2048,
+      "selected_phase": "final",
+      "actor_seed": 9611,
+      "critic_seed": 9511,
+      "evidence": [
+        "corner_config",
+        "corner_complete"
+      ]
+    },
+    {
+      "stage": "hybrid_v16_metric_cost",
+      "selected_actor_collected_steps": 131072,
+      "selected_actor_update_used_steps": 122880,
+      "selected_actor_PPO_updates": 960,
+      "critic_only_steps": 131072,
+      "critic_only_updates": 1024,
+      "full_run_actor_steps": 262144,
+      "full_run_actor_PPO_updates": 2048,
+      "selected_phase": "checkpoint_131072_before_current_update",
+      "actor_seed": 9611,
+      "critic_seed": 9511,
+      "trainable_actor_elements": 384,
+      "evidence": [
+        "v16_selection",
+        "v16_complete"
+      ]
+    },
+    {
+      "stage": "hybrid_v28_prior0_FINAL",
+      "selected_actor_collected_steps": 262144,
+      "selected_actor_update_used_steps": 262144,
+      "selected_actor_PPO_updates": 2048,
+      "critic_only_steps": 131072,
+      "critic_only_updates": 1024,
+      "full_run_actor_steps": 262144,
+      "full_run_actor_PPO_updates": 2048,
+      "selected_phase": "final_chosen_for_manual_v29_composition",
+      "actor_seed": 9611,
+      "critic_seed": 9511,
+      "trainable_actor_elements": 27396,
+      "prior_KL_weight": 0.0,
+      "offline_anchor_updates": 0,
+      "evidence": [
+        "v28_config",
+        "v28_complete",
+        "v28_independent_NN"
+      ]
+    }
+  ],
+  "hybrid_F0_selected_ancestry": {
+    "selected_actor_collected_steps": 3801088,
+    "selected_actor_update_used_steps": 3784704,
+    "selected_actor_PPO_updates": 29568,
+    "critic_only_steps": 655360,
+    "critic_only_updates": 5120,
+    "full_run_actor_steps": 3932160,
+    "full_run_actor_PPO_updates": 30720,
+    "full_ancestral_runs_environment_steps_excluding_BC_teacher_evaluation_and_search": 4587520
+  },
+  "hybrid_route_selected_ancestry": {
+    "selected_actor_collected_steps": 4063232,
+    "selected_actor_update_used_steps": 4046848,
+    "selected_actor_PPO_updates": 31616,
+    "critic_only_steps": 786432,
+    "critic_only_updates": 6144,
+    "full_run_actor_steps": 4194304,
+    "full_run_actor_PPO_updates": 32768,
+    "full_ancestral_runs_environment_steps_excluding_BC_teacher_evaluation_and_search": 4980736
+  },
+  "zero_SGD_transformations": [
+    {
+      "stage": "velocity_conditioning",
+      "detail": "Manual gamma1.15 on input columns3,4,33,34,55,56; no optimizer",
+      "evidence": "gamma_manual_lineage"
+    },
+    {
+      "stage": "path77_initializer",
+      "detail": "Function-preserving expansion74to77 with new input weights zero",
+      "evidence": "path77_initializer"
+    },
+    {
+      "stage": "route80_initializer_v14",
+      "detail": "Function-preserving expansion77to80 with new input weights zero",
+      "evidence": "route80_initializer"
+    },
+    {
+      "stage": "F0_v20",
+      "detail": "All six actor arrays exact source68; effective integral22:25 zero on own valid leg"
+    },
+    {
+      "stage": "phase29",
+      "detail": "Manual causal current-valid-leg selector, one shared encoder, zero new training",
+      "evidence": "phase29_bundle"
+    }
+  ],
+  "counting_rules": [
+    "Shared ancestry counted once: do not sum F0 and route cumulative budgets.",
+    "Optimizer updates are minibatch Adam calls, not environmental steps or epochs.",
+    "Critic-only updates do not train the actor.",
+    "Source-prior KL updates inside PPO are not additional environment steps or an extra supervised training run.",
+    "Selected pre-update checkpoints exclude subsequent updates of the same completed run.",
+    "Full ancestral run cost includes postselected work but excludes other candidate arms, teacher collection, evaluations, probes and total historical tuning search.",
+    "No comparable pure actor compute/wall-time measurement or complete historical search-budget total established."
+  ],
+  "training_distributions": {
+    "direct": "PyBullet: broad randomized mass/motor/delay/noise and wind,60%hover/40%route; BC+alternatingPPO/IL.",
+    "hybrid_wind": "PyBullet: nominal vehicle,hover only,20%nominal/80%force or gust.",
+    "hybrid_geometry": "PyBullet nominal vehicle,80%route/20%hover,20%nominal/40%constant force/40%gust; finite-path objective.",
+    "hybrid_path_and_corner": "Native-response-refit PyBullet,80%route/20%hover; hard state-triggered tailwind plus broad clock wind curriculum.",
+    "hybrid_v16": "Same native-response-refit plant/curriculum; finite metric-cost reward,gamma1,true deadline; only384 new input weights trained.",
+    "hybrid_v28": "Restart source68; same metric-cost/native plant; alternate original and Gazebo-measured full initial-state route resets; all6 mean arrays trained,std frozen,prior0,IL0."
+  },
+  "fairness": {
+    "matched_training_budget_proven": false,
+    "matched_initial_distribution_reward_data_tuning_budget_proven": false,
+    "valid_interpretation": "Comparison of these selected complete control systems in the measured conditions",
+    "unsupported_interpretation": "Isolated causal or universal superiority of Hybrid vs Direct architecture",
+    "future_design": [
+      "Prospective equal total fresh environment-step primary budget including inherited training and critic warmup.",
+      "Separate identical teacher/BC data budgets and record all supervised/anchor updates.",
+      "Shared measured task,reward/evaluation objective and distribution; architecture-specific action interface explicit.",
+      "Multiple declared training seeds and paired held-out environment seeds.",
+      "Equal candidate/tuning budget; fixed selector before results.",
+      "Record compute hardware,optimizer workloads and controlled compute/wall cap; report uncertainty."
+    ]
+  },
+  "reference": {
+    "title": "Empirical Design in Reinforcement Learning",
+    "authors": "Patterson,Neumann,White,White",
+    "year": 2024,
+    "url": "https://jmlr.org/papers/v25/23-0183.html"
+  },
+  "inputs": {
+    "direct_config": {
+      "research_relative_path": "artifacts/training/main_direct_seed111_v2/config.json",
+      "sha256": "cb8443515fafe1f5c7695fba53ec14c4c286b37654372e62d062591216110ae9",
+      "bytes": 3933,
+      "public_relative_path": null
+    },
+    "direct_selection": {
+      "research_relative_path": "artifacts/training/main_direct_seed111_v2/selection.json",
+      "sha256": "20b98cba74c62676ddac0e2322503828a5b5753d00f2d7537b5a56eb149f6141",
+      "bytes": 498,
+      "public_relative_path": null
+    },
+    "direct_training_complete": {
+      "research_relative_path": "artifacts/training/main_direct_seed111_v2/training_summary.json",
+      "sha256": "42293ab04489a5dccac6f01851a747ceee70b8ada2b45145f7f6f2079c80b9a4",
+      "bytes": 607,
+      "public_relative_path": null
+    },
+    "direct_BC": {
+      "research_relative_path": "artifacts/training/main_direct_seed111_v2/bc_summary.json",
+      "sha256": "4ccfaef94956e20a6cbdb95d2f0a85426b3965e1d5d47fd2c313924403995477",
+      "bytes": 596,
+      "public_relative_path": null
+    },
+    "direct_BC_progress": {
+      "research_relative_path": "artifacts/training/main_direct_seed111_v2/bc_progress.jsonl",
+      "sha256": "bbc66000c9bf615e03016ae1c287455bbeab32c95f7a467a06ee5c0e0247d74e",
+      "bytes": 3502,
+      "public_relative_path": null
+    },
+    "direct_updates": {
+      "research_relative_path": "artifacts/training/main_direct_seed111_v2/alternating_updates.jsonl",
+      "sha256": "b2e9a11a164c2a9e97bc06c441472616e1b6c9125c314aee7386a1a202e82b2f",
+      "bytes": 42366,
+      "public_relative_path": null
+    },
+    "direct_frozen_source": {
+      "research_relative_path": "artifacts/training/main_direct_seed111_v2/source_snapshot.zip",
+      "sha256": "cb8dac5f808bb46328b851845a2c8bf9519f398b39a5dab41a4312d75152318c",
+      "bytes": 54341,
+      "public_relative_path": null
+    },
+    "direct_teacher": {
+      "research_relative_path": "reference/artifacts/bc_direct_corrected_4001_4096/manifest.json",
+      "sha256": "9efcaecd76588c86ac9a2d4d638cda77c80996e751f830782398374e4734160b",
+      "bytes": 39870,
+      "public_relative_path": null
+    },
+    "hybrid_BC": {
+      "research_relative_path": "artifacts/training/main_hybrid_seed111_v1/bc_summary.json",
+      "sha256": "1000cbec7c06c9280a1e78cb930c8f9dcc996eddeeed5828fd84365e7dd28ea0",
+      "bytes": 594,
+      "public_relative_path": null
+    },
+    "hybrid_BC_progress": {
+      "research_relative_path": "artifacts/training/main_hybrid_seed111_v1/bc_progress.jsonl",
+      "sha256": "373eb4ad5560802e0b423af8ca211fc4a872c379eb9838705559986b225f6d54",
+      "bytes": 3524,
+      "public_relative_path": null
+    },
+    "hybrid_teacher": {
+      "research_relative_path": "reference/artifacts/bc_mixed_selected_2001_2096/manifest.json",
+      "sha256": "5a90247c9f92a3bf5ef522898ebe9ea863e7d224b470333cefc0c02ece7e1748",
+      "bytes": 40204,
+      "public_relative_path": null
+    },
+    "wind_config": {
+      "research_relative_path": "artifacts/refinement/wind_specialist_v1/config.json",
+      "sha256": "fefb9a694e24d273936df770e9ca0188171e6d2264372b4abe81b4a72bf130f4",
+      "bytes": 6486,
+      "public_relative_path": null
+    },
+    "wind_selection": {
+      "research_relative_path": "artifacts/refinement/wind_specialist_v1/selection.json",
+      "sha256": "c9e16b317b6eb2d454fae85fbcf3943e0d0930c91c9f87f7b7f77937da6e7ef9",
+      "bytes": 442,
+      "public_relative_path": null
+    },
+    "wind_complete": {
+      "research_relative_path": "artifacts/refinement/wind_specialist_v1/complete.json",
+      "sha256": "5d515a0cd78bf72e6b76a8c7e3b417df31e91ed0c53524d8ecb80b65b215a480",
+      "bytes": 516,
+      "public_relative_path": null
+    },
+    "geometry_config": {
+      "research_relative_path": "artifacts/refinement/joint_v2/training_pair111/geometry/config.json",
+      "sha256": "1ebcaf6eacb14e86fcd655956dce7678994ea29cec8d14b8d47a65c8b576a55a",
+      "bytes": 6000,
+      "public_relative_path": null
+    },
+    "geometry_complete": {
+      "research_relative_path": "artifacts/refinement/joint_v2/training_pair111/geometry/complete.json",
+      "sha256": "0c428224fcd7e2278e5b5b8038438c683ec8595da5afc59f07535f64b0602446",
+      "bytes": 4329,
+      "public_relative_path": null
+    },
+    "geometry_selection": {
+      "research_relative_path": "artifacts/refinement/joint_v2/training_pair111/geometry/selection.json",
+      "sha256": "d23d14498166a681e32601d31aeb589e79dd087a80333f2d5ec7a440cad2a4ee",
+      "bytes": 7131,
+      "public_relative_path": null
+    },
+    "gamma_manual_lineage": {
+      "research_relative_path": "artifacts/refinement/joint_v2/conditioned_initializer_v1/lineage_receipt.json",
+      "sha256": "7f37af5ca00775374ab992ba4ce768719aa5e1940b0353c293ee8e4cbda4e04e",
+      "bytes": 9106,
+      "public_relative_path": null
+    },
+    "path77_initializer": {
+      "research_relative_path": "artifacts/refinement/joint_v2/path_context_prototype_v7/prototype_receipt.json",
+      "sha256": "bcb471ceea945db1495070f54973ae972a387a75a33c2b1a9c789cf56055ba20",
+      "bytes": 75079,
+      "public_relative_path": null
+    },
+    "path_config": {
+      "research_relative_path": "artifacts/refinement/joint_v2/path_pilot111/path/config.json",
+      "sha256": "5a508af21d39e41d004de83616fadedf6346cac1e3bab56165de30507699afea",
+      "bytes": 12042,
+      "public_relative_path": null
+    },
+    "path_complete": {
+      "research_relative_path": "artifacts/refinement/joint_v2/path_pilot111/path/complete.json",
+      "sha256": "a23d72003aa2443663d4f3746ec13c663a464019d3e947176f81bd1e6eacf01b",
+      "bytes": 7979,
+      "public_relative_path": null
+    },
+    "corner_config": {
+      "research_relative_path": "artifacts/refinement/joint_v2/corner_pilot111/w8_control/config.json",
+      "sha256": "8bf82409e7de955ac4abaf0628595eac2d4fb1e5182890a9a6049a74e1110e8d",
+      "bytes": 13719,
+      "public_relative_path": null
+    },
+    "corner_complete": {
+      "research_relative_path": "artifacts/refinement/joint_v2/corner_pilot111/w8_control/complete.json",
+      "sha256": "70f48894b67467fbce6641d15a7e09aa70b7dc6b1f22dea8314a6a5debe879bb",
+      "bytes": 8259,
+      "public_relative_path": null
+    },
+    "route80_initializer": {
+      "research_relative_path": "artifacts/refinement/joint_v2/route_basis_v14/root01/report.json",
+      "sha256": "c27a70d522673da739e1d2153c16b7c885dbf0ba765649a7620cea465670a141",
+      "bytes": 29204,
+      "public_relative_path": null
+    },
+    "v16_selection": {
+      "research_relative_path": "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/selection.json",
+      "sha256": "f58d16cbb753472047bc5aa09da6e26d1c227605a97c6fb01ca7814160d52681",
+      "bytes": 20896,
+      "public_relative_path": null
+    },
+    "v16_complete": {
+      "research_relative_path": "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/complete.json",
+      "sha256": "9b1e10507e9459afc62a5c957e23e61f4f712be42a6f5214664292542ff89911",
+      "bytes": 19638,
+      "public_relative_path": null
+    },
+    "v28_config": {
+      "research_relative_path": "artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/config.json",
+      "sha256": "216e3b3aefbd8992f154805c22809c0c035702405bcd4faeca47d982d7e329b8",
+      "bytes": 27340,
+      "public_relative_path": null
+    },
+    "v28_complete": {
+      "research_relative_path": "artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/complete.json",
+      "sha256": "fa6b104422935f245fc45b2c9d728975a5765e21fca8d76babfb91790943086f",
+      "bytes": 41140,
+      "public_relative_path": null
+    },
+    "v28_independent_NN": {
+      "research_relative_path": "audit/review_joint_prior_ablation_v28_pilot_01.json",
+      "sha256": "8b9936e55e286587ae8ee66d9c487bbc08471a1d0abef9fcad53b8d858e1e2a4",
+      "bytes": 366683,
+      "public_relative_path": "v2/audit/review_joint_prior_ablation_v28_pilot_01.json",
+      "public_bytes_exact_original": true
+    },
+    "phase29_bundle": {
+      "research_relative_path": "artifacts/refinement/joint_v2/phase_expert_preparation_v29_root01/bundle.json",
+      "sha256": "c3fc1c9c799f21200c98fc5995dba9908b1b13a517eb78bd60759e91eb8818a4",
+      "bytes": 2179,
+      "public_relative_path": "v2/artifacts/refinement/joint_v2/phase_expert_preparation_v29_root01/bundle.json",
+      "public_bytes_exact_original": true
+    },
+    "phase29_policy": {
+      "research_relative_path": "quadrl_phase_expert_v29/policy.py",
+      "sha256": "0827ff86abd77b2945b1f5a5f845ccae32a5695396e5843a1eed143832a91cf7",
+      "bytes": 7906,
+      "public_relative_path": "v2/quadrl_phase_expert_v29/policy.py",
+      "public_bytes_exact_original": true
+    },
+    "phase29_independent_NN": {
+      "research_relative_path": "audit/review_joint_phase_expert_v29_native_01.json",
+      "sha256": "b13fe85ad6053645677afc566b874c5ce00b776a6e2899fc566efe67467e5db3",
+      "bytes": 93056,
+      "public_relative_path": "results/latest_diagnostics/review_joint_phase_expert_v29_native_01.json",
+      "public_bytes_exact_original": true
+    },
+    "v24_reset": {
+      "research_relative_path": "quadrl_route_initial_v24/env.py",
+      "sha256": "f8fa4216c10863997b60537ec0b0738bc89238e8dcd0cadd084424e35c7a1db5",
+      "bytes": 8719,
+      "public_relative_path": null
+    }
+  },
+  "ancestry_archive_chain": [
+    {
+      "stage": "BC_only",
+      "research_relative_path": "artifacts/training/main_hybrid_seed111_v1/bc_only_model.zip",
+      "sha256": "692af0b3c31e6020fb5faa5dd8e8c7a6aef446e220f9b6c8cebc0bc49b59eb17",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 0,
+        "_n_updates": 0,
+        "ppo_gradient_steps": null,
+        "bc_kl_gradient_steps": null
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "wind",
+      "research_relative_path": "artifacts/refinement/wind_specialist_v1/best_model.zip",
+      "sha256": "dd608dc59d0491c48c425e60a9abd15460b0ad2fbe0aa9fa7b2d1837c493f2cb",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 1048576,
+        "_n_updates": 1144,
+        "ppo_gradient_steps": 9152,
+        "bc_kl_gradient_steps": 8128
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "geometry",
+      "research_relative_path": "artifacts/refinement/joint_v2/training_pair111/geometry/best_model.zip",
+      "sha256": "8c76689508242cdf69727d6c0bade6c12dda8d0f2c5e14b5910554d6be181479",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 2097152,
+        "_n_updates": 3320,
+        "ppo_gradient_steps": 16384,
+        "bc_kl_gradient_steps": 16384
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "manual_velocity_gamma",
+      "research_relative_path": "artifacts/refinement/joint_v2/conditioned_initializer_v1/conditioned_model.zip",
+      "sha256": "9692cb5392f64622ccae030a0a87d2c939a02715a531c97232d63a78eb8e18e5",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 2097152,
+        "_n_updates": 3320,
+        "ppo_gradient_steps": 16384,
+        "bc_kl_gradient_steps": 16384
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "path77_initializer",
+      "research_relative_path": "artifacts/refinement/joint_v2/path_context_prototype_v7/path77_initializer.zip",
+      "sha256": "78a005295499233d08805a09ae197c77555920b0323f1a838bc615e0da3dfca3",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 2097152,
+        "_n_updates": 3320,
+        "ppo_gradient_steps": 16384,
+        "bc_kl_gradient_steps": 16384
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "path77_final",
+      "research_relative_path": "artifacts/refinement/joint_v2/path_pilot111/path/final.zip",
+      "sha256": "7d41ffdf401e46eb999eff8daa64b84f644164f86c1775fa4efb2233aeb1ac26",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 262144,
+        "_n_updates": 3704,
+        "ppo_gradient_steps": 2048,
+        "bc_kl_gradient_steps": 2048
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "w8_final",
+      "research_relative_path": "artifacts/refinement/joint_v2/corner_pilot111/w8_control/final.zip",
+      "sha256": "e81c587177832377307bd94c59be3bcb68245dfba64efad140df54a667257302",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 262144,
+        "_n_updates": 4088,
+        "ppo_gradient_steps": 2048,
+        "bc_kl_gradient_steps": 2048
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "route80_initializer",
+      "research_relative_path": "artifacts/refinement/joint_v2/route_basis_v14/root01/route80_initializer.zip",
+      "sha256": "122e1a7a99032c6db524b05c1c6ca0a4125c31040e187161d4558aa7f1025196",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 262144,
+        "_n_updates": 4088,
+        "ppo_gradient_steps": 2048,
+        "bc_kl_gradient_steps": 2048
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "source68_selected",
+      "research_relative_path": "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/checkpoint_131072.zip",
+      "sha256": "0df1b6cd2811f5196395e8b707a3eee0387c8b0050375479a912511df779bf40",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 131072,
+        "_n_updates": 4336,
+        "ppo_gradient_steps": 960,
+        "bc_kl_gradient_steps": 960
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    },
+    {
+      "stage": "route_v28_FINAL",
+      "research_relative_path": "artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/final.zip",
+      "sha256": "62eaf3fb179f915a91cb15686720c06c5dd8cc80595d1308279ee1895ce13c11",
+      "public_relative_path": null,
+      "archive_data_counters": {
+        "num_timesteps": 262144,
+        "_n_updates": 384,
+        "ppo_gradient_steps": 2048,
+        "bc_kl_gradient_steps": 0
+      },
+      "counter_caveat": "Raw archive counters may include inherited/critic epochs; stage accounting above separates actor and critic."
+    }
+  ],
+  "verification": {
+    "static_file_checks_passed": 65,
+    "model_parameters_counted_from_NPZ": true,
+    "original_and_public_three_used_NPZ_SHA_exact": true,
+    "all_local_markdown_targets_exist": true,
+    "personal_absolute_paths_excluded": true,
+    "new_NN_forward_rows": 0,
+    "new_physics_steps": 0,
+    "new_training_steps": 0
+  }
+}

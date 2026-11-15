@@ -36,6 +36,7 @@ def main():
     p.add_argument("--wind", choices=("strong", "gust", "none"))
     p.add_argument("--output", type=Path)
     p.add_argument("--duration", type=float)
+    p.add_argument("--wp-radius", type=float, default=.25, help="Same waypoint radius for all three drones, in metres")
     p.add_argument("--manual-start", action="store_true", help="Hold before measurement until START_MEASUREMENT appears")
     p.add_argument("--gui-warmup", type=float, default=10., help="Wall seconds held after flight readiness for GUI initialization")
     p.add_argument("--science-distro", default="Ubuntu-24.04")
@@ -46,6 +47,8 @@ def main():
     a = p.parse_args()
     if not 0 <= a.gui_warmup <= 120:
         p.error("--gui-warmup must be between 0 and 120 seconds")
+    if not 0 < a.wp_radius <= 1.:
+        p.error("--wp-radius must be finite and in (0, 1] metres")
     wind = a.wind or ("strong" if a.mission == "route" else "gust")
     stamp = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
     out = (a.output or ROOT / "runs" / f"gazebo_{a.mission}_{wind}_{stamp}").resolve()
@@ -59,7 +62,8 @@ def main():
     stop_recording = out / "STOP_RECORDING"
     runtime_args = ["-u", "-B", str(ROOT / "demo_three/runtime.py"), "--mission", a.mission,
                     "--scenario", {"strong": "force_strong", "gust": "gust", "none": "nominal"}[wind],
-                    "--seed", "83301", "--gui", "--output", str(flight), "--start-file", str(gate)]
+                    "--seed", "83301", "--gui", "--output", str(flight), "--start-file", str(gate),
+                    "--wp-radius", str(a.wp_radius)]
     if a.duration:
         runtime_args += ["--duration", str(a.duration)]
     if a.public_root:
@@ -75,7 +79,7 @@ def main():
     command = ["/mnt/c/Windows/System32/wsl.exe", "-d", a.science_distro, "--cd", str(ROOT), "--",
                "env", "OPENBLAS_NUM_THREADS=1", "OMP_NUM_THREADS=1", "/usr/bin/python3", "-c", bootstrap,
                a.science_python or "-", *runtime_args]
-    manifest = {"mission": a.mission, "wind": wind, "started_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+    manifest = {"mission": a.mission, "wind": wind, "waypoint_radius_m": a.wp_radius, "started_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
                 "source": "actual Gazebo GUI framebuffer", "runtime_command": command,
                 "output": str(out), "live_flight": str(flight), "manual_start": a.manual_start}
     (out / "presentation.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")

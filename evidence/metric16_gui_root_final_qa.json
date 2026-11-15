@@ -1,0 +1,33 @@
+{
+  "status": "PASS_ACTUAL_GUI_AND_EXACT_TABLE_BINDING",
+  "checked_utc": "2026-11-15T00:32:51.0828605Z",
+  "raw_complete_path": "artifacts/user_runs/metric16_gui_integration_v1_root01/complete.json",
+  "raw_complete_sha256": "ee932cc1a6b5a2aeb9e40b686a9004dbb30c45396675ff07ae392c777b56e2e3",
+  "registry_sha256": "b706f544de2d43292fde494676d241729c789685a8a1df6ea4bc56e2318e169e",
+  "policy_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+  "all139_registry_bindings_unchanged": true,
+  "table_audit_sha256": "589295ff9bc9a64aaa20372ddd03552641324adc9f9ae8b218038a2004c65698",
+  "root_visually_inspected_table": true,
+  "actual_GUI_window_observed": true,
+  "gui_alive_seconds": 100.27,
+  "actual_current_target_markers": 5,
+  "full_measurement_seconds": 40.0,
+  "route_completion_seconds": 8.560000000000002,
+  "finite_RMSE_m": 0.1237869855170883,
+  "manual_demo_only_not_new_primary_replication": true,
+  "automatic_video_recording": false,
+  "policy_promotion": false,
+  "table_and_compatibility_alias": [
+    {
+      "official": "reports/joint_metric_cost16_gazebo_v6/presentation.png",
+      "compatibility_alias": "reports/joint_metric16_fullcontrol_v5/presentation.png",
+      "sha256": "7c587927b1c053a293e4143c52cc2de9c75dc25b6302a80d5f45ba8ddb22dc5d"
+    },
+    {
+      "official": "reports/joint_metric_cost16_gazebo_v6/presentation.pdf",
+      "compatibility_alias": "reports/joint_metric16_fullcontrol_v5/presentation.pdf",
+      "sha256": "fc9e403f13253b15ddd034d69128a7e13b1b16fa75e1b6da60fa91761205868b"
+    }
+  ],
+  "frozen_launcher_bytes_not_modified": true
+}

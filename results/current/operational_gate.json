@@ -1,0 +1,1105 @@
+{
+  "status": "FAIL",
+  "mandatory_eight_condition_operational_gate": "FAIL",
+  "additional_tailwind84001_operational_gate": "FAIL",
+  "original_thesis_wind_macro": {
+    "status": "PASS",
+    "coverage": "ALL6_DEVELOPMENT_CELLS",
+    "cells": [
+      {
+        "scenario": "force_mild",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.01853809548266596,
+        "PID_penalized_RMSE_m": 0.034134660849772326,
+        "joint_status": "PASS",
+        "PID_status": "PASS"
+      },
+      {
+        "scenario": "force_mild",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5785847865866736,
+        "PID_penalized_RMSE_m": 0.6488727453314069,
+        "joint_status": "PASS",
+        "PID_status": "PASS"
+      },
+      {
+        "scenario": "force_strong",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.03123839156225224,
+        "PID_penalized_RMSE_m": 0.06751586046239824,
+        "joint_status": "PASS",
+        "PID_status": "PASS"
+      },
+      {
+        "scenario": "force_strong",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5794002007372633,
+        "PID_penalized_RMSE_m": 0.6571987474720183,
+        "joint_status": "PASS",
+        "PID_status": "PASS"
+      },
+      {
+        "scenario": "gust",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.055952026116139704,
+        "PID_penalized_RMSE_m": 0.10614120268086255,
+        "joint_status": "PASS",
+        "PID_status": "PASS"
+      },
+      {
+        "scenario": "gust",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5815829800445054,
+        "PID_penalized_RMSE_m": 0.6631097030146983,
+        "joint_status": "PASS",
+        "PID_status": "PASS"
+      }
+    ],
+    "formula": "1 - mean6_joint_penalized_RMSE / mean6_PID_penalized_RMSE",
+    "equal_cell_weights": true,
+    "joint_mean_penalized_RMSE_m": 0.3075494134215833,
+    "PID_mean_penalized_RMSE_m": 0.3628288199685261,
+    "relative_improvement": 0.15235671342683876,
+    "minimum_improvement": 0.15,
+    "excluded": [
+      "nominal",
+      "tail84001",
+      "legacy wind retention"
+    ],
+    "valid_controller_failures_retained": true
+  },
+  "checks": [
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": 0.0049691418498634485,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": 0.017231314963425892,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "nominal_hover_precision",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": 0.012162227717825087,
+      "limit": 0.02279284534528638,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.7538717514172044,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 4.975249937464181,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 9.54,
+      "limit": 9.575999999999997,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.5741733115031298,
+      "limit": 0.6622997326604854,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.1611428009538901,
+      "limit": 0.10273799592768003,
+      "pass_": false
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.19270518556661145,
+      "limit": 0.1728212892904558,
+      "pass_": false
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.3431096899493179,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.4789545383554689,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 4.004788915463437,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 8.479999999999997,
+      "limit": 9.744000000000002,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.5778553655877557,
+      "limit": 0.6747151420817092,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.13258289109671492,
+      "limit": 0.11500059586603935,
+      "pass_": false
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.19996957730956302,
+      "limit": 0.20180067257070053,
+      "pass_": true
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.22147734909507547,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": 0.49941409383733204,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": 1.7971179864022317,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "wind_hover_gain_vs_PID",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": 0.03123839156225224,
+      "limit": 0.0573884813930385,
+      "pass_": true
+    },
+    {
+      "check": "wind_hover_retention",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": 0.03123839156225224,
+      "limit": 0.04138724220567179,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": 0.14638640008377335,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": 0.48157188644572774,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": 0.45543013607829363,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": 1.9265625221786085,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "wind_hover_gain_vs_PID",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": 0.055952026116139704,
+      "limit": 0.09022002227873317,
+      "pass_": true
+    },
+    {
+      "check": "wind_hover_retention",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": 0.055952026116139704,
+      "limit": 0.06889996552482328,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.48720089060898436,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 4.066412636601772,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 8.54,
+      "limit": 9.786000000000001,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.5785847865866736,
+      "limit": 0.6813163825979773,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.12851984309564943,
+      "limit": 0.13378882109578494,
+      "pass_": true
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.1964407308780736,
+      "limit": 0.22843301334380078,
+      "pass_": true
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.2239633329987048,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.7078153599645626,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 4.740262197022872,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 8.560000000000002,
+      "limit": 9.933000000000002,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.5794002007372633,
+      "limit": 0.6900586848456193,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.12473683341201727,
+      "limit": 0.15958293100672993,
+      "pass_": true
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.1877683570162417,
+      "limit": 0.2740269513371272,
+      "pass_": true
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.22754226024484883,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.6730835253184047,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 4.53411331576926,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 9.259999999999998,
+      "limit": 10.017,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.5815829800445054,
+      "limit": 0.6962651881654333,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.13433453118902447,
+      "limit": 0.1590283781723517,
+      "pass_": true
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.18784411064616593,
+      "limit": 0.2740269513371272,
+      "pass_": true
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.22314837093870143,
+      "limit": 0.5,
+      "pass_": true
+    }
+  ],
+  "failed_checks": [
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.1611428009538901,
+      "limit": 0.10273799592768003,
+      "pass_": false
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.19270518556661145,
+      "limit": 0.1728212892904558,
+      "pass_": false
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.13258289109671492,
+      "limit": 0.11500059586603935,
+      "pass_": false
+    }
+  ],
+  "native_hard_guards_pass": false,
+  "candidate_mode": "DIAGNOSTIC_ONLY",
+  "eligible_for_root_review": false,
+  "policy_promotion": false,
+  "final_applicability_confirmed": false,
+  "measured_domain": "ONE exact learned77 actor, primary83301 only plus declared84001 strong-route stress. All11new+9shared controls; no borrowed learned-policy successes.",
+  "limitation": "One learned actor, one viewed primary environment83301 and one declared stress direction84001. Historical competent PID controls are shared once. Missing independent training/environment replication remains. Absolute-time force phases may differ across route controllers. Force is inN, not wind speed. Mild enables development macro evaluation but does not imply numeric success. No new training/server/GUI/video by this runner."
+}

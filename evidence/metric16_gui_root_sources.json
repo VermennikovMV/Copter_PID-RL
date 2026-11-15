@@ -1,0 +1,8 @@
+{
+  "original_relative": "audit/joint_metric16_gui_and_table_root01.json",
+  "original_sha256": "cda7b2a3c3bae1d3abdf8c53d7d173a5b29e6f28b44724e8edbe29e822c1ad33",
+  "export_sha256": "73c535e2873a254ab166aa8163b80a7fefc0828a5ad8f0232d34e02390675345",
+  "transformation": "Public path strings only; recursive numeric/bool/null invariance checked",
+  "raw_complete_original_sha256": "ee932cc1a6b5a2aeb9e40b686a9004dbb30c45396675ff07ae392c777b56e2e3",
+  "raw_complete_public_projection": "evidence/metric16_gui_integration_qa.json"
+}

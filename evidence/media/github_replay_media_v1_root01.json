@@ -1,0 +1,48 @@
+{
+  "schema": "github-measured-gazebo-replay-media-v1.0",
+  "status": "PASS_RENDERED_AND_GIF_FRAMES_READBACK",
+  "utc": "2026-11-15T12:01:12.548854+00:00",
+  "manifest": {
+    "path": "reports/github_replay_media_v1/manifest.json",
+    "sha256": "87e491cf7b3300ddba00da827d4daf4972525026c884327ed6c2eec5bf3ab582"
+  },
+  "input_sha256": {
+    "scripts/render_project_replay_gifs_v1.py": "e6cde803cefa426227ad12d7c178ef79c5a731a4d9b0e97554721cc60c7cde30",
+    "artifacts/gazebo/main_hybrid_test_v1/pid_trainNone_hover_force_strong_env202601/summary.json": "b1444e8d67e7b9a5fc67e0b9c2ea2a112e467ecda0725617452d56c277aabee1",
+    "artifacts/gazebo/main_hybrid_test_v1/pid_trainNone_hover_force_strong_env202601/telemetry.csv": "db72f6cc91b1f13eac021721b77cb9253c9af3d0ec7bba661335510a53578734",
+    "artifacts/gazebo/main_hybrid_test_v1/hybrid_train111_hover_force_strong_env202601/summary.json": "ec497ca1385fb0bee0bfa1add1906f86f0a2516d7c974e80dbec3bcb4406573a",
+    "artifacts/gazebo/main_hybrid_test_v1/hybrid_train111_hover_force_strong_env202601/telemetry.csv": "a4aba56a43c5c09006bf86146903b076514d3d96a99ddab2298fa10606fdb52f",
+    "artifacts/gazebo_direct/main_direct_test_v2/direct_train111_hover_force_strong_env202601/summary.json": "c8bcbf4e3ecb89ab44b5fa18fcba42db45956c6a2b887f227da18013c631eb71",
+    "artifacts/gazebo_direct/main_direct_test_v2/direct_train111_hover_force_strong_env202601/telemetry.csv": "07b9ed08154c5b620f6743c7aab7e368058c5e4d47c47ba147cae181b863b22c",
+    "audit/main_hybrid_gazebo_physical_identity.json": "ff5f58ec55514813388e51a22341f47f32ea0e44ed72f53d20aef5aa2881e43e",
+    "audit/main_direct_gazebo_physical_identity.json": "1719ee9dbecb829bf6bd4a38f34aa182052753a77635fb1533ecac41a918dbdb",
+    "reports/presentation_pack/complete.json": "68b8f687235df2d8d00aa67576b922e4ab81a5faf756aeef67b770eb548f0243",
+    "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_force_strong_env83301/summary.json": "8a59214a1dfcf7eb4d6c12a40680355fb5d24a24e927b21097931f88ded4ebb6",
+    "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_force_strong_env83301/telemetry.csv": "80459ce127625cd31356b26ad982a638cc62331c6510a1381a542c425bf3dc24",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env83301/summary.json": "b32a895e3d74f1f6ebe6dbb84ff71181a846e5b0c86480d8f061c9286a237390",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env83301/telemetry.csv": "92fd0c5bfccda3a4325920059f5d68e80642e4b37523104b7b36fcb407709350",
+    "audit/joint_memory_development9_v20_root01.json": "16d7e31e4cc22f5c4f55cb0ad37a1d3f46551cb6b91327b4e8164265988095ec",
+    "reports/joint_memory20_gazebo_v7/applicability.csv": "36477a231edbb90b0f2f8357261bd74ee0bf7703869aea87e2702ec35cd044ba",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/plan.json": "49228743db8afc64de5e9553e278d3efb129631de074d45d2a8ee4e6a002669a"
+  },
+  "outputs": {
+    "reports/github_replay_media_v1/f0_strong_route.gif": "88088a32bddb441963c051ed8a775ad9c0a236a6eb9f7f37e0716c3e072a5df0",
+    "reports/github_replay_media_v1/f0_strong_route.png": "194426910acf6e2710a05dd951687920a068b4deb3af86c9f8aeb938f5ca88b4",
+    "reports/github_replay_media_v1/legacy_hover_3way.gif": "22f37faacf14f2460aa3cd539c25d920adb473b93b26fd64b62825de4cf9623e",
+    "reports/github_replay_media_v1/legacy_hover_3way.png": "ff996b627ba29503b188d398d939499bd11c26acc525c7d4078db47600c58941",
+    "reports/github_replay_media_v1/manifest.json": "87e491cf7b3300ddba00da827d4daf4972525026c884327ed6c2eec5bf3ab582",
+    "reports/github_replay_media_v1/README.md": "d0b1c256082e5bcbf957a848d3b6e50833d0bbe5225e0c264012131c867f2f5a"
+  },
+  "actual_rendered_frames": 302,
+  "GIF_frame_readback_indices": [
+    0,
+    50,
+    100,
+    150
+  ],
+  "new_scientific_samples": 0,
+  "new_NN_forwards": 0,
+  "new_environment_steps": 0,
+  "new_optimizer_steps": 0,
+  "visual_review_pending": true
+}

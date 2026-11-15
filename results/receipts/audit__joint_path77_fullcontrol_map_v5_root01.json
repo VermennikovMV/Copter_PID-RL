@@ -1,0 +1,133 @@
+{
+  "schema": "joint-path77-fullcontrol-map-audit-v5.0",
+  "status": "PASS",
+  "scope": "Table integrity, not controller acceptance",
+  "utc": "2026-11-13T21:55:08.706531+00:00",
+  "checks": 7922,
+  "failures": [],
+  "source_builder_sha256": "ca3cdbe48c4e64b2ad49afd6c110a22b3c1b7e0b5c904bbbcdb4d5b4bfdf455e",
+  "campaign_complete_sha256": "7f5172c5557ce9fdac59e9b328c5bbf500ee7de94d0b17d16184aff6f8724d21",
+  "plan_sha256": "be9a90bcbb48464d8d58f2306794052d99511e8d71804fee426a7b8422578249",
+  "policy_sha256": "e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781",
+  "contract_sha256": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652",
+  "counts": {
+    "new_actual_flights": 11,
+    "shared_PID": 7,
+    "shared_specialist": 2,
+    "total_observations": 20,
+    "joint_cells": 9,
+    "raw_scalar_sets": 20,
+    "routes": 10,
+    "corners": 30
+  },
+  "quality_status": "FAIL",
+  "primary_operational": "FAIL",
+  "tail_operational": "FAIL",
+  "original_thesis_macro": {
+    "status": "PASS",
+    "coverage": "ALL6_DEVELOPMENT_CELLS",
+    "formula": "1 - mean6_joint_penalized_RMSE / mean6_PID_penalized_RMSE",
+    "relative_improvement": 0.15235671342683854,
+    "joint_mean_penalized_RMSE_m": 0.3075494134215834,
+    "PID_mean_penalized_RMSE_m": 0.3628288199685261,
+    "minimum_improvement": 0.15,
+    "cells": [
+      {
+        "scenario": "force_mild",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.01853809548266596,
+        "PID_penalized_RMSE_m": 0.034134660849772326
+      },
+      {
+        "scenario": "force_mild",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5785847865866736,
+        "PID_penalized_RMSE_m": 0.6488727453314069
+      },
+      {
+        "scenario": "force_strong",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.03123839156225224,
+        "PID_penalized_RMSE_m": 0.06751586046239824
+      },
+      {
+        "scenario": "force_strong",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5794002007372633,
+        "PID_penalized_RMSE_m": 0.6571987474720183
+      },
+      {
+        "scenario": "gust",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.055952026116139704,
+        "PID_penalized_RMSE_m": 0.10614120268086255
+      },
+      {
+        "scenario": "gust",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5815829800445054,
+        "PID_penalized_RMSE_m": 0.6631097030146983
+      }
+    ]
+  },
+  "failed_quality_checks": [
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.13258289109671492,
+      "limit": 0.11500059586603935,
+      "pass_": false
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.1611428009538901,
+      "limit": 0.10273799592768003,
+      "pass_": false
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.19270518556661145,
+      "limit": 0.1728212892904558,
+      "pass_": false
+    }
+  ],
+  "native_guards_pass": false,
+  "policy_promotion": false,
+  "source_inputs_unchanged": 1566,
+  "old_report_files_preserved": 57,
+  "reused_actor_physical_wire_receipts": true,
+  "new_actor_wire_audit_performed": false,
+  "independent_reserved_confirmation": false,
+  "new_training_or_simulation": false,
+  "visual_inspection": "PENDING_SEPARATE_IMAGE_REVIEW_RECEIPT",
+  "output_sha256": {
+    "all_original_flights.csv": "9bc7edf1a9814f7008747bfe393aad55221200c592c3df95cf679358bd74168c",
+    "applicability.csv": "c8c2e4e82d309f14a30927c706acd83be80bd95885d6929517b93100d3c43c33",
+    "applicability.pdf": "b10b78a7b3d2bcde7546f2719db443e9429138180052b011b901049f834ce3b3",
+    "applicability.png": "02644525952e1eb2a9b94e3bcec55996f261445320c8e24794e07a5afc359a7e",
+    "case_recomputation.json": "5e0748cae4617f89bfbbaa7212ea3e20b69fde0d39f2de881d8a40b4e20204bd",
+    "fixed_quality_checks.csv": "36cb80aa6d90ae8297b3c9fe9158592051ffa3ba6f92c1d2844deb1870f25e37",
+    "input_freeze.json": "be71058f6724c1f1a81806f8e99eca8378c843eb55c718390203827ba43e14a2",
+    "input_hashes_before_after.json": "7b0885b3a2525853a877535f5e2ff1b2c0d2ce48c9244885e1901bef40861491",
+    "metric_alignment.json": "bbe3a2c39bcffb77f6ecf8b8171de3a4217dde70ae8d420a756f1ea002f4666f",
+    "operational_gate.json": "d3f39d30b863c58159f1999db124c0679e04a3337aa868cd13e93542ed70cc89",
+    "original_thesis_wind_macro.json": "d55f404eb5e88be71894f14ca781ac91c017206e272120395c8260ea39341373",
+    "README.txt": "ce03da0b3bffa95185ef8a9507314598e4c13e9bd2097147a38efc2a628d1c2d",
+    "route_force_exposure.csv": "6ba9b4997eafe021ce48f4b21c747204798d6e653fa1ed76adc5269d41765222",
+    "source_builder.py": "ca3cdbe48c4e64b2ad49afd6c110a22b3c1b7e0b5c904bbbcdb4d5b4bfdf455e"
+  }
+}

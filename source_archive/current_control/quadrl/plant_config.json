@@ -1,0 +1,43 @@
+{
+  "status": "IDENTIFIED_PROXY_FROM_GAZEBO_1001_1002",
+  "source": [
+    "v2/artifacts/gazebo/system_id_fit_1001.json",
+    "v2/artifacts/gazebo/system_id_fit_1002.json",
+    "v2/artifacts/gazebo/translation_fit_1001.json",
+    "v2/artifacts/gazebo/translation_fit_1002.json"
+  ],
+  "rate_gain": [
+    1.0,
+    1.0,
+    0.9
+  ],
+  "rate_tau_s": [
+    0.035,
+    0.047,
+    0.032
+  ],
+  "rate_delay_s": [
+    0.031,
+    0.036,
+    0.046
+  ],
+  "rate_kp": [
+    28.571428571428573,
+    21.27659574468085,
+    31.25
+  ],
+  "rate_ki": [
+    28.571428571428573,
+    21.27659574468085,
+    2.0833333333333335
+  ],
+  "rate_integral_limit": 2.0,
+  "collective_tau_s": 0.015,
+  "motor_tau_s": 0.015,
+  "linear_drag_N_per_mps": [
+    0.0,
+    0.0,
+    1.55
+  ],
+  "notes": "Hybrid uses identified aggregate angular response, with differential force instantaneous after delayed rate PI; no second nominal motorlag is added. Direct motorlag is a collective-ID proxy and requires separate direct transfer validation. PI I/P ratios derive from actual AP parameters; finite-force mixer and nominal inertia remain explicit."
+}

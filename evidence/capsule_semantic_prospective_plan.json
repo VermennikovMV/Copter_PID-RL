@@ -1,0 +1,24 @@
+{
+  "status": "ROOT_AUTHORIZED_BOUNDED_PORTABILITY_SEMANTIC_QA",
+  "created_utc": "2026-11-15T00:04:01.418909+00:00",
+  "source_sha256": "4dd96486845ad25678415b71540b56a2df826925f67c11e98232419d0b12dfcd",
+  "capsule_manifest_sha256": "15f1d215937e94950530012df353ea7d7cf1faed82eab0c9b93dbe9c6f6cd3ea",
+  "expected_route_samples_per_environment": [
+    451,
+    473,
+    424
+  ],
+  "lockstep_environments_per_case": 3,
+  "budget": {
+    "optimizer_probe_control_steps": 512,
+    "nontraining_lockstep_control_steps": 4044,
+    "total_control_steps": 4556,
+    "PyBullet_substep_hard_cap": 36448,
+    "critic_optimizer_steps": 4,
+    "PPO_optimizer_steps": 4,
+    "main_PPO_transitions": 0,
+    "Gazebo_flights": 0
+  },
+  "observer": "sys.setprofile C-call observer, no source/function monkeypatch; raises BEFORE a36449th PyBullet substep",
+  "purpose": "Software portability QA, never new research quality evidence; probe weights discarded, initializer unchanged"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "ROOT_OBSERVED_DIRECT_OFFICIAL_PREFLIGHT_COMPLETED",
+  "checked_utc": "2026-11-15T06:12:00.1725937Z",
+  "actual_exec_session": 49566,
+  "actual_tool_exit_code": 0,
+  "plan": "docs/joint_route_heading_plans_v23/zero_route_integral.bound.json",
+  "plan_sha256": "3b6aa7d35126adfbd8c2e8e0f50653915182055d49798037bbd002c1298191d7",
+  "entrypoint": "scripts/joint_research_preflight_v1.py --run DIRECT",
+  "training_orchestrator_run_main_executed": false,
+  "command": "wsl.exe -d Ubuntu-24.04 -u misha --cd v2 -- env OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 [external-home]/vkr_sim/venv-cu128/bin/python -B scripts/joint_research_preflight_v1.py --plan docs/joint_route_heading_plans_v23/zero_route_integral.bound.json --run",
+  "learning_complete_sha256": "71b83c122b54471ba25f88a3b622ea282f48f934caf6d07c0aaf67a981e9043f",
+  "quality_acceptance": false,
+  "metadata_postprocessing": "Separate ROOT writer reads full validation.json records; frozen orchestrator summary-only comparison branch unused."
+}

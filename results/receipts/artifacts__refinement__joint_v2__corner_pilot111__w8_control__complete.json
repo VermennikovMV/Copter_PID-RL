@@ -1,0 +1,285 @@
+{
+  "status": "complete",
+  "task": "joint_corner_metric",
+  "variant": "w8_control",
+  "model_family": "fast_native_shaper_v3",
+  "selection_version": "corner-hard-geometry-development-v8.0",
+  "critic_only_timesteps": 131072,
+  "ppo_timesteps": 262144,
+  "completed_critic_only_epochs": 128,
+  "additional_actor_critic_ppo_epochs": 256,
+  "actor_critic_ppo_gradient_steps": 2048,
+  "on_policy_prior_kl_gradient_steps": 2048,
+  "actual_optimizer_step_hook_counts": {
+    "critic": 1024,
+    "ppo": 2048
+  },
+  "optimizer_reset": {
+    "original_parameter_states": 13,
+    "after_reset_parameter_states": 0,
+    "same_optimizer_type_and_hyperparameters": true,
+    "reset_before_critic_warmup": true
+  },
+  "on_policy_prior_kl_minibatch_sample_uses": 2097152,
+  "rollout_updates": 32,
+  "offline_supervised_anchor_gradient_steps": 0,
+  "actor_unchanged_by_critic_warmup": true,
+  "actor_changed_by_ppo": true,
+  "prior_bit_identical": true,
+  "source_hashes_unchanged": true,
+  "numpy_export_max_error": 7.748603820800781e-07,
+  "selected_policy_sha256": "e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781",
+  "final_policy_sha256": "e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781",
+  "selected_objective": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0.12368020754213793,
+    1.123680207542138,
+    0.1262527958297103
+  ],
+  "output_model_sha256": {
+    "critic_warmed_model.zip": "baf3b434604967371a35c433b9621f4bad66c6d970482e15143ab169e1d5d6ac",
+    "best_model.zip": "61cfe7442e5bf6b239920555205718d7c505b4b946fa68bf37da657b0ffc6cd8",
+    "best_policy.npz": "e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781",
+    "final.zip": "e81c587177832377307bd94c59be3bcb68245dfba64efad140df54a667257302",
+    "final.npz": "e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781"
+  },
+  "curriculum_version": "route-tailwind-phase-v5.0",
+  "actual_curriculum_counts": {
+    "critic": {
+      "completed_episodes": 197,
+      "failed_episodes": 0,
+      "successful_routes": 162,
+      "hard_tailwind_triggers": 72,
+      "actual_force_onsets": 239,
+      "completed_by_regime": {
+        "route_hard_tailwind": 70,
+        "nominal": 41,
+        "route_broad_constant": 36,
+        "route_broad_gust": 23,
+        "hover_v4": 27
+      },
+      "complete_corner_windows": 486,
+      "censored_corner_windows": 0,
+      "unreached_corners": 0,
+      "coverage_hold_steps": 0
+    },
+    "ppo": {
+      "completed_episodes": 393,
+      "failed_episodes": 0,
+      "successful_routes": 313,
+      "hard_tailwind_triggers": 137,
+      "actual_force_onsets": 507,
+      "completed_by_regime": {
+        "route_hard_tailwind": 135,
+        "route_broad_constant": 58,
+        "route_broad_gust": 56,
+        "nominal": 80,
+        "hover_v4": 64
+      },
+      "complete_corner_windows": 939,
+      "censored_corner_windows": 0,
+      "unreached_corners": 0,
+      "coverage_hold_steps": 0
+    }
+  },
+  "curriculum_events_sha256": "03dd71d4224992653cdc065faf57b26d921bd2c1d882a2d754e949dddcab7ae7",
+  "selected_metrics": {
+    "flight_failures": 0,
+    "route_incomplete": 0,
+    "heading_violations": 0,
+    "geometry_ineligible": 0,
+    "active_segment_peak_failures": 0,
+    "active_segment_peak_checks": [
+      {
+        "scenario": "nominal",
+        "seed": 84001,
+        "peak_m": 0.17984787770274183,
+        "pass_peak": true
+      },
+      {
+        "scenario": "nominal",
+        "seed": 84002,
+        "peak_m": 0.2380777631994201,
+        "pass_peak": true
+      },
+      {
+        "scenario": "nominal",
+        "seed": 84003,
+        "peak_m": 0.2401081453488699,
+        "pass_peak": true
+      },
+      {
+        "scenario": "nominal",
+        "seed": 84004,
+        "peak_m": 0.22454027707442145,
+        "pass_peak": true
+      },
+      {
+        "scenario": "force_strong",
+        "seed": 84001,
+        "peak_m": 0.2288489462215631,
+        "pass_peak": true
+      },
+      {
+        "scenario": "force_strong",
+        "seed": 84002,
+        "peak_m": 0.2380777631994201,
+        "pass_peak": true
+      },
+      {
+        "scenario": "force_strong",
+        "seed": 84003,
+        "peak_m": 0.27620220226372827,
+        "pass_peak": true
+      },
+      {
+        "scenario": "force_strong",
+        "seed": 84004,
+        "peak_m": 0.22615756954179672,
+        "pass_peak": true
+      },
+      {
+        "scenario": "gust",
+        "seed": 84001,
+        "peak_m": 0.2288489462215631,
+        "pass_peak": true
+      },
+      {
+        "scenario": "gust",
+        "seed": 84002,
+        "peak_m": 0.2380777631994201,
+        "pass_peak": true
+      },
+      {
+        "scenario": "gust",
+        "seed": 84003,
+        "peak_m": 0.27620220226372827,
+        "pass_peak": true
+      },
+      {
+        "scenario": "gust",
+        "seed": 84004,
+        "peak_m": 0.22615756954179672,
+        "pass_peak": true
+      }
+    ],
+    "cells": {
+      "nominal/hover": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.03030410199908584
+      },
+      "nominal/route": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.5642865219993822,
+        "completed": 4,
+        "restricted_time_s": 8.485,
+        "geometry_eligible": true,
+        "segment_rmse_m": 0.12360482282963518,
+        "mean_corner_peak_m": 0.19372302878049621,
+        "absolute_active_segment_peak_m": 0.2401081453488699,
+        "active_segment_peak_failed_seeds": []
+      },
+      "force_strong/hover": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.04787521054051765
+      },
+      "force_strong/route": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.5631178918573947,
+        "completed": 4,
+        "restricted_time_s": 8.655000000000001,
+        "geometry_eligible": true,
+        "segment_rmse_m": 0.12624495593311666,
+        "mean_corner_peak_m": 0.18979991388894582,
+        "absolute_active_segment_peak_m": 0.27620220226372827,
+        "active_segment_peak_failed_seeds": []
+      },
+      "gust/hover": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.06575816776436218
+      },
+      "gust/route": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.5646444585965561,
+        "completed": 4,
+        "restricted_time_s": 8.82,
+        "geometry_eligible": true,
+        "segment_rmse_m": 0.12890860872637908,
+        "mean_corner_peak_m": 0.18979991388894582,
+        "absolute_active_segment_peak_m": 0.27620220226372827,
+        "active_segment_peak_failed_seeds": []
+      }
+    }
+  },
+  "fixed_development_guards_pass": false,
+  "accepted": false,
+  "diagnostic_candidate": true,
+  "all_candidates_failed_development_guards": true,
+  "acceptance_scope": "Fast development engineering proxy only; no automatic demo/registry/actualGazebo acceptance",
+  "candidate_records": [
+    {
+      "checkpoint": "checkpoint_131072",
+      "objective": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0.18295221795968009,
+        1.18295221795968,
+        0.1321531491384663
+      ],
+      "policy_sha256": "562cbbc1836973287672997c3575d2ecb3dbdf3eb2ab0c4e1be4a41ea8b8b195",
+      "guards_pass": false
+    },
+    {
+      "checkpoint": "checkpoint_262144",
+      "objective": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0.13046189672006347,
+        1.1304618967200635,
+        0.12700130906831786
+      ],
+      "policy_sha256": "c74f36a203f3ca79a250d1c202f6eca1e08d9e4ad95e68dd0c573ee6d3abffea",
+      "guards_pass": false
+    },
+    {
+      "checkpoint": "final",
+      "objective": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0.12368020754213793,
+        1.123680207542138,
+        0.1262527958297103
+      ],
+      "policy_sha256": "e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781",
+      "guards_pass": false
+    }
+  ],
+  "wall_seconds": 256.84887403,
+  "completed_utc": "2026-11-13T20:52:45.378407+00:00",
+  "interpretation": "Bounded paired corner-reward pilot; least-bad model remains diagnostic if every candidate fails hard guards"
+}

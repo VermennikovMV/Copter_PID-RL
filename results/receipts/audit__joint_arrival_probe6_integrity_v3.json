@@ -1,0 +1,30 @@
+{
+  "schema": "joint-arrival-probe6-integrity-v3.0",
+  "status": "PASS",
+  "utc_verified": "2026-11-13T16:27:25.460440+00:00",
+  "checks": {
+    "prospective_plan_and_extension_unchanged": true,
+    "frozen_sources_and_training_receipts_match": true,
+    "completed_selected_candidate_bytes_match": true,
+    "native_PID_and_runtime_review_match": true,
+    "external_audit_helpers_match": true,
+    "all_original_shared_raw_and_receipt_bytes_match": true,
+    "shared_declaration_unchanged": true,
+    "exact_six_new_cases_and_attempts": true,
+    "six_new_plus_fourteen_shared_is_twenty_coverage": true,
+    "mandatory_shared_methods_are_PID6_BC6_legacy2": true,
+    "six_W8_causal_references_remain_shared": true,
+    "expected_new_flight_audit_denominators": true,
+    "all_new_summary_policy_and_receipt_hashes_match": true,
+    "six_actual_indexed_yaw_and_exact_wire_proofs_pass": true,
+    "development_only_no_errors_no_extra_cases": true
+  },
+  "new_actual_flights": 6,
+  "shared_development_controls": 14,
+  "comparison_coverage": 20,
+  "additional_shared_W8_reference": 6,
+  "actual_new_NN_wire_commands": 10496,
+  "complete_sha256": "2062e758457c1d0cfa6ce93636b88dd86fefcb89ddff91d025daa61514730197",
+  "plan_sha256": "b34a3e1118747f61bf77a81bfc56ffab6c70d97ebe52bd7fbc38ee85827dc7a4",
+  "scope": "Read-only provenance and actual audit proof; controller PASS does not imply operational quality gate PASS"
+}

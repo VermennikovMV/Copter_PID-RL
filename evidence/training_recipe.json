@@ -1,0 +1,40 @@
+{
+  "recipe": {
+    "schema": "joint-corner-metric-ppo-v8",
+    "variant": "w8_control",
+    "initial_sha256": "7d41ffdf401e46eb999eff8daa64b84f644164f86c1775fa4efb2233aeb1ac26",
+    "prior_sha256": "7d41ffdf401e46eb999eff8daa64b84f644164f86c1775fa4efb2233aeb1ac26",
+    "fixed_kl_weight": 0.1,
+    "geometry_weight": 8.0,
+    "corner_reward": {
+      "enabled": false,
+      "configured_weight_reward_per_m": 40.0,
+      "formula": "-40*(new_peak-old_peak), no dt multiplier; three closed1s outgoing finite3D windows"
+    },
+    "observation_contract": "measured-memory-finite-leg-v3.0",
+    "seed": 9611,
+    "warmup_seed": 9511,
+    "warmup_steps": 131072,
+    "ppo_steps": 262144,
+    "eval_every": 131072,
+    "candidate_count": 3
+  },
+  "original_driver": "scripts/train_joint_corner_v8.py",
+  "original_driver_sha256": "32625b344255328b78249a0ebf4b85852f29e504fbef316285dc0f8a933f1aba",
+  "original_plan": "docs/joint_corner_plans_v8/w8_control.bound.json",
+  "original_plan_sha256": "97a786dbbca6210c8eb949caa44fe752baded0a230fc1c5288acf0a01191560a",
+  "included_initial7d41_checkpoint": false,
+  "full_guard_evidence_closure_included": false,
+  "self_contained_training_claim": false,
+  "self_contained_CPU_inference_claim": true,
+  "warning": "Request original archive by the listed hashes; never bypass scientific guards to fill missing evidence. Do not use probe/new failed policy as initializer.",
+  "v4_portable_capsule_included": true,
+  "original_byte_initializer_included": false,
+  "portable_identical_tensor_initializer": {
+    "path": "training_capsule/artifacts/refinement/joint_v2/path_pilot111/path/final.zip",
+    "sha256": "7df5dd0a382525d08bfb4b2d8e4514e7269438bbd44a63598eff90ac0a5f3088",
+    "original_sha256": "7d41ffdf401e46eb999eff8daa64b84f644164f86c1775fa4efb2233aeb1ac26"
+  },
+  "self_contained_guarded_CPU_reproduction_preparation_verified": true,
+  "capsule_notes": "Initial13policy tensors/13Adamstates unchanged. PublicactualSHA bindings differ only by metadata. Freshbaseline24 and boundedsemantic4556controlsteps8updates verified. FullmainPPO not run during packaging. Gazebo stack/raw evidence remains external."
+}

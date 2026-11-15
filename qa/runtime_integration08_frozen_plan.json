@@ -1,0 +1,19 @@
+{
+  "status": "FIXED_BEFORE_ACTUAL3500_FORWARD_QA",
+  "maximum_NN_forwards": 3500,
+  "root_authorized_ceiling": 4000,
+  "source_sha256": {
+    "scripts/replay_controllers.py": "25dd0496a27c287a278d28bd12b28353bf4795fa322f064e1fb053066959e85f",
+    "scripts/controllers.py": "654be87b30e3c4147d3c61a4b26f582c768c1d6759b2d6ece2f94e748b801b6f",
+    "v2/controller_registry.py": "f20cfb62ff95e36497438db2cdb6c2aa5cec4fd1985cea67e7e88e8a113da859",
+    "v2/quadrl_phase_expert_inference_v1/policy.py": "55afc699bda8835460509636760f6a90d1532050b457e566ed11677237a5e1c5",
+    "v2/quadrl_phase_expert_v29/policy.py": "0827ff86abd77b2945b1f5a5f845ccae32a5695396e5843a1eed143832a91cf7",
+    "v2/sim_direct/controller.py": "a68d2bf84a52d6638d1c46df18460c2b11da6d754fe2b134cf658069ec654a2c",
+    "v2/quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "models/phase29_public_inference.json": "ba7681e4d260606a4d382e4c94b7f8da918b52aaaedd29e179ce32a68a3cd36d",
+    "examples/direct111_hover1500.npz": "3c6ee023e7f622cacbc0711d95de1265521fce1bda380d3ba2261b27f0d6f740",
+    "examples/phase29_route2000.npz": "9dc9d420a63389b5518a8c265d2fd6ac6dc2fd9b4c5b1218834a76cb6a536973"
+  },
+  "new_environment_steps": 0,
+  "optimizer_steps": 0
+}

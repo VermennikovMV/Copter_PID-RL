@@ -1,0 +1,22 @@
+{
+  "status": "PASS_BOUNDED_PORTABILITY_SEMANTICS_NOT_MAIN_TRAINING_OR_RESEARCH_RESULT",
+  "budget": {
+    "optimizer_probe_control_steps": 512,
+    "nontraining_lockstep_control_steps": 4044,
+    "total_control_steps": 4556,
+    "PyBullet_substep_hard_cap": 36448,
+    "critic_optimizer_steps": 4,
+    "PPO_optimizer_steps": 4,
+    "main_PPO_transitions": 0,
+    "Gazebo_flights": 0
+  },
+  "observed_PyBullet_substeps": 36448,
+  "actual_control_steps": 4556,
+  "root_prospective_plan_sha256": "ae614a7e7bb5f6aa7023da89ae62b5b7663c999e8582c8d5fb877d2f11e1161b",
+  "actual_semantic_receipt_sha256": "b0637a103e956b13d71d5be1f6bf21a095884688c4eda30514ba5a88d589ec59",
+  "all_capsule_sources_unchanged": true,
+  "main_PPO_executed": false,
+  "new_Gazebo_flights": 0,
+  "server_started": false,
+  "probe_weights_used_as_initializer": false
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "joint-thrust-ablation-recovery-integrity-v2.0",
+  "status": "PASS",
+  "checks": {
+    "original_tree_bytes_and_files_preserved": true,
+    "original_plan_and_progress_preserved": true,
+    "prospective_plan_and_exclusion_receipt_unchanged": true,
+    "recovery_driver_matches_prospective_archive": true,
+    "fixed_runtime_judge_and_sources_match_archives": true,
+    "same_actor_pid_hover_thrust_and_judge": true,
+    "exact_original_twelve_case_matrix": true,
+    "seven_launches_follow_original_lane_order": true,
+    "five_original_and_seven_new_physical_attempts": true,
+    "thirteen_attempt_denominator_with_one_excluded_error": true,
+    "all_excluded_raw_bytes_and_metrics_retained": true,
+    "all_summary_and_audit_receipt_hashes_match": true,
+    "expected_audit_counts": true,
+    "comparison_contains_only_twelve_valid_runs": true
+  },
+  "complete_sha256": "8321d9d415cb1d0505a50f8a6104e3bade2292bd2a5b73574c96b5b98f8c3b4b",
+  "plan_sha256": "90a071a8b0443d73b26727330bad03a4158f30d3c30f21f60a944d4da818703e",
+  "verification_source_sha256": "ec3050edcf78f2ae7fdd5696f5b52eb9ad0b0ee12d862d833a337f7d5a6d696f",
+  "limitation": "Provenance, fixed matrix, strict audit receipts and denominator verification; no new performance gate or confirmation claim."
+}

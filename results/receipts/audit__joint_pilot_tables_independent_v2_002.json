@@ -1,0 +1,38 @@
+{
+  "schema": "joint-pilot-tables-independent-v2.0",
+  "status": "PASS",
+  "utc": "2026-11-13T16:31:06.638812+00:00",
+  "checks": {
+    "sealed_matrix_raw_hashes_independent_receipts_and_shared_PID": true,
+    "independent_raw_goal_heading_and_finite3D_transit_corner_metrics": true,
+    "all_csv_absolute_values_ratios_denominators_limits_and_conjoined_guards": true,
+    "map_recommendations_and_n1_development_scope_no_original_macro_claim": true,
+    "exact_report_source_contract_and_receipt_hashes": true
+  },
+  "field_comparisons": 2660,
+  "report_rows": {
+    "route": 15,
+    "hover": 17,
+    "applicability": 6
+  },
+  "independent_receipts": {
+    "physical": 32,
+    "force": 32,
+    "metric": 32,
+    "actor": 26
+  },
+  "exact_NN_wire_commands": 44967,
+  "opened_scope": "Only explicitly named completed Gazebo geometry pilot32, fixed contract, report sources/outputs and integrity receipt",
+  "reserved_result_discovery_or_read": false,
+  "raw_recomputation": "Standalone NumPy integrals, finite active segments and all three closed corner windows; no production metric or builder imports",
+  "report_sha256": {
+    "route_metrics.csv": "9f1b3d201c9cac9ddea0b39ca7efbea60958ec17d3894cbb49f49a9ff5b2730b",
+    "hover_metrics.csv": "dc58d9fecd3c3b125757b01ae4d75a76a5910123c4cbc770d4d0fdc984cf5fbf",
+    "applicability.csv": "396a191435bdbac5dbfcc67accaaffce221f557069cbaaf384b9003ffb651f1a",
+    "operational_gate.json": "bc62ed288fc455ca0d2bb9070d2a26a79fe0fcc8ecb9b2d6b8f84279ea4161f4"
+  },
+  "builder_sha256": "c31b7732c6c104bc37b4dc668a34314b62f63a8362d006f9cdb8102a5fe16b5c",
+  "case_helper_sha256": "b2cefb889a42deb070543ea91cc1e574bd326cfd1bc9c56f1bed7bef835d0ea4",
+  "contract_sha256": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652",
+  "source_sha256": "b7816ca3a7a193cfb9f66cd38c1c866725ee3a4d87141093a4e73cee3dd1d0a1"
+}

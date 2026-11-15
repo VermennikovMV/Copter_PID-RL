@@ -1,0 +1,1324 @@
+{
+  "schema": "native-rate-fit-v3.0",
+  "status": "PROSPECTIVE_DEVELOPMENT_PHYSICS_ONLY",
+  "model_version": "native-rate-rp-refit-v3.0",
+  "diagnosis_receipt": "audit/joint_nonlinear_rate_diagnosis_v2.json",
+  "diagnosis_receipt_sha256": "3840e58a8961dc29292a5d1c6c6ac7c539bc7610843e0dfc5d4719b58447c478",
+  "diagnosis_script_sha256": "fbe2b7e2948d955e82b2ea53a5e770cb8142caf14a24d7fbeccc3e0817774936",
+  "native_shaper": {
+    "dt_s": 0.0025,
+    "RP_input_tc_s": [
+      0.025,
+      0.025
+    ],
+    "RP_accel_limit_rad_s2": [
+      19.198621771937624,
+      19.198621771937624
+    ],
+    "source_evidence": {
+      "[external-home]/vkr_sim/ardupilot/libraries/AP_Math/control.cpp": "fbe9c74f398cac2b33b4d897c90a6284a7a0e790d6e99f47dd8e69ad44b6afb8",
+      "[external-home]/vkr_sim/ardupilot/libraries/AC_AttitudeControl/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "[external-home]/vkr_sim/ardupilot/libraries/AC_AttitudeControl/AC_AttitudeControl.h": "16eeca2b47763dcd48bd30a19d29b990954aa6d8fed4925849443d094a35eb64",
+      "[external-home]/vkr_sim/ardupilot/ArduCopter/GCS_MAVLink_Copter.cpp": "7a523c1a6aa68def1774e69b6043f052aae78dc71bd9c559ac78791cc91fc73d"
+    }
+  },
+  "RP_remainder": {
+    "gain": [
+      0.9977682972630949,
+      1.0533848607167613
+    ],
+    "tau_s": [
+      0.024883299737190893,
+      0.032387224997557
+    ],
+    "delay_s": [
+      0.009999989061840561,
+      0.014780953696335723
+    ],
+    "integration": "physical feedback coefficient (1-exp(-dt/tau))/dt with fixed nominal inertia; no RP integral"
+  },
+  "yaw_retained": {
+    "gain": 0.9,
+    "delay_s": 0.046,
+    "kp": 31.25,
+    "ki": 2.0833333333333335,
+    "integral_limit": 2.0,
+    "queue_rule": "round(delay_s/dt), matching frozen QuadEnv at the selected physical dt"
+  },
+  "collective_retained_tau_s": 0.015,
+  "frozen_config_sha256": "ce247239bb1dfc4dd9557487182febe02f725544902e2b05466e2837cbc2fd43",
+  "parameter_bounds": {
+    "gain": [
+      0.85,
+      1.15
+    ],
+    "tau_s": [
+      0.001,
+      0.15
+    ],
+    "delay_s": [
+      0.0,
+      0.1
+    ]
+  },
+  "fit_scope": "Mean per-run rate MSE divided by max(0.0025,mean(true_rate^2)); same 3 training traces for both models. Each axis independently fits gain[.85,1.15], tau[.001,.15]s, delay[0,.10]s. Native shaper parameters are fixed from actual logs.",
+  "training_runs": [
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301",
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301",
+    "artifacts/gazebo/system_id_multisine_1001"
+  ],
+  "training_and_held_out_cells": [
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301",
+      "split": "fit",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.01155786086151008,
+            "rmse_rad_s": 0.10750749211803835,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.12758455683117198
+            },
+            "remaining_smooth_command": {
+              "samples": 2872,
+              "mse_rad_s_squared": 0.0018620366857723166
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.006606700050990609,
+            "rmse_rad_s": 0.08128160954970447,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.05606770125124129
+            },
+            "remaining_smooth_command": {
+              "samples": 2872,
+              "mse_rad_s_squared": 0.0024734687529195227
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 1.827728382852492e-05,
+            "rmse_rad_s": 0.0042751940106298,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3112,
+              "mse_rad_s_squared": 1.827728382852492e-05
+            }
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.008830688645661708,
+            "rmse_rad_s": 0.0939717438683656,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.10365839468554848
+            },
+            "remaining_smooth_command": {
+              "samples": 2872,
+              "mse_rad_s_squared": 0.0009063678066739568
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.0074158211650104215,
+            "rmse_rad_s": 0.08611516222483949,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.07698371448382485
+            },
+            "remaining_smooth_command": {
+              "samples": 2872,
+              "mse_rad_s_squared": 0.0016023481857223053
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 1.5346381730765638e-05,
+            "rmse_rad_s": 0.003917445817208661,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3112,
+              "mse_rad_s_squared": 1.5346381730765638e-05
+            }
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0002907998374246517,
+            "rmse_rad_s": 0.01705285423102689,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0011236242287533218
+            },
+            "remaining_smooth_command": {
+              "samples": 2872,
+              "mse_rad_s_squared": 0.0002212044843888297
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.0003371021520591269,
+            "rmse_rad_s": 0.018360341828493467,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0009435170010223265
+            },
+            "remaining_smooth_command": {
+              "samples": 2872,
+              "mse_rad_s_squared": 0.0002864268164911715
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 1.6477727112318317e-05,
+            "rmse_rad_s": 0.004059276673536594,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3112,
+              "mse_rad_s_squared": 1.6477727112318317e-05
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.01130607541565817,
+            "rmse_rad_s": 0.10633003063884713,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.12065443583922554
+            },
+            "remaining_smooth_command": {
+              "samples": 2800,
+              "mse_rad_s_squared": 0.001933358807923822
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.00607205062135544,
+            "rmse_rad_s": 0.07792336377079367,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.04823014453135791
+            },
+            "remaining_smooth_command": {
+              "samples": 2800,
+              "mse_rad_s_squared": 0.002458499714783799
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.9177015787668453e-05,
+            "rmse_rad_s": 0.005401575306118434,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3040,
+              "mse_rad_s_squared": 2.9177015787668453e-05
+            }
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.008639615133398214,
+            "rmse_rad_s": 0.0929495300332294,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.09726258134602943
+            },
+            "remaining_smooth_command": {
+              "samples": 2800,
+              "mse_rad_s_squared": 0.0010433608866012535
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.006805947533292732,
+            "rmse_rad_s": 0.08249816684807446,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.06691742244910567
+            },
+            "remaining_smooth_command": {
+              "samples": 2800,
+              "mse_rad_s_squared": 0.001653535397651623
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.967913298433549e-05,
+            "rmse_rad_s": 0.005447855815303438,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3040,
+              "mse_rad_s_squared": 2.967913298433549e-05
+            }
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0005624323191796888,
+            "rmse_rad_s": 0.02371565557136654,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0013283814667376615
+            },
+            "remaining_smooth_command": {
+              "samples": 2800,
+              "mse_rad_s_squared": 0.0004967795351032911
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.0003296036437170619,
+            "rmse_rad_s": 0.01815498949922753,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0008257401809631565
+            },
+            "remaining_smooth_command": {
+              "samples": 2800,
+              "mse_rad_s_squared": 0.00028707765481025377
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.284448392298353e-05,
+            "rmse_rad_s": 0.005731010724382177,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3040,
+              "mse_rad_s_squared": 3.284448392298353e-05
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.011097575016692268,
+            "rmse_rad_s": 0.10534502843842355,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.12071425505796386
+            },
+            "remaining_smooth_command": {
+              "samples": 2808,
+              "mse_rad_s_squared": 0.0017286280046177745
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.006183237915774747,
+            "rmse_rad_s": 0.07863356736009595,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.050184334520920186
+            },
+            "remaining_smooth_command": {
+              "samples": 2808,
+              "mse_rad_s_squared": 0.002422460428155478
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.292217476882659e-05,
+            "rmse_rad_s": 0.0057377848311719205,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3048,
+              "mse_rad_s_squared": 3.292217476882659e-05
+            }
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.008482149908494184,
+            "rmse_rad_s": 0.0920985879831726,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.09739901853189638
+            },
+            "remaining_smooth_command": {
+              "samples": 2808,
+              "mse_rad_s_squared": 0.0008824175475196385
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.006977422582610714,
+            "rmse_rad_s": 0.08353096780602218,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.06928521578342943
+            },
+            "remaining_smooth_command": {
+              "samples": 2808,
+              "mse_rad_s_squared": 0.001651970172284327
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.5336731728093185e-05,
+            "rmse_rad_s": 0.005944470685274946,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3048,
+              "mse_rad_s_squared": 3.5336731728093185e-05
+            }
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0003661337616049934,
+            "rmse_rad_s": 0.019134622065904345,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.001249726481443113
+            },
+            "remaining_smooth_command": {
+              "samples": 2808,
+              "mse_rad_s_squared": 0.000290613016319684
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.00032690621744880854,
+            "rmse_rad_s": 0.018080548040610066,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0008676937629767692
+            },
+            "remaining_smooth_command": {
+              "samples": 2808,
+              "mse_rad_s_squared": 0.00028068505971137606
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.805611595612132e-05,
+            "rmse_rad_s": 0.006168963928904214,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3048,
+              "mse_rad_s_squared": 3.805611595612132e-05
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.00014063305233817764,
+            "rmse_rad_s": 0.01185888073715971
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 2.2204348304789134e-05,
+            "rmse_rad_s": 0.004712149011309928
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.622260544421135e-06,
+            "rmse_rad_s": 0.0016193395395719622
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.00012200997614036695,
+            "rmse_rad_s": 0.01104581260661102
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 1.1648454795585904e-05,
+            "rmse_rad_s": 0.003412983269162904
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.620722439049922e-06,
+            "rmse_rad_s": 0.0016188645524100904
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 9.957165371839995e-05,
+            "rmse_rad_s": 0.009978559701600224
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 2.6071127315999743e-06,
+            "rmse_rad_s": 0.0016146556077380632
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.713527751563932e-06,
+            "rmse_rad_s": 0.0016472788930730377
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0005045885831165387,
+            "rmse_rad_s": 0.022463049283579884
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.0001270640635232607,
+            "rmse_rad_s": 0.011272269670446174
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.5490532406627536e-06,
+            "rmse_rad_s": 0.00188389310754691
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0004546341870769128,
+            "rmse_rad_s": 0.02132215249633378
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 7.061877297456719e-05,
+            "rmse_rad_s": 0.00840349766314998
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.579513927018254e-06,
+            "rmse_rad_s": 0.0018919603397054216
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0004120338421018175,
+            "rmse_rad_s": 0.02029861675341001
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 1.350694466722664e-05,
+            "rmse_rad_s": 0.00367517954217568
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.8751077801334825e-06,
+            "rmse_rad_s": 0.0019685293444938745
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.010904221313110782,
+            "rmse_rad_s": 0.10442327955542664,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.12416701833566358
+            },
+            "remaining_smooth_command": {
+              "samples": 2912,
+              "mse_rad_s_squared": 0.0015693754046586282
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.007079714333327926,
+            "rmse_rad_s": 0.08414103834234472,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.06469414008587653
+            },
+            "remaining_smooth_command": {
+              "samples": 2912,
+              "mse_rad_s_squared": 0.0023312726504255677
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.272880813765263e-05,
+            "rmse_rad_s": 0.005720909729898964,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3152,
+              "mse_rad_s_squared": 3.272880813765263e-05
+            }
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0084115616693785,
+            "rmse_rad_s": 0.09171456628790489,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.1006487435768933
+            },
+            "remaining_smooth_command": {
+              "samples": 2912,
+              "mse_rad_s_squared": 0.0008095961275503584
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.008127851571173818,
+            "rmse_rad_s": 0.09015459816988715,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.08813337028072127
+            },
+            "remaining_smooth_command": {
+              "samples": 2912,
+              "mse_rad_s_squared": 0.0015339901390682572
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.323283853366454e-05,
+            "rmse_rad_s": 0.005764793017417411,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3152,
+              "mse_rad_s_squared": 3.323283853366454e-05
+            }
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0004395258039645855,
+            "rmse_rad_s": 0.02096487071184999,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0012978970309452784
+            },
+            "remaining_smooth_command": {
+              "samples": 2912,
+              "mse_rad_s_squared": 0.000368780922620023
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.0003352983884982046,
+            "rmse_rad_s": 0.018311154756000633,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0013136923426870827
+            },
+            "remaining_smooth_command": {
+              "samples": 2912,
+              "mse_rad_s_squared": 0.0002546615241419784
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.732963586485787e-05,
+            "rmse_rad_s": 0.0061097983489521055,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3152,
+              "mse_rad_s_squared": 3.732963586485787e-05
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.00012450204167754143,
+            "rmse_rad_s": 0.011158048291593895
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 2.311308089174496e-05,
+            "rmse_rad_s": 0.004807606565823056
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.9714025136525476e-06,
+            "rmse_rad_s": 0.0017237756564160395
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.00010730978482871903,
+            "rmse_rad_s": 0.010359043625196249
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 1.2395925764334803e-05,
+            "rmse_rad_s": 0.0035207848222143317
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.9834698139544295e-06,
+            "rmse_rad_s": 0.0017272723624126073
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 7.985610789167226e-05,
+            "rmse_rad_s": 0.008936224476347506
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 2.7100964876106406e-06,
+            "rmse_rad_s": 0.0016462370690792504
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.090271717203176e-06,
+            "rmse_rad_s": 0.001757916868683834
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301",
+      "split": "fit",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.011853195488781896,
+            "rmse_rad_s": 0.10887238166211803,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.12878434338600167
+            },
+            "remaining_smooth_command": {
+              "samples": 2768,
+              "mse_rad_s_squared": 0.00171465665376284
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.005912531138763515,
+            "rmse_rad_s": 0.07689298497758762,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.046979818971348605
+            },
+            "remaining_smooth_command": {
+              "samples": 2768,
+              "mse_rad_s_squared": 0.0023517836388283917
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.50410028728841e-05,
+            "rmse_rad_s": 0.005919544144010086,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3008,
+              "mse_rad_s_squared": 3.50410028728841e-05
+            }
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.009195775063258426,
+            "rmse_rad_s": 0.0958946039319128,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.10473993377313959
+            },
+            "remaining_smooth_command": {
+              "samples": 2768,
+              "mse_rad_s_squared": 0.0009115994525750873
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.0066878571860682495,
+            "rmse_rad_s": 0.08177932003916547,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.065166809425305
+            },
+            "remaining_smooth_command": {
+              "samples": 2768,
+              "mse_rad_s_squared": 0.0016174278011633284
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.549552624360029e-05,
+            "rmse_rad_s": 0.005957812202780505,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3008,
+              "mse_rad_s_squared": 3.549552624360029e-05
+            }
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0003421141247244676,
+            "rmse_rad_s": 0.018496327330701834,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.001061516388651384
+            },
+            "remaining_smooth_command": {
+              "samples": 2768,
+              "mse_rad_s_squared": 0.0002797382058868737
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.0003111079091814828,
+            "rmse_rad_s": 0.017638251307357054,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0008419641813839393
+            },
+            "remaining_smooth_command": {
+              "samples": 2768,
+              "mse_rad_s_squared": 0.000265079908701501
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.805976869416773e-05,
+            "rmse_rad_s": 0.006169259979460075,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3008,
+              "mse_rad_s_squared": 3.805976869416773e-05
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.011631449737565292,
+            "rmse_rad_s": 0.10784919905852473,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.12219961800851979
+            },
+            "remaining_smooth_command": {
+              "samples": 2824,
+              "mse_rad_s_squared": 0.0022347215558977704
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.007074120237902265,
+            "rmse_rad_s": 0.08410778940087693,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0627102439550467
+            },
+            "remaining_smooth_command": {
+              "samples": 2824,
+              "mse_rad_s_squared": 0.002345837769023135
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 4.361393963078645e-05,
+            "rmse_rad_s": 0.0066040850714377125,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3064,
+              "mse_rad_s_squared": 4.361393963078645e-05
+            }
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.008850104548475802,
+            "rmse_rad_s": 0.09407499427837242,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.09866240929301419
+            },
+            "remaining_smooth_command": {
+              "samples": 2824,
+              "mse_rad_s_squared": 0.0012173307741524268
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.008042193482663626,
+            "rmse_rad_s": 0.08967827765219193,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.08484472494550525
+            },
+            "remaining_smooth_command": {
+              "samples": 2824,
+              "mse_rad_s_squared": 0.001515066162875386
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 4.277911921734968e-05,
+            "rmse_rad_s": 0.00654057483844881,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3064,
+              "mse_rad_s_squared": 4.277911921734968e-05
+            }
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0006647202749855123,
+            "rmse_rad_s": 0.025782169710587048,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0010851626202776374
+            },
+            "remaining_smooth_command": {
+              "samples": 2824,
+              "mse_rad_s_squared": 0.0006289886309096943
+            }
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.00038275338958490367,
+            "rmse_rad_s": 0.019564084174448434,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 240,
+              "mse_rad_s_squared": 0.0017754350604140623
+            },
+            "remaining_smooth_command": {
+              "samples": 2824,
+              "mse_rad_s_squared": 0.00026439517393370046
+            }
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 4.396757221311256e-05,
+            "rmse_rad_s": 0.006630804793772213,
+            "first300ms_after_jump_over_0p5": {
+              "samples": 0,
+              "mse_rad_s_squared": null
+            },
+            "remaining_smooth_command": {
+              "samples": 3064,
+              "mse_rad_s_squared": 4.396757221311256e-05
+            }
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.002712015788208505,
+            "rmse_rad_s": 0.052077017850569216
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.00012926184133389733,
+            "rmse_rad_s": 0.011369337770244023
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.699405436752604e-06,
+            "rmse_rad_s": 0.0019233838506009673
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.002728654416184749,
+            "rmse_rad_s": 0.05223652377584815
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 7.116991051432104e-05,
+            "rmse_rad_s": 0.0084362260824566
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.6815508955858553e-06,
+            "rmse_rad_s": 0.0019187367968499106
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.002786261560053038,
+            "rmse_rad_s": 0.05278505053566813
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 1.338519875115585e-05,
+            "rmse_rad_s": 0.0036585787884308094
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.9666244638205595e-06,
+            "rmse_rad_s": 0.0019916386378609346
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/gazebo/system_id_multisine_1001",
+      "split": "fit",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 7.779880081217978e-05,
+            "rmse_rad_s": 0.00882036285036958
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 7.912581528311691e-05,
+            "rmse_rad_s": 0.008895269264227863
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 6.956478694003318e-05,
+            "rmse_rad_s": 0.008340550757595879
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 4.2011095016625876e-05,
+            "rmse_rad_s": 0.006481596641000262
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 3.3801597144818e-05,
+            "rmse_rad_s": 0.00581391409850696
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.415488609034554e-05,
+            "rmse_rad_s": 0.00491476205836514
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 1.5745425961485383e-05,
+            "rmse_rad_s": 0.003968050650065519
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 8.557161831000538e-06,
+            "rmse_rad_s": 0.002925262694357643
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 2.802736492356851e-05,
+            "rmse_rad_s": 0.005294087732893035
+          }
+        ]
+      }
+    },
+    {
+      "run": "artifacts/gazebo/system_id_validation_1002",
+      "split": "held_out",
+      "models": {
+        "frozen_aggregate_PI": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 0.0001228838109101504,
+            "rmse_rad_s": 0.011085297060076937
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 0.00011301755859719939,
+            "rmse_rad_s": 0.010630971667594613
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 9.196399075778155e-05,
+            "rmse_rad_s": 0.009589785751401412
+          }
+        ],
+        "refit_linear": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 6.075359644494934e-05,
+            "rmse_rad_s": 0.007794459342696537
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 4.43770215076455e-05,
+            "rmse_rad_s": 0.006661608027169229
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.8456143925731765e-05,
+            "rmse_rad_s": 0.006201301792828
+          }
+        ],
+        "native_shaper_plus_refit_remainder": [
+          {
+            "axis": "roll",
+            "mse_rad_s_squared": 2.1674294797708342e-05,
+            "rmse_rad_s": 0.0046555660018636124
+          },
+          {
+            "axis": "pitch",
+            "mse_rad_s_squared": 1.0481197982244985e-05,
+            "rmse_rad_s": 0.003237467834935968
+          },
+          {
+            "axis": "yaw",
+            "mse_rad_s_squared": 3.761959416234918e-05,
+            "rmse_rad_s": 0.0061334814063751086
+          }
+        ]
+      }
+    }
+  ],
+  "source_and_input_hashes": {
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/commands.jsonl": "28e9a3ea3de9d67c2d942b751c89288b63ba3deeed94249a9c404b2afb5c02bd",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/mavlink.jsonl": "d8cc128f3a3c57abea937e22be3338c48d3e707472a8b3c69b8c9182f6272aa4",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/telemetry.csv": "157c0efdf8bc2044745ba9e12b32d14d21165bc53fbcbd51bb9f42b540d69b98",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/summary.json": "ac78fd9a3b5b9c6fb2bf66e97141fe08446442a6174a810c680864a742e24c8a",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/sitl/logs/00000001.BIN": "2b537de19455e193bcbdf3d122b7eef7c14b39dd45a2ceb575c3a37ce4a8102c",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/manifest.json": "601457851586b5aa6ae2d16e7922f0559190bba01635f84bf8eaa4d551c552f9",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/commands.jsonl": "416ef5008d82f5349a009ade72ccf5864e64a6747a44cc7ec58767020d6b5dc2",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/mavlink.jsonl": "b5af6ad63e0fb28ca8428422332a385c99453af8256984ebc8de3e83318779f7",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/telemetry.csv": "7a98bbc67cd9f5b2ea901d1e17c67ef443cc707a3b338f294915bad72037eed2",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/summary.json": "b1c9607aaeebce9f6afb6471e712c7c741b12e187a080d4bb041318fc57b49bf",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/sitl/logs/00000001.BIN": "74e04ad1eab02149347770294782bdb9f8e151205325313a63df634ecdc6d769",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/manifest.json": "14460618a054ec53ab37ef5a6fe53faf35fd68df0dfcdd9eacc74cc4b2bf5e8d",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/commands.jsonl": "053656ffc0b484de804d11a1b2666d7213e7b3ea3065128ecf2b925d871c7552",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/mavlink.jsonl": "4705b43ce9d9f023ad3a4ad3fff4899ce2e9ceb11d76c878d26aead8f351c7ac",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/telemetry.csv": "e154b5dac5b5efa1a6558b89390196988b4903d17ae51d123504d7b1d2240187",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/summary.json": "f0f48a8bd03116e686d850b76c7ff2275a7e09df9b91faf57e2ae9dba56f4206",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/sitl/logs/00000001.BIN": "bbc6c13fe34f291f93d8c5a4cac19c266819d64333d622e9e82c78c4eb328a0c",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/manifest.json": "e28512d340361018db0f9a683838f811fbfc4fbd087fab136e70d4e3bac0736c",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/commands.jsonl": "3eee33bceec0f48ad549c179111147919b1c43896bcd615d4e56da9321df6b88",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/mavlink.jsonl": "f9b36526ae7fb6580c334a6f486671eea29cd31409dcc03764bb09fb5b298491",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/telemetry.csv": "815186fc29fe73d4693aa17955e0d0631b0fd3d061d734dc4c243e1cb7bcd301",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/summary.json": "0a3602645842e2cb386e7c78d6feea7741b13277789934b9d2c5f472c0c435db",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/sitl/logs/00000001.BIN": "5f744e7361e929658645af8f9d19c1f9e27b96f5e3e10cbbf668314d94b26af7",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/manifest.json": "154f0c261541f7c6dea83f335785258cc1f4884a0fb2d95b666e37c4877973c7",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_hover_force_strong_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/commands.jsonl": "130748ba0d9027bc8b6891a0c49b54de0bc8cf4d79b3d0403ebff481fc93e008",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/mavlink.jsonl": "52bb1a942ab1f91fb4a818c3b9ac1386d1ae759962a806b85cb4e9471e20fee2",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/telemetry.csv": "884c71927f52d1f4bc13100ac96a0a4cc2139e03afa90a7a39692629199de310",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/summary.json": "6499a94c4e9164ba68e453155f89aef9858aca539d102baa9537ec7384a458db",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/sitl/logs/00000001.BIN": "98736179434d6e736bc2b79b6d0ac8ee5dacd516c34a6486ced4a5d88d5c6bf5",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/manifest.json": "5d36784c5ecd747b6a9d17976a6793862cf503c2a216b31a2e21244bb6cac4d4",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_gust_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/commands.jsonl": "b7b255a8fbeb2480ffab36f3f3b04ccccb63f33ac29443768844662b0fdced00",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/mavlink.jsonl": "bdbd214eb9e4f3d4b2d2cbfb4bef6722963e4a0eae280377c764de6ad928eef4",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/telemetry.csv": "42de6287f61e1c1b932c0537b3832b4ad51486b5d67285cdbfca734fb1567b63",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/summary.json": "9e2ab6291d6410af9837fa4caab82613c43375d575ace1f4c164fb3410015cc6",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/sitl/logs/00000001.BIN": "7a472e63fee6445eeb4d3a18d85033d3b90ec72dfa3ad524ba40462118f3c7f8",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/manifest.json": "bd3cf381263aad56679df608f3ed43d9eecdaf8a207784157d13cea444d66727",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/commands.jsonl": "1c5b9c3e8e9b1d06254425d13b924b6d64d02522fdaa4ef3686f3ebff5fdd085",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/mavlink.jsonl": "7ac490b050e427e24ef3152d3f8842cadfad9919ce9809340243c8f251920368",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/telemetry.csv": "a6af8aaf86fe7df61035eb6a95b3664f33c06e6d658db700507e1b5ddec0fdc6",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/summary.json": "35898eed2fe76c8557905e774e28d75aa09829b692effd4a96f47b126e39c030",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/sitl/logs/00000001.BIN": "7bf2b5e17c3eb30e05ba7fd58c3d1e9b8fcb664b86c9897081bcbd4e04301e2a",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/manifest.json": "3bb823c6afa03dd4235c07137d4cc998ddbc2d44cabd00300a110de53062ff57",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_hover_force_strong_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/commands.jsonl": "d32c133654b07eee144a1b8dadd7036f4925b1bdf29def3f2e9efe3c04ac9a32",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/mavlink.jsonl": "bdbf5a700f861e84adff1c6008d5790428bab489baee2a5106a6f6af38781e4b",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/telemetry.csv": "dc21bd11ebcca16736734ad2cd928907fbd65f62d4395d43b0b02716eaa18aa9",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/summary.json": "51a3414985e97168aec362ba86d2e8a5d22fe3c0e63baa3611dba21998b29588",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/sitl/logs/00000001.BIN": "51e6989df0fbb40ace427edbe70929d5e14c49e54d4f82654fd56ac352c85d89",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/manifest.json": "ba17b3c3d893867f89d03d3fe884ec3b9bfcfc33f6edae472ca3c61626b1389d",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/commands.jsonl": "375372eee0647b3b620972687f0cf1b99e633bce20f967af22b89a40e204c6c5",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/mavlink.jsonl": "2a4a612a66ebd3c8986b8fc84d9f8f7967270ea0b08825e42a31e2c612f68abf",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/telemetry.csv": "038093e76476a392af7408ef07c0c941a7df3177097630791ccb41f4714081a4",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/summary.json": "d3e418884c330178dfaa9bec9576edd243d794071c7ca309dbe4ca09a5e173ca",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/sitl/logs/00000001.BIN": "10b2405fce678a4d859906828e9a17a659bd3b5aefcb127786bd6b2114c68cea",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/manifest.json": "0fc0642c9a6fe48a6c8109f99c9534255df55582a0322e8c36c3393eeebbce52",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301": {
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/commands.jsonl": "cd65c535039304231bbcca85c6636e31afbfa5d0f61d6511094b3ad090084f5c",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/mavlink.jsonl": "9997c6e7a3886bac85dfd38b1d8d9d42aa90b4a5de27c86aeb0021b3144190c2",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/telemetry.csv": "8e5b27aafb74885cf4db312d8dc1dda21292acba927de96f1bbcbdb668a8e0e8",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/summary.json": "d44d2b69b7d7c9dab4068259f8d484b951afe6dc761c874e6b6e485223773ca8",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/sitl/logs/00000001.BIN": "bfa068cf7f71fa897bd7b4cc5700845742ca6b33f6ee971a945ea1910a52a258",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/manifest.json": "cfd21af8aa4dd1200e551cdc53d9826b74e665007a76c6ad7bfb7180a21311d7",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_hover_gust_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+    },
+    "artifacts/gazebo/system_id_multisine_1001": {
+      "artifacts/gazebo/system_id_multisine_1001/commands.jsonl": "43b8a3df1988f64d520eee7b5bebbbf37a232407451cc1656a736cac2f7e9216",
+      "artifacts/gazebo/system_id_multisine_1001/mavlink.jsonl": "691ed37cbd78da66d68d7a79f15e33f078670f5400c46f2943b0be64bc5921c3",
+      "artifacts/gazebo/system_id_multisine_1001/telemetry.csv": "c13c0225dc0f1cabf1c3e448108756eeab128d92b4ae0faec38cf7898387549f",
+      "artifacts/gazebo/system_id_multisine_1001/summary.json": "024ae0585b84ad6337e9954eb9262c3192acff877c437f7f536256fbda99acf4",
+      "artifacts/gazebo/system_id_multisine_1001/sitl/logs/00000001.BIN": "5a8f643bfc0bea61a8c520afcb248884a093eed2a1ccd9ebe244dcfe44b2a105",
+      "artifacts/gazebo/system_id_multisine_1001/manifest.json": "d197ea1ad74cfe3e2f6faeb140fd91d4665c9223e9925190e06f21a16d6ad4a6"
+    },
+    "artifacts/gazebo/system_id_validation_1002": {
+      "artifacts/gazebo/system_id_validation_1002/commands.jsonl": "7d31ec8cb171365e639c3ad28006fda0e36914c001931916662fdcf709e68316",
+      "artifacts/gazebo/system_id_validation_1002/mavlink.jsonl": "efe01e2e74aa2815139a0e34d1ac0512acc7384e4b09cd1a5252cac7c9a8ae59",
+      "artifacts/gazebo/system_id_validation_1002/telemetry.csv": "11e13569b7fea9b594228b1d1d255c12ef000a5283ebf9c572ac3eb6318b604f",
+      "artifacts/gazebo/system_id_validation_1002/summary.json": "54d8a3df21497778c55788ecd540f4de82b82b0b70bd91421cf80c6b7f78aaf1",
+      "artifacts/gazebo/system_id_validation_1002/sitl/logs/00000001.BIN": "24e98479d3d992015116c920ac82052e52fdd9c0ae55565cc4c3c825e4e08285",
+      "artifacts/gazebo/system_id_validation_1002/manifest.json": "5003354f5aad2ac590a562ad717e01302dd0b7c7d9d5a54624ebad5b12f9860e"
+    }
+  },
+  "forward_model_inputs": {
+    "prediction": "Only controller command time/value history and own simulated shaper/filter internal states. No recorded gyro, attitude, quaternion, ATTITUDE_TARGET, or BIN desired rate enters prediction.",
+    "initialization": "Shaper target rate starts from first controller command, target acceleration zero; first-order remainder starts gain times first command. No measured state initialization.",
+    "training_teacher_use": "Recorded BIN gyro enters optimization residuals only. Held-out gyro enters score only. Recorded ATTITUDE_TARGET enters separate descriptive shaper verification only."
+  },
+  "validation_limits": "Four wind route traces use one fixed policy111 and one environment seed83301 across scenario/interface cases. They are held out from this physical-response fit, not a new independent policy acceptance set.",
+  "physical_embedding_audit": "audit/joint_native_rate_physics_replay_v3.json",
+  "claims": "Nominal physical-response candidate. No randomized-fault validation, policy improvement, Gazebo acceptance, or production readiness claimed."
+}

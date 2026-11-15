@@ -1,0 +1,36 @@
+{
+  "schema": "joint-geometry-replication16-integrity-v2.0",
+  "status": "PASS",
+  "utc_verified": "2026-11-13T17:23:27.152305+00:00",
+  "checks": {
+    "prospective_plan_unchanged": true,
+    "all_sources_and_28_training_evidence_files_match": true,
+    "six_distinct_named_model_slots_match": true,
+    "own_initial_prior_ZIPs_and_completed_training_match": true,
+    "native_PID_archive_matches": true,
+    "external_audit_helpers_match": true,
+    "all_shared_previous_raw_and_receipt_bytes_match": true,
+    "shared_declaration_unchanged": true,
+    "exact_sixteen_new_physical_cases_and_attempts": true,
+    "new_models_cover_both_six_cell_matrices_and_own_two_hover_references": true,
+    "sixteen_new_plus_shared_eight_NN_and_six_PID_is_thirty": true,
+    "three_trained_geometry_actors_at_one_development_environment": true,
+    "all_new_run_summary_actor_and_audit_hashes_match": true,
+    "all_sixteen_actual_indexed_yaw_exact_wire_proofs_pass": true,
+    "expected_new_audit_denominators": true,
+    "no_extra_cases_no_retries_and_queue_released": true
+  },
+  "new_actual_flights": 16,
+  "shared_existing_111_NN": 8,
+  "shared_native_PID": 6,
+  "comparison_coverage": 30,
+  "actual_new_NN_wire_commands": 26988,
+  "nominal_segment_RMSE_m_by_seed": {
+    "222": 0.13877736249990055,
+    "333": 0.16683902590852973,
+    "111": 0.1542566740431004
+  },
+  "complete_sha256": "fb39bce9da0c3c4592c963e3cf70f2f3775fe7704a7efd294c9eb3beddec56e9",
+  "plan_sha256": "fec5c425c4f0eb39f909a175df8c8ac4615598ead5ae03f8c610c7218b032cf6",
+  "scope": "Read-only provenance and actual proof. n3 trained actors conditional on one development environment; integrity PASS does not imply quality gate PASS"
+}

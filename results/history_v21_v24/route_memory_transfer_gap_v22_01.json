@@ -1,0 +1,4017 @@
+{
+  "schema": "route-memory-transfer-gap-v22.0",
+  "status": "PASS_ARCHIVED_GEOMETRY_FORCE_PHASE_AND_INITIAL_STATE_AUDIT",
+  "created_utc": "2026-11-15T04:37:03.779820+00:00",
+  "plan_sha256": "65894aa14f5be9789864e06b1f4c69ba69e998ee70279a8fdf9eb027a7235e82",
+  "input_sha256": {
+    "scripts/diagnose_route_memory_transfer_gap_v22.py": "1d95512ebdb77018c92dd6a9f156642f2e1e770a7477a9ca7bf91e6d065edc57",
+    "audit/joint_route80_development9_v5_root01.json": "5b917f1b2ce55025878f0e7e4b8c62a95852c3a1652d6def70ad9216ad2d5b74",
+    "audit/joint_route_memory_baseline_v20_root01.json": "c577c21fb83c371fae72eb746fb9607b46dd7131c213feacd0727a82a73fd487",
+    "quadrl_joint/native_rate_fit_v3.json": "d4ad6760006aba3eddae2c2ae5d7efe1798d84c47a5a82545533f48c3200f461",
+    "quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "audit/verify_joint_metrics_v2.py": "dd7a13fd7827904efa99208f3bad23314917f15c0f865bc298568af73aad70e7",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_nominal_env83301/summary.json": "d221db82ff063371079648975587cf97a2647311f046cd6e0ef5b5a991bc66d8",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_nominal_env83301/telemetry.csv": "1367334b84e5a51178905aec457608a5366307c7388cbad8cace38ea576ffada",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_nominal_env83301/commands.jsonl": "54a8a827ff34f7c3297cebd8424255e43d374c7fe6a90258c3a85e5089c7665c",
+    "audit/memory_development9_v20_root01/memory20_route_nominal_env83301_physical.json": "6a75b367e68e9df59c9c7cde9d6d5edb9671611104bb676ea408b2f201d3d653",
+    "audit/memory_development9_v20_root01/memory20_route_nominal_env83301_actor80.json": "59c8a488f7f801867fd06643cbf85b73888f8ec45a784bc866beb332921123c1",
+    "audit/memory_development9_v20_root01/memory20_route_nominal_env83301_force.json": "690aa5760ddb57b3a410c72edae688cecd914e3d090bf007d66b3b9687ae2161",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_nominal_env83301/summary.json": "21f3ff9f2c170c05a85fa4af2e075527641c173cdfda00a23df2036425588b1b",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_nominal_env83301/telemetry.csv": "e981e89d2a9c6aaeb1f76ca1c6eeed1b57af485e1187a36a4afb975fc792fcec",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_nominal_env83301/commands.jsonl": "cf9809eb1ca9ccbec5926cd54e35616c4f6d9863ce6dbe05eb8117089cc6f906",
+    "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_nominal_env83301/summary.json": "64fe56257875e9bbe3f365e69a84dfa53afb54d1059088ef1ac1777db0dd63c9",
+    "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_nominal_env83301/telemetry.csv": "b5c688a0b8d51c57fe5538d0bdac5dc61437ff7dfe20f736364a120690eed81d",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env84001/summary.json": "50ab32120709b854f462b6e4f574bec301ff31b97516a69cc31ace255300fcb5",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env84001/telemetry.csv": "fe9eca221e6097c6903f5381c3a41f9a76c4edf3cb200aac4f0752332ddefdba",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env84001/commands.jsonl": "fd91a571a797e3e66f68d4587630e0d6f8662831f17435e4b8602cf3385db13e",
+    "audit/memory_development9_v20_root01/memory20_route_force_strong_env84001_physical.json": "2b612d2593f0366a4e0c9a0d9d244152d143294574f5fdd2e5a502410f907ae4",
+    "audit/memory_development9_v20_root01/memory20_route_force_strong_env84001_actor80.json": "087e9e142cc6a3f4a85227f0553a0c38d041d252e7af425628a0563864dfcf40",
+    "audit/memory_development9_v20_root01/memory20_route_force_strong_env84001_force.json": "5e5c25d1b8b8b1bcf951dc34b4278113d5048066bcf8fe42c5f7364d0d901d39",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001/summary.json": "6996dd1431ee60341380834b33471c365d7f107d35627b255163cfcdf2557ae9",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001/telemetry.csv": "f63925119865c59fe142f65de9ba66722e05cc24713daa627e594289bc0eb67e",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001/commands.jsonl": "56c7293f7f9d0949c9149cd6ca35821691590427695fe494924bbdea44b9d12b",
+    "artifacts/refinement/joint_v2/gazebo_tailwind_stress4/runs/pid_route_force_strong_env84001/summary.json": "b61d237e4ae1c358dd53755ce615680db1a9c02675b69b32bf9a328a89e5e54d",
+    "artifacts/refinement/joint_v2/gazebo_tailwind_stress4/runs/pid_route_force_strong_env84001/telemetry.csv": "f575624d04a5b7324134084e10f3fa7dad5d171e76b21abdb876877fcd257ad1",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/summary.json": "e800e3d1bad55b63cd93f979cda4df4d780bc46799a27ab70ae78074a23516b9",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/trace.csv": "bab9fceadeb255812c8e2f1f621939dcc7a0082de6f4af3a92f37c908a69ff54",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/actor_io.npz": "7da85e753401bab7bade07a03b7bd4bb441bfda8ad48c7f8e1ae4ab2cd35fc14",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/summary.json": "2bc5b4a5a1d088eb787cefda4703ad3dccbc8622ab56e212fec308afe276d56d",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/trace.csv": "175c362e47ce204f8d0f4d7831289cdcd1eceab97b42839e22e22a8b1d6d7bfe",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/actor_io.npz": "599afda1c8e7647c13dcecfbbd4b9ab8a964fc371526ac434c2de093f622f722",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/summary.json": "265d82b7fc9c969893b0661ef28f06de000e56dec528b603969eb8ec7d43f11b",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/trace.csv": "33eca8675e5f54298b1ff1497c897f1604b71521c66f2b4aac27e86c05eaa166",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/actor_io.npz": "32b55b34f52a55634cbf80bcf231d19c8b6699fd49aaf4e71082f09ec865caca",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/summary.json": "46ba30416f76ed6bffeef4ce471b03a7df0fcd814ccf4ced494e58e5840c2b4b",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/trace.csv": "d89717d0f3aadcdf5c4258008fb64a38be261775476979bd71d95c4ebc48c615",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/actor_io.npz": "98d1272c123d42a651e50258255ce57747c5491b6401441d0c8ede73ca538379"
+  },
+  "all_inputs_unchanged": true,
+  "actual_budget": {
+    "trace_rows": 19992,
+    "native_IO_rows": 8000,
+    "NN_forwards": 0,
+    "physics": 0,
+    "optimizer": 0,
+    "backward": 0,
+    "fit": 0
+  },
+  "cases": [
+    {
+      "name": "Gazebo_zero_nominal",
+      "backend": "Gazebo",
+      "mode": "zero",
+      "condition": "nominal",
+      "seed": 83301,
+      "run": "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_nominal_env83301",
+      "samples": 2001,
+      "complete_s": 8.299999999999997,
+      "transit_duration_s": 7.780000000000001,
+      "finite_RMSE_m": 0.0997934135503599,
+      "axis_RMSE_m": [
+        0.06261889057133166,
+        0.026988981149711894,
+        0.07286422186607938
+      ],
+      "axis_SSE_m2s": [
+        0.030506356050670706,
+        0.005666991705226141,
+        0.0413055357630011
+      ],
+      "axis_SSE_fraction": [
+        0.39373768264523157,
+        0.07314240277925403,
+        0.5331199145755143
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.519999999999996,
+          "end_s": 2.3399999999999963,
+          "transit_seconds": 1.8200000000000003,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.00016109450915143214,
+            0.0008139984474189491
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.009408159573833818,
+            0.021148330765954928
+          ],
+          "finite_RMSE_m": 0.023146605814956037,
+          "signed_normal_error_mean_m": 0.0015902692185980807,
+          "velocity_XYZ_mps": {
+            "mean": [
+              1.0558154984111232,
+              -0.0211221113341098,
+              0.011882063509751838
+            ],
+            "minimum": [
+              -0.05225412920117378,
+              -0.11806575208902359,
+              -0.17357903718948364
+            ],
+            "maximum": [
+              2.4257771968841553,
+              0.02551865763962269,
+              0.21183817088603973
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9154667854309082,
+            -0.022263769060373306,
+            3.0199999809265137
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.3399999999999963,
+          "end_s": 4.439999999999998,
+          "transit_seconds": 2.1000000000000014,
+          "SSE_XYZ_m2s": [
+            0.012106670021468945,
+            0.001049604146777469,
+            0.015370271847861829
+          ],
+          "RMSE_XYZ_m": [
+            0.07592813024567545,
+            0.022356464355202974,
+            0.0855521891619986
+          ],
+          "finite_RMSE_m": 0.11655071656356347,
+          "signed_normal_error_mean_m": -0.02682419163840152,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.07945426258568962,
+              0.9248355805474733,
+              0.21675192593996015
+            ],
+            "minimum": [
+              -0.052434470504522324,
+              -0.08009973168373108,
+              0.00505088921636343
+            ],
+            "maximum": [
+              0.25086191296577454,
+              2.1286325454711914,
+              0.5994158983230591
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            2.078871726989746,
+            1.9035522937774658,
+            3.4700000286102295
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.439999999999998,
+          "end_s": 6.199999999999996,
+          "transit_seconds": 1.759999999999998,
+          "SSE_XYZ_m2s": [
+            0.0029443567969846627,
+            0.0030252657603895617,
+            0.022177271082952022
+          ],
+          "RMSE_XYZ_m": [
+            0.04090146694541336,
+            0.04145963097063629,
+            0.1122529385193223
+          ],
+          "finite_RMSE_m": 0.12646166693797312,
+          "signed_normal_error_mean_m": 0.027379446408965464,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -1.1678541931852868,
+              0.08207328070817642,
+              -0.28661897738294845
+            ],
+            "minimum": [
+              -2.6332523822784424,
+              -0.04375778138637543,
+              -0.7253513336181641
+            ],
+            "maximum": [
+              0.18837445974349976,
+              0.20279058814048767,
+              0.08721054345369339
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            0.03631217032670975,
+            2.059398651123047,
+            2.9700000286102295
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 6.199999999999996,
+          "end_s": 8.299999999999997,
+          "transit_seconds": 2.1000000000000014,
+          "SSE_XYZ_m2s": [
+            0.015455329232217109,
+            0.0014310272889076737,
+            0.002943994384768308
+          ],
+          "RMSE_XYZ_m": [
+            0.0857885807480812,
+            0.026104435756141346,
+            0.03744198296010653
+          ],
+          "finite_RMSE_m": 0.09717522441909494,
+          "signed_normal_error_mean_m": -0.04884850844031281,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.053463518062129706,
+              -0.9226530500820704,
+              0.02335564261302352
+            ],
+            "minimum": [
+              -0.2475438117980957,
+              -2.2385523319244385,
+              -0.16403210163116455
+            ],
+            "maximum": [
+              0.19207964837551117,
+              0.15788565576076508,
+              0.263202041387558
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            -0.09078041464090347,
+            0.12245073169469833,
+            3.0199999809265137
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.3399999999999963,
+          "peak_s": 2.9199999999999946,
+          "peak_m": 0.19412711988034692,
+          "residual_XYZ_at_peak_m": [
+            -0.03914308547973633,
+            -0.046115684158661796,
+            0.18446273663464713
+          ],
+          "peak_axis_squared_fraction": [
+            0.04065722094651417,
+            0.05643192817961684,
+            0.9029108508738689
+          ],
+          "velocity_at_peak_mps": [
+            0.23991036415100098,
+            1.5531105995178223,
+            0.3292146623134613
+          ],
+          "position_at_peak_m": [
+            1.9608569145202637,
+            0.256033331155777,
+            3.259999990463257
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.439999999999998,
+          "peak_s": 5.219999999999999,
+          "peak_m": 0.21046611068226426,
+          "residual_XYZ_at_peak_m": [
+            0.051014030680936906,
+            -0.0073926448822021484,
+            -0.2040561227237477
+          ],
+          "peak_axis_squared_fraction": [
+            0.05875095451666266,
+            0.001233773216733927,
+            0.9400152722666033
+          ],
+          "velocity_at_peak_mps": [
+            -2.5469977855682373,
+            0.030870147049427032,
+            -0.5772868990898132
+          ],
+          "position_at_peak_m": [
+            1.3072381019592285,
+            1.9926073551177979,
+            3.109999895095825
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.199999999999996,
+          "peak_s": 6.3799999999999955,
+          "peak_m": 0.10301780702676908,
+          "residual_XYZ_at_peak_m": [
+            0.06354629993438721,
+            0.07053041458129883,
+            -0.039999961853027344
+          ],
+          "peak_axis_squared_fraction": [
+            0.38050111626203764,
+            0.46873595936096335,
+            0.150762924376999
+          ],
+          "velocity_at_peak_mps": [
+            0.09724206477403641,
+            -0.005664139986038208,
+            0.006964454427361488
+          ],
+          "position_at_peak_m": [
+            0.06354629993438721,
+            2.070530414581299,
+            2.9600000381469727
+          ]
+        }
+      ],
+      "force_onsets": [],
+      "first_measured_state": {
+        "time_s": 0.01999999999999602,
+        "position_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity_mps": [
+          0.0004238332621753216,
+          -9.414844680577517e-05,
+          -0.0011525797890499234
+        ],
+        "yaw_ENU_rad": 1.5709213015532608
+      },
+      "declared_native_initial_state": null,
+      "prior_physical_world_and_actor_proof": {
+        "status": "PASS_EXISTING_INDEPENDENT_RECEIPTS",
+        "world_pose_source": "groundtruth_independent.jsonl",
+        "native_world_error_m": {
+          "rmse": 0.011989194777126587,
+          "max": 0.027845358016223173
+        },
+        "fdm_world_error_m": {
+          "rmse": 5.20111360649001e-09,
+          "max": 5.749189158329968e-09
+        },
+        "physical_force_intervals": []
+      },
+      "integral_actor_input_by_leg": {
+        "1": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "2": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "3": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "4": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unlagged_command_minus_measured_rate_RMS_FLU_rad_s": [
+        0.3889726541442266,
+        0.3590926323549926,
+        0.02715444548883988
+      ]
+    },
+    {
+      "name": "Gazebo_raw_nominal",
+      "backend": "Gazebo",
+      "mode": "raw",
+      "condition": "nominal",
+      "seed": 83301,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_nominal_env83301",
+      "samples": 1998,
+      "complete_s": 8.479999999999997,
+      "transit_duration_s": 7.939999999999998,
+      "finite_RMSE_m": 0.13163719687487016,
+      "axis_RMSE_m": [
+        0.10053983388148752,
+        0.04162150095857441,
+        0.07407930927129124
+      ],
+      "axis_SSE_m2s": [
+        0.08025957008352179,
+        0.013754853775834205,
+        0.04357268785316622
+      ],
+      "axis_SSE_fraction": [
+        0.5833363974615446,
+        0.09997196397707604,
+        0.31669163856137944
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5399999999999991,
+          "end_s": 2.3200000000000003,
+          "transit_seconds": 1.7800000000000011,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.00012639723025727932,
+            0.0006919986801153767
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.008426724151164544,
+            0.019717081514149214
+          ],
+          "finite_RMSE_m": 0.02144231758358747,
+          "signed_normal_error_mean_m": 0.0036272432738809874,
+          "velocity_XYZ_mps": {
+            "mean": [
+              1.12184964967473,
+              -0.0168078827823439,
+              0.008350793310189933
+            ],
+            "minimum": [
+              -0.01610647141933441,
+              -0.11813775449991226,
+              -0.188237264752388
+            ],
+            "maximum": [
+              2.4845595359802246,
+              0.024974282830953598,
+              0.194022074341774
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9880911111831665,
+            -0.022263769060373306,
+            3.009999990463257
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.3200000000000003,
+          "end_s": 4.519999999999996,
+          "transit_seconds": 2.1999999999999957,
+          "SSE_XYZ_m2s": [
+            0.04649904110235753,
+            0.0011454087077333232,
+            0.01686114490326413
+          ],
+          "RMSE_XYZ_m": [
+            0.14538200636185664,
+            0.022817544164457446,
+            0.08754516990794514
+          ],
+          "finite_RMSE_m": 0.17123295497569055,
+          "signed_normal_error_mean_m": -0.12063059373335426,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.08095900606475136,
+              0.9052394819445908,
+              0.21428742024370215
+            ],
+            "minimum": [
+              -0.0637323260307312,
+              -0.10716775059700012,
+              0.02197362668812275
+            ],
+            "maximum": [
+              0.2805701494216919,
+              2.160188913345337,
+              0.613213837146759
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            2.169651985168457,
+            1.9592117071151733,
+            3.4800000190734863
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.519999999999996,
+          "end_s": 6.32,
+          "transit_seconds": 1.8000000000000043,
+          "SSE_XYZ_m2s": [
+            0.010134988296479113,
+            0.006417523980953257,
+            0.022817550377114144
+          ],
+          "RMSE_XYZ_m": [
+            0.07503698457160637,
+            0.05971005862105294,
+            0.1125895948841388
+          ],
+          "finite_RMSE_m": 0.14789272135674414,
+          "signed_normal_error_mean_m": -0.04999834696451832,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -1.1756473306359516,
+              0.08338868247358025,
+              -0.286135367782683
+            ],
+            "minimum": [
+              -2.687051773071289,
+              -0.08190973103046417,
+              -0.7264297604560852
+            ],
+            "maximum": [
+              0.1778344213962555,
+              0.1975780427455902,
+              0.06427359580993652
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            0.06354629993438721,
+            2.103926181793213,
+            2.9700000286102295
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 6.32,
+          "end_s": 8.479999999999997,
+          "transit_seconds": 2.1599999999999966,
+          "SSE_XYZ_m2s": [
+            0.023625540684685198,
+            0.006065523856890347,
+            0.003201993892672571
+          ],
+          "RMSE_XYZ_m": [
+            0.10458370005399457,
+            0.05299163044017893,
+            0.03850200747936408
+          ],
+          "finite_RMSE_m": 0.12340286785011688,
+          "signed_normal_error_mean_m": -0.06253761998205289,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.07555430225388422,
+              -0.9270444133888103,
+              0.0240538754133855
+            ],
+            "minimum": [
+              -0.2873077392578125,
+              -2.3075380325317383,
+              -0.11503947526216507
+            ],
+            "maximum": [
+              0.17324037849903107,
+              0.1578732281923294,
+              0.2769111394882202
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            -0.10893649607896805,
+            0.12245073169469833,
+            3.0199999809265137
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.3200000000000003,
+          "peak_s": 2.9199999999999946,
+          "peak_m": 0.20168296887061388,
+          "residual_XYZ_at_peak_m": [
+            0.04255938529968262,
+            -0.047813804710612584,
+            0.1912552188424503
+          ],
+          "peak_axis_squared_fraction": [
+            0.044529953522841496,
+            0.05620412038100933,
+            0.8992659260961492
+          ],
+          "velocity_at_peak_mps": [
+            0.2364841252565384,
+            1.5701030492782593,
+            0.3175189793109894
+          ],
+          "position_at_peak_m": [
+            2.0425593852996826,
+            0.26716524362564087,
+            3.2699999809265137
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.519999999999996,
+          "peak_s": 5.259999999999998,
+          "peak_m": 0.2289039863895346,
+          "residual_XYZ_at_peak_m": [
+            0.05281627178192139,
+            0.07053041458129883,
+            -0.21126508712768555
+          ],
+          "peak_axis_squared_fraction": [
+            0.05323886295740381,
+            0.09493932972413532,
+            0.8518218073184609
+          ],
+          "velocity_at_peak_mps": [
+            -2.4688022136688232,
+            0.041500091552734375,
+            -0.6667536497116089
+          ],
+          "position_at_peak_m": [
+            1.4978770017623901,
+            2.070530414581299,
+            3.1500000953674316
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.32,
+          "peak_s": 6.459999999999994,
+          "peak_m": 0.16471974304478468,
+          "residual_XYZ_at_peak_m": [
+            0.08170238137245178,
+            0.13732194900512695,
+            -0.039999961853027344
+          ],
+          "peak_axis_squared_fraction": [
+            0.24602436404516523,
+            0.6950060821016226,
+            0.0589695538532121
+          ],
+          "velocity_at_peak_mps": [
+            0.07450443506240845,
+            0.07722447067499161,
+            1.7289728930336423e-05
+          ],
+          "position_at_peak_m": [
+            0.08170238137245178,
+            2.137321949005127,
+            2.9600000381469727
+          ]
+        }
+      ],
+      "force_onsets": [],
+      "first_measured_state": {
+        "time_s": 0.03999999999999915,
+        "position_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity_mps": [
+          0.0008001253590919077,
+          7.498038758058101e-05,
+          -0.0010892029386013746
+        ],
+        "yaw_ENU_rad": 1.5708773672475385
+      },
+      "declared_native_initial_state": null,
+      "prior_physical_world_and_actor_proof": {
+        "status": "PASS_EXISTING_ORIGINAL_WHOLE_AUDIT",
+        "force": {
+          "status": "PASS",
+          "required_sequences": [],
+          "request_delays_s": [],
+          "physical_intervals": [],
+          "first_physical_on_s": null,
+          "last_physical_off_s": null,
+          "actual_physics_event_count": 2,
+          "scope": "Fresh schedule/request/physical-sequence replay; clock offset comes from SHA-bound independent world/PCAP receipt"
+        }
+      },
+      "integral_actor_input_by_leg": {
+        "1": {
+          "mean": [
+            -0.0006603803930613722,
+            -0.21735498040202963,
+            0.0009835196552363883
+          ],
+          "minimum": [
+            -0.002902969252318144,
+            -0.3001747727394104,
+            -0.00019999980577267706
+          ],
+          "maximum": [
+            0.000412494846386835,
+            -0.006666666828095913,
+            0.0025333308149129152
+          ]
+        },
+        "2": {
+          "mean": [
+            0.24941837647083132,
+            -0.28616427752104673,
+            0.04820606100415303
+          ],
+          "minimum": [
+            0.007055553607642651,
+            -0.3022235333919525,
+            0.0028333321679383516
+          ],
+          "maximum": [
+            0.3412010967731476,
+            -0.2554377317428589,
+            0.06626666337251663
+          ]
+        },
+        "3": {
+          "mean": [
+            0.3360181136263741,
+            -0.02599344097543508,
+            0.025299626340468725
+          ],
+          "minimum": [
+            0.3264402747154236,
+            -0.24825258553028107,
+            0.012733333744108677
+          ],
+          "maximum": [
+            0.34222471714019775,
+            0.06480924785137177,
+            0.06466666609048843
+          ]
+        },
+        "4": {
+          "mean": [
+            0.06634559181719518,
+            0.0616558872991138,
+            0.01480308501912212
+          ],
+          "minimum": [
+            -0.03394535928964615,
+            0.04542167857289314,
+            0.010300002992153168
+          ],
+          "maximum": [
+            0.3194120526313782,
+            0.07231755554676056,
+            0.018066661432385445
+          ]
+        }
+      },
+      "unlagged_command_minus_measured_rate_RMS_FLU_rad_s": [
+        0.3865399998507293,
+        0.3560900522302702,
+        0.02893823639207477
+      ]
+    },
+    {
+      "name": "Gazebo_PID_nominal",
+      "backend": "Gazebo",
+      "mode": "PID",
+      "condition": "nominal",
+      "seed": 83301,
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_nominal_env83301",
+      "samples": 1997,
+      "complete_s": 9.280000000000001,
+      "transit_duration_s": 8.740000000000002,
+      "finite_RMSE_m": 0.1045459962418539,
+      "axis_RMSE_m": [
+        0.058963570420323595,
+        0.04539664445178492,
+        0.07343233188458266
+      ],
+      "axis_SSE_m2s": [
+        0.03038638104486691,
+        0.018011875562190714,
+        0.047128766378905514
+      ],
+      "axis_SSE_fraction": [
+        0.31809199214061057,
+        0.1885526733606825,
+        0.493355334498707
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5399999999999991,
+          "end_s": 2.700000000000003,
+          "transit_seconds": 2.1600000000000037,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0,
+            0.0001279997558594916
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.0,
+            0.007697996247806698
+          ],
+          "finite_RMSE_m": 0.007697996247806698,
+          "signed_normal_error_mean_m": 0.0,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.9135932535395518,
+              0.00011811779292522126,
+              0.005493858720338148
+            ],
+            "minimum": [
+              -0.18160513043403625,
+              -0.0002768939302768558,
+              -0.022493695840239525
+            ],
+            "maximum": [
+              2.0612781047821045,
+              0.0005856382776983082,
+              0.03756490349769592
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9608569145202637,
+            0.0,
+            3.009999990463257
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.700000000000003,
+          "end_s": 4.899999999999999,
+          "transit_seconds": 2.1999999999999957,
+          "SSE_XYZ_m2s": [
+            0.015385207015083315,
+            0.0013231203571774076,
+            0.021169925714838535
+          ],
+          "RMSE_XYZ_m": [
+            0.08362580891056884,
+            0.024523832167333677,
+            0.09809532866933475
+          ],
+          "finite_RMSE_m": 0.131215043980724,
+          "signed_normal_error_mean_m": 0.07174139022827151,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.013294001914222132,
+              0.8904585688063393,
+              0.2375038774557073
+            ],
+            "minimum": [
+              -0.21746839582920074,
+              -0.20789997279644012,
+              -0.04794229194521904
+            ],
+            "maximum": [
+              0.1791972815990448,
+              1.9730101823806763,
+              0.6019212007522583
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9971692562103271,
+            1.9592117071151733,
+            3.5299999713897705
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.899999999999999,
+          "end_s": 7.100000000000001,
+          "transit_seconds": 2.200000000000003,
+          "SSE_XYZ_m2s": [
+            0.001596225741645009,
+            0.016688755205013305,
+            0.025664841224827258
+          ],
+          "RMSE_XYZ_m": [
+            0.026936168162772986,
+            0.08709648569523677,
+            0.10800850392620023
+          ],
+          "finite_RMSE_m": 0.14134069440939429,
+          "signed_normal_error_mean_m": 0.07499353235418142,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.8890724217519164,
+              0.011941314466424624,
+              -0.24875359864355148
+            ],
+            "minimum": [
+              -2.0588526725769043,
+              -0.22927187383174896,
+              -0.6632871627807617
+            ],
+            "maximum": [
+              0.15133456885814667,
+              0.20589132606983185,
+              0.04509342461824417
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            0.03631216660141945,
+            1.9926073551177979,
+            2.9800000190734863
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 7.100000000000001,
+          "end_s": 9.280000000000001,
+          "transit_seconds": 2.1799999999999997,
+          "SSE_XYZ_m2s": [
+            0.013404948288138607,
+            0.0,
+            0.00016599968338027604
+          ],
+          "RMSE_XYZ_m": [
+            0.07841593490974907,
+            0.0,
+            0.008726204429900792
+          ],
+          "finite_RMSE_m": 0.07889997142916101,
+          "signed_normal_error_mean_m": 0.06604483762943958,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.021714121448260588,
+              -0.8924357317934889,
+              0.011224552945216792
+            ],
+            "minimum": [
+              -0.18903379142284393,
+              -2.0165584087371826,
+              -0.019964607432484627
+            ],
+            "maximum": [
+              0.1749516874551773,
+              0.1687869429588318,
+              0.03896329551935196
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            0.0,
+            0.04452753812074661,
+            3.009999990463257
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.700000000000003,
+          "peak_s": 3.700000000000003,
+          "peak_m": 0.20513712271469428,
+          "residual_XYZ_at_peak_m": [
+            -0.12992346286773682,
+            -0.038502202314488976,
+            0.15400880925795613
+          ],
+          "peak_axis_squared_fraction": [
+            0.4011313962772795,
+            0.03522756492486581,
+            0.5636410387978547
+          ],
+          "velocity_at_peak_mps": [
+            0.05341334640979767,
+            1.749651312828064,
+            0.596808671951294
+          ],
+          "position_at_peak_m": [
+            1.8700765371322632,
+            0.5454623699188232,
+            3.299999952316284
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.899999999999999,
+          "peak_s": 5.899999999999999,
+          "peak_m": 0.22182743275059358,
+          "residual_XYZ_at_peak_m": [
+            0.043621441897223945,
+            -0.1298433542251587,
+            -0.17448576758889592
+          ],
+          "peak_axis_squared_fraction": [
+            0.038669586476074304,
+            0.3426170299067359,
+            0.6187133836171899
+          ],
+          "velocity_at_peak_mps": [
+            -1.7344404458999634,
+            0.03650099039077759,
+            -0.6421627998352051
+          ],
+          "position_at_peak_m": [
+            1.4615647792816162,
+            1.8701566457748413,
+            3.180000066757202
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 7.100000000000001,
+          "peak_s": 7.839999999999996,
+          "peak_m": 0.11843746224681401,
+          "residual_XYZ_at_peak_m": [
+            0.11801454424858093,
+            0.0,
+            -0.009999990463256836
+          ],
+          "peak_axis_squared_fraction": [
+            0.9928711252379452,
+            0.0,
+            0.007128874762054822
+          ],
+          "velocity_at_peak_mps": [
+            0.08052168786525726,
+            -0.9614827632904053,
+            -0.015085737220942974
+          ],
+          "position_at_peak_m": [
+            0.11801454424858093,
+            1.7922334671020508,
+            2.990000009536743
+          ]
+        }
+      ],
+      "force_onsets": [],
+      "first_measured_state": {
+        "time_s": 0.03999999999999915,
+        "position_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity_mps": [
+          0.0006893812096677721,
+          -0.0007530340808443725,
+          -0.0008443730184808373
+        ],
+        "yaw_ENU_rad": 1.5708823995763108
+      },
+      "declared_native_initial_state": null
+    },
+    {
+      "name": "Gazebo_zero_force_strong",
+      "backend": "Gazebo",
+      "mode": "zero",
+      "condition": "force_strong",
+      "seed": 84001,
+      "run": "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env84001",
+      "samples": 1999,
+      "complete_s": 9.100000000000001,
+      "transit_duration_s": 8.579999999999998,
+      "finite_RMSE_m": 0.16633021114288604,
+      "axis_RMSE_m": [
+        0.13465444073219138,
+        0.055642012046317094,
+        0.08023644574241377
+      ],
+      "axis_SSE_m2s": [
+        0.15557100194835546,
+        0.026563967469146216,
+        0.055237072393720145
+      ],
+      "axis_SSE_fraction": [
+        0.6553889024221251,
+        0.11190857721261088,
+        0.232702520365264
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5200000000000031,
+          "end_s": 2.3400000000000034,
+          "transit_seconds": 1.8200000000000003,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.00016357288621529983,
+            0.0008399983978279089
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.009480253804946822,
+            0.02148342573297205
+          ],
+          "finite_RMSE_m": 0.023482180338084756,
+          "signed_normal_error_mean_m": 0.0017125976200286792,
+          "velocity_XYZ_mps": {
+            "mean": [
+              1.0565241309148925,
+              -0.02117059864922539,
+              0.012119912048277271
+            ],
+            "minimum": [
+              -0.051822952926158905,
+              -0.11742983758449554,
+              -0.17520220577716827
+            ],
+            "maximum": [
+              2.4231977462768555,
+              0.024892399087548256,
+              0.21310552954673767
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9154667854309082,
+            -0.022263769060373306,
+            3.0199999809265137
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.3400000000000034,
+          "end_s": 4.439999999999998,
+          "transit_seconds": 2.0999999999999943,
+          "SSE_XYZ_m2s": [
+            0.011983691945613056,
+            0.0010573361625825768,
+            0.015493984100743584
+          ],
+          "RMSE_XYZ_m": [
+            0.0755415115952909,
+            0.02243865884480642,
+            0.08589579539780032
+          ],
+          "finite_RMSE_m": 0.11656801041398902,
+          "signed_normal_error_mean_m": -0.027602308137076415,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.07860606809997643,
+              0.9250967483790148,
+              0.21663121718336784
+            ],
+            "minimum": [
+              -0.05249595642089844,
+              -0.08006716519594193,
+              0.0032434731256216764
+            ],
+            "maximum": [
+              0.24472904205322266,
+              2.1311655044555664,
+              0.599545419216156
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            2.087949752807617,
+            1.9035522937774658,
+            3.4700000286102295
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.439999999999998,
+          "end_s": 6.920000000000002,
+          "transit_seconds": 2.480000000000004,
+          "SSE_XYZ_m2s": [
+            0.07921620163158248,
+            0.02248466181408001,
+            0.03627309491147319
+          ],
+          "RMSE_XYZ_m": [
+            0.1787232967101054,
+            0.09521762385595528,
+            0.12093902574510285
+          ],
+          "finite_RMSE_m": 0.23587000790239782,
+          "signed_normal_error_mean_m": -0.02717006014239403,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.8181358884058653,
+              0.08704436717051713,
+              -0.2249892633492803
+            ],
+            "minimum": [
+              -3.197399377822876,
+              -0.20927616953849792,
+              -0.7598699331283569
+            ],
+            "maximum": [
+              1.1608160734176636,
+              0.40652355551719666,
+              0.2244054079055786
+            ]
+          },
+          "forced_seconds": 2.0600000000000023,
+          "force_start_active_fraction": 0.8306451612903222,
+          "position_at_end": [
+            0.06354629993438721,
+            2.137321949005127,
+            2.9200000762939453
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 6.920000000000002,
+          "end_s": 9.100000000000001,
+          "transit_seconds": 2.1799999999999997,
+          "SSE_XYZ_m2s": [
+            0.06437110837116003,
+            0.0028583966062683294,
+            0.0026299949836754806
+          ],
+          "RMSE_XYZ_m": [
+            0.17183722344974459,
+            0.03621037287563899,
+            0.034733553191148334
+          ],
+          "finite_RMSE_m": 0.1790129665247537,
+          "signed_normal_error_mean_m": -0.15832437909797803,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.08257532715605179,
+              -0.9428578372532075,
+              0.04033111425788449
+            ],
+            "minimum": [
+              -0.46369093656539917,
+              -2.2294070720672607,
+              -0.1798410266637802
+            ],
+            "maximum": [
+              0.167350172996521,
+              -0.09195210039615631,
+              0.19509251415729523
+            ]
+          },
+          "forced_seconds": 2.1799999999999997,
+          "force_start_active_fraction": 1.0,
+          "position_at_end": [
+            -0.12709258496761322,
+            0.07792319357395172,
+            3.0
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.3400000000000034,
+          "peak_s": 2.9200000000000017,
+          "peak_m": 0.19412711988034692,
+          "residual_XYZ_at_peak_m": [
+            -0.03914308547973633,
+            -0.046115684158661796,
+            0.18446273663464713
+          ],
+          "peak_axis_squared_fraction": [
+            0.04065722094651417,
+            0.05643192817961684,
+            0.9029108508738689
+          ],
+          "velocity_at_peak_mps": [
+            0.234068363904953,
+            1.5483392477035522,
+            0.33267176151275635
+          ],
+          "position_at_peak_m": [
+            1.9608569145202637,
+            0.256033331155777,
+            3.259999990463257
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.439999999999998,
+          "peak_s": 5.119999999999997,
+          "peak_m": 0.20274667738565094,
+          "residual_XYZ_at_peak_m": [
+            0.04864439543555765,
+            -0.029656410217285156,
+            -0.19457758174223058
+          ],
+          "peak_axis_squared_fraction": [
+            0.05756494963840704,
+            0.021395856147080738,
+            0.9210391942145123
+          ],
+          "velocity_at_peak_mps": [
+            -2.5742151737213135,
+            0.048690762370824814,
+            -0.7472586631774902
+          ],
+          "position_at_peak_m": [
+            1.5069550275802612,
+            1.9703435897827148,
+            3.1700000762939453
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.920000000000002,
+          "peak_s": 7.700000000000003,
+          "peak_m": 0.22598371697651504,
+          "residual_XYZ_at_peak_m": [
+            -0.2178730070590973,
+            0.0,
+            -0.059999942779541016
+          ],
+          "peak_axis_squared_fraction": [
+            0.9295067753970986,
+            0.0,
+            0.07049322460290137
+          ],
+          "velocity_at_peak_mps": [
+            -0.08612477779388428,
+            -2.2016184329986572,
+            -0.13631059229373932
+          ],
+          "position_at_peak_m": [
+            -0.2178730070590973,
+            1.3358261585235596,
+            2.940000057220459
+          ]
+        }
+      ],
+      "force_onsets": [
+        {
+          "recorded_step_end_s": 4.880000000000003,
+          "PRE_leg": 3,
+          "leg_elapsed_s": 0.44000000000000483,
+          "force_ENU_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "yaw_ENU_rad": 1.582980983951364,
+          "force_heading_FLU_N": [
+            -0.054821170393998545,
+            3.0070338944042434,
+            0.0
+          ],
+          "position_m": [
+            1.942700982093811,
+            1.9480798244476318,
+            3.3399999141693115
+          ],
+          "velocity_mps": [
+            -1.0574274063110352,
+            0.10421621054410934,
+            -0.5675899982452393
+          ]
+        }
+      ],
+      "first_measured_state": {
+        "time_s": 0.020000000000003126,
+        "position_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity_mps": [
+          -9.26252396311611e-05,
+          -0.0006726784049533308,
+          -0.0013784937327727675
+        ],
+        "yaw_ENU_rad": 1.5708952838857098
+      },
+      "declared_native_initial_state": null,
+      "prior_physical_world_and_actor_proof": {
+        "status": "PASS_EXISTING_INDEPENDENT_RECEIPTS",
+        "world_pose_source": "groundtruth_independent.jsonl",
+        "native_world_error_m": {
+          "rmse": 0.011736447471549708,
+          "max": 0.025049666415392243
+        },
+        "fdm_world_error_m": {
+          "rmse": 2.2673305895005978e-09,
+          "max": 3.1051309645948764e-09
+        },
+        "physical_force_intervals": [
+          {
+            "on_s": 4.897000000000006,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0
+            ],
+            "off_s": 19.858000000000004
+          }
+        ]
+      },
+      "integral_actor_input_by_leg": {
+        "1": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "2": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "3": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "4": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "minimum": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "unlagged_command_minus_measured_rate_RMS_FLU_rad_s": [
+        0.4037598689459989,
+        0.3728177948844451,
+        0.028940496767106944
+      ]
+    },
+    {
+      "name": "Gazebo_raw_force_strong",
+      "backend": "Gazebo",
+      "mode": "raw",
+      "condition": "force_strong",
+      "seed": 84001,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001",
+      "samples": 1998,
+      "complete_s": 9.420000000000002,
+      "transit_duration_s": 8.900000000000006,
+      "finite_RMSE_m": 0.1509731436729435,
+      "axis_RMSE_m": [
+        0.10706349784681608,
+        0.07471414683259146,
+        0.07581618430370927
+      ],
+      "axis_SSE_m2s": [
+        0.10201707388363726,
+        0.049681613258606164,
+        0.05115803484112874
+      ],
+      "axis_SSE_fraction": [
+        0.5029021118264911,
+        0.2449098692557917,
+        0.2521880189177171
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.519999999999996,
+          "end_s": 2.299999999999997,
+          "transit_seconds": 1.7800000000000011,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0001263972302572767,
+            0.0006919986801153709
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.008426724151164456,
+            0.01971708151414913
+          ],
+          "finite_RMSE_m": 0.02144231758358736,
+          "signed_normal_error_mean_m": 0.0036272432738810316,
+          "velocity_XYZ_mps": {
+            "mean": [
+              1.1234920365903318,
+              -0.016403126799804945,
+              0.007965455741622862
+            ],
+            "minimum": [
+              -0.015665924176573753,
+              -0.11872994154691696,
+              -0.19135574996471405
+            ],
+            "maximum": [
+              2.4904067516326904,
+              0.02591133303940296,
+              0.19404356181621552
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9880911111831665,
+            -0.022263769060373306,
+            3.009999990463257
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.299999999999997,
+          "end_s": 4.539999999999999,
+          "transit_seconds": 2.240000000000002,
+          "SSE_XYZ_m2s": [
+            0.04989876010971699,
+            0.0011355978561334837,
+            0.01670417127766666
+          ],
+          "RMSE_XYZ_m": [
+            0.1492522435068831,
+            0.02251584616733333,
+            0.08635519278182925
+          ],
+          "finite_RMSE_m": 0.17389771373096266,
+          "signed_normal_error_mean_m": -0.12369444647005609,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.07570115304075184,
+              0.8919653235518906,
+              0.21204420167487115
+            ],
+            "minimum": [
+              -0.07414786517620087,
+              -0.10838890075683594,
+              0.02166038192808628
+            ],
+            "maximum": [
+              0.29188811779022217,
+              2.162266731262207,
+              0.6140009760856628
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            2.169651985168457,
+            1.9592117071151733,
+            3.490000009536743
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.539999999999999,
+          "end_s": 7.359999999999999,
+          "transit_seconds": 2.8200000000000003,
+          "SSE_XYZ_m2s": [
+            0.035606476840806006,
+            0.04475665477755909,
+            0.0318038686179335
+          ],
+          "RMSE_XYZ_m": [
+            0.11236730052482427,
+            0.12598076907385267,
+            0.10619777584776377
+          ],
+          "finite_RMSE_m": 0.199438040500521,
+          "signed_normal_error_mean_m": -0.10021553986461444,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.8038478758952297,
+              0.05077718218403756,
+              -0.1745923498541394
+            ],
+            "minimum": [
+              -3.11712646484375,
+              -0.18756331503391266,
+              -0.769964337348938
+            ],
+            "maximum": [
+              0.9154751300811768,
+              0.3702141344547272,
+              0.19115225970745087
+            ]
+          },
+          "forced_seconds": 2.5,
+          "force_start_active_fraction": 0.8865248226950354,
+          "position_at_end": [
+            -0.09078042954206467,
+            2.137321949005127,
+            2.990000009536743
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 7.359999999999999,
+          "end_s": 9.420000000000002,
+          "transit_seconds": 2.0600000000000023,
+          "SSE_XYZ_m2s": [
+            0.01651183693311423,
+            0.003662963394656328,
+            0.0019579962654131455
+          ],
+          "RMSE_XYZ_m": [
+            0.08952907249547548,
+            0.0421679685332542,
+            0.030829914433662686
+          ],
+          "finite_RMSE_m": 0.10365363484272311,
+          "signed_normal_error_mean_m": -0.08372951317036026,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.002213132246007501,
+              -0.9847888429332705,
+              0.012534385571730701
+            ],
+            "minimum": [
+              -0.19840410351753235,
+              -2.290619373321533,
+              -0.18381869792938232
+            ],
+            "maximum": [
+              0.18222710490226746,
+              -0.07306932657957077,
+              0.25961241126060486
+            ]
+          },
+          "forced_seconds": 2.0600000000000023,
+          "force_start_active_fraction": 1.0,
+          "position_at_end": [
+            -0.09078041464090347,
+            0.10018695890903473,
+            3.0199999809265137
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.299999999999997,
+          "peak_s": 2.8999999999999986,
+          "peak_m": 0.20168296887061388,
+          "residual_XYZ_at_peak_m": [
+            0.04255938529968262,
+            -0.047813804710612584,
+            0.1912552188424503
+          ],
+          "peak_axis_squared_fraction": [
+            0.044529953522841496,
+            0.05620412038100933,
+            0.8992659260961492
+          ],
+          "velocity_at_peak_mps": [
+            0.24028603732585907,
+            1.571699857711792,
+            0.3192483186721802
+          ],
+          "position_at_peak_m": [
+            2.0425593852996826,
+            0.26716524362564087,
+            3.2699999809265137
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.539999999999999,
+          "peak_s": 5.239999999999995,
+          "peak_m": 0.2105300677556802,
+          "residual_XYZ_at_peak_m": [
+            0.04811039391685934,
+            0.07053041458129883,
+            -0.1924415756674374
+          ],
+          "peak_axis_squared_fraction": [
+            0.05222152680505033,
+            0.11223404431414397,
+            0.8355444288808056
+          ],
+          "velocity_at_peak_mps": [
+            -2.717289686203003,
+            0.020116494968533516,
+            -0.7212794423103333
+          ],
+          "position_at_peak_m": [
+            1.4978770017623901,
+            2.070530414581299,
+            3.1700000762939453
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 7.359999999999999,
+          "peak_s": 7.359999999999999,
+          "peak_m": 0.1649193859910765,
+          "residual_XYZ_at_peak_m": [
+            -0.09078042954206467,
+            0.13732194900512695,
+            -0.009999990463256836
+          ],
+          "peak_axis_squared_fraction": [
+            0.30299889749091546,
+            0.6933244231817852,
+            0.0036766793272993395
+          ],
+          "velocity_at_peak_mps": [
+            -0.12730345129966736,
+            -0.11996132880449295,
+            0.10497163236141205
+          ],
+          "position_at_peak_m": [
+            -0.09078042954206467,
+            2.137321949005127,
+            2.990000009536743
+          ]
+        }
+      ],
+      "force_onsets": [
+        {
+          "recorded_step_end_s": 4.8799999999999955,
+          "PRE_leg": 3,
+          "leg_elapsed_s": 0.3399999999999963,
+          "force_ENU_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "yaw_ENU_rad": 1.5765271974403898,
+          "force_heading_FLU_N": [
+            -0.07422664877620645,
+            3.0066174694215375,
+            0.0
+          ],
+          "position_m": [
+            2.1061058044433594,
+            2.026002883911133,
+            3.4100000858306885
+          ],
+          "velocity_mps": [
+            -0.5611867308616638,
+            0.15700170397758484,
+            -0.46799302101135254
+          ]
+        }
+      ],
+      "first_measured_state": {
+        "time_s": 0.01999999999999602,
+        "position_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity_mps": [
+          0.0005825983243994415,
+          0.0006033112294971943,
+          -0.0013235481455922127
+        ],
+        "yaw_ENU_rad": 1.5709185902986231
+      },
+      "declared_native_initial_state": null,
+      "prior_physical_world_and_actor_proof": {
+        "status": "PASS_EXISTING_ORIGINAL_WHOLE_AUDIT",
+        "force": {
+          "status": "PASS",
+          "required_sequences": [
+            1,
+            2
+          ],
+          "request_delays_s": [
+            -4.440892098500626e-15,
+            -3.552713678800501e-15
+          ],
+          "physical_intervals": [
+            {
+              "on_s": 4.895000000000003,
+              "force_enu_N": [
+                -3.006142715576642,
+                -0.09145587135230222,
+                0
+              ],
+              "off_s": 19.853
+            }
+          ],
+          "first_physical_on_s": 4.895000000000003,
+          "last_physical_off_s": 19.853,
+          "actual_physics_event_count": 4,
+          "scope": "Fresh schedule/request/physical-sequence replay; clock offset comes from SHA-bound independent world/PCAP receipt"
+        }
+      },
+      "integral_actor_input_by_leg": {
+        "1": {
+          "mean": [
+            -0.0006742370385457391,
+            -0.21781153666127598,
+            0.0009535571420957659
+          ],
+          "minimum": [
+            -0.0029309175442904234,
+            -0.30081021785736084,
+            -0.0002333331067347899
+          ],
+          "maximum": [
+            0.0004184005665592849,
+            -0.006666666828095913,
+            0.002499997615814209
+          ]
+        },
+        "2": {
+          "mean": [
+            0.25062866629533737,
+            -0.2862357542450939,
+            0.048598809880786575
+          ],
+          "minimum": [
+            0.00706725288182497,
+            -0.30332860350608826,
+            0.0028333321679383516
+          ],
+          "maximum": [
+            0.34110578894615173,
+            -0.25426679849624634,
+            0.06646665930747986
+          ]
+        },
+        "3": {
+          "mean": [
+            0.3259879139298243,
+            -0.018916812460953766,
+            0.027541131487922043
+          ],
+          "minimum": [
+            0.2941610813140869,
+            -0.2470920830965042,
+            0.015433331951498985
+          ],
+          "maximum": [
+            0.34181326627731323,
+            0.027193954214453697,
+            0.06483332812786102
+          ]
+        },
+        "4": {
+          "mean": [
+            0.040935034285953895,
+            0.012295226413133279,
+            0.034668603640736886
+          ],
+          "minimum": [
+            -0.056674033403396606,
+            -0.00505079748108983,
+            0.03153333067893982
+          ],
+          "maximum": [
+            0.2871154844760895,
+            0.02610922046005726,
+            0.037099990993738174
+          ]
+        }
+      },
+      "unlagged_command_minus_measured_rate_RMS_FLU_rad_s": [
+        0.39910190161769576,
+        0.35472965489192804,
+        0.030143962218273444
+      ]
+    },
+    {
+      "name": "Gazebo_PID_force_strong",
+      "backend": "Gazebo",
+      "mode": "PID",
+      "condition": "force_strong",
+      "seed": 84001,
+      "run": "artifacts/refinement/joint_v2/gazebo_tailwind_stress4/runs/pid_route_force_strong_env84001",
+      "samples": 1999,
+      "complete_s": 9.119999999999997,
+      "transit_duration_s": 8.599999999999994,
+      "finite_RMSE_m": 0.09273799592767999,
+      "axis_RMSE_m": [
+        0.05109162301257074,
+        0.04766504037536504,
+        0.06097561703368455
+      ],
+      "axis_SSE_m2s": [
+        0.022449043901704355,
+        0.019538822236272534,
+        0.03197502250469161
+      ],
+      "axis_SSE_fraction": [
+        0.30351767371013294,
+        0.26417062117015216,
+        0.43231170511971473
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5200000000000031,
+          "end_s": 2.6799999999999997,
+          "transit_seconds": 2.1599999999999966,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0,
+            0.0001279997558594916
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.0,
+            0.007697996247806711
+          ],
+          "finite_RMSE_m": 0.007697996247806711,
+          "signed_normal_error_mean_m": 0.0,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.912771106709476,
+              -0.00029577667846667654,
+              0.005505219409584512
+            ],
+            "minimum": [
+              -0.18131980299949646,
+              -0.0006691997987218201,
+              -0.022493930533528328
+            ],
+            "maximum": [
+              2.060243844985962,
+              0.00012359398533590138,
+              0.03756804019212723
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9608569145202637,
+            0.0,
+            3.009999990463257
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6799999999999997,
+          "end_s": 4.880000000000003,
+          "transit_seconds": 2.200000000000003,
+          "SSE_XYZ_m2s": [
+            0.01596165884288949,
+            0.0013241765841788505,
+            0.021186825346861622
+          ],
+          "RMSE_XYZ_m": [
+            0.08517804572799653,
+            0.024533618717058888,
+            0.09813447486823558
+          ],
+          "finite_RMSE_m": 0.13224058786567403,
+          "signed_normal_error_mean_m": 0.07223655960776573,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.014327549729072912,
+              0.8904387228621462,
+              0.23751179490460675
+            ],
+            "minimum": [
+              -0.216133713722229,
+              -0.2079172432422638,
+              -0.0479181669652462
+            ],
+            "maximum": [
+              0.19020654261112213,
+              1.9727435111999512,
+              0.6018781065940857
+            ]
+          },
+          "forced_seconds": 0.020000000000003126,
+          "force_start_active_fraction": 0.0090909090909105,
+          "position_at_end": [
+            1.9971692562103271,
+            1.9703435897827148,
+            3.5299999713897705
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.880000000000003,
+          "end_s": 6.939999999999998,
+          "transit_seconds": 2.059999999999995,
+          "SSE_XYZ_m2s": [
+            0.0017652437273434484,
+            0.018214645652093683,
+            0.010400197897880973
+          ],
+          "RMSE_XYZ_m": [
+            0.02927310080516324,
+            0.09403223381459148,
+            0.07105378073159029
+          ],
+          "finite_RMSE_m": 0.12143975948248648,
+          "signed_normal_error_mean_m": 0.0844512113089702,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -1.0114723060464315,
+              0.012653917714487761,
+              -0.26984821017085603
+            ],
+            "minimum": [
+              -1.888573408126831,
+              -0.23394444584846497,
+              -0.6445145606994629
+            ],
+            "maximum": [
+              0.036827873438596725,
+              0.20321549475193024,
+              0.03680943325161934
+            ]
+          },
+          "forced_seconds": 2.059999999999995,
+          "force_start_active_fraction": 1.0,
+          "position_at_end": [
+            -0.08170238137245178,
+            1.9926073551177979,
+            2.9800000190734863
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 6.939999999999998,
+          "end_s": 9.119999999999997,
+          "transit_seconds": 2.1799999999999997,
+          "SSE_XYZ_m2s": [
+            0.004722141331471408,
+            0.0,
+            0.0002599995040895928
+          ],
+          "RMSE_XYZ_m": [
+            0.04654159297683898,
+            0.0,
+            0.010920889504249798
+          ],
+          "finite_RMSE_m": 0.047805707864080206,
+          "signed_normal_error_mean_m": 0.002914967579305702,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.019353445042608254,
+              -0.8918308668530657,
+              0.014135869285583053
+            ],
+            "minimum": [
+              -0.18955928087234497,
+              -2.0081751346588135,
+              -0.014069821685552597
+            ],
+            "maximum": [
+              0.21487241983413696,
+              0.161299929022789,
+              0.03890777751803398
+            ]
+          },
+          "forced_seconds": 2.1799999999999997,
+          "force_start_active_fraction": 1.0,
+          "position_at_end": [
+            -0.045390207320451736,
+            0.04452753812074661,
+            3.009999990463257
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.6799999999999997,
+          "peak_s": 3.6799999999999997,
+          "peak_m": 0.20513712271469428,
+          "residual_XYZ_at_peak_m": [
+            -0.12992346286773682,
+            -0.038502202314488976,
+            0.15400880925795613
+          ],
+          "peak_axis_squared_fraction": [
+            0.4011313962772795,
+            0.03522756492486581,
+            0.5636410387978547
+          ],
+          "velocity_at_peak_mps": [
+            0.05803549289703369,
+            1.7489551305770874,
+            0.5967056751251221
+          ],
+          "position_at_peak_m": [
+            1.8700765371322632,
+            0.5454623699188232,
+            3.299999952316284
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.880000000000003,
+          "peak_s": 5.880000000000003,
+          "peak_m": 0.16921207129419866,
+          "residual_XYZ_at_peak_m": [
+            0.02631643239189596,
+            -0.1298433542251587,
+            -0.10526572956758387
+          ],
+          "peak_axis_squared_fraction": [
+            0.024187520122644267,
+            0.5888121579150472,
+            0.38700032196230844
+          ],
+          "velocity_at_peak_mps": [
+            -1.7034507989883423,
+            0.03871123492717743,
+            -0.6274777054786682
+          ],
+          "position_at_peak_m": [
+            1.2073795795440674,
+            1.8701566457748413,
+            3.190000057220459
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.939999999999998,
+          "peak_s": 6.939999999999998,
+          "peak_m": 0.08411467386247459,
+          "residual_XYZ_at_peak_m": [
+            -0.08170238137245178,
+            0.0,
+            -0.019999980926513672
+          ],
+          "peak_axis_squared_fraction": [
+            0.9434652296679413,
+            0.0,
+            0.05653477033205863
+          ],
+          "velocity_at_peak_mps": [
+            0.036827873438596725,
+            -0.0009259774233214557,
+            0.03680943325161934
+          ],
+          "position_at_peak_m": [
+            -0.08170238137245178,
+            1.9926073551177979,
+            2.9800000190734863
+          ]
+        }
+      ],
+      "force_onsets": [
+        {
+          "recorded_step_end_s": 4.880000000000003,
+          "PRE_leg": 2,
+          "leg_elapsed_s": 2.200000000000003,
+          "force_ENU_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "yaw_ENU_rad": 1.5713759973903674,
+          "force_heading_FLU_N": [
+            -0.08971328354647409,
+            3.006195224794063,
+            0.0
+          ],
+          "position_m": [
+            1.9971692562103271,
+            1.9703435897827148,
+            3.5299999713897705
+          ],
+          "velocity_mps": [
+            -0.029905186966061592,
+            -0.2079172432422638,
+            -0.0479181669652462
+          ]
+        }
+      ],
+      "first_measured_state": {
+        "time_s": 0.020000000000003126,
+        "position_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity_mps": [
+          0.0003647521079983562,
+          -0.00019912836432922632,
+          -0.0011701661860570312
+        ],
+        "yaw_ENU_rad": 1.5709035270800253
+      },
+      "declared_native_initial_state": null
+    },
+    {
+      "name": "Native_zero_nominal",
+      "backend": "native",
+      "mode": "zero",
+      "condition": "nominal",
+      "seed": 84001,
+      "run": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001",
+      "samples": 2000,
+      "complete_s": 8.5,
+      "transit_duration_s": 7.64,
+      "finite_RMSE_m": 0.105277613447643,
+      "axis_RMSE_m": [
+        0.07164115768263372,
+        0.04498424488864883,
+        0.06266847796876372
+      ],
+      "axis_SSE_m2s": [
+        0.03921195982218504,
+        0.01546016868186273,
+        0.030004863320239678
+      ],
+      "axis_SSE_fraction": [
+        0.46307691118212446,
+        0.1825781519724272,
+        0.35434493684544827
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.86,
+          "end_s": 2.6,
+          "transit_seconds": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0068201465368945184,
+            0.0013557028325990234
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.06260690414396085,
+            0.027913071471354706
+          ],
+          "finite_RMSE_m": 0.06854753099460299,
+          "signed_normal_error_mean_m": -0.057238265755385494,
+          "velocity_XYZ_mps": {
+            "mean": [
+              1.0076011983159945,
+              -0.006575160378302021,
+              0.0014653252793380112
+            ],
+            "minimum": [
+              -0.26114084606312254,
+              -0.11096889740698886,
+              -0.18684623577588477
+            ],
+            "maximum": [
+              2.51984136618196,
+              0.13219960527652283,
+              0.1670216293391296
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.8519072250099875,
+            -0.09388119215550332,
+            2.9633678704684825
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6,
+          "end_s": 4.74,
+          "transit_seconds": 2.14,
+          "SSE_XYZ_m2s": [
+            0.026605424988764913,
+            0.0026533200007991605,
+            0.009731404846806615
+          ],
+          "RMSE_XYZ_m": [
+            0.11150085911568128,
+            0.03521177586052632,
+            0.06743430464113201
+          ],
+          "finite_RMSE_m": 0.13498035481217238,
+          "signed_normal_error_mean_m": -0.04034665046816533,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.10256811265690625,
+              0.9136023226796092,
+              0.2590097085179284
+            ],
+            "minimum": [
+              -0.21730445391845785,
+              0.014291090199491048,
+              0.012000153234397128
+            ],
+            "maximum": [
+              0.5325878427040097,
+              2.3226993268416924,
+              0.572742753726243
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            2.0702304794545463,
+            1.8594722810981872,
+            3.5172818438627407
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.74,
+          "end_s": 6.46,
+          "transit_seconds": 1.7199999999999998,
+          "SSE_XYZ_m2s": [
+            0.0016165303403724315,
+            0.00598670214416905,
+            0.013952986867100833
+          ],
+          "RMSE_XYZ_m": [
+            0.03065686254571336,
+            0.05899695569682926,
+            0.09006776152941234
+          ],
+          "finite_RMSE_m": 0.11194947820137209,
+          "signed_normal_error_mean_m": 0.048641937132005854,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -1.1537480555449904,
+              0.07188804025979623,
+              -0.295629971216573
+            ],
+            "minimum": [
+              -2.6566547714464477,
+              -0.008716406818242305,
+              -0.6323853595301092
+            ],
+            "maximum": [
+              0.2266215848065015,
+              0.21226137104411136,
+              0.006070312027107419
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            0.08291284536595946,
+            1.984615257317307,
+            3.008898717777617
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 6.46,
+          "end_s": 8.5,
+          "transit_seconds": 2.04,
+          "SSE_XYZ_m2s": [
+            0.010990004493047718,
+            0.0,
+            0.004964768773733197
+          ],
+          "RMSE_XYZ_m": [
+            0.07339793664971214,
+            0.0,
+            0.04933264824842213
+          ],
+          "finite_RMSE_m": 0.08843623288922761,
+          "signed_normal_error_mean_m": 0.06521851745069762,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.03870012694345187,
+              -0.9189414785223327,
+              -0.02299534589234634
+            ],
+            "minimum": [
+              -0.16072800459195455,
+              -2.2024768949268148,
+              -0.29611384820240555
+            ],
+            "maximum": [
+              0.22471729296344592,
+              0.04710524413778628,
+              0.06659095244142764
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            0.0064706309347311915,
+            0.11197427130528077,
+            2.9617088668143703
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.6,
+          "peak_s": 2.7,
+          "peak_m": 0.19013847656387373,
+          "residual_XYZ_at_peak_m": [
+            -0.16464738934510414,
+            -0.09171607587806675,
+            -0.025140383398054134
+          ],
+          "peak_axis_squared_fraction": [
+            0.749841854306572,
+            0.23267563618152698,
+            0.01748250951190122
+          ],
+          "velocity_at_peak_mps": [
+            -0.07759208939259439,
+            0.037960666120226555,
+            0.2672080430726005
+          ],
+          "position_at_peak_m": [
+            1.8353526106548959,
+            -0.09171607587806675,
+            2.974859616601946
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.74,
+          "peak_s": 5.42,
+          "peak_m": 0.17167636874342604,
+          "residual_XYZ_at_peak_m": [
+            0.03977730250063405,
+            -0.05074249780086437,
+            -0.15910921000253603
+          ],
+          "peak_axis_squared_fraction": [
+            0.053684587312368366,
+            0.0873620156897397,
+            0.858953396997892
+          ],
+          "velocity_at_peak_mps": [
+            -2.3850369208001068,
+            0.0706032498159631,
+            -0.6129175171551474
+          ],
+          "position_at_peak_m": [
+            1.4558499279283303,
+            1.9492575021991356,
+            3.194908946354388
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.46,
+          "peak_s": 6.78,
+          "peak_m": 0.12547094876862377,
+          "residual_XYZ_at_peak_m": [
+            0.12321067710799707,
+            0.0,
+            0.023708395801645743
+          ],
+          "peak_axis_squared_fraction": [
+            0.9642959095538091,
+            0.0,
+            0.03570409044619089
+          ],
+          "velocity_at_peak_mps": [
+            -0.014588878968112963,
+            -0.463481300381904,
+            0.04360558993002669
+          ],
+          "position_at_peak_m": [
+            0.12321067710799707,
+            1.9578871714266428,
+            3.0237083958016457
+          ]
+        }
+      ],
+      "force_onsets": [],
+      "first_measured_state": {
+        "time_s": 0.02,
+        "position_m": [
+          0.19884553254679477,
+          -0.09596344930333268,
+          2.848820927534658
+        ],
+        "velocity_mps": [
+          -0.016808397307503893,
+          0.003856107592484446,
+          -0.00016701121852653758
+        ],
+        "yaw_ENU_rad": -2.009067191499595
+      },
+      "declared_native_initial_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "rpy": [
+          -0.028324639741602944,
+          0.028955435731572804,
+          -2.009067160357219
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ]
+      },
+      "initial_preaction_measured_state": {
+        "time_s": 0.0,
+        "position_m": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity_mps": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "yaw_ENU_rad": -2.009067160357219
+      },
+      "native_IO_array_names": [
+        "basis_kind",
+        "time",
+        "dt",
+        "position",
+        "velocity",
+        "rotation",
+        "body_rates",
+        "target",
+        "previous_action",
+        "observation",
+        "action",
+        "yaw_reference",
+        "path_feature",
+        "path_valid_leg",
+        "path_target_changes",
+        "path_feature_enabled",
+        "basis_feature",
+        "basis_gate",
+        "raw_observation",
+        "effective_observation",
+        "raw_integral_world",
+        "conditioned_integral_world",
+        "memory_target_changed",
+        "memory_raw_encoder_calls"
+      ],
+      "integral_input_array_observation_range": {
+        "mean": [
+          -2.1221777200935322e-05,
+          -0.00031961608934216203,
+          0.00018522089009638876
+        ],
+        "minimum": [
+          -0.002909671748057008,
+          -0.027709774672985077,
+          0.0
+        ],
+        "maximum": [
+          0.0,
+          0.0,
+          0.014381504617631435
+        ]
+      },
+      "unlagged_command_minus_measured_rate_RMS_FLU_rad_s": [
+        0.45573656149786795,
+        0.38365505924091675,
+        0.061491704982388
+      ]
+    },
+    {
+      "name": "Native_raw_nominal",
+      "backend": "native",
+      "mode": "raw",
+      "condition": "nominal",
+      "seed": 84001,
+      "run": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001",
+      "samples": 2000,
+      "complete_s": 8.58,
+      "transit_duration_s": 7.72,
+      "finite_RMSE_m": 0.11317718785962497,
+      "axis_RMSE_m": [
+        0.07803492232360554,
+        0.051002775692200644,
+        0.06417432213473517
+      ],
+      "axis_SSE_m2s": [
+        0.04701054706783487,
+        0.02008190575054496,
+        0.03179361275761531
+      ],
+      "axis_SSE_fraction": [
+        0.4754011274895622,
+        0.20308124945179232,
+        0.32151762305864556
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.86,
+          "end_s": 2.6,
+          "transit_seconds": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.00670220991486487,
+            0.0011883836955584824
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.062063232099673724,
+            0.02613386950641711
+          ],
+          "finite_RMSE_m": 0.0673411012238173,
+          "signed_normal_error_mean_m": -0.05671196987236555,
+          "velocity_XYZ_mps": {
+            "mean": [
+              1.0383437753108977,
+              -0.0062744298682721016,
+              0.007439011071105314
+            ],
+            "minimum": [
+              -0.22690560774313812,
+              -0.11360612912213354,
+              -0.18734848271037013
+            ],
+            "maximum": [
+              2.547447510357043,
+              0.13263919799162294,
+              0.16848518577273836
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9047560728855262,
+            -0.09330014593170184,
+            2.9735204871863274
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6,
+          "end_s": 4.7,
+          "transit_seconds": 2.1,
+          "SSE_XYZ_m2s": [
+            0.03658937510797501,
+            0.0029755134292825287,
+            0.01481007452059544
+          ],
+          "RMSE_XYZ_m": [
+            0.13199815133621598,
+            0.03764188035687383,
+            0.08397866656704416
+          ],
+          "finite_RMSE_m": 0.16091252142502324,
+          "signed_normal_error_mean_m": -0.09022184893944313,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.10642872918754627,
+              0.9597579364297959,
+              0.2720922446930303
+            ],
+            "minimum": [
+              -0.14528960167783758,
+              0.00748384343565245,
+              0.035524562136509064
+            ],
+            "maximum": [
+              0.5079682245652282,
+              2.3136574755751274,
+              0.597177354008861
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            2.127359943782914,
+            1.9199961362403057,
+            3.544654595536674
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.7,
+          "end_s": 6.44,
+          "transit_seconds": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.004502408864566501,
+            0.007332634161423521,
+            0.01089156975370155
+          ],
+          "RMSE_XYZ_m": [
+            0.050868372310061194,
+            0.06491654306905525,
+            0.0791171463524495
+          ],
+          "finite_RMSE_m": 0.11428592088471098,
+          "signed_normal_error_mean_m": -0.04341375462961935,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -1.1775270623956393,
+              0.10010731169674199,
+              -0.296659653818435
+            ],
+            "minimum": [
+              -2.709424594756229,
+              0.006107482620294959,
+              -0.6533764395258206
+            ],
+            "maximum": [
+              0.16475341823533565,
+              0.2552036162841204,
+              0.02128917735396993
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            0.07650852314216085,
+            2.0959871279316418,
+            3.0285701338444975
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 6.44,
+          "end_s": 8.58,
+          "transit_seconds": 2.1399999999999997,
+          "SSE_XYZ_m2s": [
+            0.005918763095293398,
+            0.0030715482449740496,
+            0.004903584787759835
+          ],
+          "RMSE_XYZ_m": [
+            0.05259065646417968,
+            0.03788539188410452,
+            0.047868515337698085
+          ],
+          "finite_RMSE_m": 0.08057589482085181,
+          "signed_normal_error_mean_m": 0.038794485973222194,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.04937608921968695,
+              -0.9253731881408468,
+              -0.02838134218326451
+            ],
+            "minimum": [
+              -0.1610808101763902,
+              -2.257323861247312,
+              -0.3167408222442031
+            ],
+            "maximum": [
+              0.16002841421803457,
+              0.05249723811255029,
+              0.06972177860330846
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            -0.02730688308344862,
+            0.11784636184792305,
+            2.9676798526429824
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.6,
+          "peak_s": 3.58,
+          "peak_m": 0.19511055998266,
+          "residual_XYZ_at_peak_m": [
+            0.17800664829187385,
+            -0.01937518695263174,
+            0.07750074781052674
+          ],
+          "peak_axis_squared_fraction": [
+            0.8323594125256891,
+            0.009861211027900694,
+            0.15777937644641019
+          ],
+          "velocity_at_peak_mps": [
+            0.07137250940798803,
+            2.065870897722582,
+            0.36813235480884393
+          ],
+          "position_at_peak_m": [
+            2.178006648291874,
+            1.1459762220661625,
+            3.3688386000652253
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.7,
+          "peak_s": 4.7,
+          "peak_m": 0.15689234015531367,
+          "residual_XYZ_at_peak_m": [
+            0.12735994378291382,
+            -0.08000386375969426,
+            0.04465459553667417
+          ],
+          "peak_axis_squared_fraction": [
+            0.6589648291868612,
+            0.2600269976461773,
+            0.08100817316696167
+          ],
+          "velocity_at_peak_mps": [
+            -0.05831520029646458,
+            0.2553507717341789,
+            0.035524562136509064
+          ],
+          "position_at_peak_m": [
+            2.127359943782914,
+            1.9199961362403057,
+            3.544654595536674
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.44,
+          "peak_s": 6.62,
+          "peak_m": 0.14576474964209002,
+          "residual_XYZ_at_peak_m": [
+            0.09771238200265218,
+            0.102048010848371,
+            0.03585883605863005
+          ],
+          "peak_axis_squared_fraction": [
+            0.4493597600297493,
+            0.49012185142568954,
+            0.060518388544561194
+          ],
+          "velocity_at_peak_mps": [
+            0.05319651488105821,
+            -0.03905958658609137,
+            0.05019559027701725
+          ],
+          "position_at_peak_m": [
+            0.09771238200265218,
+            2.102048010848371,
+            3.03585883605863
+          ]
+        }
+      ],
+      "force_onsets": [],
+      "first_measured_state": {
+        "time_s": 0.02,
+        "position_m": [
+          0.19884553254679477,
+          -0.09596344930333268,
+          2.848820927534658
+        ],
+        "velocity_mps": [
+          -0.016808397307503893,
+          0.003856107592484446,
+          -0.00016701121852653758
+        ],
+        "yaw_ENU_rad": -2.009067191499595
+      },
+      "declared_native_initial_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "rpy": [
+          -0.028324639741602944,
+          0.028955435731572804,
+          -2.009067160357219
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ]
+      },
+      "initial_preaction_measured_state": {
+        "time_s": 0.0,
+        "position_m": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity_mps": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "yaw_ENU_rad": -2.009067160357219
+      },
+      "native_IO_array_names": [
+        "basis_kind",
+        "time",
+        "dt",
+        "position",
+        "velocity",
+        "rotation",
+        "body_rates",
+        "target",
+        "previous_action",
+        "observation",
+        "action",
+        "yaw_reference",
+        "path_feature",
+        "path_valid_leg",
+        "path_target_changes",
+        "path_feature_enabled",
+        "basis_feature",
+        "basis_gate",
+        "raw_observation",
+        "effective_observation",
+        "raw_integral_world",
+        "conditioned_integral_world",
+        "memory_target_changed",
+        "memory_raw_encoder_calls"
+      ],
+      "integral_input_array_observation_range": {
+        "mean": [
+          -0.03395919203637334,
+          -0.03971120068230084,
+          0.02005379635130521
+        ],
+        "minimum": [
+          -0.43525129556655884,
+          -0.22229230403900146,
+          0.0
+        ],
+        "maximum": [
+          0.045738328248262405,
+          0.23575203120708466,
+          0.07994276285171509
+        ]
+      },
+      "unlagged_command_minus_measured_rate_RMS_FLU_rad_s": [
+        0.44932062340749596,
+        0.3818393711569731,
+        0.06307569875749196
+      ]
+    },
+    {
+      "name": "Native_zero_force_strong",
+      "backend": "native",
+      "mode": "zero",
+      "condition": "force_strong",
+      "seed": 84001,
+      "run": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001",
+      "samples": 2000,
+      "complete_s": 8.42,
+      "transit_duration_s": 7.56,
+      "finite_RMSE_m": 0.09936482048122337,
+      "axis_RMSE_m": [
+        0.06823387830033295,
+        0.04916968322554495,
+        0.05291358665655413
+      ],
+      "axis_SSE_m2s": [
+        0.035198317838159146,
+        0.018277492578663297,
+        0.021166848255626616
+      ],
+      "axis_SSE_fraction": [
+        0.47155766506949204,
+        0.2448665803675292,
+        0.28357575456297884
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.86,
+          "end_s": 2.6,
+          "transit_seconds": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0068201465368945184,
+            0.0013557028325990234
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.06260690414396085,
+            0.027913071471354706
+          ],
+          "finite_RMSE_m": 0.06854753099460299,
+          "signed_normal_error_mean_m": -0.057238265755385494,
+          "velocity_XYZ_mps": {
+            "mean": [
+              1.0076011983159945,
+              -0.006575160378302021,
+              0.0014653252793380112
+            ],
+            "minimum": [
+              -0.26114084606312254,
+              -0.11096889740698886,
+              -0.18684623577588477
+            ],
+            "maximum": [
+              2.51984136618196,
+              0.13219960527652283,
+              0.1670216293391296
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.8519072250099875,
+            -0.09388119215550332,
+            2.9633678704684825
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6,
+          "end_s": 4.74,
+          "transit_seconds": 2.14,
+          "SSE_XYZ_m2s": [
+            0.026605424988764913,
+            0.0026533200007991605,
+            0.009731404846806615
+          ],
+          "RMSE_XYZ_m": [
+            0.11150085911568128,
+            0.03521177586052632,
+            0.06743430464113201
+          ],
+          "finite_RMSE_m": 0.13498035481217238,
+          "signed_normal_error_mean_m": -0.04034665046816533,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.10256811265690625,
+              0.9136023226796092,
+              0.2590097085179284
+            ],
+            "minimum": [
+              -0.21730445391845785,
+              0.014291090199491048,
+              0.012000153234397128
+            ],
+            "maximum": [
+              0.5325878427040097,
+              2.3226993268416924,
+              0.572742753726243
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            2.0702304794545463,
+            1.8594722810981872,
+            3.5172818438627407
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.74,
+          "end_s": 6.34,
+          "transit_seconds": 1.5999999999999996,
+          "SSE_XYZ_m2s": [
+            0.0025206936718465884,
+            0.008804026040969621,
+            0.008102887933049094
+          ],
+          "RMSE_XYZ_m": [
+            0.03969173144250724,
+            0.07417894765771495,
+            0.07116393017642916
+          ],
+          "finite_RMSE_m": 0.11019189978698897,
+          "signed_normal_error_mean_m": 0.07134875912571818,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -1.3289739539269942,
+              0.042880621563059655,
+              -0.309428133133028
+            ],
+            "minimum": [
+              -2.7993334085295527,
+              -0.05733826997665388,
+              -0.6396485059041958
+            ],
+            "maximum": [
+              0.26821988871524993,
+              0.21226137104411136,
+              -0.01179122546378068
+            ]
+          },
+          "forced_seconds": 1.46,
+          "force_start_active_fraction": 0.9125000000000002,
+          "position_at_end": [
+            -0.05946418020379614,
+            1.9297585772348487,
+            3.022914860357209
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 6.34,
+          "end_s": 8.42,
+          "transit_seconds": 2.08,
+          "SSE_XYZ_m2s": [
+            0.006072199177547639,
+            0.0,
+            0.0019768526431718832
+          ],
+          "RMSE_XYZ_m": [
+            0.05403079240273211,
+            0.0,
+            0.030828719152794313
+          ],
+          "finite_RMSE_m": 0.06220720579055935,
+          "signed_normal_error_mean_m": -0.02552590288438063,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -0.009691945344542928,
+              -0.8834412705231216,
+              -0.013474697262553117
+            ],
+            "minimum": [
+              -0.24872946337697735,
+              -2.083332641170541,
+              -0.2597421109013
+            ],
+            "maximum": [
+              0.3535929364170415,
+              0.04098668273856451,
+              0.10031381464245737
+            ]
+          },
+          "forced_seconds": 2.08,
+          "force_start_active_fraction": 1.0,
+          "position_at_end": [
+            -0.07736962222947315,
+            0.09409357750901237,
+            2.99410926146994
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.6,
+          "peak_s": 2.7,
+          "peak_m": 0.19013847656387373,
+          "residual_XYZ_at_peak_m": [
+            -0.16464738934510414,
+            -0.09171607587806675,
+            -0.025140383398054134
+          ],
+          "peak_axis_squared_fraction": [
+            0.749841854306572,
+            0.23267563618152698,
+            0.01748250951190122
+          ],
+          "velocity_at_peak_mps": [
+            -0.07759208939259439,
+            0.037960666120226555,
+            0.2672080430726005
+          ],
+          "position_at_peak_m": [
+            1.8353526106548959,
+            -0.09171607587806675,
+            2.974859616601946
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.74,
+          "peak_s": 4.74,
+          "peak_m": 0.15804753130453672,
+          "residual_XYZ_at_peak_m": [
+            0.0702304794545463,
+            -0.14052771890181281,
+            0.017281843862740676
+          ],
+          "peak_axis_squared_fraction": [
+            0.19745849995683093,
+            0.7905849820703985,
+            0.011956517972770555
+          ],
+          "velocity_at_peak_mps": [
+            -0.10066317861324829,
+            0.21152111128055534,
+            0.02000637365345277
+          ],
+          "position_at_peak_m": [
+            2.0702304794545463,
+            1.8594722810981872,
+            3.5172818438627407
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.34,
+          "peak_s": 6.82,
+          "peak_m": 0.07381811036164086,
+          "residual_XYZ_at_peak_m": [
+            0.06133091557964149,
+            0.0,
+            0.04108080100882017
+          ],
+          "peak_axis_squared_fraction": [
+            0.6902923315655893,
+            0.0,
+            0.3097076684344108
+          ],
+          "velocity_at_peak_mps": [
+            -0.004408097467914453,
+            -1.1166701589264398,
+            0.013846993724730023
+          ],
+          "position_at_peak_m": [
+            0.06133091557964149,
+            1.7843977582637132,
+            3.04108080100882
+          ]
+        }
+      ],
+      "force_onsets": [
+        {
+          "recorded_step_end_s": 4.9,
+          "PRE_leg": 3,
+          "leg_elapsed_s": 0.16000000000000014,
+          "force_ENU_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "yaw_ENU_rad": -1.9892310454605602,
+          "force_heading_FLU_N": [
+            1.3050537280635344,
+            -2.7096296739013592,
+            0.0
+          ],
+          "position_m": [
+            2.0518855134927305,
+            1.8927900594502667,
+            3.4858175315004165
+          ],
+          "velocity_mps": [
+            -0.1844603063609794,
+            0.1946862998601622,
+            -0.386752679518275
+          ]
+        }
+      ],
+      "first_measured_state": {
+        "time_s": 0.02,
+        "position_m": [
+          0.19884553254679477,
+          -0.09596344930333268,
+          2.848820927534658
+        ],
+        "velocity_mps": [
+          -0.016808397307503893,
+          0.003856107592484446,
+          -0.00016701121852653758
+        ],
+        "yaw_ENU_rad": -2.009067191499595
+      },
+      "declared_native_initial_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "rpy": [
+          -0.028324639741602944,
+          0.028955435731572804,
+          -2.009067160357219
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ]
+      },
+      "initial_preaction_measured_state": {
+        "time_s": 0.0,
+        "position_m": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity_mps": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "yaw_ENU_rad": -2.009067160357219
+      },
+      "native_IO_array_names": [
+        "basis_kind",
+        "time",
+        "dt",
+        "position",
+        "velocity",
+        "rotation",
+        "body_rates",
+        "target",
+        "previous_action",
+        "observation",
+        "action",
+        "yaw_reference",
+        "path_feature",
+        "path_valid_leg",
+        "path_target_changes",
+        "path_feature_enabled",
+        "basis_feature",
+        "basis_gate",
+        "raw_observation",
+        "effective_observation",
+        "raw_integral_world",
+        "conditioned_integral_world",
+        "memory_target_changed",
+        "memory_raw_encoder_calls"
+      ],
+      "integral_input_array_observation_range": {
+        "mean": [
+          -2.1221777200935322e-05,
+          -0.00031961608934216203,
+          0.00018522089009638876
+        ],
+        "minimum": [
+          -0.002909671748057008,
+          -0.027709774672985077,
+          0.0
+        ],
+        "maximum": [
+          0.0,
+          0.0,
+          0.014381504617631435
+        ]
+      },
+      "unlagged_command_minus_measured_rate_RMS_FLU_rad_s": [
+        0.44612974636955194,
+        0.3890775842735154,
+        0.05741710886018386
+      ]
+    },
+    {
+      "name": "Native_raw_force_strong",
+      "backend": "native",
+      "mode": "raw",
+      "condition": "force_strong",
+      "seed": 84001,
+      "run": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001",
+      "samples": 2000,
+      "complete_s": 8.52,
+      "transit_duration_s": 7.659999999999999,
+      "finite_RMSE_m": 0.10973808214467193,
+      "axis_RMSE_m": [
+        0.08382879530110997,
+        0.04065514007509916,
+        0.057985682169216846
+      ],
+      "axis_SSE_m2s": [
+        0.05382886461972713,
+        0.012660757575268654,
+        0.02575551931858145
+      ],
+      "axis_SSE_fraction": [
+        0.583541460682829,
+        0.1372512130994472,
+        0.27920732621772376
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.86,
+          "end_s": 2.6,
+          "transit_seconds": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.00670220991486487,
+            0.0011883836955584824
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.062063232099673724,
+            0.02613386950641711
+          ],
+          "finite_RMSE_m": 0.0673411012238173,
+          "signed_normal_error_mean_m": -0.05671196987236555,
+          "velocity_XYZ_mps": {
+            "mean": [
+              1.0383437753108977,
+              -0.0062744298682721016,
+              0.007439011071105314
+            ],
+            "minimum": [
+              -0.22690560774313812,
+              -0.11360612912213354,
+              -0.18734848271037013
+            ],
+            "maximum": [
+              2.547447510357043,
+              0.13263919799162294,
+              0.16848518577273836
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            1.9047560728855262,
+            -0.09330014593170184,
+            2.9735204871863274
+          ]
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6,
+          "end_s": 4.7,
+          "transit_seconds": 2.1,
+          "SSE_XYZ_m2s": [
+            0.03658937510797501,
+            0.0029755134292825287,
+            0.01481007452059544
+          ],
+          "RMSE_XYZ_m": [
+            0.13199815133621598,
+            0.03764188035687383,
+            0.08397866656704416
+          ],
+          "finite_RMSE_m": 0.16091252142502324,
+          "signed_normal_error_mean_m": -0.09022184893944313,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.10642872918754627,
+              0.9597579364297959,
+              0.2720922446930303
+            ],
+            "minimum": [
+              -0.14528960167783758,
+              0.00748384343565245,
+              0.035524562136509064
+            ],
+            "maximum": [
+              0.5079682245652282,
+              2.3136574755751274,
+              0.597177354008861
+            ]
+          },
+          "forced_seconds": 0.0,
+          "force_start_active_fraction": 0.0,
+          "position_at_end": [
+            2.127359943782914,
+            1.9199961362403057,
+            3.544654595536674
+          ]
+        },
+        {
+          "leg": 3,
+          "start_s": 4.7,
+          "end_s": 6.32,
+          "transit_seconds": 1.62,
+          "SSE_XYZ_m2s": [
+            0.008339496691760564,
+            0.002539997980789558,
+            0.0073915617768923894
+          ],
+          "RMSE_XYZ_m": [
+            0.07174843178808671,
+            0.03959671688589475,
+            0.0675477050303846
+          ],
+          "finite_RMSE_m": 0.1061999524814549,
+          "signed_normal_error_mean_m": -0.020601073393318983,
+          "velocity_XYZ_mps": {
+            "mean": [
+              -1.3787120789210021,
+              0.07176681116037426,
+              -0.3131226927787022
+            ],
+            "minimum": [
+              -2.9274219128682937,
+              -0.04957513663380879,
+              -0.6611000583151109
+            ],
+            "maximum": [
+              0.30384148889327856,
+              0.2552036162841204,
+              0.00318160152748251
+            ]
+          },
+          "forced_seconds": 1.4400000000000004,
+          "force_start_active_fraction": 0.8888888888888891,
+          "position_at_end": [
+            -0.10944029889532811,
+            2.038341565812242,
+            3.0382822348285563
+          ]
+        },
+        {
+          "leg": 4,
+          "start_s": 6.32,
+          "end_s": 8.52,
+          "transit_seconds": 2.1999999999999993,
+          "SSE_XYZ_m2s": [
+            0.00889999281999157,
+            0.00044303625033170844,
+            0.0023654993255351124
+          ],
+          "RMSE_XYZ_m": [
+            0.06360386216114829,
+            0.014190846126540174,
+            0.03279065364021163
+          ],
+          "finite_RMSE_m": 0.07295243903910147,
+          "signed_normal_error_mean_m": -0.04962861414177313,
+          "velocity_XYZ_mps": {
+            "mean": [
+              0.010142699242929345,
+              -0.8841481046536092,
+              -0.017560660690126614
+            ],
+            "minimum": [
+              -0.2367678203588204,
+              -2.1174443369001077,
+              -0.2777484685543479
+            ],
+            "maximum": [
+              0.4010692915333755,
+              0.0363843290282588,
+              0.09971917399947203
+            ]
+          },
+          "forced_seconds": 2.1999999999999993,
+          "force_start_active_fraction": 1.0,
+          "position_at_end": [
+            -0.08468731813681518,
+            0.0950749952472615,
+            2.998904635905214
+          ]
+        }
+      ],
+      "corners": [
+        {
+          "corner": 1,
+          "transition_s": 2.6,
+          "peak_s": 3.58,
+          "peak_m": 0.19511055998266,
+          "residual_XYZ_at_peak_m": [
+            0.17800664829187385,
+            -0.01937518695263174,
+            0.07750074781052674
+          ],
+          "peak_axis_squared_fraction": [
+            0.8323594125256891,
+            0.009861211027900694,
+            0.15777937644641019
+          ],
+          "velocity_at_peak_mps": [
+            0.07137250940798803,
+            2.065870897722582,
+            0.36813235480884393
+          ],
+          "position_at_peak_m": [
+            2.178006648291874,
+            1.1459762220661625,
+            3.3688386000652253
+          ]
+        },
+        {
+          "corner": 2,
+          "transition_s": 4.7,
+          "peak_s": 4.7,
+          "peak_m": 0.15689234015531367,
+          "residual_XYZ_at_peak_m": [
+            0.12735994378291382,
+            -0.08000386375969426,
+            0.04465459553667417
+          ],
+          "peak_axis_squared_fraction": [
+            0.6589648291868612,
+            0.2600269976461773,
+            0.08100817316696167
+          ],
+          "velocity_at_peak_mps": [
+            -0.05831520029646458,
+            0.2553507717341789,
+            0.035524562136509064
+          ],
+          "position_at_peak_m": [
+            2.127359943782914,
+            1.9199961362403057,
+            3.544654595536674
+          ]
+        },
+        {
+          "corner": 3,
+          "transition_s": 6.32,
+          "peak_s": 6.32,
+          "peak_m": 0.12211791103151888,
+          "residual_XYZ_at_peak_m": [
+            -0.10944029889532811,
+            0.03834156581224191,
+            0.038282234828556305
+          ],
+          "peak_axis_squared_fraction": [
+            0.8031484172186886,
+            0.09857821649808014,
+            0.09827336628323137
+          ],
+          "velocity_at_peak_mps": [
+            0.30384148889327856,
+            0.015792545475001356,
+            -0.0679949663708986
+          ],
+          "position_at_peak_m": [
+            -0.10944029889532811,
+            2.038341565812242,
+            3.0382822348285563
+          ]
+        }
+      ],
+      "force_onsets": [
+        {
+          "recorded_step_end_s": 4.9,
+          "PRE_leg": 3,
+          "leg_elapsed_s": 0.20000000000000018,
+          "force_ENU_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "yaw_ENU_rad": -1.9732542231845789,
+          "force_heading_FLU_N": [
+            1.2615977383391879,
+            -2.7301335772149984,
+            0.0
+          ],
+          "position_m": [
+            2.1083733707706376,
+            1.969217232849385,
+            3.5000351925098396
+          ],
+          "velocity_mps": [
+            -0.22158327258583707,
+            0.2221409506879228,
+            -0.43270938075672954
+          ]
+        }
+      ],
+      "first_measured_state": {
+        "time_s": 0.02,
+        "position_m": [
+          0.19884553254679477,
+          -0.09596344930333268,
+          2.848820927534658
+        ],
+        "velocity_mps": [
+          -0.016808397307503893,
+          0.003856107592484446,
+          -0.00016701121852653758
+        ],
+        "yaw_ENU_rad": -2.009067191499595
+      },
+      "declared_native_initial_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "rpy": [
+          -0.028324639741602944,
+          0.028955435731572804,
+          -2.009067160357219
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ]
+      },
+      "initial_preaction_measured_state": {
+        "time_s": 0.0,
+        "position_m": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity_mps": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "yaw_ENU_rad": -2.009067160357219
+      },
+      "native_IO_array_names": [
+        "basis_kind",
+        "time",
+        "dt",
+        "position",
+        "velocity",
+        "rotation",
+        "body_rates",
+        "target",
+        "previous_action",
+        "observation",
+        "action",
+        "yaw_reference",
+        "path_feature",
+        "path_valid_leg",
+        "path_target_changes",
+        "path_feature_enabled",
+        "basis_feature",
+        "basis_gate",
+        "raw_observation",
+        "effective_observation",
+        "raw_integral_world",
+        "conditioned_integral_world",
+        "memory_target_changed",
+        "memory_raw_encoder_calls"
+      ],
+      "integral_input_array_observation_range": {
+        "mean": [
+          -0.057290576555825735,
+          -0.0036133785038384757,
+          0.0072099085709319295
+        ],
+        "minimum": [
+          -0.43525129556655884,
+          -0.17621825635433197,
+          -0.003997268620878458
+        ],
+        "maximum": [
+          0.003945736214518547,
+          0.23575203120708466,
+          0.07994276285171509
+        ]
+      },
+      "unlagged_command_minus_measured_rate_RMS_FLU_rad_s": [
+        0.4403031041973897,
+        0.3828727561577831,
+        0.05855532232846093
+      ]
+    }
+  ],
+  "zero_raw_differences": [
+    {
+      "backend": "Gazebo",
+      "condition": "nominal",
+      "zero_minus_raw_axis_SSE_m2s": [
+        -0.04975321403285109,
+        -0.008087862070608064,
+        -0.00226715209016512
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "axis_SSE_change_m2s": [
+            0.0,
+            3.469727889415282e-05,
+            0.00012199976730357248
+          ]
+        },
+        {
+          "leg": 2,
+          "axis_SSE_change_m2s": [
+            -0.034392371080888585,
+            -9.580456095585415e-05,
+            -0.0014908730554023027
+          ]
+        },
+        {
+          "leg": 3,
+          "axis_SSE_change_m2s": [
+            -0.00719063149949445,
+            -0.003392258220563695,
+            -0.0006402792941621223
+          ]
+        },
+        {
+          "leg": 4,
+          "axis_SSE_change_m2s": [
+            -0.00817021145246809,
+            -0.004634496567982673,
+            -0.000257999507904263
+          ]
+        }
+      ],
+      "finite_RMSE_change_ratio": -0.24190566253685786
+    },
+    {
+      "backend": "Gazebo",
+      "condition": "force_strong",
+      "zero_minus_raw_axis_SSE_m2s": [
+        0.053553928064718204,
+        -0.023117645789459948,
+        0.004079037552591404
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "axis_SSE_change_m2s": [
+            0.0,
+            3.717565595802314e-05,
+            0.00014799971771253795
+          ]
+        },
+        {
+          "leg": 2,
+          "axis_SSE_change_m2s": [
+            -0.037915068164103935,
+            -7.826169355090685e-05,
+            -0.0012101871769230766
+          ]
+        },
+        {
+          "leg": 3,
+          "axis_SSE_change_m2s": [
+            0.043609724790776475,
+            -0.022271992963479082,
+            0.004469226293539685
+          ]
+        },
+        {
+          "leg": 4,
+          "axis_SSE_change_m2s": [
+            0.0478592714380458,
+            -0.0008045667883879986,
+            0.0006719987182623351
+          ]
+        }
+      ],
+      "finite_RMSE_change_ratio": 0.10172052522938047
+    },
+    {
+      "backend": "native",
+      "condition": "nominal",
+      "zero_minus_raw_axis_SSE_m2s": [
+        -0.0077985872456498295,
+        -0.004621737068682231,
+        -0.0017887494373756314
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "axis_SSE_change_m2s": [
+            0.0,
+            0.00011793662202964818,
+            0.000167319137040541
+          ]
+        },
+        {
+          "leg": 2,
+          "axis_SSE_change_m2s": [
+            -0.009983950119210099,
+            -0.0003221934284833683,
+            -0.005078669673788824
+          ]
+        },
+        {
+          "leg": 3,
+          "axis_SSE_change_m2s": [
+            -0.00288587852419407,
+            -0.0013459320172544706,
+            0.0030614171133992833
+          ]
+        },
+        {
+          "leg": 4,
+          "axis_SSE_change_m2s": [
+            0.005071241397754321,
+            -0.0030715482449740496,
+            6.118398597336223e-05
+          ]
+        }
+      ],
+      "finite_RMSE_change_ratio": -0.06979829205316457
+    },
+    {
+      "backend": "native",
+      "condition": "force_strong",
+      "zero_minus_raw_axis_SSE_m2s": [
+        -0.018630546781567982,
+        0.005616735003394643,
+        -0.004588671062954835
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "axis_SSE_change_m2s": [
+            0.0,
+            0.00011793662202964818,
+            0.000167319137040541
+          ]
+        },
+        {
+          "leg": 2,
+          "axis_SSE_change_m2s": [
+            -0.009983950119210099,
+            -0.0003221934284833683,
+            -0.005078669673788824
+          ]
+        },
+        {
+          "leg": 3,
+          "axis_SSE_change_m2s": [
+            -0.005818803019913976,
+            0.006264028060180064,
+            0.0007113261561567047
+          ]
+        },
+        {
+          "leg": 4,
+          "axis_SSE_change_m2s": [
+            -0.002827793642443931,
+            -0.00044303625033170844,
+            -0.00038864668236322916
+          ]
+        }
+      ],
+      "finite_RMSE_change_ratio": -0.09452745538028529
+    }
+  ],
+  "known_native_RP_model_asymmetry": {
+    "gain": [
+      0.9977682972630949,
+      1.0533848607167613
+    ],
+    "tau_s": [
+      0.024883299737190893,
+      0.032387224997557
+    ],
+    "delay_s": [
+      0.009999989061840561,
+      0.014780953696335723
+    ],
+    "tau_plus_delay_s": [
+      0.03488328879903145,
+      0.047168178693892726
+    ]
+  },
+  "limitations": [
+    "Existing world/actor identity receipts validated and SHA bound, not rerun; no fresh NN inference.",
+    "Native and Gazebo same seed does not match initial state/body heading or force-at-corner phase.",
+    "Unlagged command/rate RMS is descriptive, not an identified lag, causal fault or new dynamics fit.",
+    "Rate/translation model changes need a separately authorized prospective diagnostic; no new controller or conditional integral tuning here."
+  ]
+}

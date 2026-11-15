@@ -1,0 +1,1026 @@
+{
+  "schema": "joint-native-rate-physical-replay-v3.0",
+  "status": "PASS",
+  "scope": "DIAGNOSTIC prospective physical subsystem verification, not Gazebo or new policy acceptance",
+  "checks": {
+    "unchanged_judge_reward_termination_observation_AST": {
+      "status": "PASS",
+      "method": "Exact AST equality after steps increment, ignoring only new version metadata; observation method inherited by identity."
+    },
+    "native_acceleration_jerk_caps": {
+      "status": "PASS",
+      "peak_a": [
+        19.198621771937624,
+        19.198621771937624
+      ],
+      "peak_j": [
+        767.9448708775055,
+        767.9448708775055
+      ]
+    },
+    "constant_fractional_delay_causality": {
+      "status": "PASS",
+      "impulse": [
+        0.0,
+        0.0,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "original_yaw_physics_at_matching_dt": {
+      "status": "PASS",
+      "peak_rate_difference_rad_s": 1.1835578913114124e-16,
+      "delay_queue_steps": 18
+    },
+    "actor74_mass_inertia_and_forces": {
+      "status": "PASS",
+      "observation_shape": [
+        74
+      ],
+      "mass_kg": 1.75,
+      "inertia": [
+        0.01251888,
+        0.01742669,
+        0.02380042
+      ],
+      "rotor_limit_N": 8.580818749999999
+    },
+    "hover_full_original_horizon": {
+      "status": "PASS",
+      "steps": 1500,
+      "duration_s": 30.0,
+      "events": []
+    },
+    "route_full_original_horizon": {
+      "status": "PASS",
+      "steps": 2000,
+      "duration_s": 40.0,
+      "events": [
+        {
+          "type": "goal_reached",
+          "goal_index": 0,
+          "time_s": 0.5,
+          "dwell_started_s": 0.0,
+          "target": [
+            0.0,
+            0.0,
+            3.0
+          ]
+        }
+      ]
+    },
+    "archived_actor_loads_unchanged": {
+      "status": "PASS",
+      "input_size": 74,
+      "output_size": 4
+    },
+    "frozen_files_preserved": {
+      "status": "PASS",
+      "hashes": {
+        "quadrl/env.py": "d583db69a3c1afb317baefdf530f35a9781c8aa8dc37faeca764a3e503e8bc59",
+        "quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+        "quadrl/protocol.py": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473",
+        "quadrl/reward.py": "dcbb0c8bcb704dc83ae271c2a4e55ce0210ab808c6a3e44b236d6bf614794e25",
+        "quadrl/plant_config.json": "ce247239bb1dfc4dd9557487182febe02f725544902e2b05466e2837cbc2fd43"
+      }
+    }
+  },
+  "replays": [
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301",
+      "split": "fit",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0006597670144401491,
+          5.522892388398759e-05,
+          -0.0012387543683871627
+        ],
+        "rotation_enu_flu": [
+          [
+            -9.529343855308612e-05,
+            -0.9999999188969132,
+            -0.00039131231471332007
+          ],
+          [
+            0.9999999563137997,
+            -9.540291917433981e-05,
+            0.000279768979084917
+          ],
+          [
+            -0.0002798062887319217,
+            -0.0003912856374703544,
+            0.9999998843019886
+          ]
+        ],
+        "body_rates_flu": [
+          0.0037722126580774784,
+          -9.047113417182118e-05,
+          -0.002210291102528572
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 42.166000000000004,
+      "requested_end_boot_s": 42.686,
+      "full_scored_span_without_ground_contact": false,
+      "recorded_thrust_semantics": "legacy_preboost",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.008888321776542486,
+            0.008297950818732117,
+            1.782625044116369e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.09427789654284023,
+            0.09109308875393411,
+            0.004222114451452458
+          ],
+          "samples": 337,
+          "first_contact_boot_s": 42.166000000000004,
+          "first_termination_flag_elapsed_s": 3.46,
+          "rotor_clip_control_steps": 1,
+          "last_position": [
+            17.38075011783099,
+            9.382024619391181,
+            0.0403198228977341
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.0002765554600127988,
+            0.0003763737809776267,
+            1.7766797260197414e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.016629956705078903,
+            0.01940035517658444,
+            0.0042150678832253005
+          ],
+          "samples": 337,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 8.040000000000001,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            0.7373488124762367,
+            0.6851785106438644,
+            0.1277390867582601
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/commands.jsonl": "28e9a3ea3de9d67c2d942b751c89288b63ba3deeed94249a9c404b2afb5c02bd",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/mavlink.jsonl": "d8cc128f3a3c57abea937e22be3338c48d3e707472a8b3c69b8c9182f6272aa4",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/telemetry.csv": "157c0efdf8bc2044745ba9e12b32d14d21165bc53fbcbd51bb9f42b540d69b98",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/summary.json": "ac78fd9a3b5b9c6fb2bf66e97141fe08446442a6174a810c680864a742e24c8a",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/sitl/logs/00000001.BIN": "2b537de19455e193bcbdf3d122b7eef7c14b39dd45a2ceb575c3a37ce4a8102c",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/manifest.json": "601457851586b5aa6ae2d16e7922f0559190bba01635f84bf8eaa4d551c552f9",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_nominal_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301",
+      "split": "held_out",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          -1.489447367930552e-05,
+          -0.0002599528816062957,
+          -0.0010039705084636807
+        ],
+        "rotation_enu_flu": [
+          [
+            -0.00011057284282785507,
+            -0.9999999735896172,
+            -0.00020148054763886758
+          ],
+          [
+            0.9999999828091017,
+            -0.00011054284957437838,
+            -0.00014886931994509577
+          ],
+          [
+            0.00014884704377953023,
+            -0.00020149700507915216,
+            0.9999999686217567
+          ]
+        ],
+        "body_rates_flu": [
+          -0.004417403135448694,
+          0.001256383373402059,
+          -0.001911606639623642
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 42.599,
+      "requested_end_boot_s": 42.599,
+      "full_scored_span_without_ground_contact": true,
+      "recorded_thrust_semantics": "body_collective",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.008053273655570856,
+            0.007058968473229708,
+            3.3850084411038105e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.08974003373952372,
+            0.08401766762550426,
+            0.005818082537317437
+          ],
+          "samples": 354,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 3.3200000000000003,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            17.98741011693669,
+            9.552165987129468,
+            2.9069017982676306
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.0005399626938989326,
+            0.00035906090915209006,
+            3.283848669831637e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.023237097363890624,
+            0.01894890258437385,
+            0.00573048747475434
+          ],
+          "samples": 354,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": null,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            1.5615065774926984,
+            1.1274527337243256,
+            3.323258840737374
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/commands.jsonl": "416ef5008d82f5349a009ade72ccf5864e64a6747a44cc7ec58767020d6b5dc2",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/mavlink.jsonl": "b5af6ad63e0fb28ca8428422332a385c99453af8256984ebc8de3e83318779f7",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/telemetry.csv": "7a98bbc67cd9f5b2ea901d1e17c67ef443cc707a3b338f294915bad72037eed2",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/summary.json": "b1c9607aaeebce9f6afb6471e712c7c741b12e187a080d4bb041318fc57b49bf",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/sitl/logs/00000001.BIN": "74e04ad1eab02149347770294782bdb9f8e151205325313a63df634ecdc6d769",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/manifest.json": "14460618a054ec53ab37ef5a6fe53faf35fd68df0dfcdd9eacc74cc4b2bf5e8d",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_force_strong_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301",
+      "split": "held_out",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          1.2474562936404254e-05,
+          -7.229702168842778e-05,
+          -0.0009980667382478714
+        ],
+        "rotation_enu_flu": [
+          [
+            -0.00014617357891935428,
+            -0.9999999019005861,
+            0.0004181292908276147
+          ],
+          [
+            0.9999999785388889,
+            -0.00014611217568386405,
+            0.00014687904748332336
+          ],
+          [
+            -0.00014681793929417487,
+            0.0004181507516901343,
+            0.9999999017972163
+          ]
+        ],
+        "body_rates_flu": [
+          -0.0038286633789539337,
+          -0.00043953751446679235,
+          -0.0010055931052193046
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 42.579,
+      "requested_end_boot_s": 42.579,
+      "full_scored_span_without_ground_contact": true,
+      "recorded_thrust_semantics": "body_collective",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.007862742696888733,
+            0.007249625525272698,
+            3.713354940095049e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.08867210777289966,
+            0.08514473280992017,
+            0.006093730335430876
+          ],
+          "samples": 354,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 3.3200000000000003,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            17.957930476394775,
+            9.604927617112144,
+            2.9085696962935743
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.0003354445889067694,
+            0.00035712634492000834,
+            3.607659618751125e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.018315146434215845,
+            0.018897786773059123,
+            0.006006379623992413
+          ],
+          "samples": 354,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": null,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            1.5543967793978701,
+            1.1298215237361082,
+            3.3288168137372716
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/commands.jsonl": "053656ffc0b484de804d11a1b2666d7213e7b3ea3065128ecf2b925d871c7552",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/mavlink.jsonl": "4705b43ce9d9f023ad3a4ad3fff4899ce2e9ceb11d76c878d26aead8f351c7ac",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/telemetry.csv": "e154b5dac5b5efa1a6558b89390196988b4903d17ae51d123504d7b1d2240187",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/summary.json": "f0f48a8bd03116e686d850b76c7ff2275a7e09df9b91faf57e2ae9dba56f4206",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/sitl/logs/00000001.BIN": "bbc6c13fe34f291f93d8c5a4cac19c266819d64333d622e9e82c78c4eb328a0c",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/manifest.json": "e28512d340361018db0f9a683838f811fbfc4fbd087fab136e70d4e3bac0736c",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/body_collective_route_gust_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301",
+      "split": "held_out",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.00034880961175076663,
+          -0.0007604874554090202,
+          -0.001051488914526999
+        ],
+        "rotation_enu_flu": [
+          [
+            -9.823102237193716e-05,
+            -0.9999999940550717,
+            4.733416515597328e-05
+          ],
+          [
+            0.9999999903604887,
+            -9.822637684094096e-05,
+            9.813562847514478e-05
+          ],
+          [
+            -9.813097842819141e-05,
+            4.734380466281129e-05,
+            0.9999999940644377
+          ]
+        ],
+        "body_rates_flu": [
+          -0.0006248378776945174,
+          0.0002966136089526117,
+          -0.0014891434693709016
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 42.498999999999995,
+      "requested_end_boot_s": 42.599,
+      "full_scored_span_without_ground_contact": false,
+      "recorded_thrust_semantics": "legacy_preboost",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.008027886324923659,
+            0.008575825766227658,
+            3.345619173248042e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.08959847278231732,
+            0.09260575449845251,
+            0.005784132755433645
+          ],
+          "samples": 363,
+          "first_contact_boot_s": 42.498999999999995,
+          "first_termination_flag_elapsed_s": 3.48,
+          "rotor_clip_control_steps": 1,
+          "last_position": [
+            18.34423400078826,
+            9.747957065952932,
+            0.03482212568156921
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.00041030902375490855,
+            0.0003667081098177098,
+            3.274952986675399e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.020256086091713487,
+            0.01914962427353889,
+            0.005722720495249964
+          ],
+          "samples": 363,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": null,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            1.5024908512810624,
+            0.6203759280230092,
+            0.39375172892747506
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/commands.jsonl": "b7b255a8fbeb2480ffab36f3f3b04ccccb63f33ac29443768844662b0fdced00",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/mavlink.jsonl": "bdbd214eb9e4f3d4b2d2cbfb4bef6722963e4a0eae280377c764de6ad928eef4",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/telemetry.csv": "42de6287f61e1c1b932c0537b3832b4ad51486b5d67285cdbfca734fb1567b63",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/summary.json": "9e2ab6291d6410af9837fa4caab82613c43375d575ace1f4c164fb3410015cc6",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/sitl/logs/00000001.BIN": "7a472e63fee6445eeb4d3a18d85033d3b90ec72dfa3ad524ba40462118f3c7f8",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/manifest.json": "bd3cf381263aad56679df608f3ed43d9eecdaf8a207784157d13cea444d66727",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/legacy_preboost_route_gust_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301",
+      "split": "fit",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          4.679194898926653e-05,
+          0.00031850230880081654,
+          -0.0011113565415143967
+        ],
+        "rotation_enu_flu": [
+          [
+            -0.0001920779140242294,
+            -0.9999999815450785,
+            -3.989731901737097e-06
+          ],
+          [
+            0.9999999683291185,
+            -0.00019207856032446663,
+            0.00016262714771968765
+          ],
+          [
+            -0.00016262791106037616,
+            -3.958494692081062e-06,
+            0.9999999867682466
+          ]
+        ],
+        "body_rates_flu": [
+          0.0015070707304403186,
+          -0.0026771945413202047,
+          0.0024440186098217964
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 42.449,
+      "requested_end_boot_s": 42.449,
+      "full_scored_span_without_ground_contact": true,
+      "recorded_thrust_semantics": "body_collective",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.007990079161912014,
+            0.006929941542976436,
+            3.7135796097226765e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.08938724272463053,
+            0.08324627044484598,
+            0.006093914677547329
+          ],
+          "samples": 349,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 3.2800000000000002,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            18.212988066799014,
+            9.145568422144652,
+            2.8186102124472527
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.00032254037983445193,
+            0.000340164732756855,
+            3.63255085293949e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.01795940922843655,
+            0.018443555317694444,
+            0.006027064669421998
+          ],
+          "samples": 349,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": null,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            2.066009609240301,
+            0.9626405420440983,
+            3.220516724377359
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/commands.jsonl": "d32c133654b07eee144a1b8dadd7036f4925b1bdf29def3f2e9efe3c04ac9a32",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/mavlink.jsonl": "bdbf5a700f861e84adff1c6008d5790428bab489baee2a5106a6f6af38781e4b",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/telemetry.csv": "dc21bd11ebcca16736734ad2cd928907fbd65f62d4395d43b0b02716eaa18aa9",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/summary.json": "51a3414985e97168aec362ba86d2e8a5d22fe3c0e63baa3611dba21998b29588",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/sitl/logs/00000001.BIN": "51e6989df0fbb40ace427edbe70929d5e14c49e54d4f82654fd56ac352c85d89",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/manifest.json": "ba17b3c3d893867f89d03d3fe884ec3b9bfcfc33f6edae472ca3c61626b1389d",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/runs/body_collective_route_nominal_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+      }
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301",
+      "split": "held_out",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0004326574853621423,
+          -8.434439223492518e-05,
+          -0.0016523536760360003
+        ],
+        "rotation_enu_flu": [
+          [
+            -7.348027410522908e-05,
+            -0.9999998524841464,
+            -0.0005381750039781493
+          ],
+          [
+            0.999999995611695,
+            -7.344898773329768e-05,
+            -5.8153730917107306e-05
+          ],
+          [
+            5.811419392924449e-05,
+            -0.0005381792747685612,
+            0.9999998534928937
+          ]
+        ],
+        "body_rates_flu": [
+          0.003893380519002676,
+          0.0008630776428617537,
+          -0.0024006920866668224
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 41.796,
+      "requested_end_boot_s": 42.316,
+      "full_scored_span_without_ground_contact": false,
+      "recorded_thrust_semantics": "legacy_preboost",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.008862850415876311,
+            0.009063539638606243,
+            4.509904034209174e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.09414271302589655,
+            0.09520262411617782,
+            0.006715581906439064
+          ],
+          "samples": 331,
+          "first_contact_boot_s": 41.796,
+          "first_termination_flag_elapsed_s": 3.48,
+          "rotor_clip_control_steps": 2,
+          "last_position": [
+            23.943471498062685,
+            6.474090073579617,
+            0.04021703492057304
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            0.0006633927928396249,
+            0.00043032007707811764,
+            4.447073250326654e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.025756412654708436,
+            0.020744157661330035,
+            0.006668637979622716
+          ],
+          "samples": 331,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 7.5,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            7.824943935817282,
+            -1.8086286399869311,
+            0.12126925338884909
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/commands.jsonl": "375372eee0647b3b620972687f0cf1b99e633bce20f967af22b89a40e204c6c5",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/mavlink.jsonl": "2a4a612a66ebd3c8986b8fc84d9f8f7967270ea0b08825e42a31e2c612f68abf",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/telemetry.csv": "038093e76476a392af7408ef07c0c941a7df3177097630791ccb41f4714081a4",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/summary.json": "d3e418884c330178dfaa9bec9576edd243d794071c7ca309dbe4ca09a5e173ca",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/sitl/logs/00000001.BIN": "10b2405fce678a4d859906828e9a17a659bd3b5aefcb127786bd6b2114c68cea",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/manifest.json": "0fc0642c9a6fe48a6c8109f99c9534255df55582a0322e8c36c3393eeebbce52",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+        "artifacts/refinement/joint_v2/gazebo_thrust_ablation/runs/legacy_preboost_route_force_strong_env83301/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08"
+      }
+    },
+    {
+      "run": "artifacts/gazebo/system_id_multisine_1001",
+      "split": "fit",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.000534744409378618,
+          0.00020613915694411844,
+          -0.0011720433831214905
+        ],
+        "rotation_enu_flu": [
+          [
+            -7.291652471545677e-05,
+            -0.9999999935369225,
+            -8.723150342026299e-05
+          ],
+          [
+            0.9999999830312671,
+            -7.290176588498907e-05,
+            -0.00016918273511049896
+          ],
+          [
+            0.0001691763746864177,
+            -8.724383815714101e-05,
+            0.9999999818839332
+          ]
+        ],
+        "body_rates_flu": [
+          0.0016111094737425447,
+          0.0010878811590373516,
+          0.0005986717296764255
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 127.62700000000001,
+      "requested_end_boot_s": 127.62700000000001,
+      "full_scored_span_without_ground_contact": true,
+      "recorded_thrust_semantics": "legacy_system_id_small_signal",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            5.162979589169444e-05,
+            4.1835024482060735e-05,
+            4.587901444752778e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.007185387664677142,
+            0.006468000037265054,
+            0.00677340493751317
+          ],
+          "samples": 4699,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 49.96,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            12.84851063614224,
+            55.48000500061981,
+            2.3965093196313605
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            1.9131275096907548e-05,
+            8.12959607998775e-06,
+            4.937682966365066e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.00437393130912084,
+            0.0028512446545303246,
+            0.007026864853094206
+          ],
+          "samples": 4699,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 50.6,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            10.579018848962688,
+            58.37392776309929,
+            2.40473353136183
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/gazebo/system_id_multisine_1001/commands.jsonl": "43b8a3df1988f64d520eee7b5bebbbf37a232407451cc1656a736cac2f7e9216",
+        "artifacts/gazebo/system_id_multisine_1001/mavlink.jsonl": "691ed37cbd78da66d68d7a79f15e33f078670f5400c46f2943b0be64bc5921c3",
+        "artifacts/gazebo/system_id_multisine_1001/telemetry.csv": "c13c0225dc0f1cabf1c3e448108756eeab128d92b4ae0faec38cf7898387549f",
+        "artifacts/gazebo/system_id_multisine_1001/summary.json": "024ae0585b84ad6337e9954eb9262c3192acff877c437f7f536256fbda99acf4",
+        "artifacts/gazebo/system_id_multisine_1001/sitl/logs/00000001.BIN": "5a8f643bfc0bea61a8c520afcb248884a093eed2a1ccd9ebe244dcfe44b2a105",
+        "artifacts/gazebo/system_id_multisine_1001/manifest.json": "d197ea1ad74cfe3e2f6faeb140fd91d4665c9223e9925190e06f21a16d6ad4a6"
+      }
+    },
+    {
+      "run": "artifacts/gazebo/system_id_validation_1002",
+      "split": "held_out",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0021545912604779005,
+          -0.0002785594842862338,
+          -0.0009588070679455996
+        ],
+        "rotation_enu_flu": [
+          [
+            -9.03664896322961e-05,
+            -0.9999999952339734,
+            3.6958769564569134e-05
+          ],
+          [
+            0.9999999782762555,
+            -9.035954588506682e-05,
+            0.00018783673992797705
+          ],
+          [
+            -0.00018783339945510781,
+            3.6975742908497535e-05,
+            0.999999981675704
+          ]
+        ],
+        "body_rates_flu": [
+          -0.0017071703914552927,
+          -1.0874885447265115e-05,
+          -0.0011967632453888655
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 127.64699999999999,
+      "requested_end_boot_s": 127.64699999999999,
+      "full_scored_span_without_ground_contact": true,
+      "recorded_thrust_semantics": "legacy_system_id_small_signal",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            7.899733342013657e-05,
+            5.8759420839322325e-05,
+            6.0803545421893455e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.008888044409212668,
+            0.00766546938153968,
+            0.007797662817914958
+          ],
+          "samples": 4699,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 48.480000000000004,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            -0.5980554620504183,
+            21.07347089080765,
+            2.5242319685192043
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            3.0466408139006945e-05,
+            1.0358551927884445e-05,
+            6.455722656230231e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.005519638406545029,
+            0.0032184704329672573,
+            0.008034751182351717
+          ],
+          "samples": 4699,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 43.0,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            -10.123111960854242,
+            20.644758109298373,
+            2.530963152521676
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/gazebo/system_id_validation_1002/commands.jsonl": "7d31ec8cb171365e639c3ad28006fda0e36914c001931916662fdcf709e68316",
+        "artifacts/gazebo/system_id_validation_1002/mavlink.jsonl": "efe01e2e74aa2815139a0e34d1ac0512acc7384e4b09cd1a5252cac7c9a8ae59",
+        "artifacts/gazebo/system_id_validation_1002/telemetry.csv": "11e13569b7fea9b594228b1d1d255c12ef000a5283ebf9c572ac3eb6318b604f",
+        "artifacts/gazebo/system_id_validation_1002/summary.json": "54d8a3df21497778c55788ecd540f4de82b82b0b70bd91421cf80c6b7f78aaf1",
+        "artifacts/gazebo/system_id_validation_1002/sitl/logs/00000001.BIN": "24e98479d3d992015116c920ac82052e52fdd9c0ae55565cc4c3c825e4e08285",
+        "artifacts/gazebo/system_id_validation_1002/manifest.json": "5003354f5aad2ac590a562ad717e01302dd0b7c7d9d5a54624ebad5b12f9860e"
+      }
+    }
+  ],
+  "held_out_route_mean_MSE_RPY": {
+    "frozen_physical": [
+      0.00820168827331489,
+      0.007986989850834077,
+      3.738471647164019e-05
+    ],
+    "native_v3_physical": [
+      0.0004872772748500589,
+      0.00037830386024198146,
+      3.6533836313962036e-05
+    ]
+  },
+  "held_out_RP_mean_MSE_reduction_fraction": 0.9465316977424589,
+  "primary_matching_body_collective_interface": {
+    "held_out_wind_routes": 2,
+    "mean_MSE_RPY": {
+      "frozen_physical": [
+        0.007958008176229794,
+        0.007154296999251203,
+        3.5491816905994296e-05
+      ],
+      "native_v3_physical": [
+        0.000437703641402851,
+        0.0003580936270360492,
+        3.445754144291381e-05
+      ]
+    },
+    "RP_MSE_reduction_fraction": 0.9473411065222502,
+    "small_signal_validation1002_held_out": {
+      "run": "artifacts/gazebo/system_id_validation_1002",
+      "split": "held_out",
+      "initial_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0021545912604779005,
+          -0.0002785594842862338,
+          -0.0009588070679455996
+        ],
+        "rotation_enu_flu": [
+          [
+            -9.03664896322961e-05,
+            -0.9999999952339734,
+            3.6958769564569134e-05
+          ],
+          [
+            0.9999999782762555,
+            -9.035954588506682e-05,
+            0.00018783673992797705
+          ],
+          [
+            -0.00018783339945510781,
+            3.6975742908497535e-05,
+            0.999999981675704
+          ]
+        ],
+        "body_rates_flu": [
+          -0.0017071703914552927,
+          -1.0874885447265115e-05,
+          -0.0011967632453888655
+        ],
+        "initial_collective": "Both models start with nominal mass*g and equal rotor forces; unknown archived PWM state excluded by 1s warmup."
+      },
+      "warmup_excluded_s": 1.0,
+      "common_score_end_boot_s": 127.64699999999999,
+      "requested_end_boot_s": 127.64699999999999,
+      "full_scored_span_without_ground_contact": true,
+      "recorded_thrust_semantics": "legacy_system_id_small_signal",
+      "input_rule": "Exact recorded normalized actions held causally at 50Hz; no recorded target, attitude, gyro or pose is fed after initialization.",
+      "models": {
+        "frozen_physical": {
+          "MSE_RPY_rad_s_squared": [
+            7.899733342013657e-05,
+            5.8759420839322325e-05,
+            6.0803545421893455e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.008888044409212668,
+            0.00766546938153968,
+            0.007797662817914958
+          ],
+          "samples": 4699,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 48.480000000000004,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            -0.5980554620504183,
+            21.07347089080765,
+            2.5242319685192043
+          ]
+        },
+        "native_v3_physical": {
+          "MSE_RPY_rad_s_squared": [
+            3.0466408139006945e-05,
+            1.0358551927884445e-05,
+            6.455722656230231e-05
+          ],
+          "RMSE_RPY_rad_s": [
+            0.005519638406545029,
+            0.0032184704329672573,
+            0.008034751182351717
+          ],
+          "samples": 4699,
+          "first_contact_boot_s": null,
+          "first_termination_flag_elapsed_s": 43.0,
+          "rotor_clip_control_steps": 0,
+          "last_position": [
+            -10.123111960854242,
+            20.644758109298373,
+            2.530963152521676
+          ]
+        }
+      },
+      "source_hashes": {
+        "artifacts/gazebo/system_id_validation_1002/commands.jsonl": "7d31ec8cb171365e639c3ad28006fda0e36914c001931916662fdcf709e68316",
+        "artifacts/gazebo/system_id_validation_1002/mavlink.jsonl": "efe01e2e74aa2815139a0e34d1ac0512acc7384e4b09cd1a5252cac7c9a8ae59",
+        "artifacts/gazebo/system_id_validation_1002/telemetry.csv": "11e13569b7fea9b594228b1d1d255c12ef000a5283ebf9c572ac3eb6318b604f",
+        "artifacts/gazebo/system_id_validation_1002/summary.json": "54d8a3df21497778c55788ecd540f4de82b82b0b70bd91421cf80c6b7f78aaf1",
+        "artifacts/gazebo/system_id_validation_1002/sitl/logs/00000001.BIN": "24e98479d3d992015116c920ac82052e52fdd9c0ae55565cc4c3c825e4e08285",
+        "artifacts/gazebo/system_id_validation_1002/manifest.json": "5003354f5aad2ac590a562ad717e01302dd0b7c7d9d5a54624ebad5b12f9860e"
+      }
+    },
+    "all_full_spans_without_contact": true
+  },
+  "supplemental_legacy_interface": "Legacy-preboost normalized action0 commands target native preboost, whereas this namespace targets body collective. Their common contact-free prefixes are retained as supplemental rate diagnostics; old physical branch ground contacts invalidate a full-span legacy comparison. They do not determine the matching-interface PASS verdict.",
+  "limits": "Open-loop command replay can diverge spatially and trigger mission termination flags; no new position or policy performance inferred. Ground contact truncates both models at their common earliest contact. No fault/randomization validation claimed.",
+  "artifact_hashes": {
+    "audit/joint_native_rate_physics_replay_v3.py": "eae497a7ec5ad65b64016aad1fb55185244c9a3d0532a442e5e6e7ceccd223b8",
+    "quadrl_joint/native_rate_fit_v3.json": "d4ad6760006aba3eddae2c2ae5d7efe1798d84c47a5a82545533f48c3200f461",
+    "quadrl_joint/native_rate_model_v3.py": "68f62995c66372aaaac8670f36125ee6a5de00d340da3dea956e5f2d11a08e52",
+    "quadrl_joint/env_v3.py": "8f801f8d0e01d15a3e23cf5022b48da0d8cb4d146cb8c28b7784f247b70beb15",
+    "quadrl/env.py": "d583db69a3c1afb317baefdf530f35a9781c8aa8dc37faeca764a3e503e8bc59",
+    "quadrl/plant_config.json": "ce247239bb1dfc4dd9557487182febe02f725544902e2b05466e2837cbc2fd43",
+    "audit/joint_nonlinear_rate_diagnosis_v2.json": "3840e58a8961dc29292a5d1c6c6ac7c539bc7610843e0dfc5d4719b58447c478"
+  }
+}

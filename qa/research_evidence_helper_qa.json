@@ -1,0 +1,9 @@
+{
+  "status": "PASS_STDLIB_SYNTHETIC_HELPER_QA",
+  "tests": 10,
+  "helper_sha256": "8c7a5a3bedc002be2848c302d0ff18ac5f82079dcc92267a55e16b7a1efea1d0",
+  "real_research_data_copied": 0,
+  "real_research_archives_created": 0,
+  "new_environment_steps": 0,
+  "optimizer_steps": 0
+}

@@ -1,0 +1,144 @@
+{
+  "status": "LOCAL_STAGE_NOT_PUBLISHED_NOT_FLIGHT_TESTED",
+  "baseline_manifest_sha256": "0d8774d4ec1c6bdc541139470dd86466c715507ef87bab6131924ac1dca83cf5",
+  "source_files": [
+    {
+      "original_relative": "demo_three/runtime.py",
+      "path": "demo_three/runtime.py",
+      "original_sha256": "a85ee5e43f3f0eb6699a417140f990fc634ff289cea5241525467e7edef3bb06",
+      "export_sha256": "a85ee5e43f3f0eb6699a417140f990fc634ff289cea5241525467e7edef3bb06",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/assets.py",
+      "path": "demo_three/assets.py",
+      "original_sha256": "5ab6a295a59c186d6565fd30e6a47a9ebd1d9ac97e98c9d5f253890b631e8df6",
+      "export_sha256": "5ab6a295a59c186d6565fd30e6a47a9ebd1d9ac97e98c9d5f253890b631e8df6",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/adapters.py",
+      "path": "demo_three/adapters.py",
+      "original_sha256": "0720269ba3c65f456284137c99ac6557d69070a2c449da318350df88a1121cc7",
+      "export_sha256": "0720269ba3c65f456284137c99ac6557d69070a2c449da318350df88a1121cc7",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/telemetry.py",
+      "path": "demo_three/telemetry.py",
+      "original_sha256": "9aff0421cf5fcf64d0dc6ede469b6636140732cccabf89140f3ab5af5d8cf9df",
+      "export_sha256": "9aff0421cf5fcf64d0dc6ede469b6636140732cccabf89140f3ab5af5d8cf9df",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/sitl.py",
+      "path": "demo_three/sitl.py",
+      "original_sha256": "aead9ca037a561fc18810adf87813e612c37ec35b854a7eb5cad64ad93b7c040",
+      "export_sha256": "aead9ca037a561fc18810adf87813e612c37ec35b854a7eb5cad64ad93b7c040",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/scene.py",
+      "path": "demo_three/scene.py",
+      "original_sha256": "99e0a12d927030ed51ad3a0a3217e0f919667653f7cd1cb66404be85c3503a0d",
+      "export_sha256": "99e0a12d927030ed51ad3a0a3217e0f919667653f7cd1cb66404be85c3503a0d",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/present.py",
+      "path": "demo_three/present.py",
+      "original_sha256": "a5d8e5d0e7b0855d91f096bf493d79dacf82d32102fe793c2d226aef940b83de",
+      "export_sha256": "a5d8e5d0e7b0855d91f096bf493d79dacf82d32102fe793c2d226aef940b83de",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/capture.py",
+      "path": "demo_three/capture.py",
+      "original_sha256": "fef8c0325fcb9a52ec307d5a996b1eeb3bcde5f493351ca7d31f502ce4db212f",
+      "export_sha256": "fef8c0325fcb9a52ec307d5a996b1eeb3bcde5f493351ca7d31f502ce4db212f",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/audit.py",
+      "path": "demo_three/audit.py",
+      "original_sha256": "b814b0a6bfa9c3b71f5aabbd55d429f2f9acaffd873a6541afe26f1794396bf7",
+      "export_sha256": "b814b0a6bfa9c3b71f5aabbd55d429f2f9acaffd873a6541afe26f1794396bf7",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/gui.config",
+      "path": "demo_three/gui.config",
+      "original_sha256": "6fcbc4ca5151fe394badd5802fe37fb92c125ed69c2746a1210688543518049b",
+      "export_sha256": "6fcbc4ca5151fe394badd5802fe37fb92c125ed69c2746a1210688543518049b",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/force_plugin/GroupForceSystem.cc",
+      "path": "demo_three/force_plugin/GroupForceSystem.cc",
+      "original_sha256": "dc345e710ca91f2d838f4bd9155b905c5dca86096401df76c45ca39307526695",
+      "export_sha256": "dc345e710ca91f2d838f4bd9155b905c5dca86096401df76c45ca39307526695",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "demo_three/force_plugin/CMakeLists.txt",
+      "path": "demo_three/force_plugin/CMakeLists.txt",
+      "original_sha256": "a1cee5e39e35600642dc4c6ecdb68c4d29b737a80893957eeac34203bd123471",
+      "export_sha256": "a1cee5e39e35600642dc4c6ecdb68c4d29b737a80893957eeac34203bd123471",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "docs/three_drone_install_DRAFT.md",
+      "path": "docs/three_drone_install_DRAFT.md",
+      "original_sha256": "7dd93a011868e098ffc3ea07b96db59a31b50d5c91c5bd52c47d3c341b4ca246",
+      "export_sha256": "7dd93a011868e098ffc3ea07b96db59a31b50d5c91c5bd52c47d3c341b4ca246",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    },
+    {
+      "original_relative": "artifacts/gazebo_direct/calibration_nominal_1104/calibration.json",
+      "path": "v2/artifacts/gazebo_direct/calibration_nominal_1104/calibration.public.json",
+      "original_sha256": "2e20df83b9dadf5231c2f93e8070d89c03ffbdbe17c14e277935d7c87743a649",
+      "export_sha256": "2757f7baf65cbcdb220d3c305dc471ad24c3ea74dbaaa5a4888f98dd3c022a31",
+      "transformation": "ONLY_SOURCE_RUN_METADATA_PLUS_META;NUMERIC_FIELDS_EXACT"
+    },
+    {
+      "path": ".gitignore",
+      "original_relative": "publication/.gitignore",
+      "original_sha256": "6b8becc83255a6cf22d198f093e1c9d5fc3454b664a465c1dbef7d2840158f5b",
+      "export_sha256": "2acea50f35e2270da577a258b561ea1bfd8561d87a737b85be6a37d75e6abfcb",
+      "transformation": "APPEND_ONE_EXACT_PUBLIC_CALIBRATION_ALLOWLIST_ENTRY"
+    },
+    {
+      "original_relative": "demo_three/media.py",
+      "path": "demo_three/media.py",
+      "original_sha256": "86bc9bd06f9454b471ee8e0a9332e00e7792d1ebca290987cae533ed6bf445c0",
+      "export_sha256": "86bc9bd06f9454b471ee8e0a9332e00e7792d1ebca290987cae533ed6bf445c0",
+      "transformation": "EXACT_BYTES_NO_CODE_REWRITE"
+    }
+  ],
+  "required_public_files": [
+    "models/phase29_public_inference.json",
+    "v2/artifacts/gazebo/native_pid_tuning_v1/frozen_native_pid.public.json",
+    "v2/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz",
+    "v2/artifacts/refinement/joint_v2/phase_expert_preparation_v29_root01/bundle.json",
+    "v2/artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/final.npz",
+    "v2/artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/zero_route_integral/policy.npz",
+    "v2/artifacts/training/main_direct_seed111_v2/best_policy.npz",
+    "v2/audit/review_joint_prior_ablation_v28_pilot_01.json",
+    "v2/quadrl/policy.py",
+    "v2/quadrl/protocol.py",
+    "v2/quadrl_phase_expert_inference_v1/policy.py",
+    "v2/sim_direct/proxy.py",
+    "v2/sim_joint/thrust_adapter.py"
+  ],
+  "excluded": "build binaries/cache/runs/raw calibration/original private PID/original route ZIP",
+  "calibration_numeric_invariance": true,
+  "PID_parameters_exact": true,
+  "PID_public_sha256": "d126d067034a5948852fd3759fb56efef000b0483111f4e3b60aa64cbeb4cee5",
+  "public_inference_contract": "public-shared-phase-expert-inference-v1.0",
+  "original_route_ZIP_verified_locally": false,
+  "new_NN_forwards": 0,
+  "new_environment_steps": 0,
+  "optimizer_steps": 0,
+  "publication": false,
+  "late_new_source_before_handoff": "media.py added after initial12-source export, no old control/model payload rewritten"
+}

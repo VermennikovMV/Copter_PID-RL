@@ -1,0 +1,9 @@
+# User-invoked read-only monitor. Does not start training or a browser.
+$ErrorActionPreference = 'Stop'
+$recordingRoot = $PSScriptRoot
+$recordingDrive = $recordingRoot.Substring(0,1).ToLowerInvariant()
+$recordingLinuxRoot = '/mnt/' + $recordingDrive + $recordingRoot.Substring(2).Replace('\','/')
+Write-Host 'Read-only recording monitor: http://127.0.0.1:8770/'
+Write-Host 'Open the address manually. Ctrl+C stops only this monitor.'
+& wsl.exe -d Ubuntu-24.04 -u misha --cd $recordingLinuxRoot -- /opt/vkr/vkr_sim/venv-cu128/bin/python -B scripts/joint_training_viewer_v4.py @args
+exit $LASTEXITCODE

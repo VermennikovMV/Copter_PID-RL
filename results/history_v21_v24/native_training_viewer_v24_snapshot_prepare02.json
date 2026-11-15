@@ -1,0 +1,424 @@
+{
+  "status": "PASS_READ_ONLY_SNAPSHOT_NO_GUI",
+  "run_root": "[local-user]/Desktop/ВКР/Реализация/v2/artifacts/refinement/joint_v2/route_initial_pilot_v24_111",
+  "experiment_label": "V24 · новое PPO только C; A — архив V23 · original24 / matched5 / FULL admission отдельно",
+  "arms": [
+    {
+      "role": "C_NEW_FULL_INITIAL_TRAINING",
+      "display_name": "C · full initial bundle + ref0",
+      "name": "zero_route_integral",
+      "path": "[local-user]/Desktop/ВКР/Реализация/v2/artifacts/refinement/joint_v2/route_initial_pilot_v24_111/zero_route_integral",
+      "stage": "critic",
+      "phase_source_stage": "critic",
+      "state": "СВЕЖИЙ HEARTBEAT · ждём движения счётчиков",
+      "error_reason": "",
+      "error_source": "",
+      "pair_failed": false,
+      "heartbeat_utc": "2026-11-15T06:48:52.875646+00:00",
+      "heartbeat_age_s": 7.5527364,
+      "observed_counter_movement": false,
+      "critic_env": 122880,
+      "ppo_env": null,
+      "critic_updates": 933,
+      "ppo_updates": 0,
+      "counter_source": "actual_gradient_norms.jsonl: непрерывная последовательность реальных optimizer updates; последние опубликованные CSV/guard могут отставать от rollout во время checkpoint evaluation",
+      "guard_rows": 933,
+      "budget": {
+        "ppo_steps": 262144,
+        "critic_steps": 131072,
+        "eval_every": 131072,
+        "candidate_count": 3
+      },
+      "evaluations": [],
+      "baseline_reference": {
+        "checkpoint": "BASELINE0 · без PPO",
+        "timesteps": 0,
+        "source_kind": "ZERO_UPDATE_ARCHIVE_REFERENCE",
+        "nominal": 0.10451467405894763,
+        "strong": 0.10867545424108034,
+        "gust": 0.11013356229331359,
+        "tail84001": 0.09936482048122339,
+        "guards_pass": true,
+        "policy_sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+        "checkpoint_timing": null,
+        "original24_admission": null,
+        "matched5_pass": null,
+        "combined_admission": null,
+        "engineering_eligibility": null,
+        "original_hard_checks": null,
+        "matched_worst_finite": null,
+        "matched_worst_peak": null,
+        "matched_episodes": [],
+        "role": "",
+        "source_path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/evaluation.json",
+        "source_sha256": "f0f6930a58d690f1c474c4ff954575c0af84e9e9c7f7d5cb66a266b0b82cbb9e"
+      },
+      "heading_critic": null,
+      "heading_ppo": null,
+      "evaluated_policy_sha256": null,
+      "initial_sha256": "0df1b6cd2811f5196395e8b707a3eee0387c8b0050375479a912511df779bf40",
+      "reward_points": 0
+    },
+    {
+      "role": "A_REUSED_COMPLETED_V23",
+      "display_name": "A · V23 ARCHIVE / reuse",
+      "name": "zero_route_integral",
+      "path": "[local-user]/Desktop/ВКР/Реализация/v2/artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral",
+      "stage": "archive",
+      "phase_source_stage": "complete",
+      "state": "АРХИВ V23 · новых training / Adam updates: 0",
+      "error_reason": "",
+      "error_source": "",
+      "pair_failed": false,
+      "heartbeat_utc": "2026-11-15T06:07:35.592230+00:00",
+      "heartbeat_age_s": 2485.3142574999997,
+      "observed_counter_movement": false,
+      "critic_env": 131072,
+      "ppo_env": 262144,
+      "critic_updates": 1024,
+      "ppo_updates": 2048,
+      "counter_source": "actual_gradient_norms.jsonl: непрерывная последовательность реальных optimizer updates; последние опубликованные CSV/guard могут отставать от rollout во время checkpoint evaluation",
+      "guard_rows": 3072,
+      "budget": {
+        "ppo_steps": 262144,
+        "critic_steps": 131072,
+        "eval_every": 131072,
+        "candidate_count": 3
+      },
+      "evaluations": [
+        {
+          "checkpoint": "checkpoint_131072",
+          "timesteps": 131072,
+          "source_kind": "ACTUAL_PPO_CHECKPOINT",
+          "nominal": 0.10262355612159799,
+          "strong": 0.10840314542824535,
+          "gust": 0.11054548353559981,
+          "tail84001": 0.09971829743902606,
+          "guards_pass": true,
+          "policy_sha256": "d538eebdeeadcbfc7a51e998299b8dc4f4a6359d594360378fe04d9b185ebf71",
+          "checkpoint_timing": "Before current rollout update",
+          "original24_admission": false,
+          "matched5_pass": false,
+          "combined_admission": false,
+          "engineering_eligibility": null,
+          "original_hard_checks": {
+            "all_original_fixed_native_hard_pass": true,
+            "nominal_finite_le_0_97_own_zero_update": false,
+            "tail84001_finite_nonincrease": false,
+            "tail84001_corner_nonincrease": false,
+            "each_hover_le_1_10_own_zero_update": true,
+            "source77_nonregression": true
+          },
+          "matched_worst_finite": 0.15523370881031562,
+          "matched_worst_peak": 0.5114901744883116,
+          "matched_episodes": [
+            {
+              "scenario": "nominal",
+              "intervention": "yaw_only",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.09545753883402433,
+                "active_segment_peak_m": 0.1948407754477184
+              },
+              "profile_admission_pass": true
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "yaw_only",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.14375466163117562,
+                "active_segment_peak_m": 0.26183360664679206
+              },
+              "profile_admission_pass": true
+            },
+            {
+              "scenario": "nominal",
+              "intervention": "full_initial",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.09365233265627292,
+                "active_segment_peak_m": 0.1936973672478904
+              },
+              "profile_admission_pass": true
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "full_initial",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.15061764315026818,
+                "active_segment_peak_m": 0.4866577181181175
+              },
+              "profile_admission_pass": false
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "full_initial_physical_pulse",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.15523370881031562,
+                "active_segment_peak_m": 0.5114901744883116
+              },
+              "profile_admission_pass": false
+            }
+          ],
+          "role": "A REUSED"
+        },
+        {
+          "checkpoint": "checkpoint_262144",
+          "timesteps": 262144,
+          "source_kind": "ACTUAL_PPO_CHECKPOINT",
+          "nominal": 0.10269432692227384,
+          "strong": 0.10599232360952118,
+          "gust": 0.10742219018412483,
+          "tail84001": 0.09608137258186493,
+          "guards_pass": true,
+          "policy_sha256": "b9561acf3fbe9b0449b2dc04b65740651207403d9425fde0b53d082156ed9847",
+          "checkpoint_timing": "Before current rollout update",
+          "original24_admission": false,
+          "matched5_pass": false,
+          "combined_admission": false,
+          "engineering_eligibility": null,
+          "original_hard_checks": {
+            "all_original_fixed_native_hard_pass": true,
+            "nominal_finite_le_0_97_own_zero_update": false,
+            "tail84001_finite_nonincrease": true,
+            "tail84001_corner_nonincrease": false,
+            "each_hover_le_1_10_own_zero_update": true,
+            "source77_nonregression": true
+          },
+          "matched_worst_finite": 0.16456878192187116,
+          "matched_worst_peak": 0.5531680770400297,
+          "matched_episodes": [
+            {
+              "scenario": "nominal",
+              "intervention": "yaw_only",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.09219852311579495,
+                "active_segment_peak_m": 0.1942454572375886
+              },
+              "profile_admission_pass": true
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "yaw_only",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.15128182447603444,
+                "active_segment_peak_m": 0.31610516316474513
+              },
+              "profile_admission_pass": false
+            },
+            {
+              "scenario": "nominal",
+              "intervention": "full_initial",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.0908467273603234,
+                "active_segment_peak_m": 0.19008643879772924
+              },
+              "profile_admission_pass": true
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "full_initial",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.16254192427023517,
+                "active_segment_peak_m": 0.5390771886700982
+              },
+              "profile_admission_pass": false
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "full_initial_physical_pulse",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.16456878192187116,
+                "active_segment_peak_m": 0.5531680770400297
+              },
+              "profile_admission_pass": false
+            }
+          ],
+          "role": "A REUSED"
+        },
+        {
+          "checkpoint": "final",
+          "timesteps": 262144,
+          "source_kind": "ACTUAL_PPO_CHECKPOINT",
+          "nominal": 0.1017235246630672,
+          "strong": 0.10496232063184158,
+          "gust": 0.1063915196791605,
+          "tail84001": 0.09641874450153783,
+          "guards_pass": true,
+          "policy_sha256": "c9f861bb9fbd141f7a78fbb0aa72e16dfe20efa6304463010acd153812c45337",
+          "checkpoint_timing": "After final update",
+          "original24_admission": false,
+          "matched5_pass": false,
+          "combined_admission": false,
+          "engineering_eligibility": null,
+          "original_hard_checks": {
+            "all_original_fixed_native_hard_pass": true,
+            "nominal_finite_le_0_97_own_zero_update": false,
+            "tail84001_finite_nonincrease": true,
+            "tail84001_corner_nonincrease": false,
+            "each_hover_le_1_10_own_zero_update": true,
+            "source77_nonregression": true
+          },
+          "matched_worst_finite": 0.17786682283256006,
+          "matched_worst_peak": 0.5408865067185591,
+          "matched_episodes": [
+            {
+              "scenario": "nominal",
+              "intervention": "yaw_only",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.09195534458674089,
+                "active_segment_peak_m": 0.19943841528614303
+              },
+              "profile_admission_pass": true
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "yaw_only",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.14878189776363673,
+                "active_segment_peak_m": 0.28766571100917177
+              },
+              "profile_admission_pass": true
+            },
+            {
+              "scenario": "nominal",
+              "intervention": "full_initial",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.09094675586961361,
+                "active_segment_peak_m": 0.19507709081021332
+              },
+              "profile_admission_pass": true
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "full_initial",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.17786682283256006,
+                "active_segment_peak_m": 0.5200793197768139
+              },
+              "profile_admission_pass": false
+            },
+            {
+              "scenario": "force_strong",
+              "intervention": "full_initial_physical_pulse",
+              "eval_seed": 84001,
+              "geometry": {
+                "segment_rmse_m": 0.16149827372449332,
+                "active_segment_peak_m": 0.5408865067185591
+              },
+              "profile_admission_pass": false
+            }
+          ],
+          "role": "A REUSED"
+        }
+      ],
+      "baseline_reference": {
+        "checkpoint": "BASELINE0 · без PPO",
+        "timesteps": 0,
+        "source_kind": "ZERO_UPDATE_ARCHIVE_REFERENCE",
+        "nominal": 0.10451467405894763,
+        "strong": 0.10867545424108034,
+        "gust": 0.11013356229331359,
+        "tail84001": 0.09936482048122339,
+        "guards_pass": true,
+        "policy_sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+        "checkpoint_timing": null,
+        "original24_admission": null,
+        "matched5_pass": null,
+        "combined_admission": null,
+        "engineering_eligibility": null,
+        "original_hard_checks": null,
+        "matched_worst_finite": null,
+        "matched_worst_peak": null,
+        "matched_episodes": [],
+        "role": "",
+        "source_path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/evaluation.json",
+        "source_sha256": "f0f6930a58d690f1c474c4ff954575c0af84e9e9c7f7d5cb66a266b0b82cbb9e"
+      },
+      "heading_critic": null,
+      "heading_ppo": null,
+      "evaluated_policy_sha256": "c9f861bb9fbd141f7a78fbb0aa72e16dfe20efa6304463010acd153812c45337",
+      "initial_sha256": "0df1b6cd2811f5196395e8b707a3eee0387c8b0050375479a912511df779bf40",
+      "reward_points": 32
+    }
+  ],
+  "warnings": [],
+  "frozen_matched_profile_references": [
+    {
+      "key": "yaw_only/nominal/84001",
+      "intervention": "yaw_only",
+      "scenario": "nominal",
+      "seed": 84001,
+      "finite": 0.09878668448604172,
+      "peak": 0.20013047081274957,
+      "source": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/intervention_summary.json",
+      "source_sha256": "eba5e7f27d45fb3b9858694cdb26cdd3c743eb1c68d2e9b15be37a5f56165a5c",
+      "source_kind": "REUSED_V22_ZERO_UPDATE_REFERENCE_NOT_PPO"
+    },
+    {
+      "key": "yaw_only/force_strong/84001",
+      "intervention": "yaw_only",
+      "scenario": "force_strong",
+      "seed": 84001,
+      "finite": 0.16146465356582992,
+      "peak": 0.35278347075225336,
+      "source": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/intervention_summary.json",
+      "source_sha256": "555b0cccd146e415c4dc01c3b127fad0adadb68624eb23faf4b63863332d8468",
+      "source_kind": "REUSED_V22_ZERO_UPDATE_REFERENCE_NOT_PPO"
+    },
+    {
+      "key": "full_initial/nominal/84001",
+      "intervention": "full_initial",
+      "scenario": "nominal",
+      "seed": 84001,
+      "finite": 0.09693181726487468,
+      "peak": 0.19767157212238437,
+      "source": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/intervention_summary.json",
+      "source_sha256": "667bf1c624687433cf89c365b57641797c84e68183b69e16e57449dafcee203d",
+      "source_kind": "REUSED_V22_ZERO_UPDATE_REFERENCE_NOT_PPO"
+    },
+    {
+      "key": "full_initial/force_strong/84001",
+      "intervention": "full_initial",
+      "scenario": "force_strong",
+      "seed": 84001,
+      "finite": 0.16815179083505258,
+      "peak": 0.5532695780916502,
+      "source": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/intervention_summary.json",
+      "source_sha256": "d9c43c2c59986007803cd3e3fe035c735675027d4d88af5a5215f7aade4e4888",
+      "source_kind": "REUSED_V22_ZERO_UPDATE_REFERENCE_NOT_PPO"
+    },
+    {
+      "key": "full_initial_physical_pulse/force_strong/84001",
+      "intervention": "full_initial_physical_pulse",
+      "scenario": "force_strong",
+      "seed": 84001,
+      "finite": 0.17274419057223472,
+      "peak": 0.5742383309282991,
+      "source": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/intervention_summary.json",
+      "source_sha256": "737084251849f1044e8d4259d57d271f5b950e0d5694382ecdf4169c618ab665",
+      "source_kind": "REUSED_V22_ZERO_UPDATE_REFERENCE_NOT_PPO"
+    }
+  ],
+  "new_A_aux_episodes": 0,
+  "engineering_is_separate_resource_classification": true,
+  "full_admission_unchanged": true,
+  "process_started": false,
+  "network_calls": 0,
+  "new_env_steps": 0,
+  "new_optimizer_steps": 0,
+  "A_new_training_updates": 0,
+  "acceptance_is_native_not_Gazebo": true
+}

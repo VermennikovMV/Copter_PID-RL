@@ -1,0 +1,28 @@
+{
+  "status": "PASS_ROOT_VISUAL_REVIEW_EXACT_MEASURED_MEMORY20_TABLE",
+  "checked_utc": "2026-11-15T04:39:51.0202318Z",
+  "images_opened_and_visually_inspected": 3,
+  "PNG_dimensions": "2560x1440",
+  "source_whole_audit_sha256": "16d7e31e4cc22f5c4f55cb0ad37a1d3f46551cb6b91327b4e8164265988095ec",
+  "source_table_audit_sha256": "2bcea62f7853fd1970a718da6db0a206c55b6e1e60e29992ff8df192bece15ce",
+  "artifact_sha256": {
+    "reports/joint_memory20_gazebo_v7/presentation.png": "c03ab6328e7e57772ec1ae5542449817d68dfb241c3ab5cb8704ba38bfe96591",
+    "reports/joint_memory20_gazebo_v7/presentation.pdf": "6e622ab217a47f4151ec16bc61b7ccf69f97fdd822079b3b6af9d987c8d94d36",
+    "reports/joint_memory20_gazebo_v7/thesis_metrics.png": "2f5dd1a1b520e23f2798032e5a22aa15e3bb7f6615a2d482f0eaaa7e7468901a",
+    "reports/joint_memory20_gazebo_v7/thesis_metrics.pdf": "e749f21de4fcae7e05c174f0233d9565a70cce3e2e4e644ea3be13cb4648b658",
+    "reports/joint_memory20_gazebo_v7/conditioning_effect.png": "3c880fc58b7ea0a10c3f160430a072b46a6ac770fabb4d491204777923d9c8db",
+    "reports/joint_memory20_gazebo_v7/conditioning_effect.pdf": "72fbb8113f8918664bb3a7aca0bd31837bf74c264492cd4b2af48485a8a1ba06"
+  },
+  "primary_conditions_pass": 8,
+  "primary_conditions_total": 8,
+  "fixed_checks_pass": 88,
+  "fixed_checks_total": 90,
+  "original_six_wind_macro_percent": 17.49797,
+  "tail_finite_and_corner_FAIL_and_worse_source68_visible": true,
+  "new_PPO_updates_zero_explicit": true,
+  "new9_plus_shared11_explicit": true,
+  "five_thesis_metrics_plus_PRE_finite_geometry_separate": true,
+  "force_N_and_development_n1_visible": true,
+  "final_applicability_confirmed": false,
+  "new_NN_or_physics_or_optimizer_calls_by_this_review": 0
+}

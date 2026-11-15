@@ -1,0 +1,188 @@
+{
+  "status": "PASS_PORTABILITY_QA_NOT_NEW_RESEARCH_REPLICATION",
+  "new_baseline_episodes": 24,
+  "actual_control_steps": 42000,
+  "actual_physics_substeps": 336000,
+  "all24_trace_SHA_and_metrics_exact": true,
+  "actor_IO_arrays_exact": 360,
+  "initial_policy_tensors_exact": 13,
+  "initial_Adam_states_exact": 13,
+  "non_metadata_checkpoint_members_byte_exact": true,
+  "strict_rebound_guard_rejects_tamper": true,
+  "original_sources_modified": false,
+  "public_PPO_training_executed": false,
+  "optimizer_steps": 0,
+  "public_full_prepare_semantics_not_executed": true,
+  "Gazebo_or_server_started": false,
+  "cases": [
+    {
+      "scenario": "nominal",
+      "mission": "hover",
+      "seed": 84001,
+      "trace_sha256": "6ab42614d63784f46a64834f2462d6eabef02f0add0729daf45dbfb563f719bc",
+      "steps": 1500
+    },
+    {
+      "scenario": "nominal",
+      "mission": "hover",
+      "seed": 84002,
+      "trace_sha256": "5c1083bd9bf5e4ed83fb8bdae5278e4e483b4c7e203d9fd33360e991e81df71b",
+      "steps": 1500
+    },
+    {
+      "scenario": "nominal",
+      "mission": "hover",
+      "seed": 84003,
+      "trace_sha256": "2485dd8d53413661688433a5703dbf06fbc83d97cf95d85041a09cbe0ecb8061",
+      "steps": 1500
+    },
+    {
+      "scenario": "nominal",
+      "mission": "hover",
+      "seed": 84004,
+      "trace_sha256": "83c9d460c7ff839629f715a6b814f02ba4f04851dbcd3e1d78189e28628af835",
+      "steps": 1500
+    },
+    {
+      "scenario": "nominal",
+      "mission": "route",
+      "seed": 84001,
+      "trace_sha256": "886c7932f48e0862eb3015ea0791e397be139301872c44081f83d5734d17a13d",
+      "steps": 2000
+    },
+    {
+      "scenario": "nominal",
+      "mission": "route",
+      "seed": 84002,
+      "trace_sha256": "0bb0da43082b977d9f022f95a45f18ad2779e51212f5171daa3a60ec4f54dde6",
+      "steps": 2000
+    },
+    {
+      "scenario": "nominal",
+      "mission": "route",
+      "seed": 84003,
+      "trace_sha256": "df3468d3614a4b3c0818bacca101f6ef4c4e5b15c6efd14276d5cba3e35e8960",
+      "steps": 2000
+    },
+    {
+      "scenario": "nominal",
+      "mission": "route",
+      "seed": 84004,
+      "trace_sha256": "71a14793c2dcb0b0001d70c801365dbf4096c68b731d7fd2ae0778266d7b394c",
+      "steps": 2000
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "hover",
+      "seed": 84001,
+      "trace_sha256": "df5cd2c86034f059c31c36dbc800df33833da51cb6a01a50a8451febb3eaef85",
+      "steps": 1500
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "hover",
+      "seed": 84002,
+      "trace_sha256": "902097285f032dbac07b728f9997d2230bf1ac4b95e625637e1ecfc49981b50f",
+      "steps": 1500
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "hover",
+      "seed": 84003,
+      "trace_sha256": "ed4a763695798b8a6f3405ef2f3b2c034a42091d6c4e80e9c1f7314eb6b67caf",
+      "steps": 1500
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "hover",
+      "seed": 84004,
+      "trace_sha256": "13e0f78e9ecaaa5957fe07ea0ddcdd366d15ceb87fd66062924491fd2210d628",
+      "steps": 1500
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "route",
+      "seed": 84001,
+      "trace_sha256": "64d40b94c8ed3aa1de31e55976e6d3b9f5274b63d0e114928ea8e550e1f93300",
+      "steps": 2000
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "route",
+      "seed": 84002,
+      "trace_sha256": "8dd51acd8b7e63a4463d7ab9d41f336368b904f83e81b98e475c3a1b5afca1e3",
+      "steps": 2000
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "route",
+      "seed": 84003,
+      "trace_sha256": "b93ad72aa9361a9b5081e0030e7fdaafb0002fe56fe4608d3c8390305679fa7c",
+      "steps": 2000
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "route",
+      "seed": 84004,
+      "trace_sha256": "68160d321ab369ce92779c5f63911edae952c9de838c165b2756084815fa25ba",
+      "steps": 2000
+    },
+    {
+      "scenario": "gust",
+      "mission": "hover",
+      "seed": 84001,
+      "trace_sha256": "68b05690c8a79a6653cf295240b2826626acddc804ca6a7cc9cb900da22c2091",
+      "steps": 1500
+    },
+    {
+      "scenario": "gust",
+      "mission": "hover",
+      "seed": 84002,
+      "trace_sha256": "5b23054075f82fba9ac83074f1889635f66f709402803598846bde7f2b2caef9",
+      "steps": 1500
+    },
+    {
+      "scenario": "gust",
+      "mission": "hover",
+      "seed": 84003,
+      "trace_sha256": "b69ef52100193b0ea303a0dc6ddb822a2e23c5b7557ae34c34c8c90970229b65",
+      "steps": 1500
+    },
+    {
+      "scenario": "gust",
+      "mission": "hover",
+      "seed": 84004,
+      "trace_sha256": "7178522bb00759ffdc44701e5ab16278a4a0cf39c3604650ef99898be5f31932",
+      "steps": 1500
+    },
+    {
+      "scenario": "gust",
+      "mission": "route",
+      "seed": 84001,
+      "trace_sha256": "89add1106ead20fcf9ef9d859ac693db56e038f2805793bb778fbf959bcbf9cf",
+      "steps": 2000
+    },
+    {
+      "scenario": "gust",
+      "mission": "route",
+      "seed": 84002,
+      "trace_sha256": "ad15caf9ce4d856bbc581bb3a88fc505692c4888b375bbc99b2b891ad906d02f",
+      "steps": 2000
+    },
+    {
+      "scenario": "gust",
+      "mission": "route",
+      "seed": 84003,
+      "trace_sha256": "d0cdbcbb4901c142f8c5932d5078d2b03c051c7406140e8e69d4f38a5bd26b03",
+      "steps": 2000
+    },
+    {
+      "scenario": "gust",
+      "mission": "route",
+      "seed": 84004,
+      "trace_sha256": "12528e43c5a759ff6cc01eca8d18014a2f9f118df4e4786a69acdb5a552bb6ba",
+      "steps": 2000
+    }
+  ],
+  "capsule_manifest_sha256": "15f1d215937e94950530012df353ea7d7cf1faed82eab0c9b93dbe9c6f6cd3ea"
+}

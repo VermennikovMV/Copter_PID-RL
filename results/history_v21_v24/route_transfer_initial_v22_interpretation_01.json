@@ -1,0 +1,5201 @@
+{
+  "schema": "joint-transfer-initial-v22-interpretation-v1.0",
+  "status": "PASS_ARITHMETIC_INTERPRETATION_WITH_VALID_FAILURES",
+  "created_utc": "2026-11-15T05:06:49.840530+00:00",
+  "input_sha256": {
+    "scripts/interpret_joint_transfer_initial_v22.py": "97780ff285b58c40052ce1d372c90498331827759779b645096010a5de63398b",
+    "quadrl_route_transfer_v22/initial.py": "c053bed5c10df330062079f8bd0f9202dd2ae4100852c534b077cb63858fb1f6",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/complete.json": "37fc99321504b35de10464420de6297a2c84ba89f802105a6243de7abcff4919",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/prospective_plan.json": "8352d8d16d0f6d4bbf2f4bf40177f0f6c942a8308a00e1abfe9b66d84b0409ef",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/summary.json": "2bc5b4a5a1d088eb787cefda4703ad3dccbc8622ab56e212fec308afe276d56d",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/trace.csv": "175c362e47ce204f8d0f4d7831289cdcd1eceab97b42839e22e22a8b1d6d7bfe",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/actor_io.npz": "599afda1c8e7647c13dcecfbbd4b9ab8a964fc371526ac434c2de093f622f722",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/summary.json": "46ba30416f76ed6bffeef4ce471b03a7df0fcd814ccf4ced494e58e5840c2b4b",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/trace.csv": "d89717d0f3aadcdf5c4258008fb64a38be261775476979bd71d95c4ebc48c615",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/actor_io.npz": "98d1272c123d42a651e50258255ce57747c5491b6401441d0c8ede73ca538379",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/summary.json": "e800e3d1bad55b63cd93f979cda4df4d780bc46799a27ab70ae78074a23516b9",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/trace.csv": "bab9fceadeb255812c8e2f1f621939dcc7a0082de6f4af3a92f37c908a69ff54",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/actor_io.npz": "7da85e753401bab7bade07a03b7bd4bb441bfda8ad48c7f8e1ae4ab2cd35fc14",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/summary.json": "265d82b7fc9c969893b0661ef28f06de000e56dec528b603969eb8ec7d43f11b",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/trace.csv": "33eca8675e5f54298b1ff1497c897f1604b71521c66f2b4aac27e86c05eaa166",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/actor_io.npz": "32b55b34f52a55634cbf80bcf231d19c8b6699fd49aaf4e71082f09ec865caca",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_nominal_84001/trace.csv": "603fbc3c2afc1f6ff8d197052304028c990d88f6be4b005a0abf144e2bb1f4ae",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_nominal_84001/actor_io.npz": "8110b6ef2e759bf725b9bf1976c359e7e7f6090d8073980347b254c5ccd97c20",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_nominal_84001/summary.json": "62b2bc6040e9cf3005188daab3282a60a8e17443eae0e58e8eadefe2a63464fd",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_nominal_84001/intervention_summary.json": "4e26d5b2fcfc80f2e5cda8e603a851ac46d81c596fcba9e876ec1bd676d1188e",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/trace.csv": "d01ff3b7b4723d975a5614c1cb251f0cbf408f1ce691e7fa12ae9b3a3ef56cd6",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/actor_io.npz": "b23cf95c496453bf910e05ea924fced413fc4f391c1413cab5d499e6ae1e6e3b",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/summary.json": "e33be1f77090aa7d2b231d63cac8f180cd4735b625627a089e3f0cc5197c4a66",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/intervention_summary.json": "eba5e7f27d45fb3b9858694cdb26cdd3c743eb1c68d2e9b15be37a5f56165a5c",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_force_strong_84001/trace.csv": "41a8d85acc21b65d1925927a935757c3053ceffa856e933307c79eaacd955490",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_force_strong_84001/actor_io.npz": "10c6f370b7ebee7d482cd940b0abc14e4cc76980d4e67ac5c2f819f7886e4c53",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_force_strong_84001/summary.json": "4fcc38b3d3fd6e0195bcedc74cb374e96656dcef3a3ef3d948b16785e0aec425",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_force_strong_84001/intervention_summary.json": "02abe22472b3f24d6532baf7a6a57ef01f6a0754a29703528af5b8796dd20aa5",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/trace.csv": "887765ee5a3053ab21427314f501e64ce39c29591bfb0391c9b28535494ccb22",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz": "cb608a19bdfa6f62a8e651c8552340497e9a15b79d96e10fd97a7967fbc4e34a",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/summary.json": "fd1ecfa0b265a44ca621a4f22eddb7693d1333464baee71cf6a581a65ad95505",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/intervention_summary.json": "555b0cccd146e415c4dc01c3b127fad0adadb68624eb23faf4b63863332d8468",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_nominal_84001/trace.csv": "8a1604ffe4612278ad90bf10c19bc97340e13fa757dba77e1c17122c12f0d4ea",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_nominal_84001/actor_io.npz": "89c77729ee91a6d84fe9d31c60988f2d4eedf01956296bdc59f2affb83efd793",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_nominal_84001/summary.json": "044c1adee0a9bef9477774fa8aa54abe45eeca77aba606de668d7b949faba7a9",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_nominal_84001/intervention_summary.json": "44de0f0f8107114089fc5edcd671b67be750c5088ae469316b50ee56e0fd6ade",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/trace.csv": "396a3662907d729c80e3e40f3145a295aa137fc3b3d1bc0b593707319c6e4780",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/actor_io.npz": "521c8bc9b5be75550f0d1a3cf3512c8b41e89f4c7b12c0537ea93a5a56198aa0",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/summary.json": "c1d4a5062102d4491ec906f10c71880806eb3931034f8583b2db68acef7558e1",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/intervention_summary.json": "667bf1c624687433cf89c365b57641797c84e68183b69e16e57449dafcee203d",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_force_strong_84001/trace.csv": "99fe3de49d7ee88248dbf2b64f2ef076e041864ad1f0a5d4135b8cc223d80241",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_force_strong_84001/actor_io.npz": "1c31146ebe85a05a037a9eb2d48033fdc808886cf035e6e30cdf2a6c0d5a00cf",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_force_strong_84001/summary.json": "c50f6b084dd278638593d9f2d2327b8860d174677e5afefe7ca0e8e6c40abefc",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_force_strong_84001/intervention_summary.json": "8b70ae98930044b740a23dc3852318be4557ef3af41112326b86065ffce3cc48",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/trace.csv": "ace933388edcdf21c9ba2c06c928a78d9fdf9655cce0e51dcdd3043e50e8e1b4",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/actor_io.npz": "2abd884f8fa76fe3c9e015427f1498e8719cbbf3ac8328c7a1c2183a37f7b102",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/summary.json": "9fa18bd27310291e6676b42ad5fb4e4ab2737aec4cfb0fe93f1b985ddf987b1e",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/intervention_summary.json": "d9c43c2c59986007803cd3e3fe035c735675027d4d88af5a5215f7aade4e4888",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_raw_force_strong_84001/trace.csv": "3fafb3b85c3c3415a20c4a17712534b19991d2b45fba310983d376e4ae50f0ae",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_raw_force_strong_84001/actor_io.npz": "49a1bab5213be5069ab968f32fa688219485d59b0adaf17eef9b681dc798d9df",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_raw_force_strong_84001/summary.json": "933dbca0a7565e7f73f247867590fbfac6a37b12b1035a0acd01749b23c72c33",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_raw_force_strong_84001/intervention_summary.json": "ee1fe4a0ef979be7ce89eb699c7f4522de08f839accb02ea2238d518e7e31bb3",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv": "a554434c803814f22ef7130836af16c388cdb55e3c71b0b70f4dc67f276646b9",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz": "c95c13ee8caa1c3c4776dcb7ab16728d709d65a5e0a00d20daf1ac0cad436961",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/summary.json": "6eddcab0de4b49e8749db264821cd3fe9878d280a1007fa155f5dc3b7b2806b9",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/intervention_summary.json": "737084251849f1044e8d4259d57d271f5b950e0d5694382ecdf4169c618ab665",
+    "audit/route_memory_transfer_gap_v22_01.json": "c3a84aa02796b3717bc632f7da03d5c279943f6b915d935a0e1bcf1496f5a274"
+  },
+  "all_inputs_unchanged": true,
+  "interpreted_counts": {
+    "new_episodes": 10,
+    "reused_episodes": 4,
+    "trace_rows": 28000,
+    "archived_IO_files": 14,
+    "new_NN_forwards": 0,
+    "new_physics": 0,
+    "new_backward": 0,
+    "new_optimizer": 0
+  },
+  "rows": [
+    {
+      "intervention": "native_original",
+      "mode": "raw",
+      "scenario": "nominal",
+      "new_actual_episode": false,
+      "steps": 2000,
+      "completion_s": 8.58,
+      "finite_RMSE_m": 0.11317718785962497,
+      "finite_peak_m": 0.19511055998266,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.1659225499266879,
+      "axis_SSE_m2s": [
+        0.04701054706783487,
+        0.02008190575054496,
+        0.03179361275761531
+      ],
+      "axis_RMSE_m": [
+        0.07803492232360554,
+        0.051002775692200644,
+        0.06417432213473517
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.86,
+          "end_s": 2.6,
+          "duration_s": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.00670220991486487,
+            0.0011883836955584824
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.062063232099673724,
+            0.02613386950641711
+          ],
+          "finite_RMSE_m": 0.0673411012238173,
+          "finite_peak_m": 0.09702484242913165,
+          "peak_time_s": 2.58,
+          "peak_position_m": [
+            1.9081515685152304,
+            -0.09335407761836713,
+            2.9735644890266575
+          ],
+          "peak_velocity_mps": [
+            -0.176231051367458,
+            0.0008789740591712081,
+            -0.008908502397063494
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.06310087533035688,
+          "minimum_X_time_s": 1.08,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6,
+          "end_s": 4.7,
+          "duration_s": 2.1,
+          "SSE_XYZ_m2s": [
+            0.03658937510797501,
+            0.0029755134292825287,
+            0.01481007452059544
+          ],
+          "RMSE_XYZ_m": [
+            0.13199815133621598,
+            0.03764188035687383,
+            0.08397866656704416
+          ],
+          "finite_RMSE_m": 0.16091252142502324,
+          "finite_peak_m": 0.19511055998266,
+          "peak_time_s": 3.58,
+          "peak_position_m": [
+            2.178006648291874,
+            1.1459762220661625,
+            3.3688386000652253
+          ],
+          "peak_velocity_mps": [
+            0.07137250940798803,
+            2.065870897722582,
+            0.36813235480884393
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.002914865685205114,
+            0.03367450942276991,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.894931220102705,
+          "minimum_X_time_s": 2.7,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.7,
+          "end_s": 6.44,
+          "duration_s": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.004502408864566501,
+            0.007332634161423521,
+            0.01089156975370155
+          ],
+          "RMSE_XYZ_m": [
+            0.050868372310061194,
+            0.06491654306905525,
+            0.0791171463524495
+          ],
+          "finite_RMSE_m": 0.11428592088471098,
+          "finite_peak_m": 0.15348030408861413,
+          "peak_time_s": 4.72,
+          "peak_position_m": [
+            2.1261591858738997,
+            1.9251020935835588,
+            3.5450595958393136
+          ],
+          "peak_velocity_mps": [
+            -0.06127085872378846,
+            0.2552036162841204,
+            0.00318160152748251
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.003858803203117572,
+            0.0006436056614489288,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.05554273095796586,
+          "minimum_X_time_s": 6.26,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 4,
+          "start_s": 6.44,
+          "end_s": 8.58,
+          "duration_s": 2.1399999999999997,
+          "SSE_XYZ_m2s": [
+            0.005918763095293398,
+            0.0030715482449740496,
+            0.004903584787759835
+          ],
+          "RMSE_XYZ_m": [
+            0.05259065646417968,
+            0.03788539188410452,
+            0.047868515337698085
+          ],
+          "finite_RMSE_m": 0.08057589482085181,
+          "finite_peak_m": 0.14576474964209002,
+          "peak_time_s": 6.62,
+          "peak_position_m": [
+            0.09771238200265218,
+            2.102048010848371,
+            3.03585883605863
+          ],
+          "peak_velocity_mps": [
+            0.05319651488105821,
+            -0.03905958658609137,
+            0.05019559027701725
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.00351513256693395,
+            0.0024036305283594507,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.02730688308344862,
+          "minimum_X_time_s": 8.58,
+          "forced_seconds": 0.0
+        }
+      ],
+      "force_onsets": [],
+      "force_changes": [],
+      "first_IO_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "rotation": [
+          [
+            -0.42419647388665216,
+            0.9054715818436353,
+            0.013362859563573835
+          ],
+          [
+            -0.9051072690968917,
+            -0.42346170555315776,
+            -0.03822323060623796
+          ],
+          [
+            -0.028951389778346038,
+            -0.0283089809706341,
+            0.9991798730090126
+          ]
+        ],
+        "body_rates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.349848777752296e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.5810322593732705e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.5810322593732705e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": null,
+      "trace_sha256": "175c362e47ce204f8d0f4d7831289cdcd1eceab97b42839e22e22a8b1d6d7bfe",
+      "IO_sha256": "599afda1c8e7647c13dcecfbbd4b9ab8a964fc371526ac434c2de093f622f722"
+    },
+    {
+      "intervention": "native_original",
+      "mode": "raw",
+      "scenario": "force_strong",
+      "new_actual_episode": false,
+      "steps": 2000,
+      "completion_s": 8.52,
+      "finite_RMSE_m": 0.10973808214467193,
+      "finite_peak_m": 0.19511055998266,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.15804027038983087,
+      "axis_SSE_m2s": [
+        0.05382886461972713,
+        0.012660757575268654,
+        0.02575551931858145
+      ],
+      "axis_RMSE_m": [
+        0.08382879530110997,
+        0.04065514007509916,
+        0.057985682169216846
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.86,
+          "end_s": 2.6,
+          "duration_s": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.00670220991486487,
+            0.0011883836955584824
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.062063232099673724,
+            0.02613386950641711
+          ],
+          "finite_RMSE_m": 0.0673411012238173,
+          "finite_peak_m": 0.09702484242913165,
+          "peak_time_s": 2.58,
+          "peak_position_m": [
+            1.9081515685152304,
+            -0.09335407761836713,
+            2.9735644890266575
+          ],
+          "peak_velocity_mps": [
+            -0.176231051367458,
+            0.0008789740591712081,
+            -0.008908502397063494
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.06310087533035688,
+          "minimum_X_time_s": 1.08,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6,
+          "end_s": 4.7,
+          "duration_s": 2.1,
+          "SSE_XYZ_m2s": [
+            0.03658937510797501,
+            0.0029755134292825287,
+            0.01481007452059544
+          ],
+          "RMSE_XYZ_m": [
+            0.13199815133621598,
+            0.03764188035687383,
+            0.08397866656704416
+          ],
+          "finite_RMSE_m": 0.16091252142502324,
+          "finite_peak_m": 0.19511055998266,
+          "peak_time_s": 3.58,
+          "peak_position_m": [
+            2.178006648291874,
+            1.1459762220661625,
+            3.3688386000652253
+          ],
+          "peak_velocity_mps": [
+            0.07137250940798803,
+            2.065870897722582,
+            0.36813235480884393
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.002914865685205114,
+            0.03367450942276991,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.894931220102705,
+          "minimum_X_time_s": 2.7,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.7,
+          "end_s": 6.32,
+          "duration_s": 1.62,
+          "SSE_XYZ_m2s": [
+            0.008339496691760564,
+            0.002539997980789558,
+            0.0073915617768923894
+          ],
+          "RMSE_XYZ_m": [
+            0.07174843178808671,
+            0.03959671688589475,
+            0.0675477050303846
+          ],
+          "finite_RMSE_m": 0.1061999524814549,
+          "finite_peak_m": 0.15348030408861413,
+          "peak_time_s": 4.72,
+          "peak_position_m": [
+            2.1261591858738997,
+            1.9251020935835588,
+            3.5450595958393136
+          ],
+          "peak_velocity_mps": [
+            -0.06127085872378846,
+            0.2552036162841204,
+            0.00318160152748251
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0036488193371319233,
+            0.00036651125619358146,
+            0.00432416609843506
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.11496019644205058,
+          "minimum_X_m": -0.1306692286841524,
+          "minimum_X_time_s": 6.2,
+          "forced_seconds": 1.4400000000000004
+        },
+        {
+          "leg": 4,
+          "start_s": 6.32,
+          "end_s": 8.52,
+          "duration_s": 2.1999999999999993,
+          "SSE_XYZ_m2s": [
+            0.00889999281999157,
+            0.00044303625033170844,
+            0.0023654993255351124
+          ],
+          "RMSE_XYZ_m": [
+            0.06360386216114829,
+            0.014190846126540174,
+            0.03279065364021163
+          ],
+          "finite_RMSE_m": 0.07295243903910147,
+          "finite_peak_m": 0.11613146277704729,
+          "peak_time_s": 6.34,
+          "peak_position_m": [
+            -0.1030258664184376,
+            2.03873099840495,
+            3.0370418311915426
+          ],
+          "peak_velocity_mps": [
+            0.3331029861162344,
+            0.022303249463336387,
+            -0.05689331342272653
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0010775226700635832,
+            0.007822470149927988,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.1030258664184376,
+          "minimum_X_time_s": 6.34,
+          "forced_seconds": 2.1999999999999993
+        }
+      ],
+      "force_onsets": [
+        {
+          "applied_control_interval_start_s": 4.88,
+          "PRE_leg": 3,
+          "seconds_after_leg_transition": 0.17999999999999972,
+          "measured_row_end_s": 4.9,
+          "position_m": [
+            2.1083733707706376,
+            1.969217232849385,
+            3.5000351925098396
+          ],
+          "velocity_mps": [
+            -0.22158327258583707,
+            0.2221409506879228,
+            -0.43270938075672954
+          ],
+          "force_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ]
+        }
+      ],
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ],
+      "first_IO_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "rotation": [
+          [
+            -0.42419647388665216,
+            0.9054715818436353,
+            0.013362859563573835
+          ],
+          [
+            -0.9051072690968917,
+            -0.42346170555315776,
+            -0.03822323060623796
+          ],
+          [
+            -0.028951389778346038,
+            -0.0283089809706341,
+            0.9991798730090126
+          ]
+        ],
+        "body_rates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.349848777752296e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.5810322593732705e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.5810322593732705e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": null,
+      "trace_sha256": "d89717d0f3aadcdf5c4258008fb64a38be261775476979bd71d95c4ebc48c615",
+      "IO_sha256": "98d1272c123d42a651e50258255ce57747c5491b6401441d0c8ede73ca538379"
+    },
+    {
+      "intervention": "native_original",
+      "mode": "zero_route_integral",
+      "scenario": "nominal",
+      "new_actual_episode": false,
+      "steps": 2000,
+      "completion_s": 8.5,
+      "finite_RMSE_m": 0.105277613447643,
+      "finite_peak_m": 0.19013847656387373,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.16242859802530787,
+      "axis_SSE_m2s": [
+        0.03921195982218504,
+        0.01546016868186273,
+        0.030004863320239678
+      ],
+      "axis_RMSE_m": [
+        0.07164115768263372,
+        0.04498424488864883,
+        0.06266847796876372
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.86,
+          "end_s": 2.6,
+          "duration_s": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0068201465368945184,
+            0.0013557028325990234
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.06260690414396085,
+            0.027913071471354706
+          ],
+          "finite_RMSE_m": 0.06854753099460299,
+          "finite_peak_m": 0.10077495301190875,
+          "peak_time_s": 2.6,
+          "peak_position_m": [
+            1.8519072250099875,
+            -0.09388119215550332,
+            2.9633678704684825
+          ],
+          "peak_velocity_mps": [
+            -0.2378123073141916,
+            0.01063733015768078,
+            -0.024794814819121345
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.06307036444062869,
+          "minimum_X_time_s": 1.08,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6,
+          "end_s": 4.74,
+          "duration_s": 2.14,
+          "SSE_XYZ_m2s": [
+            0.026605424988764913,
+            0.0026533200007991605,
+            0.009731404846806615
+          ],
+          "RMSE_XYZ_m": [
+            0.11150085911568128,
+            0.03521177586052632,
+            0.06743430464113201
+          ],
+          "finite_RMSE_m": 0.13498035481217238,
+          "finite_peak_m": 0.19013847656387373,
+          "peak_time_s": 2.7,
+          "peak_position_m": [
+            1.8353526106548959,
+            -0.09171607587806675,
+            2.974859616601946
+          ],
+          "peak_velocity_mps": [
+            -0.07759208939259439,
+            0.037960666120226555,
+            0.2672080430726005
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.008237376713101228,
+            0.018368048275663684,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.8339123832773139,
+          "minimum_X_time_s": 2.74,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.74,
+          "end_s": 6.46,
+          "duration_s": 1.7199999999999998,
+          "SSE_XYZ_m2s": [
+            0.0016165303403724315,
+            0.00598670214416905,
+            0.013952986867100833
+          ],
+          "RMSE_XYZ_m": [
+            0.03065686254571336,
+            0.05899695569682926,
+            0.09006776152941234
+          ],
+          "finite_RMSE_m": 0.11194947820137209,
+          "finite_peak_m": 0.17167636874342604,
+          "peak_time_s": 5.42,
+          "peak_position_m": [
+            1.4558499279283303,
+            1.9492575021991356,
+            3.194908946354388
+          ],
+          "peak_velocity_mps": [
+            -2.3850369208001068,
+            0.0706032498159631,
+            -0.6129175171551474
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0007637146519775755,
+            0.0008528156883948559,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.053756022181690205,
+          "minimum_X_time_s": 6.26,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 4,
+          "start_s": 6.46,
+          "end_s": 8.5,
+          "duration_s": 2.04,
+          "SSE_XYZ_m2s": [
+            0.010990004493047718,
+            0.0,
+            0.004964768773733197
+          ],
+          "RMSE_XYZ_m": [
+            0.07339793664971214,
+            0.0,
+            0.04933264824842213
+          ],
+          "finite_RMSE_m": 0.08843623288922761,
+          "finite_peak_m": 0.12547094876862377,
+          "peak_time_s": 6.78,
+          "peak_position_m": [
+            0.12321067710799707,
+            1.9578871714266428,
+            3.0237083958016457
+          ],
+          "peak_velocity_mps": [
+            -0.014588878968112963,
+            -0.463481300381904,
+            0.04360558993002669
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.010990004493047722,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.0064706309347311915,
+          "minimum_X_time_s": 8.5,
+          "forced_seconds": 0.0
+        }
+      ],
+      "force_onsets": [],
+      "force_changes": [],
+      "first_IO_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "rotation": [
+          [
+            -0.42419647388665216,
+            0.9054715818436353,
+            0.013362859563573835
+          ],
+          [
+            -0.9051072690968917,
+            -0.42346170555315776,
+            -0.03822323060623796
+          ],
+          [
+            -0.028951389778346038,
+            -0.0283089809706341,
+            0.9991798730090126
+          ]
+        ],
+        "body_rates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.349848777752296e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.5810322593732705e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.5810322593732705e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": null,
+      "trace_sha256": "bab9fceadeb255812c8e2f1f621939dcc7a0082de6f4af3a92f37c908a69ff54",
+      "IO_sha256": "7da85e753401bab7bade07a03b7bd4bb441bfda8ad48c7f8e1ae4ab2cd35fc14"
+    },
+    {
+      "intervention": "native_original",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "new_actual_episode": false,
+      "steps": 2000,
+      "completion_s": 8.42,
+      "finite_RMSE_m": 0.09936482048122337,
+      "finite_peak_m": 0.19013847656387373,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.14066803941001713,
+      "axis_SSE_m2s": [
+        0.035198317838159146,
+        0.018277492578663297,
+        0.021166848255626616
+      ],
+      "axis_RMSE_m": [
+        0.06823387830033295,
+        0.04916968322554495,
+        0.05291358665655413
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.86,
+          "end_s": 2.6,
+          "duration_s": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0068201465368945184,
+            0.0013557028325990234
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.06260690414396085,
+            0.027913071471354706
+          ],
+          "finite_RMSE_m": 0.06854753099460299,
+          "finite_peak_m": 0.10077495301190875,
+          "peak_time_s": 2.6,
+          "peak_position_m": [
+            1.8519072250099875,
+            -0.09388119215550332,
+            2.9633678704684825
+          ],
+          "peak_velocity_mps": [
+            -0.2378123073141916,
+            0.01063733015768078,
+            -0.024794814819121345
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.06307036444062869,
+          "minimum_X_time_s": 1.08,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.6,
+          "end_s": 4.74,
+          "duration_s": 2.14,
+          "SSE_XYZ_m2s": [
+            0.026605424988764913,
+            0.0026533200007991605,
+            0.009731404846806615
+          ],
+          "RMSE_XYZ_m": [
+            0.11150085911568128,
+            0.03521177586052632,
+            0.06743430464113201
+          ],
+          "finite_RMSE_m": 0.13498035481217238,
+          "finite_peak_m": 0.19013847656387373,
+          "peak_time_s": 2.7,
+          "peak_position_m": [
+            1.8353526106548959,
+            -0.09171607587806675,
+            2.974859616601946
+          ],
+          "peak_velocity_mps": [
+            -0.07759208939259439,
+            0.037960666120226555,
+            0.2672080430726005
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.008237376713101228,
+            0.018368048275663684,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.8339123832773139,
+          "minimum_X_time_s": 2.74,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.74,
+          "end_s": 6.34,
+          "duration_s": 1.5999999999999996,
+          "SSE_XYZ_m2s": [
+            0.0025206936718465884,
+            0.008804026040969621,
+            0.008102887933049094
+          ],
+          "RMSE_XYZ_m": [
+            0.03969173144250724,
+            0.07417894765771495,
+            0.07116393017642916
+          ],
+          "finite_RMSE_m": 0.11019189978698897,
+          "finite_peak_m": 0.1533905499133416,
+          "peak_time_s": 4.76,
+          "peak_position_m": [
+            2.0682041658973507,
+            1.8637110778492012,
+            3.517383390231411
+          ],
+          "peak_velocity_mps": [
+            -0.10175483726191006,
+            0.2121665204318631,
+            -0.01179122546378068
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0007156088673245305,
+            0.0004669666602189521,
+            0.0013381181443031056
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.06771517801105162,
+          "minimum_X_m": -0.07795592665475935,
+          "minimum_X_time_s": 6.22,
+          "forced_seconds": 1.46
+        },
+        {
+          "leg": 4,
+          "start_s": 6.34,
+          "end_s": 8.42,
+          "duration_s": 2.08,
+          "SSE_XYZ_m2s": [
+            0.006072199177547639,
+            0.0,
+            0.0019768526431718832
+          ],
+          "RMSE_XYZ_m": [
+            0.05403079240273211,
+            0.0,
+            0.030828719152794313
+          ],
+          "finite_RMSE_m": 0.06220720579055935,
+          "finite_peak_m": 0.07844311247718733,
+          "peak_time_s": 8.32,
+          "peak_position_m": [
+            -0.07792572743649061,
+            0.11490362372989783,
+            2.9910053961397716
+          ],
+          "peak_velocity_mps": [
+            -0.004487769634775242,
+            -0.21942379188326805,
+            0.036096339905515834
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0060721991775476375,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.07797215299611181,
+          "minimum_X_time_s": 8.34,
+          "forced_seconds": 2.08
+        }
+      ],
+      "force_onsets": [
+        {
+          "applied_control_interval_start_s": 4.88,
+          "PRE_leg": 3,
+          "seconds_after_leg_transition": 0.13999999999999968,
+          "measured_row_end_s": 4.9,
+          "position_m": [
+            2.0518855134927305,
+            1.8927900594502667,
+            3.4858175315004165
+          ],
+          "velocity_mps": [
+            -0.1844603063609794,
+            0.1946862998601622,
+            -0.386752679518275
+          ],
+          "force_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ]
+        }
+      ],
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ],
+      "first_IO_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "rotation": [
+          [
+            -0.42419647388665216,
+            0.9054715818436353,
+            0.013362859563573835
+          ],
+          [
+            -0.9051072690968917,
+            -0.42346170555315776,
+            -0.03822323060623796
+          ],
+          [
+            -0.028951389778346038,
+            -0.0283089809706341,
+            0.9991798730090126
+          ]
+        ],
+        "body_rates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.349848777752296e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.5810322593732705e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.0008290708065032959,
+          -0.0737212672829628,
+          0.0503728874027729,
+          -0.0007294546812772751,
+          -0.0075202323496341705,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -1.5810322593732705e-16,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": null,
+      "trace_sha256": "33eca8675e5f54298b1ff1497c897f1604b71521c66f2b4aac27e86c05eaa166",
+      "IO_sha256": "32b55b34f52a55634cbf80bcf231d19c8b6699fd49aaf4e71082f09ec865caca"
+    },
+    {
+      "intervention": "yaw_only",
+      "mode": "raw",
+      "scenario": "nominal",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 8.74,
+      "finite_RMSE_m": 0.12880880182138443,
+      "finite_peak_m": 0.20805205608302513,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.1924239566940684,
+      "axis_SSE_m2s": [
+        0.07674058226595017,
+        0.015986597873056556,
+        0.040338313422811994
+      ],
+      "axis_RMSE_m": [
+        0.09781948249380275,
+        0.04464685185632206,
+        0.07092048287078238
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.72,
+          "end_s": 2.44,
+          "duration_s": 1.72,
+          "SSE_XYZ_m2s": [
+            8.441664637961261e-05,
+            0.0010914833740264891,
+            0.001762732603681135
+          ],
+          "RMSE_XYZ_m": [
+            0.007005672385256265,
+            0.025190937993495692,
+            0.032013193171314784
+          ],
+          "finite_RMSE_m": 0.04133409415465159,
+          "finite_peak_m": 0.06706904390162943,
+          "peak_time_s": 0.74,
+          "peak_position_m": [
+            0.07853894063383954,
+            -0.02140441967666219,
+            2.9364381602832013
+          ],
+          "peak_velocity_mps": [
+            -0.22631433855370167,
+            0.1030596289331552,
+            0.13333151210131705
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0,
+            8.441664637961261e-05
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.022967790843579916,
+          "minimum_X_m": 0.04822368383816503,
+          "minimum_X_time_s": 0.9400000000000001,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.44,
+          "end_s": 4.7,
+          "duration_s": 2.2600000000000002,
+          "SSE_XYZ_m2s": [
+            0.0446295490381637,
+            0.0012966321121235106,
+            0.017394011386470835
+          ],
+          "RMSE_XYZ_m": [
+            0.14052611170164758,
+            0.023952683003444525,
+            0.08772950025648488
+          ],
+          "finite_RMSE_m": 0.1673851376565435,
+          "finite_peak_m": 0.20778268222299584,
+          "peak_time_s": 3.8200000000000003,
+          "peak_position_m": [
+            2.2053174528144353,
+            1.6763839717357045,
+            3.3862016809001863
+          ],
+          "peak_velocity_mps": [
+            -0.009833640413975518,
+            0.7703900292206954,
+            0.12498432217732428
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            7.397369007863285e-05,
+            0.044555575348085075,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.9725954910006744,
+          "minimum_X_time_s": 2.74,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.7,
+          "end_s": 6.46,
+          "duration_s": 1.7599999999999998,
+          "SSE_XYZ_m2s": [
+            0.006690647150101558,
+            0.007594385548224596,
+            0.019039445880790137
+          ],
+          "RMSE_XYZ_m": [
+            0.06165633838104323,
+            0.06568859709846128,
+            0.10400897546712817
+          ],
+          "finite_RMSE_m": 0.1376021904950766,
+          "finite_peak_m": 0.20805205608302513,
+          "peak_time_s": 5.44,
+          "peak_position_m": [
+            1.4532649006619294,
+            2.084914409446207,
+            3.1675359882209055
+          ],
+          "peak_velocity_mps": [
+            -2.5069442860185234,
+            0.013768189159614672,
+            -0.6052624453114425
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0055970232348712574,
+            0.001093623915230303,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.008502727662443213,
+          "minimum_X_time_s": 6.26,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 4,
+          "start_s": 6.46,
+          "end_s": 8.74,
+          "duration_s": 2.2800000000000002,
+          "SSE_XYZ_m2s": [
+            0.025335969431305304,
+            0.006004096838681962,
+            0.002142123551869923
+          ],
+          "RMSE_XYZ_m": [
+            0.10541473945531597,
+            0.05131642823150747,
+            0.030651718934297294
+          ],
+          "finite_RMSE_m": 0.12118238722891526,
+          "finite_peak_m": 0.16888836557602196,
+          "peak_time_s": 6.66,
+          "peak_position_m": [
+            0.08921022647613591,
+            2.139164920982264,
+            2.9653887260128027
+          ],
+          "peak_velocity_mps": [
+            0.08920818313357,
+            -0.03843828249511042,
+            0.06825871801228449
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.002856003349629827,
+            0.022479966081675476,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.14816710234311486,
+          "minimum_X_time_s": 7.96,
+          "forced_seconds": 0.0
+        }
+      ],
+      "force_onsets": [],
+      "force_changes": [],
+      "first_IO_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "rotation": [
+          [
+            -0.00012221225308750583,
+            -0.9995987764918104,
+            -0.028324390553747015
+          ],
+          [
+            0.9995808131882422,
+            -0.000942142494675835,
+            0.028936314095825196
+          ],
+          [
+            -0.028951389778346066,
+            -0.02830898097063411,
+            0.9991798730090126
+          ]
+        ],
+        "body_rates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.49476769656027e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.494398443134826e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.494398443134826e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 4.4224606615683726e-16,
+        "body_rates": 0.0
+      },
+      "trace_sha256": "603fbc3c2afc1f6ff8d197052304028c990d88f6be4b005a0abf144e2bb1f4ae",
+      "IO_sha256": "8110b6ef2e759bf725b9bf1976c359e7e7f6090d8073980347b254c5ccd97c20"
+    },
+    {
+      "intervention": "yaw_only",
+      "mode": "zero_route_integral",
+      "scenario": "nominal",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 8.46,
+      "finite_RMSE_m": 0.09878668448604173,
+      "finite_peak_m": 0.20013047081274957,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.1673198278544518,
+      "axis_SSE_m2s": [
+        0.031172244921661946,
+        0.005841629807333597,
+        0.03851930717670888
+      ],
+      "axis_RMSE_m": [
+        0.06346197148296077,
+        0.027472395841048058,
+        0.0705454085961191
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.72,
+          "end_s": 2.46,
+          "duration_s": 1.74,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0009329087355386395,
+            0.001556785615088871
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.023155009084685364,
+            0.029911609393141268
+          ],
+          "finite_RMSE_m": 0.03782669457142295,
+          "finite_peak_m": 0.06707004165837332,
+          "peak_time_s": 0.74,
+          "peak_position_m": [
+            0.07853891463835341,
+            -0.021404397630059302,
+            2.9364371000492406
+          ],
+          "peak_velocity_mps": [
+            -0.2263172618411811,
+            0.10306206326837149,
+            0.13321468578144818
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.04820301468156543,
+          "minimum_X_time_s": 0.9400000000000001,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.46,
+          "end_s": 4.6000000000000005,
+          "duration_s": 2.1400000000000006,
+          "SSE_XYZ_m2s": [
+            0.014545257037513075,
+            0.0011993718214920806,
+            0.01472923650709588
+          ],
+          "RMSE_XYZ_m": [
+            0.0824430050577369,
+            0.02367391227052599,
+            0.08296276753886862
+          ],
+          "finite_RMSE_m": 0.11933199069340521,
+          "finite_peak_m": 0.20013047081274957,
+          "peak_time_s": 2.96,
+          "peak_position_m": [
+            1.928381931163025,
+            0.1714979271761404,
+            3.235503006840385
+          ],
+          "peak_velocity_mps": [
+            0.2218299348295423,
+            1.3697499518377965,
+            0.4369063099160559
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0019364601667892823,
+            0.012608796870723794,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.901654749936855,
+          "minimum_X_time_s": 2.74,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.6000000000000005,
+          "end_s": 6.32,
+          "duration_s": 1.7199999999999998,
+          "SSE_XYZ_m2s": [
+            0.002164003204242907,
+            0.002558615074231713,
+            0.020179393344699644
+          ],
+          "RMSE_XYZ_m": [
+            0.035470288944631445,
+            0.038568988885153435,
+            0.10831530562651297
+          ],
+          "finite_RMSE_m": 0.1203242026127896,
+          "finite_peak_m": 0.19399326105624226,
+          "peak_time_s": 5.32,
+          "peak_position_m": [
+            1.4208615528987836,
+            1.9957707665150501,
+            3.1552992367965897
+          ],
+          "peak_velocity_mps": [
+            -2.4275009678177533,
+            0.03986613214312724,
+            -0.6165408775107276
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0009340403654558734,
+            0.0011985031194796207,
+            3.145971930741379e-05
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.018354715570513984,
+          "minimum_X_m": -0.016389365377579197,
+          "minimum_X_time_s": 6.16,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 4,
+          "start_s": 6.32,
+          "end_s": 8.46,
+          "duration_s": 2.1400000000000006,
+          "SSE_XYZ_m2s": [
+            0.01446298467990598,
+            0.0011507341760711664,
+            0.0020538917098244704
+          ],
+          "RMSE_XYZ_m": [
+            0.08220951317232593,
+            0.023188925169152295,
+            0.0309800335898202
+          ],
+          "finite_RMSE_m": 0.09086194356141498,
+          "finite_peak_m": 0.12540743782023056,
+          "peak_time_s": 7.74,
+          "peak_position_m": [
+            -0.11792275652723103,
+            0.3027390561037309,
+            3.042676093467589
+          ],
+          "peak_velocity_mps": [
+            -0.017190464624021212,
+            -0.6002232418495909,
+            -0.02959653188768235
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.001442072044261713,
+            0.013020912635644267,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.11820045449632624,
+          "minimum_X_time_s": 7.78,
+          "forced_seconds": 0.0
+        }
+      ],
+      "force_onsets": [],
+      "force_changes": [],
+      "first_IO_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "rotation": [
+          [
+            -0.00012221225308750583,
+            -0.9995987764918104,
+            -0.028324390553747015
+          ],
+          [
+            0.9995808131882422,
+            -0.000942142494675835,
+            0.028936314095825196
+          ],
+          [
+            -0.028951389778346066,
+            -0.02830898097063411,
+            0.9991798730090126
+          ]
+        ],
+        "body_rates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.49476769656027e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.494398443134826e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.494398443134826e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 4.4224606615683726e-16,
+        "body_rates": 0.0
+      },
+      "trace_sha256": "d01ff3b7b4723d975a5614c1cb251f0cbf408f1ce691e7fa12ae9b3a3ef56cd6",
+      "IO_sha256": "b23cf95c496453bf910e05ea924fced413fc4f391c1413cab5d499e6ae1e6e3b"
+    },
+    {
+      "intervention": "yaw_only",
+      "mode": "raw",
+      "scenario": "force_strong",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 8.66,
+      "finite_RMSE_m": 0.13456080011430757,
+      "finite_peak_m": 0.20778268222299584,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.19617098715409087,
+      "axis_SSE_m2s": [
+        0.08678355918716958,
+        0.016032686456211618,
+        0.0409502292401957
+      ],
+      "axis_RMSE_m": [
+        0.10454625432359786,
+        0.0449358435134856,
+        0.0718154551753295
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.72,
+          "end_s": 2.44,
+          "duration_s": 1.72,
+          "SSE_XYZ_m2s": [
+            8.441664637961261e-05,
+            0.0010914833740264891,
+            0.001762732603681135
+          ],
+          "RMSE_XYZ_m": [
+            0.007005672385256265,
+            0.025190937993495692,
+            0.032013193171314784
+          ],
+          "finite_RMSE_m": 0.04133409415465159,
+          "finite_peak_m": 0.06706904390162943,
+          "peak_time_s": 0.74,
+          "peak_position_m": [
+            0.07853894063383954,
+            -0.02140441967666219,
+            2.9364381602832013
+          ],
+          "peak_velocity_mps": [
+            -0.22631433855370167,
+            0.1030596289331552,
+            0.13333151210131705
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0,
+            8.441664637961261e-05
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.022967790843579916,
+          "minimum_X_m": 0.04822368383816503,
+          "minimum_X_time_s": 0.9400000000000001,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.44,
+          "end_s": 4.7,
+          "duration_s": 2.2600000000000002,
+          "SSE_XYZ_m2s": [
+            0.0446295490381637,
+            0.0012966321121235106,
+            0.017394011386470835
+          ],
+          "RMSE_XYZ_m": [
+            0.14052611170164758,
+            0.023952683003444525,
+            0.08772950025648488
+          ],
+          "finite_RMSE_m": 0.1673851376565435,
+          "finite_peak_m": 0.20778268222299584,
+          "peak_time_s": 3.8200000000000003,
+          "peak_position_m": [
+            2.2053174528144353,
+            1.6763839717357045,
+            3.3862016809001863
+          ],
+          "peak_velocity_mps": [
+            -0.009833640413975518,
+            0.7703900292206954,
+            0.12498432217732428
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            7.397369007863285e-05,
+            0.044555575348085075,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.9725954910006744,
+          "minimum_X_time_s": 2.74,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.7,
+          "end_s": 6.32,
+          "duration_s": 1.62,
+          "SSE_XYZ_m2s": [
+            0.013361294149363857,
+            0.005181426026657045,
+            0.01369843937466738
+          ],
+          "RMSE_XYZ_m": [
+            0.09081691713485392,
+            0.056554496970321264,
+            0.09195556956751472
+          ],
+          "finite_RMSE_m": 0.14107427242389392,
+          "finite_peak_m": 0.19839022228746808,
+          "peak_time_s": 6.24,
+          "peak_position_m": [
+            -0.16144216119478047,
+            2.0920362322428625,
+            2.9305418050726377
+          ],
+          "peak_velocity_mps": [
+            0.3176732484871648,
+            0.31707934233657253,
+            -0.3180290079442535
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.005167241450701173,
+            0.0007344022097629733,
+            0.007459650488899712
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.17927956797467198,
+          "minimum_X_m": -0.17230729191759553,
+          "minimum_X_time_s": 6.18,
+          "forced_seconds": 1.4400000000000004
+        },
+        {
+          "leg": 4,
+          "start_s": 6.32,
+          "end_s": 8.66,
+          "duration_s": 2.34,
+          "SSE_XYZ_m2s": [
+            0.02870829935326243,
+            0.008463144943404574,
+            0.008095045875376343
+          ],
+          "RMSE_XYZ_m": [
+            0.11076327910061483,
+            0.06013924349617771,
+            0.05881684549738616
+          ],
+          "finite_RMSE_m": 0.13908506001608026,
+          "finite_peak_m": 0.20716277219534804,
+          "peak_time_s": 6.6000000000000005,
+          "peak_position_m": [
+            0.07739609841078164,
+            2.155410004065912,
+            2.8869779279490793
+          ],
+          "peak_velocity_mps": [
+            0.6131379601111364,
+            -0.22858398349191766,
+            0.09461296609230886
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.00438154529402198,
+            0.024326754059240452,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.1612308467298612,
+          "minimum_X_time_s": 7.8,
+          "forced_seconds": 2.34
+        }
+      ],
+      "force_onsets": [
+        {
+          "applied_control_interval_start_s": 4.88,
+          "PRE_leg": 3,
+          "seconds_after_leg_transition": 0.17999999999999972,
+          "measured_row_end_s": 4.9,
+          "position_m": [
+            2.128810872612499,
+            2.0112933363636643,
+            3.463964561250587
+          ],
+          "velocity_mps": [
+            -0.17246476926739676,
+            0.23050802338249074,
+            -0.3484441813244792
+          ],
+          "force_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ]
+        }
+      ],
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ],
+      "first_IO_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "rotation": [
+          [
+            -0.00012221225308750583,
+            -0.9995987764918104,
+            -0.028324390553747015
+          ],
+          [
+            0.9995808131882422,
+            -0.000942142494675835,
+            0.028936314095825196
+          ],
+          [
+            -0.028951389778346066,
+            -0.02830898097063411,
+            0.9991798730090126
+          ]
+        ],
+        "body_rates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.49476769656027e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.494398443134826e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.494398443134826e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 4.4224606615683726e-16,
+        "body_rates": 0.0
+      },
+      "trace_sha256": "41a8d85acc21b65d1925927a935757c3053ceffa856e933307c79eaacd955490",
+      "IO_sha256": "10c6f370b7ebee7d482cd940b0abc14e4cc76980d4e67ac5c2f819f7886e4c53"
+    },
+    {
+      "intervention": "yaw_only",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 9.14,
+      "finite_RMSE_m": 0.16146465356582995,
+      "finite_peak_m": 0.3527834707522532,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.21943013856140148,
+      "axis_SSE_m2s": [
+        0.14887839023327068,
+        0.02019224668826153,
+        0.05044578831501177
+      ],
+      "axis_RMSE_m": [
+        0.13297187307878178,
+        0.048970695935054896,
+        0.07740275357304954
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.72,
+          "end_s": 2.46,
+          "duration_s": 1.74,
+          "SSE_XYZ_m2s": [
+            0.0,
+            0.0009329087355386395,
+            0.001556785615088871
+          ],
+          "RMSE_XYZ_m": [
+            0.0,
+            0.023155009084685364,
+            0.029911609393141268
+          ],
+          "finite_RMSE_m": 0.03782669457142295,
+          "finite_peak_m": 0.06707004165837332,
+          "peak_time_s": 0.74,
+          "peak_position_m": [
+            0.07853891463835341,
+            -0.021404397630059302,
+            2.9364371000492406
+          ],
+          "peak_velocity_mps": [
+            -0.2263172618411811,
+            0.10306206326837149,
+            0.13321468578144818
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.04820301468156543,
+          "minimum_X_time_s": 0.9400000000000001,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.46,
+          "end_s": 4.6000000000000005,
+          "duration_s": 2.1400000000000006,
+          "SSE_XYZ_m2s": [
+            0.014545257037513075,
+            0.0011993718214920806,
+            0.01472923650709588
+          ],
+          "RMSE_XYZ_m": [
+            0.0824430050577369,
+            0.02367391227052599,
+            0.08296276753886862
+          ],
+          "finite_RMSE_m": 0.11933199069340521,
+          "finite_peak_m": 0.20013047081274957,
+          "peak_time_s": 2.96,
+          "peak_position_m": [
+            1.928381931163025,
+            0.1714979271761404,
+            3.235503006840385
+          ],
+          "peak_velocity_mps": [
+            0.2218299348295423,
+            1.3697499518377965,
+            0.4369063099160559
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0019364601667892823,
+            0.012608796870723794,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.901654749936855,
+          "minimum_X_time_s": 2.74,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.6000000000000005,
+          "end_s": 6.86,
+          "duration_s": 2.26,
+          "SSE_XYZ_m2s": [
+            0.04660616848678952,
+            0.014747942909313489,
+            0.02870658577887229
+          ],
+          "RMSE_XYZ_m": [
+            0.1436043120713375,
+            0.08078142395036403,
+            0.11270327903701695
+          ],
+          "finite_RMSE_m": 0.1996243121631888,
+          "finite_peak_m": 0.3527834707522532,
+          "peak_time_s": 6.1000000000000005,
+          "peak_position_m": [
+            -0.3468743975016883,
+            2.013500544294039,
+            2.937134549253096
+          ],
+          "peak_velocity_mps": [
+            0.05452973406012463,
+            0.3796435781886999,
+            -0.35105750532872626
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0009336480654493264,
+            0.0012522614987882158,
+            0.04442025892255197
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.3517647066187848,
+          "minimum_X_m": -0.3468743975016883,
+          "minimum_X_time_s": 6.1000000000000005,
+          "forced_seconds": 1.9800000000000004
+        },
+        {
+          "leg": 4,
+          "start_s": 6.86,
+          "end_s": 9.14,
+          "duration_s": 2.2800000000000002,
+          "SSE_XYZ_m2s": [
+            0.087726964708968,
+            0.0033120232219173264,
+            0.005453180413954737
+          ],
+          "RMSE_XYZ_m": [
+            0.19615488499510306,
+            0.038113537804811914,
+            0.04890547817570321
+          ],
+          "finite_RMSE_m": 0.2057209917996584,
+          "finite_peak_m": 0.28027641039028145,
+          "peak_time_s": 7.76,
+          "peak_position_m": [
+            -0.27010377542527353,
+            0.9758833301882355,
+            2.9251747587890633
+          ],
+          "peak_velocity_mps": [
+            -0.018436488598773757,
+            -2.268639450692845,
+            0.025378145202607255
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0011800021378937536,
+            0.08654696257107426,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.2702337915412699,
+          "minimum_X_time_s": 7.78,
+          "forced_seconds": 2.2800000000000002
+        }
+      ],
+      "force_onsets": [
+        {
+          "applied_control_interval_start_s": 4.88,
+          "PRE_leg": 3,
+          "seconds_after_leg_transition": 0.27999999999999936,
+          "measured_row_end_s": 4.9,
+          "position_m": [
+            2.0251816433228034,
+            1.9481191056354916,
+            3.4028780766249653
+          ],
+          "velocity_mps": [
+            -0.45669956613576157,
+            0.166927712126944,
+            -0.4580138138090653
+          ],
+          "force_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ]
+        }
+      ],
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ],
+      "first_IO_state": {
+        "position": [
+          0.199205400761013,
+          -0.09610838561801588,
+          2.8488813421205905
+        ],
+        "velocity": [
+          -0.019499728287901176,
+          0.011555716138396184,
+          -0.005378165330440533
+        ],
+        "rotation": [
+          [
+            -0.00012221225308750583,
+            -0.9995987764918104,
+            -0.028324390553747015
+          ],
+          [
+            0.9995808131882422,
+            -0.000942142494675835,
+            0.028936314095825196
+          ],
+          [
+            -0.028951389778346066,
+            -0.02830898097063411,
+            0.9991798730090126
+          ]
+        ],
+        "body_rates": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.49476769656027e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.494398443134826e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.032044246792793274,
+          0.06639788299798965,
+          0.0503728874027729,
+          0.0038527001161128283,
+          0.006499438546597958,
+          -0.0017927217995747924,
+          0.9995808005332947,
+          -0.0008199280127882957,
+          0.028939776122570038,
+          -8.494398443134826e-17,
+          0.9995988607406616,
+          0.028320852667093277,
+          -0.028951389715075493,
+          -0.02830898016691208,
+          0.9991798996925354,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 4.4224606615683726e-16,
+        "body_rates": 0.0
+      },
+      "trace_sha256": "887765ee5a3053ab21427314f501e64ce39c29591bfb0391c9b28535494ccb22",
+      "IO_sha256": "cb608a19bdfa6f62a8e651c8552340497e9a15b79d96e10fd97a7967fbc4e34a"
+    },
+    {
+      "intervention": "full_initial",
+      "mode": "raw",
+      "scenario": "nominal",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 8.58,
+      "finite_RMSE_m": 0.1295179156861807,
+      "finite_peak_m": 0.2139322765460196,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.19524780436221098,
+      "axis_SSE_m2s": [
+        0.0797975860859287,
+        0.015821089194500388,
+        0.03992243982780723
+      ],
+      "axis_RMSE_m": [
+        0.09937775843729259,
+        0.04424992195901323,
+        0.07029150744074973
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5,
+          "end_s": 2.24,
+          "duration_s": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            1.6865978704260292e-06,
+            0.00024890494116629663,
+            0.0005093126097556465
+          ],
+          "RMSE_XYZ_m": [
+            0.0009845349769990396,
+            0.011960301700301686,
+            0.017108722816484317
+          ],
+          "finite_RMSE_m": 0.020898002830281773,
+          "finite_peak_m": 0.03933190268009691,
+          "peak_time_s": 1.48,
+          "peak_position_m": [
+            1.2658523508536779,
+            0.014172097602455842,
+            2.9633100801583994
+          ],
+          "peak_velocity_mps": [
+            2.3978396039472547,
+            0.03216582494725341,
+            0.005710240794202775
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            1.6865978704260294e-06,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.0036323001213913347,
+          "minimum_X_time_s": 0.62,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.24,
+          "end_s": 4.5600000000000005,
+          "duration_s": 2.3200000000000003,
+          "SSE_XYZ_m2s": [
+            0.04800931842006682,
+            0.0014570008311799467,
+            0.017072220911013177
+          ],
+          "RMSE_XYZ_m": [
+            0.1438529517694629,
+            0.02506027932099977,
+            0.08578295815556533
+          ],
+          "finite_RMSE_m": 0.16935290148784998,
+          "finite_peak_m": 0.201626992665415,
+          "peak_time_s": 3.66,
+          "peak_position_m": [
+            2.199288115042677,
+            1.6868681341273881,
+            3.3901528594588037
+          ],
+          "peak_velocity_mps": [
+            -0.009087278288674653,
+            0.6554908712881381,
+            0.11859280187893326
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.00039178732180575706,
+            0.04761753109826106,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.958599481454195,
+          "minimum_X_time_s": 2.42,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.5600000000000005,
+          "end_s": 6.32,
+          "duration_s": 1.7599999999999998,
+          "SSE_XYZ_m2s": [
+            0.007479030865366663,
+            0.00809981722449293,
+            0.020375870308225467
+          ],
+          "RMSE_XYZ_m": [
+            0.0651878006633294,
+            0.06783928712444436,
+            0.10759739327123344
+          ],
+          "finite_RMSE_m": 0.14292941359859854,
+          "finite_peak_m": 0.2139322765460196,
+          "peak_time_s": 5.28,
+          "peak_position_m": [
+            1.5077668151041128,
+            2.087114896512379,
+            3.1755362926932755
+          ],
+          "peak_velocity_mps": [
+            -2.4432816965360042,
+            0.01979845301687095,
+            -0.623935963208016
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.006311086881260449,
+            0.0011679439841062126,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 0.01584661282755617,
+          "minimum_X_time_s": 6.140000000000001,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 4,
+          "start_s": 6.32,
+          "end_s": 8.58,
+          "duration_s": 2.26,
+          "SSE_XYZ_m2s": [
+            0.02430755020262475,
+            0.0060153661976612115,
+            0.0019650359988129455
+          ],
+          "RMSE_XYZ_m": [
+            0.10370898315479765,
+            0.05159134093180879,
+            0.029487030288365208
+          ],
+          "finite_RMSE_m": 0.11952700364926412,
+          "finite_peak_m": 0.1728258995554201,
+          "peak_time_s": 6.5200000000000005,
+          "peak_position_m": [
+            0.09480940265810803,
+            2.1392593856913074,
+            2.9614410552318584
+          ],
+          "peak_velocity_mps": [
+            0.08587648149048653,
+            -0.041997033039390556,
+            0.06376606429265183
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.003258624040775113,
+            0.021048926161849644,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.1453804418654114,
+          "minimum_X_time_s": 7.8,
+          "forced_seconds": 0.0
+        }
+      ],
+      "force_onsets": [],
+      "force_changes": [],
+      "first_IO_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0005825983243994415,
+          0.0006033112294971943,
+          -0.0013235481455922127
+        ],
+        "rotation": [
+          [
+            -0.00012226350253752294,
+            -0.9999999915099683,
+            -4.507437844196342e-05
+          ],
+          [
+            0.9999999852893661,
+            -0.00012225807892818352,
+            -0.00012030889401133726
+          ],
+          [
+            0.00012030338228299373,
+            -4.5089087165658956e-05,
+            0.9999999917470351
+          ]
+        ],
+        "body_rates": [
+          0.0041231922805309296,
+          -0.0005067550227977347,
+          0.0009743102127686143
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119542870499419e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 3.7291133722638925e-16,
+        "body_rates": 1.1926223897340549e-18
+      },
+      "trace_sha256": "8a1604ffe4612278ad90bf10c19bc97340e13fa757dba77e1c17122c12f0d4ea",
+      "IO_sha256": "89c77729ee91a6d84fe9d31c60988f2d4eedf01956296bdc59f2affb83efd793"
+    },
+    {
+      "intervention": "full_initial",
+      "mode": "zero_route_integral",
+      "scenario": "nominal",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 8.32,
+      "finite_RMSE_m": 0.0969318172648747,
+      "finite_peak_m": 0.1976715721223842,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.1657529520797066,
+      "axis_SSE_m2s": [
+        0.03119680611908288,
+        0.005118703913925011,
+        0.03715946765747181
+      ],
+      "axis_RMSE_m": [
+        0.06316139165900446,
+        0.02558448197429887,
+        0.06893366437435108
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5,
+          "end_s": 2.2800000000000002,
+          "duration_s": 1.7800000000000002,
+          "SSE_XYZ_m2s": [
+            1.686459462314811e-06,
+            0.00032031052433737335,
+            0.0002919864770308066
+          ],
+          "RMSE_XYZ_m": [
+            0.0009733699893318656,
+            0.013414534385277978,
+            0.01280770653343215
+          ],
+          "finite_RMSE_m": 0.018572413105368342,
+          "finite_peak_m": 0.041757412593542,
+          "peak_time_s": 2.2800000000000002,
+          "peak_position_m": [
+            1.89278431522293,
+            -0.03999085416712873,
+            3.0120171997358263
+          ],
+          "peak_velocity_mps": [
+            -0.12136046807587592,
+            -0.09731729519685314,
+            0.05763914550543693
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            1.6864594623148104e-06,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.0036322847363582595,
+          "minimum_X_time_s": 0.62,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.2800000000000002,
+          "end_s": 4.46,
+          "duration_s": 2.1799999999999997,
+          "SSE_XYZ_m2s": [
+            0.014455729013678779,
+            0.0013828721464392904,
+            0.01511470592065967
+          ],
+          "RMSE_XYZ_m": [
+            0.08143137205585156,
+            0.025186206965369495,
+            0.08326674810362263
+          ],
+          "finite_RMSE_m": 0.11915856962868047,
+          "finite_peak_m": 0.19767157212238423,
+          "peak_time_s": 2.7600000000000002,
+          "peak_position_m": [
+            1.934498433906033,
+            0.1470319668538755,
+            3.229001509077796
+          ],
+          "peak_velocity_mps": [
+            0.2789307119343918,
+            1.3003131996027337,
+            0.45144688770692754
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0034434918492367034,
+            0.011012237164442076,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.8820259747995098,
+          "minimum_X_time_s": 2.44,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.46,
+          "end_s": 6.18,
+          "duration_s": 1.7199999999999998,
+          "SSE_XYZ_m2s": [
+            0.002053614520257463,
+            0.0023016721310814008,
+            0.01977113207298042
+          ],
+          "RMSE_XYZ_m": [
+            0.03455375421545749,
+            0.03658116279670391,
+            0.10721401134402625
+          ],
+          "finite_RMSE_m": 0.1184355843081723,
+          "finite_peak_m": 0.19217411659189745,
+          "peak_time_s": 5.18,
+          "peak_position_m": [
+            1.4154890562643025,
+            1.9973090651263747,
+            3.1558031395672823
+          ],
+          "peak_velocity_mps": [
+            -2.4241899512863547,
+            0.037464865132621296,
+            -0.6151601836971202
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0008537999366031181,
+            0.0011887023992833477,
+            1.1112184370998077e-05
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.012994123505169673,
+          "minimum_X_m": -0.010951951314416494,
+          "minimum_X_time_s": 6.0200000000000005,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 4,
+          "start_s": 6.18,
+          "end_s": 8.32,
+          "duration_s": 2.1400000000000006,
+          "SSE_XYZ_m2s": [
+            0.014685776125684308,
+            0.0011138491120669476,
+            0.001981643186800904
+          ],
+          "RMSE_XYZ_m": [
+            0.0828402813144891,
+            0.02281425517705148,
+            0.030430272577801544
+          ],
+          "finite_RMSE_m": 0.09115373791955332,
+          "finite_peak_m": 0.12593042364313684,
+          "peak_time_s": 7.62,
+          "peak_position_m": [
+            -0.11889398501195919,
+            0.2897774640243241,
+            3.041505324079158
+          ],
+          "peak_velocity_mps": [
+            -0.008038883618004502,
+            -0.5473744481950875,
+            -0.037450557856120684
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.001496043605393567,
+            0.013189732520290744,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.11894995289324993,
+          "minimum_X_time_s": 7.640000000000001,
+          "forced_seconds": 0.0
+        }
+      ],
+      "force_onsets": [],
+      "force_changes": [],
+      "first_IO_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0005825983243994415,
+          0.0006033112294971943,
+          -0.0013235481455922127
+        ],
+        "rotation": [
+          [
+            -0.00012226350253752294,
+            -0.9999999915099683,
+            -4.507437844196342e-05
+          ],
+          [
+            0.9999999852893661,
+            -0.00012225807892818352,
+            -0.00012030889401133726
+          ],
+          [
+            0.00012030338228299373,
+            -4.5089087165658956e-05,
+            0.9999999917470351
+          ]
+        ],
+        "body_rates": [
+          0.0041231922805309296,
+          -0.0005067550227977347,
+          0.0009743102127686143
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119542870499419e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 3.7291133722638925e-16,
+        "body_rates": 1.1926223897340549e-18
+      },
+      "trace_sha256": "396a3662907d729c80e3e40f3145a295aa137fc3b3d1bc0b593707319c6e4780",
+      "IO_sha256": "521c8bc9b5be75550f0d1a3cf3512c8b41e89f4c7b12c0537ea93a5a56198aa0"
+    },
+    {
+      "intervention": "full_initial",
+      "mode": "raw",
+      "scenario": "force_strong",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 9.700000000000001,
+      "finite_RMSE_m": 0.16170767015251938,
+      "finite_peak_m": 0.3903121798994612,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.17368756393615228,
+      "axis_SSE_m2s": [
+        0.1239120443862883,
+        0.05927664695640222,
+        0.05738551804994476
+      ],
+      "axis_RMSE_m": [
+        0.11605473052301861,
+        0.08026900896117341,
+        0.0789782014848186
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5,
+          "end_s": 2.24,
+          "duration_s": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            1.6865978704260292e-06,
+            0.00024890494116629663,
+            0.0005093126097556465
+          ],
+          "RMSE_XYZ_m": [
+            0.0009845349769990396,
+            0.011960301700301686,
+            0.017108722816484317
+          ],
+          "finite_RMSE_m": 0.020898002830281773,
+          "finite_peak_m": 0.03933190268009691,
+          "peak_time_s": 1.48,
+          "peak_position_m": [
+            1.2658523508536779,
+            0.014172097602455842,
+            2.9633100801583994
+          ],
+          "peak_velocity_mps": [
+            2.3978396039472547,
+            0.03216582494725341,
+            0.005710240794202775
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            1.6865978704260294e-06,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.0036323001213913347,
+          "minimum_X_time_s": 0.62,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.24,
+          "end_s": 4.5600000000000005,
+          "duration_s": 2.3200000000000003,
+          "SSE_XYZ_m2s": [
+            0.04800931842006682,
+            0.0014570008311799467,
+            0.017072220911013177
+          ],
+          "RMSE_XYZ_m": [
+            0.1438529517694629,
+            0.02506027932099977,
+            0.08578295815556533
+          ],
+          "finite_RMSE_m": 0.16935290148784998,
+          "finite_peak_m": 0.201626992665415,
+          "peak_time_s": 3.66,
+          "peak_position_m": [
+            2.199288115042677,
+            1.6868681341273881,
+            3.3901528594588037
+          ],
+          "peak_velocity_mps": [
+            -0.009087278288674653,
+            0.6554908712881381,
+            0.11859280187893326
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.00039178732180575706,
+            0.04761753109826106,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.958599481454195,
+          "minimum_X_time_s": 2.42,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.5600000000000005,
+          "end_s": 7.5600000000000005,
+          "duration_s": 3.0,
+          "SSE_XYZ_m2s": [
+            0.05921359083696936,
+            0.05458436490138468,
+            0.039028459059802616
+          ],
+          "RMSE_XYZ_m": [
+            0.14049150726048576,
+            0.1348880584057075,
+            0.11405913533456029
+          ],
+          "finite_RMSE_m": 0.22570365142383544,
+          "finite_peak_m": 0.3903121798994612,
+          "peak_time_s": 6.1000000000000005,
+          "peak_position_m": [
+            -0.3706080430623217,
+            2.085789569975734,
+            2.9126305208968004
+          ],
+          "peak_velocity_mps": [
+            0.19225490612948976,
+            0.38921883111869543,
+            -0.4022110610138132
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.006286615637531119,
+            0.0017220117799273639,
+            0.051204963419510884
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.3813564711573594,
+          "minimum_X_m": -0.37325413806653746,
+          "minimum_X_time_s": 6.08,
+          "forced_seconds": 2.6800000000000006
+        },
+        {
+          "leg": 4,
+          "start_s": 7.5600000000000005,
+          "end_s": 9.700000000000001,
+          "duration_s": 2.1400000000000006,
+          "SSE_XYZ_m2s": [
+            0.01668744853138157,
+            0.0029863762826713,
+            0.0007755254693733082
+          ],
+          "RMSE_XYZ_m": [
+            0.0883055668998586,
+            0.03735643098353629,
+            0.019036677208651872
+          ],
+          "finite_RMSE_m": 0.09775362479457997,
+          "finite_peak_m": 0.14750315669734704,
+          "peak_time_s": 9.16,
+          "peak_position_m": [
+            -0.1454934345438156,
+            0.2098534942166428,
+            3.0242660614918564
+          ],
+          "peak_velocity_mps": [
+            -0.0031865297930641526,
+            -0.29914398015489274,
+            -0.02695010829199453
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0006546182230809461,
+            0.01603283030830062,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.1454934345438156,
+          "minimum_X_time_s": 9.16,
+          "forced_seconds": 2.1400000000000006
+        }
+      ],
+      "force_onsets": [
+        {
+          "applied_control_interval_start_s": 4.88,
+          "PRE_leg": 3,
+          "seconds_after_leg_transition": 0.3199999999999994,
+          "measured_row_end_s": 4.9,
+          "position_m": [
+            2.090576775757502,
+            2.0477606740147514,
+            3.4016553193735284
+          ],
+          "velocity_mps": [
+            -0.5925819404370695,
+            0.17739389306103331,
+            -0.4837222723289909
+          ],
+          "force_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ]
+        }
+      ],
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ],
+      "first_IO_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0005825983243994415,
+          0.0006033112294971943,
+          -0.0013235481455922127
+        ],
+        "rotation": [
+          [
+            -0.00012226350253752294,
+            -0.9999999915099683,
+            -4.507437844196342e-05
+          ],
+          [
+            0.9999999852893661,
+            -0.00012225807892818352,
+            -0.00012030889401133726
+          ],
+          [
+            0.00012030338228299373,
+            -4.5089087165658956e-05,
+            0.9999999917470351
+          ]
+        ],
+        "body_rates": [
+          0.0041231922805309296,
+          -0.0005067550227977347,
+          0.0009743102127686143
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119542870499419e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 3.7291133722638925e-16,
+        "body_rates": 1.1926223897340549e-18
+      },
+      "trace_sha256": "99fe3de49d7ee88248dbf2b64f2ef076e041864ad1f0a5d4135b8cc223d80241",
+      "IO_sha256": "1c31146ebe85a05a037a9eb2d48033fdc808886cf035e6e30cdf2a6c0d5a00cf"
+    },
+    {
+      "intervention": "full_initial",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 9.6,
+      "finite_RMSE_m": 0.16815179083505258,
+      "finite_peak_m": 0.5532695780916501,
+      "absolute_peak_guard_pass": false,
+      "mean_corner_peak_m": 0.14915297089806126,
+      "axis_SSE_m2s": [
+        0.15874631217892468,
+        0.035622085793542604,
+        0.06293432735295364
+      ],
+      "axis_RMSE_m": [
+        0.13207819536165583,
+        0.06256608444171106,
+        0.0831616507091834
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5,
+          "end_s": 2.2800000000000002,
+          "duration_s": 1.7800000000000002,
+          "SSE_XYZ_m2s": [
+            1.686459462314811e-06,
+            0.00032031052433737335,
+            0.0002919864770308066
+          ],
+          "RMSE_XYZ_m": [
+            0.0009733699893318656,
+            0.013414534385277978,
+            0.01280770653343215
+          ],
+          "finite_RMSE_m": 0.018572413105368342,
+          "finite_peak_m": 0.041757412593542,
+          "peak_time_s": 2.2800000000000002,
+          "peak_position_m": [
+            1.89278431522293,
+            -0.03999085416712873,
+            3.0120171997358263
+          ],
+          "peak_velocity_mps": [
+            -0.12136046807587592,
+            -0.09731729519685314,
+            0.05763914550543693
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            1.6864594623148104e-06,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.0036322847363582595,
+          "minimum_X_time_s": 0.62,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.2800000000000002,
+          "end_s": 4.46,
+          "duration_s": 2.1799999999999997,
+          "SSE_XYZ_m2s": [
+            0.014455729013678779,
+            0.0013828721464392904,
+            0.01511470592065967
+          ],
+          "RMSE_XYZ_m": [
+            0.08143137205585156,
+            0.025186206965369495,
+            0.08326674810362263
+          ],
+          "finite_RMSE_m": 0.11915856962868047,
+          "finite_peak_m": 0.19767157212238423,
+          "peak_time_s": 2.7600000000000002,
+          "peak_position_m": [
+            1.934498433906033,
+            0.1470319668538755,
+            3.229001509077796
+          ],
+          "peak_velocity_mps": [
+            0.2789307119343918,
+            1.3003131996027337,
+            0.45144688770692754
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0034434918492367034,
+            0.011012237164442076,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.8820259747995098,
+          "minimum_X_time_s": 2.44,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.46,
+          "end_s": 7.5,
+          "duration_s": 3.04,
+          "SSE_XYZ_m2s": [
+            0.12893141225624355,
+            0.03376595831955658,
+            0.04697425431851545
+          ],
+          "RMSE_XYZ_m": [
+            0.20594088658763507,
+            0.10539081141842056,
+            0.12430630451275158
+          ],
+          "finite_RMSE_m": 0.2626231696586407,
+          "finite_peak_m": 0.5532695780916501,
+          "peak_time_s": 6.0,
+          "peak_position_m": [
+            -0.5460782500865117,
+            2.0231466732560044,
+            2.9141512822381976
+          ],
+          "peak_velocity_mps": [
+            0.06648106276976665,
+            0.44050713961117727,
+            -0.41112641512791664
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0008537999366031181,
+            0.0019741849250846256,
+            0.12610342739455588
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.5505950912348427,
+          "minimum_X_m": -0.5460782500865117,
+          "minimum_X_time_s": 6.0,
+          "forced_seconds": 2.62
+        },
+        {
+          "leg": 4,
+          "start_s": 7.5,
+          "end_s": 9.6,
+          "duration_s": 2.0999999999999996,
+          "SSE_XYZ_m2s": [
+            0.015357484449540057,
+            0.00015294480320933874,
+            0.0005533806367476965
+          ],
+          "RMSE_XYZ_m": [
+            0.08551659390500954,
+            0.008534099757508913,
+            0.016233132443477277
+          ],
+          "finite_RMSE_m": 0.08746103864414659,
+          "finite_peak_m": 0.14055046479942604,
+          "peak_time_s": 9.08,
+          "peak_position_m": [
+            -0.13955377536257835,
+            0.21120199453404942,
+            3.0167085887311202
+          ],
+          "peak_velocity_mps": [
+            -0.007584523240802706,
+            -0.31033472264968814,
+            -0.027283116992200127
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0006893624523027593,
+            0.014668121997237292,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.13955377536257835,
+          "minimum_X_time_s": 9.08,
+          "forced_seconds": 2.0999999999999996
+        }
+      ],
+      "force_onsets": [
+        {
+          "applied_control_interval_start_s": 4.88,
+          "PRE_leg": 3,
+          "seconds_after_leg_transition": 0.41999999999999993,
+          "measured_row_end_s": 4.9,
+          "position_m": [
+            1.9190885608066082,
+            1.9724300207105023,
+            3.331564427797017
+          ],
+          "velocity_mps": [
+            -1.1002614466060028,
+            0.13171525297312175,
+            -0.5579036374604669
+          ],
+          "force_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ]
+        }
+      ],
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ],
+      "first_IO_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0005825983243994415,
+          0.0006033112294971943,
+          -0.0013235481455922127
+        ],
+        "rotation": [
+          [
+            -0.00012226350253752294,
+            -0.9999999915099683,
+            -4.507437844196342e-05
+          ],
+          [
+            0.9999999852893661,
+            -0.00012225807892818352,
+            -0.00012030889401133726
+          ],
+          [
+            0.00012030338228299373,
+            -4.5089087165658956e-05,
+            0.9999999917470351
+          ]
+        ],
+        "body_rates": [
+          0.0041231922805309296,
+          -0.0005067550227977347,
+          0.0009743102127686143
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119542870499419e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 3.7291133722638925e-16,
+        "body_rates": 1.1926223897340549e-18
+      },
+      "trace_sha256": "ace933388edcdf21c9ba2c06c928a78d9fdf9655cce0e51dcdd3043e50e8e1b4",
+      "IO_sha256": "2abd884f8fa76fe3c9e015427f1498e8719cbbf3ac8328c7a1c2183a37f7b102"
+    },
+    {
+      "intervention": "full_initial_physical_pulse",
+      "mode": "raw",
+      "scenario": "force_strong",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 9.74,
+      "finite_RMSE_m": 0.16730015492724554,
+      "finite_peak_m": 0.4230067910628364,
+      "absolute_peak_guard_pass": true,
+      "mean_corner_peak_m": 0.17254065686513723,
+      "axis_SSE_m2s": [
+        0.13477433559492466,
+        0.06327518232487775,
+        0.06057200066960413
+      ],
+      "axis_RMSE_m": [
+        0.12077237703932045,
+        0.0827524226538012,
+        0.08096549467445521
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5,
+          "end_s": 2.24,
+          "duration_s": 1.7400000000000002,
+          "SSE_XYZ_m2s": [
+            1.6865978704260292e-06,
+            0.00024890494116629663,
+            0.0005093126097556465
+          ],
+          "RMSE_XYZ_m": [
+            0.0009845349769990396,
+            0.011960301700301686,
+            0.017108722816484317
+          ],
+          "finite_RMSE_m": 0.020898002830281773,
+          "finite_peak_m": 0.03933190268009691,
+          "peak_time_s": 1.48,
+          "peak_position_m": [
+            1.2658523508536779,
+            0.014172097602455842,
+            2.9633100801583994
+          ],
+          "peak_velocity_mps": [
+            2.3978396039472547,
+            0.03216582494725341,
+            0.005710240794202775
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            1.6865978704260294e-06,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.0036323001213913347,
+          "minimum_X_time_s": 0.62,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.24,
+          "end_s": 4.5600000000000005,
+          "duration_s": 2.3200000000000003,
+          "SSE_XYZ_m2s": [
+            0.04800931842006682,
+            0.0014570008311799467,
+            0.017072220911013177
+          ],
+          "RMSE_XYZ_m": [
+            0.1438529517694629,
+            0.02506027932099977,
+            0.08578295815556533
+          ],
+          "finite_RMSE_m": 0.16935290148784998,
+          "finite_peak_m": 0.201626992665415,
+          "peak_time_s": 3.66,
+          "peak_position_m": [
+            2.199288115042677,
+            1.6868681341273881,
+            3.3901528594588037
+          ],
+          "peak_velocity_mps": [
+            -0.009087278288674653,
+            0.6554908712881381,
+            0.11859280187893326
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.00039178732180575706,
+            0.04761753109826106,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.958599481454195,
+          "minimum_X_time_s": 2.42,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.5600000000000005,
+          "end_s": 7.6000000000000005,
+          "duration_s": 3.04,
+          "SSE_XYZ_m2s": [
+            0.07014305749193427,
+            0.05857857209128391,
+            0.042219423190989
+          ],
+          "RMSE_XYZ_m": [
+            0.15189922374712247,
+            0.13881378582579887,
+            0.11784722378966164
+          ],
+          "finite_RMSE_m": 0.23712994215239822,
+          "finite_peak_m": 0.4230067910628364,
+          "peak_time_s": 6.1000000000000005,
+          "peak_position_m": [
+            -0.40477370750198144,
+            2.084308298863797,
+            2.91064060349873
+          ],
+          "peak_velocity_mps": [
+            0.15524507019293657,
+            0.3965881690717696,
+            -0.4130266886009416
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.006300056926182779,
+            0.0018367778501906015,
+            0.06200622271556089
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.4143610136723726,
+          "minimum_X_m": -0.40662123600995126,
+          "minimum_X_time_s": 6.08,
+          "forced_seconds": 2.7
+        },
+        {
+          "leg": 4,
+          "start_s": 7.6000000000000005,
+          "end_s": 9.74,
+          "duration_s": 2.1399999999999997,
+          "SSE_XYZ_m2s": [
+            0.016620273085053046,
+            0.002990704461247566,
+            0.0007710439578463144
+          ],
+          "RMSE_XYZ_m": [
+            0.08812765031489714,
+            0.037383491666524486,
+            0.018981594108015674
+          ],
+          "finite_RMSE_m": 0.0975925668997765,
+          "finite_peak_m": 0.14782785792170916,
+          "peak_time_s": 9.200000000000001,
+          "peak_position_m": [
+            -0.14584986503591457,
+            0.2092193375796411,
+            3.0241017104523005
+          ],
+          "peak_velocity_mps": [
+            -0.0006389500558261875,
+            -0.2975245730579725,
+            -0.027986796177738735
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0004697743894308497,
+            0.016150498695622195,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.14584986503591457,
+          "minimum_X_time_s": 9.200000000000001,
+          "forced_seconds": 2.1399999999999997
+        }
+      ],
+      "force_onsets": [
+        {
+          "applied_control_interval_start_s": 4.9,
+          "PRE_leg": 3,
+          "seconds_after_leg_transition": 0.33999999999999986,
+          "measured_row_end_s": 4.92,
+          "position_m": [
+            2.078431641043945,
+            2.0512549599754055,
+            3.3918444130132035
+          ],
+          "velocity_mps": [
+            -0.6808004773819877,
+            0.17071237903419298,
+            -0.49544548967801066
+          ],
+          "force_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ]
+        }
+      ],
+      "force_changes": [
+        {
+          "time_s": 4.9,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.86,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ],
+      "first_IO_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0005825983243994415,
+          0.0006033112294971943,
+          -0.0013235481455922127
+        ],
+        "rotation": [
+          [
+            -0.00012226350253752294,
+            -0.9999999915099683,
+            -4.507437844196342e-05
+          ],
+          [
+            0.9999999852893661,
+            -0.00012225807892818352,
+            -0.00012030889401133726
+          ],
+          [
+            0.00012030338228299373,
+            -4.5089087165658956e-05,
+            0.9999999917470351
+          ]
+        ],
+        "body_rates": [
+          0.0041231922805309296,
+          -0.0005067550227977347,
+          0.0009743102127686143
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119542870499419e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 3.7291133722638925e-16,
+        "body_rates": 1.1926223897340549e-18
+      },
+      "trace_sha256": "3fafb3b85c3c3415a20c4a17712534b19991d2b45fba310983d376e4ae50f0ae",
+      "IO_sha256": "49a1bab5213be5069ab968f32fa688219485d59b0adaf17eef9b681dc798d9df"
+    },
+    {
+      "intervention": "full_initial_physical_pulse",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "new_actual_episode": true,
+      "steps": 2000,
+      "completion_s": 9.64,
+      "finite_RMSE_m": 0.17274419057223475,
+      "finite_peak_m": 0.5742383309282992,
+      "absolute_peak_guard_pass": false,
+      "mean_corner_peak_m": 0.14809420067592824,
+      "axis_SSE_m2s": [
+        0.17019456140630412,
+        0.03746634368857058,
+        0.06508177104593824
+      ],
+      "axis_RMSE_m": [
+        0.13645823232469298,
+        0.06402470092991666,
+        0.0843833151642634
+      ],
+      "legs": [
+        {
+          "leg": 1,
+          "start_s": 0.5,
+          "end_s": 2.2800000000000002,
+          "duration_s": 1.7800000000000002,
+          "SSE_XYZ_m2s": [
+            1.686459462314811e-06,
+            0.00032031052433737335,
+            0.0002919864770308066
+          ],
+          "RMSE_XYZ_m": [
+            0.0009733699893318656,
+            0.013414534385277978,
+            0.01280770653343215
+          ],
+          "finite_RMSE_m": 0.018572413105368342,
+          "finite_peak_m": 0.041757412593542,
+          "peak_time_s": 2.2800000000000002,
+          "peak_position_m": [
+            1.89278431522293,
+            -0.03999085416712873,
+            3.0120171997358263
+          ],
+          "peak_velocity_mps": [
+            -0.12136046807587592,
+            -0.09731729519685314,
+            0.05763914550543693
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            1.6864594623148104e-06,
+            0.0,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.0036322847363582595,
+          "minimum_X_time_s": 0.62,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 2,
+          "start_s": 2.2800000000000002,
+          "end_s": 4.46,
+          "duration_s": 2.1799999999999997,
+          "SSE_XYZ_m2s": [
+            0.014455729013678779,
+            0.0013828721464392904,
+            0.01511470592065967
+          ],
+          "RMSE_XYZ_m": [
+            0.08143137205585156,
+            0.025186206965369495,
+            0.08326674810362263
+          ],
+          "finite_RMSE_m": 0.11915856962868047,
+          "finite_peak_m": 0.19767157212238423,
+          "peak_time_s": 2.7600000000000002,
+          "peak_position_m": [
+            1.934498433906033,
+            0.1470319668538755,
+            3.229001509077796
+          ],
+          "peak_velocity_mps": [
+            0.2789307119343918,
+            1.3003131996027337,
+            0.45144688770692754
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0034434918492367034,
+            0.011012237164442076,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": 1.8820259747995098,
+          "minimum_X_time_s": 2.44,
+          "forced_seconds": 0.0
+        },
+        {
+          "leg": 3,
+          "start_s": 4.46,
+          "end_s": 7.54,
+          "duration_s": 3.08,
+          "SSE_XYZ_m2s": [
+            0.1403236024731294,
+            0.03561455876412246,
+            0.0491194485306891
+          ],
+          "RMSE_XYZ_m": [
+            0.21344697513100175,
+            0.10753217392906128,
+            0.12628488785113753
+          ],
+          "finite_RMSE_m": 0.27031583845949303,
+          "finite_peak_m": 0.5742383309282992,
+          "peak_time_s": 6.0,
+          "peak_position_m": [
+            -0.5673349387138388,
+            2.022614008995361,
+            2.9141551712737375
+          ],
+          "peak_velocity_mps": [
+            0.022854193867729633,
+            0.4408936244345256,
+            -0.4142477658852498
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0008537999366031181,
+            0.0020749558056414085,
+            0.13739484673088473
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.5712161650549032,
+          "minimum_X_m": -0.5673349387138388,
+          "minimum_X_time_s": 6.0,
+          "forced_seconds": 2.6399999999999997
+        },
+        {
+          "leg": 4,
+          "start_s": 7.54,
+          "end_s": 9.64,
+          "duration_s": 2.1000000000000005,
+          "SSE_XYZ_m2s": [
+            0.015413543460033628,
+            0.0001486022536714579,
+            0.0005556301175586755
+          ],
+          "RMSE_XYZ_m": [
+            0.08567253118716647,
+            0.008412073343640643,
+            0.016266092655153414
+          ],
+          "finite_RMSE_m": 0.0876078269803608,
+          "finite_peak_m": 0.1415244766563808,
+          "peak_time_s": 9.120000000000001,
+          "peak_position_m": [
+            -0.14061920689172772,
+            0.20950545006174498,
+            3.015981744147744
+          ],
+          "peak_velocity_mps": [
+            -0.0026507263784033177,
+            -0.30485656132749506,
+            -0.029182498298407567
+          ],
+          "X_SSE_projection_before_inside_after_m2s": [
+            0.0005338580608400223,
+            0.014879685399193605,
+            0.0
+          ],
+          "incoming_longitudinal_after_endpoint_peak_m": 0.0,
+          "minimum_X_m": -0.14061920689172772,
+          "minimum_X_time_s": 9.120000000000001,
+          "forced_seconds": 2.1000000000000005
+        }
+      ],
+      "force_onsets": [
+        {
+          "applied_control_interval_start_s": 4.9,
+          "PRE_leg": 3,
+          "seconds_after_leg_transition": 0.4400000000000004,
+          "measured_row_end_s": 4.92,
+          "position_m": [
+            1.8965748487296497,
+            1.9750230323107227,
+            3.3202558889407343
+          ],
+          "velocity_mps": [
+            -1.2070026173965025,
+            0.126136907520017,
+            -0.5710398489283474
+          ],
+          "force_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ]
+        }
+      ],
+      "force_changes": [
+        {
+          "time_s": 4.9,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.86,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ],
+      "first_IO_state": {
+        "position": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "velocity": [
+          0.0005825983243994415,
+          0.0006033112294971943,
+          -0.0013235481455922127
+        ],
+        "rotation": [
+          [
+            -0.00012226350253752294,
+            -0.9999999915099683,
+            -4.507437844196342e-05
+          ],
+          [
+            0.9999999852893661,
+            -0.00012225807892818352,
+            -0.00012030889401133726
+          ],
+          [
+            0.00012030338228299373,
+            -4.5089087165658956e-05,
+            0.9999999917470351
+          ]
+        ],
+        "body_rates": [
+          0.0041231922805309296,
+          -0.0005067550227977347,
+          0.0009743102127686143
+        ],
+        "previous_action": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "effective_observation": [
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119542870499419e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -4.440892098500626e-16,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.00020107999444007874,
+          -0.00019422403420321643,
+          -0.00044118272489868104,
+          1.0,
+          5.4243698421885256e-09,
+          -0.00012030338257318363,
+          -7.119174278818466e-17,
+          1.0,
+          4.508908750722185e-05,
+          0.00012030338257318363,
+          -4.508908750722185e-05,
+          1.0,
+          0.0013743974268436432,
+          -0.00016891834093257785,
+          0.00032477008062414825,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "first_state_max_errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 3.7291133722638925e-16,
+        "body_rates": 1.1926223897340549e-18
+      },
+      "trace_sha256": "a554434c803814f22ef7130836af16c388cdb55e3c71b0b70f4dc67f276646b9",
+      "IO_sha256": "c95c13ee8caa1c3c4776dcb7ab16728d709d65a5e0a00d20daf1ac0cad436961"
+    }
+  ],
+  "pair_table": [
+    {
+      "intervention": "native_original",
+      "scenario": "nominal",
+      "raw_finite_RMSE_m": 0.11317718785962497,
+      "zero_finite_RMSE_m": 0.105277613447643,
+      "zero_vs_raw_change_percent": -6.979829205316457,
+      "raw_peak_m": 0.19511055998266,
+      "zero_peak_m": 0.19013847656387373,
+      "zero_absolute_peak_guard_pass": true,
+      "raw_corner_mean_m": 0.1659225499266879,
+      "zero_corner_mean_m": 0.16242859802530787,
+      "raw_completion_s": 8.58,
+      "zero_completion_s": 8.5,
+      "zero_minus_raw_axis_SSE_m2s": [
+        -0.0077985872456498295,
+        -0.004621737068682231,
+        -0.0017887494373756314
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            0.0,
+            0.00011793662202964818,
+            0.000167319137040541
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 2,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.009983950119210099,
+            -0.0003221934284833683,
+            -0.005078669673788824
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 3,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.00288587852419407,
+            -0.0013459320172544706,
+            0.0030614171133992833
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 4,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            0.005071241397754321,
+            -0.0030715482449740496,
+            6.118398597336223e-05
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        }
+      ]
+    },
+    {
+      "intervention": "native_original",
+      "scenario": "force_strong",
+      "raw_finite_RMSE_m": 0.10973808214467193,
+      "zero_finite_RMSE_m": 0.09936482048122337,
+      "zero_vs_raw_change_percent": -9.452745538028529,
+      "raw_peak_m": 0.19511055998266,
+      "zero_peak_m": 0.19013847656387373,
+      "zero_absolute_peak_guard_pass": true,
+      "raw_corner_mean_m": 0.15804027038983087,
+      "zero_corner_mean_m": 0.14066803941001713,
+      "raw_completion_s": 8.52,
+      "zero_completion_s": 8.42,
+      "zero_minus_raw_axis_SSE_m2s": [
+        -0.018630546781567982,
+        0.005616735003394643,
+        -0.004588671062954835
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            0.0,
+            0.00011793662202964818,
+            0.000167319137040541
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 2,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.009983950119210099,
+            -0.0003221934284833683,
+            -0.005078669673788824
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 3,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.005818803019913976,
+            0.006264028060180064,
+            0.0007113261561567047
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.00432416609843506,
+          "zero_after_endpoint_X_SSE_m2s": 0.0013381181443031056
+        },
+        {
+          "leg": 4,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.002827793642443931,
+            -0.00044303625033170844,
+            -0.00038864668236322916
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        }
+      ]
+    },
+    {
+      "intervention": "yaw_only",
+      "scenario": "nominal",
+      "raw_finite_RMSE_m": 0.12880880182138443,
+      "zero_finite_RMSE_m": 0.09878668448604173,
+      "zero_vs_raw_change_percent": -23.307504542254442,
+      "raw_peak_m": 0.20805205608302513,
+      "zero_peak_m": 0.20013047081274957,
+      "zero_absolute_peak_guard_pass": true,
+      "raw_corner_mean_m": 0.1924239566940684,
+      "zero_corner_mean_m": 0.1673198278544518,
+      "raw_completion_s": 8.74,
+      "zero_completion_s": 8.46,
+      "zero_minus_raw_axis_SSE_m2s": [
+        -0.04556833734428822,
+        -0.010144968065722959,
+        -0.001819006246103115
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -8.441664637961261e-05,
+            -0.0001585746384878496,
+            -0.00020594698859226386
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 8.441664637961261e-05,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 2,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.030084292000650624,
+            -9.726029063143e-05,
+            -0.0026647748793749548
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 3,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.00452664394585865,
+            -0.005035770473992883,
+            0.0011399474639095068
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 3.145971930741379e-05
+        },
+        {
+          "leg": 4,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.010872984751399323,
+            -0.004853362662610796,
+            -8.823184204545271e-05
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        }
+      ]
+    },
+    {
+      "intervention": "yaw_only",
+      "scenario": "force_strong",
+      "raw_finite_RMSE_m": 0.13456080011430757,
+      "zero_finite_RMSE_m": 0.16146465356582995,
+      "zero_vs_raw_change_percent": 19.99382690104987,
+      "raw_peak_m": 0.20778268222299584,
+      "zero_peak_m": 0.3527834707522532,
+      "zero_absolute_peak_guard_pass": true,
+      "raw_corner_mean_m": 0.19617098715409087,
+      "zero_corner_mean_m": 0.21943013856140148,
+      "raw_completion_s": 8.66,
+      "zero_completion_s": 9.14,
+      "zero_minus_raw_axis_SSE_m2s": [
+        0.0620948310461011,
+        0.004159560232049914,
+        0.00949555907481607
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -8.441664637961261e-05,
+            -0.0001585746384878496,
+            -0.00020594698859226386
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 8.441664637961261e-05,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 2,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.030084292000650624,
+            -9.726029063143e-05,
+            -0.0026647748793749548
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 3,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            0.033244874337425664,
+            0.009566516882656445,
+            0.015008146404204909
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.007459650488899712,
+          "zero_after_endpoint_X_SSE_m2s": 0.04442025892255197
+        },
+        {
+          "leg": 4,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            0.059018665355705574,
+            -0.005151121721487247,
+            -0.002641865461421606
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        }
+      ]
+    },
+    {
+      "intervention": "full_initial",
+      "scenario": "nominal",
+      "raw_finite_RMSE_m": 0.1295179156861807,
+      "zero_finite_RMSE_m": 0.0969318172648747,
+      "zero_vs_raw_change_percent": -25.15952966712456,
+      "raw_peak_m": 0.2139322765460196,
+      "zero_peak_m": 0.1976715721223842,
+      "zero_absolute_peak_guard_pass": true,
+      "raw_corner_mean_m": 0.19524780436221098,
+      "zero_corner_mean_m": 0.1657529520797066,
+      "raw_completion_s": 8.58,
+      "zero_completion_s": 8.32,
+      "zero_minus_raw_axis_SSE_m2s": [
+        -0.04860077996684582,
+        -0.010702385280575377,
+        -0.002762972170335422
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -1.384081112181742e-10,
+            7.140558317107672e-05,
+            -0.0002173261327248399
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 2,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.033553589406388036,
+            -7.412868474065623e-05,
+            -0.001957514990353508
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 3,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.0054254163451092005,
+            -0.00579814509341153,
+            -0.0006047382352450462
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 1.1112184370998077e-05
+        },
+        {
+          "leg": 4,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.009621774076940443,
+            -0.004901517085594264,
+            1.6607187987958613e-05
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        }
+      ]
+    },
+    {
+      "intervention": "full_initial",
+      "scenario": "force_strong",
+      "raw_finite_RMSE_m": 0.16170767015251938,
+      "zero_finite_RMSE_m": 0.16815179083505258,
+      "zero_vs_raw_change_percent": 3.985043304659097,
+      "raw_peak_m": 0.3903121798994612,
+      "zero_peak_m": 0.5532695780916501,
+      "zero_absolute_peak_guard_pass": false,
+      "raw_corner_mean_m": 0.17368756393615228,
+      "zero_corner_mean_m": 0.14915297089806126,
+      "raw_completion_s": 9.700000000000001,
+      "zero_completion_s": 9.6,
+      "zero_minus_raw_axis_SSE_m2s": [
+        0.034834267792636375,
+        -0.023654561162859612,
+        0.005548809303008877
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -1.384081112181742e-10,
+            7.140558317107672e-05,
+            -0.0002173261327248399
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 2,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.033553589406388036,
+            -7.412868474065623e-05,
+            -0.001957514990353508
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 3,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            0.06971782141927418,
+            -0.020818406581828097,
+            0.007945795258712834
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.051204963419510884,
+          "zero_after_endpoint_X_SSE_m2s": 0.12610342739455588
+        },
+        {
+          "leg": 4,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.001329964081841514,
+            -0.002833431479461961,
+            -0.00022214483262561176
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        }
+      ]
+    },
+    {
+      "intervention": "full_initial_physical_pulse",
+      "scenario": "force_strong",
+      "raw_finite_RMSE_m": 0.16730015492724554,
+      "zero_finite_RMSE_m": 0.17274419057223475,
+      "zero_vs_raw_change_percent": 3.254052960893361,
+      "raw_peak_m": 0.4230067910628364,
+      "zero_peak_m": 0.5742383309282992,
+      "zero_absolute_peak_guard_pass": false,
+      "raw_corner_mean_m": 0.17254065686513723,
+      "zero_corner_mean_m": 0.14809420067592824,
+      "raw_completion_s": 9.74,
+      "zero_completion_s": 9.64,
+      "zero_minus_raw_axis_SSE_m2s": [
+        0.03542022581137946,
+        -0.025808838636307167,
+        0.004509770376334106
+      ],
+      "leg_differences": [
+        {
+          "leg": 1,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -1.384081112181742e-10,
+            7.140558317107672e-05,
+            -0.0002173261327248399
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 2,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.033553589406388036,
+            -7.412868474065623e-05,
+            -0.001957514990353508
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        },
+        {
+          "leg": 3,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            0.07018054498119512,
+            -0.022964013327161456,
+            0.0069000253397000985
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.06200622271556089,
+          "zero_after_endpoint_X_SSE_m2s": 0.13739484673088473
+        },
+        {
+          "leg": 4,
+          "zero_minus_raw_SSE_XYZ_m2s": [
+            -0.0012067296250194183,
+            -0.002842102207576108,
+            -0.00021541384028763897
+          ],
+          "raw_after_endpoint_X_SSE_m2s": 0.0,
+          "zero_after_endpoint_X_SSE_m2s": 0.0
+        }
+      ]
+    }
+  ],
+  "prior_Gazebo_anchors": [
+    {
+      "name": "Gazebo_zero_nominal",
+      "finite_RMSE_m": 0.0997934135503599,
+      "axis_RMSE_m": [
+        0.06261889057133166,
+        0.026988981149711894,
+        0.07286422186607938
+      ],
+      "complete_s": 8.299999999999997
+    },
+    {
+      "name": "Gazebo_raw_nominal",
+      "finite_RMSE_m": 0.13163719687487016,
+      "axis_RMSE_m": [
+        0.10053983388148752,
+        0.04162150095857441,
+        0.07407930927129124
+      ],
+      "complete_s": 8.479999999999997
+    },
+    {
+      "name": "Gazebo_zero_force_strong",
+      "finite_RMSE_m": 0.16633021114288604,
+      "axis_RMSE_m": [
+        0.13465444073219138,
+        0.055642012046317094,
+        0.08023644574241377
+      ],
+      "complete_s": 9.100000000000001
+    },
+    {
+      "name": "Gazebo_raw_force_strong",
+      "finite_RMSE_m": 0.1509731436729435,
+      "axis_RMSE_m": [
+        0.10706349784681608,
+        0.07471414683259146,
+        0.07581618430370927
+      ],
+      "complete_s": 9.420000000000002
+    }
+  ],
+  "new_valid_absolute_peak_failures": [
+    {
+      "intervention": "full_initial",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "peak_m": 0.5532695780916501
+    },
+    {
+      "intervention": "full_initial_physical_pulse",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "peak_m": 0.5742383309282992
+    }
+  ],
+  "conclusion": "Yaw-only is sufficient to reproduce the adverse tail ranking sign in native. Remaining full-state/pulse changes affect magnitude but do not restore the old favorable ranking. Old randomized84001native was not an adequate sole transfer test.",
+  "next_PPO_proposal": {
+    "status": "PROPOSED_NOT_AUTHORIZED_OR_EXECUTED",
+    "sole_changed_factor": "Route initial-heading training distribution, not reward weights or plant refit.",
+    "reason": "Yaw-only intervention flips zero-versus-raw tail ranking while preserving p/v/roll/pitch/bodyrates; no dynamics or force timing changed. Full state and pulse retain failure; peak geometry newlyfails despite lower corner mean.",
+    "control": "Frozen original training route initial yaw sampler.",
+    "treatment": "Equal-priority route-heading strata: retain original sampler for half route episodes; set only initial yaw/yaw_reference to the declared measuredGazebo heading for other half. Initial p/v/r/p, task sampler, wind curriculum, source weights/prior, architecture, PPO settings, reward and interaction budget identical; hover unchanged.",
+    "allocation": "50/50 is prospective equal-stratum coverage allocation, not chosen by validation search. Freeze RNG/hash-based assignment and log counts before run; do not silently change sampler RNG draws.",
+    "common_source": "ROOT selects and freezes ONE common prior/initializer only after current v21p1 outcome; no assumption that pendingcandidate passed.",
+    "main_budget": "Same bounded131072critic+262144PPO per arm/three candidates, not automaticextension. Allmetrics mapped and officialpreflight/rootreviewbeforelearning.",
+    "selection": "Keep original24native gates and add all5 matched-start diagnosticconditions per candidate with fixed prospective guards. Entire active-leg finiteerror and absolutepeak remain required; low post-transition cornermean cannot hide pre-transition overshoot. No finalreserved seeds.",
+    "attribution": "Tests route-heading coverage for this integrated controller. Does not separately isolate network yawdependence versus native roll/pitch model asymmetry; no universal heading-invariance or Gazeboacceptance claim."
+  },
+  "limitations": [
+    "Yaw intervention changes body-relative route/force and integrated network+anisotropic plant response; cannot assign cause solely to policy or plant.",
+    "Full initial matches measuredp/v/R/bodyrates, not hiddenArduPilotcontrollerstates; pulsequantizes to4.90/19.86 in originalnative50Hz lookup.",
+    "One fixed developmentseed, dependent raw/zero cases and4reusedbaselines; not independentalgorithm ranking or finalconfirmation.",
+    "A conservativefull-initialnative peak failure is valid even if post-transitioncorner means improve."
+  ]
+}

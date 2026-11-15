@@ -1,0 +1,17 @@
+{
+  "schema": "local-publication-snapshot-v3",
+  "utc": "2026-11-13T22:15:30.214303+00:00",
+  "current_policy_sha256": "e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781",
+  "main_source_audit_sha256": "8f51f4917382e068188230cfe86a142c26f80e95977690919098b91e181922cb",
+  "original_development_gate": "FAIL",
+  "original_thesis_wind_macro": "PASS_IN_VIEWED_DEVELOPMENT_ONLY",
+  "active_new_experiments_included": false,
+  "GUI_training_recording_launchers_included": false,
+  "no_remote_or_push_performed": true,
+  "no_project_license_chosen": true,
+  "prior_snapshot_before_sha256": "16ac4dd33451c59832c589ddd20b3f3efb63c8b300032fc1f7b29938441e77d4",
+  "old_snapshot_preserved": true,
+  "workspace_only_recording_text_references_included": true,
+  "workspace_original_GUI_QA_passed": true,
+  "public_portable_Gazebo_recording_claim": false
+}

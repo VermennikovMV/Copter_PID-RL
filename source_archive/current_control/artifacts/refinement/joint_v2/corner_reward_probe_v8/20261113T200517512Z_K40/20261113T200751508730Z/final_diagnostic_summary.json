@@ -1,0 +1,168 @@
+{
+  "schema": "corner-reward-final-offline-diagnostic-summary-v8",
+  "created_utc": "2026-11-13T20:09:32.3446850Z",
+  "scope": "OFFLINE REPLAY ONLY; no simulator/training/Gazebo; no independent policy quality result",
+  "K20": "Numerical formula PASS, selected-tail total discounted return FAIL; preserved corrected receipt20261113T200412920997Z",
+  "K40_formula_status": "PASS",
+  "K40_selected_tail_rejection_status": "PASS_FOR_THE_ALREADY_VIEWED_SPECIFIC_PAIRED_TAIL_TRAJECTORIES",
+  "K40_general_corner_ranking_status": "FAIL_SOME_MATCHED_CHECKPOINT_REGRESSIONS_AND_SELECTED_AGGREGATE_STILL_PREFERRED",
+  "checks": 290710,
+  "coverage": {
+    "candidate_routes": 72,
+    "candidate_control_rows": 144000,
+    "complete_corner_windows": 216,
+    "selected_route_pair_cells": 12,
+    "matched_label_route_pair_cells": 36,
+    "training_seed_ids": [
+      111
+    ],
+    "backend": "archived fast_native_shaper_v3 development only",
+    "candidate_states": "blind/path x checkpoint131072/checkpoint262144/final x3 scenarios x4 development seeds; snapshots from same learning trajectory"
+  },
+  "report": "artifacts/refinement/joint_v2/corner_reward_probe_v8/20261113T200517512Z_K40/20261113T200751508730Z/report.json",
+  "report_sha256": "26077dd3bbd7849ee9846a1397780bdf3f6b9e4c444263e6b4f119a8b5106925",
+  "plan_corrigendum": "artifacts/refinement/joint_v2/corner_reward_probe_v8/20261113T200517512Z_K40/metric_mapping_corrigendum_20261113T2008Z.json",
+  "plan_corrigendum_sha256": "3ac80dd96b4242bedcf1321ff7316beaf80aa4686a549224dc2b4c622bdf014b",
+  "selected_tail": {
+    "blind_label": "checkpoint_131072",
+    "path_label": "final",
+    "scenario": "force_strong",
+    "seed": 84001,
+    "blind_mean_corner_peak_m": 0.1500482933704296,
+    "path_mean_corner_peak_m": 0.18560871901963158,
+    "corner_regression": true,
+    "score_scopes": {
+      "training_prefix": {
+        "fixed_K_reward_per_m": 40.0,
+        "old_discounted_path_minus_blind": 0.583217578611805,
+        "corner_K_undiscounted_path_minus_blind": -4.2672510779042305,
+        "corner_K_discounted_path_minus_blind": -0.9449923586871396,
+        "new_discounted_path_minus_blind": -0.3617747800753399,
+        "old_undiscounted_path_minus_blind": -0.24157866201997535,
+        "new_undiscounted_path_minus_blind": -4.508829739924206,
+        "discounted_corner_delta_per_unit_K": -0.02362480896717849,
+        "analytic_critical_K_discounted_zero_crossing": 24.686657971374853,
+        "analytic_critical_K_undiscounted_zero_crossing": -2.2644897861376516,
+        "minimum_nonnegative_K_boundary_for_path_rejection": 24.686657971374853,
+        "analytic_formula": "D(K)=D_old+K*slope; K_zero=-D_old/slope; slope<0: rejection strictly above K_zero, equality tie. Negative roots are not positive-weight thresholds.",
+        "positive_weight_can_reject_path": true,
+        "corner_penalty_disfavors_path": true,
+        "full_counterfactual_discounted_return_rejects_path": true
+      },
+      "full40": {
+        "fixed_K_reward_per_m": 40.0,
+        "old_discounted_path_minus_blind": 0.675370039205994,
+        "corner_K_undiscounted_path_minus_blind": -4.267251077904234,
+        "corner_K_discounted_path_minus_blind": -0.9449923586871396,
+        "new_discounted_path_minus_blind": -0.2696223194811438,
+        "old_undiscounted_path_minus_blind": 0.7016315014640497,
+        "new_undiscounted_path_minus_blind": -3.5656195764401843,
+        "discounted_corner_delta_per_unit_K": -0.02362480896717849,
+        "analytic_critical_K_discounted_zero_crossing": 28.587322764991374,
+        "analytic_critical_K_undiscounted_zero_crossing": 6.576894479887418,
+        "minimum_nonnegative_K_boundary_for_path_rejection": 28.587322764991374,
+        "analytic_formula": "D(K)=D_old+K*slope; K_zero=-D_old/slope; slope<0: rejection strictly above K_zero, equality tie. Negative roots are not positive-weight thresholds.",
+        "positive_weight_can_reject_path": true,
+        "corner_penalty_disfavors_path": true,
+        "full_counterfactual_discounted_return_rejects_path": true
+      }
+    }
+  },
+  "selected_regression_cases": 3,
+  "selected_regression_cases_rejected_training": 3,
+  "selected_regression_cases_rejected_full40": 3,
+  "matched_regression_cases": 3,
+  "matched_regression_cases_still_preferred_training": 3,
+  "matched_regression_cases_still_preferred_full40": 3,
+  "matched_unrejected_regressions": [
+    {
+      "training_slope": 0.0007755120682154005,
+      "full40_critical_K": -39.881414643977244,
+      "training_delta": 0.0561114818244679,
+      "label": "checkpoint_131072",
+      "scenario": "nominal",
+      "seed": 84002,
+      "full40_delta": 0.061949001082520994,
+      "training_critical_K": -32.354105273424054
+    },
+    {
+      "training_slope": 0.0033997544172773343,
+      "full40_critical_K": -23.342787407807432,
+      "training_delta": 0.21625438444422684,
+      "label": "checkpoint_262144",
+      "scenario": "nominal",
+      "seed": 84002,
+      "full40_delta": 0.21534992129235597,
+      "training_critical_K": -23.608825197854788
+    },
+    {
+      "training_slope": -0.0007595671397573778,
+      "full40_critical_K": 45.25250399800846,
+      "training_delta": 0.012408696912787676,
+      "label": "final",
+      "scenario": "nominal",
+      "seed": 84002,
+      "full40_delta": 0.0039896294383297,
+      "training_critical_K": 56.33653730301087
+    }
+  ],
+  "selected_equal12_aggregate": {
+    "cells_per_arm": 12,
+    "labels": {
+      "blind": "checkpoint_131072",
+      "path": "final"
+    },
+    "blind_mean_corner_peak_m": 0.1950448866720503,
+    "path_mean_corner_peak_m": 0.1961631531235195,
+    "blind_mean_finite_segment_rmse_m": 0.1366959612618264,
+    "path_mean_finite_segment_rmse_m": 0.131349387233643,
+    "score_scopes": {
+      "training_prefix": {
+        "fixed_K_reward_per_m": 40.0,
+        "old_discounted_path_minus_blind": 0.11166018414222023,
+        "corner_K_undiscounted_path_minus_blind": -0.13419197417630002,
+        "corner_K_discounted_path_minus_blind": 0.04263014961481382,
+        "new_discounted_path_minus_blind": 0.1542903337570376,
+        "old_undiscounted_path_minus_blind": 0.021348675748143364,
+        "new_undiscounted_path_minus_blind": -0.11284329842815666,
+        "discounted_corner_delta_per_unit_K": 0.0010657537403703453,
+        "analytic_critical_K_discounted_zero_crossing": -104.77109290127262,
+        "analytic_critical_K_undiscounted_zero_crossing": 6.363622229775291,
+        "minimum_nonnegative_K_boundary_for_path_rejection": null,
+        "analytic_formula": "D(K)=D_old+K*slope; K_zero=-D_old/slope; slope<0: rejection strictly above K_zero, equality tie. Negative roots are not positive-weight thresholds.",
+        "positive_weight_can_reject_path": false,
+        "corner_penalty_disfavors_path": true,
+        "full_counterfactual_discounted_return_rejects_path": false
+      },
+      "full40": {
+        "fixed_K_reward_per_m": 40.0,
+        "old_discounted_path_minus_blind": 0.13124367129021763,
+        "corner_K_undiscounted_path_minus_blind": -0.13419197417630713,
+        "corner_K_discounted_path_minus_blind": 0.04263014961481382,
+        "new_discounted_path_minus_blind": 0.1738738209050279,
+        "old_undiscounted_path_minus_blind": 0.26481462576718684,
+        "new_undiscounted_path_minus_blind": 0.1306226515908797,
+        "discounted_corner_delta_per_unit_K": 0.0010657537403703453,
+        "analytic_critical_K_discounted_zero_crossing": -123.14633889495988,
+        "analytic_critical_K_undiscounted_zero_crossing": 78.93605482523482,
+        "minimum_nonnegative_K_boundary_for_path_rejection": null,
+        "analytic_formula": "D(K)=D_old+K*slope; K_zero=-D_old/slope; slope<0: rejection strictly above K_zero, equality tie. Negative roots are not positive-weight thresholds.",
+        "positive_weight_can_reject_path": false,
+        "corner_penalty_disfavors_path": true,
+        "full_counterfactual_discounted_return_rejects_path": false
+      }
+    }
+  },
+  "exact_weight_linearity_max_error": 0.0,
+  "source_input_integrity_unchanged": true,
+  "max_errors": {
+    "peak_frozen_error_m": 2.220446049250313e-16,
+    "peak_numpy_error_m": 5.551115123125783e-17,
+    "peak_saved_geometry_error_m": 2.220446049250313e-16,
+    "peak_existing_geometry_error_m": 2.220446049250313e-16,
+    "telescoping_error_reward": 7.105427357601002e-15,
+    "row_geometry_error_m": 2.498001805406602e-16
+  },
+  "interpretation": "Undiscounted peak increments telescope exactly to -K*sum3peaks. Gamma0.995 discounts increments by their actual50Hz times; different peak timing can invert rankings. Positive K cannot correct cases with positive old return delta and positive discounted corner slope. No universal optimal K or PPO improvement is claimed.",
+  "next": "Root review only. FixedK20/K40 bounded replay complete. No furtherK search or actualPPO/simulator run authorized."
+}

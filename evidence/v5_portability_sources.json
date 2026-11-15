@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "original_relative": "audit/github_packaging_v5_memory20_qa_01.json",
+      "path": "evidence/memory20_portability_qa.json",
+      "original_sha256": "576fbc6be7d1e9c9efd986019739593411ad0c8314825ecd36b2e39c12a8a40a",
+      "export_sha256": "576fbc6be7d1e9c9efd986019739593411ad0c8314825ecd36b2e39c12a8a40a",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "audit/github_packaging_v5_memory20_qa_plan_01.json",
+      "path": "evidence/memory20_portability_prospective_plan.json",
+      "original_sha256": "bcc68b86dfdd097649ad3405fc3b0873b954d0f8aa003bab94ef87cbd2bd365b",
+      "export_sha256": "bcc68b86dfdd097649ad3405fc3b0873b954d0f8aa003bab94ef87cbd2bd365b",
+      "transformation": "Exact bytes"
+    }
+  ]
+}

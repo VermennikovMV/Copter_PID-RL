@@ -1,0 +1,59 @@
+{
+  "schema": "joint-causal-two-expert-bundle-v29.0",
+  "observation_contract": "measured-shared-phase-expert-v29.0",
+  "architecture": "hybrid",
+  "conditioning": {
+    "mode": "zero_route_integral",
+    "integral_input_columns": [
+      22,
+      23,
+      24
+    ],
+    "raw_old_contract": "measured-memory-route-basis-v4.0",
+    "raw_encoder_calls_per_observation": 1,
+    "gating": "own observed-target history valid_leg",
+    "reset_timing": "observed target change before current dt integration",
+    "world_integral_rule": "original first-sample skip; error*dt; XYnorm and separate Z clamp",
+    "other77_inputs_bit_exact": true,
+    "hidden_or_future_inputs": false
+  },
+  "shared_encoder": true,
+  "selector": {
+    "predicate": "CURRENT shared encoder valid_leg AFTER observe",
+    "false_expert": 0,
+    "true_expert": 1,
+    "latched": false,
+    "reset_on_switch": false,
+    "uses_mission_kind_or_future_waypoint": false
+  },
+  "experts": [
+    {
+      "index": 0,
+      "role": "F0_without_observed_leg",
+      "policy": {
+        "path": "artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/zero_route_integral/policy.npz",
+        "sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461"
+      }
+    },
+    {
+      "index": 1,
+      "role": "prior0_FINAL_with_observed_leg",
+      "policy": {
+        "path": "artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/final.npz",
+        "sha256": "ce86bb56d7e0f5c1775266d4a45cd3417e979303d27cc662a58e8070bf34e345"
+      },
+      "model_zip": {
+        "path": "artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/final.zip",
+        "sha256": "62eaf3fb179f915a91cb15686720c06c5dd8cc80595d1308279ee1895ce13c11"
+      },
+      "training_proof": {
+        "path": "audit/review_joint_prior_ablation_v28_pilot_01.json",
+        "sha256": "8b9936e55e286587ae8ee66d9c487bbc08471a1d0abef9fcad53b8d858e1e2a4",
+        "pointer": "/candidate_claims/prior0/final"
+      }
+    }
+  ],
+  "new_optimizer_steps": 0,
+  "new_training_steps": 0,
+  "development_choice": "Manual causal composition after known v28 quality; no new PPO training or inherited cell acceptance"
+}

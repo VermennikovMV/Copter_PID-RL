@@ -1,0 +1,121 @@
+{
+  "schema": "joint-memory20-gazebo-table-v7.0",
+  "status": "PASS",
+  "created_utc": "2026-11-15T04:35:39.136220+00:00",
+  "checks": 3413,
+  "source_builder_sha256": "79e94a70eb15e62bf4e8283e8d6e1aabcf1a6ca5fb006e3bc630ce5cd05cf56e",
+  "independent_whole_audit_sha256": "16d7e31e4cc22f5c4f55cb0ad37a1d3f46551cb6b91327b4e8164265988095ec",
+  "policy_sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+  "source_policy_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+  "new_actual_flights": 9,
+  "shared_PID_flights": 9,
+  "shared_retention_flights": 2,
+  "total_coverage": 20,
+  "table_rows": 9,
+  "route_geometries": 10,
+  "corner_windows": 30,
+  "fixed_checks": 90,
+  "primary_passed": 8,
+  "primary_total": 8,
+  "tail_passed": false,
+  "passed_checks": 88,
+  "scientific_quality_status": "FAIL",
+  "failed_quality_checks": [
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.1663302111428861,
+      "limit": 0.10273799592768003,
+      "pass_": false
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.20761917141417097,
+      "limit": 0.17282128929045582,
+      "pass_": false
+    }
+  ],
+  "original_thesis_wind_macro": {
+    "status": "PASS",
+    "coverage": "ALL6_DEVELOPMENT_CELLS",
+    "relative_improvement": 0.17497969906604094,
+    "joint_mean_penalized_RMSE_m": 0.29934114223794667,
+    "PID_mean_penalized_RMSE_m": 0.3628288199685261,
+    "minimum_improvement": 0.15,
+    "cells": [
+      {
+        "scenario": "force_mild",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.01890566076380011,
+        "PID_penalized_RMSE_m": 0.034134660849772326
+      },
+      {
+        "scenario": "force_mild",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5620126600868467,
+        "PID_penalized_RMSE_m": 0.6488727453314069
+      },
+      {
+        "scenario": "force_strong",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.03073129862693366,
+        "PID_penalized_RMSE_m": 0.06751586046239824
+      },
+      {
+        "scenario": "force_strong",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5634190848382914,
+        "PID_penalized_RMSE_m": 0.6571987474720183
+      },
+      {
+        "scenario": "gust",
+        "mission": "hover",
+        "joint_penalized_RMSE_m": 0.05578178897631948,
+        "PID_penalized_RMSE_m": 0.10614120268086255
+      },
+      {
+        "scenario": "gust",
+        "mission": "route",
+        "joint_penalized_RMSE_m": 0.5651963601354888,
+        "PID_penalized_RMSE_m": 0.6631097030146983
+      }
+    ],
+    "formula": "1 - mean6_joint_penalized_RMSE / mean6_PID_penalized_RMSE"
+  },
+  "conditioning_mode": "zero_route_integral",
+  "new_optimizer_steps": 0,
+  "policy_promotion": false,
+  "final_applicability_confirmed": false,
+  "input_files_unchanged": 1513,
+  "old_v6_files_preserved": 12,
+  "no_new_physics_training_or_actor_inference": true,
+  "visual_inspection": "PENDING_ROOT_AND_SEPARATE_IMAGE_READBACK",
+  "output_sha256": {
+    "all_original_flights.csv": "fa194ea49db05d58bd1a6f0237121f96bcfaa9ff6846a6880dd3dd1f32dd464a",
+    "applicability.csv": "36477a231edbb90b0f2f8357261bd74ee0bf7703869aea87e2702ec35cd044ba",
+    "case_recomputation.json": "7e86d5104cfb1612fcd38d08e365fc849cd6b25e86c0fc315026a21a856974fb",
+    "comparison_to_source68_and_PID.csv": "b888b39cada25d81eac1cef3cdd1dd2abacb7329a6c50fd376588ba4cc5eb894",
+    "conditioning_effect.pdf": "72fbb8113f8918664bb3a7aca0bd31837bf74c264492cd4b2af48485a8a1ba06",
+    "conditioning_effect.png": "3c880fc58b7ea0a10c3f160430a072b46a6ac770fabb4d491204777923d9c8db",
+    "fixed_quality_checks.csv": "e3af313d2e8ae7c142db7132d22010ade9ee315757b5122b5cb8d0198bccbf9b",
+    "input_freeze.json": "e2c977b619c000e828944a0133184c5ae9b71bfba6b9279cda6b895f0bf7da29",
+    "native_zero_update_reference.json": "62d55b35a18bb497db2695274ccf5d2c15fb8e0fee8e38c12351dadbd80c3e23",
+    "operational_gate.json": "1609877f60aa878000e82800fa78dcae800e443285acabec7bf5711f9e915d6d",
+    "original_thesis_wind_macro.json": "2e4a0fc591010a42c4e8ca8b0b240e22aac61071dbe6a109d9c7805b8a8c6aa9",
+    "presentation.pdf": "6e622ab217a47f4151ec16bc61b7ccf69f97fdd822079b3b6af9d987c8d94d36",
+    "presentation.png": "c03ab6328e7e57772ec1ae5542449817d68dfb241c3ab5cb8704ba38bfe96591",
+    "README.txt": "d97b47a54b9a10e40cd875d7ef08ff1d64afa83d7b6a5d4312d2c816f9bf8220",
+    "route_force_exposure.csv": "1799d64811b50ae8e153ef3640566d8d08942a4bcf50953a1578277f4cbbb3f6",
+    "thesis_metrics.pdf": "e749f21de4fcae7e05c174f0233d9565a70cce3e2e4e644ea3be13cb4648b658",
+    "thesis_metrics.png": "2f5dd1a1b520e23f2798032e5a22aa15e3bb7f6615a2d482f0eaaa7e7468901a"
+  }
+}

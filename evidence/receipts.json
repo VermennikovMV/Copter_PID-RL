@@ -1,0 +1,270 @@
+{
+  "previous_publication_index": {
+    "schema": "github-ready-joint-v2.0",
+    "receipts": [
+      {
+        "source_relative": "audit/joint_geometry_pilot32_integrity_v2.json",
+        "source_sha256": "2c388490c7ee00aaf09f5d00a6ed352ae1c2b46ab5e288f1b7efe0a59ec82808",
+        "source_bytes": 1299,
+        "projection": "results/receipts/audit__joint_geometry_pilot32_integrity_v2.json",
+        "projection_sha256": "2c388490c7ee00aaf09f5d00a6ed352ae1c2b46ab5e288f1b7efe0a59ec82808",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_geometry_replication16_integrity_v2.json",
+        "source_sha256": "c8cbd8930e10df8156255e4cd4e7014c7440843ee1887a622fd2c8e3cb48eabb",
+        "source_bytes": 1699,
+        "projection": "results/receipts/audit__joint_geometry_replication16_integrity_v2.json",
+        "projection_sha256": "c8cbd8930e10df8156255e4cd4e7014c7440843ee1887a622fd2c8e3cb48eabb",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_tailwind_stress4_integrity_v2.json",
+        "source_sha256": "72e394f6ac4f342e8591ad33f13eefb37a3aa523045c2446d35271ada7fb76f1",
+        "source_bytes": 1311,
+        "projection": "results/receipts/audit__joint_tailwind_stress4_integrity_v2.json",
+        "projection_sha256": "72e394f6ac4f342e8591ad33f13eefb37a3aa523045c2446d35271ada7fb76f1",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_thrust_recovery_integrity_v2.json",
+        "source_sha256": "00e20f95218b23918a5fc380efb955a20ad014af02bb17879ece03ec9d5aa97a",
+        "source_bytes": 1284,
+        "projection": "results/receipts/audit__joint_thrust_recovery_integrity_v2.json",
+        "projection_sha256": "00e20f95218b23918a5fc380efb955a20ad014af02bb17879ece03ec9d5aa97a",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_arrival_probe6_integrity_v3.json",
+        "source_sha256": "97f5a777523c61b0ce17bf2dacca6d64241a9abf0c5915bc868017644d8eadff",
+        "source_bytes": 1419,
+        "projection": "results/receipts/audit__joint_arrival_probe6_integrity_v3.json",
+        "projection_sha256": "97f5a777523c61b0ce17bf2dacca6d64241a9abf0c5915bc868017644d8eadff",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_pilot_tables_independent_v2_002.json",
+        "source_sha256": "61c99cd3d0a9ecdca7b51a76628fb66eefabeb35d8cf7e93df4644813ca79ab3",
+        "source_bytes": 1862,
+        "projection": "results/receipts/audit__joint_pilot_tables_independent_v2_002.json",
+        "projection_sha256": "61c99cd3d0a9ecdca7b51a76628fb66eefabeb35d8cf7e93df4644813ca79ab3",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_training_pair111_complete_integrity_20261113_01.json",
+        "source_sha256": "b7b8c9453766803581544b059356b3357f7caea21c0e0d869006499a5f7ef47a",
+        "source_bytes": 7684,
+        "projection": "results/receipts/audit__joint_training_pair111_complete_integrity_20261113_01.json",
+        "projection_sha256": "7d6511f8e6e96ccf34fa974e427b4fb81f503a3c6c8758284b422197888dd9c9",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_training_pair111_final_comparison_20261113_01.json",
+        "source_sha256": "47d2896e9ed1a68ac7647307423afebc68f267825d38d98fe014fd0f541e228b",
+        "source_bytes": 16561,
+        "projection": "results/receipts/audit__joint_training_pair111_final_comparison_20261113_01.json",
+        "projection_sha256": "5df60ea1e414fd75103ca65cf012047b6878d30e6c6052ad1e34a1ef12b1240c",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_native_rate_physics_replay_v3.json",
+        "source_sha256": "bb239e855728582e28c39b60725e58292579c96a14b8f137b18d0ca105cad2c4",
+        "source_bytes": 43857,
+        "projection": "results/receipts/audit__joint_native_rate_physics_replay_v3.json",
+        "projection_sha256": "bb239e855728582e28c39b60725e58292579c96a14b8f137b18d0ca105cad2c4",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_nativeplant111_final_integrity_20261113_01.json",
+        "source_sha256": "071421cd0986e131a84ddbec08a93634066ed0730531e3f298785364603129d2",
+        "source_bytes": 82391,
+        "projection": "results/receipts/audit__joint_nativeplant111_final_integrity_20261113_01.json",
+        "projection_sha256": "333bce60c5d27fffa98614afbe82856ff9b69081ad1ec192be7aecb8471d466d",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_tailwind111_final_integrity_20261113_01.json",
+        "source_sha256": "0637d1940b24aa283484c74b0fe591adbbe55e3abd5219234af5606099a07f51",
+        "source_bytes": 82284,
+        "projection": "results/receipts/audit__joint_tailwind111_final_integrity_20261113_01.json",
+        "projection_sha256": "c39b34fb2ab707cabc393b02e387c9792ab9ecd2035e9868db38a41b40922f94",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "audit/joint_research_preflight_v1_002.json",
+        "source_sha256": "ef915bad38ca80dbcac7b16a30f967682f8c0dc1244a1266c1097e7553092314",
+        "source_bytes": 3603,
+        "projection": "results/receipts/audit__joint_research_preflight_v1_002.json",
+        "projection_sha256": "83c0e566ea75c7a1e5f00199be40b38eda30a74038f491993b69f26cade59963",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/training_pair111/plan.json",
+        "source_sha256": "af6a7bdfc8e5ae44e8c566efcbdd2f91bcc77ba64f81687cce6dac670f0de145",
+        "source_bytes": 4535,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__training_pair111__plan.json",
+        "projection_sha256": "68c9601ffdf399f23c2b898de129c01f05e4245e1ef552c5c90960902523edf7",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/training_pair111/paired_complete.json",
+        "source_sha256": "30e6d5da41358a10bce22f5e0bf6adf28c2507921e4cf06fce69abdf2cd620fb",
+        "source_bytes": 11341,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__training_pair111__paired_complete.json",
+        "projection_sha256": "cd4ee1c47d4a0621bcb409a34ae488aa2aa418a914d7812a819cbb357e6307fa",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "reports/joint_geometry_pilot_v2/operational_gate.json",
+        "source_sha256": "bc62ed288fc455ca0d2bb9070d2a26a79fe0fcc8ecb9b2d6b8f84279ea4161f4",
+        "source_bytes": 132151,
+        "projection": "results/receipts/reports__joint_geometry_pilot_v2__operational_gate.json",
+        "projection_sha256": "94af784a6a67c011d3d56c39ca5c315d9337907d0621b832c347b72d300f9455",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/nativeplant111/complete.json",
+        "source_sha256": "a8a5fa5248ac197f01b3b14a0d9dc1fa82790ce57bcb04ea5ea4b5b46cf04cb1",
+        "source_bytes": 6614,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__nativeplant111__complete.json",
+        "projection_sha256": "859183a581b31a214526acb8b1b280f65c813b7be7beb72626b8b7f173c24a07",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/tailwind111/complete.json",
+        "source_sha256": "077dac88935d352e51c078fabf4b8c33ac4bebcf4240f65a6b3c132e649cfc4d",
+        "source_bytes": 7532,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__tailwind111__complete.json",
+        "projection_sha256": "6e17379eaf8fbd93b0eb3f7686b593a62dd1f4ed5b1a4a8cdc34df04f6586a6b",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/tailwind111/curriculum_counts_ppo.json",
+        "source_sha256": "275f22cec844c91f988dab191d687dfe98d98d5fab720efe8f109aa509437e7e",
+        "source_bytes": 478,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__tailwind111__curriculum_counts_ppo.json",
+        "projection_sha256": "b7c452e068a382afa84644d9ec86aab2f474abcd8813976911ec910c1042eb05",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/continuation_state.json",
+        "source_sha256": "ec216d0b5056dc8ca1f0ea279f843b0574296b9a12faf3ed1186900eeba3dd18",
+        "source_bytes": 9724,
+        "projection": "v2/artifacts/refinement/joint_v2/continuation_state.json",
+        "projection_sha256": "2ee962b212b57d92f3e6ef66cc7fb61cf8ea6a241dfa6478cf955406fa36ec22",
+        "byte_identical": false,
+        "projection_note": "Public export snapshot; internal process/service notes omitted; not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/plan.json",
+        "source_sha256": "683e25951a37122b574c439ad38c523dd8fe4f69c37429239a6273e01a0bedad",
+        "source_bytes": 58552,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_geometry_pilot32__plan.json",
+        "projection_sha256": "0b1c6ccdc185c4679c712d815e5b46c07a48c862f82f922379c428d6fbb93ee7",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/complete.json",
+        "source_sha256": "89835dacbff03ad280b11877080235d32cfc4e6d942da400c901f1ead4900b76",
+        "source_bytes": 180268,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_geometry_pilot32__complete.json",
+        "projection_sha256": "e88bf48ba8d5d93e659ac73e6a8dbaeee691a41f9d8f6e0f8725ef52c259b1dd",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_geometry_replication16/plan.json",
+        "source_sha256": "fec5c425c4f0eb39f909a175df8c8ac4615598ead5ae03f8c610c7218b032cf6",
+        "source_bytes": 427335,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_geometry_replication16__plan.json",
+        "projection_sha256": "dbd91bb18edd8cc153221e5051a9d437935e69f9c73f354bd6a3c8e3b8ff3721",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_geometry_replication16/complete.json",
+        "source_sha256": "fb39bce9da0c3c4592c963e3cf70f2f3775fe7704a7efd294c9eb3beddec56e9",
+        "source_bytes": 285169,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_geometry_replication16__complete.json",
+        "projection_sha256": "b11cf528b7dead667b5ce0365957209ba6c49dafe6e774f072756e113444f5ab",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_tailwind_stress4/plan.json",
+        "source_sha256": "2e859f7c393f97744f7c8ef4ceb88a56900b954635e50ae208f74df9b4b40f97",
+        "source_bytes": 37249,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_tailwind_stress4__plan.json",
+        "projection_sha256": "99f2cdc91bab0e3dcc397d1e2a7f649dced134faf6911b00c1c7fde1023b2edb",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_tailwind_stress4/complete.json",
+        "source_sha256": "1aa77a14552a557ca8d18996c2266475c1699877bfad06a4b309a390b7ad28c5",
+        "source_bytes": 29117,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_tailwind_stress4__complete.json",
+        "projection_sha256": "9bd9c5219c99dfbc42a9b496f089fc31c9d3f05ce7188db6917f98f1b702980a",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/plan.json",
+        "source_sha256": "90a071a8b0443d73b26727330bad03a4158f30d3c30f21f60a944d4da818703e",
+        "source_bytes": 14099,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_thrust_ablation_recovery__plan.json",
+        "projection_sha256": "48eaae82c2b6d25af03ebb214c435fdf4214ec653363100dab7fc96cb348701d",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/complete.json",
+        "source_sha256": "8321d9d415cb1d0505a50f8a6104e3bade2292bd2a5b73574c96b5b98f8c3b4b",
+        "source_bytes": 69384,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_thrust_ablation_recovery__complete.json",
+        "projection_sha256": "98b96f19be875fcb594d35c39b667a12097d46e65f436191a893d2518c1198fb",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_arrival_probe6/plan.json",
+        "source_sha256": "b34a3e1118747f61bf77a81bfc56ffab6c70d97ebe52bd7fbc38ee85827dc7a4",
+        "source_bytes": 582121,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_arrival_probe6__plan.json",
+        "projection_sha256": "7aa0a9e5329bdf8d3bb75acd97f605c12dd840eefae312ddced661c5035b26e1",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      },
+      {
+        "source_relative": "artifacts/refinement/joint_v2/gazebo_arrival_probe6/complete.json",
+        "source_sha256": "2062e758457c1d0cfa6ce93636b88dd86fefcb89ddff91d025daa61514730197",
+        "source_bytes": 216417,
+        "projection": "results/receipts/artifacts__refinement__joint_v2__gazebo_arrival_probe6__complete.json",
+        "projection_sha256": "7ef426d66a0030b8bbaedcddf1487c7dddcd835233f2d0d2ba31bad1d369824d",
+        "byte_identical": false,
+        "projection_note": "Local absolute paths replaced; public projection is not original receipt bytes"
+      }
+    ]
+  },
+  "current_index": "evidence/current_receipts.json",
+  "interpretation": "Do not pool different policy versions"
+}

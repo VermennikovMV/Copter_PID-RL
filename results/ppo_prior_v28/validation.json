@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "figure_visually_inspected": true,
+  "figure_dimensions": "2560x1440",
+  "unique_PDF_primary_links": 3,
+  "all_source_hashes_current": true,
+  "all_three_learned_FULL_research_fail": true,
+  "F0_research_baseline_not_candidate": true,
+  "sources_sha256": "4238af33927266676607bbe0cc3d4474259a708332cbe776b461be393266c076",
+  "NN": 0,
+  "env": 0,
+  "physics": 0,
+  "SGD": 0
+}

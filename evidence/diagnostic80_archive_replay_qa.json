@@ -1,0 +1,18 @@
+{
+  "status": "PASS_PORTABLE_DIAGNOSTIC80_ARCHIVE_REPLAY_NOT_NEW_SIMULATION",
+  "archived_rows": 1000,
+  "encoder_max_error": 0.0,
+  "action_max_error": 0.0,
+  "strict_schema_rejections": [
+    "77loader_rejects80",
+    "80loader_rejects77",
+    "wrong_basis_kind"
+  ],
+  "policy_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+  "default77_sha256": "e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781",
+  "no_Torch_import": true,
+  "new_environment_steps": 0,
+  "optimizer_steps": 0,
+  "Gazebo_flights": 0,
+  "independent_new_quality_replication": false
+}

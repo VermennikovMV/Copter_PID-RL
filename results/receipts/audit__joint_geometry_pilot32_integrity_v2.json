@@ -1,0 +1,26 @@
+{
+  "schema": "joint-geometry-pilot32-integrity-v2.0",
+  "status": "PASS",
+  "utc_verified": "2026-11-13T16:07:16.915084+00:00",
+  "checks": {
+    "prospective_plan_unchanged": true,
+    "all_frozen_source_bytes_match": true,
+    "all_training_completion_evidence_matches": true,
+    "all_five_NPZ_slots_match_completed_sources": true,
+    "native_PID_profile_matches": true,
+    "external_read_only_audit_helpers_match": true,
+    "v2_1_review_receipt_matches": true,
+    "full_fixed32_with_mandatory20_and_extra12": true,
+    "all32_valid_attempts_retained_without_retry": true,
+    "expected_audit_denominators": true,
+    "all_summary_policy_and_audit_receipt_hashes_match": true,
+    "all26_actual_indexed_yaw_and_exact_wire_proofs_pass": true,
+    "comparison_contains_exact32_valid_runs": true,
+    "development_seed_only_and_queue_released": true
+  },
+  "actual_NN_wire_commands": 44967,
+  "complete_sha256": "89835dacbff03ad280b11877080235d32cfc4e6d942da400c901f1ead4900b76",
+  "plan_sha256": "683e25951a37122b574c439ad38c523dd8fe4f69c37429239a6273e01a0bedad",
+  "comparison_sha256": "322c4be0c0cf3f32c9ce77e0aeeb62a3a5b2ce6bfcdb793aad68652763fe129b",
+  "scope": "Read-only matrix/provenance/denominator/receipt verification; controller PASS is not a fixed operational-quality gate pass"
+}

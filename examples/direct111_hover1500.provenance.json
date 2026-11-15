@@ -1,0 +1,29 @@
+{
+  "status": "ARCHIVED_ACTUAL_DIRECT_FAST_PHYSICAL_IO_NOT_NEW_SIMULATION",
+  "original_source_relative": "artifacts/fast/main_direct_test_v2/runs/direct111_force_strong_hover_202601/actor_io.npz",
+  "original_source_sha256": "3c6ee023e7f622cacbc0711d95de1265521fce1bda380d3ba2261b27f0d6f740",
+  "rows": 1500,
+  "row_range": [
+    0,
+    1500
+  ],
+  "export_sha256": "3c6ee023e7f622cacbc0711d95de1265521fce1bda380d3ba2261b27f0d6f740",
+  "array_names": [
+    "time",
+    "dt",
+    "position",
+    "velocity",
+    "rotation",
+    "body_rates",
+    "target",
+    "previous_action",
+    "observation",
+    "action",
+    "yaw_reference"
+  ],
+  "transformation": "Exact copies of selected original arrays, full causal prefix, recompressed",
+  "backend": "Historical Direct Fast physical rotor model",
+  "new_environment_steps": 0,
+  "new_optimizer_steps": 0,
+  "independent_new_quality_replication": false
+}

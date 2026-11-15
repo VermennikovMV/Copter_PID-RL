@@ -1,0 +1,63 @@
+{
+  "schema": "joint-research-preflight-verification-v1",
+  "status": "PASS",
+  "utc": "2026-11-13T17:47:07.0503187Z",
+  "unit_tests": 15,
+  "unit_result": "Ran15tests OK; all isolated fixtures, no scientific flight or training claim",
+  "test_command": "python -B -m unittest discover -s tests -p test_joint_research_preflight_v1.py -v",
+  "draft_cli": "BLOCKED: Plan is still a draft",
+  "frozen_sources": [
+    {
+      "path": "docs/joint_applicability_contract_v2.json",
+      "sha256": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/train_joint_geometry_v2.py",
+      "sha256": "ebb4cd2f95b5432e71c9c3b26a411f304b74c5de144061df364e70cf3441bd0b",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/train_joint_nativeplant_v4.py",
+      "sha256": "e1efeac66b9b233b5262513584be19922d4a100f37a520e2af64ae593bdecd92",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/train_joint_tailwind_v5.py",
+      "sha256": "462bf82b32c0212c0ecc8f38be202fb3b7a5b401cf445a31796b48239fbd7ca5",
+      "unchanged": true
+    },
+    {
+      "path": "sim_joint/run_experiment_v2_1.py",
+      "sha256": "d1d102170e763a2c53b7dfa00e3a7cd8f5b3a5fb631370eed1be3f8ca1db72bb",
+      "unchanged": true
+    }
+  ],
+  "new_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "8b63289b369ba0a002209e4f380e01915988aa305b0619c3e3ffda8103843d16"
+    },
+    {
+      "path": "docs/joint_research_rules_v1.md",
+      "sha256": "3c7f10f8c7f0008db087ca3119c01ffa44f02c575338975d02b525ee95a28935"
+    },
+    {
+      "path": "docs/joint_research_plan_v1.template.json",
+      "sha256": "4ea19ca3f3e0fbd9a7a344e5ea297c5ec47c3311cfef6de01c434057d338cdd2"
+    },
+    {
+      "path": "scripts/joint_research_preflight_v1.py",
+      "sha256": "27be46baf162a3b096f25a16299c3b64fd38f42c955cdddee2f7550c924c7dd7"
+    },
+    {
+      "path": "tests/test_joint_research_preflight_v1.py",
+      "sha256": "918cc42415f985f2772372e98a62bd69addd46a3fff17bb86773f4d7312da6dd"
+    }
+  ],
+  "scope": "Structural plan/evidence checks only; semantic review and actual policy acceptance remain separate",
+  "training_started": false,
+  "gazebo_started": false,
+  "supersedes": "audit/joint_research_preflight_v1_001.json",
+  "revision": "AGENTS wording narrowed from new runs to new training runs, matching checker scope. Executable/test sources unchanged; previous15test result remains applicable."
+}

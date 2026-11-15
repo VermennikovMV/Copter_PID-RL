@@ -1,0 +1,80 @@
+{
+  "position_goal_rmse": {
+    "reward": "Inherited trained CONTROL goal error/speed reward; no reward changes or training in this matrix.",
+    "checkpoint": "Root binds exact independently audited selected policy; do not reselect using these Gazebo results.",
+    "evaluation": "Independent full30s/40s goal-distance RMSE and4m-tail penalized RMSE. Every route<=1.05 pairedPID penalized value.",
+    "known_gap": "Goal distance is not cross-track; route terminal hover remains in this original thesis metric only."
+  },
+  "height_max_down": {
+    "reward": "Inherited vertical tracking term; no direct new max reward.",
+    "checkpoint": "Report all selected-policy errors, no posthoc checkpoint switch.",
+    "evaluation": "Independent maximum downward error versus active goal plus pre-force auxiliary when available.",
+    "known_gap": "Commanded route height steps are not an uncommanded physical drop. No invented numeric acceptance threshold."
+  },
+  "recovery_time": {
+    "reward": "Inherited hover tracking under wind; no explicit new recovery timer.",
+    "checkpoint": "Original fixed hover retention constraints; root frozen policy.",
+    "evaluation": "Hover only after independently verified actual final forceOFF;0.25m band continuously1s, censoring retained.",
+    "known_gap": "Already inside at OFF is not millisecond adaptation. Route recovery not substituted for hover."
+  },
+  "stability_full_flight": {
+    "reward": "Inherited safety termination; no new reward.",
+    "checkpoint": "Native all-flight hard guards must pass for acceptance-candidate status; failed native model is diagnostic.",
+    "evaluation": "Every9 joint flight survived, full horizon and valid status. Valid failures remain in denominators; paired PID validity also checked.",
+    "known_gap": "No new fault/noise/delay coverage; SITL survival does not establish real hardware safety."
+  },
+  "route_completion_time": {
+    "reward": "Inherited arrival10/completion20 and W8; continued learning evidence belongs to training receipts.",
+    "checkpoint": "Native fixed route time/complete guards; no Gazebo checkpoint reselection.",
+    "evaluation": "All5 joint routes confirm5 ordered0.5s dwells; restricted time40s when incomplete, otherwise actualtime<=1.05 matchedPID.",
+    "known_gap": "Force clock is absolute; a faster route sees different corner exposure."
+  },
+  "heading": {
+    "reward": "Inherited yaw tracking; commanded yaw remains common initial reference.",
+    "checkpoint": "Native heading guards preserved.",
+    "evaluation": "Every valid full flight RMS<=5deg and absolutepeak<=15deg including PIDreference validity.",
+    "known_gap": "Waypoint90deg turns are not90deg commanded yaw steps."
+  },
+  "nominal_hover_accuracy": {
+    "reward": "Inherited hover tracking, no new reward.",
+    "checkpoint": "Original Gamma native retention anchor remains separate from new Gazebo PID gate.",
+    "evaluation": "Nominal83301 hover RMSE<=min(.05,max(1.2*pairedPID,pairedPID+.02)).",
+    "known_gap": "One viewed development environment, not reserved confirmation."
+  },
+  "wind_hover_gain": {
+    "reward": "Inherited wind distribution and tracking; actual training evidence hash-bound.",
+    "checkpoint": "Native hover guards and root choice bound before matrix.",
+    "evaluation": "Strong/gust83301 penalized hoverRMSE<=.85 correspondingPID; mild belongs to six-cell macro without added per-cell15%requirement.",
+    "known_gap": "Three force profiles do not mean all wind directions/speeds. Newton proxies are notm/s."
+  },
+  "wind_specialist_retention": {
+    "reward": "Inherited original hover task; no fresh reward adjustment.",
+    "checkpoint": "Original Gamma native anchor not loosened; actualold specialist paired onlystrong/gusthover83301.",
+    "evaluation": "Joint strong/gusthoverRMSE<=1.10 matched oldwind111specialist; exact policyddd0... and2sharedflights verified.",
+    "known_gap": "Legacy specialist has older throttle semantics; this is retained integrated-system reference, not new matched causal PPO ablation."
+  },
+  "route_finite_segment_rmse": {
+    "reward": "InheritedW8=-dt*8*finite active3D segment error squared on pre-update goals1..4.",
+    "checkpoint": "Native finite targets unchanged; root policy chosen before Gazebo.",
+    "evaluation": "Independent pre-transition active finite3D transit RMSE excluding final hover <=max(1.10*pairedPID,pairedPID+.01). All5joint routes, each geometry complete.",
+    "known_gap": "Nominal finite target is still required even if native/Gazebo return improves. No criterion relaxation."
+  },
+  "route_corner_peak": {
+    "reward": "CONTROL has no effective K40 corner reward; that branch was rejected. Inherited tracking/W8 can only influence corners indirectly.",
+    "checkpoint": "Native corner hard constraints and fixed policy binding.",
+    "evaluation": "All3 interior outgoing finite3D peaks in closed1s windows; mean<=max(1.10*pairedPID,pairedPID+.02), gap<=.060001 and complete coverage.",
+    "known_gap": "No direct corner reward in intended controller; this explicit residual mismatch cannot be hidden by overall return or mean finite error."
+  },
+  "route_absolute_peak": {
+    "reward": "Inherited path/safety penalties, no added max clipping or new reward.",
+    "checkpoint": "Every native route peak<=.50 for acceptance-candidate status.",
+    "evaluation": "Every joint active-segment peak<=.50m including tail84001. Never average away one failed seed or corner.",
+    "known_gap": "A pass in these5 development routes does not prove all force timing/directions."
+  },
+  "thesis_six_cell_macro": {
+    "reward": "Inherited training objective is not exactly the six-cell macro; no macro reward change in this matrix.",
+    "checkpoint": "Freeze chosen actor before all new flights; no selection on resulting macro.",
+    "evaluation": "1 - mean6joint penalized goalRMSE/mean6pairedPID >=.15, mild/strong/gust x hover/route83301, equal cell weights. New mild2PID+2joint finally cover missingcells.",
+    "known_gap": "Ratio of means, not mean of ratios. Nominal/tail/legacy references excluded. This remains development-only, one actor/environment; final114flight matrix still required."
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "status": "PREPARED_NOT_FINAL",
+  "files": [
+    {
+      "original_relative": "artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/zero_route_integral/policy.npz",
+      "path": "models/route_memory20_zero_integral.npz",
+      "original_sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+      "export_sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz",
+      "path": "v2/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz",
+      "original_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+      "export_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "quadrl_route_memory_v20/policy.py",
+      "path": "v2/quadrl_route_memory_v20/policy.py",
+      "original_sha256": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+      "export_sha256": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "quadrl_route_memory_v20/__init__.py",
+      "path": "v2/quadrl_route_memory_v20/__init__.py",
+      "original_sha256": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+      "export_sha256": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/inspect_joint_memory20_v5_template.py",
+      "path": "scripts/inspect_memory20.py",
+      "original_sha256": "e291513b8e14b6bb92999f42be74a3b838066ae03bb1e82e5d33911f4b0cf6d9",
+      "export_sha256": "e291513b8e14b6bb92999f42be74a3b838066ae03bb1e82e5d33911f4b0cf6d9",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "docs/joint_algorithm_choice_v17.md",
+      "path": "docs/algorithm_choice.md",
+      "original_sha256": "16e4417cfad136ec02373fd170622510f4cdbe6f9d7eeedff9cc122bf94a597d",
+      "export_sha256": "16e4417cfad136ec02373fd170622510f4cdbe6f9d7eeedff9cc122bf94a597d",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_algorithm_choice_v17/choice.pdf",
+      "path": "results/algorithm_choice/choice.pdf",
+      "original_sha256": "3fe4b3b1343e558df0de48d1e0eaff1e44633ffae0e201f6ce1d4ab8c02fec27",
+      "export_sha256": "3fe4b3b1343e558df0de48d1e0eaff1e44633ffae0e201f6ce1d4ab8c02fec27",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "audit/native_training_viewer_v21_live_root01.png",
+      "path": "results/training_viewer/native_v21_live_snapshot.png",
+      "original_sha256": "9618bcfda487f1fd3ab2fd7cdbf1addebe1a235d4f3f7636a9cbc6fbeca7ff8f",
+      "export_sha256": "9618bcfda487f1fd3ab2fd7cdbf1addebe1a235d4f3f7636a9cbc6fbeca7ff8f",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/all_original_flights.csv",
+      "path": "results/memory20_v7/all_original_flights.csv",
+      "original_sha256": "fa194ea49db05d58bd1a6f0237121f96bcfaa9ff6846a6880dd3dd1f32dd464a",
+      "export_sha256": "fa194ea49db05d58bd1a6f0237121f96bcfaa9ff6846a6880dd3dd1f32dd464a",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/applicability.csv",
+      "path": "results/memory20_v7/applicability.csv",
+      "original_sha256": "36477a231edbb90b0f2f8357261bd74ee0bf7703869aea87e2702ec35cd044ba",
+      "export_sha256": "36477a231edbb90b0f2f8357261bd74ee0bf7703869aea87e2702ec35cd044ba",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/comparison_to_source68_and_PID.csv",
+      "path": "results/memory20_v7/comparison_to_source68_and_PID.csv",
+      "original_sha256": "b888b39cada25d81eac1cef3cdd1dd2abacb7329a6c50fd376588ba4cc5eb894",
+      "export_sha256": "b888b39cada25d81eac1cef3cdd1dd2abacb7329a6c50fd376588ba4cc5eb894",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/conditioning_effect.pdf",
+      "path": "results/memory20_v7/conditioning_effect.pdf",
+      "original_sha256": "72fbb8113f8918664bb3a7aca0bd31837bf74c264492cd4b2af48485a8a1ba06",
+      "export_sha256": "72fbb8113f8918664bb3a7aca0bd31837bf74c264492cd4b2af48485a8a1ba06",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/conditioning_effect.png",
+      "path": "results/memory20_v7/conditioning_effect.png",
+      "original_sha256": "3c880fc58b7ea0a10c3f160430a072b46a6ac770fabb4d491204777923d9c8db",
+      "export_sha256": "3c880fc58b7ea0a10c3f160430a072b46a6ac770fabb4d491204777923d9c8db",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/fixed_quality_checks.csv",
+      "path": "results/memory20_v7/fixed_quality_checks.csv",
+      "original_sha256": "e3af313d2e8ae7c142db7132d22010ade9ee315757b5122b5cb8d0198bccbf9b",
+      "export_sha256": "e3af313d2e8ae7c142db7132d22010ade9ee315757b5122b5cb8d0198bccbf9b",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/presentation.pdf",
+      "path": "results/memory20_v7/presentation.pdf",
+      "original_sha256": "6e622ab217a47f4151ec16bc61b7ccf69f97fdd822079b3b6af9d987c8d94d36",
+      "export_sha256": "6e622ab217a47f4151ec16bc61b7ccf69f97fdd822079b3b6af9d987c8d94d36",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/presentation.png",
+      "path": "results/memory20_v7/presentation.png",
+      "original_sha256": "c03ab6328e7e57772ec1ae5542449817d68dfb241c3ab5cb8704ba38bfe96591",
+      "export_sha256": "c03ab6328e7e57772ec1ae5542449817d68dfb241c3ab5cb8704ba38bfe96591",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/README.txt",
+      "path": "results/memory20_v7/README.txt",
+      "original_sha256": "d97b47a54b9a10e40cd875d7ef08ff1d64afa83d7b6a5d4312d2c816f9bf8220",
+      "export_sha256": "d97b47a54b9a10e40cd875d7ef08ff1d64afa83d7b6a5d4312d2c816f9bf8220",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/route_force_exposure.csv",
+      "path": "results/memory20_v7/route_force_exposure.csv",
+      "original_sha256": "1799d64811b50ae8e153ef3640566d8d08942a4bcf50953a1578277f4cbbb3f6",
+      "export_sha256": "1799d64811b50ae8e153ef3640566d8d08942a4bcf50953a1578277f4cbbb3f6",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/thesis_metrics.pdf",
+      "path": "results/memory20_v7/thesis_metrics.pdf",
+      "original_sha256": "e749f21de4fcae7e05c174f0233d9565a70cce3e2e4e644ea3be13cb4648b658",
+      "export_sha256": "e749f21de4fcae7e05c174f0233d9565a70cce3e2e4e644ea3be13cb4648b658",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/thesis_metrics.png",
+      "path": "results/memory20_v7/thesis_metrics.png",
+      "original_sha256": "2f5dd1a1b520e23f2798032e5a22aa15e3bb7f6615a2d482f0eaaa7e7468901a",
+      "export_sha256": "2f5dd1a1b520e23f2798032e5a22aa15e3bb7f6615a2d482f0eaaa7e7468901a",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "quadrl_route_memory_v20/policy.py",
+      "path": "source_archive/v17_v21/quadrl_route_memory_v20/policy.py",
+      "original_sha256": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+      "export_sha256": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "quadrl_route_memory_v20/__init__.py",
+      "path": "source_archive/v17_v21/quadrl_route_memory_v20/__init__.py",
+      "original_sha256": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+      "export_sha256": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "quadrl_route_memory_train_v21/policy.py",
+      "path": "source_archive/v17_v21/quadrl_route_memory_train_v21/policy.py",
+      "original_sha256": "9a6dd33bdfb3f2ad7127a4c25b71d889b87f610481fac33a42ccd4bcd2a4d53d",
+      "export_sha256": "9a6dd33bdfb3f2ad7127a4c25b71d889b87f610481fac33a42ccd4bcd2a4d53d",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "quadrl_route_memory_train_v21/env.py",
+      "path": "source_archive/v17_v21/quadrl_route_memory_train_v21/env.py",
+      "original_sha256": "a47fbe0b7dffba7d491ca6082c09d0704e1cfe40199264f79af11493dadedf54",
+      "export_sha256": "a47fbe0b7dffba7d491ca6082c09d0704e1cfe40199264f79af11493dadedf54",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "quadrl_route_memory_train_v21/eval.py",
+      "path": "source_archive/v17_v21/quadrl_route_memory_train_v21/eval.py",
+      "original_sha256": "4d301832fe8f15e178eb5be92488331d0bb07c0622345c60e1dc278617f22aef",
+      "export_sha256": "4d301832fe8f15e178eb5be92488331d0bb07c0622345c60e1dc278617f22aef",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/prototype_joint_route_memory_v20.py",
+      "path": "source_archive/v17_v21/scripts/prototype_joint_route_memory_v20.py",
+      "original_sha256": "0d88b02089338be580efd5756d259ec38d754cfdd7dc5fdd05841d3716a6b4b2",
+      "export_sha256": "0d88b02089338be580efd5756d259ec38d754cfdd7dc5fdd05841d3716a6b4b2",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/train_joint_route_memory_v21.py",
+      "path": "source_archive/v17_v21/scripts/train_joint_route_memory_v21.py",
+      "original_sha256": "fca9dbeb7c75b185868b9adc1de0fb6a31f7b168835a07b87de116c96a731959",
+      "export_sha256": "fca9dbeb7c75b185868b9adc1de0fb6a31f7b168835a07b87de116c96a731959",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/run_joint_route_memory_pair_v21.py",
+      "path": "source_archive/v17_v21/scripts/run_joint_route_memory_pair_v21.py",
+      "original_sha256": "3c3f5d633ae37400245dc9b3862d63b9ad49f7fbaf783d8d8b6b0bb4133019c8",
+      "export_sha256": "3c3f5d633ae37400245dc9b3862d63b9ad49f7fbaf783d8d8b6b0bb4133019c8",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/build_joint_memory20_gazebo_table_v7.py",
+      "path": "source_archive/v17_v21/scripts/build_joint_memory20_gazebo_table_v7.py",
+      "original_sha256": "79e94a70eb15e62bf4e8283e8d6e1aabcf1a6ca5fb006e3bc630ce5cd05cf56e",
+      "export_sha256": "79e94a70eb15e62bf4e8283e8d6e1aabcf1a6ca5fb006e3bc630ce5cd05cf56e",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/joint_memory20_presentation_v1.py",
+      "path": "source_archive/v17_v21/scripts/joint_memory20_presentation_v1.py",
+      "original_sha256": "440cfd91d31e82413c732b982323a9007ea213de621bd87a7cd772d72342f0f9",
+      "export_sha256": "dfa7f6b4d52a58e82cc92e2e715d3a6b71ec15401afbda290f7055231b0c5096",
+      "transformation": "External home path string projection only; line endings and normalized AST invariant; WORKSPACE_ONLY, not executable public launcher"
+    },
+    {
+      "original_relative": "scripts/prepare_memory21_recording_v1.py",
+      "path": "source_archive/v17_v21/scripts/prepare_memory21_recording_v1.py",
+      "original_sha256": "a9b2ee51b15dc4e768ec78df662a3854ca1dbee2e1fbd87705195f64879a627f",
+      "export_sha256": "a9b2ee51b15dc4e768ec78df662a3854ca1dbee2e1fbd87705195f64879a627f",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/train_joint_actor_capacity_v17.py",
+      "path": "source_archive/v17_v21/scripts/train_joint_actor_capacity_v17.py",
+      "original_sha256": "a1ec69df5a1526797ced779a97b4c1de97ad1763474a26b485aaa3ae42ba8b27",
+      "export_sha256": "a1ec69df5a1526797ced779a97b4c1de97ad1763474a26b485aaa3ae42ba8b27",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/train_joint_critic_calibration_v18.py",
+      "path": "source_archive/v17_v21/scripts/train_joint_critic_calibration_v18.py",
+      "original_sha256": "af46c696c088bce3486f34355a4f4e27fa00fcacf1e4ee997003f7509443991d",
+      "export_sha256": "af46c696c088bce3486f34355a4f4e27fa00fcacf1e4ee997003f7509443991d",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "scripts/train_joint_path_damping_v19.py",
+      "path": "source_archive/v17_v21/scripts/train_joint_path_damping_v19.py",
+      "original_sha256": "ff015776adf465060fec2edab7bc0697209a62970bfdd9cf62a59daa93d3136e",
+      "export_sha256": "ff015776adf465060fec2edab7bc0697209a62970bfdd9cf62a59daa93d3136e",
+      "transformation": "Exact bytes"
+    },
+    {
+      "original_relative": "audit/joint_actor_capacity_pilot_v17_root01.json",
+      "path": "results/diagnostics_latest/joint_actor_capacity_pilot_v17_root01.json",
+      "original_sha256": "4d4b88bf5ec459cf0d1ae91893de2d3b10667c9daa1eaa9c8e656f54f073dad0",
+      "export_sha256": "4d4b88bf5ec459cf0d1ae91893de2d3b10667c9daa1eaa9c8e656f54f073dad0",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_critic_calibration_pilot_v18_root01.json",
+      "path": "results/diagnostics_latest/joint_critic_calibration_pilot_v18_root01.json",
+      "original_sha256": "3921fe7753cfe0c3cf2218948985ad061bb1bfd9f3c8503fbf30e163c5acbad1",
+      "export_sha256": "3921fe7753cfe0c3cf2218948985ad061bb1bfd9f3c8503fbf30e163c5acbad1",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_path_damping_pilot_v19_root01.json",
+      "path": "results/diagnostics_latest/joint_path_damping_pilot_v19_root01.json",
+      "original_sha256": "5cad658c22e14ff3d0e6f2d772b2d33d91e985499811423bcb9a258f2bda12f4",
+      "export_sha256": "5cad658c22e14ff3d0e6f2d772b2d33d91e985499811423bcb9a258f2bda12f4",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_route_memory_baseline_v20_root01.json",
+      "path": "results/diagnostics_latest/joint_route_memory_baseline_v20_root01.json",
+      "original_sha256": "c577c21fb83c371fae72eb746fb9607b46dd7131c213feacd0727a82a73fd487",
+      "export_sha256": "b98b62c63bfd44b4bf79487432d4560f58352edf7e95c43d5682af6a500f96aa",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_route_memory_baseline_metrics_v20_root01.json",
+      "path": "results/diagnostics_latest/joint_route_memory_baseline_metrics_v20_root01.json",
+      "original_sha256": "4c2f645bd82ae39ada4d5459436c7ffb0ec11ac089f511be3d008b854a86db2d",
+      "export_sha256": "4c2f645bd82ae39ada4d5459436c7ffb0ec11ac089f511be3d008b854a86db2d",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/review_joint_route_memory_v20_baseline_01.json",
+      "path": "results/diagnostics_latest/review_joint_route_memory_v20_baseline_01.json",
+      "original_sha256": "f502813a39e610ae15361dbd823d1ac729e3f4b410d7ca0c6f2d34daacee8943",
+      "export_sha256": "f502813a39e610ae15361dbd823d1ac729e3f4b410d7ca0c6f2d34daacee8943",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_route_memory_static_v20_root02.json",
+      "path": "results/diagnostics_latest/joint_route_memory_static_v20_root02.json",
+      "original_sha256": "e2417b9b0b62d0ac83b523ad81f06d525b894cc3b35cc322021ef1e1f5a010e9",
+      "export_sha256": "00bc89f41647aa4d33d9985e307691e5b809d6911964240a5cb1c6b245d5640a",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_memory_development9_v20_root01.json",
+      "path": "results/diagnostics_latest/joint_memory_development9_v20_root01.json",
+      "original_sha256": "16d7e31e4cc22f5c4f55cb0ad37a1d3f46551cb6b91327b4e8164265988095ec",
+      "export_sha256": "25c1315c9be2c592674ac028f4685fdef86bc8832cc102afcf4ab5eeaa69a3a3",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_memory20_gazebo_v7_table_root01.json",
+      "path": "results/diagnostics_latest/joint_memory20_gazebo_v7_table_root01.json",
+      "original_sha256": "2bcea62f7853fd1970a718da6db0a206c55b6e1e60e29992ff8df192bece15ce",
+      "export_sha256": "2bcea62f7853fd1970a718da6db0a206c55b6e1e60e29992ff8df192bece15ce",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_memory20_table_visual_root01.json",
+      "path": "results/diagnostics_latest/joint_memory20_table_visual_root01.json",
+      "original_sha256": "defed963e4f9760e4e59b1d3980fcb8a87f6a3928dd378290275bce26a35a1ae",
+      "export_sha256": "4bd300e3b409feb1cc224dbe676200d8b473116e5dc4a44a10ac205252f0c851",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/native_training_viewer_v21_root01.json",
+      "path": "results/diagnostics_latest/native_training_viewer_v21_root01.json",
+      "original_sha256": "78af70565110522a8aa904c410878980159052eaf041e63eaf7be63313fe4558",
+      "export_sha256": "61060d317bb0d0dd3170f6f8a2167d36b24d8cd2135af11c70ba9bba06b4866f",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "audit/joint_memory21_manual_preparation_v1_01.json",
+      "path": "results/diagnostics_latest/joint_memory21_manual_preparation_v1_01.json",
+      "original_sha256": "55a536df4bda235fddfc209e996cfd125d380410240db62cfc4d8813247110c8",
+      "export_sha256": "55a536df4bda235fddfc209e996cfd125d380410240db62cfc4d8813247110c8",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/case_recomputation.json",
+      "path": "results/memory20_v7/case_recomputation.json",
+      "original_sha256": "7e86d5104cfb1612fcd38d08e365fc849cd6b25e86c0fc315026a21a856974fb",
+      "export_sha256": "7e86d5104cfb1612fcd38d08e365fc849cd6b25e86c0fc315026a21a856974fb",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/input_freeze.json",
+      "path": "results/memory20_v7/input_freeze.json",
+      "original_sha256": "e2c977b619c000e828944a0133184c5ae9b71bfba6b9279cda6b895f0bf7da29",
+      "export_sha256": "64204cb8037f1ad49751ba33eba4775e3a445a864c52882d48d764be3b8ca592",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/native_zero_update_reference.json",
+      "path": "results/memory20_v7/native_zero_update_reference.json",
+      "original_sha256": "62d55b35a18bb497db2695274ccf5d2c15fb8e0fee8e38c12351dadbd80c3e23",
+      "export_sha256": "62d55b35a18bb497db2695274ccf5d2c15fb8e0fee8e38c12351dadbd80c3e23",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/operational_gate.json",
+      "path": "results/memory20_v7/operational_gate.json",
+      "original_sha256": "1609877f60aa878000e82800fa78dcae800e443285acabec7bf5711f9e915d6d",
+      "export_sha256": "1609877f60aa878000e82800fa78dcae800e443285acabec7bf5711f9e915d6d",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "original_relative": "reports/joint_memory20_gazebo_v7/original_thesis_wind_macro.json",
+      "path": "results/memory20_v7/original_thesis_wind_macro.json",
+      "original_sha256": "2e4a0fc591010a42c4e8ca8b0b240e22aac61071dbe6a109d9c7805b8a8c6aa9",
+      "export_sha256": "2e4a0fc591010a42c4e8ca8b0b240e22aac61071dbe6a109d9c7805b8a8c6aa9",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    }
+  ]
+}

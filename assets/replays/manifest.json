@@ -1,0 +1,191 @@
+{
+  "schema": "github-measured-gazebo-replay-media-v1.0",
+  "status": "COMPLETE_MEASURED_CSV_REPLAYS_NOT_GUI_RECORDINGS",
+  "created_utc": "2026-11-15T12:01:12.548854+00:00",
+  "renderer": "scripts/render_project_replay_gifs_v1.py",
+  "input_sha256": {
+    "scripts/render_project_replay_gifs_v1.py": "e6cde803cefa426227ad12d7c178ef79c5a731a4d9b0e97554721cc60c7cde30",
+    "artifacts/gazebo/main_hybrid_test_v1/pid_trainNone_hover_force_strong_env202601/summary.json": "b1444e8d67e7b9a5fc67e0b9c2ea2a112e467ecda0725617452d56c277aabee1",
+    "artifacts/gazebo/main_hybrid_test_v1/pid_trainNone_hover_force_strong_env202601/telemetry.csv": "db72f6cc91b1f13eac021721b77cb9253c9af3d0ec7bba661335510a53578734",
+    "artifacts/gazebo/main_hybrid_test_v1/hybrid_train111_hover_force_strong_env202601/summary.json": "ec497ca1385fb0bee0bfa1add1906f86f0a2516d7c974e80dbec3bcb4406573a",
+    "artifacts/gazebo/main_hybrid_test_v1/hybrid_train111_hover_force_strong_env202601/telemetry.csv": "a4aba56a43c5c09006bf86146903b076514d3d96a99ddab2298fa10606fdb52f",
+    "artifacts/gazebo_direct/main_direct_test_v2/direct_train111_hover_force_strong_env202601/summary.json": "c8bcbf4e3ecb89ab44b5fa18fcba42db45956c6a2b887f227da18013c631eb71",
+    "artifacts/gazebo_direct/main_direct_test_v2/direct_train111_hover_force_strong_env202601/telemetry.csv": "07b9ed08154c5b620f6743c7aab7e368058c5e4d47c47ba147cae181b863b22c",
+    "audit/main_hybrid_gazebo_physical_identity.json": "ff5f58ec55514813388e51a22341f47f32ea0e44ed72f53d20aef5aa2881e43e",
+    "audit/main_direct_gazebo_physical_identity.json": "1719ee9dbecb829bf6bd4a38f34aa182052753a77635fb1533ecac41a918dbdb",
+    "reports/presentation_pack/complete.json": "68b8f687235df2d8d00aa67576b922e4ab81a5faf756aeef67b770eb548f0243",
+    "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_force_strong_env83301/summary.json": "8a59214a1dfcf7eb4d6c12a40680355fb5d24a24e927b21097931f88ded4ebb6",
+    "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_force_strong_env83301/telemetry.csv": "80459ce127625cd31356b26ad982a638cc62331c6510a1381a542c425bf3dc24",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env83301/summary.json": "b32a895e3d74f1f6ebe6dbb84ff71181a846e5b0c86480d8f061c9286a237390",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env83301/telemetry.csv": "92fd0c5bfccda3a4325920059f5d68e80642e4b37523104b7b36fcb407709350",
+    "audit/joint_memory_development9_v20_root01.json": "16d7e31e4cc22f5c4f55cb0ad37a1d3f46551cb6b91327b4e8164265988095ec",
+    "reports/joint_memory20_gazebo_v7/applicability.csv": "36477a231edbb90b0f2f8357261bd74ee0bf7703869aea87e2702ec35cd044ba",
+    "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/plan.json": "49228743db8afc64de5e9553e278d3efb129631de074d45d2a8ee4e6a002669a"
+  },
+  "assets": [
+    {
+      "name": "legacy_hover_3way",
+      "gif": {
+        "path": "reports/github_replay_media_v1/legacy_hover_3way.gif",
+        "sha256": "22f37faacf14f2460aa3cd539c25d920adb473b93b26fd64b62825de4cf9623e",
+        "bytes": 477441
+      },
+      "poster": {
+        "path": "reports/github_replay_media_v1/legacy_hover_3way.png",
+        "sha256": "ff996b627ba29503b188d398d939499bd11c26acc525c7d4078db47600c58941"
+      },
+      "source_horizon_s": 30.0,
+      "replay_frames": 151,
+      "replay_fps": 10,
+      "duration_ms": 15100,
+      "playback_rate": 2.0,
+      "frame_time_range_s": [
+        0,
+        30.0
+      ],
+      "poster_measurement_time_s": 6.2,
+      "scenario_spec": {
+        "name": "force_strong",
+        "seed": 202601,
+        "protocol": "thesis-v2-draft-20261111",
+        "force_profile": "force_strong",
+        "force_events": [
+          {
+            "on_s": 5.12,
+            "off_s": 20.18,
+            "force_enu_N": [
+              -1.2885629157291805,
+              2.4896983583694605,
+              0.0
+            ]
+          }
+        ]
+      },
+      "caption": "Компромисс: Direct — меньше RMSE положения, но просадка Z 3 см против 1 см у PID и Hybrid.",
+      "source_metrics": {},
+      "cases": [
+        {
+          "label": "PID",
+          "folder": "artifacts/gazebo/main_hybrid_test_v1/pid_trainNone_hover_force_strong_env202601",
+          "source_summary": "artifacts/gazebo/main_hybrid_test_v1/pid_trainNone_hover_force_strong_env202601/summary.json",
+          "source_csv": "artifacts/gazebo/main_hybrid_test_v1/pid_trainNone_hover_force_strong_env202601/telemetry.csv",
+          "policy_sha256": null,
+          "input_rows": 1501,
+          "on": 5.139000000000003,
+          "off": 20.195
+        },
+        {
+          "label": "Hybrid (старый)",
+          "folder": "artifacts/gazebo/main_hybrid_test_v1/hybrid_train111_hover_force_strong_env202601",
+          "source_summary": "artifacts/gazebo/main_hybrid_test_v1/hybrid_train111_hover_force_strong_env202601/summary.json",
+          "source_csv": "artifacts/gazebo/main_hybrid_test_v1/hybrid_train111_hover_force_strong_env202601/telemetry.csv",
+          "policy_sha256": "a80e039ee35a718a2659de51f6b649237f9c8bc9c39eeae9bd3917484794d3a5",
+          "input_rows": 1497,
+          "on": 5.139000000000003,
+          "off": 20.194000000000003
+        },
+        {
+          "label": "Direct (старый)",
+          "folder": "artifacts/gazebo_direct/main_direct_test_v2/direct_train111_hover_force_strong_env202601",
+          "source_summary": "artifacts/gazebo_direct/main_direct_test_v2/direct_train111_hover_force_strong_env202601/summary.json",
+          "source_csv": "artifacts/gazebo_direct/main_direct_test_v2/direct_train111_hover_force_strong_env202601/telemetry.csv",
+          "policy_sha256": "5d0d19e02c30c62ed3a0efdcf003d8b6b635ae1eea9b1d32b4737836c46ff900",
+          "input_rows": 1500,
+          "on": 5.155999999999999,
+          "off": 20.214
+        }
+      ]
+    },
+    {
+      "name": "f0_strong_route",
+      "gif": {
+        "path": "reports/github_replay_media_v1/f0_strong_route.gif",
+        "sha256": "88088a32bddb441963c051ed8a775ad9c0a236a6eb9f7f37e0716c3e072a5df0",
+        "bytes": 443503
+      },
+      "poster": {
+        "path": "reports/github_replay_media_v1/f0_strong_route.png",
+        "sha256": "194426910acf6e2710a05dd951687920a068b4deb3af86c9f8aeb938f5ca88b4"
+      },
+      "source_horizon_s": 40.0,
+      "replay_frames": 151,
+      "replay_fps": 10,
+      "duration_ms": 15100,
+      "playback_rate": 2.6666666666666665,
+      "frame_time_range_s": [
+        0,
+        40.0
+      ],
+      "poster_measurement_time_s": 6.8,
+      "scenario_spec": {
+        "name": "force_strong",
+        "seed": 83301,
+        "protocol": "thesis-v2-draft-20261111",
+        "force_profile": "force_strong",
+        "force_events": [
+          {
+            "on_s": 4.92,
+            "off_s": 20.22,
+            "force_enu_N": [
+              2.61331047917283,
+              -1.1521643960622598,
+              0.0
+            ]
+          }
+        ]
+      },
+      "caption": "Это один успешный primary-case; отдельный tailwind84001 у F0 провален. Общей победы при любом ветре нет.",
+      "source_metrics": {
+        "PID": {
+          "finite_segment_RMSE_m": 0.14507539182429993,
+          "route_time_s": 9.46
+        },
+        "F0 (zero-route-I)": {
+          "finite_segment_RMSE_m": 0.09616460992205014,
+          "route_time_s": 8.46
+        }
+      },
+      "cases": [
+        {
+          "label": "PID",
+          "folder": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_force_strong_env83301",
+          "source_summary": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_force_strong_env83301/summary.json",
+          "source_csv": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_force_strong_env83301/telemetry.csv",
+          "policy_sha256": null,
+          "input_rows": 1998,
+          "on": 4.940000000000005,
+          "off": 20.237000000000002
+        },
+        {
+          "label": "F0 (zero-route-I)",
+          "folder": "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env83301",
+          "source_summary": "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env83301/summary.json",
+          "source_csv": "artifacts/refinement/joint_v2/gazebo_memory_development9_v20_root01/runs/memory20_route_force_strong_env83301/telemetry.csv",
+          "policy_sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+          "input_rows": 1998,
+          "on": 4.930999999999997,
+          "off": 20.232
+        }
+      ]
+    }
+  ],
+  "metric_definitions": {
+    "hover_RMSE": "Saved time-weighted full30s 3D current-target goal-distance RMSE; not XY-only",
+    "altitude_drop": "Saved maximum downward current-target altitude error; hovertarget3m",
+    "route_finite_RMSE": "Saved independent3D distance to finite active PRE-target segment over transit only",
+    "route_time": "All ordered0.5s dwell confirmations frommeasurement0; full40s replay continues after completion"
+  },
+  "interpolation": "Linear position/error interpolation between telemetry rows for pictures only; current targets step-held; each physicalforceinterval fromitsownreceipt",
+  "source_time_alignment": "Each flight uses itsown saved measurement-time t; no boot/wall-clock alignment or spatial offsets",
+  "frames_are_not_scientific_samples": true,
+  "new_evaluation_cases": 0,
+  "new_environment_steps": 0,
+  "new_NN_forwards": 0,
+  "new_SGD_steps": 0,
+  "limitations": [
+    "One viewed development case per method/model, not final independent confirmation.",
+    "First clip is archived legacy train111/env202601, not current F0 or newer PPO.",
+    "Second is actual F0f0e/env83301, not v28FINAL or v29composite; F0tail84001failure remains recorded.",
+    "GIF interpolation and compressed colors do not replace raw traces or scientific receipts."
+  ]
+}

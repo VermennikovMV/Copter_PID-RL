@@ -1,0 +1,555 @@
+{
+  "status": "PASS",
+  "scope": "Read-only independent training-result audit",
+  "utc": "2026-11-13T15:40:44.102283+00:00",
+  "data": {
+    "wind_initial": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.02929659334844202
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5543958620590959,
+          "completed": 4,
+          "restricted_time_s": 7.754999999999999,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.14102437399012147,
+          "mean_corner_peak_m": 0.2075996485073701
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.049808658899349656
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5500510390010329,
+          "completed": 4,
+          "restricted_time_s": 8.17,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.1653432312261027,
+          "mean_corner_peak_m": 0.19955839810139595
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07242477838303518
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5520187292297051,
+          "completed": 4,
+          "restricted_time_s": 8.19,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.16617084315568417,
+          "mean_corner_peak_m": 0.19955839810139595
+        }
+      }
+    },
+    "control/checkpoint_1048576": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.032274388181377844
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5534232794450045,
+          "completed": 4,
+          "restricted_time_s": 7.734999999999999,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.13668593902848167,
+          "mean_corner_peak_m": 0.2013927947111678
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.05097075184266595
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5488574788076037,
+          "completed": 4,
+          "restricted_time_s": 8.155,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.15971511167699087,
+          "mean_corner_peak_m": 0.19013364634265523
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07223701851832952
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.550759883326665,
+          "completed": 4,
+          "restricted_time_s": 8.18,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.16057560460625925,
+          "mean_corner_peak_m": 0.19013364634265523
+        }
+      }
+    },
+    "control/checkpoint_2097152": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.031101005294101054
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5553634937924112,
+          "completed": 4,
+          "restricted_time_s": 7.73,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.13952978087129125,
+          "mean_corner_peak_m": 0.20672838769207508
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.05090356906506403
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5506370937836489,
+          "completed": 4,
+          "restricted_time_s": 8.16,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.1654436065992138,
+          "mean_corner_peak_m": 0.1973591813186981
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07286259794829766
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5525534781951278,
+          "completed": 4,
+          "restricted_time_s": 8.180000000000001,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.16598859696190504,
+          "mean_corner_peak_m": 0.1973591813186981
+        }
+      }
+    },
+    "control/final": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.030357358501402663
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.555035397495229,
+          "completed": 4,
+          "restricted_time_s": 7.725,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.13999468180760485,
+          "mean_corner_peak_m": 0.20648967190714743
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.05084373592537102
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5501967912207618,
+          "completed": 4,
+          "restricted_time_s": 8.15,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.1645805305513704,
+          "mean_corner_peak_m": 0.1964682622063517
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07285643510846924
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5520971152832839,
+          "completed": 4,
+          "restricted_time_s": 8.165000000000001,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.1651065368456866,
+          "mean_corner_peak_m": 0.1964682622063517
+        }
+      }
+    },
+    "control/selected/checkpoint_1048576": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.032274388181377844
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5534232794450045,
+          "completed": 4,
+          "restricted_time_s": 7.734999999999999,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.13668593902848167,
+          "mean_corner_peak_m": 0.2013927947111678
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.05097075184266595
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5488574788076037,
+          "completed": 4,
+          "restricted_time_s": 8.155,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.15971511167699087,
+          "mean_corner_peak_m": 0.19013364634265523
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07223701851832952
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.550759883326665,
+          "completed": 4,
+          "restricted_time_s": 8.18,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.16057560460625925,
+          "mean_corner_peak_m": 0.19013364634265523
+        }
+      }
+    },
+    "geometry/checkpoint_1048576": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.032589701059419315
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5534085986193847,
+          "completed": 4,
+          "restricted_time_s": 7.725,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.13535285094413976,
+          "mean_corner_peak_m": 0.20279527227487656
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.0524187688349838
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5492731150865122,
+          "completed": 4,
+          "restricted_time_s": 8.15,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.1636058341226564,
+          "mean_corner_peak_m": 0.1936199663793072
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07367197261912689
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5511764336867568,
+          "completed": 4,
+          "restricted_time_s": 8.17,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.16413979638241438,
+          "mean_corner_peak_m": 0.1936199663793072
+        }
+      }
+    },
+    "geometry/checkpoint_2097152": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.02861509496401848
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5521717843930574,
+          "completed": 4,
+          "restricted_time_s": 7.69,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.13596777536063262,
+          "mean_corner_peak_m": 0.19972499932397536
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.048347657739932014
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5475686384812625,
+          "completed": 4,
+          "restricted_time_s": 8.08,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.1590111613844843,
+          "mean_corner_peak_m": 0.19099373323602586
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07018485486634535
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5493818843817316,
+          "completed": 4,
+          "restricted_time_s": 8.09,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.15976378203138658,
+          "mean_corner_peak_m": 0.19099373323602586
+        }
+      }
+    },
+    "geometry/final": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.028634814465829835
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5523058756880247,
+          "completed": 4,
+          "restricted_time_s": 7.68,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.13620449557275002,
+          "mean_corner_peak_m": 0.19929054654736358
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.048492311926472464
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5474589468337544,
+          "completed": 4,
+          "restricted_time_s": 8.05,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.15748646331976052,
+          "mean_corner_peak_m": 0.19112665307398258
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07042240582865152
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.549264122095793,
+          "completed": 4,
+          "restricted_time_s": 8.06,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.15821352390208043,
+          "mean_corner_peak_m": 0.19112665307398258
+        }
+      }
+    },
+    "geometry/selected/final": {
+      "flight_failures": 0,
+      "route_incomplete": 0,
+      "heading_violations": 0,
+      "geometry_ineligible": 0,
+      "cells": {
+        "nominal/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.028634814465829835
+        },
+        "nominal/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5523058756880247,
+          "completed": 4,
+          "restricted_time_s": 7.68,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.13620449557275002,
+          "mean_corner_peak_m": 0.19929054654736358
+        },
+        "force_strong/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.048492311926472464
+        },
+        "force_strong/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.5474589468337544,
+          "completed": 4,
+          "restricted_time_s": 8.05,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.15748646331976052,
+          "mean_corner_peak_m": 0.19112665307398258
+        },
+        "gust/hover": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.07042240582865152
+        },
+        "gust/route": {
+          "episodes": 4,
+          "survived": 4,
+          "heading_pass": 4,
+          "goal_rmse_m": 0.549264122095793,
+          "completed": 4,
+          "restricted_time_s": 8.06,
+          "geometry_eligible": true,
+          "segment_rmse_m": 0.15821352390208043,
+          "mean_corner_peak_m": 0.19112665307398258
+        }
+      }
+    }
+  },
+  "update_counters": {
+    "control": {
+      "rollouts": 256,
+      "gradient_steps": 16384,
+      "sample_uses": 16777216,
+      "last_kl": 0.02887122699758038
+    },
+    "geometry": {
+      "rollouts": 256,
+      "gradient_steps": 16384,
+      "sample_uses": 16777216,
+      "last_kl": 0.035675218678079545
+    }
+  },
+  "identical_initial_parameters": true,
+  "warmed_actors_bit_identical_to_initial": true,
+  "source_sha256": "ebb4cd2f95b5432e71c9c3b26a411f304b74c5de144061df364e70cf3441bd0b"
+}

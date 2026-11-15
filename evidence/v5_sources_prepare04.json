@@ -1,0 +1,75 @@
+{
+  "status": "PREPARE_ONLY_V24_COMPLETE_V25_PENDING",
+  "files": [
+    {
+      "path": "results/history_v21_v24/joint_initial_coverage_metrics_v24_root01.json",
+      "original_relative": "audit/joint_initial_coverage_metrics_v24_root01.json",
+      "original_sha256": "ea49cda6b1318a8244937ff30eba468f30fa9a56fa639cd72e900339c77c8182",
+      "export_sha256": "ea49cda6b1318a8244937ff30eba468f30fa9a56fa639cd72e900339c77c8182",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/history_v21_v24/joint_initial_coverage_official_run_v24_root01.json",
+      "original_relative": "audit/joint_initial_coverage_official_run_v24_root01.json",
+      "original_sha256": "d19c5d215e7a67702bc6996f6ad6889feb7cbcb81dbd88641953d084c749ab43",
+      "export_sha256": "2977b4097f9634406cbce253728e2426e8e224df2096258f20c7ee26851bd486",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/history_v21_v24/joint_initial24_manual_preparation_v1_01.json",
+      "original_relative": "audit/joint_initial24_manual_preparation_v1_01.json",
+      "original_sha256": "8c10ce1bf1f3e77cf2dd45eb2fb23f9dcdb71b5d46ac74c33b1639e3e12fd6b4",
+      "export_sha256": "8c10ce1bf1f3e77cf2dd45eb2fb23f9dcdb71b5d46ac74c33b1639e3e12fd6b4",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/history_v21_v24/native_training_viewer_v24_prepare01.json",
+      "original_relative": "audit/native_training_viewer_v24_prepare01.json",
+      "original_sha256": "48fadeab9cceee2b9ee9a6ea68519a4bfa3e13af05186e1559b9aaa093636c65",
+      "export_sha256": "48fadeab9cceee2b9ee9a6ea68519a4bfa3e13af05186e1559b9aaa093636c65",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/history_v21_v24/native_training_viewer_v24_snapshot_prepare02.json",
+      "original_relative": "audit/native_training_viewer_v24_snapshot_prepare02.json",
+      "original_sha256": "f7aa4677812eed37da0b32a745b24005862d0dc4e841d045afece3311083956d",
+      "export_sha256": "a6985bb6a73f2afb82f69dc97ee5567ef8d942f7245c73ff61deae204fca0842",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "source_archive/recording_latest/train_joint_initial24.cmd",
+      "original_relative": "train_joint_initial24.cmd",
+      "original_sha256": "3d0f9e5218138d1a1079ba498e2b3775aa043dacc5f54021fba4840ab35caa32",
+      "export_sha256": "fe4d5933eddd5681a8e7779e55f883f0fa2bac0dd4b4bb51da93f2bc4a1ee6a5",
+      "transformation": "External home strings only; WORKSPACE_ONLY"
+    },
+    {
+      "path": "source_archive/recording_latest/train_joint_initial24.py",
+      "original_relative": "train_joint_initial24.py",
+      "original_sha256": "b44ef1b69ce66ba976afdca62c55ae1cc66611e6db29a9d7e9c3fecad28f52cd",
+      "export_sha256": "b44ef1b69ce66ba976afdca62c55ae1cc66611e6db29a9d7e9c3fecad28f52cd",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "source_archive/recording_latest/show_joint_training_native_v24.cmd",
+      "original_relative": "show_joint_training_native_v24.cmd",
+      "original_sha256": "37ff3854b2217453f1449dcf6c46c8f7f54473b71c0d492f6f8cfacae4218d82",
+      "export_sha256": "37ff3854b2217453f1449dcf6c46c8f7f54473b71c0d492f6f8cfacae4218d82",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "source_archive/recording_latest/show_joint_training_native_v24.ps1",
+      "original_relative": "show_joint_training_native_v24.ps1",
+      "original_sha256": "72097b1f1438432c570da27d6871904820e6dc51adf5770c0c710c444f5f8e1d",
+      "export_sha256": "72097b1f1438432c570da27d6871904820e6dc51adf5770c0c710c444f5f8e1d",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/training_viewer/native_v24_live_snapshot.png",
+      "original_relative": "audit/native_training_viewer_v24_live_root01.png",
+      "original_sha256": "14324923b8905a32473e01c3cc7b4ba9c9151da8625bb3943eafcab813088cae",
+      "export_sha256": "14324923b8905a32473e01c3cc7b4ba9c9151da8625bb3943eafcab813088cae",
+      "transformation": "Exact bytes"
+    }
+  ]
+}

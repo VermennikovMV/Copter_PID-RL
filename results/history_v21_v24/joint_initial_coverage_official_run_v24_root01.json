@@ -1,0 +1,15 @@
+{
+  "status": "ACTUAL_DIRECT_OFFICIAL_V24_MAIN_COMPLETE_EXIT0",
+  "utc": "2026-11-15T06:55:09.2328553Z",
+  "actual_tool_session": 75359,
+  "actual_tool_exit_code": 0,
+  "plan_sha256": "bebc6287f2f45bdf2fce2a544cd8b8710fb25d4bd318bff12369f56d94152823",
+  "entrypoint": "scripts/joint_research_preflight_v1.py --run DIRECT",
+  "training_orchestrator_run_main_executed": false,
+  "new_training_arms": 1,
+  "reused_A_training": true,
+  "new_A_aux_evaluations": 0,
+  "first_pre_model_missing_parent_failure": "audit/joint_initial_coverage_main_directory_preflight_v24_root01.json",
+  "quality_acceptance": false,
+  "actual_Gazebo_for_new_model": false
+}

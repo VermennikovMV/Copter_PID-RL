@@ -1,0 +1,48 @@
+{
+  "status": "AUTHORIZE_ROUTE80_DEVELOPMENT9",
+  "created_utc": "2026-11-15T00:05:51.100655+00:00",
+  "policy_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+  "basis_kind": "velocity_residual",
+  "training_variant": "metric_cost",
+  "mode": "DIAGNOSTIC_ONLY",
+  "native_hard_guards_pass": false,
+  "relative_extension_eligibility": false,
+  "paired_pilot_completed_and_audited": true,
+  "policy_promotion": false,
+  "long_extension_authorized": false,
+  "final_applicability_confirmed": false,
+  "authorization_scope": "Parent root explicitly chose this candidate and authorized freeze/check only. Actual --execute remains a separate root action; this preparation starts no flight.",
+  "reason": "Measure whether audited native tail improvements transfer to Gazebo and identify boundaries; nominal native.123338>.11 and nonregression/relative rules still FAIL.",
+  "native_selected_tail_improvement_vs_selected_control": {
+    "finite_percent": 6.84802146754668,
+    "mean_corner_peak_percent": 14.58644904414419
+  },
+  "selected_checkpoint": "checkpoint_131072",
+  "selected_checkpoint_optimizer_steps": 960,
+  "completed_whole_pilot_budget": {
+    "critic": 131072,
+    "PPO": 262144,
+    "optimizer_critic": 1024,
+    "optimizer_PPO": 2048,
+    "candidates": 3
+  },
+  "coverage": {
+    "new_joint_flights": 9,
+    "new_PID_flights": 0,
+    "shared_PID": 9,
+    "shared_specialist": 2,
+    "total": 20
+  },
+  "unchanged": "Frozen competentPID/contract/90gate rows/sixwindmacro/caseorder/three-lane schedule; current77e0aa map not replaced.",
+  "paired_pilot_audit": {
+    "path": "audit/joint_metric_cost_pilot_v16_root01.json",
+    "sha256": "f87ae82684225284b9e9c4e1272b47139307f569b740f1f3ab0516156f144294"
+  },
+  "no_actual80_wire_pass_claim": true,
+  "no_old77_cell_inheritance": true,
+  "reserved_seeds_unopened": [
+    93001,
+    93002,
+    93003
+  ]
+}

@@ -1,0 +1,245 @@
+"""Read declared frozen v8/v9/v11 plans and actual training records.
+
+--snapshot prints data without opening HTTP. The manual monitor never starts
+learning and follows the latest fresh recording namespace when --runs is absent.
+"""
+from __future__ import annotations
+import argparse
+import ast
+from datetime import datetime, timezone
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+import json
+import math
+import os
+from pathlib import Path
+import sys
+import zipfile
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from scripts import joint_research_preflight_v1 as gate
+from scripts import joint_training_viewer_v3 as base
+
+DRIVERS = {
+    "scripts/train_joint_corner_v8.py": "32625b344255328b78249a0ebf4b85852f29e504fbef316285dc0f8a933f1aba",
+    "scripts/train_joint_control_budget_v9.py": "707538b2592e08e5782f1aff60ec444337d006cb78a00d1005f49c356e880ee1",
+    "scripts/train_joint_path_columns_v11.py": "a4aace412087bbce2135cbd7f7d683a9e881edca7c420e7fb10be8987dc2de4a",
+}
+HISTORICAL = "artifacts/refinement/joint_v2/corner_pilot111/w8_control"
+
+
+def option(argv, key):
+    if argv.count(key) != 1:
+        raise ValueError("Expected exactly one " + key)
+    return argv[argv.index(key) + 1]
+
+
+def declared_plan(run, config):
+    """Check immutable identities without calling fresh-output-only validation."""
+    info = dict(verified=False, error=None)
+    try:
+        path = base.project_path(config["research_plan"]) if config else run.parent / "research_plan.json"
+        plan = base.read_json(path)
+        if config and base.digest(path) != config["research_plan_sha256"]:
+            raise ValueError("Recorded plan SHA mismatch")
+        if plan.get("schema") != "joint-research-plan-v1" or plan.get("status") != "READY_FOR_RUN":
+            raise ValueError("No frozen runnable plan for this output")
+        if plan["contract"] != dict(path=gate.CONTRACT, sha256=gate.CONTRACT_SHA):
+            raise ValueError("Fixed applicability contract mismatch")
+        gate.bound_file(ROOT, plan["contract"])
+        if set(plan["sources"]) != set(gate.ROLES) or set(plan["metric_alignment"]) != set(gate.METRICS):
+            raise ValueError("Incomplete source/metric declaration")
+        driver = plan["sources"]["driver"]
+        if DRIVERS.get(driver["path"]) != driver["sha256"]:
+            raise ValueError("Unsupported or changed frozen driver")
+        for binding in plan["sources"].values():
+            gate.bound_file(ROOT, binding)
+        for binding in plan["evidence"].values():
+            source = gate.bound_file(ROOT, binding)
+            actual = gate.json_pointer(base.read_json(source), binding["pointer"])
+            if type(actual) is not type(binding["equals"]) or actual != binding["equals"]:
+                raise ValueError("Prerequisite assertion mismatch")
+        if base.project_path(option(plan["argv"], "--output")) != run:
+            raise ValueError("Plan names a different output")
+        if base.project_path(option(plan["argv"], "--research-plan")) != path.resolve():
+            raise ValueError("Plan self-path mismatch")
+        budget = plan["budget"]
+        for name, flag in (("ppo_steps", "--steps"), ("critic_steps", "--warmup-steps"), ("eval_every", "--eval-every")):
+            if str(budget[name]) != option(plan["argv"], flag):
+                raise ValueError("Plan budget/argv mismatch")
+        if budget["candidate_count"] != budget["ppo_steps"] // budget["eval_every"] + 1:
+            raise ValueError("Candidate count mismatch")
+        if config:
+            recorded = config.get("budget", dict(ppo_steps=config.get("ppo_steps"), critic_steps=config.get("warmup_steps"), eval_every=config.get("eval_every"), candidate_count=config.get("candidate_count")))
+            if recorded != budget:
+                raise ValueError("Recorded configuration budget differs from plan")
+            sources = config.get("source_hashes", config.get("source_sha256", {}))
+            engine = "scripts/train_joint_corner_v8.py"
+            if sources.get(engine) != DRIVERS[engine] or config.get("initial_sha256") != plan["sources"]["initial_policy"]["sha256"]:
+                raise ValueError("Recorded engine/initial identity mismatch")
+        info.update(verified=True, path=path.relative_to(ROOT).as_posix(), sha256=base.digest(path),
+                    driver=driver, plan=plan)
+    except (OSError, ValueError, TypeError, KeyError, IndexError) as exc:
+        info["error"] = str(exc)
+    return info
+
+
+def process_evidence(run, phase, declaration, proc_root=Path("/proc")):
+    evidence = dict(confirmed=False, pid=phase.get("pid"), reason="No verified live process")
+    if not declaration["verified"]:
+        return evidence
+    try:
+        pid = phase["pid"]
+        if type(pid) is not int or pid <= 0:
+            return evidence
+        proc = proc_root / str(pid)
+        argv = proc.joinpath("cmdline").read_bytes().decode("utf-8").rstrip("\0").split("\0")
+        cwd, executable = proc.joinpath("cwd").resolve(strict=True), proc.joinpath("exe").resolve(strict=True)
+        expected = base.project_path(declaration["driver"]["path"])
+        indices = [i for i, arg in enumerate(argv) if arg and (Path(arg) if Path(arg).is_absolute() else cwd / arg).resolve() == expected]
+        if len(indices) != 1 or argv[indices[0] + 1:] != declaration["plan"]["argv"]:
+            return evidence
+        if not executable.name.startswith("python") or base.project_path(option(argv, "--output"), cwd) != run:
+            return evidence
+        if proc.joinpath("stat").read_text().rsplit(")", 1)[1].split()[0] == "Z":
+            return evidence
+        evidence.update(confirmed=True, driver=declaration["driver"]["path"],
+                        driver_sha256=declaration["driver"]["sha256"], plan_sha256=declaration["sha256"],
+                        argv=argv, phase=phase.get("phase"), reason="Exact /proc PID, frozen driver, bound argv/output and plan SHA match")
+    except (OSError, ValueError, TypeError, KeyError, IndexError):
+        pass
+    return evidence
+
+
+def actor_scalars(plan):
+    if "optimization_subspace" in plan:
+        return plan["optimization_subspace"]["trainable_actor_scalars"]
+    # Derive full Gaussian actor size from the exact plan-bound NumPy mean
+    # export: six weight/bias arrays plus one trainable log_std per action.
+    npz = Path(plan["sources"]["initial_policy"]["path"]).with_suffix(".npz").as_posix()
+    binding = next(item for item in plan["additional_immutable_sources"] if item["path"] == npz)
+    path = gate.bound_file(ROOT, binding)
+    sizes = {}
+    with zipfile.ZipFile(path) as archive:
+        for name in ("w0", "b0", "w1", "b1", "w2", "b2"):
+            data = archive.read(name + ".npy")
+            start = 10 if data[6] == 1 else 12
+            length = int.from_bytes(data[8:start], "little")
+            shape = ast.literal_eval(data[start:start + length].decode("latin1"))["shape"]
+            sizes[name] = math.prod(shape)
+    return sum(sizes.values()) + sizes["b2"]
+
+
+def hyperparameters(plan):
+    for key in ("paired_design", "duration_study_design", "matched_reference_design"):
+        if "frozen_ppo_hyperparameters" in plan.get(key, {}):
+            return plan[key]["frozen_ppo_hyperparameters"]
+    return {}
+
+
+def snapshot(run):
+    result = base.snapshot(run)
+    config, complete = result["config"], base.read_json(run / "complete.json")
+    declaration = declared_plan(run, config)
+    process = process_evidence(run, result["phase"], declaration)
+    result["process"] = process
+    result["declaration"] = {k: value for k, value in declaration.items() if k != "plan"}
+    if not declaration["verified"]:
+        result.update(study="Неподтверждённый план — только просмотр файлов", state="observing" if config else "waiting")
+        return result
+    plan, budget = declaration["plan"], declaration["plan"]["budget"]
+    hp = hyperparameters(plan)
+    result["budget"] = dict(critic_steps=budget["critic_steps"], ppo_steps=budget["ppo_steps"],
+        expected_critic_updates=budget["critic_steps"] * hp["n_epochs"] // hp["batch_size"],
+        expected_ppo_updates=budget["ppo_steps"] * hp["n_epochs"] // hp["batch_size"])
+    result["trainable_actor_scalars"] = actor_scalars(plan)
+    result["study"] = "Дообучение PPO: воспроизведение проверенного опыта" if plan.get("recording_reproduction") else "PPO по зафиксированному плану: " + plan["sources"]["driver"]["path"]
+    if result["error"] or result["wrapper"].get("status") == "FAILED":
+        result["state"] = "error"
+    elif process["confirmed"]:
+        result["state"] = "verifying" if complete else "training"
+    else:
+        result["state"] = "complete" if complete else "observing" if config else "waiting"
+    warm = base.read_json(run / "warmup.json")
+    actual = complete.get("actual_optimizer_step_hook_counts", complete.get("optimizer", {}).get("actual_optimizer_steps", {}))
+    critic = actual.get("critic", warm.get("actual_optimizer_steps"))
+    if isinstance(critic, dict):
+        critic = critic.get("critic")
+    result["counters"]["critic_optimizer_steps"] = critic
+    if "ppo" in actual:
+        result["counters"]["ppo_optimizer_steps"] = actual["ppo"]
+    result["counters"]["critic_environment_steps"] = complete.get("critic_transitions", result["counters"]["critic_environment_steps"])
+    result["counters"]["ppo_environment_steps"] = complete.get("ppo_transitions", result["counters"]["ppo_environment_steps"])
+    labels = ["checkpoint_" + str(v) for v in range(budget["eval_every"], budget["ppo_steps"] + 1, budget["eval_every"])] + ["final"]
+    selected = base.read_json(run / "selection.json")
+    result["candidates"] = []
+    for label in labels:
+        record = base.read_json(run / (label + "_validation.json"))
+        result["candidates"].append(dict(label=label, measured=bool(record), selected=bool(record) and record.get("policy_sha256") == selected.get("policy_sha256"),
+            timesteps=record.get("timesteps"), actual_ppo_updates=record.get("ppo_kl_gradient_steps"), timing=record.get("checkpoint_timing"),
+            policy_sha256=record.get("policy_sha256"), hard_guards_pass=record.get("fixed_development_guards_pass"),
+            aggregate=record.get("aggregate", {}), constraints=record.get("constraints", []),
+            episodes=[{key: ep.get(key) for key in ("scenario", "mission", "environment_seed", "metrics", "geometry")} for ep in record.get("episodes", [])]))
+    return base.finite_json(result)
+
+
+def default_runs():
+    candidates = sorted((ROOT / "artifacts/refinement/joint_v2").glob("recording_control77_*/research_plan.json"), reverse=True)
+    for path in candidates:
+        plan = base.read_json(path)
+        if plan.get("recording_reproduction", {}).get("source_plan", {}).get("sha256") == "97a786dbbca6210c8eb949caa44fe752baded0a230fc1c5288acf0a01191560a":
+            return [base.project_path(option(plan["argv"], "--output"))]
+    return [ROOT / HISTORICAL]
+
+
+HTML = base.HTML.replace("Фактическое обучение PPO · CONTROL v9", "Дообучение PPO · воспроизведение опыта").replace(
+    "CONTROL v9 · подготовка критика → PPO → проверка каждой сохранённой модели",
+    "Исходная сеть уже обучена · фактическое новое дообучение, без воспроизведения архива").replace(
+    "let cards=el('div'", "s.append(el('p','Обучаемых параметров actor: '+fmt(r.trainable_actor_scalars)+'. Бюджет и кандидаты взяты из проверенного bound-плана.','note'));let cards=el('div'")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--runs", nargs="+")
+    parser.add_argument("--port", type=int, default=8770)
+    parser.add_argument("--snapshot", action="store_true", help="Read once without an HTTP socket")
+    args = parser.parse_args()
+    fixed = [base.project_path(value) for value in args.runs] if args.runs else None
+    if fixed and any(not path.is_relative_to(ROOT / "artifacts") for path in fixed):
+        parser.error("Runs must stay inside project artifacts")
+    def payload():
+        return dict(mode="read_only_declared_frozen_plans_v4", server_time=datetime.now(timezone.utc).isoformat(), runs=[snapshot(path) for path in (fixed or default_runs())])
+    if args.snapshot:
+        print(json.dumps(payload(), ensure_ascii=False, allow_nan=False))
+        return 0
+    if not 1024 <= args.port <= 65535:
+        parser.error("Port must be in1024..65535")
+    class Handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.path == "/":
+                data, kind = HTML.encode("utf-8"), "text/html; charset=utf-8"
+            elif self.path == "/api/status":
+                data, kind = json.dumps(payload(), ensure_ascii=False, allow_nan=False).encode("utf-8"), "application/json; charset=utf-8"
+            else:
+                self.send_error(404)
+                return
+            self.send_response(200)
+            for key, value in (("Content-Type", kind), ("Content-Length", str(len(data))), ("Cache-Control", "no-store")):
+                self.send_header(key, value)
+            self.end_headers()
+            self.wfile.write(data)
+        def log_message(self, *_):
+            pass
+    server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
+    print(json.dumps(dict(status="MANUAL_READ_ONLY_VIEWER", url=f"http://127.0.0.1:{args.port}/", pid=os.getpid())), flush=True)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        server.server_close()
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

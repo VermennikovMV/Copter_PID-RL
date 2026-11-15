@@ -1,0 +1,35 @@
+{
+  "status": "PASS_MEMORY20_SOFTWARE_PORTABILITY_NOT_NEW_SCIENTIFIC_REPLICATION",
+  "archived_rows": 1000,
+  "conditioned_valid_leg_rows": 974,
+  "unchanged_no_leg_rows": 26,
+  "effective_observation_max_error": 0.0,
+  "action_max_error": 0.0,
+  "paired_synthetic_encoder_fixture_rows": 8,
+  "encoder_fixture_max_error": 0.0,
+  "fixture_action_max_error": 0.0,
+  "explicit_NN_forward_calls": 1016,
+  "all6_weight_bias_NPY_members_byte_exact": [
+    "w0.npy",
+    "b0.npy",
+    "w1.npy",
+    "b1.npy",
+    "w2.npy",
+    "b2.npy"
+  ],
+  "strict_schema_rejections": [
+    "memory_loader_rejects_raw80",
+    "raw80_loader_rejects_memory20",
+    "path77_loader_rejects_memory20",
+    "memory_loader_rejects_wrong_mode"
+  ],
+  "source68_at_original_required_relative_path": true,
+  "source_or_guard_rewrites": false,
+  "no_Torch_import": true,
+  "new_environment_steps": 0,
+  "new_physics_substeps": 0,
+  "optimizer_updates": 0,
+  "Gazebo_flights": 0,
+  "independent_new_quality_replication": false,
+  "plan_sha256": "bcc68b86dfdd097649ad3405fc3b0873b954d0f8aa003bab94ef87cbd2bd365b"
+}

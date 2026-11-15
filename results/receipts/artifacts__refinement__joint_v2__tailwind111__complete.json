@@ -1,0 +1,267 @@
+{
+  "status": "complete",
+  "task": "joint_tailwind",
+  "variant": "geometry",
+  "model_family": "fast_native_shaper_v3",
+  "selection_version": "nativeplant-development-v4.0",
+  "critic_only_timesteps": 131072,
+  "ppo_timesteps": 2097152,
+  "completed_critic_only_epochs": 128,
+  "additional_actor_critic_ppo_epochs": 2048,
+  "actor_critic_ppo_gradient_steps": 16384,
+  "on_policy_prior_kl_gradient_steps": 16384,
+  "on_policy_prior_kl_minibatch_sample_uses": 16777216,
+  "rollout_updates": 256,
+  "offline_supervised_anchor_gradient_steps": 0,
+  "actor_unchanged_by_critic_warmup": true,
+  "actor_changed_by_ppo": true,
+  "prior_bit_identical": true,
+  "source_hashes_unchanged": true,
+  "numpy_export_max_error": 1.7136335372924805e-07,
+  "selected_policy_sha256": "7399c5663cea4b3bfe6364b76f1129d90af83f87502990d41c3d70becc7e4d6b",
+  "final_policy_sha256": "7399c5663cea4b3bfe6364b76f1129d90af83f87502990d41c3d70becc7e4d6b",
+  "selected_objective": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    0.5170799733710711,
+    1.3056576149385126,
+    0.16182821158188487
+  ],
+  "output_model_sha256": {
+    "critic_warmed_model.zip": "faf54f76f42ecc4e550fcf0c6fc4c39048b45f098f8deb3a5d73598c154b305e",
+    "best_model.zip": "ce05bdea4dc5aae1aba56a8498d666d91dd8c6c521df3fa64ccfab607811273b",
+    "best_policy.npz": "7399c5663cea4b3bfe6364b76f1129d90af83f87502990d41c3d70becc7e4d6b",
+    "final.zip": "1bad3a393d281e05eb4cdb59278bdb74ded7ec9da47a391ee450054d1725de6a",
+    "final.npz": "7399c5663cea4b3bfe6364b76f1129d90af83f87502990d41c3d70becc7e4d6b"
+  },
+  "curriculum_version": "route-tailwind-phase-v5.0",
+  "actual_curriculum_counts": {
+    "critic": {
+      "completed_episodes": 204,
+      "failed_episodes": 0,
+      "successful_routes": 169,
+      "hard_tailwind_triggers": 72,
+      "actual_force_onsets": 248,
+      "completed_by_regime": {
+        "route_broad_constant": 38,
+        "route_hard_tailwind": 71,
+        "nominal": 43,
+        "route_broad_gust": 25,
+        "hover_v4": 27
+      }
+    },
+    "ppo": {
+      "completed_episodes": 3303,
+      "failed_episodes": 0,
+      "successful_routes": 2639,
+      "hard_tailwind_triggers": 1085,
+      "actual_force_onsets": 4349,
+      "completed_by_regime": {
+        "route_broad_constant": 519,
+        "nominal": 623,
+        "route_hard_tailwind": 1083,
+        "route_broad_gust": 544,
+        "hover_v4": 534
+      }
+    }
+  },
+  "curriculum_events_sha256": "538456e4c95bc0caaaf909df503a85af1064f4b15b8d97e5b101742837666b1d",
+  "selected_metrics": {
+    "flight_failures": 0,
+    "route_incomplete": 0,
+    "heading_violations": 0,
+    "geometry_ineligible": 0,
+    "active_segment_peak_failures": 2,
+    "active_segment_peak_checks": [
+      {
+        "scenario": "nominal",
+        "seed": 84001,
+        "peak_m": 0.22974671118201126,
+        "pass_peak": true
+      },
+      {
+        "scenario": "nominal",
+        "seed": 84002,
+        "peak_m": 0.2616874313790135,
+        "pass_peak": true
+      },
+      {
+        "scenario": "nominal",
+        "seed": 84003,
+        "peak_m": 0.3251022258147343,
+        "pass_peak": true
+      },
+      {
+        "scenario": "nominal",
+        "seed": 84004,
+        "peak_m": 0.257315981062792,
+        "pass_peak": true
+      },
+      {
+        "scenario": "force_strong",
+        "seed": 84001,
+        "peak_m": 0.7585399866855356,
+        "pass_peak": false
+      },
+      {
+        "scenario": "force_strong",
+        "seed": 84002,
+        "peak_m": 0.2616874313790135,
+        "pass_peak": true
+      },
+      {
+        "scenario": "force_strong",
+        "seed": 84003,
+        "peak_m": 0.3251022258147343,
+        "pass_peak": true
+      },
+      {
+        "scenario": "force_strong",
+        "seed": 84004,
+        "peak_m": 0.257315981062792,
+        "pass_peak": true
+      },
+      {
+        "scenario": "gust",
+        "seed": 84001,
+        "peak_m": 0.7585399866855356,
+        "pass_peak": false
+      },
+      {
+        "scenario": "gust",
+        "seed": 84002,
+        "peak_m": 0.2616874313790135,
+        "pass_peak": true
+      },
+      {
+        "scenario": "gust",
+        "seed": 84003,
+        "peak_m": 0.3251022258147343,
+        "pass_peak": true
+      },
+      {
+        "scenario": "gust",
+        "seed": 84004,
+        "peak_m": 0.257315981062792,
+        "pass_peak": true
+      }
+    ],
+    "cells": {
+      "nominal/hover": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.03103137267408383
+      },
+      "nominal/route": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.5645641381055697,
+        "completed": 4,
+        "restricted_time_s": 7.8549999999999995,
+        "geometry_eligible": true,
+        "segment_rmse_m": 0.1436223376432364,
+        "mean_corner_peak_m": 0.21455910730853653,
+        "absolute_active_segment_peak_m": 0.3251022258147343,
+        "active_segment_peak_failed_seeds": []
+      },
+      "force_strong/hover": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.05099594394785935
+      },
+      "force_strong/route": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.5614864114437803,
+        "completed": 4,
+        "restricted_time_s": 8.25,
+        "geometry_eligible": true,
+        "segment_rmse_m": 0.1704864864107774,
+        "mean_corner_peak_m": 0.201317752081331,
+        "absolute_active_segment_peak_m": 0.7585399866855356,
+        "active_segment_peak_failed_seeds": [
+          84001
+        ]
+      },
+      "gust/hover": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.0727276233330926
+      },
+      "gust/route": {
+        "episodes": 4,
+        "survived": 4,
+        "heading_pass": 4,
+        "goal_rmse_m": 0.5633687178984845,
+        "completed": 4,
+        "restricted_time_s": 8.275,
+        "geometry_eligible": true,
+        "segment_rmse_m": 0.17137581069164082,
+        "mean_corner_peak_m": 0.201317752081331,
+        "absolute_active_segment_peak_m": 0.7585399866855356,
+        "active_segment_peak_failed_seeds": [
+          84001
+        ]
+      }
+    }
+  },
+  "fixed_development_guards_pass": false,
+  "candidate_records": [
+    {
+      "checkpoint": "checkpoint_1048576",
+      "objective": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0.5546331606304913,
+        1.2668309739874435,
+        0.15846840264389908
+      ],
+      "policy_sha256": "bb4a44546f9a2ca0ebe78f69f4c17d53f15c67727a8e614ea9242d3ff158881f",
+      "guards_pass": false
+    },
+    {
+      "checkpoint": "checkpoint_2097152",
+      "objective": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0.5445272807211898,
+        1.292855139294356,
+        0.16092455750522358
+      ],
+      "policy_sha256": "37fce27d8375592e086fdec5466ae0d842dfe76f4363f5f3fc7f2dda7a30961d",
+      "guards_pass": false
+    },
+    {
+      "checkpoint": "final",
+      "objective": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0.5170799733710711,
+        1.3056576149385126,
+        0.16182821158188487
+      ],
+      "policy_sha256": "7399c5663cea4b3bfe6364b76f1129d90af83f87502990d41c3d70becc7e4d6b",
+      "guards_pass": false
+    }
+  ],
+  "wall_seconds": 1224.888046107,
+  "completed_utc": "2026-11-13T17:16:32.892454+00:00",
+  "interpretation": "Development native plant with route wind phase curriculum; v4 budgets unchanged; no Gazebo applicability claim"
+}

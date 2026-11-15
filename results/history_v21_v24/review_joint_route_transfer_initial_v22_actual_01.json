@@ -1,0 +1,2504 @@
+{
+  "schema": "independent-route-transfer-initial-v22-actual-audit-v1.0",
+  "status": "PASS",
+  "checked_utc": "2026-11-15T05:06:30.213327+00:00",
+  "source_sha256": "d0e118a14f69519ee861e0dde44af2d2f903bf61a9df6377b4a38aae749db5cf",
+  "checks": 36776,
+  "failures": [],
+  "input_sha256": {
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/complete.json": "37fc99321504b35de10464420de6297a2c84ba89f802105a6243de7abcff4919",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/prospective_plan.json": "8352d8d16d0f6d4bbf2f4bf40177f0f6c942a8308a00e1abfe9b66d84b0409ef",
+    "docs/joint_route_transfer_v22/physical_plan.root01.ready.json": "2dc263cf9d49084986710c18709f31b2a1bc51fe709a1c167e52d3c4f70be716",
+    "artifacts/refinement/joint_v2/conditioned_initializer_v1/lineage_receipt.json": "7f37af5ca00775374ab992ba4ce768719aa5e1940b0353c293ee8e4cbda4e04e",
+    "artifacts/refinement/joint_v2/corner_reward_probe_v8/20261113T200517512Z_K40/20261113T200751508730Z/final_diagnostic_summary.json": "909d52e38dd8cb889802fdb743f9e8f6acb28f62eb417d18906fde93f018758d",
+    "artifacts/refinement/joint_v2/corner_reward_probe_v8/20261113T200517512Z_K40/20261113T200751508730Z/report.json": "26077dd3bbd7849ee9846a1397780bdf3f6b9e4c444263e6b4f119a8b5106925",
+    "artifacts/refinement/joint_v2/path_v7_baseline111/path/baseline.json": "7a92ac77774e637471b7f36783e38fd12da63715aee18ce5ca3c41d082e9d999",
+    "audit/joint_native_rate_physics_replay_v3.json": "bb239e855728582e28c39b60725e58292579c96a14b8f137b18d0ca105cad2c4",
+    "audit/joint_native_rate_physics_replay_v3.py": "eae497a7ec5ad65b64016aad1fb55185244c9a3d0532a442e5e6e7ceccd223b8",
+    "audit/joint_nativeplant_peak_seed84001_v4.json": "238884ceb56e883c5d5099d06119e62dc00404339be06e7359483c08f44bc18b",
+    "audit/joint_nativeplant_peak_seed84001_v4.py": "31333610269e07879d192564461c17881aa7ac6e8558aee16791217d6bc5dcb6",
+    "audit/joint_nonlinear_rate_diagnosis_v2.json": "3840e58a8961dc29292a5d1c6c6ac7c539bc7610843e0dfc5d4719b58447c478",
+    "audit/joint_nonlinear_rate_diagnosis_v2.py": "fbe2b7e2948d955e82b2ea53a5e770cb8142caf14a24d7fbeccc3e0817774936",
+    "audit/joint_path_context_prototype_v7.json": "bcb471ceea945db1495070f54973ae972a387a75a33c2b1a9c789cf56055ba20",
+    "audit/joint_reward_scale_diagnosis_v1.json": "0c2c4335e7292f1c6aaeae0daf0a37034a05ade23bb388ae176b73cc4d943501",
+    "audit/turns_corners.py": "5df0454674f2f8f27f338518bea86e3eae9fd771cd4c5cfb7d12bdb7e2976c31",
+    "audit/verify_joint_metrics_v2.py": "dd7a13fd7827904efa99208f3bad23314917f15c0f865bc298568af73aad70e7",
+    "docs/joint_applicability_contract_v2.json": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652",
+    "docs/protocol.md": "e1b0713baf8051d58b5fdf88e0e63aef619d2141bc800e52a1af60a52b91a35e",
+    "quadrl/__init__.py": "bf9e04e1c20183cec77f6c9fe28513b65d00896b33add08f18df672ae96e9090",
+    "quadrl/baseline.py": "ee796fc1027510cb6091855501f85bd3e6d67cab502903535c8ecc6aa1fd8389",
+    "quadrl/env.py": "d583db69a3c1afb317baefdf530f35a9781c8aa8dc37faeca764a3e503e8bc59",
+    "quadrl/pid_config.json": "0264412f373b95c294a37705c64f2cc1ebde041c40b04a34b48ef311fe235055",
+    "quadrl/plant_config.json": "ce247239bb1dfc4dd9557487182febe02f725544902e2b05466e2837cbc2fd43",
+    "quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "quadrl/protocol.py": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473",
+    "quadrl/reward.py": "dcbb0c8bcb704dc83ae271c2a4e55ce0210ab808c6a3e44b236d6bf614794e25",
+    "quadrl/rollout.py": "de3418d9215ec6dc9e5eec60a8ae793c7984c35d872f7bdb144f17675b868f57",
+    "quadrl_corner_v8/__init__.py": "15487c30fe2478d5a35385ea810148c2d2a4b61a0173881135df040d51bd10a0",
+    "quadrl_corner_v8/env.py": "4ec08713f4793abc46f4282ba565dbcfe94842e1652b99649e983aea43327eaf",
+    "quadrl_corner_v8/reward.py": "0291d4c643d1aa0e613f26d46b7394f0da884da17dc9af2cd454f409d81c9964",
+    "quadrl_joint/__init__.py": "852cd639ca0ff568c812feeff13086b4e6c6833b17b70bba7400e702b1bde614",
+    "quadrl_joint/env_v3.py": "8f801f8d0e01d15a3e23cf5022b48da0d8cb4d146cb8c28b7784f247b70beb15",
+    "quadrl_joint/native_rate_fit_v3.json": "d4ad6760006aba3eddae2c2ae5d7efe1798d84c47a5a82545533f48c3200f461",
+    "quadrl_joint/native_rate_model_v3.py": "68f62995c66372aaaac8670f36125ee6a5de00d340da3dea956e5f2d11a08e52",
+    "quadrl_path_v7/__init__.py": "b22e00e0881e1e451cb15fcacd53c45b5bb2581ea31045977b90c0db785e1510",
+    "quadrl_path_v7/env.py": "e425e8c3aab9ce435a359779d6376b5415f296d11d823e0f289694a5ea4c4a36",
+    "quadrl_path_v7/policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "reference/__init__.py": "a36055da4ef4c930c75e7ce06195d24d25c5aa088490bb0416334946ac11798e",
+    "reference/audit_demonstrations.py": "649e3104d59d940e515b41daad032f628efc59029f9af933b1b8981a143a8495",
+    "reference/check_direct_teacher.py": "bf2eeebfbfc0c1a2efd233bc95eb3fd2e07553853c7154eec6c02c2faaba3e5e",
+    "reference/collect_demonstrations.py": "4c8325c7b3fcd2c7853b28839e5161e56a8eaee4983b43fa92f5aedd0720ba09",
+    "reference/collect_direct_demonstrations.py": "d2c0632a9fab21a0f652a4c894f8be9a1eabfdd7f5294b71c6f33affec205444",
+    "reference/collect_mixed_demonstrations.py": "6345117e794819c0eadc8f29c4294f48f408ce6a103ff3966c57ba227f0c9a91",
+    "reference/direct_physics.py": "5607a4551a441d11b4be2dd5f97645f4dd3b269001cf4dd4165c23a94276510c",
+    "reference/direct_teacher.py": "8d1b5028a816b6a6bc32273800dbc986dec7f1931d2d0f464c68be28413a776e",
+    "reference/dob.py": "c4d42f90a81f1d46c86e07d455151f0f49cfd550912ec3da935609f505dfa507",
+    "reference/evaluate_reference.py": "6f855850ee2888f1b14a6b9164d05181d39608c7f779f13d59e958fc72f0d812",
+    "reference/summarize_development.py": "2746aae6b14e72d63c34bb250e5f44072cc83c803b71d3bfec98acf6d3f6d454",
+    "reference/test_collector.py": "c0b6a3558b0a6dce666eb8b58764e8f03c02113c15ea8360a4d50aa1f9c10e7d",
+    "reference/test_dob.py": "fb86a23c9ce27f3da02629ab3829899e76fcebcb2d6b1284ac9ca703a9ddfdf6",
+    "reference/test_mixed_collection.py": "894d6ee696e09bb2f1062a315c852a0079c5163b1a455e2b95159665b7d10d87",
+    "reference/tune_gains.py": "08dea5a60ea062b25df252ed02dd5aac272455c3a414758a252daee7657c30ab",
+    "scripts/bc_trust_region_probe_v1.py": "d58e2f50b04337305b265710c9dbfa0ddb3d324b16a3406389066de56268637f",
+    "scripts/joint_research_preflight_v1.py": "27be46baf162a3b096f25a16299c3b64fd38f42c955cdddee2f7550c924c7dd7",
+    "scripts/probe_joint_corner_reward_v8.py": "33c32be6e6064c5e45b6bc8c79b828f410c3df8f59021ed36c3060c6737d3e0b",
+    "scripts/probe_joint_reward_scale_v1.py": "2518bf72aa518b01dc816fc3c4c5e6fead8aaef2f903c85a39d4dd26464c389f",
+    "scripts/refine_precision.py": "c0b4c0de57ef1d922c3e205e19edde9c1b3520baff6c966c7b43133057d7d780",
+    "scripts/run_joint_corner_pair_v8.py": "e71ce9b636e60fc3c8eae241bf14ce1d1186c5596f232aed0fca2ccc06f02dfb",
+    "scripts/train.py": "e4c4319799f7da1272f61cd6526a0206f9cf1c12794a6034c447973e23191a9d",
+    "scripts/train_joint_corner_v8.py": "32625b344255328b78249a0ebf4b85852f29e504fbef316285dc0f8a933f1aba",
+    "scripts/train_joint_geometry_v2.py": "ebb4cd2f95b5432e71c9c3b26a411f304b74c5de144061df364e70cf3441bd0b",
+    "scripts/train_joint_nativeplant_v4.py": "e1efeac66b9b233b5262513584be19922d4a100f37a520e2af64ae593bdecd92",
+    "scripts/train_joint_tailwind_v5.py": "462bf82b32c0212c0ecc8f38be202fb3b7a5b401cf445a31796b48239fbd7ca5",
+    "scripts/train_wind_specialist_v1.py": "f51c77257770c3dfe331dd43b4badcc44c9246b729e2310f9b3c4f270c1f7c96",
+    "sim/metrics.py": "4298cf11b2b2f2a4df3c5851ba86e5ee90d680e5ae2163dca3776b6a756c7ad1",
+    "scripts/prototype_joint_route_basis_v14.py": "38657e84893d09fe1b0335b419864da9dbcf68d878c47aa4fe3379d4d5b1e1f1",
+    "quadrl_route_basis_v14/__init__.py": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+    "quadrl_route_basis_v14/policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "scripts/train_joint_route_basis_v15.py": "fb4c6567e6072e244f8b6c6d5d2eca3acd19c54873fc32d11cbb3cce82b16be7",
+    "scripts/run_joint_route_basis_pair_v15.py": "7da33e24cf10827a48fd3605da7cc5ea75c80a5a1635d849987adeebca1a8bc7",
+    "quadrl_route_basis_v15/__init__.py": "6d777a2ae18c1ebbec654c6a9ffea59214c739945518c9aada2870ebd5d4ea40",
+    "quadrl_route_basis_v15/env.py": "f02f15942998eb1d3093ad339cb9e20312d4df1ce1c380646ab8d09f669c11b9",
+    "scripts/prototype_joint_route_memory_v20.py": "0d88b02089338be580efd5756d259ec38d754cfdd7dc5fdd05841d3716a6b4b2",
+    "scripts/run_joint_route_memory_baseline_v20.py": "1f4e18564a74d1f386164b92020ee9177bddbae35a6a1c3d6c875193f0654fd3",
+    "quadrl_route_memory_v20/__init__.py": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+    "quadrl_route_memory_v20/eval.py": "ca879c19a5783048c3a4a43847dbfb8416695efd3001ea71303158443dea75cb",
+    "quadrl_route_memory_v20/policy.py": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+    "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+    "scripts/run_joint_memory_transfer_initial_v22.py": "79e074640c857fbf7f8c474832a6f8d734b192fc3866b29f32d0bae368ca8c1e",
+    "quadrl_route_transfer_v22/__init__.py": "3e439569e27e37776ddd3796e2905d3e808f43b0f52f36d7d9e1e67a06946682",
+    "quadrl_route_transfer_v22/env.py": "d380f72d7a545d7592928903229ebb4fcf9fe837056b2fc1417f95e166a7430f",
+    "quadrl_route_transfer_v22/initial.py": "c053bed5c10df330062079f8bd0f9202dd2ae4100852c534b077cb63858fb1f6",
+    "audit/joint_route80_development9_v5_root01.json": "5b917f1b2ce55025878f0e7e4b8c62a95852c3a1652d6def70ad9216ad2d5b74",
+    "audit/joint_route_memory_baseline_v20_root01.json": "c577c21fb83c371fae72eb746fb9607b46dd7131c213feacd0727a82a73fd487",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001/summary.json": "6996dd1431ee60341380834b33471c365d7f107d35627b255163cfcdf2557ae9",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001/telemetry.csv": "f63925119865c59fe142f65de9ba66722e05cc24713daa627e594289bc0eb67e",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001/commands.jsonl": "56c7293f7f9d0949c9149cd6ca35821691590427695fe494924bbdea44b9d12b",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/summary.json": "2bc5b4a5a1d088eb787cefda4703ad3dccbc8622ab56e212fec308afe276d56d",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/trace.csv": "175c362e47ce204f8d0f4d7831289cdcd1eceab97b42839e22e22a8b1d6d7bfe",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/actor_io.npz": "599afda1c8e7647c13dcecfbbd4b9ab8a964fc371526ac434c2de093f622f722",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/summary.json": "46ba30416f76ed6bffeef4ce471b03a7df0fcd814ccf4ced494e58e5840c2b4b",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/trace.csv": "d89717d0f3aadcdf5c4258008fb64a38be261775476979bd71d95c4ebc48c615",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/actor_io.npz": "98d1272c123d42a651e50258255ce57747c5491b6401441d0c8ede73ca538379",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/summary.json": "e800e3d1bad55b63cd93f979cda4df4d780bc46799a27ab70ae78074a23516b9",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/trace.csv": "bab9fceadeb255812c8e2f1f621939dcc7a0082de6f4af3a92f37c908a69ff54",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/actor_io.npz": "7da85e753401bab7bade07a03b7bd4bb441bfda8ad48c7f8e1ae4ab2cd35fc14",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/summary.json": "265d82b7fc9c969893b0661ef28f06de000e56dec528b603969eb8ec7d43f11b",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/trace.csv": "33eca8675e5f54298b1ff1497c897f1604b71521c66f2b4aac27e86c05eaa166",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/actor_io.npz": "32b55b34f52a55634cbf80bcf231d19c8b6699fd49aaf4e71082f09ec865caca",
+    "artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/raw/policy.npz": "315a85be5009ea8be7433241d65ded453520e03973d0fd3344624af95e427bb5",
+    "artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/zero_route_integral/policy.npz": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_nominal_84001/intervention_summary.json": "4e26d5b2fcfc80f2e5cda8e603a851ac46d81c596fcba9e876ec1bd676d1188e",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_nominal_84001/summary.json": "62b2bc6040e9cf3005188daab3282a60a8e17443eae0e58e8eadefe2a63464fd",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_nominal_84001/trace.csv": "603fbc3c2afc1f6ff8d197052304028c990d88f6be4b005a0abf144e2bb1f4ae",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_nominal_84001/actor_io.npz": "8110b6ef2e759bf725b9bf1976c359e7e7f6090d8073980347b254c5ccd97c20",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/intervention_summary.json": "eba5e7f27d45fb3b9858694cdb26cdd3c743eb1c68d2e9b15be37a5f56165a5c",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/summary.json": "e33be1f77090aa7d2b231d63cac8f180cd4735b625627a089e3f0cc5197c4a66",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/trace.csv": "d01ff3b7b4723d975a5614c1cb251f0cbf408f1ce691e7fa12ae9b3a3ef56cd6",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/actor_io.npz": "b23cf95c496453bf910e05ea924fced413fc4f391c1413cab5d499e6ae1e6e3b",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_force_strong_84001/intervention_summary.json": "02abe22472b3f24d6532baf7a6a57ef01f6a0754a29703528af5b8796dd20aa5",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_force_strong_84001/summary.json": "4fcc38b3d3fd6e0195bcedc74cb374e96656dcef3a3ef3d948b16785e0aec425",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_force_strong_84001/trace.csv": "41a8d85acc21b65d1925927a935757c3053ceffa856e933307c79eaacd955490",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_raw_force_strong_84001/actor_io.npz": "10c6f370b7ebee7d482cd940b0abc14e4cc76980d4e67ac5c2f819f7886e4c53",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/intervention_summary.json": "555b0cccd146e415c4dc01c3b127fad0adadb68624eb23faf4b63863332d8468",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/summary.json": "fd1ecfa0b265a44ca621a4f22eddb7693d1333464baee71cf6a581a65ad95505",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/trace.csv": "887765ee5a3053ab21427314f501e64ce39c29591bfb0391c9b28535494ccb22",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz": "cb608a19bdfa6f62a8e651c8552340497e9a15b79d96e10fd97a7967fbc4e34a",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_nominal_84001/intervention_summary.json": "44de0f0f8107114089fc5edcd671b67be750c5088ae469316b50ee56e0fd6ade",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_nominal_84001/summary.json": "044c1adee0a9bef9477774fa8aa54abe45eeca77aba606de668d7b949faba7a9",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_nominal_84001/trace.csv": "8a1604ffe4612278ad90bf10c19bc97340e13fa757dba77e1c17122c12f0d4ea",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_nominal_84001/actor_io.npz": "89c77729ee91a6d84fe9d31c60988f2d4eedf01956296bdc59f2affb83efd793",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/intervention_summary.json": "667bf1c624687433cf89c365b57641797c84e68183b69e16e57449dafcee203d",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/summary.json": "c1d4a5062102d4491ec906f10c71880806eb3931034f8583b2db68acef7558e1",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/trace.csv": "396a3662907d729c80e3e40f3145a295aa137fc3b3d1bc0b593707319c6e4780",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/actor_io.npz": "521c8bc9b5be75550f0d1a3cf3512c8b41e89f4c7b12c0537ea93a5a56198aa0",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_force_strong_84001/intervention_summary.json": "8b70ae98930044b740a23dc3852318be4557ef3af41112326b86065ffce3cc48",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_force_strong_84001/summary.json": "c50f6b084dd278638593d9f2d2327b8860d174677e5afefe7ca0e8e6c40abefc",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_force_strong_84001/trace.csv": "99fe3de49d7ee88248dbf2b64f2ef076e041864ad1f0a5d4135b8cc223d80241",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_raw_force_strong_84001/actor_io.npz": "1c31146ebe85a05a037a9eb2d48033fdc808886cf035e6e30cdf2a6c0d5a00cf",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/intervention_summary.json": "d9c43c2c59986007803cd3e3fe035c735675027d4d88af5a5215f7aade4e4888",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/summary.json": "9fa18bd27310291e6676b42ad5fb4e4ab2737aec4cfb0fe93f1b985ddf987b1e",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/trace.csv": "ace933388edcdf21c9ba2c06c928a78d9fdf9655cce0e51dcdd3043e50e8e1b4",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/actor_io.npz": "2abd884f8fa76fe3c9e015427f1498e8719cbbf3ac8328c7a1c2183a37f7b102",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_raw_force_strong_84001/intervention_summary.json": "ee1fe4a0ef979be7ce89eb699c7f4522de08f839accb02ea2238d518e7e31bb3",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_raw_force_strong_84001/summary.json": "933dbca0a7565e7f73f247867590fbfac6a37b12b1035a0acd01749b23c72c33",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_raw_force_strong_84001/trace.csv": "3fafb3b85c3c3415a20c4a17712534b19991d2b45fba310983d376e4ae50f0ae",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_raw_force_strong_84001/actor_io.npz": "49a1bab5213be5069ab968f32fa688219485d59b0adaf17eef9b681dc798d9df",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/intervention_summary.json": "737084251849f1044e8d4259d57d271f5b950e0d5694382ecdf4169c618ab665",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/summary.json": "6eddcab0de4b49e8749db264821cd3fe9878d280a1007fa155f5dc3b7b2806b9",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv": "a554434c803814f22ef7130836af16c388cdb55e3c71b0b70f4dc67f276646b9",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz": "c95c13ee8caa1c3c4776dcb7ab16728d709d65a5e0a00d20daf1ac0cad436961",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_nominal_84001/geometry.json": "2894be98b7c6b0d0d0bba4625167b46b39595c51b5d8b7ce55d685e636841286",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/route_force_strong_84001/geometry.json": "f1d98b0058a75e6557bfbdbedbed40279d11affaf7936858e2acfa1b65320e0c",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/geometry.json": "246ff5b31a286ff32363ce281e19ce654bab413588b23c91e3e598a5a9f73166",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/geometry.json": "9892fa9822da7650deca6fe243053ac315f9f2935dfd57d89ed55734418008b8",
+    "audit/joint_memory_development9_v20_root01.json": "16d7e31e4cc22f5c4f55cb0ad37a1d3f46551cb6b91327b4e8164265988095ec"
+  },
+  "actual_NEW_episodes": 10,
+  "REUSED_episodes": 4,
+  "total_coverage_episodes": 14,
+  "actual_ROOT_NEW_counts": {
+    "control_steps": 20000,
+    "physical_substeps": 160000,
+    "NN_forwards": 20000
+  },
+  "coverage_control_rows": 28000,
+  "cases": [
+    {
+      "name": "yaw_only_raw_nominal_84001",
+      "intervention": "yaw_only",
+      "mode": "raw",
+      "scenario": "nominal",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.566184914280874,
+        "penalized_rmse_position_m": 0.566184914280874,
+        "altitude_drop_m": 0.4981776654057235,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.74,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.6383799913310062,
+        "heading_peak_deg": 5.295367012648306,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.02427028191888781,
+        "action_saturation_fraction": 0.006375,
+        "goals_reached": 5
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.72,
+        "transit_end_s": 8.74,
+        "transit_duration_s": 8.02,
+        "observed_transit_coverage_s": 8.02,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.12880880182138446,
+        "cross_track_rmse_m": 0.12350603163608286,
+        "cross_track_3d_rmse_m": 0.12350603163608286,
+        "cross_track_xy_rmse_m": 0.09902982459122397,
+        "finite_segment_xy_rmse_m": 0.10629785723145621,
+        "active_segment_peak_m": 0.20805205608302513,
+        "observed_transit_segment_rmse_m": 0.12880880182138446,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.1924239566940684,
+        "max_corner_post_peak_m": 0.20805205608302513,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.44,
+            "window_end_s": 3.44,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20033144842315806,
+            "post_outgoing_mean_deviation_m": 0.13894001335413353,
+            "post_incoming_overshoot_m": 0.15498083930074635
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.7,
+            "window_end_s": 5.7,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20805205608302513,
+            "post_outgoing_mean_deviation_m": 0.16516394050779676,
+            "post_incoming_overshoot_m": 0.02174864547097913
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.46,
+            "window_end_s": 7.46,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.16888836557602196,
+            "post_outgoing_mean_deviation_m": 0.08958882616131328,
+            "post_incoming_overshoot_m": 0.08974237280393224
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "intervention": "yaw_only",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 4.4224606615683726e-16,
+          "body_rates": 0.0
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1964,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 4.4224606615683726e-16,
+          "body_rates": 0.0
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": []
+    },
+    {
+      "name": "yaw_only_zero_route_integral_nominal_84001",
+      "intervention": "yaw_only",
+      "mode": "zero_route_integral",
+      "scenario": "nominal",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5526144039455715,
+        "penalized_rmse_position_m": 0.5526144039455715,
+        "altitude_drop_m": 0.4947953591618992,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.46,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.5885506953415893,
+        "heading_peak_deg": 4.934826959469709,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.024367240496192686,
+        "action_saturation_fraction": 0.00525,
+        "goals_reached": 5
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.72,
+        "transit_end_s": 8.46,
+        "transit_duration_s": 7.740000000000001,
+        "observed_transit_coverage_s": 7.740000000000001,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.09878668448604172,
+        "cross_track_rmse_m": 0.09749612209267583,
+        "cross_track_3d_rmse_m": 0.09749612209267583,
+        "cross_track_xy_rmse_m": 0.06479919841035037,
+        "finite_segment_xy_rmse_m": 0.06720045715929629,
+        "active_segment_peak_m": 0.20013047081274957,
+        "observed_transit_segment_rmse_m": 0.09878668448604172,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.1673198278544518,
+        "max_corner_post_peak_m": 0.20013047081274957,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.46,
+            "window_end_s": 3.46,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20013047081274957,
+            "post_outgoing_mean_deviation_m": 0.13617419639408262,
+            "post_incoming_overshoot_m": 0.06987296148203948
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.6000000000000005,
+            "window_end_s": 5.6000000000000005,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1939932610562423,
+            "post_outgoing_mean_deviation_m": 0.14868542390486938,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.32,
+            "window_end_s": 7.32,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1078357516943635,
+            "post_outgoing_mean_deviation_m": 0.06601635930829833,
+            "post_incoming_overshoot_m": 0.06297674290814895
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "intervention": "yaw_only",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 4.4224606615683726e-16,
+          "body_rates": 0.0
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1964,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 4.4224606615683726e-16,
+          "body_rates": 0.0
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": []
+    },
+    {
+      "name": "yaw_only_raw_force_strong_84001",
+      "intervention": "yaw_only",
+      "mode": "raw",
+      "scenario": "force_strong",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5640057650539457,
+        "penalized_rmse_position_m": 0.5640057650539457,
+        "altitude_drop_m": 0.4981776654057235,
+        "pre_force_altitude_m": 3.4872720254310905,
+        "altitude_drop_from_preforce_m": 0.6048989894967094,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": true,
+        "force_off_time_s": 19.84,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.66,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.8864408380614202,
+        "heading_peak_deg": 7.069968568790839,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.02439427361079729,
+        "action_saturation_fraction": 0.0065,
+        "goals_reached": 5,
+        "rmse_before_force_m": 1.1845134559702069,
+        "rmse_during_force_m": 0.6261732656028745,
+        "rmse_after_force_m": 0.023777113785425578,
+        "phase_force_time_source": "physics_step"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.72,
+        "transit_end_s": 8.66,
+        "transit_duration_s": 7.94,
+        "observed_transit_coverage_s": 7.94,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.13456080011430757,
+        "cross_track_rmse_m": 0.12429852140236973,
+        "cross_track_3d_rmse_m": 0.12429852140236973,
+        "cross_track_xy_rmse_m": 0.10013263105767622,
+        "finite_segment_xy_rmse_m": 0.11282232951724684,
+        "active_segment_peak_m": 0.20778268222299584,
+        "observed_transit_segment_rmse_m": 0.13456080011430757,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.19617098715409098,
+        "max_corner_post_peak_m": 0.20716277219534804,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.44,
+            "window_end_s": 3.44,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20033144842315806,
+            "post_outgoing_mean_deviation_m": 0.13894001335413353,
+            "post_incoming_overshoot_m": 0.15498083930074635
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.7,
+            "window_end_s": 5.7,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.18101874084376685,
+            "post_outgoing_mean_deviation_m": 0.14430649361097753,
+            "post_incoming_overshoot_m": 0.019363285028907905
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.32,
+            "window_end_s": 7.32,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20716277219534804,
+            "post_outgoing_mean_deviation_m": 0.1529674964661451,
+            "post_incoming_overshoot_m": 0.14214647640580902
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "intervention": "yaw_only",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 4.4224606615683726e-16,
+          "body_rates": 0.0
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [
+          {
+            "on_s": 4.88,
+            "off_s": 19.84,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0.0
+            ]
+          }
+        ],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1964,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 4.4224606615683726e-16,
+          "body_rates": 0.0
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ]
+    },
+    {
+      "name": "yaw_only_zero_route_integral_force_strong_84001",
+      "intervention": "yaw_only",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5496055962000707,
+        "penalized_rmse_position_m": 0.5496055962000707,
+        "altitude_drop_m": 0.4947953591618992,
+        "pre_force_altitude_m": 3.4699495538283487,
+        "altitude_drop_from_preforce_m": 0.6182037396048048,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": true,
+        "force_off_time_s": 19.84,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 9.14,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.8258032216706169,
+        "heading_peak_deg": 5.021944808267092,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.02597293477903546,
+        "action_saturation_fraction": 0.008,
+        "goals_reached": 5,
+        "rmse_before_force_m": 1.2133200430688031,
+        "rmse_during_force_m": 0.5713243065225005,
+        "rmse_after_force_m": 0.027698412851880634,
+        "phase_force_time_source": "physics_step"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.72,
+        "transit_end_s": 9.14,
+        "transit_duration_s": 8.42,
+        "observed_transit_coverage_s": 8.420000000000002,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.16146465356582992,
+        "cross_track_rmse_m": 0.14115749551181442,
+        "cross_track_3d_rmse_m": 0.14115749551181442,
+        "cross_track_xy_rmse_m": 0.1183582635477539,
+        "finite_segment_xy_rmse_m": 0.14080878653285805,
+        "active_segment_peak_m": 0.3527834707522532,
+        "observed_transit_segment_rmse_m": 0.16146465356582992,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.21943013856140156,
+        "max_corner_post_peak_m": 0.28027641039028145,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.46,
+            "window_end_s": 3.46,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20013047081274957,
+            "post_outgoing_mean_deviation_m": 0.13617419639408262,
+            "post_incoming_overshoot_m": 0.06987296148203948
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.6000000000000005,
+            "window_end_s": 5.6000000000000005,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.17788353448117356,
+            "post_outgoing_mean_deviation_m": 0.1363246619009883,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.86,
+            "window_end_s": 7.86,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.28027641039028145,
+            "post_outgoing_mean_deviation_m": 0.18760777229529668,
+            "post_incoming_overshoot_m": 0.28018693863535704
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "intervention": "yaw_only",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 4.4224606615683726e-16,
+          "body_rates": 0.0
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [
+          {
+            "on_s": 4.88,
+            "off_s": 19.84,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0.0
+            ]
+          }
+        ],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1964,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 4.4224606615683726e-16,
+          "body_rates": 0.0
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ]
+    },
+    {
+      "name": "full_initial_raw_nominal_84001",
+      "intervention": "full_initial",
+      "mode": "raw",
+      "scenario": "nominal",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5692276877210294,
+        "penalized_rmse_position_m": 0.5692276877210294,
+        "altitude_drop_m": 0.4949515139732408,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.58,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.6092674439613479,
+        "heading_peak_deg": 5.253579079325841,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.02461385280218468,
+        "action_saturation_fraction": 0.006125,
+        "goals_reached": 5
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5,
+        "transit_end_s": 8.58,
+        "transit_duration_s": 8.08,
+        "observed_transit_coverage_s": 8.08,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.12951791568618068,
+        "cross_track_rmse_m": 0.12399130527685889,
+        "cross_track_3d_rmse_m": 0.12399130527685889,
+        "cross_track_xy_rmse_m": 0.09991679136450525,
+        "finite_segment_xy_rmse_m": 0.10756241812544629,
+        "active_segment_peak_m": 0.2139322765460196,
+        "observed_transit_segment_rmse_m": 0.12951791568618068,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.195247804362211,
+        "max_corner_post_peak_m": 0.2139322765460196,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.24,
+            "window_end_s": 3.24,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1989852369851933,
+            "post_outgoing_mean_deviation_m": 0.14542381729172082,
+            "post_incoming_overshoot_m": 0.1571006296809223
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.5600000000000005,
+            "window_end_s": 5.5600000000000005,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2139322765460196,
+            "post_outgoing_mean_deviation_m": 0.17207373953372523,
+            "post_incoming_overshoot_m": 0.02557762757438479
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.32,
+            "window_end_s": 7.32,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1728258995554201,
+            "post_outgoing_mean_deviation_m": 0.092501923293938,
+            "post_incoming_overshoot_m": 0.08733183206867037
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "velocity": [
+            0.0005825983243994415,
+            0.0006033112294971943,
+            -0.0013235481455922127
+          ],
+          "rpy": [
+            -4.508908750722185e-05,
+            -0.00012030338257318363,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0041231922805309296,
+            -0.0005067550227977335,
+            0.0009743102127686143
+          ]
+        },
+        "intervention": "full_initial",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1975,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": []
+    },
+    {
+      "name": "full_initial_zero_route_integral_nominal_84001",
+      "intervention": "full_initial",
+      "mode": "zero_route_integral",
+      "scenario": "nominal",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5546289181982167,
+        "penalized_rmse_position_m": 0.5546289181982167,
+        "altitude_drop_m": 0.4865274543661835,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.32,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.5603543030597017,
+        "heading_peak_deg": 4.874834928150708,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.024793049061097677,
+        "action_saturation_fraction": 0.005,
+        "goals_reached": 5
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5,
+        "transit_end_s": 8.32,
+        "transit_duration_s": 7.82,
+        "observed_transit_coverage_s": 7.82,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.09693181726487468,
+        "cross_track_rmse_m": 0.09563477072857,
+        "cross_track_3d_rmse_m": 0.09563477072857,
+        "cross_track_xy_rmse_m": 0.06373246491178335,
+        "finite_segment_xy_rmse_m": 0.06619487479980327,
+        "active_segment_peak_m": 0.1976715721223842,
+        "observed_transit_segment_rmse_m": 0.09693181726487468,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.1657529520797065,
+        "max_corner_post_peak_m": 0.1976715721223842,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.2800000000000002,
+            "window_end_s": 3.2800000000000002,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1976715721223842,
+            "post_outgoing_mean_deviation_m": 0.1448082107772014,
+            "post_incoming_overshoot_m": 0.06652154863462911
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.46,
+            "window_end_s": 5.46,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19217411659189745,
+            "post_outgoing_mean_deviation_m": 0.1461293629241635,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.18,
+            "window_end_s": 7.18,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.10741316752483787,
+            "post_outgoing_mean_deviation_m": 0.06551701040637889,
+            "post_incoming_overshoot_m": 0.06469471633495266
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "velocity": [
+            0.0005825983243994415,
+            0.0006033112294971943,
+            -0.0013235481455922127
+          ],
+          "rpy": [
+            -4.508908750722185e-05,
+            -0.00012030338257318363,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0041231922805309296,
+            -0.0005067550227977335,
+            0.0009743102127686143
+          ]
+        },
+        "intervention": "full_initial",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1975,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": []
+    },
+    {
+      "name": "full_initial_raw_force_strong_84001",
+      "intervention": "full_initial",
+      "mode": "raw",
+      "scenario": "force_strong",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5663024790746481,
+        "penalized_rmse_position_m": 0.5663024790746481,
+        "altitude_drop_m": 0.4949515139732408,
+        "pre_force_altitude_m": 3.486759935873427,
+        "altitude_drop_from_preforce_m": 0.6578938015536835,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": true,
+        "force_off_time_s": 19.84,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 9.700000000000001,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.7582702590446917,
+        "heading_peak_deg": 5.178796981854361,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.025951086082451585,
+        "action_saturation_fraction": 0.00925,
+        "goals_reached": 5,
+        "rmse_before_force_m": 1.2510468868132865,
+        "rmse_during_force_m": 0.5883532939579631,
+        "rmse_after_force_m": 0.024002884097240194,
+        "phase_force_time_source": "physics_step"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5,
+        "transit_end_s": 9.700000000000001,
+        "transit_duration_s": 9.200000000000001,
+        "observed_transit_coverage_s": 9.200000000000001,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.16170767015251936,
+        "cross_track_rmse_m": 0.1385622621613625,
+        "cross_track_3d_rmse_m": 0.1385622621613625,
+        "cross_track_xy_rmse_m": 0.11398418883202872,
+        "finite_segment_xy_rmse_m": 0.1400601290371949,
+        "active_segment_peak_m": 0.3903121798994612,
+        "observed_transit_segment_rmse_m": 0.16170767015251936,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.17368756393615217,
+        "max_corner_post_peak_m": 0.1989852369851933,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.24,
+            "window_end_s": 3.24,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1989852369851933,
+            "post_outgoing_mean_deviation_m": 0.14542381729172082,
+            "post_incoming_overshoot_m": 0.1571006296809223
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.5600000000000005,
+            "window_end_s": 5.5600000000000005,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1986301886666498,
+            "post_outgoing_mean_deviation_m": 0.15949087570103038,
+            "post_incoming_overshoot_m": 0.025136092853630058
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 7.5600000000000005,
+            "window_end_s": 8.56,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.12344726615661349,
+            "post_outgoing_mean_deviation_m": 0.052449337148049016,
+            "post_incoming_overshoot_m": 0.06571421445914861
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "velocity": [
+            0.0005825983243994415,
+            0.0006033112294971943,
+            -0.0013235481455922127
+          ],
+          "rpy": [
+            -4.508908750722185e-05,
+            -0.00012030338257318363,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0041231922805309296,
+            -0.0005067550227977335,
+            0.0009743102127686143
+          ]
+        },
+        "intervention": "full_initial",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [
+          {
+            "on_s": 4.88,
+            "off_s": 19.84,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0.0
+            ]
+          }
+        ],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1975,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ]
+    },
+    {
+      "name": "full_initial_zero_route_integral_force_strong_84001",
+      "intervention": "full_initial",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5551936412622407,
+        "penalized_rmse_position_m": 0.5551936412622407,
+        "altitude_drop_m": 0.4865274543661835,
+        "pre_force_altitude_m": 3.4576711260826167,
+        "altitude_drop_from_preforce_m": 0.649862209753874,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": true,
+        "force_off_time_s": 19.84,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 9.6,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.7523462691171385,
+        "heading_peak_deg": 4.972651593262766,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.02623601037503154,
+        "action_saturation_fraction": 0.00925,
+        "goals_reached": 5,
+        "rmse_before_force_m": 1.269235236204715,
+        "rmse_during_force_m": 0.5455620712500626,
+        "rmse_after_force_m": 0.027692000310795835,
+        "phase_force_time_source": "physics_step"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5,
+        "transit_end_s": 9.6,
+        "transit_duration_s": 9.1,
+        "observed_transit_coverage_s": 9.1,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.16815179083505258,
+        "cross_track_rmse_m": 0.1165795218305949,
+        "cross_track_3d_rmse_m": 0.1165795218305949,
+        "cross_track_xy_rmse_m": 0.08379690407556688,
+        "finite_segment_xy_rmse_m": 0.14506704610338356,
+        "active_segment_peak_m": 0.5532695780916501,
+        "observed_transit_segment_rmse_m": 0.16815179083505258,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.14915297089806126,
+        "max_corner_post_peak_m": 0.1976715721223842,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.2800000000000002,
+            "window_end_s": 3.2800000000000002,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1976715721223842,
+            "post_outgoing_mean_deviation_m": 0.1448082107772014,
+            "post_incoming_overshoot_m": 0.06652154863462911
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.46,
+            "window_end_s": 5.46,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.18249902798588277,
+            "post_outgoing_mean_deviation_m": 0.13812849741536393,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 7.5,
+            "window_end_s": 8.5,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.06728831258591678,
+            "post_outgoing_mean_deviation_m": 0.032014597432813575,
+            "post_incoming_overshoot_m": 0.05869393117701838
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "velocity": [
+            0.0005825983243994415,
+            0.0006033112294971943,
+            -0.0013235481455922127
+          ],
+          "rpy": [
+            -4.508908750722185e-05,
+            -0.00012030338257318363,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0041231922805309296,
+            -0.0005067550227977335,
+            0.0009743102127686143
+          ]
+        },
+        "intervention": "full_initial",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [
+          {
+            "on_s": 4.88,
+            "off_s": 19.84,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0.0
+            ]
+          }
+        ],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1975,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": [
+        {
+          "time_s": 4.88,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.84,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ]
+    },
+    {
+      "name": "full_initial_physical_pulse_raw_force_strong_84001",
+      "intervention": "full_initial_physical_pulse",
+      "mode": "raw",
+      "scenario": "force_strong",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5670521136349043,
+        "penalized_rmse_position_m": 0.5670521136349043,
+        "altitude_drop_m": 0.4949515139732408,
+        "pre_force_altitude_m": 3.486759935873427,
+        "altitude_drop_from_preforce_m": 0.6661955812662432,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": true,
+        "force_off_time_s": 19.86,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 9.74,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.7669790193226182,
+        "heading_peak_deg": 5.239333327559247,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.025922657974542528,
+        "action_saturation_fraction": 0.009375,
+        "goals_reached": 5,
+        "rmse_before_force_m": 1.2546797724388412,
+        "rmse_during_force_m": 0.5864514738073437,
+        "rmse_after_force_m": 0.024073091303344854,
+        "phase_force_time_source": "physics_step"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5,
+        "transit_end_s": 9.74,
+        "transit_duration_s": 9.24,
+        "observed_transit_coverage_s": 9.24,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.16730015492724548,
+        "cross_track_rmse_m": 0.1408222543759636,
+        "cross_track_3d_rmse_m": 0.1408222543759636,
+        "cross_track_xy_rmse_m": 0.11559046069478711,
+        "finite_segment_xy_rmse_m": 0.14535192921829365,
+        "active_segment_peak_m": 0.4230067910628364,
+        "observed_transit_segment_rmse_m": 0.16730015492724548,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.17254065686513723,
+        "max_corner_post_peak_m": 0.1997716055251963,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.24,
+            "window_end_s": 3.24,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1989852369851933,
+            "post_outgoing_mean_deviation_m": 0.14542381729172082,
+            "post_incoming_overshoot_m": 0.1571006296809223
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.5600000000000005,
+            "window_end_s": 5.5600000000000005,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1997716055251963,
+            "post_outgoing_mean_deviation_m": 0.1603166920545533,
+            "post_incoming_overshoot_m": 0.025280012103291272
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 7.6000000000000005,
+            "window_end_s": 8.600000000000001,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.11886512808502209,
+            "post_outgoing_mean_deviation_m": 0.05305623933229774,
+            "post_incoming_overshoot_m": 0.058383008727742845
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "velocity": [
+            0.0005825983243994415,
+            0.0006033112294971943,
+            -0.0013235481455922127
+          ],
+          "rpy": [
+            -4.508908750722185e-05,
+            -0.00012030338257318363,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0041231922805309296,
+            -0.0005067550227977335,
+            0.0009743102127686143
+          ]
+        },
+        "intervention": "full_initial_physical_pulse",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [
+          {
+            "on_s": 4.895000000000003,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0
+            ],
+            "off_s": 19.853
+          }
+        ],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1975,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": [
+        {
+          "time_s": 4.9,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.86,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ]
+    },
+    {
+      "name": "full_initial_physical_pulse_zero_route_integral_force_strong_84001",
+      "intervention": "full_initial_physical_pulse",
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5557475334310925,
+        "penalized_rmse_position_m": 0.5557475334310925,
+        "altitude_drop_m": 0.4865274543661835,
+        "pre_force_altitude_m": 3.4513250336201735,
+        "altitude_drop_from_preforce_m": 0.648233178495623,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": true,
+        "force_off_time_s": 19.86,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 9.64,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.7577854044731457,
+        "heading_peak_deg": 5.0637696992995584,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.026169332378782762,
+        "action_saturation_fraction": 0.00925,
+        "goals_reached": 5,
+        "rmse_before_force_m": 1.2718690964908879,
+        "rmse_during_force_m": 0.5436155119127347,
+        "rmse_after_force_m": 0.027697297286265493,
+        "phase_force_time_source": "physics_step"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5,
+        "transit_end_s": 9.64,
+        "transit_duration_s": 9.14,
+        "observed_transit_coverage_s": 9.14,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.17274419057223472,
+        "cross_track_rmse_m": 0.11807683679693552,
+        "cross_track_3d_rmse_m": 0.11807683679693552,
+        "cross_track_xy_rmse_m": 0.08485032630062772,
+        "finite_segment_xy_rmse_m": 0.1496568893489666,
+        "active_segment_peak_m": 0.5742383309282992,
+        "observed_transit_segment_rmse_m": 0.17274419057223472,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.14809420067592818,
+        "max_corner_post_peak_m": 0.1976715721223842,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.2800000000000002,
+            "window_end_s": 3.2800000000000002,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1976715721223842,
+            "post_outgoing_mean_deviation_m": 0.1448082107772014,
+            "post_incoming_overshoot_m": 0.06652154863462911
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.46,
+            "window_end_s": 5.46,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.18320785401826076,
+            "post_outgoing_mean_deviation_m": 0.13862717176281866,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 7.54,
+            "window_end_s": 8.54,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.06340317588713958,
+            "post_outgoing_mean_deviation_m": 0.030675727631323056,
+            "post_incoming_overshoot_m": 0.05558285549410012
+          }
+        ]
+      },
+      "reset_proof": {
+        "native_original_initial": {
+          "position": [
+            0.199205400761013,
+            -0.09610838561801588,
+            2.8488813421205905
+          ],
+          "rpy": [
+            -0.028324639741602944,
+            0.028955435731572804,
+            -2.009067160357219
+          ],
+          "velocity": [
+            -0.019499728287901176,
+            0.011555716138396184,
+            -0.005378165330440533
+          ]
+        },
+        "injected_initial": {
+          "position": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "velocity": [
+            0.0005825983243994415,
+            0.0006033112294971943,
+            -0.0013235481455922127
+          ],
+          "rpy": [
+            -4.508908750722185e-05,
+            -0.00012030338257318363,
+            1.5709185902986231
+          ],
+          "body_rates": [
+            0.0041231922805309296,
+            -0.0005067550227977335,
+            0.0009743102127686143
+          ]
+        },
+        "intervention": "full_initial_physical_pulse",
+        "first_state_max_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "parent_reset_observation_discarded": true,
+        "sensor_rng_restored_before_one_effective_observation": true,
+        "base74_history_rows": 1,
+        "base74_time_s": 0.0,
+        "raw_env_80_observations_after_reset": 1,
+        "steps": 0,
+        "hidden_physics_steps": 0,
+        "plant_rate_queues_zero_before_effective_observation": true,
+        "native_force_events": [
+          {
+            "on_s": 4.895000000000003,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0
+            ],
+            "off_s": 19.853
+          }
+        ],
+        "source_Gazebo_hidden_lower_controller_state_matched": false,
+        "force_application": "Frozen original50Hz control-interval force lookup; actual source timestamps are not silently rounded in plan, realized force change logged by evaluator."
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1975,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {
+          "position": 0.0,
+          "velocity": 0.0,
+          "rotation": 3.7291133722638925e-16,
+          "body_rates": 1.1926223897340549e-18
+        },
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      },
+      "force_changes": [
+        {
+          "time_s": 4.9,
+          "force_enu_N": [
+            -3.006142715576642,
+            -0.09145587135230222,
+            0.0
+          ],
+          "type": "on_or_change"
+        },
+        {
+          "time_s": 19.86,
+          "force_enu_N": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "type": "off"
+        }
+      ]
+    }
+  ],
+  "REUSED_cases": [
+    {
+      "mode": "raw",
+      "scenario": "nominal",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5607798559265816,
+        "penalized_rmse_position_m": 0.5607798559265816,
+        "altitude_drop_m": 0.5260661766992283,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.58,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 1.1117855544120259,
+        "heading_peak_deg": 6.206119304437954,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.026823199012339517,
+        "action_saturation_fraction": 0.00375,
+        "goals_reached": 5
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.86,
+        "transit_end_s": 8.58,
+        "transit_duration_s": 7.72,
+        "observed_transit_coverage_s": 7.72,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.11317718785962501,
+        "cross_track_rmse_m": 0.10808574202826522,
+        "cross_track_3d_rmse_m": 0.10808574202826522,
+        "cross_track_xy_rmse_m": 0.0855816598491363,
+        "finite_segment_xy_rmse_m": 0.09217132230409593,
+        "active_segment_peak_m": 0.19511055998266,
+        "observed_transit_segment_rmse_m": 0.11317718785962501,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.16592254992668787,
+        "max_corner_post_peak_m": 0.19511055998266,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.6,
+            "window_end_s": 3.6,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19511055998266,
+            "post_outgoing_mean_deviation_m": 0.15789703953435968,
+            "post_incoming_overshoot_m": 0.17917645721045927
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.7,
+            "window_end_s": 5.7,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.15689234015531367,
+            "post_outgoing_mean_deviation_m": 0.12711812129755573,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.44,
+            "window_end_s": 7.44,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.14576474964209,
+            "post_outgoing_mean_deviation_m": 0.09473614178140657,
+            "post_incoming_overshoot_m": 0.0
+          }
+        ]
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1957,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {},
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      }
+    },
+    {
+      "mode": "raw",
+      "scenario": "force_strong",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5526351990286672,
+        "penalized_rmse_position_m": 0.5526351990286672,
+        "altitude_drop_m": 0.5260661766992283,
+        "pre_force_altitude_m": 3.535384965594876,
+        "altitude_drop_from_preforce_m": 0.576759906962117,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": true,
+        "force_off_time_s": 19.84,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.52,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 1.2894713973278331,
+        "heading_peak_deg": 6.57312466420172,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.026236014492193822,
+        "action_saturation_fraction": 0.004,
+        "goals_reached": 5,
+        "rmse_before_force_m": 1.1849437384791006,
+        "rmse_during_force_m": 0.597889865689684,
+        "rmse_after_force_m": 0.028585823732873897,
+        "phase_force_time_source": "physics_step"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.86,
+        "transit_end_s": 8.52,
+        "transit_duration_s": 7.659999999999999,
+        "observed_transit_coverage_s": 7.659999999999999,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.10973808214467194,
+        "cross_track_rmse_m": 0.10416173955081105,
+        "cross_track_3d_rmse_m": 0.10416173955081105,
+        "cross_track_xy_rmse_m": 0.08452877816038358,
+        "finite_segment_xy_rmse_m": 0.09229756362437665,
+        "active_segment_peak_m": 0.19511055998266,
+        "observed_transit_segment_rmse_m": 0.10973808214467194,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.15804027038983084,
+        "max_corner_post_peak_m": 0.19511055998266,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.6,
+            "window_end_s": 3.6,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19511055998266,
+            "post_outgoing_mean_deviation_m": 0.15789703953435968,
+            "post_incoming_overshoot_m": 0.17917645721045927
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.7,
+            "window_end_s": 5.7,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.15689234015531367,
+            "post_outgoing_mean_deviation_m": 0.10239156762025482,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.32,
+            "window_end_s": 7.32,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.12211791103151888,
+            "post_outgoing_mean_deviation_m": 0.05534097476632528,
+            "post_incoming_overshoot_m": 0.09688787943503444
+          }
+        ]
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1957,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {},
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      }
+    },
+    {
+      "mode": "zero_route_integral",
+      "scenario": "nominal",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5471238646957544,
+        "penalized_rmse_position_m": 0.5471238646957544,
+        "altitude_drop_m": 0.5367674820719746,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.5,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 1.088614677652024,
+        "heading_peak_deg": 5.8990396369177605,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.026886545947034695,
+        "action_saturation_fraction": 0.0035,
+        "goals_reached": 5
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.86,
+        "transit_end_s": 8.5,
+        "transit_duration_s": 7.64,
+        "observed_transit_coverage_s": 7.64,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.10527761344764301,
+        "cross_track_rmse_m": 0.1036045478427607,
+        "cross_track_3d_rmse_m": 0.1036045478427607,
+        "cross_track_xy_rmse_m": 0.08122288364495316,
+        "finite_segment_xy_rmse_m": 0.0834869385588005,
+        "active_segment_peak_m": 0.19013847656387373,
+        "observed_transit_segment_rmse_m": 0.10527761344764301,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.16242859802530785,
+        "max_corner_post_peak_m": 0.19013847656387373,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.6,
+            "window_end_s": 3.6,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19013847656387373,
+            "post_outgoing_mean_deviation_m": 0.15049502716880497,
+            "post_incoming_overshoot_m": 0.1284165336720542
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.74,
+            "window_end_s": 5.74,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.171676368743426,
+            "post_outgoing_mean_deviation_m": 0.14165885762292346,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.46,
+            "window_end_s": 7.46,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.12547094876862377,
+            "post_outgoing_mean_deviation_m": 0.10234140560163937,
+            "post_incoming_overshoot_m": 0.0
+          }
+        ]
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1957,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {},
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      }
+    },
+    {
+      "mode": "zero_route_integral",
+      "scenario": "force_strong",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5386538724504977,
+        "penalized_rmse_position_m": 0.5386538724504977,
+        "altitude_drop_m": 0.5367674820719746,
+        "pre_force_altitude_m": 3.510721196506659,
+        "altitude_drop_from_preforce_m": 0.5574071257479658,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": true,
+        "force_off_time_s": 19.84,
+        "force_time_source": "physics_step",
+        "route_completed": true,
+        "route_completion_time_s": 8.42,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 1.2687317051188582,
+        "heading_peak_deg": 6.253161710486654,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "action_delta_rms": 0.026482509012933815,
+        "action_saturation_fraction": 0.003625,
+        "goals_reached": 5,
+        "rmse_before_force_m": 1.1666253648284022,
+        "rmse_during_force_m": 0.5749337107222787,
+        "rmse_after_force_m": 0.030827064155655812,
+        "phase_force_time_source": "physics_step"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.86,
+        "transit_end_s": 8.42,
+        "transit_duration_s": 7.56,
+        "observed_transit_coverage_s": 7.56,
+        "max_sample_gap_s": 0.020000000000003126,
+        "segment_rmse_m": 0.09936482048122339,
+        "cross_track_rmse_m": 0.09693068109299151,
+        "cross_track_3d_rmse_m": 0.09693068109299151,
+        "cross_track_xy_rmse_m": 0.07993201206939886,
+        "finite_segment_xy_rmse_m": 0.08328468205498289,
+        "active_segment_peak_m": 0.19013847656387373,
+        "observed_transit_segment_rmse_m": 0.09936482048122339,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.14066803941001713,
+        "max_corner_post_peak_m": 0.19013847656387373,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.6,
+            "window_end_s": 3.6,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19013847656387373,
+            "post_outgoing_mean_deviation_m": 0.15049502716880497,
+            "post_incoming_overshoot_m": 0.1284165336720542
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.74,
+            "window_end_s": 5.74,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.15804753130453672,
+            "post_outgoing_mean_deviation_m": 0.12075102947722133,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.34,
+            "window_end_s": 7.34,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.07381811036164086,
+            "post_outgoing_mean_deviation_m": 0.04445704649984997,
+            "post_incoming_overshoot_m": 0.05213105847264733
+          }
+        ]
+      },
+      "input_proof": {
+        "rows": 2000,
+        "raw80_encoder_proof": {
+          "rows": 2000,
+          "maximum_encoder_error": 0.0,
+          "valid_leg_rows": 1957,
+          "changed_observed_targets": 4,
+          "scope": "Reference speed is norm-capped before subtracting measured velocity; residual itself is not clipped."
+        },
+        "first_actual_IO_errors": {},
+        "raw_effective_input_proven": true,
+        "NN_forward_parity_recomputed": false,
+        "NN_proof_scope": "Archived commands from exact frozen evaluator/strict v20 loader and exact six source68 weights; no extra NN-state forwards in this audit."
+      }
+    }
+  ],
+  "contrasts": {
+    "REUSED_native_nominal": {
+      "raw_finite": 0.11317718785962501,
+      "zero_finite": 0.10527761344764301,
+      "zero_raw_finite_ratio": 0.9302017079468352,
+      "raw_corner": 0.16592254992668787,
+      "zero_corner": 0.16242859802530785,
+      "zero_raw_corner_ratio": 0.9789422721449025,
+      "raw_time": 8.58,
+      "zero_time": 8.5
+    },
+    "REUSED_native_force_strong": {
+      "raw_finite": 0.10973808214467194,
+      "zero_finite": 0.09936482048122339,
+      "zero_raw_finite_ratio": 0.9054725446197147,
+      "raw_corner": 0.15804027038983084,
+      "zero_corner": 0.14066803941001713,
+      "zero_raw_corner_ratio": 0.8900771876879076,
+      "raw_time": 8.52,
+      "zero_time": 8.42
+    },
+    "yaw_only/nominal": {
+      "raw_finite": 0.12880880182138446,
+      "zero_finite": 0.09878668448604172,
+      "zero_raw_finite_ratio": 0.7669249545774554,
+      "raw_corner": 0.1924239566940684,
+      "zero_corner": 0.1673198278544518,
+      "zero_raw_corner_ratio": 0.8695374044328107,
+      "raw_time": 8.74,
+      "zero_time": 8.46
+    },
+    "yaw_only/force_strong": {
+      "raw_finite": 0.13456080011430757,
+      "zero_finite": 0.16146465356582992,
+      "zero_raw_finite_ratio": 1.1999382690104985,
+      "raw_corner": 0.19617098715409098,
+      "zero_corner": 0.21943013856140156,
+      "zero_raw_corner_ratio": 1.1185657050756475,
+      "raw_time": 8.66,
+      "zero_time": 9.14
+    },
+    "full_initial/nominal": {
+      "raw_finite": 0.12951791568618068,
+      "zero_finite": 0.09693181726487468,
+      "zero_raw_finite_ratio": 0.7484047033287544,
+      "raw_corner": 0.195247804362211,
+      "zero_corner": 0.1657529520797065,
+      "zero_raw_corner_ratio": 0.8489363177278676,
+      "raw_time": 8.58,
+      "zero_time": 8.32
+    },
+    "full_initial/force_strong": {
+      "raw_finite": 0.16170767015251936,
+      "zero_finite": 0.16815179083505258,
+      "zero_raw_finite_ratio": 1.0398504330465912,
+      "raw_corner": 0.17368756393615217,
+      "zero_corner": 0.14915297089806126,
+      "zero_raw_corner_ratio": 0.8587429492239878,
+      "raw_time": 9.700000000000001,
+      "zero_time": 9.6
+    },
+    "full_initial_physical_pulse/force_strong": {
+      "raw_finite": 0.16730015492724548,
+      "zero_finite": 0.17274419057223472,
+      "zero_raw_finite_ratio": 1.0325405296089338,
+      "raw_corner": 0.17254065686513723,
+      "zero_corner": 0.14809420067592818,
+      "zero_raw_corner_ratio": 0.858314807458296,
+      "raw_time": 9.74,
+      "zero_time": 9.64
+    },
+    "historical_Gazebo_tail": {
+      "raw_finite": 0.15097314367294346,
+      "zero_finite": 0.1663302111428861,
+      "zero_raw_finite_ratio": 1.1017205252293811,
+      "raw_corner": 0.19237747420579018,
+      "zero_corner": 0.20761917141417097,
+      "zero_raw_corner_ratio": 1.0792280763187296
+    }
+  },
+  "own_environment_steps": 0,
+  "own_NN_forwards": 0,
+  "own_backward_calls": 0,
+  "own_optimizer_steps": 0,
+  "NN_scope": "Exact six source68 arrays and strict original v20 loader; actual ROOT20000 NN outputs archived. Independently replayed RAW80 and effective80 inputs, no NN inference repeated by audit.",
+  "limitations": "One common measured raw-Gazebo initial sample, environment intervention only. Hidden ArduPilot state not matched, native50Hz force onset4.90 !=source4.895. Historical Gazebo pair is viewed development, not a new matched-initial physical replication. No promotion/PPO/Gazebo run by this audit."
+}

@@ -1,0 +1,203 @@
+{
+  "default77_unchanged": true,
+  "diagnostic80_promoted": false,
+  "separate_models_and_observations": true,
+  "files": [
+    {
+      "path": "results/diagnostic80_v16/all_original_flights.csv",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/all_original_flights.csv",
+      "original_sha256": "8da5fcfd22af142488c70c470730c1a0f7dd05301136b4f0af2cf543207fbe99",
+      "export_sha256": "8da5fcfd22af142488c70c470730c1a0f7dd05301136b4f0af2cf543207fbe99",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/diagnostic80_v16/applicability.csv",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/applicability.csv",
+      "original_sha256": "d1c73c0e8ab97ef11728a1709987b999bdb146309d373bc10d1796b7494bb3e1",
+      "export_sha256": "d1c73c0e8ab97ef11728a1709987b999bdb146309d373bc10d1796b7494bb3e1",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/diagnostic80_v16/case_recomputation.json",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/case_recomputation.json",
+      "original_sha256": "1a4c71ba325fd3cb2ba723fe82386f19005fd6519d852dfbc62dff6da379d5e2",
+      "export_sha256": "1a4c71ba325fd3cb2ba723fe82386f19005fd6519d852dfbc62dff6da379d5e2",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/diagnostic80_v16/comparison_to_previous77.csv",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/comparison_to_previous77.csv",
+      "original_sha256": "edc3b12222ac70b08a4629ecd6d8f362a77ddbe4de5214ff27d568e4faa3eb0f",
+      "export_sha256": "edc3b12222ac70b08a4629ecd6d8f362a77ddbe4de5214ff27d568e4faa3eb0f",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/diagnostic80_v16/fixed_quality_checks.csv",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/fixed_quality_checks.csv",
+      "original_sha256": "42bc081ba464c038034c7a903d1cda263aa4528ea1eedfe439ac00d6c6a05d8e",
+      "export_sha256": "42bc081ba464c038034c7a903d1cda263aa4528ea1eedfe439ac00d6c6a05d8e",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/diagnostic80_v16/input_freeze.json",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/input_freeze.json",
+      "original_sha256": "a2397e88207fe153ad533f7052c4ab115e9b0576e56c53d729aa4f1849b53eb6",
+      "export_sha256": "a14fc6e16bef225d9ba330265721eefc2f99d9d63badd7451521a046d2672f80",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/diagnostic80_v16/operational_gate.json",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/operational_gate.json",
+      "original_sha256": "aac14b45fcb9a7baa016b41adc6e14fb50306673a94c008d13c54be89938c53e",
+      "export_sha256": "aac14b45fcb9a7baa016b41adc6e14fb50306673a94c008d13c54be89938c53e",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/diagnostic80_v16/original_thesis_wind_macro.json",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/original_thesis_wind_macro.json",
+      "original_sha256": "de01738b5c3944b8484abcd52e6e72ff5854e34a058c810ce9d317d394fd2380",
+      "export_sha256": "de01738b5c3944b8484abcd52e6e72ff5854e34a058c810ce9d317d394fd2380",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/diagnostic80_v16/presentation.pdf",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/presentation.pdf",
+      "original_sha256": "fc9e403f13253b15ddd034d69128a7e13b1b16fa75e1b6da60fa91761205868b",
+      "export_sha256": "fc9e403f13253b15ddd034d69128a7e13b1b16fa75e1b6da60fa91761205868b",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/diagnostic80_v16/presentation.png",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/presentation.png",
+      "original_sha256": "7c587927b1c053a293e4143c52cc2de9c75dc25b6302a80d5f45ba8ddb22dc5d",
+      "export_sha256": "7c587927b1c053a293e4143c52cc2de9c75dc25b6302a80d5f45ba8ddb22dc5d",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/diagnostic80_v16/README.txt",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/README.txt",
+      "original_sha256": "27699f9aed5c2036c3f399bab9f114045f6a8863b058b55fb3b48d779d641c39",
+      "export_sha256": "27699f9aed5c2036c3f399bab9f114045f6a8863b058b55fb3b48d779d641c39",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/diagnostic80_v16/route_force_exposure.csv",
+      "original_relative": "reports/joint_metric_cost16_gazebo_v6/route_force_exposure.csv",
+      "original_sha256": "df668e2a4d748483fbe4df25c76c80aec899cfcda679c5461082ebb31b12a5a9",
+      "export_sha256": "df668e2a4d748483fbe4df25c76c80aec899cfcda679c5461082ebb31b12a5a9",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "results/diagnostic80_v16/whole_integrity_audit.json",
+      "original_relative": "audit/joint_route80_development9_v5_root01.json",
+      "original_sha256": "5b917f1b2ce55025878f0e7e4b8c62a95852c3a1652d6def70ad9216ad2d5b74",
+      "export_sha256": "3a1bf336a52bd884ba9f225c2755ef7a87c0b3311f4fe495c298a84a04b4a97f",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/diagnostic80_v16/table_audit.json",
+      "original_relative": "audit/joint_metric_cost16_gazebo_v6_table_root01.json",
+      "original_sha256": "589295ff9bc9a64aaa20372ddd03552641324adc9f9ae8b218038a2004c65698",
+      "export_sha256": "589295ff9bc9a64aaa20372ddd03552641324adc9f9ae8b218038a2004c65698",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "results/diagnostic80_v16/visual_readback_audit.json",
+      "original_relative": "audit/joint_metric_cost16_gazebo_v6_visual_root01.json",
+      "original_sha256": "dba2f8c8c7a5229e56012ac3548d16282949c1900e52bfb5cb2e84b2c1fbacea",
+      "export_sha256": "4e6e668ec8e6930cbe814d846a552d51c19be216d1aa6298851fb675fde13316",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "evidence/capsule_prepare_qa.json",
+      "original_relative": "audit/github_packaging_v4_prepare_qa_01.json",
+      "original_sha256": "34ddc183caa2405b9743c1617d7d5318912dae6aca6d3e710e3ba360fdce7ae1",
+      "export_sha256": "b3df3bb3a101b15a2cd1720d643da8aa0e37e6777ad26854270b0bf4472babba",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "evidence/preflight_tests_qa.json",
+      "original_relative": "audit/github_packaging_v4_preflight_tests_01.json",
+      "original_sha256": "443bc23052fbb2b12dc23f00f688e46d6a65d3988ff3e63c2368fa222487a514",
+      "export_sha256": "e761fb1ccf3346dae6bac284f4297c082e5b0b06ad1497698a5ca889383113ad",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "evidence/diagnostic80_archive_replay_qa.json",
+      "original_relative": "audit/github_packaging_v4_diagnostic80_qa_01.json",
+      "original_sha256": "00a3a1512019772f67753a606db1d7a070dd955e1c8bf8097bcbf735d7cce545",
+      "export_sha256": "4d4fe241c7b64c9692c2acde2593132e051f131b5b13c175aa84bfcdc98994bd",
+      "transformation": "Public path strings only; recursive numeric/bool/null invariance checked"
+    },
+    {
+      "path": "models/diagnostic80_metric_cost16.npz",
+      "original_relative": "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/checkpoint_131072.npz",
+      "original_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+      "export_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+      "transformation": "Exact selected diagnostic weights; not promoted"
+    },
+    {
+      "path": "v2/quadrl_route_basis_v14/__init__.py",
+      "original_relative": "quadrl_route_basis_v14/__init__.py",
+      "original_sha256": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+      "export_sha256": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+      "transformation": "Exact bytes; archive replay verified"
+    },
+    {
+      "path": "v2/quadrl_route_basis_v14/policy.py",
+      "original_relative": "quadrl_route_basis_v14/policy.py",
+      "original_sha256": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+      "export_sha256": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+      "transformation": "Exact bytes; archive replay verified"
+    },
+    {
+      "path": "source_archive/diagnostic80/scripts/train_joint_metric_cost_v16.py",
+      "original_relative": "scripts/train_joint_metric_cost_v16.py",
+      "original_sha256": "a64913c709afe922ba9c329bde960fa3ec75a436d1239b3948ff4c714e08d66c",
+      "export_sha256": "a64913c709afe922ba9c329bde960fa3ec75a436d1239b3948ff4c714e08d66c",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "source_archive/diagnostic80/scripts/run_joint_metric_cost_pair_v16.py",
+      "original_relative": "scripts/run_joint_metric_cost_pair_v16.py",
+      "original_sha256": "1c3c2cdafb5898efdd9976a2ed6c8f1dcf6333a04e360b9333018451c91ad932",
+      "export_sha256": "1c3c2cdafb5898efdd9976a2ed6c8f1dcf6333a04e360b9333018451c91ad932",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "source_archive/diagnostic80/scripts/build_joint_metric_cost16_gazebo_v6.py",
+      "original_relative": "scripts/build_joint_metric_cost16_gazebo_v6.py",
+      "original_sha256": "de18eb0e97e0b81a2e42091f01e56c2c68913f74347e2055f9978fa3b313e1ce",
+      "export_sha256": "de18eb0e97e0b81a2e42091f01e56c2c68913f74347e2055f9978fa3b313e1ce",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "source_archive/diagnostic80/audit/audit_joint_metric_cost_pilot_v16.py",
+      "original_relative": "audit/audit_joint_metric_cost_pilot_v16.py",
+      "original_sha256": "6b82973a4a46a09464b15e3d3abe151ad4ac21dd2cd518a20d32efb6b99736a1",
+      "export_sha256": "6b82973a4a46a09464b15e3d3abe151ad4ac21dd2cd518a20d32efb6b99736a1",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "source_archive/diagnostic80/quadrl_metric_cost_v16/env.py",
+      "original_relative": "quadrl_metric_cost_v16/env.py",
+      "original_sha256": "7f517ec2e99377b91f530a16a9e7e3062fe6c9685fd3f17e90fb4a2dafb830a5",
+      "export_sha256": "7f517ec2e99377b91f530a16a9e7e3062fe6c9685fd3f17e90fb4a2dafb830a5",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "source_archive/diagnostic80/quadrl_metric_cost_v16/reward.py",
+      "original_relative": "quadrl_metric_cost_v16/reward.py",
+      "original_sha256": "cea5803e7516b416e045f049858bddfa3c93420107e9e70b253cf2b78470f36c",
+      "export_sha256": "cea5803e7516b416e045f049858bddfa3c93420107e9e70b253cf2b78470f36c",
+      "transformation": "Exact bytes"
+    },
+    {
+      "path": "source_archive/diagnostic80/quadrl_metric_cost_v16/__init__.py",
+      "original_relative": "quadrl_metric_cost_v16/__init__.py",
+      "original_sha256": "3f9aa720491ff159b6f275d08b5e14b46602f0ddc6aa3836d558114f65ddf5ef",
+      "export_sha256": "3f9aa720491ff159b6f275d08b5e14b46602f0ddc6aa3836d558114f65ddf5ef",
+      "transformation": "Exact bytes"
+    }
+  ]
+}

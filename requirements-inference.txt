@@ -1,0 +1,2 @@
+# Minimal CPU NPZ inspection/replay, matching the observed environment.
+numpy==2.5.4

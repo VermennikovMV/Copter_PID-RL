@@ -1,0 +1,62 @@
+{
+  "status": "PASS_V18_NATIVE_VIEWER_PREPARATION_NO_GUI",
+  "checked_utc": "2026-11-15T02:47:27.4485114Z",
+  "source_sha256": {
+    "show_joint_training_native_v18.ps1": "91d79dc57cbe07e26811055c295bba1aadac791c81bc99b90cb66dfac67def84",
+    "START_TRAINING_NATIVE_V18.txt": "33d77ae0063e17bb2a29c799637c64de659d496fca3716aaa91868015af76bc0",
+    "show_joint_training_native_v18.cmd": "5df4c628b190d5beb3d0e0c2933028d6aa425bd68524e92206760d76e8983a1d"
+  },
+  "old17_source_sha256_unchanged": {
+    "show_joint_training_native_v17.ps1": "dedb73003a5936a8a42ee7dc5e5adacf5b51b7bcb0c7c9d69e6da3af8e1a15af",
+    "show_joint_training_native_v17.cmd": "bb7d53c9169c4b5ae2ddba3ea3ad0b92003837349bbee99114650389612fa275",
+    "START_TRAINING_NATIVE_V17.txt": "8bb2efde41a795452f81025d3d748b836e3114d27527e833c59ec2866754819a"
+  },
+  "default_root": "[local-user]/Desktop/ВКР/Реализация/v2/artifacts/refinement/joint_v2/critic_calibration_pilot_v18_111",
+  "default_arms": [
+    "critic_lr3e5",
+    "critic_lr3e4"
+  ],
+  "default_before_job_counters_null": true,
+  "actual_archived_v17_guard_rows_per_arm": 3072,
+  "actual_archived_critic_updates_per_arm": 1024,
+  "actual_archived_ppo_updates_per_arm": 2048,
+  "actual_archived_critic_env_per_arm": 131072,
+  "actual_archived_ppo_env_per_arm": 262144,
+  "reward_points_per_arm": 32,
+  "candidate_evaluations_per_arm": 3,
+  "archive_label": "Архив / другая серия: limited_actor / full_actor. Параметры эксперимента V18 к этому архиву не относятся.",
+  "all_archived_inputs_unchanged": true,
+  "input_sha256": {
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/progress.csv": "da838171c44d18d7b7d7e01806d9db81b15d91158de409d0dbe6c5db52a5a660",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/progress.csv": "7f8d52d79e932795b98e734c0854d1dd611b6a1da35dbac92ae52a676b19b714",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/phase.json": "0ecce834c18a8eda81c8a1a7c440502c273200fbd2164691ec13e59e79264e0e",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/config.json": "05b88a4615a81b3c8862d21480c13abbaa39152e8a38810e76471a23500ded90",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/checkpoint_131072_validation.json": "4aabbbe0e0a51502f11218e718133c776e363ebf2ccd7ba41f8d62afc165c271",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/actual_gradient_norms.jsonl": "be1657160577316f44733d9a5de94a1c7a5c0e0993cfd0be37347712e89dee99",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/final_validation.json": "4c86b30103fb61b0c669ca20b74ba583b24ac3f3d35216b174b53d84f3c9d3a1",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/warmup/progress.csv": "a5427b0b1fc8cc23b1ee29a8898f04dc3cd1de662a7525c30b9d38b91674ecd7",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/complete.json": "0f42ab5b07d6c4c983573636a8ab673b9c13e01361461fb47fea3e6922bd29d9",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/checkpoint_262144_validation.json": "3d2be3f584985b82bf49887435e79438debe7b7d99bb171b48d0a5b199e7275e",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/selection.json": "392a8615445a81b18e0ec27d7b71b7ea6237268c905d26a713187baa30aa48b4",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/complete.json": "4faf0f3dd979c027a7423f7f26a02c12254fa425de7f2035ec82007be71a621f",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/checkpoint_262144_validation.json": "822c39fbbff9b20d54adf3fd80a9a9b7829b547fbc28c3a386761be2208fdb62",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/warmup.json": "ebd80189308488cdcd04562951c24945d8e9674c718494f25ae648383ff238ed",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/config.json": "81b641fed6fed61f556b675e17e55bf8a789a6757b3c34070b9283a2d3f67e04",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/checkpoint_131072_validation.json": "4392c11c9b036222fe87ba9aa731a0390dd292dc95a45397b060a9063b490dc4",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/final_validation.json": "efc92b140ec166ecea42b40fd1affc0704d2672adb30ef3a334ab18144198dca",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/phase.json": "683c7015c09c09c910fac08fd3e2521edcd1ee31071a3c8d01dc071828c0ebce",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/selection.json": "70c01d3c824d165595dbe50f3905c0f2c36a2b4874eff6bc7b811b0f6d98fa5a",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/warmup/progress.csv": "232e5a3c4c127d8080487b38660ed4365d4fa319565dd6eadf8b675696c8438a",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/limited_actor/warmup.json": "98c1717d220223901baf0adbfa8dc6cb4109753898f0dcbc2843904755bd0af3",
+    "artifacts/refinement/joint_v2/actor_capacity_pilot_v17_111/full_actor/actual_gradient_norms.jsonl": "4f7a37c1d3dad8a9b1c97809db369e6a1dc65a086c96466be41808ee3d982530"
+  },
+  "PS51_parser": "PASS",
+  "PlanOnly_owned_QA8s_args": "PASS",
+  "actual_GUI_opened": false,
+  "ROOT_actual_GUI_QA_pending": true,
+  "new_physics_steps": 0,
+  "new_optimizer_steps": 0,
+  "network_calls": 0,
+  "training_or_simulator_launches": 0,
+  "processes_stopped": 0
+}

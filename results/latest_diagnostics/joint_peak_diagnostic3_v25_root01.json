@@ -1,0 +1,2865 @@
+{
+  "schema": "independent-peak-diagnostic3-v25-v1.0",
+  "status": "PASS",
+  "new_actual_flights": 3,
+  "shared_actual_flights": 0,
+  "total_unique_observation_coverage": 3,
+  "scope": "ONE_OPENED_CASE_84001_THREE_NEW_MEASUREMENTS_DIAGNOSTIC_ONLY_NOT_ENGINEERING9",
+  "candidate_label": "checkpoint_262144",
+  "trained_policy_sha256": "470005b73488dde8505c26da09fd2902d8dc36a9922c21628e62d4eda028b303",
+  "native_FULL_research_pass": false,
+  "native_engineering_pass": false,
+  "all_native_FAIL_preserved": true,
+  "cases": [
+    {
+      "role": "PID",
+      "job": {
+        "name": "peak25_pid_route_force_strong_env84001",
+        "role": "PID",
+        "controller": "pid",
+        "scenario": "force_strong",
+        "mission": "route",
+        "environment_seed": 84001,
+        "instance": 1,
+        "duration_s": 40.0,
+        "order": 0,
+        "training_seed": null,
+        "runtime": "sim_joint/run_experiment_v6_memory_train.py",
+        "actor_auditor": null,
+        "policy_sha256": null,
+        "policy_archive": null
+      },
+      "run": "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001",
+      "status": "PASS",
+      "metrics": {
+        "rmse_position_m": 0.6303089257993482,
+        "penalized_rmse_position_m": 0.6303089257993482,
+        "altitude_drop_m": 0.49000000953674316,
+        "heading_rmse_deg": 0.30668685224922787,
+        "heading_peak_deg": 2.525459759226777,
+        "survived": true,
+        "heading_guard_pass": true,
+        "duration_s": 40.0,
+        "route_completed": true,
+        "route_completion_time_s": 9.160000000000004
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 9.160000000000004,
+        "transit_duration_s": 8.620000000000005,
+        "observed_transit_coverage_s": 8.620000000000005,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.09218517268768903,
+        "cross_track_rmse_m": 0.09132065888172436,
+        "cross_track_3d_rmse_m": 0.09132065888172436,
+        "cross_track_xy_rmse_m": 0.06637164568799313,
+        "finite_segment_xy_rmse_m": 0.06740503746200205,
+        "active_segment_peak_m": 0.21520683675038768,
+        "observed_transit_segment_rmse_m": 0.09218517268768903,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.15282128929045583,
+        "max_corner_post_peak_m": 0.20513712271469428,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.700000000000003,
+            "window_end_s": 3.700000000000003,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20513712271469428,
+            "post_outgoing_mean_deviation_m": 0.11671760580151798,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.899999999999999,
+            "window_end_s": 5.899999999999999,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.16921207129419866,
+            "post_outgoing_mean_deviation_m": 0.1112391299883966,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.980000000000004,
+            "window_end_s": 7.980000000000004,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.08411467386247459,
+            "post_outgoing_mean_deviation_m": 0.04003730325789404,
+            "post_incoming_overshoot_m": 0.0841136604072245
+          }
+        ]
+      },
+      "force": {
+        "status": "PASS",
+        "required_sequences": [
+          1,
+          2
+        ],
+        "request_delays_s": [
+          2.6645352591003757e-15,
+          3.552713678800501e-15
+        ],
+        "physical_intervals": [
+          {
+            "on_s": 4.890000000000001,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0
+            ],
+            "off_s": 19.851000000000006
+          }
+        ],
+        "first_physical_on_s": 4.890000000000001,
+        "last_physical_off_s": 19.851000000000006,
+        "actual_physics_event_count": 4,
+        "scope": "Fresh schedule/request/physical-sequence replay; clock offset comes from SHA-bound independent world/PCAP receipt"
+      },
+      "independent_original_metrics": {
+        "rmse_m": 0.6303089257993482,
+        "observed_duration_positive": true,
+        "sample_rmse_m": 0.6306243168252389,
+        "penalized_rmse_m": 0.6303089257993482,
+        "max_error_m": 2.06694961531583,
+        "max_altitude_drop_m": 0.49000000953674316,
+        "altitude_drop_since_force": null,
+        "recovery": {
+          "applicable": false,
+          "reason": "route_target_changes",
+          "time_s": null,
+          "censored": null
+        },
+        "survived": true,
+        "declared_failed": false,
+        "route": {
+          "completed": true,
+          "completion_time_s": 9.160000000000004,
+          "censored": false,
+          "events": [
+            {
+              "goal_index": 0,
+              "time_s": 0.5399999999999991,
+              "dwell_started_s": 0.03999999999999915
+            },
+            {
+              "goal_index": 1,
+              "time_s": 2.700000000000003,
+              "dwell_started_s": 2.200000000000003
+            },
+            {
+              "goal_index": 2,
+              "time_s": 4.899999999999999,
+              "dwell_started_s": 4.399999999999999
+            },
+            {
+              "goal_index": 3,
+              "time_s": 6.980000000000004,
+              "dwell_started_s": 6.480000000000004
+            },
+            {
+              "goal_index": 4,
+              "time_s": 9.160000000000004,
+              "dwell_started_s": 8.660000000000004
+            }
+          ]
+        },
+        "completion": true,
+        "heading_rmse_deg": 0.30668685224922787,
+        "heading_peak_deg": 2.525459759226777,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "yaw_unwrapped_change_deg": -0.022196622366187153,
+        "timing": {
+          "first_time_s": 0.03999999999999915,
+          "last_time_s": 40.001000000000005,
+          "samples": 1998,
+          "integration_endpoint_samples": 1998,
+          "planned_steps": 2000,
+          "missing_steps": 2,
+          "max_gap_s": 0.03900000000000148,
+          "gaps_above_1_5_dt": 1,
+          "full_horizon": true,
+          "covered_seconds": 40.0,
+          "tail_seconds": 0.0,
+          "unexplained_short_trace": false
+        },
+        "metric_time_weighting": "preceding sample interval; failure/incomplete tail4m; surviving final<=2controlsteps filled last error"
+      },
+      "new_actual_flight": true
+    },
+    {
+      "role": "F0",
+      "job": {
+        "name": "peak25_f0_route_force_strong_env84001",
+        "role": "F0",
+        "controller": "hybrid",
+        "scenario": "force_strong",
+        "mission": "route",
+        "environment_seed": 84001,
+        "instance": 1,
+        "duration_s": 40.0,
+        "order": 1,
+        "training_seed": 111,
+        "runtime": "sim_joint/run_experiment_v5_memory.py",
+        "actor_auditor": "audit/verify_joint_hybrid_v5_memory.py",
+        "policy_sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+        "policy_archive": "F0_policy.npz"
+      },
+      "run": "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001",
+      "status": "PASS",
+      "metrics": {
+        "rmse_position_m": 0.562764231436275,
+        "penalized_rmse_position_m": 0.562764231436275,
+        "altitude_drop_m": 0.48000001907348633,
+        "heading_rmse_deg": 0.7627160210024432,
+        "heading_peak_deg": 5.489193563427735,
+        "survived": true,
+        "heading_guard_pass": true,
+        "duration_s": 40.0,
+        "route_completed": true,
+        "route_completion_time_s": 9.079999999999998
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.519999999999996,
+        "transit_end_s": 9.079999999999998,
+        "transit_duration_s": 8.560000000000002,
+        "observed_transit_coverage_s": 8.560000000000002,
+        "max_sample_gap_s": 0.021000000000000796,
+        "segment_rmse_m": 0.16412529599275402,
+        "cross_track_rmse_m": 0.1333996746314121,
+        "cross_track_3d_rmse_m": 0.1333996746314121,
+        "cross_track_xy_rmse_m": 0.10605844656692853,
+        "finite_segment_xy_rmse_m": 0.1424490655415738,
+        "active_segment_peak_m": 0.4301448527674933,
+        "observed_transit_segment_rmse_m": 0.16412529599275402,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.20761917141417097,
+        "max_corner_post_peak_m": 0.22598371697651504,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.3399999999999963,
+            "window_end_s": 3.3399999999999963,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19412711988034692,
+            "post_outgoing_mean_deviation_m": 0.13640011505490246,
+            "post_incoming_overshoot_m": 0.060715675354003906
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.439999999999998,
+            "window_end_s": 5.439999999999998,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20274667738565094,
+            "post_outgoing_mean_deviation_m": 0.15121454972631407,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.919999999999995,
+            "window_end_s": 7.919999999999995,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.22598371697651504,
+            "post_outgoing_mean_deviation_m": 0.1642759712396574,
+            "post_incoming_overshoot_m": 0.22591998740667438
+          }
+        ]
+      },
+      "force": {
+        "status": "PASS",
+        "required_sequences": [
+          1,
+          2
+        ],
+        "request_delays_s": [
+          -4.440892098500626e-15,
+          -3.552713678800501e-15
+        ],
+        "physical_intervals": [
+          {
+            "on_s": 4.893999999999998,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0
+            ],
+            "off_s": 19.851
+          }
+        ],
+        "first_physical_on_s": 4.893999999999998,
+        "last_physical_off_s": 19.851,
+        "actual_physics_event_count": 4,
+        "scope": "Fresh schedule/request/physical-sequence replay; clock offset comes from SHA-bound independent world/PCAP receipt"
+      },
+      "independent_original_metrics": {
+        "rmse_m": 0.562764231436275,
+        "observed_duration_positive": true,
+        "sample_rmse_m": 0.5626238411867488,
+        "penalized_rmse_m": 0.562764231436275,
+        "max_error_m": 2.139126848788048,
+        "max_altitude_drop_m": 0.48000001907348633,
+        "altitude_drop_since_force": null,
+        "recovery": {
+          "applicable": false,
+          "reason": "route_target_changes",
+          "time_s": null,
+          "censored": null
+        },
+        "survived": true,
+        "declared_failed": false,
+        "route": {
+          "completed": true,
+          "completion_time_s": 9.079999999999998,
+          "censored": false,
+          "events": [
+            {
+              "goal_index": 0,
+              "time_s": 0.519999999999996,
+              "dwell_started_s": 0.01999999999999602
+            },
+            {
+              "goal_index": 1,
+              "time_s": 2.3399999999999963,
+              "dwell_started_s": 1.8399999999999963
+            },
+            {
+              "goal_index": 2,
+              "time_s": 4.439999999999998,
+              "dwell_started_s": 3.9399999999999977
+            },
+            {
+              "goal_index": 3,
+              "time_s": 6.919999999999995,
+              "dwell_started_s": 6.419999999999995
+            },
+            {
+              "goal_index": 4,
+              "time_s": 9.079999999999998,
+              "dwell_started_s": 8.579999999999998
+            }
+          ]
+        },
+        "completion": true,
+        "heading_rmse_deg": 0.7627160210024432,
+        "heading_peak_deg": 5.489193563427735,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "yaw_unwrapped_change_deg": 0.021397177572048252,
+        "timing": {
+          "first_time_s": 0.01999999999999602,
+          "last_time_s": 40.02,
+          "samples": 2001,
+          "integration_endpoint_samples": 2001,
+          "planned_steps": 2000,
+          "missing_steps": 0,
+          "max_gap_s": 0.021000000000000796,
+          "gaps_above_1_5_dt": 0,
+          "full_horizon": true,
+          "covered_seconds": 40.0,
+          "tail_seconds": 0.0,
+          "unexplained_short_trace": false
+        },
+        "metric_time_weighting": "preceding sample interval; failure/incomplete tail4m; surviving final<=2controlsteps filled last error"
+      },
+      "new_actual_flight": true
+    },
+    {
+      "role": "TRAINED",
+      "job": {
+        "name": "peak25_trained_route_force_strong_env84001",
+        "role": "TRAINED",
+        "controller": "hybrid",
+        "scenario": "force_strong",
+        "mission": "route",
+        "environment_seed": 84001,
+        "instance": 1,
+        "duration_s": 40.0,
+        "order": 2,
+        "training_seed": 111,
+        "runtime": "sim_joint/run_experiment_v6_memory_train.py",
+        "actor_auditor": "audit/verify_joint_hybrid_v6_memory_train.py",
+        "policy_sha256": "470005b73488dde8505c26da09fd2902d8dc36a9922c21628e62d4eda028b303",
+        "policy_archive": "trained25_policy.npz"
+      },
+      "run": "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001",
+      "status": "PASS",
+      "metrics": {
+        "rmse_position_m": 0.5618249411470327,
+        "penalized_rmse_position_m": 0.5618249411470327,
+        "altitude_drop_m": 0.48000001907348633,
+        "heading_rmse_deg": 0.7488263475737846,
+        "heading_peak_deg": 5.262635448485018,
+        "survived": true,
+        "heading_guard_pass": true,
+        "duration_s": 40.0,
+        "route_completed": true,
+        "route_completion_time_s": 8.979999999999997
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 8.979999999999997,
+        "transit_duration_s": 8.439999999999998,
+        "observed_transit_coverage_s": 8.439999999999998,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.15971082895030958,
+        "cross_track_rmse_m": 0.13728506711071747,
+        "cross_track_3d_rmse_m": 0.13728506711071747,
+        "cross_track_xy_rmse_m": 0.11355518803126954,
+        "finite_segment_xy_rmse_m": 0.1395343889308257,
+        "active_segment_peak_m": 0.3655631015091845,
+        "observed_transit_segment_rmse_m": 0.15971082895030958,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.22030286543678157,
+        "max_corner_post_peak_m": 0.2724105662118121,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.3599999999999994,
+            "window_end_s": 3.3599999999999994,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19615920347243684,
+            "post_outgoing_mean_deviation_m": 0.1361000633162833,
+            "post_incoming_overshoot_m": 0.04255938529968262
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.439999999999998,
+            "window_end_s": 5.439999999999998,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19233882662609583,
+            "post_outgoing_mean_deviation_m": 0.1403804040647127,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.839999999999996,
+            "window_end_s": 7.839999999999996,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2724105662118121,
+            "post_outgoing_mean_deviation_m": 0.18445650651841922,
+            "post_incoming_overshoot_m": 0.27238032139820306
+          }
+        ]
+      },
+      "force": {
+        "status": "PASS",
+        "required_sequences": [
+          1,
+          2
+        ],
+        "request_delays_s": [
+          2.6645352591003757e-15,
+          -3.552713678800501e-15
+        ],
+        "physical_intervals": [
+          {
+            "on_s": 4.893999999999998,
+            "force_enu_N": [
+              -3.006142715576642,
+              -0.09145587135230222,
+              0
+            ],
+            "off_s": 19.851
+          }
+        ],
+        "first_physical_on_s": 4.893999999999998,
+        "last_physical_off_s": 19.851,
+        "actual_physics_event_count": 4,
+        "scope": "Fresh schedule/request/physical-sequence replay; clock offset comes from SHA-bound independent world/PCAP receipt"
+      },
+      "independent_original_metrics": {
+        "rmse_m": 0.5618249411470327,
+        "observed_duration_positive": true,
+        "sample_rmse_m": 0.5621059446635499,
+        "penalized_rmse_m": 0.5618249411470327,
+        "max_error_m": 2.1468433430576592,
+        "max_altitude_drop_m": 0.48000001907348633,
+        "altitude_drop_since_force": null,
+        "recovery": {
+          "applicable": false,
+          "reason": "route_target_changes",
+          "time_s": null,
+          "censored": null
+        },
+        "survived": true,
+        "declared_failed": false,
+        "route": {
+          "completed": true,
+          "completion_time_s": 8.979999999999997,
+          "censored": false,
+          "events": [
+            {
+              "goal_index": 0,
+              "time_s": 0.5399999999999991,
+              "dwell_started_s": 0.03999999999999915
+            },
+            {
+              "goal_index": 1,
+              "time_s": 2.3599999999999994,
+              "dwell_started_s": 1.8599999999999994
+            },
+            {
+              "goal_index": 2,
+              "time_s": 4.439999999999998,
+              "dwell_started_s": 3.9399999999999977
+            },
+            {
+              "goal_index": 3,
+              "time_s": 6.839999999999996,
+              "dwell_started_s": 6.339999999999996
+            },
+            {
+              "goal_index": 4,
+              "time_s": 8.979999999999997,
+              "dwell_started_s": 8.479999999999997
+            }
+          ]
+        },
+        "completion": true,
+        "heading_rmse_deg": 0.7488263475737846,
+        "heading_peak_deg": 5.262635448485018,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "yaw_unwrapped_change_deg": -0.004841976401974664,
+        "timing": {
+          "first_time_s": 0.03999999999999915,
+          "last_time_s": 40.0,
+          "samples": 1998,
+          "integration_endpoint_samples": 1998,
+          "planned_steps": 2000,
+          "missing_steps": 2,
+          "max_gap_s": 0.03900000000000148,
+          "gaps_above_1_5_dt": 1,
+          "full_horizon": true,
+          "covered_seconds": 40.0,
+          "tail_seconds": 0.0,
+          "unexplained_short_trace": false
+        },
+        "metric_time_weighting": "preceding sample interval; failure/incomplete tail4m; surviving final<=2controlsteps filled last error"
+      },
+      "new_actual_flight": true
+    }
+  ],
+  "fresh_actor_proofs": [
+    {
+      "role": "F0",
+      "proof": {
+        "status": "PASS",
+        "checks": [
+          {
+            "check": "explicit_joint_interface_identity",
+            "pass": true
+          },
+          {
+            "check": "equal_nonempty_command_telemetry_count",
+            "pass": true
+          },
+          {
+            "check": "immutable_source_archive",
+            "pass": true,
+            "files": {
+              "contract.py": true,
+              "finalize_metrics.py": true,
+              "gazebo_worker.py": true,
+              "metrics.py": true,
+              "network_capture.py": true,
+              "path_policy.py": true,
+              "pcap_clock.py": true,
+              "pid_profile.json": true,
+              "policy.npz": true,
+              "policy.py": true,
+              "protocol.py": true,
+              "route_policy.py": true,
+              "run_experiment_v5_memory.py": true,
+              "thrust_adapter.py": true,
+              "force_plugin/CMakeLists.txt": true,
+              "force_plugin/ForceSystem.cc": true,
+              "native_angle_boost/AC_AttitudeControl.cpp": true,
+              "native_angle_boost/AC_AttitudeControl_Multi.cpp": true,
+              "native_angle_boost/mode_guided.cpp": true,
+              "force_plugin/build/libVkrForceSystem.so": true,
+              "memory_package/quadrl/policy.py": true,
+              "memory_package/quadrl/__init__.py": true,
+              "memory_package/quadrl_path_v7/policy.py": true,
+              "memory_package/quadrl_path_v7/__init__.py": true,
+              "memory_package/quadrl_route_basis_v14/policy.py": true,
+              "memory_package/quadrl_route_basis_v14/__init__.py": true,
+              "memory_package/quadrl_route_memory_v20/policy.py": true,
+              "memory_package/quadrl_route_memory_v20/__init__.py": true,
+              "memory_package/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz": true
+            }
+          },
+          {
+            "check": "immutable_policy",
+            "pass": true
+          },
+          {
+            "check": "explicit_route80_observation_identity",
+            "pass": true
+          },
+          {
+            "check": "yaw_reference_from_explicit_receive_prefix",
+            "pass": true,
+            "failures": [],
+            "raw_message_index": 6740,
+            "attitude_record_index": 6737,
+            "position_record_index": 6739,
+            "prefix_boot_s": 34.514,
+            "start_monotonic_s": 364.638409844,
+            "wall_time_used_for_selection": false,
+            "wall_backsteps_retained": 0,
+            "raw_yaw_enu_rad": 1.570888657751146,
+            "reference_rad": 1.570888657751146,
+            "wrapped_residual_rad": 0.0
+          },
+          {
+            "check": "archived_receive_cutoff_no_drain_before_yaw_reset",
+            "pass": true,
+            "capture_line": 419,
+            "measurement_start_line": 420,
+            "policy_reset_line": 424,
+            "exact_public_receive_sources": true,
+            "event_reuses_capture": true,
+            "no_receive_before_yaw_reset": true,
+            "state_method_has_no_receive": true,
+            "sender": [
+              255,
+              190
+            ]
+          },
+          {
+            "check": "command_prefix_and_yaw_reference_follow_start",
+            "pass": true
+          },
+          {
+            "check": "causal_current_targets_and_ordered_mission_replay",
+            "pass": true,
+            "failures": [],
+            "independent_events": [
+              {
+                "type": "goal_reached",
+                "goal_index": 0,
+                "time_s": 0.519999999999996,
+                "dwell_started_s": 0.01999999999999602,
+                "target": [
+                  0.0,
+                  0.0,
+                  3.0
+                ]
+              },
+              {
+                "type": "goal_reached",
+                "goal_index": 1,
+                "time_s": 2.3399999999999963,
+                "dwell_started_s": 1.8399999999999963,
+                "target": [
+                  2.0,
+                  0.0,
+                  3.0
+                ]
+              },
+              {
+                "type": "goal_reached",
+                "goal_index": 2,
+                "time_s": 4.439999999999998,
+                "dwell_started_s": 3.9399999999999977,
+                "target": [
+                  2.0,
+                  2.0,
+                  3.5
+                ]
+              },
+              {
+                "type": "goal_reached",
+                "goal_index": 3,
+                "time_s": 6.919999999999995,
+                "dwell_started_s": 6.419999999999995,
+                "target": [
+                  0.0,
+                  2.0,
+                  3.0
+                ]
+              },
+              {
+                "type": "goal_reached",
+                "goal_index": 4,
+                "time_s": 9.079999999999998,
+                "dwell_started_s": 8.579999999999998,
+                "target": [
+                  0.0,
+                  0.0,
+                  3.0
+                ]
+              }
+            ]
+          },
+          {
+            "check": "RAW80_and_gated_EFFECTIVE80_independently_reconstructed",
+            "pass": true,
+            "bad_rows": [],
+            "max_RAW80_difference": 0.0,
+            "conditioned_rows": 1975,
+            "other77_RAW_EFFECTIVE_bit_exact": true,
+            "effective77_old_contract_claim": false
+          },
+          {
+            "check": "all80_actual_actor_inputs_match_independent_raw_reconstruction",
+            "pass": true,
+            "bad_observation_rows": [],
+            "max_difference": 0.0,
+            "max_finite_leg_feature_difference": 0.0,
+            "max_route_basis_feature_difference": 0.0,
+            "basis_kind": "velocity_residual",
+            "base77_calls": 2001,
+            "rows": 2001
+          },
+          {
+            "check": "every_command_time_and_sample_follow_strict_received_prefix",
+            "pass": true,
+            "failures": [],
+            "wall_clock_used": false
+          },
+          {
+            "check": "raw_message_indices_and_latest_public_state_source",
+            "pass": true,
+            "failures": []
+          },
+          {
+            "check": "independent_measured_body_boost_inverse",
+            "pass": true,
+            "max_difference": 0.0,
+            "semantics": "body_collective",
+            "inputs": "NN action, fixed nominal calibration, raw measured ATTITUDE only; target quaternion is diagnostic"
+          },
+          {
+            "check": "optional_target_quaternion_diagnostic_matches_raw",
+            "pass": true,
+            "failures": []
+          },
+          {
+            "check": "raw_MAV_state_available_for_every_command",
+            "pass": true,
+            "missing": []
+          },
+          {
+            "check": "CSV_pose_velocity_matches_raw_MAV",
+            "pass": true,
+            "max_difference": 0.0
+          },
+          {
+            "check": "stateful_encoder_dt_matches_real_control_intervals",
+            "pass": true,
+            "max_difference_s": 0.0
+          },
+          {
+            "check": "raw_MAV_stateful_encoder_MLP_reproduces_all_actions",
+            "pass": true,
+            "commands": 2001,
+            "observation_size": 80,
+            "max_action_difference": 0.0
+          },
+          {
+            "check": "collective_and_FRD_mapping_matches_commands",
+            "pass": true,
+            "max_difference": 0.0
+          },
+          {
+            "pass": true,
+            "expected_commands": 2001,
+            "in_window_wire_commands": 2001,
+            "outside_window_wire_commands": 0,
+            "window_boot_ms_inclusive": [
+              34514,
+              74534
+            ],
+            "missing_count": 0,
+            "extra_or_conflicting_count": 0,
+            "missing_examples": [],
+            "extra_examples": [],
+            "comparison": "exact integer send boot_ms, IEEE754 float32 FRD rates/thrust bytes, mask and MAVLink sender/target; multiset equality, no value-based deduplication",
+            "check": "exclusive_exact_CRC_valid_wire_commands",
+            "ordered_clock_header_agreement": true,
+            "tcp_sequence_reassembly": {
+              "gaps": 0,
+              "conflicting_overlap": 0,
+              "retransmitted_bytes": 120157,
+              "crc_bad": 0,
+              "flows": 1
+            }
+          },
+          {
+            "check": "CRC_valid_wire_commands_match_independent_NN_actions",
+            "pass": true,
+            "matched_unique_commands": 2001,
+            "planned_commands": 2001,
+            "max_difference": 1.4894758149086584e-08,
+            "CRC_failures": 0
+          },
+          {
+            "check": "native_collective_feedback_confirms_acceptance",
+            "pass": true,
+            "samples": 1996,
+            "matching_samples": 1996,
+            "max_residual": 1.4894758149086584e-08,
+            "rates_note": "native ATTITUDE_TARGET rates are internally shaped, not direct command echoes"
+          },
+          {
+            "check": "independent_weighted_metrics",
+            "pass": true
+          },
+          {
+            "check": "independent_route_completion",
+            "pass": true
+          },
+          {
+            "check": "landed_disarmed",
+            "pass": true
+          },
+          {
+            "check": "binary_SITL_log_AHRS10_GUID_options8",
+            "pass": true
+          },
+          {
+            "check": "native_angle_boost_readback_and_BIN_enabled",
+            "pass": true
+          }
+        ],
+        "run": "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001",
+        "policy_sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+        "recorded_split": "development",
+        "derived_phase": "development",
+        "observation_contract": "measured-memory-route-integral-v5.0",
+        "basis_kind": "velocity_residual",
+        "observation_dependency_scope": "Independent measured RAW80 and own observed-target valid_leg; only effective22:25 zero while valid. All other77 RAW/EFFECTIVE columns byte exact; no old77-prefix claim for effective input. Mission replay only judges target validity, never conditions actor.",
+        "evidence_kind": "ACTUAL_RECORDED_FLIGHT",
+        "new_actual_flight": true,
+        "offline_conversion": null,
+        "algorithm_claim": "Exact trained source68 weights, zero additional SGD; own observed-target integral3 conditioning. RAW80 and EFFECTIVE80 distinct. Physical transfer and conditioning effect require measured comparisons.",
+        "independent_metrics": {
+          "rmse_m": 0.562764231436275,
+          "observed_duration_positive": true,
+          "sample_rmse_m": 0.5626238411867488,
+          "penalized_rmse_m": 0.562764231436275,
+          "max_error_m": 2.139126848788048,
+          "max_altitude_drop_m": 0.48000001907348633,
+          "altitude_drop_since_force": null,
+          "recovery": {
+            "applicable": false,
+            "reason": "route_target_changes",
+            "time_s": null,
+            "censored": null
+          },
+          "survived": true,
+          "declared_failed": false,
+          "route": {
+            "completed": true,
+            "completion_time_s": 9.079999999999998,
+            "censored": false,
+            "events": [
+              {
+                "goal_index": 0,
+                "time_s": 0.519999999999996,
+                "dwell_started_s": 0.01999999999999602
+              },
+              {
+                "goal_index": 1,
+                "time_s": 2.3399999999999963,
+                "dwell_started_s": 1.8399999999999963
+              },
+              {
+                "goal_index": 2,
+                "time_s": 4.439999999999998,
+                "dwell_started_s": 3.9399999999999977
+              },
+              {
+                "goal_index": 3,
+                "time_s": 6.919999999999995,
+                "dwell_started_s": 6.419999999999995
+              },
+              {
+                "goal_index": 4,
+                "time_s": 9.079999999999998,
+                "dwell_started_s": 8.579999999999998
+              }
+            ]
+          },
+          "completion": true,
+          "heading_rmse_deg": 0.7627160210024432,
+          "heading_peak_deg": 5.489193563427735,
+          "heading_guard_pass": true,
+          "heading_full_flight_eligible": true,
+          "yaw_unwrapped_change_deg": 0.021397177572048252,
+          "timing": {
+            "first_time_s": 0.01999999999999602,
+            "last_time_s": 40.02,
+            "samples": 2001,
+            "integration_endpoint_samples": 2001,
+            "planned_steps": 2000,
+            "missing_steps": 0,
+            "max_gap_s": 0.021000000000000796,
+            "gaps_above_1_5_dt": 0,
+            "full_horizon": true,
+            "covered_seconds": 40.0,
+            "tail_seconds": 0.0,
+            "unexplained_short_trace": false
+          },
+          "metric_time_weighting": "preceding sample interval; failure/incomplete tail4m; surviving final<=2controlsteps filled last error"
+        },
+        "truth_position_metrics": {
+          "rmse_m": 0.5613358511181923,
+          "penalized_rmse_m": 0.5613358511181923,
+          "max_error_m": 2.140956773790674,
+          "max_altitude_drop_m": 0.4758481958752294,
+          "recovery": {
+            "applicable": false,
+            "reason": "route_target_changes",
+            "time_s": null,
+            "censored": null
+          },
+          "route": {
+            "completed": true,
+            "completion_time_s": 9.04,
+            "censored": false,
+            "events": [
+              {
+                "goal_index": 0,
+                "time_s": 0.519999999999996,
+                "dwell_started_s": 0.01999999999999602
+              },
+              {
+                "goal_index": 1,
+                "time_s": 2.3399999999999963,
+                "dwell_started_s": 1.8399999999999963
+              },
+              {
+                "goal_index": 2,
+                "time_s": 4.419999999999995,
+                "dwell_started_s": 3.9199999999999946
+              },
+              {
+                "goal_index": 3,
+                "time_s": 6.899999999999999,
+                "dwell_started_s": 6.399999999999999
+              },
+              {
+                "goal_index": 4,
+                "time_s": 9.04,
+                "dwell_started_s": 8.54
+              }
+            ]
+          }
+        },
+        "geographic_origin_world_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "capture_order_clock": {
+          "method": "latest FDM addressed to an observed SERVO source socket preceding CRC-valid LOCAL_POSITION_NED in first-observation capture order; strict reversed-MAC checksum-completion copies deduplicated; no realtime sorting or value-based outlier removal",
+          "pairs": 2001,
+          "median_gazebo_minus_boot_s": 0.00999999999999801,
+          "residual_p95_s": 0.0029999999999930083,
+          "offset_p05_s": 0.00999999999999801,
+          "offset_p95_s": 0.012999999999991019,
+          "offset_min_s": 0.009999999999990905,
+          "offset_max_s": 0.01300000000000523,
+          "outliers_over50ms": 0,
+          "capture_realtime_backsteps": 0,
+          "largest_realtime_backstep_s": 0.0,
+          "fdm_simtime_backsteps": 0,
+          "raw_fdm_simtime_backsteps": 0,
+          "raw_fdm_backstep_witnesses": [],
+          "capture_copy_dedup": {
+            "rule": "Earlier invalid UDP checksum -> later valid checksum; reversed Ethernet MACs; every IPv4 byte including ID and complete UDP bytes identical except the two UDP checksum bytes. Consume each earlier observation once. First observation retained; no application values or timestamp window used.",
+            "copies_removed": 90001,
+            "invalid_checksum_observations": 90004,
+            "valid_checksum_observations": 90001,
+            "unmatched_valid_observations": 0,
+            "pending_invalid_observations": 3,
+            "examples": [
+              {
+                "first_capture_frame": 9,
+                "later_capture_frame": 10,
+                "first_wall_time": 1794728762.591232,
+                "later_wall_time": 1794728762.591351,
+                "observed_copy_delay_s": 0.00011897087097167969,
+                "ipv4_id": 39695,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "536cde2102de510759bf4b466b2c9d45e542c062ebe5f7928485eefb8d75589d",
+                "later_ipv4_sha256": "5a5349d78937bc382340c47434ed26cb06c1b94cbc0c13555b169b6c7e201639",
+                "ipv4_except_udp_checksum_sha256": "1ee37c15f05d53a3b0e5ec422bba147000ee9d6357a8012fd8b1cf4de99ad936",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 17,
+                "later_capture_frame": 18,
+                "first_wall_time": 1794728762.598018,
+                "later_wall_time": 1794728762.59811,
+                "observed_copy_delay_s": 9.202957153320312e-05,
+                "ipv4_id": 39697,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "78d9dd120b9f65394d5901860ec4a7b838757c68f09f1f50d583363c5c60e346",
+                "later_ipv4_sha256": "29e5a1f603929134bbb24c50f444ef26677c14a08801586560ffa3a879147771",
+                "ipv4_except_udp_checksum_sha256": "25009268545592472f2d5f9507893d21490be0021c3a8ea8d1ecefa784a748ec",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 21,
+                "later_capture_frame": 22,
+                "first_wall_time": 1794728762.599334,
+                "later_wall_time": 1794728762.599388,
+                "observed_copy_delay_s": 5.3882598876953125e-05,
+                "ipv4_id": 39699,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "0cca1a9f1f6c5f1da15e33590ff8e66c5786976b8212c8327943d397d138c87d",
+                "later_ipv4_sha256": "a9e7405d9fdbc26699c4ab184e400fd7743e6a4bffc29b5b8c8d6ffcbca2f9c3",
+                "ipv4_except_udp_checksum_sha256": "11cb1938424541d1994fbc1e32de440c4294364483107c71e15da185b97d7539",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 25,
+                "later_capture_frame": 26,
+                "first_wall_time": 1794728762.600123,
+                "later_wall_time": 1794728762.600188,
+                "observed_copy_delay_s": 6.508827209472656e-05,
+                "ipv4_id": 39701,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "5374309711f9e647c8803bcc6836f87b7d967429fd1dacf894beac9c45412808",
+                "later_ipv4_sha256": "98b37df8a2432290f069625ee083e5643c20df6a419873327eb7bc962d3de89d",
+                "ipv4_except_udp_checksum_sha256": "87fa8870903d2f73f551c2b9b37af89992419f8911948f6a282636ac74191cdf",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 29,
+                "later_capture_frame": 30,
+                "first_wall_time": 1794728762.600915,
+                "later_wall_time": 1794728762.600969,
+                "observed_copy_delay_s": 5.412101745605469e-05,
+                "ipv4_id": 39703,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "9d028d0533a99c0d3fd86f7fa7abc30228447af4cc909ea641c6a5b073d828ca",
+                "later_ipv4_sha256": "736040a2eaecebc8c8ad31c29672dc75ed51efacf9309fec6c91492c93133872",
+                "ipv4_except_udp_checksum_sha256": "1d470623e76233365e67214b8e0c826a969d2bb0afc0bfa529b168bb0a60b5b1",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 33,
+                "later_capture_frame": 34,
+                "first_wall_time": 1794728762.601775,
+                "later_wall_time": 1794728762.601845,
+                "observed_copy_delay_s": 7.009506225585938e-05,
+                "ipv4_id": 39705,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "1252a6cf872b1f06b0a6d8db0553ed20bf9bc932958cc1073d2960b34789842f",
+                "later_ipv4_sha256": "c95f04c622ff2cb23843d5652196bb02e15a5a3329e076b852f5e50e01f88709",
+                "ipv4_except_udp_checksum_sha256": "609ff76f9bdde80248330c72d1ff8351637aa92d3cf131d97000a69b1641f009",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 37,
+                "later_capture_frame": 38,
+                "first_wall_time": 1794728762.602802,
+                "later_wall_time": 1794728762.602856,
+                "observed_copy_delay_s": 5.3882598876953125e-05,
+                "ipv4_id": 39707,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "e97de78fc6688956c816e8abc2c0650cd1b1778132fb2da4a44b4a4d42102ffb",
+                "later_ipv4_sha256": "bef19e0b2b38dede8353c1776c3c6403bd4317618b46c919ec8b88d47439a71c",
+                "ipv4_except_udp_checksum_sha256": "3a591b55de6f4bd1f74d33362d5d7063eb1c10113b5aa50552d8784deafa493f",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 41,
+                "later_capture_frame": 42,
+                "first_wall_time": 1794728762.603784,
+                "later_wall_time": 1794728762.60385,
+                "observed_copy_delay_s": 6.580352783203125e-05,
+                "ipv4_id": 39709,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "3e01e97d33b02238be2ab27d3d956b0312e74d0ca2d433f5a2230a9c26309a2b",
+                "later_ipv4_sha256": "4efe4bbc502f02625c7cfad620a22030bf5e80ecf830e3a80336dd77d928dc0a",
+                "ipv4_except_udp_checksum_sha256": "f17d4fdc464a952b72a98a89cdc8a0d31dfce7c270258e2412fc98cb1a76c1e2",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              }
+            ]
+          },
+          "retained_active_endpoint_fdm_counts": {
+            "127.0.0.1:45573": 90007
+          },
+          "tcp_gaps": 0,
+          "crc_failures": 0,
+          "fdm_schema_keys": [
+            "timestamp",
+            "imu",
+            "position",
+            "quaternion",
+            "velocity",
+            "no_time_sync",
+            "no_lockstep"
+          ],
+          "limitation": "MAVLink sample/send latency and capture queueing remain; envelope is empirical clock association uncertainty, not proof of an exact offset",
+          "tcp_port": 5770,
+          "plugin_port": 9012,
+          "crc_valid_wire_attitude_commands": 2001,
+          "servo_sources": [
+            {
+              "source_ip": "127.0.0.1",
+              "source_port": 45573,
+              "plugin_ip": "127.0.0.1",
+              "plugin_port": 9012,
+              "packets": 180010
+            }
+          ],
+          "active_endpoint_fdm": {
+            "127.0.0.1:45573": {
+              "count": 180008,
+              "min_sim_time": 0.002,
+              "max_sim_time": 90.003
+            }
+          },
+          "foreign_endpoint_fdm": {}
+        },
+        "dataflash": [
+          {
+            "path": "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/sitl/logs/00000001.BIN",
+            "sha256": "3eb8f00bf8e7f465267234f2437efa9849e86767ee1638549ec3c657a6fa76ed",
+            "bytes": 19779584,
+            "parameters": {
+              "FRAME_TYPE": 1.0,
+              "AHRS_EKF_TYPE": 10.0,
+              "SIM_SPEEDUP": 1.0,
+              "MOT_THST_EXPO": 0.6499999761581421,
+              "MOT_THST_HOVER": 0.5,
+              "MOT_HOVER_LEARN": 0.0,
+              "EK2_ENABLE": 0.0,
+              "EK3_ENABLE": 1.0,
+              "FRAME_CLASS": 1.0,
+              "GUID_OPTIONS": 8.0,
+              "ATC_ANGLE_BOOST": 1.0
+            },
+            "startup_messages": [
+              "ArduCopter V4.7.2 (fb773567)",
+              "fb77b175bbc64409987ef464e5f2e9a7",
+              "Param space used: 158/4096",
+              "RC Protocol: UDP",
+              "New mission"
+            ]
+          }
+        ],
+        "measurement_start_index_evidence": {
+          "pass": true,
+          "failures": [],
+          "raw_message_index": 6740,
+          "attitude_record_index": 6737,
+          "position_record_index": 6739,
+          "prefix_boot_s": 34.514,
+          "start_monotonic_s": 364.638409844,
+          "wall_time_used_for_selection": false,
+          "wall_backsteps_retained": 0,
+          "raw_yaw_enu_rad": 1.570888657751146,
+          "reference_rad": 1.570888657751146,
+          "wrapped_residual_rad": 0.0
+        },
+        "auditor_sha256": "a3ddcbf96fe05c1692aaac3f6a6c8d812f469df73b8ad668435baef3f9c0caf9",
+        "wire_helper_sha256": "ff5452d31be67ca28c928aae6acc5d2bb0b2a59e337ca6653c98adb05d8ae192",
+        "limitations": "A single validation flight establishes no general superiority; matching-controller comparisons require the same scenario/mission/seed. AHRS10 is idealized SITL state, external50Hz MAVLink. World route dwell is a separate geometric diagnostic, not the controller's actual target-switch schedule. Real measured encoder history and wire commands are verified, not physical flight outside simulation."
+      }
+    },
+    {
+      "role": "TRAINED",
+      "proof": {
+        "status": "PASS",
+        "checks": [
+          {
+            "check": "explicit_joint_interface_identity",
+            "pass": true
+          },
+          {
+            "check": "equal_nonempty_command_telemetry_count",
+            "pass": true
+          },
+          {
+            "check": "immutable_source_archive",
+            "pass": true,
+            "files": {
+              "contract.py": true,
+              "finalize_metrics.py": true,
+              "gazebo_worker.py": true,
+              "metrics.py": true,
+              "network_capture.py": true,
+              "path_policy.py": true,
+              "pcap_clock.py": true,
+              "pid_profile.json": true,
+              "policy.npz": true,
+              "policy.py": true,
+              "protocol.py": true,
+              "route_policy.py": true,
+              "run_experiment_v6_memory_train.py": true,
+              "thrust_adapter.py": true,
+              "force_plugin/CMakeLists.txt": true,
+              "force_plugin/ForceSystem.cc": true,
+              "native_angle_boost/AC_AttitudeControl.cpp": true,
+              "native_angle_boost/AC_AttitudeControl_Multi.cpp": true,
+              "native_angle_boost/mode_guided.cpp": true,
+              "force_plugin/build/libVkrForceSystem.so": true,
+              "memory_package/quadrl/policy.py": true,
+              "memory_package/quadrl/__init__.py": true,
+              "memory_package/quadrl_path_v7/policy.py": true,
+              "memory_package/quadrl_path_v7/__init__.py": true,
+              "memory_package/quadrl_route_basis_v14/policy.py": true,
+              "memory_package/quadrl_route_basis_v14/__init__.py": true,
+              "memory_package/quadrl_route_memory_train_v21/policy.py": true,
+              "memory_package/quadrl_route_memory_train_v21/__init__.py": true,
+              "memory_package/quadrl_route_memory_v20/policy.py": true,
+              "memory_package/quadrl_route_memory_v20/__init__.py": true,
+              "memory_package/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz": true,
+              "memory_package/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/checkpoint_131072.zip": true
+            }
+          },
+          {
+            "check": "immutable_policy",
+            "pass": true
+          },
+          {
+            "check": "explicit_route80_observation_identity",
+            "pass": true
+          },
+          {
+            "check": "yaw_reference_from_explicit_receive_prefix",
+            "pass": true,
+            "failures": [],
+            "raw_message_index": 6732,
+            "attitude_record_index": 6729,
+            "position_record_index": 6731,
+            "prefix_boot_s": 34.384,
+            "start_monotonic_s": 475.321566198,
+            "wall_time_used_for_selection": false,
+            "wall_backsteps_retained": 0,
+            "raw_yaw_enu_rad": 1.570813788849426,
+            "reference_rad": 1.570813788849426,
+            "wrapped_residual_rad": 0.0
+          },
+          {
+            "check": "archived_receive_cutoff_no_drain_before_yaw_reset",
+            "pass": true,
+            "capture_line": 434,
+            "measurement_start_line": 435,
+            "policy_reset_line": 439,
+            "exact_public_receive_sources": true,
+            "event_reuses_capture": true,
+            "no_receive_before_yaw_reset": true,
+            "state_method_has_no_receive": true,
+            "sender": [
+              255,
+              190
+            ]
+          },
+          {
+            "check": "command_prefix_and_yaw_reference_follow_start",
+            "pass": true
+          },
+          {
+            "check": "causal_current_targets_and_ordered_mission_replay",
+            "pass": true,
+            "failures": [],
+            "independent_events": [
+              {
+                "type": "goal_reached",
+                "goal_index": 0,
+                "time_s": 0.5399999999999991,
+                "dwell_started_s": 0.03999999999999915,
+                "target": [
+                  0.0,
+                  0.0,
+                  3.0
+                ]
+              },
+              {
+                "type": "goal_reached",
+                "goal_index": 1,
+                "time_s": 2.3599999999999994,
+                "dwell_started_s": 1.8599999999999994,
+                "target": [
+                  2.0,
+                  0.0,
+                  3.0
+                ]
+              },
+              {
+                "type": "goal_reached",
+                "goal_index": 2,
+                "time_s": 4.439999999999998,
+                "dwell_started_s": 3.9399999999999977,
+                "target": [
+                  2.0,
+                  2.0,
+                  3.5
+                ]
+              },
+              {
+                "type": "goal_reached",
+                "goal_index": 3,
+                "time_s": 6.839999999999996,
+                "dwell_started_s": 6.339999999999996,
+                "target": [
+                  0.0,
+                  2.0,
+                  3.0
+                ]
+              },
+              {
+                "type": "goal_reached",
+                "goal_index": 4,
+                "time_s": 8.979999999999997,
+                "dwell_started_s": 8.479999999999997,
+                "target": [
+                  0.0,
+                  0.0,
+                  3.0
+                ]
+              }
+            ]
+          },
+          {
+            "check": "RAW80_and_gated_EFFECTIVE80_independently_reconstructed",
+            "pass": true,
+            "bad_rows": [],
+            "max_RAW80_difference": 0.0,
+            "conditioned_rows": 1972,
+            "other77_RAW_EFFECTIVE_bit_exact": true,
+            "effective77_old_contract_claim": false
+          },
+          {
+            "check": "all80_actual_actor_inputs_match_independent_raw_reconstruction",
+            "pass": true,
+            "bad_observation_rows": [],
+            "max_difference": 0.0,
+            "max_finite_leg_feature_difference": 0.0,
+            "max_route_basis_feature_difference": 0.0,
+            "basis_kind": "velocity_residual",
+            "base77_calls": 1998,
+            "rows": 1998
+          },
+          {
+            "check": "every_command_time_and_sample_follow_strict_received_prefix",
+            "pass": true,
+            "failures": [],
+            "wall_clock_used": false
+          },
+          {
+            "check": "raw_message_indices_and_latest_public_state_source",
+            "pass": true,
+            "failures": []
+          },
+          {
+            "check": "independent_measured_body_boost_inverse",
+            "pass": true,
+            "max_difference": 0.0,
+            "semantics": "body_collective",
+            "inputs": "NN action, fixed nominal calibration, raw measured ATTITUDE only; target quaternion is diagnostic"
+          },
+          {
+            "check": "optional_target_quaternion_diagnostic_matches_raw",
+            "pass": true,
+            "failures": []
+          },
+          {
+            "check": "raw_MAV_state_available_for_every_command",
+            "pass": true,
+            "missing": []
+          },
+          {
+            "check": "CSV_pose_velocity_matches_raw_MAV",
+            "pass": true,
+            "max_difference": 0.0
+          },
+          {
+            "check": "stateful_encoder_dt_matches_real_control_intervals",
+            "pass": true,
+            "max_difference_s": 0.0
+          },
+          {
+            "check": "raw_MAV_stateful_encoder_MLP_reproduces_all_actions",
+            "pass": true,
+            "commands": 1998,
+            "observation_size": 80,
+            "max_action_difference": 0.0
+          },
+          {
+            "check": "collective_and_FRD_mapping_matches_commands",
+            "pass": true,
+            "max_difference": 0.0
+          },
+          {
+            "pass": true,
+            "expected_commands": 1998,
+            "in_window_wire_commands": 1998,
+            "outside_window_wire_commands": 0,
+            "window_boot_ms_inclusive": [
+              34384,
+              74384
+            ],
+            "missing_count": 0,
+            "extra_or_conflicting_count": 0,
+            "missing_examples": [],
+            "extra_examples": [],
+            "comparison": "exact integer send boot_ms, IEEE754 float32 FRD rates/thrust bytes, mask and MAVLink sender/target; multiset equality, no value-based deduplication",
+            "check": "exclusive_exact_CRC_valid_wire_commands",
+            "ordered_clock_header_agreement": true,
+            "tcp_sequence_reassembly": {
+              "gaps": 0,
+              "conflicting_overlap": 0,
+              "retransmitted_bytes": 120069,
+              "crc_bad": 0,
+              "flows": 1
+            }
+          },
+          {
+            "check": "CRC_valid_wire_commands_match_independent_NN_actions",
+            "pass": true,
+            "matched_unique_commands": 1998,
+            "planned_commands": 1998,
+            "max_difference": 1.4879312226767638e-08,
+            "CRC_failures": 0
+          },
+          {
+            "check": "native_collective_feedback_confirms_acceptance",
+            "pass": true,
+            "samples": 1994,
+            "matching_samples": 1994,
+            "max_residual": 1.4879312226767638e-08,
+            "rates_note": "native ATTITUDE_TARGET rates are internally shaped, not direct command echoes"
+          },
+          {
+            "check": "independent_weighted_metrics",
+            "pass": true
+          },
+          {
+            "check": "independent_route_completion",
+            "pass": true
+          },
+          {
+            "check": "landed_disarmed",
+            "pass": true
+          },
+          {
+            "check": "binary_SITL_log_AHRS10_GUID_options8",
+            "pass": true
+          },
+          {
+            "check": "native_angle_boost_readback_and_BIN_enabled",
+            "pass": true
+          }
+        ],
+        "run": "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001",
+        "policy_sha256": "470005b73488dde8505c26da09fd2902d8dc36a9922c21628e62d4eda028b303",
+        "recorded_split": "development",
+        "derived_phase": "development",
+        "observation_contract": "measured-memory-route-integral-train-v6.0",
+        "basis_kind": "velocity_residual",
+        "conditioning_mode": "zero_route_integral",
+        "observation_dependency_scope": "Independent measured RAW80 and own observed-target valid_leg; raw mode keeps all80 exact; zero_route_integral masks effective22:25 only while valid. All other77 RAW/EFFECTIVE columns byte exact; no old77-prefix claim for effective input. Mission replay only judges target validity, never conditions actor.",
+        "evidence_kind": "ACTUAL_RECORDED_FLIGHT",
+        "new_actual_flight": true,
+        "offline_conversion": null,
+        "algorithm_claim": "Current trained actor arrays bound by exact NPZ SHA; original source68 initialization provenance retained. Additional PPO amount and eligible selection require separate completed native audits. RAW/effective are independently replayed for explicit conditioning mode; no zero-SGD claim for this candidate.",
+        "independent_metrics": {
+          "rmse_m": 0.5618249411470327,
+          "observed_duration_positive": true,
+          "sample_rmse_m": 0.5621059446635499,
+          "penalized_rmse_m": 0.5618249411470327,
+          "max_error_m": 2.1468433430576592,
+          "max_altitude_drop_m": 0.48000001907348633,
+          "altitude_drop_since_force": null,
+          "recovery": {
+            "applicable": false,
+            "reason": "route_target_changes",
+            "time_s": null,
+            "censored": null
+          },
+          "survived": true,
+          "declared_failed": false,
+          "route": {
+            "completed": true,
+            "completion_time_s": 8.979999999999997,
+            "censored": false,
+            "events": [
+              {
+                "goal_index": 0,
+                "time_s": 0.5399999999999991,
+                "dwell_started_s": 0.03999999999999915
+              },
+              {
+                "goal_index": 1,
+                "time_s": 2.3599999999999994,
+                "dwell_started_s": 1.8599999999999994
+              },
+              {
+                "goal_index": 2,
+                "time_s": 4.439999999999998,
+                "dwell_started_s": 3.9399999999999977
+              },
+              {
+                "goal_index": 3,
+                "time_s": 6.839999999999996,
+                "dwell_started_s": 6.339999999999996
+              },
+              {
+                "goal_index": 4,
+                "time_s": 8.979999999999997,
+                "dwell_started_s": 8.479999999999997
+              }
+            ]
+          },
+          "completion": true,
+          "heading_rmse_deg": 0.7488263475737846,
+          "heading_peak_deg": 5.262635448485018,
+          "heading_guard_pass": true,
+          "heading_full_flight_eligible": true,
+          "yaw_unwrapped_change_deg": -0.004841976401974664,
+          "timing": {
+            "first_time_s": 0.03999999999999915,
+            "last_time_s": 40.0,
+            "samples": 1998,
+            "integration_endpoint_samples": 1998,
+            "planned_steps": 2000,
+            "missing_steps": 2,
+            "max_gap_s": 0.03900000000000148,
+            "gaps_above_1_5_dt": 1,
+            "full_horizon": true,
+            "covered_seconds": 40.0,
+            "tail_seconds": 0.0,
+            "unexplained_short_trace": false
+          },
+          "metric_time_weighting": "preceding sample interval; failure/incomplete tail4m; surviving final<=2controlsteps filled last error"
+        },
+        "truth_position_metrics": {
+          "rmse_m": 0.5600895898751233,
+          "penalized_rmse_m": 0.5600895898751233,
+          "max_error_m": 2.1389665307190513,
+          "max_altitude_drop_m": 0.4715513841930097,
+          "recovery": {
+            "applicable": false,
+            "reason": "route_target_changes",
+            "time_s": null,
+            "censored": null
+          },
+          "route": {
+            "completed": true,
+            "completion_time_s": 8.920000000000002,
+            "censored": false,
+            "events": [
+              {
+                "goal_index": 0,
+                "time_s": 0.5399999999999991,
+                "dwell_started_s": 0.03999999999999915
+              },
+              {
+                "goal_index": 1,
+                "time_s": 2.3599999999999994,
+                "dwell_started_s": 1.8599999999999994
+              },
+              {
+                "goal_index": 2,
+                "time_s": 4.420000000000002,
+                "dwell_started_s": 3.9200000000000017
+              },
+              {
+                "goal_index": 3,
+                "time_s": 6.839999999999996,
+                "dwell_started_s": 6.339999999999996
+              },
+              {
+                "goal_index": 4,
+                "time_s": 8.920000000000002,
+                "dwell_started_s": 8.420000000000002
+              }
+            ]
+          }
+        },
+        "geographic_origin_world_enu_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "capture_order_clock": {
+          "method": "latest FDM addressed to an observed SERVO source socket preceding CRC-valid LOCAL_POSITION_NED in first-observation capture order; strict reversed-MAC checksum-completion copies deduplicated; no realtime sorting or value-based outlier removal",
+          "pairs": 1999,
+          "median_gazebo_minus_boot_s": 0.00999999999999801,
+          "residual_p95_s": 0.0029999999999930083,
+          "offset_p05_s": 0.00999999999999801,
+          "offset_p95_s": 0.012999999999991019,
+          "offset_min_s": 0.009999999999990905,
+          "offset_max_s": 0.01300000000000523,
+          "outliers_over50ms": 0,
+          "capture_realtime_backsteps": 0,
+          "largest_realtime_backstep_s": 0.0,
+          "fdm_simtime_backsteps": 0,
+          "raw_fdm_simtime_backsteps": 0,
+          "raw_fdm_backstep_witnesses": [],
+          "capture_copy_dedup": {
+            "rule": "Earlier invalid UDP checksum -> later valid checksum; reversed Ethernet MACs; every IPv4 byte including ID and complete UDP bytes identical except the two UDP checksum bytes. Consume each earlier observation once. First observation retained; no application values or timestamp window used.",
+            "copies_removed": 89953,
+            "invalid_checksum_observations": 89954,
+            "valid_checksum_observations": 89955,
+            "unmatched_valid_observations": 2,
+            "pending_invalid_observations": 1,
+            "examples": [
+              {
+                "first_capture_frame": 9,
+                "later_capture_frame": 10,
+                "first_wall_time": 1794728873.3756,
+                "later_wall_time": 1794728873.375726,
+                "observed_copy_delay_s": 0.000125885009765625,
+                "ipv4_id": 24996,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "f84c8bd95000b7a94ca2c44b0b2c1b3378aefac028acc54364b1a387e8a3a774",
+                "later_ipv4_sha256": "03c409ff60cb9ec9acc11ffd75db7691b613eac505426e201547b4f1b52455a8",
+                "ipv4_except_udp_checksum_sha256": "5c636d938b89093fcd13c87995aabaf1d905359ec54870856d9340154124c4d5",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 17,
+                "later_capture_frame": 18,
+                "first_wall_time": 1794728873.382298,
+                "later_wall_time": 1794728873.382365,
+                "observed_copy_delay_s": 6.699562072753906e-05,
+                "ipv4_id": 24998,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "d3d077b5636405c4f9f5a29cc71562faee81dd8acd5f1543d09476dfd087d967",
+                "later_ipv4_sha256": "a7cad5a2df0d800dfbefe072844960ea84c9ff31a3a3db669ca8d85359e54d67",
+                "ipv4_except_udp_checksum_sha256": "a30a33e7b6f1d4d0fd5ab27c5337e93cdbbbf69d56d9b433da4b0fbe22dcec83",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 21,
+                "later_capture_frame": 22,
+                "first_wall_time": 1794728873.383565,
+                "later_wall_time": 1794728873.383626,
+                "observed_copy_delay_s": 6.103515625e-05,
+                "ipv4_id": 25000,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "57c02796586b1c9e04c560fb1029cf79ca43239120f91d24b257fcd3ecc816e6",
+                "later_ipv4_sha256": "97654cff5bf5219a5da8db9e708e735338aafcd60cd0db8d3b5078339c143d39",
+                "ipv4_except_udp_checksum_sha256": "f4b34d85b850ed65caaf53b829096fa8418586400a183032d0fd21570e8d1a0f",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 25,
+                "later_capture_frame": 26,
+                "first_wall_time": 1794728873.384339,
+                "later_wall_time": 1794728873.384381,
+                "observed_copy_delay_s": 4.1961669921875e-05,
+                "ipv4_id": 25002,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "44598658027a045c429f6f6043b7c5e396b88848642f5a53c4bb3d11e286f8d6",
+                "later_ipv4_sha256": "fc201129abf27bd2fbf5be6e6b0cac16c02a569db8deaa20949647871d422356",
+                "ipv4_except_udp_checksum_sha256": "b5508783887320d3b1f2ef16950df4acd22348579193891390d505423f5448ca",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 29,
+                "later_capture_frame": 30,
+                "first_wall_time": 1794728873.385112,
+                "later_wall_time": 1794728873.38517,
+                "observed_copy_delay_s": 5.793571472167969e-05,
+                "ipv4_id": 25004,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "6231a69d0d738cf346f010bbc548ca9acc92b897fd9c71d87a88d211332a25a1",
+                "later_ipv4_sha256": "ede72f41e5447457ef7a2c5f1313431a866d036d439f8918a7cea1de4ddcd4de",
+                "ipv4_except_udp_checksum_sha256": "7cf51aa6d81d2573862b2f77f767582828c596cb61c19815f8c2dffc52144da5",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 33,
+                "later_capture_frame": 34,
+                "first_wall_time": 1794728873.386068,
+                "later_wall_time": 1794728873.386115,
+                "observed_copy_delay_s": 4.696846008300781e-05,
+                "ipv4_id": 25006,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "a640bd919acba2d4aede7bf8dc84d00731e3591d7a0c2e7d41065422ee5758b8",
+                "later_ipv4_sha256": "be88e54f1e33d38dfc0941b4dc8350d260f4f4c37a5c0def2bde6332c5fdf6ae",
+                "ipv4_except_udp_checksum_sha256": "bccdb77c11f17b80243aff958f34c65a8450862d961850d960e7f44da2b8e1e7",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 37,
+                "later_capture_frame": 38,
+                "first_wall_time": 1794728873.387077,
+                "later_wall_time": 1794728873.387162,
+                "observed_copy_delay_s": 8.487701416015625e-05,
+                "ipv4_id": 25008,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "f01a7eb2df43f0e3bce79071a28ca84f99dedd0a0157d8099dd0f1864036b2a9",
+                "later_ipv4_sha256": "6ec1c853aeaf8d9751ddc46cdcf75d49b29a467cf1550e1f9f5ff2fbc2554844",
+                "ipv4_except_udp_checksum_sha256": "2d7e36acb19dc6bee54c4d8d40d4a0b88c30fae1f26b44bc8f6379da01a34506",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              },
+              {
+                "first_capture_frame": 41,
+                "later_capture_frame": 42,
+                "first_wall_time": 1794728873.388018,
+                "later_wall_time": 1794728873.388061,
+                "observed_copy_delay_s": 4.315376281738281e-05,
+                "ipv4_id": 25010,
+                "first_link_header_hex": "00112233445500155d024c800800",
+                "later_link_header_hex": "00155d024c800011223344550800",
+                "first_ipv4_sha256": "f41e5c2f1d923815500440505beba55b426ec7806e7974c8b715027328678544",
+                "later_ipv4_sha256": "fb0ac5eb271750eb330dd5ca20d3eff8fba387ccf1d55c1f43e2aea84c0a1e55",
+                "ipv4_except_udp_checksum_sha256": "cfec0aba83b1b770045eaad4c848753e6bfec91371beaff81e68249d5433d688",
+                "udp_checksum_byte_offsets": [
+                  26,
+                  27
+                ],
+                "differing_ipv4_byte_offsets": [
+                  26,
+                  27
+                ],
+                "first_udp_checksum_valid": false,
+                "later_udp_checksum_valid": true
+              }
+            ]
+          },
+          "retained_active_endpoint_fdm_counts": {
+            "127.0.0.1:44011": 89957
+          },
+          "tcp_gaps": 0,
+          "crc_failures": 0,
+          "fdm_schema_keys": [
+            "timestamp",
+            "imu",
+            "position",
+            "quaternion",
+            "velocity",
+            "no_time_sync",
+            "no_lockstep"
+          ],
+          "limitation": "MAVLink sample/send latency and capture queueing remain; envelope is empirical clock association uncertainty, not proof of an exact offset",
+          "tcp_port": 5770,
+          "plugin_port": 9012,
+          "crc_valid_wire_attitude_commands": 1998,
+          "servo_sources": [
+            {
+              "source_ip": "127.0.0.1",
+              "source_port": 44011,
+              "plugin_ip": "127.0.0.1",
+              "plugin_port": 9012,
+              "packets": 179912
+            }
+          ],
+          "active_endpoint_fdm": {
+            "127.0.0.1:44011": {
+              "count": 179910,
+              "min_sim_time": 0.002,
+              "max_sim_time": 89.954
+            }
+          },
+          "foreign_endpoint_fdm": {}
+        },
+        "dataflash": [
+          {
+            "path": "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/sitl/logs/00000001.BIN",
+            "sha256": "9a54af9f7a44f6f68d69f75f6b5f887adcaf80dacb2fd3b682bf642875d84bc3",
+            "bytes": 19787776,
+            "parameters": {
+              "FRAME_TYPE": 1.0,
+              "AHRS_EKF_TYPE": 10.0,
+              "SIM_SPEEDUP": 1.0,
+              "MOT_THST_EXPO": 0.6499999761581421,
+              "MOT_THST_HOVER": 0.5,
+              "MOT_HOVER_LEARN": 0.0,
+              "EK2_ENABLE": 0.0,
+              "EK3_ENABLE": 1.0,
+              "FRAME_CLASS": 1.0,
+              "GUID_OPTIONS": 8.0,
+              "ATC_ANGLE_BOOST": 1.0
+            },
+            "startup_messages": [
+              "ArduCopter V4.7.2 (fb773567)",
+              "fb77b175bbc64409987ef464e5f2e9a7",
+              "Param space used: 158/4096",
+              "RC Protocol: UDP",
+              "New mission"
+            ]
+          }
+        ],
+        "measurement_start_index_evidence": {
+          "pass": true,
+          "failures": [],
+          "raw_message_index": 6732,
+          "attitude_record_index": 6729,
+          "position_record_index": 6731,
+          "prefix_boot_s": 34.384,
+          "start_monotonic_s": 475.321566198,
+          "wall_time_used_for_selection": false,
+          "wall_backsteps_retained": 0,
+          "raw_yaw_enu_rad": 1.570813788849426,
+          "reference_rad": 1.570813788849426,
+          "wrapped_residual_rad": 0.0
+        },
+        "auditor_sha256": "7d7e18d185dee339f26432d5c8e4c9fd3ebb2779957c5fbeb075b6909661c933",
+        "wire_helper_sha256": "ff5452d31be67ca28c928aae6acc5d2bb0b2a59e337ca6653c98adb05d8ae192",
+        "limitations": "A single validation flight establishes no general superiority; matching-controller comparisons require the same scenario/mission/seed. AHRS10 is idealized SITL state, external50Hz MAVLink. World route dwell is a separate geometric diagnostic, not the controller's actual target-switch schedule. Real measured encoder history and wire commands are verified, not physical flight outside simulation."
+      }
+    }
+  ],
+  "route_checks": [
+    {
+      "role": "F0",
+      "check": "paired_PID_reference_full_flight",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "all_valid_joint_flights_survived",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "full_flight_heading_guard",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "heading_RMS_deg",
+      "value": 0.7627160210024432,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "heading_peak_deg",
+      "value": 5.489193563427735,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "paired_PID_complete_route_geometry",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "route_completed",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "restricted_route_time_s",
+      "value": 9.079999999999998,
+      "limit": 9.618000000000004,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "penalized_goal_RMSE_m",
+      "value": 0.562764231436275,
+      "limit": 0.6618243720893155,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "complete_route_geometry",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "F0",
+      "check": "finite_segment_RMSE_m",
+      "value": 0.16412529599275402,
+      "limit": 0.10218517268768902,
+      "pass_": false
+    },
+    {
+      "role": "F0",
+      "check": "mean_corner_peak_m",
+      "value": 0.20761917141417097,
+      "limit": 0.17282128929045582,
+      "pass_": false
+    },
+    {
+      "role": "F0",
+      "check": "absolute_active_segment_peak_m",
+      "value": 0.4301448527674933,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "paired_PID_reference_full_flight",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "all_valid_joint_flights_survived",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "full_flight_heading_guard",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "heading_RMS_deg",
+      "value": 0.7488263475737846,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "heading_peak_deg",
+      "value": 5.262635448485018,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "paired_PID_complete_route_geometry",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "route_completed",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "restricted_route_time_s",
+      "value": 8.979999999999997,
+      "limit": 9.618000000000004,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "penalized_goal_RMSE_m",
+      "value": 0.5618249411470327,
+      "limit": 0.6618243720893155,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "complete_route_geometry",
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "role": "TRAINED",
+      "check": "finite_segment_RMSE_m",
+      "value": 0.15971082895030958,
+      "limit": 0.10218517268768902,
+      "pass_": false
+    },
+    {
+      "role": "TRAINED",
+      "check": "mean_corner_peak_m",
+      "value": 0.22030286543678157,
+      "limit": 0.17282128929045582,
+      "pass_": false
+    },
+    {
+      "role": "TRAINED",
+      "check": "absolute_active_segment_peak_m",
+      "value": 0.3655631015091845,
+      "limit": 0.5,
+      "pass_": true
+    }
+  ],
+  "route_check_count": 26,
+  "failed_route_checks": [
+    {
+      "role": "F0",
+      "check": "finite_segment_RMSE_m",
+      "value": 0.16412529599275402,
+      "limit": 0.10218517268768902,
+      "pass_": false
+    },
+    {
+      "role": "F0",
+      "check": "mean_corner_peak_m",
+      "value": 0.20761917141417097,
+      "limit": 0.17282128929045582,
+      "pass_": false
+    },
+    {
+      "role": "TRAINED",
+      "check": "finite_segment_RMSE_m",
+      "value": 0.15971082895030958,
+      "limit": 0.10218517268768902,
+      "pass_": false
+    },
+    {
+      "role": "TRAINED",
+      "check": "mean_corner_peak_m",
+      "value": 0.22030286543678157,
+      "limit": 0.17282128929045582,
+      "pass_": false
+    }
+  ],
+  "comparisons": [
+    {
+      "role": "F0",
+      "vs_fresh_PID": {
+        "segment_rmse_m": {
+          "value": 0.16412529599275402,
+          "PID": 0.09218517268768903,
+          "absolute_change": 0.071940123305065,
+          "relative_change": 0.7803871404438159
+        },
+        "mean_corner_post_peak_m": {
+          "value": 0.20761917141417097,
+          "PID": 0.15282128929045583,
+          "absolute_change": 0.05479788212371514,
+          "relative_change": 0.3585749235472353
+        },
+        "active_segment_peak_m": {
+          "value": 0.4301448527674933,
+          "PID": 0.21520683675038768,
+          "absolute_change": 0.21493801601710563,
+          "relative_change": 0.9987508727076648
+        }
+      }
+    },
+    {
+      "role": "TRAINED",
+      "vs_fresh_PID": {
+        "segment_rmse_m": {
+          "value": 0.15971082895030958,
+          "PID": 0.09218517268768903,
+          "absolute_change": 0.06752565626262055,
+          "relative_change": 0.7325001873282637
+        },
+        "mean_corner_post_peak_m": {
+          "value": 0.22030286543678157,
+          "PID": 0.15282128929045583,
+          "absolute_change": 0.06748157614632574,
+          "relative_change": 0.4415718285040027
+        },
+        "active_segment_peak_m": {
+          "value": 0.3655631015091845,
+          "PID": 0.21520683675038768,
+          "absolute_change": 0.1503562647587968,
+          "relative_change": 0.6986593317813168
+        }
+      }
+    }
+  ],
+  "original_six_cell_macro": "NOT_APPLICABLE_SINGLE_CASE",
+  "new_9_case_map_inherited": false,
+  "input_sha256": {
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/plan.json": "1c07a4a8a16b2a116df41e98504f3dd97d379f4a5b2909f9a06f325f973d67f7",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/complete.json": "a993642820f5b3e4e12edd7f19766fe5d4e64d7b4921d796fa6bc6c741ba9f69",
+    "v2/scripts/audit_joint_path77_development11_v3.py": "310676b136a3ff7844f29906f7df462e7dcb0f287ede24ade2a73de6a5f1eac3",
+    "v2/sim/pcap_clock.py": "bd78d669787eedfd08db40d2cb1645ad2932e6ed2bc404f95c9fc822d7ddb220",
+    "v2/audit/review_joint_peak_diagnostic3_v25_sources_01.py": "a3f472e1bfc4083edbb9de9fbb68ac9f1fb566cdbc81e9eb205d49008f76ac7b",
+    "v2/sim/force_plugin/build/libVkrForceSystem.so": "c6e0dd81b76b8d823631c493b7bda730bacf40a74bfacc48d65969ad9937b547",
+    "v2/artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/zero_route_integral/policy.npz": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+    "v2/scripts/evaluate_fast.py": "28aa2d9efdbd9456cb4aa7b3e699b67fc7d723e26b462614fbad3201e97c4d8a",
+    "v2/scripts/ppo_gazebo_probe.py": "bb3fcf8395269f8a30cb5890249a1d61e910b683b2f7ad671a371b026ac91ca6",
+    "v2/artifacts/gazebo/native_pid_tuning_v1/frozen_native_pid.json": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd",
+    "v2/scripts/joint_geometry_gazebo_pilot_v2.py": "05e2e9161e29eb4879591d90d1fbae6d684acde5d4f626385d1250fcc200cb11",
+    "v2/sim/system_id_run.py": "6c7b0cce9ba357dee0c2cae586183283d55f49d7118ba4ca73ce03994d40fd69",
+    "v2/docs/joint_geometry_pilot32_extension_v2.json": "179cc20280ad51136aa72a072d2667773f20eec1d47f5c5764d90d28efe5d299",
+    "v2/audit/audit_joint_peak_diagnostic3_v25.py": "50c069fa9e3e42cd0043b3f43c27af2211318a65d2b3eeb051ff67f65338d1a5",
+    "v2/scripts/refined_wind_confirmation_v1.py": "6e055c5c451e1919da116db47dc15de1d9b0f6998f1541ffe6b55a109dfacf1d",
+    "v2/quadrl/__init__.py": "bf9e04e1c20183cec77f6c9fe28513b65d00896b33add08f18df672ae96e9090",
+    "v2/sim/finalize_metrics.py": "140fde10e8dc67de88f78b2f0dd2767f90eacccbf56a13b494c4fdb843dbf046",
+    "v2/audit/turns_corners.py": "5df0454674f2f8f27f338518bea86e3eae9fd771cd4c5cfb7d12bdb7e2976c31",
+    "v2/sim/inspect_rate_shaping.py": "4ef6599fe44619421b79a7b960daca589311a80e59e52187b102a5d66e5c51bf",
+    "v2/audit/replay_observations.py": "aab253b420fbd78fbd600fdb069161020c986131f0bc32a3273e2c01febd3808",
+    "v2/scripts/run_joint_training_pair_v2.py": "c731c1d2013838f504fc6dad83302aeee379f6abe7121f3c205f1b074b6b54fc",
+    "v2/quadrl/protocol.py": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473",
+    "v2/docs/joint_peak_diagnostic3_v25/resource_rule.prospective.json": "0c768a15ef7f194bd609daa7813c7c4c084103c1b2ba81d8347288a95a4cc4fa",
+    "v2/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+    "v2/sim/audit_fdm_destinations.py": "3d33fa62bf36a1e9ba8206c83eaebfc86bc809a362074e5e946d3f062bd92183",
+    "v2/audit/capture_udp_copies.py": "9a9cafbe7fba0c72f901b9bb300bf2403408e3f703cfba079c31a8ca3724b574",
+    "v2/sim/identify_translation.py": "ce24774a15b3904e4b95db38bb69b862b71e59f09b95a6fac4c1c31aa75a5b9a",
+    "v2/audit/verify_joint_metrics_v2.py": "dd7a13fd7827904efa99208f3bad23314917f15c0f865bc298568af73aad70e7",
+    "v2/audit/joint_peak_diagnostic3_v25_prep_root01.json": "a53da0cfa970b0db844be52b9c6dd623803957193ac3b125381f47696db3bf4a",
+    "v2/scripts/run_joint_path77_smoke_v3.py": "05ce3fc236a21c37e74516f8e541e31328fbe2928033f18839dfb0f48859994e",
+    "v2/sim/plot_identification.py": "c8950effca8c7776c80c2de26bab0f9cfe7b35026114cae48883f4ca811d659e",
+    "v2/reference/dob.py": "c4d42f90a81f1d46c86e07d455151f0f49cfd550912ec3da935609f505dfa507",
+    "v2/quadrl/pid_config.json": "0264412f373b95c294a37705c64f2cc1ebde041c40b04a34b48ef311fe235055",
+    "v2/quadrl_route_basis_v14/policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "v2/quadrl_path_v7/policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "v2/quadrl_route_memory_train_v21/__init__.py": "88e665eecb1fd3a5bb23425c3d3e25d80dc25cbb029a46fd4cf0c84931d6585f",
+    "v2/quadrl_path_v7/__init__.py": "b22e00e0881e1e451cb15fcacd53c45b5bb2581ea31045977b90c0db785e1510",
+    "v2/sim/finish_native_tuning.py": "e4752d0c36b47de2565f4b55843bd6c227e6d18f7f255f70753fa8789e03bc8d",
+    "v2/sim/network_capture.py": "d7cd91c72f74d5dcb18af46178f83b59119625c80da382ad77db50842df818b1",
+    "v2/quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "v2/sim/gazebo_worker.py": "1698ea8ca4a70834bb240eb5e1130eb40c43fb28a431e0949dbc9b8289878968",
+    "v2/docs/joint_peak_diagnostic3_v25/candidate_binding.template.json": "e184fcda609f3d66fe380a0cd158e18f1f8def980e8c69cc488abd8d5ce18c10",
+    "v2/docs/joint_peak_diagnostic3_v25/prospective_plan.draft.json": "291c8904e8af35e59a8204311a1fb040d05bb68d61d3e4552d70dc49becaff5f",
+    "v2/quadrl/rollout.py": "de3418d9215ec6dc9e5eec60a8ae793c7984c35d872f7bdb144f17675b868f57",
+    "v2/scripts/joint_thrust_ablation_v2.py": "bf66211f59ff05cd4659fed88401f2428ff7b910e2dc430a762bb4ff14c85de8",
+    "v2/audit/verify_joint_wire_exclusivity_v2.py": "ff5452d31be67ca28c928aae6acc5d2bb0b2a59e337ca6653c98adb05d8ae192",
+    "v2/audit/verify_joint_hybrid_v2.py": "56d2f34346676b7994ef6741f05c331ed2a71115d6cf36e6b1232fc25efe30ed",
+    "v2/scripts/run_joint_path77_development9_v4.py": "3c857d3aa3654caae4cad4f23ea998be90d3f693b522dd6e9b6ab152a1ba7d84",
+    "v2/audit/verify_joint_hybrid_v5_memory.py": "a3ddcbf96fe05c1692aaac3f6a6c8d812f469df73b8ad668435baef3f9c0caf9",
+    "v2/sim_joint/run_experiment_v6_memory_train.py": "99bc58f09cdcf45052b6fa609d8d82f969e1f87dbf4a459effe62386618cd7d8",
+    "v2/sim_joint/__init__.py": "f79c78d8ceed8e1d124c6d4d9363cf1c1d9be1c74e420837d79af2fd26c22a0a",
+    "v2/docs/joint_peak_diagnostic3_v25/README.md": "3c4ffb61d1469fca697cb5e42263a9ae91a1517385ac905229d61f308af224de",
+    "v2/scripts/independent_pose_recorder.py": "d093383d8d8fb3a73cd88a31b40f1ab8fd87e9245cfffc2500685a212b48be96",
+    "v2/sim/analyze_system_id.py": "aa6353dd2f949830822715388e64c863da564b874e2e254a19c34a6321b82f66",
+    "v2/audit/verify_fdm_identity.py": "7538b8c5cf5d9f424d48b6e90a81d5742f45c2c2eb63c2f8ccb2995861c859a3",
+    "v2/sim/model_spec.py": "4504ef09326e151ff75d38d7e46edf8674eb21610d7002062be6ebfd4eb65caa",
+    "v2/sim_joint/thrust_adapter.py": "a0e571075163443f987f6ca0c2a3e1068183a09f4a12827f0dc3c144f916ef72",
+    "v2/scripts/train_joint_geometry_v2.py": "ebb4cd2f95b5432e71c9c3b26a411f304b74c5de144061df364e70cf3441bd0b",
+    "v2/reference/direct_physics.py": "5607a4551a441d11b4be2dd5f97645f4dd3b269001cf4dd4165c23a94276510c",
+    "v2/sim/check_port_guard.py": "c86c69f33e014c0f8be9366837f4b2dbbf0362abc05067f9ba530285e2c103b9",
+    "v2/audit/independent_metrics.py": "5c70e9639eaebc5f1a9b1c1bc3b418c3ec1b74fb8612fc34e422df9e962964ba",
+    "v2/quadrl_route_basis_v14/__init__.py": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+    "v2/scripts/run_joint_peak_diagnostic3_v25.py": "792cce6c268780e49e3426f14917c39130ee6e5c8c2774d35fcdfd1cd43b649f",
+    "v2/docs/joint_peak_diagnostic3_v25/preparation_pins.json": "70616bf14ab3d565d6f362e767c7a825cdc71f8b3f83a59eff7c396bcd90d54a",
+    "v2/contract.py": "20cf4d281656941a2c73d6c1cf26a2461d98d9bbd82c2314128cd9a6ed2f396c",
+    "v2/quadrl/env.py": "d583db69a3c1afb317baefdf530f35a9781c8aa8dc37faeca764a3e503e8bc59",
+    "v2/audit/verify_joint_hybrid_v6_memory_train.py": "7d7e18d185dee339f26432d5c8e4c9fd3ebb2779957c5fbeb075b6909661c933",
+    "v2/audit/packet_clock_ordered.py": "aeb71ec261bd833e0cd37424aa1bec6c990fce1370b0b689fc80caadcd1fa80a",
+    "v2/sim/force_plugin/ForceSystem.cc": "e39ef7693758701eb538fabd29e3e7ea519a624fd819f9f89cff62ca0c1b6bf0",
+    "v2/quadrl_route_memory_v20/policy.py": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+    "v2/quadrl_route_memory_v20/__init__.py": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+    "v2/sim_joint/run_experiment_v5_memory.py": "04f31f69f03c6f0e411ea7c57fd73e9b3513eb8bdd324566e3c37aa288e9d047",
+    "v2/sim/run_frozen_campaign.py": "a05c3445ced6a9f2cfe7a651ff58fea6f665ebca248c4d6123d4c03fdae1425a",
+    "v2/sim/run_experiment.py": "179bb675208419224e176f541ef178c06a734048c65962563a1002a69f9a71b7",
+    "v2/scripts/joint_gazebo_screen_v2.py": "6dda683547cbf505e62f81fe4b7f2c1fe3796c7fb777d9ff1333638ca19808c8",
+    "v2/quadrl/reward.py": "dcbb0c8bcb704dc83ae271c2a4e55ce0210ab808c6a3e44b236d6bf614794e25",
+    "v2/sim/tune_native_pid.py": "98e32fd6971f2978cacbb8111d205ce7bdb8c62972c3af7b61ba0c09bbc6aa0b",
+    "v2/quadrl_route_memory_train_v21/policy.py": "9a6dd33bdfb3f2ad7127a4c25b71d889b87f610481fac33a42ccd4bcd2a4d53d",
+    "v2/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/checkpoint_131072.zip": "0df1b6cd2811f5196395e8b707a3eee0387c8b0050375479a912511df779bf40",
+    "v2/scripts/joint_thrust_ablation_recovery_v2.py": "5add2e0be7cee2769927d945ef40b6393a238eb111188b33f0dfa9406ff287e6",
+    "v2/sim/metrics.py": "4298cf11b2b2f2a4df3c5851ba86e5ee90d680e5ae2163dca3776b6a756c7ad1",
+    "v2/docs/joint_applicability_contract_v2.json": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652",
+    "v2/sim_joint/run_experiment_v2_1.py": "d1d102170e763a2c53b7dfa00e3a7cd8f5b3a5fb631370eed1be3f8ca1db72bb",
+    "v2/quadrl/baseline.py": "ee796fc1027510cb6091855501f85bd3e6d67cab502903535c8ecc6aa1fd8389",
+    "v2/quadrl/plant_config.json": "ce247239bb1dfc4dd9557487182febe02f725544902e2b05466e2837cbc2fd43",
+    "v2/audit/verify_joint_hybrid_v2_1.py": "5608940e2fa49ebd8f360df63870d0dfb3e6ef1acdc3cabfb04342ff5057d0a0",
+    "v2/docs/joint_peak_diagnostic3_v25/candidate_binding.root01.ready.json": "05649814c392b08d25dbccaecf021a01df30d925203c35f6c2eadb83780f9ddb",
+    "v2/artifacts/refinement/joint_v2/route_peak_pilot_v25_111/zero_route_integral/complete.json": "10373aaad060420f43f1dc7d423bf99fbdd46debc3839931280c7dfb738326d6",
+    "v2/artifacts/refinement/joint_v2/route_peak_pilot_v25_111/zero_route_integral/config.json": "6398c2cd1cf22acb6d6955cc0d84c37f1e08f762d3f5be56fd321f3b0bc63b2c",
+    "v2/audit/joint_peak_coverage_metrics_v25_root01.json": "df11412c8baf6efa6b2eba79cf6d79b3d9bee05afddd39748a7db8fc2befed4d",
+    "v2/audit/review_joint_route_peak_v25_pilot_01.json": "4c975804a2cd9e8e6b4ffbe38227d355da333414936960a2eaf495263e5da096",
+    "v2/audit/review_joint_peak_diagnostic3_v25_prephysics_01.json": "e1a0626e119c605265e536cb51c2b56bb514d293335eb4ad943bec44dbf4a76f",
+    "v2/audit/joint_peak_diagnostic3_root_go_v25_root01.json": "b50de7eb7530ed89b90b44b7d966c85df886fbc8477e50316a3377cd44feb65f",
+    "external_source_root/audit/pcap_evidence.py": "179c16f38ed41363f7f4ec72b03ea07060abc84d8fee95a63000021b2946646a",
+    "external_source_root/audit/dataflash_parameters.py": "7354c84f0d5d8f4e9e697b27a5e6146ca9a1024f1a80ee7bd18e6bb657df40ca",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/clock_alignment.json": "fc15da66417d53b6b45a3fbea824a43c63a6e572b5ad25bd2c6e84a470294811",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/commands.jsonl": "f168ff3263791046bae1b41d276abe5257630c644b4fa18113009d900a813227",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/events.jsonl": "aa97e13288ed652d215913fc809521e58797f2ce13e7cf81f1f8cae32c18ade0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/experiment.parm": "81b83096471cfad0bda2e66f4ef58ae28bf30b8ac74771108f8c0676bc1c5770",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/FORCE_COMMAND.json": "2e19fc55c81520f78e5309a67d35cf014548f94d52c316c9e9c51be99178be3f",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/force_physics.jsonl": "791c21fe3e19b3eb2e9e74d1372e2d975b4df8cec0f943a5a3972db045cd30ee",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo.log": "f2483cca8451531be31b1b08b733c2c7ffe117a95ea32366f08d3d595a8cfb5f",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_events.jsonl": "680dac59bf7112795b895ca113f2295306b21d6d939591cde561c5124775c753",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_finished.json": "d9c0e3a90d2fab19cc1458da2e80a0100da5ab8ee06c6a05c140c42b8a5bd54b",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_manifest.json": "99ce51e68103f8dcd008f19030387f309f6589d0bcce11e065602ca802becc03",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/groundtruth.jsonl": "1d6eb21ec8126d5360b90c8fd7eb16eead9a31e609bbd37ea210e69e8dec4753",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/groundtruth_independent.jsonl": "967d369ef1d9491f2ef5fdb6fab203fb5c9839a515f0370f578afc9239d55426",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/independent_pose_manifest.json": "8d1c50999d6740ca8f179c6ef4f05ff76e08a1f27663b5d1dcb4206fb5c9a3cc",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/manifest.json": "c2dc02370850dbb82649e24455a08c04ddb59f1fd84e9be070d7fc0a8f9257af",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/mavlink.jsonl": "94bb3c589950ada4857fe20e73373aa4efb155ac5450e3ce03cb8d8b08e4f4b8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/metrics.json": "4eb99c00a3d536c418eebe914a56c4db26e3c0a4babe7e5216905d9d1148bfea",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/network.pcap.gz": "52ee2d5a6295d17f48caa4752997d1589b3e44a22899abcb0913479430417a27",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/network_capture.log": "5a544eed8428aad0604713ac7f413be1704bc925e20432c6739db3899d939e4e",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/network_capture_finished.json": "dbbd141dd62badfcfa91f64de1486f22dca8d05e8dba1ad616c7a8f5ff74a5d8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/network_capture_manifest.json": "b37eed5a0f108ce1f62fb301f2a02822d9656fe5ccb957936d87fa7ae6f5f8d3",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/network_worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/parameter_readback.json": "d048471379ca9420a2f5ce3684cc57331a9f8c1e9aa1b13a9c26040deb593f55",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/sitl.log": "a33e42decba3ade3e684d270805a9611351cb5235b901fd78ef0d779f1c8b24e",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/STOP_GAZEBO": "a11c3d917a2149a4b548217038bc8f2dd2130a1966e0c7af5c4225d81f25a8c3",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/summary.json": "f098f604ec6795aa81bae7a67f1f36ab9bd81ce4f31af21784526b8c0277bb53",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/telemetry.csv": "f86ff21aed4b712dd39898940659cec5228772cd04f8e8e4fdc973d9954079a4",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/ForceSystem.cc": "e39ef7693758701eb538fabd29e3e7ea519a624fd819f9f89cff62ca0c1b6bf0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/libVkrForceSystem.so": "c6e0dd81b76b8d823631c493b7bda730bacf40a74bfacc48d65969ad9937b547",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/world.sdf": "1a2bd51598763c6b58769559f38e2cb4e1e634fb26d85eb04b58733aa4bc91f8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/sitl/eeprom.bin": "b42ba7f9271885a216cf34f90b90a362b2590eed27eede8a6e22091f8cec99c0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/contract.py": "20cf4d281656941a2c73d6c1cf26a2461d98d9bbd82c2314128cd9a6ed2f396c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/finalize_metrics.py": "140fde10e8dc67de88f78b2f0dd2767f90eacccbf56a13b494c4fdb843dbf046",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/gazebo_worker.py": "1698ea8ca4a70834bb240eb5e1130eb40c43fb28a431e0949dbc9b8289878968",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/metrics.py": "4298cf11b2b2f2a4df3c5851ba86e5ee90d680e5ae2163dca3776b6a756c7ad1",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/network_capture.py": "d7cd91c72f74d5dcb18af46178f83b59119625c80da382ad77db50842df818b1",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/path_policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/pcap_clock.py": "bd78d669787eedfd08db40d2cb1645ad2932e6ed2bc404f95c9fc822d7ddb220",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/pid_profile.json": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/protocol.py": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/route_policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/run_experiment_v6_memory_train.py": "99bc58f09cdcf45052b6fa609d8d82f969e1f87dbf4a459effe62386618cd7d8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/thrust_adapter.py": "a0e571075163443f987f6ca0c2a3e1068183a09f4a12827f0dc3c144f916ef72",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/iris_with_ardupilot/model.config": "57def1cd520ad4065ba7b2dece876e4faf2ea9e816d69dadef409efe9bf5873b",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/iris_with_ardupilot/model.sdf": "2ce6734684656a41417d43f91ee8c1f5d6d67f9eae6389c90bfa6a1ea3f56c0d",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/model.config": "e419cc7681f730edf14398baa577a4f05cd34e2cebaa764c508119c4465b34b7",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/model.sdf": "a93d1a55f7972ce088b6a6878eeac3b8ae8730c9022550dead7656cbddcdc450",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris.dae": "697956cfc0fe608afc52a0f688de50354b89e5201056451cf6bb767de8f46323",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_collision.stl": "66b85caa021497ea73dbaed08c72da381a6157116244ea3860a1ba445f50102c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_prop_ccw.dae": "5f8b01668ee24a5b663ca8c4dd56e294fd6480db7eec1e5a7c11e45ba9004e99",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_prop_cw.dae": "6cbc686772dccd46253fb65ece000e7ffa6a74b9c097bda349884bd1e78cd879",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/sitl/logs/00000001.BIN": "b7974a51768886c10f75070a8d23f387a379f0a22d9ec666be1ef4c127776e4e",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/sitl/logs/LASTLOG.TXT": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/sitl/terrain/S36E149.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/force_plugin/CMakeLists.txt": "eea30871849c72c95771acbabe052e4e746f306a518cfaeebad1316700587e8c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/force_plugin/ForceSystem.cc": "e39ef7693758701eb538fabd29e3e7ea519a624fd819f9f89cff62ca0c1b6bf0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/force_plugin/build/libVkrForceSystem.so": "c6e0dd81b76b8d823631c493b7bda730bacf40a74bfacc48d65969ad9937b547",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl/__init__.py": "bf9e04e1c20183cec77f6c9fe28513b65d00896b33add08f18df672ae96e9090",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl_path_v7/policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl_path_v7/__init__.py": "b22e00e0881e1e451cb15fcacd53c45b5bb2581ea31045977b90c0db785e1510",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_basis_v14/policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_basis_v14/__init__.py": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_train_v21/policy.py": "9a6dd33bdfb3f2ad7127a4c25b71d889b87f610481fac33a42ccd4bcd2a4d53d",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_train_v21/__init__.py": "88e665eecb1fd3a5bb23425c3d3e25d80dc25cbb029a46fd4cf0c84931d6585f",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_v20/policy.py": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_v20/__init__.py": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_pid_route_force_strong_env84001/source_snapshot/memory_package/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/checkpoint_131072.zip": "0df1b6cd2811f5196395e8b707a3eee0387c8b0050375479a912511df779bf40",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/clock_alignment.json": "6b8fea4990c467cf0701890cd9f7e3f171d72fda0ddff25b4f0ce483200dad1d",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/commands.jsonl": "27be676c3261a06140f5ada16caf74c620c94935dfecb56ab7be70a4b5f3622b",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/events.jsonl": "99b13315e45e4d761769bab4c1a2339dc7eeda33df649c7e6fe0a69992ad4339",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/experiment.parm": "81b83096471cfad0bda2e66f4ef58ae28bf30b8ac74771108f8c0676bc1c5770",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/FORCE_COMMAND.json": "672998e004c2535e205fd77bd3f10a12280c310bfa42becbef57215c819bf187",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/force_physics.jsonl": "d3e77d67b4ca2e09a14de3ef36284dd325c521cbf4cfa9e42b755be3349c8477",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo.log": "f2270543e34da797b506a6808fa5614add79f1dc99b986c4c6f341f7dcdc8cfd",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_events.jsonl": "1593a071f3e55da7097912d4aeac33ba8af0a9293c6abd123e4b854b4265b85b",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_finished.json": "3df6220bf7bd80671d83050007118860dbbd7b53909586dd971dcae5d9c03ac5",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_manifest.json": "495db5556426b1c4bffb548343fc7e4cb56565666350274fee4a326e2e9d6c7f",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/groundtruth.jsonl": "1c81d12c0d453132c08f4f2c5bacf596b6dee1b35d4635bf7e61a4746d615a48",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/groundtruth_independent.jsonl": "61a2394d421a774887b377c45d56d051124b78ce70f48067f003a90713898c38",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/independent_pose_manifest.json": "c675f146ead1c9e0de58ed17b4e76ae9f426f10949931ab75d27aaa393f926f6",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/manifest.json": "fadab3c529d6acef8a2ebed7fcbfe373fc7733a308c346e6a065b9f85132053b",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/mavlink.jsonl": "203607286d8eeddbea0fa0d6024fb4dd75152cee859972d9fb9b3cb0c12c9d1d",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/metrics.json": "85962e34d13a0b14335aff49624cdc3ea5a4afd140c18cb8f97655e924426087",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/network.pcap.gz": "ee14c7758ccfd7fcd0daca8eda912e03b4a5f29d0c300ceedf49008afdb8ecec",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/network_capture.log": "791527a400550e2cee597a999e55fe962460f6d0df26ff11bdce92071c4f7762",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/network_capture_finished.json": "a78f9498204686a23a2de2ee02b52bfcc780984a730db7dc94b86ee2916fb10c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/network_capture_manifest.json": "7c8548b96a3cd626441f8f761dd4a9c7147082e4d7184943eac6d57d0f9de05c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/network_worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/parameter_readback.json": "b9258fbc9210e7330c6946359540fd1fc3585dd2383e51bc7bbd5f9de3a57a3f",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/sitl.log": "97b7a9090225072f9e4082eb6f1899229ea27a17379f255c6a6d62e9b13e45a0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/STOP_GAZEBO": "a11c3d917a2149a4b548217038bc8f2dd2130a1966e0c7af5c4225d81f25a8c3",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/summary.json": "d8ac6cfee119a14628334eed5a6b8c6cce35eb36618213c159ee07f5ae370d12",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/telemetry.csv": "aa29a105136069fa86ccdb5694771d56200496854d444396313437848531bcb0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/ForceSystem.cc": "e39ef7693758701eb538fabd29e3e7ea519a624fd819f9f89cff62ca0c1b6bf0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/libVkrForceSystem.so": "c6e0dd81b76b8d823631c493b7bda730bacf40a74bfacc48d65969ad9937b547",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/world.sdf": "00988d1e6885d022f9ae62fc6071dc7d42b02261f0f9b41630a840baf87a1061",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/sitl/eeprom.bin": "b533dec3d9765c5c8afa9346a426156e8f790c7d132389a962cf12b5cafd8854",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/contract.py": "20cf4d281656941a2c73d6c1cf26a2461d98d9bbd82c2314128cd9a6ed2f396c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/finalize_metrics.py": "140fde10e8dc67de88f78b2f0dd2767f90eacccbf56a13b494c4fdb843dbf046",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/gazebo_worker.py": "1698ea8ca4a70834bb240eb5e1130eb40c43fb28a431e0949dbc9b8289878968",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/metrics.py": "4298cf11b2b2f2a4df3c5851ba86e5ee90d680e5ae2163dca3776b6a756c7ad1",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/network_capture.py": "d7cd91c72f74d5dcb18af46178f83b59119625c80da382ad77db50842df818b1",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/path_policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/pcap_clock.py": "bd78d669787eedfd08db40d2cb1645ad2932e6ed2bc404f95c9fc822d7ddb220",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/pid_profile.json": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/policy.npz": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/protocol.py": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/route_policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/run_experiment_v5_memory.py": "04f31f69f03c6f0e411ea7c57fd73e9b3513eb8bdd324566e3c37aa288e9d047",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/thrust_adapter.py": "a0e571075163443f987f6ca0c2a3e1068183a09f4a12827f0dc3c144f916ef72",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/iris_with_ardupilot/model.config": "57def1cd520ad4065ba7b2dece876e4faf2ea9e816d69dadef409efe9bf5873b",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/iris_with_ardupilot/model.sdf": "2ce6734684656a41417d43f91ee8c1f5d6d67f9eae6389c90bfa6a1ea3f56c0d",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/model.config": "e419cc7681f730edf14398baa577a4f05cd34e2cebaa764c508119c4465b34b7",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/model.sdf": "a93d1a55f7972ce088b6a6878eeac3b8ae8730c9022550dead7656cbddcdc450",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris.dae": "697956cfc0fe608afc52a0f688de50354b89e5201056451cf6bb767de8f46323",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_collision.stl": "66b85caa021497ea73dbaed08c72da381a6157116244ea3860a1ba445f50102c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_prop_ccw.dae": "5f8b01668ee24a5b663ca8c4dd56e294fd6480db7eec1e5a7c11e45ba9004e99",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_prop_cw.dae": "6cbc686772dccd46253fb65ece000e7ffa6a74b9c097bda349884bd1e78cd879",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/sitl/logs/00000001.BIN": "3eb8f00bf8e7f465267234f2437efa9849e86767ee1638549ec3c657a6fa76ed",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/sitl/logs/LASTLOG.TXT": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/sitl/terrain/S36E149.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/force_plugin/CMakeLists.txt": "eea30871849c72c95771acbabe052e4e746f306a518cfaeebad1316700587e8c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/force_plugin/ForceSystem.cc": "e39ef7693758701eb538fabd29e3e7ea519a624fd819f9f89cff62ca0c1b6bf0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/force_plugin/build/libVkrForceSystem.so": "c6e0dd81b76b8d823631c493b7bda730bacf40a74bfacc48d65969ad9937b547",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/quadrl/__init__.py": "bf9e04e1c20183cec77f6c9fe28513b65d00896b33add08f18df672ae96e9090",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/quadrl_path_v7/policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/quadrl_path_v7/__init__.py": "b22e00e0881e1e451cb15fcacd53c45b5bb2581ea31045977b90c0db785e1510",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_basis_v14/policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_basis_v14/__init__.py": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_v20/policy.py": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_v20/__init__.py": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_f0_route_force_strong_env84001/source_snapshot/memory_package/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/clock_alignment.json": "600b4fd99c4a684f8703a1bbd9ffb66dd5ec60bbb654a0ede9684de7fe4a17e5",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/commands.jsonl": "f76089f3dfb7ff6ae812aadd0589e89f56f08a23eecfc2b14b3c7ac0df4810cd",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/events.jsonl": "8461ac7e556883b3caa521ee857a18aed430ace396c1742b7d6f86b39912c926",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/experiment.parm": "81b83096471cfad0bda2e66f4ef58ae28bf30b8ac74771108f8c0676bc1c5770",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/FORCE_COMMAND.json": "2e2a97c5ddc601c6507ae40a4f55f2274c3f0ab537fd12df44007d1e6fb84a88",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/force_physics.jsonl": "10818c4bab358cebf2353352b7a21d998c406a97d0ccc26a7572cd7afd4c28f7",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo.log": "0b906240e103ed6a5c67e9793459a6571e094e88058417f29ef0b6cd72a54d60",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_events.jsonl": "50c7f6d12e17be043bd03031cf7b6dca3b508dde939971ab305b35d6c7031fc5",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_finished.json": "ff46aef8ec5b6e300aa7b872a50906d5451b77cf3661efb6b41b32751d20f570",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_manifest.json": "8c02cf9589cce5f3abce3926f651dbb8a28182711b8f81f12faf3b9af604462e",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/groundtruth.jsonl": "281db3a3c4e92ee361e56836361ca9652ee59ca95ac4cb16b1296d7b370df4bf",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/groundtruth_independent.jsonl": "893914100b210d2748630979da97d4af007a16be1f4aa0e2032dfcb6c9ee6fc3",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/independent_pose_manifest.json": "1fdcb0a6d4cdba77b14691aa99db0c3a878c5a012cb366c23365185cd07a1b1f",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/manifest.json": "668b334e4bcd94acc27a46d42e7ade831784949b5184bfc3e4d5a0373b4b27de",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/mavlink.jsonl": "886af3ba3ad75b050bfb6d3a14e4526a4b5c870ae6914a209ee8ce9db3140323",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/metrics.json": "134fea1fbcde74b499f515803b469277e43186de9535b5463e3b0c7457847807",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/network.pcap.gz": "7bf0e95f287c6f67f64e7cd6435828e0e12b78ed510db946119a28040df04e5a",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/network_capture.log": "9023970d669f1e37ac5338d10650646311d55a33dcca9d9b5a98d83fb1369c73",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/network_capture_finished.json": "978ab40af4763d20f98090403ddc4c23cd56d1815f77b1c93f9e4c15969c439a",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/network_capture_manifest.json": "3f7c4abc23990060a7134242a91afd681b879dc0826ae99123679e75a42cf424",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/network_worker.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/parameter_readback.json": "b9258fbc9210e7330c6946359540fd1fc3585dd2383e51bc7bbd5f9de3a57a3f",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/sitl.log": "e04c686ca4f44920e54f215c7a768a27b4b2f9be4fc8b9ec4fa68811ce3c934e",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/STOP_GAZEBO": "a11c3d917a2149a4b548217038bc8f2dd2130a1966e0c7af5c4225d81f25a8c3",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/summary.json": "cbf79a030fd567f9ed7c1790523fea39b401eeb49af2cd4a271c0ee2ae18bb49",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/telemetry.csv": "fbbf56b0821d923854b40eef0fd718f819b08bbaf299e01c3239db32f2b5a5c3",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/ForceSystem.cc": "e39ef7693758701eb538fabd29e3e7ea519a624fd819f9f89cff62ca0c1b6bf0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/libVkrForceSystem.so": "c6e0dd81b76b8d823631c493b7bda730bacf40a74bfacc48d65969ad9937b547",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/world.sdf": "eeed83ead76d0ea4f960b7d2cb1c7a34fb6cfaa18b11ae760419ecdfc100fab4",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/sitl/eeprom.bin": "668e90f3daa3e7d982ba585491c1710084c4c63e883f26c8c464b1330d73bf60",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/contract.py": "20cf4d281656941a2c73d6c1cf26a2461d98d9bbd82c2314128cd9a6ed2f396c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/finalize_metrics.py": "140fde10e8dc67de88f78b2f0dd2767f90eacccbf56a13b494c4fdb843dbf046",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/gazebo_worker.py": "1698ea8ca4a70834bb240eb5e1130eb40c43fb28a431e0949dbc9b8289878968",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/metrics.py": "4298cf11b2b2f2a4df3c5851ba86e5ee90d680e5ae2163dca3776b6a756c7ad1",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/network_capture.py": "d7cd91c72f74d5dcb18af46178f83b59119625c80da382ad77db50842df818b1",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/path_policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/pcap_clock.py": "bd78d669787eedfd08db40d2cb1645ad2932e6ed2bc404f95c9fc822d7ddb220",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/pid_profile.json": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/policy.npz": "470005b73488dde8505c26da09fd2902d8dc36a9922c21628e62d4eda028b303",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/protocol.py": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/route_policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/run_experiment_v6_memory_train.py": "99bc58f09cdcf45052b6fa609d8d82f969e1f87dbf4a459effe62386618cd7d8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/thrust_adapter.py": "a0e571075163443f987f6ca0c2a3e1068183a09f4a12827f0dc3c144f916ef72",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/iris_with_ardupilot/model.config": "57def1cd520ad4065ba7b2dece876e4faf2ea9e816d69dadef409efe9bf5873b",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/iris_with_ardupilot/model.sdf": "2ce6734684656a41417d43f91ee8c1f5d6d67f9eae6389c90bfa6a1ea3f56c0d",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/model.config": "e419cc7681f730edf14398baa577a4f05cd34e2cebaa764c508119c4465b34b7",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/model.sdf": "a93d1a55f7972ce088b6a6878eeac3b8ae8730c9022550dead7656cbddcdc450",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris.dae": "697956cfc0fe608afc52a0f688de50354b89e5201056451cf6bb767de8f46323",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_collision.stl": "66b85caa021497ea73dbaed08c72da381a6157116244ea3860a1ba445f50102c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_prop_ccw.dae": "5f8b01668ee24a5b663ca8c4dd56e294fd6480db7eec1e5a7c11e45ba9004e99",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/gazebo_assets/iris_with_standoffs/meshes/iris_prop_cw.dae": "6cbc686772dccd46253fb65ece000e7ffa6a74b9c097bda349884bd1e78cd879",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/sitl/logs/00000001.BIN": "9a54af9f7a44f6f68d69f75f6b5f887adcaf80dacb2fd3b682bf642875d84bc3",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/sitl/logs/LASTLOG.TXT": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/sitl/terrain/S36E149.DAT": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/force_plugin/CMakeLists.txt": "eea30871849c72c95771acbabe052e4e746f306a518cfaeebad1316700587e8c",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/force_plugin/ForceSystem.cc": "e39ef7693758701eb538fabd29e3e7ea519a624fd819f9f89cff62ca0c1b6bf0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/native_angle_boost/AC_AttitudeControl.cpp": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/native_angle_boost/AC_AttitudeControl_Multi.cpp": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/native_angle_boost/mode_guided.cpp": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/force_plugin/build/libVkrForceSystem.so": "c6e0dd81b76b8d823631c493b7bda730bacf40a74bfacc48d65969ad9937b547",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl/__init__.py": "bf9e04e1c20183cec77f6c9fe28513b65d00896b33add08f18df672ae96e9090",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl_path_v7/policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl_path_v7/__init__.py": "b22e00e0881e1e451cb15fcacd53c45b5bb2581ea31045977b90c0db785e1510",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_basis_v14/policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_basis_v14/__init__.py": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_train_v21/policy.py": "9a6dd33bdfb3f2ad7127a4c25b71d889b87f610481fac33a42ccd4bcd2a4d53d",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_train_v21/__init__.py": "88e665eecb1fd3a5bb23425c3d3e25d80dc25cbb029a46fd4cf0c84931d6585f",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_v20/policy.py": "75ef5e3f6dfd02221d3fb5d69fe3aaee49c3d9ca450f3a0a64c3206a2b58681e",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/quadrl_route_memory_v20/__init__.py": "a88fbd133b99214a674a657a99e64ecea30dc336b6e681016171381a824a9ad6",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+    "v2/artifacts/refinement/joint_v2/gazebo_peak_diagnostic3_v25_root01/runs/peak25_trained_route_force_strong_env84001/source_snapshot/memory_package/artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/checkpoint_131072.zip": "0df1b6cd2811f5196395e8b707a3eee0387c8b0050375479a912511df779bf40"
+  },
+  "checks": [
+    {
+      "check": "PID exact fresh case",
+      "pass_": true
+    },
+    {
+      "check": "PID actual valid outcome retained",
+      "pass_": true
+    },
+    {
+      "check": "PID actual frozen PID gain PSC_NE_POS_P",
+      "pass_": true
+    },
+    {
+      "check": "PID actual frozen PID gain PSC_NE_VEL_P",
+      "pass_": true
+    },
+    {
+      "check": "PID actual frozen PID gain PSC_NE_VEL_I",
+      "pass_": true
+    },
+    {
+      "check": "PID actual frozen PID gain PSC_NE_VEL_D",
+      "pass_": true
+    },
+    {
+      "check": "PID actual runtime",
+      "pass_": true
+    },
+    {
+      "check": "PID fresh world/PCAP/read-only observer",
+      "pass_": true
+    },
+    {
+      "check": "PID actual cadence",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric rmse_position_m",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric penalized_rmse_position_m",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric altitude_drop_m",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric heading_rmse_deg",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric heading_peak_deg",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric survived",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric heading_guard_pass",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric duration_s",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric route_completed",
+      "pass_": true
+    },
+    {
+      "check": "PID independent metric route_completion_time_s",
+      "pass_": true
+    },
+    {
+      "check": "PID independent geometry segment_rmse_m",
+      "pass_": true
+    },
+    {
+      "check": "PID independent geometry mean_corner_post_peak_m",
+      "pass_": true
+    },
+    {
+      "check": "PID independent geometry active_segment_peak_m",
+      "pass_": true
+    },
+    {
+      "check": "PID independent geometry complete_corner_windows",
+      "pass_": true
+    },
+    {
+      "check": "PID independent geometry geometry_eligible",
+      "pass_": true
+    },
+    {
+      "check": "F0 exact fresh case",
+      "pass_": true
+    },
+    {
+      "check": "F0 actual valid outcome retained",
+      "pass_": true
+    },
+    {
+      "check": "F0 actual frozen PID gain PSC_NE_POS_P",
+      "pass_": true
+    },
+    {
+      "check": "F0 actual frozen PID gain PSC_NE_VEL_P",
+      "pass_": true
+    },
+    {
+      "check": "F0 actual frozen PID gain PSC_NE_VEL_I",
+      "pass_": true
+    },
+    {
+      "check": "F0 actual frozen PID gain PSC_NE_VEL_D",
+      "pass_": true
+    },
+    {
+      "check": "F0 actual runtime",
+      "pass_": true
+    },
+    {
+      "check": "F0 fresh world/PCAP/read-only observer",
+      "pass_": true
+    },
+    {
+      "check": "F0 actual cadence",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric rmse_position_m",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric penalized_rmse_position_m",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric altitude_drop_m",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric heading_rmse_deg",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric heading_peak_deg",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric survived",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric heading_guard_pass",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric duration_s",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric route_completed",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent metric route_completion_time_s",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent geometry segment_rmse_m",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent geometry mean_corner_post_peak_m",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent geometry active_segment_peak_m",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent geometry complete_corner_windows",
+      "pass_": true
+    },
+    {
+      "check": "F0 independent geometry geometry_eligible",
+      "pass_": true
+    },
+    {
+      "check": "F0 actual received-prefix NN/exclusive CRC wire",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED exact fresh case",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED actual valid outcome retained",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED actual frozen PID gain PSC_NE_POS_P",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED actual frozen PID gain PSC_NE_VEL_P",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED actual frozen PID gain PSC_NE_VEL_I",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED actual frozen PID gain PSC_NE_VEL_D",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED actual runtime",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED fresh world/PCAP/read-only observer",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED actual cadence",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric rmse_position_m",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric penalized_rmse_position_m",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric altitude_drop_m",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric heading_rmse_deg",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric heading_peak_deg",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric survived",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric heading_guard_pass",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric duration_s",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric route_completed",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent metric route_completion_time_s",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent geometry segment_rmse_m",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent geometry mean_corner_post_peak_m",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent geometry active_segment_peak_m",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent geometry complete_corner_windows",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED independent geometry geometry_eligible",
+      "pass_": true
+    },
+    {
+      "check": "TRAINED actual received-prefix NN/exclusive CRC wire",
+      "pass_": true
+    },
+    {
+      "check": "all raw/frozen evidence unchanged",
+      "pass_": true
+    }
+  ],
+  "queue_operations": 0,
+  "own_physics_steps": 0,
+  "engineering9_authorized": false,
+  "policy_promotion": false,
+  "final_applicability_confirmed": false,
+  "limitations": [
+    "Three fresh processes on one already viewed development case; n1 per controller, no replication or general superiority claim.",
+    "Native FULL/engineering FAIL remains FAIL; this receipt establishes measurement integrity, not model acceptance.",
+    "Native matched startup does not reconstruct hidden ArduPilot states; absolute force phases and actual measured initial states remain archived.",
+    "All13 original route predicates evaluated separately for each NN against the fresh competent PID; no six-cell macro or all9 result."
+  ]
+}

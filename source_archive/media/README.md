@@ -1,0 +1,1 @@
+WORKSPACE_ONLY renderer review source. It requires original measured CSVs and audit inputs, not all included in the lightweight clone. Packaged GIF/PNG and manifest are exact final copies under assets/replays. No rendered animation is a Gazebo GUI recording.

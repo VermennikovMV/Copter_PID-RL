@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "tests_passed": 15,
+  "command": "python -I -B -m unittest discover -s v2/tests -p test_joint_research_preflight_v1.py -v",
+  "actual_test_run_exit_code": 0,
+  "test_input_sha256": {
+    "v2/tests/test_joint_research_preflight_v1.py": "918cc42415f985f2772372e98a62bd69addd46a3fff17bb86773f4d7312da6dd",
+    "v2/scripts/joint_research_preflight_v1.py": "1564bdfe2481b0638156905df2894f28b7028f8b6352654220c31e227bda3e29",
+    "v2/docs/joint_applicability_contract_v2.json": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652"
+  },
+  "physical_or_optimizer_steps": 0
+}

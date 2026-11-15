@@ -1,0 +1,2274 @@
+{
+  "status": "NOT_YET_EXPORTABLE",
+  "files": 209,
+  "bytes": 134217675,
+  "declined": [
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84004/actor_io.npz",
+      "bytes": 1481743,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84004/trace.csv",
+      "bytes": 802183,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_gust_84001/actor_io.npz",
+      "bytes": 1550482,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_gust_84001/trace.csv",
+      "bytes": 790286,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_gust_84002/actor_io.npz",
+      "bytes": 1558347,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_gust_84002/trace.csv",
+      "bytes": 787859,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_gust_84003/actor_io.npz",
+      "bytes": 1555606,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_gust_84003/trace.csv",
+      "bytes": 789632,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_gust_84004/actor_io.npz",
+      "bytes": 1555935,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_gust_84004/trace.csv",
+      "bytes": 789384,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_nominal_84001/actor_io.npz",
+      "bytes": 1385091,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_nominal_84001/trace.csv",
+      "bytes": 782577,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_nominal_84002/actor_io.npz",
+      "bytes": 1385287,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_nominal_84002/trace.csv",
+      "bytes": 781556,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_nominal_84003/actor_io.npz",
+      "bytes": 1389546,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_nominal_84003/trace.csv",
+      "bytes": 783902,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_nominal_84004/actor_io.npz",
+      "bytes": 1403459,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_nominal_84004/trace.csv",
+      "bytes": 781280,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_force_strong_84001/actor_io.npz",
+      "bytes": 1078264,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_force_strong_84001/trace.csv",
+      "bytes": 612373,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_force_strong_84002/actor_io.npz",
+      "bytes": 1046459,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_force_strong_84002/trace.csv",
+      "bytes": 611042,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_force_strong_84003/actor_io.npz",
+      "bytes": 1051621,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_force_strong_84003/trace.csv",
+      "bytes": 609990,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_force_strong_84004/actor_io.npz",
+      "bytes": 1030658,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_force_strong_84004/trace.csv",
+      "bytes": 614348,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_gust_84001/actor_io.npz",
+      "bytes": 1144704,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_gust_84001/trace.csv",
+      "bytes": 599041,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_gust_84002/actor_io.npz",
+      "bytes": 1142961,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_gust_84002/trace.csv",
+      "bytes": 597479,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_gust_84003/actor_io.npz",
+      "bytes": 1145108,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_gust_84003/trace.csv",
+      "bytes": 597264,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_gust_84004/actor_io.npz",
+      "bytes": 1134841,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_gust_84004/trace.csv",
+      "bytes": 598642,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_nominal_84001/actor_io.npz",
+      "bytes": 982817,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_nominal_84001/trace.csv",
+      "bytes": 599281,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_nominal_84002/actor_io.npz",
+      "bytes": 999714,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_nominal_84002/trace.csv",
+      "bytes": 597321,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_nominal_84003/actor_io.npz",
+      "bytes": 995635,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_nominal_84003/trace.csv",
+      "bytes": 597168,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_nominal_84004/actor_io.npz",
+      "bytes": 984718,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/hover_nominal_84004/trace.csv",
+      "bytes": 597292,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_force_strong_84001/actor_io.npz",
+      "bytes": 1471990,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_force_strong_84001/trace.csv",
+      "bytes": 806724,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_force_strong_84002/actor_io.npz",
+      "bytes": 1471489,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_force_strong_84002/trace.csv",
+      "bytes": 800472,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_force_strong_84003/actor_io.npz",
+      "bytes": 1477064,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_force_strong_84003/trace.csv",
+      "bytes": 802567,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_force_strong_84004/actor_io.npz",
+      "bytes": 1490126,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_force_strong_84004/trace.csv",
+      "bytes": 802105,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_gust_84001/actor_io.npz",
+      "bytes": 1555795,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_gust_84001/trace.csv",
+      "bytes": 790235,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_gust_84002/actor_io.npz",
+      "bytes": 1563906,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_gust_84002/trace.csv",
+      "bytes": 788112,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_gust_84003/actor_io.npz",
+      "bytes": 1561659,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_gust_84003/trace.csv",
+      "bytes": 789258,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_gust_84004/actor_io.npz",
+      "bytes": 1560407,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_gust_84004/trace.csv",
+      "bytes": 789013,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_nominal_84001/actor_io.npz",
+      "bytes": 1397158,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_nominal_84001/trace.csv",
+      "bytes": 783822,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_nominal_84002/actor_io.npz",
+      "bytes": 1401140,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_nominal_84002/trace.csv",
+      "bytes": 783467,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_nominal_84003/actor_io.npz",
+      "bytes": 1406891,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_nominal_84003/trace.csv",
+      "bytes": 784883,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_nominal_84004/actor_io.npz",
+      "bytes": 1413295,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/final/route_nominal_84004/trace.csv",
+      "bytes": 781895,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_force_strong_84001/actor_io.npz",
+      "bytes": 1061512,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_force_strong_84001/trace.csv",
+      "bytes": 614177,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_force_strong_84002/actor_io.npz",
+      "bytes": 1042487,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_force_strong_84002/trace.csv",
+      "bytes": 611668,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_force_strong_84003/actor_io.npz",
+      "bytes": 1060114,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_force_strong_84003/trace.csv",
+      "bytes": 609305,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_force_strong_84004/actor_io.npz",
+      "bytes": 1042169,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_force_strong_84004/trace.csv",
+      "bytes": 612008,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_gust_84001/actor_io.npz",
+      "bytes": 1142905,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_gust_84001/trace.csv",
+      "bytes": 599376,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_gust_84002/actor_io.npz",
+      "bytes": 1144076,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_gust_84002/trace.csv",
+      "bytes": 597291,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_gust_84003/actor_io.npz",
+      "bytes": 1144707,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_gust_84003/trace.csv",
+      "bytes": 597434,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_gust_84004/actor_io.npz",
+      "bytes": 1130307,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_gust_84004/trace.csv",
+      "bytes": 599447,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_nominal_84001/actor_io.npz",
+      "bytes": 969145,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_nominal_84001/trace.csv",
+      "bytes": 596556,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_nominal_84002/actor_io.npz",
+      "bytes": 988013,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_nominal_84002/trace.csv",
+      "bytes": 597212,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_nominal_84003/actor_io.npz",
+      "bytes": 992426,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_nominal_84003/trace.csv",
+      "bytes": 596099,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_nominal_84004/actor_io.npz",
+      "bytes": 967017,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/hover_nominal_84004/trace.csv",
+      "bytes": 596819,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/actor_io.npz",
+      "bytes": 1481359,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84001/trace.csv",
+      "bytes": 805884,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84002/actor_io.npz",
+      "bytes": 1472945,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84002/trace.csv",
+      "bytes": 801016,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84003/actor_io.npz",
+      "bytes": 1484562,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84003/trace.csv",
+      "bytes": 800703,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84004/actor_io.npz",
+      "bytes": 1503570,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_force_strong_84004/trace.csv",
+      "bytes": 802289,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_gust_84001/actor_io.npz",
+      "bytes": 1559108,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_gust_84001/trace.csv",
+      "bytes": 790086,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_gust_84002/actor_io.npz",
+      "bytes": 1568850,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_gust_84002/trace.csv",
+      "bytes": 788818,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_gust_84003/actor_io.npz",
+      "bytes": 1565422,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_gust_84003/trace.csv",
+      "bytes": 790853,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_gust_84004/actor_io.npz",
+      "bytes": 1566604,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_gust_84004/trace.csv",
+      "bytes": 789485,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/actor_io.npz",
+      "bytes": 1408730,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84001/trace.csv",
+      "bytes": 782479,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84002/actor_io.npz",
+      "bytes": 1406013,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84002/trace.csv",
+      "bytes": 783140,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84003/actor_io.npz",
+      "bytes": 1412160,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84003/trace.csv",
+      "bytes": 784215,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84004/actor_io.npz",
+      "bytes": 1424998,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/route_nominal_84004/trace.csv",
+      "bytes": 781840,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "audit/joint_heading_coverage_control_aux_v23_root01.json",
+      "bytes": 257493,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "audit/joint_heading_coverage_metrics_v23_root01.json",
+      "bytes": 906270,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "audit/joint_heading_coverage_semantics_v23_root01.json",
+      "bytes": 142965,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "audit/joint_initial_coverage_semantics_v24_root01.json",
+      "bytes": 196429,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "audit/review_joint_heading_coverage_v23_pilot_01.json",
+      "bytes": 139189,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "audit/review_joint_route_transfer_initial_v22_actual_01.json",
+      "bytes": 106681,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "audit/joint_initial_coverage_static_v24_root01.json",
+      "bytes": 27830,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "audit/joint_initial_coverage_static_v24_root02.json",
+      "bytes": 27830,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "docs/joint_route_initial_v24/preparation_plan.DRAFT.json",
+      "bytes": 33035,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "docs/joint_route_transfer_v22/physical_plan.root01.ready.json",
+      "bytes": 32345,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "docs/protocol.md",
+      "bytes": 31554,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl/policy.py",
+      "bytes": 7655,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl/protocol.py",
+      "bytes": 5162,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl/reward.py",
+      "bytes": 1311,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl/rollout.py",
+      "bytes": 9002,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_corner_v8/env.py",
+      "bytes": 5610,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_corner_v8/reward.py",
+      "bytes": 12046,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_joint/env_v3.py",
+      "bytes": 6313,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_joint/native_rate_fit_v3.json",
+      "bytes": 61579,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_joint/native_rate_model_v3.py",
+      "bytes": 3341,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_metric_cost_v16/env.py",
+      "bytes": 3340,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_metric_cost_v16/reward.py",
+      "bytes": 5719,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_path_v7/env.py",
+      "bytes": 2562,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_path_v7/policy.py",
+      "bytes": 8592,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_basis_v14/policy.py",
+      "bytes": 8709,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_basis_v15/env.py",
+      "bytes": 3393,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_heading_v23/env.py",
+      "bytes": 6532,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_heading_v23/eval.py",
+      "bytes": 5067,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_initial_v24/env.py",
+      "bytes": 8719,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_memory_train_v21/env.py",
+      "bytes": 2019,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_memory_train_v21/eval.py",
+      "bytes": 11894,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_memory_train_v21/policy.py",
+      "bytes": 4367,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_memory_train_v21p1/eval.py",
+      "bytes": 11953,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_memory_v20/__init__.py",
+      "bytes": 81,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_memory_v20/eval.py",
+      "bytes": 9009,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_memory_v20/policy.py",
+      "bytes": 7144,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_transfer_v22/__init__.py",
+      "bytes": 81,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_transfer_v22/env.py",
+      "bytes": 5510,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "quadrl_route_transfer_v22/initial.py",
+      "bytes": 1251,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/__init__.py",
+      "bytes": 78,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/audit_demonstrations.py",
+      "bytes": 3303,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/check_direct_teacher.py",
+      "bytes": 748,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/collect_demonstrations.py",
+      "bytes": 7754,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/collect_direct_demonstrations.py",
+      "bytes": 2238,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/collect_mixed_demonstrations.py",
+      "bytes": 4632,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/direct_physics.py",
+      "bytes": 30854,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/direct_teacher.py",
+      "bytes": 2578,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/dob.py",
+      "bytes": 8855,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/evaluate_reference.py",
+      "bytes": 5083,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/summarize_development.py",
+      "bytes": 3061,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/test_collector.py",
+      "bytes": 2460,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/test_dob.py",
+      "bytes": 4416,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/test_mixed_collection.py",
+      "bytes": 1736,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "reference/tune_gains.py",
+      "bytes": 11543,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/bc_trust_region_probe_v1.py",
+      "bytes": 20040,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/joint_research_preflight_v1.py",
+      "bytes": 8894,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/probe_joint_corner_reward_v8.py",
+      "bytes": 40068,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/probe_joint_reward_scale_v1.py",
+      "bytes": 10707,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/prototype_joint_route_basis_v14.py",
+      "bytes": 24518,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/prototype_joint_route_memory_v20.py",
+      "bytes": 7244,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/refine_precision.py",
+      "bytes": 10091,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_actor_capacity_pair_v17.py",
+      "bytes": 9521,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_corner_pair_v8.py",
+      "bytes": 14489,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_critic_calibration_pair_v18.py",
+      "bytes": 11830,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_heading_coverage_v23.py",
+      "bytes": 6576,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_memory_transfer_initial_v22.py",
+      "bytes": 19259,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_metric_cost_pair_v16.py",
+      "bytes": 9202,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_route_basis_pair_v15.py",
+      "bytes": 17102,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_route_memory_baseline_v20.py",
+      "bytes": 9512,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_route_memory_pair_v21.py",
+      "bytes": 9598,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/run_joint_route_memory_pair_v21p1.py",
+      "bytes": 9600,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train.py",
+      "bytes": 14377,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_actor_capacity_v17.py",
+      "bytes": 26524,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_corner_v8.py",
+      "bytes": 77686,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_critic_calibration_v18.py",
+      "bytes": 26742,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_geometry_v2.py",
+      "bytes": 39619,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_heading_coverage_v23.py",
+      "bytes": 29758,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_initial_coverage_v24.py",
+      "bytes": 28768,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_metric_cost_v16.py",
+      "bytes": 19849,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_nativeplant_v4.py",
+      "bytes": 48022,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_route_basis_v15.py",
+      "bytes": 47093,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_route_memory_v21.py",
+      "bytes": 29031,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_route_memory_v21p1.py",
+      "bytes": 37713,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_joint_tailwind_v5.py",
+      "bytes": 64312,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "scripts/train_wind_specialist_v1.py",
+      "bytes": 11377,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "sim/metrics.py",
+      "bytes": 5403,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    },
+    {
+      "path": "sim_joint/run_experiment_v4.py",
+      "bytes": 48765,
+      "reason": "Beyond prospective static inventory bound; no bulk raw copy"
+    }
+  ],
+  "unresolved_SHA_dependency_cycle": {},
+  "dependency_order": [
+    "artifacts/gazebo/native_pid_tuning_v1/frozen_native_pid.json",
+    "artifacts/gazebo_direct/main_direct_test_v2/campaign_summary.json",
+    "artifacts/provenance/main_direct_v2/state.json",
+    "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/complete.json",
+    "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz",
+    "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/checkpoint_131072.zip",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_zero_route_integral_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_zero_route_integral_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/yaw_only_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/yaw_only_zero_route_integral_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/yaw_only_zero_route_integral_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_zero_route_integral_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_zero_route_integral_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/yaw_only_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/yaw_only_zero_route_integral_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/yaw_only_zero_route_integral_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_zero_route_integral_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_zero_route_integral_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/yaw_only_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/yaw_only_zero_route_integral_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/yaw_only_zero_route_integral_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84004/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84004/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84002/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84002/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84003/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84003/trace.csv",
+    "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/actual_first_ppo_rollout.npz",
+    "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/actual_gradient_norms.jsonl",
+    "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/ppo_trace.npz",
+    "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/warm_trace.npz",
+    "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/actual_first_ppo_rollout.npz",
+    "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/actual_gradient_norms.jsonl",
+    "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/ppo_trace.npz",
+    "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/warm_trace.npz",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/trace.csv",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/actor_io.npz",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/trace.csv",
+    "audit/joint_native_rate_physics_replay_v3.py",
+    "audit/joint_nativeplant_peak_seed84001_v4.py",
+    "audit/joint_nonlinear_rate_diagnosis_v2.py",
+    "audit/turns_corners.py",
+    "audit/verify_joint_metrics_v2.py",
+    "docs/joint_route_initial_v24/README.md",
+    "quadrl/__init__.py",
+    "quadrl/baseline.py",
+    "quadrl/env.py",
+    "quadrl/pid_config.json",
+    "quadrl/plant_config.json",
+    "quadrl_corner_v8/__init__.py",
+    "quadrl_joint/__init__.py",
+    "quadrl_metric_cost_v16/__init__.py",
+    "quadrl_path_v7/__init__.py",
+    "quadrl_route_basis_v14/__init__.py",
+    "quadrl_route_basis_v15/__init__.py",
+    "quadrl_route_heading_v23/__init__.py",
+    "quadrl_route_initial_v24/__init__.py",
+    "quadrl_route_memory_train_v21/__init__.py",
+    "quadrl_route_memory_train_v21p1/__init__.py",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_131072.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_131072.zip",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_262144.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_262144.zip",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/final.npz",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/final.zip",
+    "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/critic_warmed_model.zip",
+    "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/probe_model.zip",
+    "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/critic_warmed_model.zip",
+    "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/probe_model.zip",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_131072.npz",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_131072.zip",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_262144.npz",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_262144.zip",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/final.npz",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/final.zip",
+    "audit/joint_nonlinear_rate_diagnosis_v2.json",
+    "audit/verify_joint_metrics_v2_1.json",
+    "docs/joint_applicability_contract_v2.json",
+    "artifacts/refinement/joint_v2/conditioned_initializer_v1/lineage_receipt.json",
+    "artifacts/refinement/joint_v2/corner_reward_probe_v8/20261113T200517512Z_K40/20261113T200751508730Z/report.json",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/profiles.json",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/profiles.json",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/profiles.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/summary.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/summary.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/summary.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/summary.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/summary.json",
+    "audit/joint_native_rate_physics_replay_v3.json",
+    "audit/joint_path_context_prototype_v7.json",
+    "audit/joint_reward_scale_diagnosis_v1.json",
+    "artifacts/refinement/joint_v2/corner_reward_probe_v8/20261113T200517512Z_K40/20261113T200751508730Z/final_diagnostic_summary.json",
+    "artifacts/refinement/joint_v2/path_v7_baseline111/path/baseline.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/intervention_summary.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/intervention_summary.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/intervention_summary.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/intervention_summary.json",
+    "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/intervention_summary.json",
+    "audit/joint_nativeplant_peak_seed84001_v4.json",
+    "artifacts/refinement/joint_v2/route_basis_v15_baseline111/velocity_residual/baseline.json",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/evaluation.json",
+    "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/evaluation.json",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_131072_validation.json",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_262144_validation.json",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/final_validation.json",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/selection.json",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_131072_validation.json",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_262144_validation.json",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/complete.json",
+    "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/final_validation.json",
+    "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/complete.json",
+    "audit/review_joint_heading_coverage_v23_semantics_01.json",
+    "docs/joint_route_initial_plans_v24/control_reuse_manifest.json",
+    "docs/joint_route_initial_plans_v24/zero_route_integral.plan.json",
+    "docs/joint_route_initial_v24/preparation_freeze.json"
+  ],
+  "inputs": [
+    {
+      "path": "artifacts/gazebo/native_pid_tuning_v1/frozen_native_pid.json",
+      "bytes": 1085,
+      "original_sha256": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd"
+    },
+    {
+      "path": "artifacts/gazebo_direct/main_direct_test_v2/campaign_summary.json",
+      "bytes": 36733,
+      "original_sha256": "cc16c05bbc5ffdf0ba5e23ca09e739fbcf8464f68993cd46b5bc038b2ef8bcab"
+    },
+    {
+      "path": "artifacts/provenance/main_direct_v2/state.json",
+      "bytes": 321,
+      "original_sha256": "5c7aaff825ef12ddb9eab7cc1c80076c8cf2abd1fe311eb73dd3ffca2ad17367"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/conditioned_initializer_v1/lineage_receipt.json",
+      "bytes": 9106,
+      "original_sha256": "7f37af5ca00775374ab992ba4ce768719aa5e1940b0353c293ee8e4cbda4e04e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/corner_reward_probe_v8/20261113T200517512Z_K40/20261113T200751508730Z/final_diagnostic_summary.json",
+      "bytes": 15955,
+      "original_sha256": "909d52e38dd8cb889802fdb743f9e8f6acb28f62eb417d18906fde93f018758d"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/corner_reward_probe_v8/20261113T200517512Z_K40/20261113T200751508730Z/report.json",
+      "bytes": 655586,
+      "original_sha256": "26077dd3bbd7849ee9846a1397780bdf3f6b9e4c444263e6b4f119a8b5106925"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/gazebo_thrust_ablation_recovery/complete.json",
+      "bytes": 69384,
+      "original_sha256": "8321d9d415cb1d0505a50f8a6104e3bade2292bd2a5b73574c96b5b98f8c3b4b"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz",
+      "bytes": 114864,
+      "original_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/checkpoint_131072.zip",
+      "bytes": 557974,
+      "original_sha256": "0df1b6cd2811f5196395e8b707a3eee0387c8b0050375479a912511df779bf40"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/path_v7_baseline111/path/baseline.json",
+      "bytes": 211484,
+      "original_sha256": "7a92ac77774e637471b7f36783e38fd12da63715aee18ce5ca3c41d082e9d999"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_basis_v15_baseline111/velocity_residual/baseline.json",
+      "bytes": 219364,
+      "original_sha256": "c9a2a99a5a65305bba39e7a22f4a9ce19d344d74ae2d2b249d06e80fd7e9c2f6"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_131072.npz",
+      "bytes": 119357,
+      "original_sha256": "d538eebdeeadcbfc7a51e998299b8dc4f4a6359d594360378fe04d9b185ebf71"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_131072.zip",
+      "bytes": 699026,
+      "original_sha256": "afaf421b8556ff7b66158c34fdf776017be3a227dd8735cd64aff8b22c3e39e5"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_131072_validation.json",
+      "bytes": 310117,
+      "original_sha256": "0a733d40274a7923b1845cea91ebe1b8e26a9f3003b29cfaf4e927b64d37027e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_262144.npz",
+      "bytes": 119357,
+      "original_sha256": "b9561acf3fbe9b0449b2dc04b65740651207403d9425fde0b53d082156ed9847"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_262144.zip",
+      "bytes": 699029,
+      "original_sha256": "e448f3f99d9d1e8893df73fb59066d9058b39aa0af011d72b64c08f71870d69a"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/checkpoint_262144_validation.json",
+      "bytes": 310470,
+      "original_sha256": "e69bd9396308d5969d94b869c3f8e786e99b8f7f533e65a1f1b08687b472b4aa"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/complete.json",
+      "bytes": 33791,
+      "original_sha256": "71b83c122b54471ba25f88a3b622ea282f48f934caf6d07c0aaf67a981e9043f"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/final.npz",
+      "bytes": 119357,
+      "original_sha256": "c9f861bb9fbd141f7a78fbb0aa72e16dfe20efa6304463010acd153812c45337"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/final.zip",
+      "bytes": 699025,
+      "original_sha256": "161eaba711dd5f7bd9a53dd32b46fd22ffbd3992bcd140398d8d2c4bf775e602"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/final_validation.json",
+      "bytes": 309455,
+      "original_sha256": "a590085d3802bcd093ec4b3e2a6510b449a9632ee82bcf07f0e93593271078be"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1499545,
+      "original_sha256": "dd39008d43540b32d224f368c42dcefe8a3d1759a5774ae9ddee30ec06a19d0c"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 799889,
+      "original_sha256": "c4c942e70b2e9b75155901de9834af9e6e930605b38479577b0141bd2d1fa5ed"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1496650,
+      "original_sha256": "7d6964269620b9d1fe967aeb7cf6ea86c63b8d4fcb38226b1bb9f77685031e30"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 800340,
+      "original_sha256": "6570a4c84bf9cb8104c36d1a825cd160487a001be95f03b10692eaf2141d6040"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_zero_route_integral_nominal_84001/actor_io.npz",
+      "bytes": 1411252,
+      "original_sha256": "12ae6a267fc05b45eae9ac33f5408494ead4c483ab9743ccd735f9fdd515fb94"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/full_initial_zero_route_integral_nominal_84001/trace.csv",
+      "bytes": 779453,
+      "original_sha256": "c7ff8bb18fa7399e44e720353d4022297ba7b66989fcb4859373d19c6e70a2df"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/profiles.json",
+      "bytes": 67289,
+      "original_sha256": "13ccc6558e66737b78592f246cf898c0c3ae7afe71c7aea3c697c06ee0cc81ba"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1472848,
+      "original_sha256": "adf085ce55ad30df301ca1e596f60a11d67ace470ee573ceecee6bef6cd4b00e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/yaw_only_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 800101,
+      "original_sha256": "0b52e52748a617b114d5cdee7129d03e99ebac8b3675c83f7c6c8af2f27d8d1e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/yaw_only_zero_route_integral_nominal_84001/actor_io.npz",
+      "bytes": 1420867,
+      "original_sha256": "59ec32e4209ef55871a23cc3a51c3c2391a876e329bc7324f5f87f1cc27f2487"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_131072/yaw_only_zero_route_integral_nominal_84001/trace.csv",
+      "bytes": 777760,
+      "original_sha256": "b4cbe4d6be112c7527e30223a9a42b41930f8efcfc0a6f1efc0b8b97b72ef5cb"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1489393,
+      "original_sha256": "5b8359fd36cfc537fa95a741d21c05aeebb3fa85bebd2959dcca0d82ec371e74"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 800892,
+      "original_sha256": "c5a0ec89eaf7b96764462ee47e5332a63eb2aba075fd28d2ce6255a38f8086ee"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1486919,
+      "original_sha256": "c21946f5862c1e83e0157a70d79e6f16423c7f1ea8fdf495daf1902c31793bca"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 800365,
+      "original_sha256": "5aca979f34d491f703e01ca34d0e7c755e1a92500d222581375c40a92424f901"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_zero_route_integral_nominal_84001/actor_io.npz",
+      "bytes": 1398123,
+      "original_sha256": "8b56f0fb2744cb6917cbe2232dcab55f4a1335834763b1e74985f4a33a2adc67"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/full_initial_zero_route_integral_nominal_84001/trace.csv",
+      "bytes": 781638,
+      "original_sha256": "23738cf5443bffdd372c61a6d7dc7ab502f70b08669f840e9b2310f95c6855e1"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/profiles.json",
+      "bytes": 67407,
+      "original_sha256": "31908b1476fee74a8d1bf568f14498b2a36b8f80bbc8c8f7e43cd51108e1b3ba"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1455359,
+      "original_sha256": "36717ebaaa696885189d286bb830963818cf642e00102538931a521796e15169"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/yaw_only_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 799218,
+      "original_sha256": "907b46a416e141a8d8c12f9d6d332a7df3d1835d5596550384fcf16613d89439"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/yaw_only_zero_route_integral_nominal_84001/actor_io.npz",
+      "bytes": 1408171,
+      "original_sha256": "5a8c219167371741dc897dc40bb447b383b51c89a94d3b7e5575c7ba24f8545c"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/checkpoint_262144/yaw_only_zero_route_integral_nominal_84001/trace.csv",
+      "bytes": 780441,
+      "original_sha256": "287933bc00f670a93a80bc9329633c415aa293400593ef1ca75d990c95d00137"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1492390,
+      "original_sha256": "f30c4a08d85a237d1e1c29f4be87e5b9d62a94f8813929bc3575eb1e0d82d182"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 801863,
+      "original_sha256": "53ecea0380cc014914a1dec15899d58780a212a07ffe6125600bfb1504350f56"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1457800,
+      "original_sha256": "4fd27e2c0d82f9abfddfdcb3ff54c3bd64423670f877b6309cc8dd07ada08b11"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 801837,
+      "original_sha256": "eaa0cd17b9d5cf3be2321c02d5fc8352ae0c202efbdc1275baafef9040218135"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_zero_route_integral_nominal_84001/actor_io.npz",
+      "bytes": 1403815,
+      "original_sha256": "0792a1173b521739c53d5e87972b1d7313ab3c5a51775e2b79b32b8e37c85cf4"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/full_initial_zero_route_integral_nominal_84001/trace.csv",
+      "bytes": 782543,
+      "original_sha256": "4c2d896b04b77c73d854528e534674f2cef5f92882de494f0d3bce288250bf9e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/profiles.json",
+      "bytes": 67199,
+      "original_sha256": "88dd4d62eeaf6a8eb7bf6439927d956373517520fdc7aa1f89cd2d9151ef330f"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1459782,
+      "original_sha256": "13b592e9b99de6061c00d229df92881ff541f57e4f935899ce1f8d5a7f547655"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/yaw_only_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 802037,
+      "original_sha256": "b7ef09bfab97f09c04b3c67bbf2918c51a678199977a248e4c560b67cabaec97"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/yaw_only_zero_route_integral_nominal_84001/actor_io.npz",
+      "bytes": 1413135,
+      "original_sha256": "9b145147ca4898a2e1d63a9001ae19fdbe7e293aba0a82fa3b12b3ea2c986f3e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/matched_profiles/final/yaw_only_zero_route_integral_nominal_84001/trace.csv",
+      "bytes": 783144,
+      "original_sha256": "c29b1d19d67c72828449d9d74bcb0ef6eddc54d611bd4af04259c3486551d903"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/selection.json",
+      "bytes": 90461,
+      "original_sha256": "60b7ea3fffa29a1a38a069c4014cea97fb8ba8fa06eb7e47ad11500aea348841"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84001/actor_io.npz",
+      "bytes": 1067944,
+      "original_sha256": "443c1f100daec0e605a882836eb92159fb004d0e9f9590d75ecbc94481e82a79"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84001/trace.csv",
+      "bytes": 613550,
+      "original_sha256": "cd0c10c2c60bcaeb7a592668e2810a38ae49e3196c6faf266a892a14b5964ca7"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84002/actor_io.npz",
+      "bytes": 1046876,
+      "original_sha256": "d77e63a65cb2c2f8cd6cca983279147b63ad4a1fc38705534ce29ee787ee09d8"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84002/trace.csv",
+      "bytes": 611389,
+      "original_sha256": "b8a52b2a9ca7ccaad6004a31bc782f9e52724e96aaf12ec0a554ed7ef989ba0e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84003/actor_io.npz",
+      "bytes": 1061679,
+      "original_sha256": "00b86275a9ccdf7d29ae2d008ecad677c8dc70ff45e73e8ebc18cd77f998733f"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84003/trace.csv",
+      "bytes": 608745,
+      "original_sha256": "65b0ffdf41317a65c75c84052386de0fa3f3f97cd775de7a8c6160fedec49bdc"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84004/actor_io.npz",
+      "bytes": 1047411,
+      "original_sha256": "8773e16cb11a354b2d2d810f40cad56b15e0cdd5386f1e6e0137e3cf5171dd31"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_force_strong_84004/trace.csv",
+      "bytes": 612396,
+      "original_sha256": "d20c209480f682823f0850e4682d482681eeedcfa6a46629ccf932cb1d11865c"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84001/actor_io.npz",
+      "bytes": 1144339,
+      "original_sha256": "d5b8b08f2d856c584cd6ff7b542f16c6db03efb68289ed897424f9412e4b259e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84001/trace.csv",
+      "bytes": 599307,
+      "original_sha256": "881ccce9495d4f5f105ae73a5aeac46457eb32d849151d378dfb41bd004c2403"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84002/actor_io.npz",
+      "bytes": 1143658,
+      "original_sha256": "288707895abfc91d4049cc07d76709d69bd0144bb8e8d23ad88b5f4fb1aa8906"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84002/trace.csv",
+      "bytes": 596901,
+      "original_sha256": "c8b37a8f361104840a06bc08323cb9f796ee27a21114957310f54cc4e297a018"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84003/actor_io.npz",
+      "bytes": 1145721,
+      "original_sha256": "fcf274c9b602c06ee2a48bc242283566515e7302d7813ec3148ecabb80fd93fd"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84003/trace.csv",
+      "bytes": 596565,
+      "original_sha256": "a9ef7a4130e5e7baa58adfbde484a107870efddc47246c5b8b443677b216faae"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84004/actor_io.npz",
+      "bytes": 1134691,
+      "original_sha256": "2b5d66f0ebe0e95d665ec95e2470d061ce91ac5004ef2bcbd106c4076dca156e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_gust_84004/trace.csv",
+      "bytes": 598355,
+      "original_sha256": "1f5ccf7c18567d632944fe14f6bbaf23e51934a16b6d33b6a1cafb542417c897"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84001/actor_io.npz",
+      "bytes": 983447,
+      "original_sha256": "e7a346008fc561fb061c1db013f9e92f40c73cff5c695d28ed8e006f2cd6a8e6"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84001/trace.csv",
+      "bytes": 596902,
+      "original_sha256": "3ac6ade8f18e45f275ba483424059f2ed996afc62cf57d40c6feaf97b57e8d4c"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84002/actor_io.npz",
+      "bytes": 986914,
+      "original_sha256": "73185b7debdde4751911a8eb7a3d790b7a133cdb15fab01fac4bcfe1ee90a2e4"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84002/trace.csv",
+      "bytes": 595716,
+      "original_sha256": "e17f46072ec5ac077e1348655d52e1ebb20da757ce56873dcdc561d5c7973155"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84003/actor_io.npz",
+      "bytes": 984334,
+      "original_sha256": "0dfbb4e59f595080d86d5d18b6958cbcd43f3a801b7f7c388b259f907e4c9b7b"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84003/trace.csv",
+      "bytes": 595071,
+      "original_sha256": "c0c09bae89d6a8bb8d63bae754c2f28e44e3eebaa275a9961f8a821c14151f50"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84004/actor_io.npz",
+      "bytes": 984792,
+      "original_sha256": "251f9dcd825a20d7bc000c6da577b479ce94a449d0acf674dbc01e2b650306a2"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/hover_nominal_84004/trace.csv",
+      "bytes": 594681,
+      "original_sha256": "74285499b4a6fa4f6b57d906f20571bef75f4e60139a090874f2a052aa1b1d52"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84001/actor_io.npz",
+      "bytes": 1474572,
+      "original_sha256": "dce3fb832b917d37ee014899a90c99265841fc0b435141269735c46bad03a1ad"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84001/trace.csv",
+      "bytes": 806453,
+      "original_sha256": "66038c4b10d680892fb4c118894dcd2b258021eb0c0c3f0fd079e57f92161e7c"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84002/actor_io.npz",
+      "bytes": 1483796,
+      "original_sha256": "1bf9675fd3f07f3d56411082c06c3a14dbe7ae4d235e83dd6a3eed7c5fe034bf"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84002/trace.csv",
+      "bytes": 800525,
+      "original_sha256": "1799a760d8c6bb79b611644c4e4fd5341235f5473bcfc4994fb3e208bc5e4e16"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84003/actor_io.npz",
+      "bytes": 1477051,
+      "original_sha256": "5d3e61ef324095a1c55703a66e9dbcaf78e8ae07cd7ec91b6f1b54e7d63b6aa2"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84003/trace.csv",
+      "bytes": 801174,
+      "original_sha256": "7b0858389bb5ee2ae45c9e26340fac7cb48064f8171e926ac81f9631a8735f85"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84004/actor_io.npz",
+      "bytes": 1499210,
+      "original_sha256": "7ca8ccabdc788b276bb846ec5b234cf459aec2a8214ccad3ebbd267c1f566f6b"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_force_strong_84004/trace.csv",
+      "bytes": 802068,
+      "original_sha256": "b794a8ddd432d2992bebe666b179d9e75ccf4267ffb066f3454e07f49d89ad9d"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84001/actor_io.npz",
+      "bytes": 1557798,
+      "original_sha256": "153e47989cfcaf6cc946586ebf74205a5b38016009a61502895503184823ffc4"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84001/trace.csv",
+      "bytes": 791608,
+      "original_sha256": "7db3f7d9d78f190a87f077b9bd22eb0f775fb02483e5e3eb0f9704d1012eadf8"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84002/actor_io.npz",
+      "bytes": 1567764,
+      "original_sha256": "3a49832805d3e58d0f9be6ec98bc31b0b2413c396f96162b3541c55777f5ca1a"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84002/trace.csv",
+      "bytes": 786978,
+      "original_sha256": "2e1f8d61c31fcaa33b132e09d74a8edf5cf596496b6b294fb03ad960b3b74694"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84003/actor_io.npz",
+      "bytes": 1564873,
+      "original_sha256": "0a2091e7ca1e1715ef35179a15532b25fd4b2d5e3e8c704154972b14ca3145fb"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84003/trace.csv",
+      "bytes": 789014,
+      "original_sha256": "fc9ed4cfbee27a5f35b4b00f85c89128daf1c5a194a0ee129e4dac6bedd2394a"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84004/actor_io.npz",
+      "bytes": 1562070,
+      "original_sha256": "9645ee2874f3b29d0535e85f8fd84d5e0cc95be3d67b4f4a71672b678209adcd"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_gust_84004/trace.csv",
+      "bytes": 788559,
+      "original_sha256": "667bb043cc1d8695355a941c7f046269ae002d9fc9c3ef79e50bbed0d1ab9494"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84001/actor_io.npz",
+      "bytes": 1402370,
+      "original_sha256": "7c4c42a4dd10d90118daf4c25db11f10592828df73c69c846b2944a4c04b528c"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84001/trace.csv",
+      "bytes": 786633,
+      "original_sha256": "e8a5ecfa0af63995787e3626bec9b8fe6e6d4d14e60b5e9adeabda0135fd227d"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84002/actor_io.npz",
+      "bytes": 1405562,
+      "original_sha256": "947fe54aad911c4f8c9f29d8b5139b7a7c19c0cccb7935e2d8392e50ffd87085"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84002/trace.csv",
+      "bytes": 779806,
+      "original_sha256": "845faa494e4592c77f600a8fddfec1787db51f4daf1ccc22b4b53b8dc3ba6e0d"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84003/actor_io.npz",
+      "bytes": 1413078,
+      "original_sha256": "6b6c5495ab0c0eb726deef360def4c75fb654172da67691ee117cdf6b7d95f06"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84003/trace.csv",
+      "bytes": 781864,
+      "original_sha256": "1503436431c244bf9ffbeaf83271ddcb21a345804f1453be8c83589bf6f04b14"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84004/actor_io.npz",
+      "bytes": 1418878,
+      "original_sha256": "9deaaa50737b41b9c3ef3ed6646bb4dae40b0c2230a485e1226235ad3227085c"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_131072/route_nominal_84004/trace.csv",
+      "bytes": 780031,
+      "original_sha256": "fc94af11c6b3a550c178abd4da2333038edc6a9fb628985266451746c374a3a1"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84001/actor_io.npz",
+      "bytes": 1075039,
+      "original_sha256": "7c5faabd3b863a97b0c54b287a5fbe229b0bfc6502d2ab3a317cfdc6d0fa94eb"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84001/trace.csv",
+      "bytes": 613646,
+      "original_sha256": "6d121c9da6bae71bdb09b7c4e1dd8c939b9168f60d554178f6b81fb752a012fa"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84002/actor_io.npz",
+      "bytes": 1043871,
+      "original_sha256": "1e722e377a27c6ab1e51a40c243ec6a5cc54b2f58d025f6238ef9ea996dc3981"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84002/trace.csv",
+      "bytes": 611064,
+      "original_sha256": "0329ce4d36450a5339f73c1803f2848a13a3528bf89e532978f77dafb28cb5e1"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84003/actor_io.npz",
+      "bytes": 1059170,
+      "original_sha256": "d8775b56a3e39a262f53ab2d05c97e53eb996b3423fecef279bd491727591fbd"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84003/trace.csv",
+      "bytes": 610532,
+      "original_sha256": "b817ff8897f3a9e5140cf2ce6d55ddd987f7f8a1575b57bf05e1d8c0bdb04ff2"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84004/actor_io.npz",
+      "bytes": 1034162,
+      "original_sha256": "035ab9bf2611b76751efbe581d673306571866354b20985dfe5cd4736cc616c1"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_force_strong_84004/trace.csv",
+      "bytes": 613001,
+      "original_sha256": "04482254905dc6e62d25741929d82b3011963c2410fdbd8f6e821effbb67ee7b"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84001/actor_io.npz",
+      "bytes": 1144353,
+      "original_sha256": "3a18fd338ea8b8766182d328f0675cb5dd3afcd2e9502edde11835893fd2a372"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84001/trace.csv",
+      "bytes": 599210,
+      "original_sha256": "046b0d2e47ab92bc2aeb4dbf6e9819ceb02607605f5b0fbda52f508d185c8712"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84002/actor_io.npz",
+      "bytes": 1142495,
+      "original_sha256": "22358e8faa94f1be15db889305364baa63a61d45553e38f7610e75b2a3e842bf"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84002/trace.csv",
+      "bytes": 597658,
+      "original_sha256": "4fc81f6dc58ec5af89ae23472d7db5bfc94c5c4edb415d666bf3f17d4889df37"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84003/actor_io.npz",
+      "bytes": 1145323,
+      "original_sha256": "50b7d235a9e0cc782209bd1ddd7c4032eedee9cb9bea1637af50c0b8e9f1565f"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84003/trace.csv",
+      "bytes": 597408,
+      "original_sha256": "0c34d44ada7dd0f33124d7ef53c4476fab6936e56315f73963cc7d8c17c34181"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84004/actor_io.npz",
+      "bytes": 1132839,
+      "original_sha256": "a835cf386d2878b72497791f9a98d785f8be3ab18313bf8c36f220d5a991953b"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_gust_84004/trace.csv",
+      "bytes": 599014,
+      "original_sha256": "3ea2c9d8a91d45db2ade2eede507a3c4471eb61fe08833760228d05dfd8168b6"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84001/actor_io.npz",
+      "bytes": 994595,
+      "original_sha256": "4915e169e21149a0a935db3d5922a177d06c5dc41ca0e8859c2447ea833e77c1"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84001/trace.csv",
+      "bytes": 596278,
+      "original_sha256": "0b8145ca98df6e4625b0b6274f120d1b81a920f6d4251397c1e61115cd65d61d"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84002/actor_io.npz",
+      "bytes": 1000283,
+      "original_sha256": "8782b1afde6f8ceebb422982a08573a186f997f0e2b46c386cf0b9288c7e2933"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84002/trace.csv",
+      "bytes": 596912,
+      "original_sha256": "96882220d7384913bc2c2b5df8045828d892e32b50eed7a0ee7ca13f817aeddf"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84003/actor_io.npz",
+      "bytes": 998942,
+      "original_sha256": "aad7950fb6b1bbc8b01dc7eb6fa71071f32a251ddf214765f381ed7aae7f4a20"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84003/trace.csv",
+      "bytes": 595517,
+      "original_sha256": "3ed820f48c135a2be1aaec09f2875026284abd1f8627acfd01865bbf7a562f55"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84004/actor_io.npz",
+      "bytes": 989354,
+      "original_sha256": "5dc3627bc6cd59346a1b140b41ee8018867eb0ca49b818b80cfb03db24611227"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/hover_nominal_84004/trace.csv",
+      "bytes": 595855,
+      "original_sha256": "aadde02d3c7042a16cfd65a4cbcef5cf622628e01d0e5d7caf146532403324c6"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84001/actor_io.npz",
+      "bytes": 1468448,
+      "original_sha256": "8fad239a7871ad6521a4579aa3d506be3b6bbfbb226549803be10d2317c5722b"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84001/trace.csv",
+      "bytes": 805482,
+      "original_sha256": "7d66a8066dac87f632f710cdf1e00e7d8e954bf39771918b612a75b0f2e5081a"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84002/actor_io.npz",
+      "bytes": 1461425,
+      "original_sha256": "23685a2298052d673058b9009093590090c9f47de2331584df03481c6e64cc51"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84002/trace.csv",
+      "bytes": 799805,
+      "original_sha256": "39bd8257c1ee143fca507d336b4e8f5823989723698fa02935ef676cf4080757"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84003/actor_io.npz",
+      "bytes": 1462925,
+      "original_sha256": "64653fc0d5bff2345a566fa6cf368916ee48aa8dc3aad2e87165c33acf7e386e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_pilot_v23_111/zero_route_integral/validation/checkpoint_262144/route_force_strong_84003/trace.csv",
+      "bytes": 800055,
+      "original_sha256": "8284bbbde61caeeaf28d42cd18bec02fef214402040a1e832f747219befdfd28"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/actual_first_ppo_rollout.npz",
+      "bytes": 117145,
+      "original_sha256": "7eb05eb829ba3cc0d204b4a4ea785861bdd0d229bdb40ab9de9597867448eca4"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/actual_gradient_norms.jsonl",
+      "bytes": 5607,
+      "original_sha256": "4eb380018b20f223dbd911ac28e0b49d4ca79f375fe49b88dfa668d149704dfc"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/critic_warmed_model.zip",
+      "bytes": 462185,
+      "original_sha256": "bdcbee808a280526f0c3d6fe9f4e8f61b293783e0b824ba7815d324a76f5162e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/ppo_trace.npz",
+      "bytes": 145714,
+      "original_sha256": "23c963f9844ad8b9d5ec90da0316b14ce2ddf5636001f1dccbcae33d92426160"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/probe_model.zip",
+      "bytes": 685744,
+      "original_sha256": "c7a79637d7c2040459d3ebf1a1accf6a1aed529da6ec909c186a8ab2c2c7bf55"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_heading_semantic_v23_root01/heading_probe/warm_trace.npz",
+      "bytes": 145104,
+      "original_sha256": "45035d5dd25709b585812e0226ae7e2ca55b05c3d96aaaa6117d8a7d66533e57"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/raw/evaluation.json",
+      "bytes": 226602,
+      "original_sha256": "1c503e3c0f75be090fe36f439c9061bddeeedf12f1ee70fa6136500c52e5719d"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/evaluation.json",
+      "bytes": 227437,
+      "original_sha256": "f0f6930a58d690f1c474c4ff954575c0af84e9e9c7f7d5cb66a266b0b82cbb9e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/actual_first_ppo_rollout.npz",
+      "bytes": 116145,
+      "original_sha256": "8b94a6872775c6cd79b43e43bcbae27a2af35c51c70fcaeb5927a0b382b3427f"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/actual_gradient_norms.jsonl",
+      "bytes": 5623,
+      "original_sha256": "cedb93c72415c32cdd98caee44bb718ba5e18fc84434da91258a2a6d99f1c975"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/critic_warmed_model.zip",
+      "bytes": 462196,
+      "original_sha256": "16f4be25dec703cb8f16fc901f3167e2359c84afa255c504eb95ebad03d24c78"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/ppo_trace.npz",
+      "bytes": 144917,
+      "original_sha256": "65b804dc1fedb5c0cd09fad532783ccb6212766c80ba38ffc4e8d219410f6e7a"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/probe_model.zip",
+      "bytes": 685755,
+      "original_sha256": "6d4a157078896a749f2518410f615c33b92c2ce6004b26efc2d5249b166000c8"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21_semantic/root01/zero_route_integral/warm_trace.npz",
+      "bytes": 145044,
+      "original_sha256": "77119bc426db717622a7fe3b62efb28dd5e666177e1a257fe0b2601b967b5914"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_131072.npz",
+      "bytes": 119357,
+      "original_sha256": "e4489281f791a75df55c57c74260b2292fb2df45675717c65c4ec061900cedf2"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_131072.zip",
+      "bytes": 699027,
+      "original_sha256": "37ce3fcbcbc8745a4dc73e1334afe13f519cd1dc88aa41d6cbdfd88be502ca3a"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_131072_validation.json",
+      "bytes": 236468,
+      "original_sha256": "6658e0e7396d1f4fca90f50a1159e841235f64497e156039a27c8cc352eb23c2"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_262144.npz",
+      "bytes": 119357,
+      "original_sha256": "230b5e56ebe0486bb22ebe3ff626fed50557bb837f23f23c58c31b00edd3efc1"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_262144.zip",
+      "bytes": 699030,
+      "original_sha256": "987d6be644fa9aeb7415150e032c54ab7acb282ce1f86617522edd05845951c1"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/checkpoint_262144_validation.json",
+      "bytes": 236289,
+      "original_sha256": "7588b4bb081caa61d0c5a0ba6ce4361e6c12195762dff26e14e31f1f0e5ccbea"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/complete.json",
+      "bytes": 25534,
+      "original_sha256": "a471ff2dd94cfbcf6228c957fda9c966f2dbfcb4f983b0b35c0a793b3f046a07"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/final.npz",
+      "bytes": 119357,
+      "original_sha256": "a9dc66669f918fc454c8cb2867c2029d13b1360c99267e663d890d53eec0f27e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/final.zip",
+      "bytes": 699026,
+      "original_sha256": "940ed702b93086d2f528f67fc492fafe590f3484b1867ca7f32163267fea92d7"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_memory_train_v21p1_111/zero_route_integral/final_validation.json",
+      "bytes": 236095,
+      "original_sha256": "9f565838a995230932f45f05f167b368e6b4c7846800d9e08258f53511130e95"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1504745,
+      "original_sha256": "c95c13ee8caa1c3c4776dcb7ab16728d709d65a5e0a00d20daf1ac0cad436961"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/intervention_summary.json",
+      "bytes": 12199,
+      "original_sha256": "737084251849f1044e8d4259d57d271f5b950e0d5694382ecdf4169c618ab665"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/summary.json",
+      "bytes": 7326,
+      "original_sha256": "6eddcab0de4b49e8749db264821cd3fe9878d280a1007fa155f5dc3b7b2806b9"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_physical_pulse_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 803303,
+      "original_sha256": "a554434c803814f22ef7130836af16c388cdb55e3c71b0b70f4dc67f276646b9"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1503880,
+      "original_sha256": "2abd884f8fa76fe3c9e015427f1498e8719cbbf3ac8328c7a1c2183a37f7b102"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/intervention_summary.json",
+      "bytes": 12074,
+      "original_sha256": "d9c43c2c59986007803cd3e3fe035c735675027d4d88af5a5215f7aade4e4888"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/summary.json",
+      "bytes": 7277,
+      "original_sha256": "9fa18bd27310291e6676b42ad5fb4e4ab2737aec4cfb0fe93f1b985ddf987b1e"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 802750,
+      "original_sha256": "ace933388edcdf21c9ba2c06c928a78d9fdf9655cce0e51dcdd3043e50e8e1b4"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/actor_io.npz",
+      "bytes": 1400453,
+      "original_sha256": "521c8bc9b5be75550f0d1a3cf3512c8b41e89f4c7b12c0537ea93a5a56198aa0"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/intervention_summary.json",
+      "bytes": 11143,
+      "original_sha256": "667bf1c624687433cf89c365b57641797c84e68183b69e16e57449dafcee203d"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/summary.json",
+      "bytes": 6537,
+      "original_sha256": "c1d4a5062102d4491ec906f10c71880806eb3931034f8583b2db68acef7558e1"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/full_initial_zero_route_integral_nominal_84001/trace.csv",
+      "bytes": 782486,
+      "original_sha256": "396a3662907d729c80e3e40f3145a295aa137fc3b3d1bc0b593707319c6e4780"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/actor_io.npz",
+      "bytes": 1469194,
+      "original_sha256": "cb608a19bdfa6f62a8e651c8552340497e9a15b79d96e10fd97a7967fbc4e34a"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/intervention_summary.json",
+      "bytes": 12025,
+      "original_sha256": "555b0cccd146e415c4dc01c3b127fad0adadb68624eb23faf4b63863332d8468"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/summary.json",
+      "bytes": 7260,
+      "original_sha256": "fd1ecfa0b265a44ca621a4f22eddb7693d1333464baee71cf6a581a65ad95505"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_force_strong_84001/trace.csv",
+      "bytes": 803137,
+      "original_sha256": "887765ee5a3053ab21427314f501e64ce39c29591bfb0391c9b28535494ccb22"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/actor_io.npz",
+      "bytes": 1410772,
+      "original_sha256": "b23cf95c496453bf910e05ea924fced413fc4f391c1413cab5d499e6ae1e6e3b"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/intervention_summary.json",
+      "bytes": 11107,
+      "original_sha256": "eba5e7f27d45fb3b9858694cdb26cdd3c743eb1c68d2e9b15be37a5f56165a5c"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/summary.json",
+      "bytes": 6517,
+      "original_sha256": "e33be1f77090aa7d2b231d63cac8f180cd4735b625627a089e3f0cc5197c4a66"
+    },
+    {
+      "path": "artifacts/refinement/joint_v2/route_transfer_initial_v22_root01/yaw_only_zero_route_integral_nominal_84001/trace.csv",
+      "bytes": 782864,
+      "original_sha256": "d01ff3b7b4723d975a5614c1cb251f0cbf408f1ce691e7fa12ae9b3a3ef56cd6"
+    },
+    {
+      "path": "audit/joint_native_rate_physics_replay_v3.json",
+      "bytes": 43857,
+      "original_sha256": "bb239e855728582e28c39b60725e58292579c96a14b8f137b18d0ca105cad2c4"
+    },
+    {
+      "path": "audit/joint_native_rate_physics_replay_v3.py",
+      "bytes": 17582,
+      "original_sha256": "eae497a7ec5ad65b64016aad1fb55185244c9a3d0532a442e5e6e7ceccd223b8"
+    },
+    {
+      "path": "audit/joint_nativeplant_peak_seed84001_v4.json",
+      "bytes": 1865477,
+      "original_sha256": "238884ceb56e883c5d5099d06119e62dc00404339be06e7359483c08f44bc18b"
+    },
+    {
+      "path": "audit/joint_nativeplant_peak_seed84001_v4.py",
+      "bytes": 16057,
+      "original_sha256": "31333610269e07879d192564461c17881aa7ac6e8558aee16791217d6bc5dcb6"
+    },
+    {
+      "path": "audit/joint_nonlinear_rate_diagnosis_v2.json",
+      "bytes": 328877,
+      "original_sha256": "3840e58a8961dc29292a5d1c6c6ac7c539bc7610843e0dfc5d4719b58447c478"
+    },
+    {
+      "path": "audit/joint_nonlinear_rate_diagnosis_v2.py",
+      "bytes": 25047,
+      "original_sha256": "fbe2b7e2948d955e82b2ea53a5e770cb8142caf14a24d7fbeccc3e0817774936"
+    },
+    {
+      "path": "audit/joint_path_context_prototype_v7.json",
+      "bytes": 75079,
+      "original_sha256": "bcb471ceea945db1495070f54973ae972a387a75a33c2b1a9c789cf56055ba20"
+    },
+    {
+      "path": "audit/joint_reward_scale_diagnosis_v1.json",
+      "bytes": 63417,
+      "original_sha256": "0c2c4335e7292f1c6aaeae0daf0a37034a05ade23bb388ae176b73cc4d943501"
+    },
+    {
+      "path": "audit/review_joint_heading_coverage_v23_semantics_01.json",
+      "bytes": 50914,
+      "original_sha256": "dff6cc1f3d824d13837fb15e961cecdc94894de40b6f2321e7e04e36080f3433"
+    },
+    {
+      "path": "audit/turns_corners.py",
+      "bytes": 16996,
+      "original_sha256": "5df0454674f2f8f27f338518bea86e3eae9fd771cd4c5cfb7d12bdb7e2976c31"
+    },
+    {
+      "path": "audit/verify_joint_metrics_v2.py",
+      "bytes": 16334,
+      "original_sha256": "dd7a13fd7827904efa99208f3bad23314917f15c0f865bc298568af73aad70e7"
+    },
+    {
+      "path": "audit/verify_joint_metrics_v2_1.json",
+      "bytes": 54292,
+      "original_sha256": "3757ba4681f3fe107219aaa0835b5519ac8856a42b5d0c705e2e48cdbde117d6"
+    },
+    {
+      "path": "docs/joint_applicability_contract_v2.json",
+      "bytes": 10688,
+      "original_sha256": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652"
+    },
+    {
+      "path": "docs/joint_route_initial_plans_v24/control_reuse_manifest.json",
+      "bytes": 11825,
+      "original_sha256": "27b43b5ea6007a5581f55c15a3bef0eabcd0d162b4e5793cd37f6e3d81150dfe"
+    },
+    {
+      "path": "docs/joint_route_initial_plans_v24/zero_route_integral.plan.json",
+      "bytes": 127229,
+      "original_sha256": "7aa891c7b0819b6003e1144f1ad53b5e3d393a64a2909ab201ae48e8aae80063"
+    },
+    {
+      "path": "docs/joint_route_initial_v24/README.md",
+      "bytes": 5079,
+      "original_sha256": "c804f1980a615e88ff8207d8a84dd284b1dea71339da9d132dceabe1d8d93569"
+    },
+    {
+      "path": "docs/joint_route_initial_v24/preparation_freeze.json",
+      "bytes": 29706,
+      "original_sha256": "653e8ceebe838b7008b2bfcbe142d105411bad55fe6fc3bf867e316ee3c165e6"
+    },
+    {
+      "path": "quadrl/__init__.py",
+      "bytes": 74,
+      "original_sha256": "bf9e04e1c20183cec77f6c9fe28513b65d00896b33add08f18df672ae96e9090"
+    },
+    {
+      "path": "quadrl/baseline.py",
+      "bytes": 864,
+      "original_sha256": "ee796fc1027510cb6091855501f85bd3e6d67cab502903535c8ecc6aa1fd8389"
+    },
+    {
+      "path": "quadrl/env.py",
+      "bytes": 15327,
+      "original_sha256": "d583db69a3c1afb317baefdf530f35a9781c8aa8dc37faeca764a3e503e8bc59"
+    },
+    {
+      "path": "quadrl/pid_config.json",
+      "bytes": 370,
+      "original_sha256": "0264412f373b95c294a37705c64f2cc1ebde041c40b04a34b48ef311fe235055"
+    },
+    {
+      "path": "quadrl/plant_config.json",
+      "bytes": 996,
+      "original_sha256": "ce247239bb1dfc4dd9557487182febe02f725544902e2b05466e2837cbc2fd43"
+    },
+    {
+      "path": "quadrl_corner_v8/__init__.py",
+      "bytes": 80,
+      "original_sha256": "15487c30fe2478d5a35385ea810148c2d2a4b61a0173881135df040d51bd10a0"
+    },
+    {
+      "path": "quadrl_joint/__init__.py",
+      "bytes": 146,
+      "original_sha256": "852cd639ca0ff568c812feeff13086b4e6c6833b17b70bba7400e702b1bde614"
+    },
+    {
+      "path": "quadrl_metric_cost_v16/__init__.py",
+      "bytes": 80,
+      "original_sha256": "3f9aa720491ff159b6f275d08b5e14b46602f0ddc6aa3836d558114f65ddf5ef"
+    },
+    {
+      "path": "quadrl_path_v7/__init__.py",
+      "bytes": 459,
+      "original_sha256": "b22e00e0881e1e451cb15fcacd53c45b5bb2581ea31045977b90c0db785e1510"
+    },
+    {
+      "path": "quadrl_route_basis_v14/__init__.py",
+      "bytes": 79,
+      "original_sha256": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358"
+    },
+    {
+      "path": "quadrl_route_basis_v15/__init__.py",
+      "bytes": 81,
+      "original_sha256": "6d777a2ae18c1ebbec654c6a9ffea59214c739945518c9aada2870ebd5d4ea40"
+    },
+    {
+      "path": "quadrl_route_heading_v23/__init__.py",
+      "bytes": 78,
+      "original_sha256": "a68d239b3358a7450db0ec9d9e902ada4207794e5b783c49ec5eaa4eca1c2419"
+    },
+    {
+      "path": "quadrl_route_initial_v24/__init__.py",
+      "bytes": 77,
+      "original_sha256": "376026767549d3b6668224203af7415c7249abcdd472f8980a8695627f9d6f6f"
+    },
+    {
+      "path": "quadrl_route_memory_train_v21/__init__.py",
+      "bytes": 67,
+      "original_sha256": "88e665eecb1fd3a5bb23425c3d3e25d80dc25cbb029a46fd4cf0c84931d6585f"
+    },
+    {
+      "path": "quadrl_route_memory_train_v21p1/__init__.py",
+      "bytes": 88,
+      "original_sha256": "614b63f92b9ec433dc60663cb69562f05fca0eb20a940a1221e7eca816c09da2"
+    }
+  ],
+  "limitations": "Static import/path inventory is not runtime completeness or portability QA. No capsule/training claim.",
+  "new_environment_steps": 0,
+  "optimizer_steps": 0
+}

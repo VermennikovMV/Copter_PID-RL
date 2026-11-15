@@ -1,0 +1,23 @@
+{
+  "label": "position_1p5_velocity_4",
+  "parameters": {
+    "PSC_NE_POS_P": 1.5,
+    "PSC_NE_VEL_P": 4.0,
+    "PSC_NE_VEL_I": 2.0,
+    "PSC_NE_VEL_D": 0.5
+  },
+  "selected_using": "Only fixed development82001/82002 grid and prospectively definedobjective",
+  "screen_scores": {
+    "native_default": 0.43670055643781064,
+    "velocity_4": 0.37516869856228235,
+    "position_1p5_velocity_3": 0.37737202472531844,
+    "position_1p5_velocity_4": 0.36264554868458393
+  },
+  "final_scores": {
+    "position_1p5_velocity_4": 0.3623088916626549,
+    "velocity_4": 0.37403287935214374
+  },
+  "source_tuning_protocol": "public_source_root/artifacts/gazebo/native_pid_tuning_v1/tuning_protocol.json",
+  "infrastructure_repeat_decision": "public_source_root/artifacts/gazebo/native_pid_tuning_v1/retry_decision_001.json",
+  "frozen_utc": "2026-11-11T16:30:36.467130+00:00"
+}

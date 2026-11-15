@@ -1,0 +1,17 @@
+{
+  "status": "PASS_FINAL_RESTORE_COMMAND_DOCUMENTATION12",
+  "changed_file": "reference_manual/reproduction.md",
+  "previous_sha256": "fe98171292be66cbc993377f4f043111941c6152e20e4786c5f5b2c5b4ad7839",
+  "current_sha256": "6a7eaded1cd4b47e71f59bd068499edb2027f44468a1685e7d165c6c09778dfb",
+  "README_sha256": "d43caecc36c37f2275aab1d38a713925dba2710bb1f82f8ab2ab626debffa46d",
+  "core_unchanged": 10,
+  "restore_destination_is_project_root": true,
+  "required_empty_output_parent_explicit": true,
+  "official_prior0_bound_plan_run_command_explicit": true,
+  "same_viewed_recipe_not_independent_replica": true,
+  "metadata_check": "scripts/check_local_package.py PASS63links",
+  "new_NN_forwards": 0,
+  "new_environment_steps": 0,
+  "optimizer_steps": 0,
+  "publication": false
+}

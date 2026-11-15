@@ -1,0 +1,49 @@
+{
+  "status": "PASS_V21P1_PREPARATION_ERROR_PRIORITY_AND_FAIL_CLOSED_MANUAL_BINDING",
+  "checked_utc": "2026-11-15T04:52:27.1897058Z",
+  "source_sha256": {
+    "START_TRAINING_NATIVE_V21P1.txt": "8671999101821ae2e8df5420e48e720fbc671719a322f2e7397103e7d1940228",
+    "show_joint_training_native_v21p1.cmd": "d8b93e35c3206be457aae105eaaa521531a95b6eafc944cc9ca192b9b488adab",
+    "train_joint_memory21p1.ps1": "cd8b94a433a8c0189d28ab3a412366d094152993ed72b78af43c7c79e52037ee",
+    "scripts/joint_memory21p1_training_v1.py": "a4e340f8496ff35c6b7e55d83be34b46cb3722c048c20a5a90e5350b5b06fccc",
+    "memory21p1_recording_source_v1.json": "2dfa9aa7c420b7d6c77c4f3bbac33cf3f6db33d56b1f5ec734ef075ff122239e",
+    "show_joint_training_native_v21p1.ps1": "b43b2ac6c4a8144db5d3aafbf0c64833afbc320c2e43c4abafd00744b74b7c12",
+    "START_TRAINING_MEMORY21P1.txt": "d85e7e0d994eccc2c10784ce679f70315d466ed4910acc14a3d3633faef2a170",
+    "train_joint_memory21p1.cmd": "7802a0c17af9efd88b3c551394e454a39f5f007067014cc3c30b8b347151b4b1"
+  },
+  "old_v21_seven_sources_unchanged": true,
+  "default_root": "[local-user]/Desktop/ВКР/Реализация/v2/artifacts/refinement/joint_v2/route_memory_train_v21p1_111",
+  "default_arm_names": [
+    "raw",
+    "zero_route_integral"
+  ],
+  "default_before_job_counters_null": true,
+  "real_failed_v21_archive_read": true,
+  "real_error_reason": "NameError: sha is not defined (exact repr checked against both error.json)",
+  "stale_phase_validation_overridden_by_ERROR": true,
+  "paired_complete_error_status_read": true,
+  "no_live_claim_on_failed_archive": true,
+  "failed_archive_sha256_unchanged": {
+    "paired_complete.json": "0ab1cc534a7a0a6003c067e2be70f0d0fce47f597ef2c77fe47cfc3607325760",
+    "zero_route_integral/error.json": "34eaf564ab0d1be197961edde5262905454ab3eabfc8924c5a074a92797e433d",
+    "raw/progress.csv": "f837d56052759c20668d050a9c044ccf94a56e896b7bdcbd49162b16bfaf3c5b",
+    "zero_route_integral/actual_gradient_norms.jsonl": "7258da8c730330af99032d2f157034d1c3bdd4d5837d2911c796b18150a0b4f7",
+    "zero_route_integral/phase.json": "6562c8711c948fbf4ebcd24fc6c198b7c4f51588a4f9bbe69b2af4e383cb8a68",
+    "raw/actual_gradient_norms.jsonl": "ab8878738ba10b8bf5f953bf5866a599d26d1bde7cabd6b8eca4cebc4e2447de",
+    "raw/error.json": "d76046478135d3396ecb61eac604f0fac7aa8af4af91a45d6a3a1c5b6dcaf6bf",
+    "zero_route_integral/progress.csv": "ca14fb0fbc4a4d4ff8d631addd71ee2537cd1152da5725e8862851ebc026f3dc",
+    "raw/phase.json": "f51adf76b8497ba664cc137bd74909bd5a220567b7d62d4232bf36bca4fbb187"
+  },
+  "baseline_zero_update_separate_from_PPO": true,
+  "PS51_both_parsers": "PASS",
+  "PlanOnly_owned10s_QA_args": "PASS",
+  "actual_GUI_opened": false,
+  "ROOT_GUI_QA_pending": true,
+  "manual_binding_status": "PENDING_ROOT_BOUND_PLAN",
+  "prepare_only_expected_fail_closed_before_output": true,
+  "new_environment_steps": 0,
+  "new_optimizer_steps": 0,
+  "new_evaluation_episodes": 0,
+  "network_calls": 0,
+  "QA_correction": "Initial readback used reserved PowerShell Error variable; corrected to task-specific actualErrorRecord before PASS. No output receipt was emitted by that failed readback and viewer/model sources were not modified."
+}

@@ -1,0 +1,69 @@
+{
+  "bundle": {
+    "path": "artifacts/refinement/joint_v2/phase_expert_preparation_v29_root01/bundle.json",
+    "sha256": "c3fc1c9c799f21200c98fc5995dba9908b1b13a517eb78bd60759e91eb8818a4",
+    "experts": [
+      {
+        "index": 0,
+        "role": "F0_without_observed_leg",
+        "policy": {
+          "path": "artifacts/refinement/joint_v2/route_memory_prototype_v20/root02/zero_route_integral/policy.npz",
+          "sha256": "f0e87341177d9f2e3f2522973dd9887cf583736618aeb39ec850e98058ee8461"
+        }
+      },
+      {
+        "index": 1,
+        "role": "prior0_FINAL_with_observed_leg",
+        "policy": {
+          "path": "artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/final.npz",
+          "sha256": "ce86bb56d7e0f5c1775266d4a45cd3417e979303d27cc662a58e8070bf34e345"
+        },
+        "model_zip": {
+          "path": "artifacts/refinement/joint_v2/prior_ablation_pilot_v28_111/prior0/final.zip",
+          "sha256": "62eaf3fb179f915a91cb15686720c06c5dd8cc80595d1308279ee1895ce13c11"
+        },
+        "training_proof": {
+          "path": "audit/review_joint_prior_ablation_v28_pilot_01.json",
+          "sha256": "8b9936e55e286587ae8ee66d9c487bbc08471a1d0abef9fcad53b8d858e1e2a4",
+          "pointer": "/candidate_claims/prior0/final"
+        }
+      }
+    ]
+  },
+  "frozen_PID": {
+    "path": "artifacts/gazebo/native_pid_tuning_v1/frozen_native_pid.json",
+    "sha256": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd"
+  },
+  "actual_complete": {
+    "path": "artifacts/refinement/joint_v2/gazebo_phase_expert_development9_v29_root01/complete.json",
+    "sha256": "2a9c0776bc1f8187a7f43aea4b6107b7919efceb03ac1b4f233378805f9a86f3"
+  },
+  "prospective_plan": {
+    "path": "artifacts/refinement/joint_v2/gazebo_phase_expert_development9_v29_root01/plan.json",
+    "sha256": "f41142916d18e840fdb485f5f9697ca39f9458343506018484edc5b16c89ca6c"
+  },
+  "independent_whole20": {
+    "path": "audit/joint_phase_expert_development9_v29_root01.json",
+    "sha256": "a53074f38e0f0dfd67c6c40b9aeaf37619ac12da72633b74b6a370a335ddaff1"
+  },
+  "native29": {
+    "path": "audit/joint_phase_expert_metrics_v29_root01.json",
+    "sha256": "fca6df9306e70884997d7db766b31b780c1bda64f84d1cd86df28f38a7487961"
+  },
+  "route_expert_training": {
+    "path": "audit/review_joint_prior_ablation_v28_pilot_01.json",
+    "sha256": "8b9936e55e286587ae8ee66d9c487bbc08471a1d0abef9fcad53b8d858e1e2a4"
+  },
+  "historical_F0_comparison": {
+    "path": "audit/joint_memory_development9_v20_root01.json",
+    "sha256": "16d7e31e4cc22f5c4f55cb0ad37a1d3f46551cb6b91327b4e8164265988095ec"
+  },
+  "new_SGD_v29": 0,
+  "source_route_checkpoint_PPO_updates_v28": 2048,
+  "_public_export": {
+    "source_kind": "PUBLIC_DISPLAY_PROJECTION_NOT_GUARD_BYTES",
+    "original_relative": "reports/joint_phase29_gazebo_v8/sources.json",
+    "original_sha256": "58a95c5054134e0097881bdd1402086f6b063fa7160be2af3dab25527a4765cc",
+    "scope": "Path projection only; original numeric values retained. Never substitute this display file for an original scientific SHA binding."
+  }
+}

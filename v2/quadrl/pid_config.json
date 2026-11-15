@@ -1,0 +1,13 @@
+{
+  "status": "DEVELOPMENT_CANDIDATE_NOT_YET_SELECTED",
+  "kp": [4.0, 4.0, 6.0],
+  "kd": [3.6, 3.6, 4.0],
+  "ki": [1.0, 1.0, 2.0],
+  "attitude_gain": 5.0,
+  "integral_limit": 6.0,
+  "horizontal_acceleration_limit": 5.0,
+  "vertical_acceleration_limit": 5.0,
+  "nominal_motor_tau_s": 0.015,
+  "nominal_drag_per_mass": [0.0, 0.0, 0.8857142857142857],
+  "enabled": false
+}

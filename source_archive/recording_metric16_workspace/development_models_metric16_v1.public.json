@@ -1,0 +1,483 @@
+{
+  "schema": "joint-metric16-presentation-v1.0",
+  "status": "DEVELOPMENT_MEASURED_EXPERIMENTAL",
+  "model_role": "DIAGNOSTIC_ONLY_NATIVE_QUALITY_FAIL_NOT_PROMOTED",
+  "final_applicability_confirmed": false,
+  "training_models": 1,
+  "training_seed": 111,
+  "primary_environment_seeds": [
+    83301
+  ],
+  "stress_environment_seeds": [
+    84001
+  ],
+  "reserved_environment_seeds": [
+    93001,
+    93002,
+    93003
+  ],
+  "basis_kind": "velocity_residual",
+  "actor_observations": 80,
+  "default": {
+    "controller": "rl",
+    "scenario": "force_strong",
+    "mission": "route",
+    "environment_seed": 83301,
+    "instance": 0
+  },
+  "horizon_s": {
+    "hover": 30.0,
+    "route": 40.0
+  },
+  "policy": {
+    "path": "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz",
+    "sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5"
+  },
+  "pid_profile": {
+    "path": "artifacts/gazebo/native_pid_tuning_v1/frozen_native_pid.json",
+    "sha256": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd"
+  },
+  "policy_snapshot": "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/policy.npz",
+  "pid_snapshot": "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/frozen_native_pid.json",
+  "hover_thrust": 0.3026512153,
+  "thrust_semantics": "body_collective",
+  "adapter_attitude_max_age_s": 0.1,
+  "runtime": {
+    "runner": "sim_joint/run_experiment_v4.py",
+    "actor_distro": "Ubuntu-24.04",
+    "actor_user": "misha",
+    "python": "[external-home]/vkr_sim/venv-cu128/bin/python",
+    "gui_distro": "Ubuntu",
+    "gui_user": "misha3"
+  },
+  "original_external_runtime": [
+    {
+      "role": "ardupilot_binary",
+      "environment": "current",
+      "path": "[external-home]/vkr_sim/ardupilot/build/sitl/bin/arducopter",
+      "sha256": "42a771c258c6a097abda28955ff25fa3ecbab63402c8a7d358ee8a1f957d39c6"
+    },
+    {
+      "role": "default_copter",
+      "environment": "current",
+      "path": "[external-home]/vkr_sim/ardupilot/Tools/autotest/default_params/copter.parm",
+      "sha256": "5e01345b45d1c6190b28bece5638bbdd4cf1cce35e05bbbf480ab24d2b51aa0e"
+    },
+    {
+      "role": "default_gazebo",
+      "environment": "current",
+      "path": "[external-home]/vkr_sim/ardupilot/Tools/autotest/default_params/gazebo-iris.parm",
+      "sha256": "4aee140cbb29b967e4519e4c84c4b389a2172c30e542f36b4fba4c118b4d4750"
+    },
+    {
+      "role": "gazebo_plugin",
+      "environment": "Ubuntu",
+      "path": "[external-home]/ardupilot_gazebo/build/libArduPilotPlugin.so",
+      "sha256": "2390b61371181140bf9b9b1ddf505bdcd2652fabbd691de5e2a4b089057aff3f"
+    },
+    {
+      "role": "iris_base_sdf",
+      "environment": "Ubuntu",
+      "path": "[external-home]/ardupilot_gazebo/models/iris_with_standoffs/model.sdf",
+      "sha256": "2c4e8ccf4385f329af905cce1cbceff96656da4ace9353c0ec6ca09df3c442d0"
+    },
+    {
+      "role": "iris_control_sdf",
+      "environment": "Ubuntu",
+      "path": "[external-home]/ardupilot_gazebo/models/iris_with_ardupilot/model.sdf",
+      "sha256": "513bf6f142ab257cbd85f89e8ee9739555b188591ada83082abb27abd5ccda66"
+    }
+  ],
+  "evidence_cases": [
+    {
+      "scenario": "force_mild",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "duration_s": 30.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_hover_force_mild_env83301",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_mild_env83301_actor.json",
+          "sha256": "c62785bf1219c459f6f1b02c21c306199f90bb2d1ab9e88833476418fb671aa5"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_mild_env83301_physical.json",
+          "sha256": "0562a1682fea7c7e0224a4c4c23656ab7b857cd2357f9962b42331f94192a46f"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_mild_env83301_force.json",
+          "sha256": "fd24b0e7245c5979a6b814c0649733a2bdbfd70f425e4d56b5d4b51f7ba8ac62"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_mild_env83301_metric.json",
+          "sha256": "a6b81861a0756ed24429678044ded8523f0ee531000bd8794b84c5d7df590786"
+        }
+      }
+    },
+    {
+      "scenario": "nominal",
+      "mission": "route",
+      "environment_seed": 83301,
+      "duration_s": 40.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_nominal_env83301",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_nominal_env83301_actor.json",
+          "sha256": "7340d69c675569a77956faa62db048b92659f06cbe15a007a90f1f71ca47c1b5"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_nominal_env83301_physical.json",
+          "sha256": "e6940ed6ab260a19c36cb45461b45786a496f824fcefd96031ab185ec1c7687a"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_nominal_env83301_force.json",
+          "sha256": "66ffb1946e950506d6ac38edf7ede07dc64a51d8a4c8f072ae626e21f27a4e9e"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_nominal_env83301_metric.json",
+          "sha256": "b570274234df90aaaf7c25334ff363111c648cca15e5acb08f8fdf1474632a5e"
+        }
+      }
+    },
+    {
+      "scenario": "force_mild",
+      "mission": "route",
+      "environment_seed": 83301,
+      "duration_s": 40.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_mild_env83301",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_mild_env83301_actor.json",
+          "sha256": "3050406e4455511c747b91ea96e75008b7861102246d09f5b4050d12f04b04c8"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_mild_env83301_physical.json",
+          "sha256": "2ec0c181014dcd97a816894e83658e235fbbf524902e74088ff06760308fa2b2"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_mild_env83301_force.json",
+          "sha256": "c939f5717b63e081afd1051cea56b2887fe6db401d9ae3f7ef4614ff557d6f8e"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_mild_env83301_metric.json",
+          "sha256": "81df0046c4910e9612379b0e87feb00a9f508dd55ee001c53020f971ec297423"
+        }
+      }
+    },
+    {
+      "scenario": "nominal",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "duration_s": 30.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_hover_nominal_env83301",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_nominal_env83301_actor.json",
+          "sha256": "29e8f9c90024b81808aac6f6e5fa0e08da963cf42f05608636cab267376e616e"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_nominal_env83301_physical.json",
+          "sha256": "617f6f7710753f98bf4cf52ace2642fd884f7d33999afb7fd9748b6a160b8c6f"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_nominal_env83301_force.json",
+          "sha256": "d7d1eb7ecf7d8285f491f7a71025d40831587f9cdfa041438eb371c7a1f93803"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_nominal_env83301_metric.json",
+          "sha256": "8deb1fd7ac88dbad64434b6c8d563c8f78b1851d3790e70f014a131f174fbc9b"
+        }
+      }
+    },
+    {
+      "scenario": "gust",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "duration_s": 30.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_hover_gust_env83301",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_gust_env83301_actor.json",
+          "sha256": "9fa33c4dcba61ab6eb4cf0a239d8ac72ef65c9908deedc3ec2f5dbd285f2a469"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_gust_env83301_physical.json",
+          "sha256": "e6f8258369ee415b64105e48dee7aee410d8f8336529c292b759d4a1bd2fb2dd"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_gust_env83301_force.json",
+          "sha256": "ec3edb1df4fbf0fc5d52542391394ca1af33e38eb08b89771d66a51520372295"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_gust_env83301_metric.json",
+          "sha256": "9b743034f136ec2d6b504b75a1c9a165e62b2b797a6524e1ede0c3f3f0fe50bf"
+        }
+      }
+    },
+    {
+      "scenario": "gust",
+      "mission": "route",
+      "environment_seed": 83301,
+      "duration_s": 40.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_gust_env83301",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_gust_env83301_actor.json",
+          "sha256": "b0d1c047ba790de161b9a35e221d2560dfdad38eb19ca07e896936f55141a5e6"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_gust_env83301_physical.json",
+          "sha256": "f119fdac3b5747e04407f80cf7907e5097c8e24dd6ac979b47c3d2073fbbde1d"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_gust_env83301_force.json",
+          "sha256": "73cb165c8056b519c3f3e8e414ff3fd9a0c30ef945df4444ea47c18440ccc655"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_gust_env83301_metric.json",
+          "sha256": "ff9cfd5561afdd0c99158aa5a299b5b4dddc4fe19d1cbff7d62fb5d9b1da327d"
+        }
+      }
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "route",
+      "environment_seed": 83301,
+      "duration_s": 40.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env83301",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env83301_actor.json",
+          "sha256": "672c490833cf1753f754d6105428de08c320e4456342e55e3b817c3abbf76e55"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env83301_physical.json",
+          "sha256": "224ba5b1b1119cd103b46d38e30f2c405ecd85fdc9948412e1e54a0b793563ab"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env83301_force.json",
+          "sha256": "d32843d2494788c472b3bd073baa5a9b6ef945521e9941f4455e367f1ef9afdf"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env83301_metric.json",
+          "sha256": "0352aff62d0a70a98f3baa9b77086d15479e41052671df3352bf73c1e3a231d3"
+        }
+      }
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "route",
+      "environment_seed": 84001,
+      "duration_s": 40.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env84001_actor.json",
+          "sha256": "2806c6e65bbd24a173fa7d5ee03e5a93073a1fda17ff5c8279f792fcab3629f6"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env84001_physical.json",
+          "sha256": "0106e88683b35a4efbaf4b2db81b52f3b5e8c38d0e2e7038a8f7ebd078cbc593"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env84001_force.json",
+          "sha256": "7f1050509f35c5ba2c28d3fe59937ac5250914d7e50abd00b273c5b886fb3854"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env84001_metric.json",
+          "sha256": "5759ef32a5efa05c534427f4f9bab8bb3ff8476afc6105d576e6280102704667"
+        }
+      }
+    },
+    {
+      "scenario": "force_strong",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "duration_s": 30.0,
+      "run": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_hover_force_strong_env83301",
+      "audits": {
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_strong_env83301_actor.json",
+          "sha256": "9a046fa08354229bbed840f60df54bdcb547aee7b37905ced43a23b5f8e308c6"
+        },
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_strong_env83301_physical.json",
+          "sha256": "910f6e71560569f208fde19dde3922127f6a6e61aa6719bd0fb4b55563327f92"
+        },
+        "force": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_strong_env83301_force.json",
+          "sha256": "d078fbf8053bd6aede8661ed61e1d31aa76d400a3a08a9132edb8666b4f82628"
+        },
+        "metric": {
+          "path": "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_strong_env83301_metric.json",
+          "sha256": "1e0b15fb59b2e07bbb2382713c79cf165ca47c56fc6f9bb98ecdee7f03ebd8bc"
+        }
+      }
+    }
+  ],
+  "evidence": {
+    "audit/joint_route80_development9_v5_root01.json": {
+      "path": "audit/joint_route80_development9_v5_root01.json",
+      "sha256": "5b917f1b2ce55025878f0e7e4b8c62a95852c3a1652d6def70ad9216ad2d5b74"
+    }
+  },
+  "quality": {
+    "primary": "FAIL",
+    "tailwind": "FAIL",
+    "six_wind_cell_macro": "PASS",
+    "primary_cells_pass": 7,
+    "primary_cells_total": 8,
+    "quality_receipt": "v2/artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/fixed_quality_gate_classification.json"
+  },
+  "coverage": {
+    "new_actual_flights": 9,
+    "shared_PID_flights": 9,
+    "shared_retention_flights": 2,
+    "total_observation_coverage": 20
+  },
+  "audience_note": "Diagnostic hybrid Route80. Wind gains are measured in development only; nominal route and separate tailwind accuracy still fail. Not promoted or universally better.",
+  "table": "reports/joint_metric_cost16_gazebo_v6/presentation.png",
+  "table_binding": null,
+  "automatic_video_recording": false,
+  "files_sha256": {
+    "START_JOINT_METRIC16.txt": "ca3d8997239191a3ff7eeaa81fa9b67a94c28f739423a9f2013c7f196c411394",
+    "artifacts/gazebo/native_pid_tuning_v1/frozen_native_pid.json": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_mild_env83301_actor.json": "c62785bf1219c459f6f1b02c21c306199f90bb2d1ab9e88833476418fb671aa5",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_mild_env83301_force.json": "fd24b0e7245c5979a6b814c0649733a2bdbfd70f425e4d56b5d4b51f7ba8ac62",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_mild_env83301_metric.json": "a6b81861a0756ed24429678044ded8523f0ee531000bd8794b84c5d7df590786",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_mild_env83301_physical.json": "0562a1682fea7c7e0224a4c4c23656ab7b857cd2357f9962b42331f94192a46f",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_strong_env83301_actor.json": "9a046fa08354229bbed840f60df54bdcb547aee7b37905ced43a23b5f8e308c6",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_strong_env83301_force.json": "d078fbf8053bd6aede8661ed61e1d31aa76d400a3a08a9132edb8666b4f82628",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_strong_env83301_metric.json": "1e0b15fb59b2e07bbb2382713c79cf165ca47c56fc6f9bb98ecdee7f03ebd8bc",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_force_strong_env83301_physical.json": "910f6e71560569f208fde19dde3922127f6a6e61aa6719bd0fb4b55563327f92",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_gust_env83301_actor.json": "9fa33c4dcba61ab6eb4cf0a239d8ac72ef65c9908deedc3ec2f5dbd285f2a469",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_gust_env83301_force.json": "ec3edb1df4fbf0fc5d52542391394ca1af33e38eb08b89771d66a51520372295",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_gust_env83301_metric.json": "9b743034f136ec2d6b504b75a1c9a165e62b2b797a6524e1ede0c3f3f0fe50bf",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_gust_env83301_physical.json": "e6f8258369ee415b64105e48dee7aee410d8f8336529c292b759d4a1bd2fb2dd",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_nominal_env83301_actor.json": "29e8f9c90024b81808aac6f6e5fa0e08da963cf42f05608636cab267376e616e",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_nominal_env83301_force.json": "d7d1eb7ecf7d8285f491f7a71025d40831587f9cdfa041438eb371c7a1f93803",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_nominal_env83301_metric.json": "8deb1fd7ac88dbad64434b6c8d563c8f78b1851d3790e70f014a131f174fbc9b",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_hover_nominal_env83301_physical.json": "617f6f7710753f98bf4cf52ace2642fd884f7d33999afb7fd9748b6a160b8c6f",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_mild_env83301_actor.json": "3050406e4455511c747b91ea96e75008b7861102246d09f5b4050d12f04b04c8",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_mild_env83301_force.json": "c939f5717b63e081afd1051cea56b2887fe6db401d9ae3f7ef4614ff557d6f8e",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_mild_env83301_metric.json": "81df0046c4910e9612379b0e87feb00a9f508dd55ee001c53020f971ec297423",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_mild_env83301_physical.json": "2ec0c181014dcd97a816894e83658e235fbbf524902e74088ff06760308fa2b2",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env83301_actor.json": "672c490833cf1753f754d6105428de08c320e4456342e55e3b817c3abbf76e55",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env83301_force.json": "d32843d2494788c472b3bd073baa5a9b6ef945521e9941f4455e367f1ef9afdf",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env83301_metric.json": "0352aff62d0a70a98f3baa9b77086d15479e41052671df3352bf73c1e3a231d3",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env83301_physical.json": "224ba5b1b1119cd103b46d38e30f2c405ecd85fdc9948412e1e54a0b793563ab",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env84001_actor.json": "2806c6e65bbd24a173fa7d5ee03e5a93073a1fda17ff5c8279f792fcab3629f6",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env84001_force.json": "7f1050509f35c5ba2c28d3fe59937ac5250914d7e50abd00b273c5b886fb3854",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env84001_metric.json": "5759ef32a5efa05c534427f4f9bab8bb3ff8476afc6105d576e6280102704667",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_force_strong_env84001_physical.json": "0106e88683b35a4efbaf4b2db81b52f3b5e8c38d0e2e7038a8f7ebd078cbc593",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_gust_env83301_actor.json": "b0d1c047ba790de161b9a35e221d2560dfdad38eb19ca07e896936f55141a5e6",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_gust_env83301_force.json": "73cb165c8056b519c3f3e8e414ff3fd9a0c30ef945df4444ea47c18440ccc655",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_gust_env83301_metric.json": "ff9cfd5561afdd0c99158aa5a299b5b4dddc4fe19d1cbff7d62fb5d9b1da327d",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_gust_env83301_physical.json": "f119fdac3b5747e04407f80cf7907e5097c8e24dd6ac979b47c3d2073fbbde1d",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_nominal_env83301_actor.json": "7340d69c675569a77956faa62db048b92659f06cbe15a007a90f1f71ca47c1b5",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_nominal_env83301_force.json": "66ffb1946e950506d6ac38edf7ede07dc64a51d8a4c8f072ae626e21f27a4e9e",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_nominal_env83301_metric.json": "b570274234df90aaaf7c25334ff363111c648cca15e5acb08f8fdf1474632a5e",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/audits/route80_v5_route_nominal_env83301_physical.json": "e6940ed6ab260a19c36cb45461b45786a496f824fcefd96031ab185ec1c7687a",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/complete.json": "39ab3c74bdad1604975eff9259fef0c8eb3fc3737f5db4cb34bfea222db88e3f",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/fixed_quality_gate_classification.json": "c04e082fe964838a9a31640d11440391137c6a6a2076fc29026042f2b4690ffd",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/plan.json": "bc64b56570f03fbc4d47067f57a67fd3417783b8a973939b73265769f90a3a04",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_hover_force_mild_env83301/summary.json": "8bd4fddef4828025232a6b13a9458b12902dcc7e7d2252735124849a48d140be",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_hover_force_strong_env83301/summary.json": "16d0067cf962f4500b521dd7c34cde330ff085146030c49dd8067db2bb731e08",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_hover_gust_env83301/summary.json": "a07b3ae67534f0ab3c45d25e5c5862b60ba3cab78d2d2df7630208dff9ef8b83",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_hover_nominal_env83301/summary.json": "a7f2d95718d1d6442cf50388bf01c40cf3be57cdb2a892b9428c9ef2426c48cd",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_mild_env83301/summary.json": "2f6cc6b6a5701e55df7b9892bb04df52a1eb10913a91d411a48622daef0f0fa4",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env83301/summary.json": "6429044be09c0de057c39e4c6eca4fc09daced093a0b78a0d2c0223b38faf020",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_force_strong_env84001/summary.json": "6996dd1431ee60341380834b33471c365d7f107d35627b255163cfcdf2557ae9",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_gust_env83301/summary.json": "f3e7d92b374ddcdc37cc4b51bcec07f2b6373dcb76fc07e4ae7d9b0d64870805",
+    "artifacts/refinement/joint_v2/gazebo_route80_development9_v5_metric_cost16_root01/runs/route80_v5_route_nominal_env83301/summary.json": "21f3ff9f2c170c05a85fa4af2e075527641c173cdfda00a23df2036425588b1b",
+    "artifacts/refinement/joint_v2/metric_cost_pilot_v16_111/metric_cost/best_policy.npz": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+    "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/frozen_native_pid.json": "086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd",
+    "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/policy.npz": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5",
+    "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/policy_base74.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/policy_path77.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/policy_route80.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/run_experiment_v4.py": "75302a356022501143e71b1be7f24d6cd6eeb58e0b39aa98e4f05b085852f904",
+    "artifacts/refinement/joint_v2/presentation_metric16_v1/source_snapshot/thrust_adapter.py": "a0e571075163443f987f6ca0c2a3e1068183a09f4a12827f0dc3c144f916ef72",
+    "audit/capture_udp_copies.py": "9a9cafbe7fba0c72f901b9bb300bf2403408e3f703cfba079c31a8ca3724b574",
+    "audit/independent_metrics.py": "5c70e9639eaebc5f1a9b1c1bc3b418c3ec1b74fb8612fc34e422df9e962964ba",
+    "audit/joint_route80_development9_v5_root01.json": "5b917f1b2ce55025878f0e7e4b8c62a95852c3a1652d6def70ad9216ad2d5b74",
+    "audit/packet_clock_ordered.py": "aeb71ec261bd833e0cd37424aa1bec6c990fce1370b0b689fc80caadcd1fa80a",
+    "audit/replay_observations.py": "aab253b420fbd78fbd600fdb069161020c986131f0bc32a3273e2c01febd3808",
+    "audit/turns_corners.py": "5df0454674f2f8f27f338518bea86e3eae9fd771cd4c5cfb7d12bdb7e2976c31",
+    "audit/verify_fdm_identity.py": "7538b8c5cf5d9f424d48b6e90a81d5742f45c2c2eb63c2f8ccb2995861c859a3",
+    "audit/verify_joint_hybrid_v2.py": "56d2f34346676b7994ef6741f05c331ed2a71115d6cf36e6b1232fc25efe30ed",
+    "audit/verify_joint_hybrid_v2_1.py": "5608940e2fa49ebd8f360df63870d0dfb3e6ef1acdc3cabfb04342ff5057d0a0",
+    "audit/verify_joint_hybrid_v3.py": "34db4b49b6c786512b4950e18018773f63afed6587a30cf2d4d6163cb08e4332",
+    "audit/verify_joint_hybrid_v4.py": "d054b0f9552ff0ed71c969a259c5943d12d4a38255c59faf5d141240ddc5530c",
+    "audit/verify_joint_metrics_v2.py": "dd7a13fd7827904efa99208f3bad23314917f15c0f865bc298568af73aad70e7",
+    "audit/verify_joint_wire_exclusivity_v2.py": "ff5452d31be67ca28c928aae6acc5d2bb0b2a59e337ca6653c98adb05d8ae192",
+    "contract.py": "20cf4d281656941a2c73d6c1cf26a2461d98d9bbd82c2314128cd9a6ed2f396c",
+    "docs/joint_applicability_contract_v2.json": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652",
+    "docs/joint_geometry_pilot32_extension_v2.json": "179cc20280ad51136aa72a072d2667773f20eec1d47f5c5764d90d28efe5d299",
+    "docs/joint_path77_development11_v3/prospective_plan.draft.json": "6405123076913f7ac8ba0d9b73b22d27eebb4504fb78a387bfd107b60424e715",
+    "docs/joint_path77_development9_v4/metric_alignment.json": "1104117345bc533b24417841653d35f5edd5d31e072fb44b069afcf13f166bf3",
+    "docs/joint_path77_development9_v4/prospective_plan.draft.json": "f75ad0f1a63f9a2df8792d59b19114d0f576d345f3426e67cd3e8487e551d158",
+    "docs/joint_research_plan_v1.template.json": "4ea19ca3f3e0fbd9a7a344e5ea297c5ec47c3311cfef6de01c434057d338cdd2",
+    "docs/joint_route80_development9_v5/candidate_binding.template.json": "0ddff53ca926dc7163cda236688974a6e53dc6d36998454b696f8418e351c604",
+    "docs/joint_route80_development9_v5/prospective_plan.draft.json": "f98820e7ccfbe7778d314336abd697881f3646608239468e0bf70af19fe57fd2",
+    "docs/joint_route80_runtime_v4/check_readonly.py": "637d2984112c60ae5f1278a8404b5473ab0c7a2cac903200abb55b198ec1dbff",
+    "quadrl/__init__.py": "bf9e04e1c20183cec77f6c9fe28513b65d00896b33add08f18df672ae96e9090",
+    "quadrl/baseline.py": "ee796fc1027510cb6091855501f85bd3e6d67cab502903535c8ecc6aa1fd8389",
+    "quadrl/env.py": "d583db69a3c1afb317baefdf530f35a9781c8aa8dc37faeca764a3e503e8bc59",
+    "quadrl/pid_config.json": "0264412f373b95c294a37705c64f2cc1ebde041c40b04a34b48ef311fe235055",
+    "quadrl/plant_config.json": "ce247239bb1dfc4dd9557487182febe02f725544902e2b05466e2837cbc2fd43",
+    "quadrl/policy.py": "21d725026fb0135c191d1e4bf8fbec8651f5265d310f444893b15d3ef6f33ce8",
+    "quadrl/protocol.py": "cae94eb9e02371c3d31ffe8d8334acad92ce1979634274081d77369f5edc0473",
+    "quadrl/reward.py": "dcbb0c8bcb704dc83ae271c2a4e55ce0210ab808c6a3e44b236d6bf614794e25",
+    "quadrl/rollout.py": "de3418d9215ec6dc9e5eec60a8ae793c7984c35d872f7bdb144f17675b868f57",
+    "quadrl_path_v7/policy.py": "ce7f04661da180c22f82acf8f34f917556b34f18c409c8ed90ce2196b75f1106",
+    "quadrl_route_basis_v14/__init__.py": "77d886badb0ac89c81fc06f9471e18aed6f2b9191e8e49cb9961402cb0bb7358",
+    "quadrl_route_basis_v14/policy.py": "73deb4adeaba58b943e7901d54293bea6c9b17321425a182ed51ce95384f47f0",
+    "reference/direct_physics.py": "5607a4551a441d11b4be2dd5f97645f4dd3b269001cf4dd4165c23a94276510c",
+    "reference/dob.py": "c4d42f90a81f1d46c86e07d455151f0f49cfd550912ec3da935609f505dfa507",
+    "scripts/evaluate_fast.py": "28aa2d9efdbd9456cb4aa7b3e699b67fc7d723e26b462614fbad3201e97c4d8a",
+    "scripts/gazebo_gui_client.py": "69f8c799086168440fca797ebb776d7525ec58ac0d9fde61a058f8a08c986288",
+    "scripts/gazebo_recording_gui.config": "c1e6bde45bb7ccc23cee8d2e3b276122ad22d33eae16e1adac43bc06c6ff9749",
+    "scripts/independent_pose_recorder.py": "d093383d8d8fb3a73cd88a31b40f1ab8fd87e9245cfffc2500685a212b48be96",
+    "scripts/joint_gazebo_gui_v2.py": "bc03c66dd1f1253dca6ea0b97a314694be2c04b422acba589743c7b471ed43d4",
+    "scripts/joint_gazebo_screen_v2.py": "6dda683547cbf505e62f81fe4b7f2c1fe3796c7fb777d9ff1333638ca19808c8",
+    "scripts/joint_geometry_gazebo_pilot_v2.py": "05e2e9161e29eb4879591d90d1fbae6d684acde5d4f626385d1250fcc200cb11",
+    "scripts/joint_metric16_presentation_v1.py": "adde76b24fb51259a14985ff3b63ef31c6b3d5b3bd322c27c6232344a79fdd28",
+    "scripts/joint_thrust_ablation_recovery_v2.py": "5add2e0be7cee2769927d945ef40b6393a238eb111188b33f0dfa9406ff287e6",
+    "scripts/joint_thrust_ablation_v2.py": "bf66211f59ff05cd4659fed88401f2428ff7b910e2dc430a762bb4ff14c85de8",
+    "scripts/ppo_gazebo_probe.py": "bb3fcf8395269f8a30cb5890249a1d61e910b683b2f7ad671a371b026ac91ca6",
+    "scripts/refined_wind_confirmation_v1.py": "6e055c5c451e1919da116db47dc15de1d9b0f6998f1541ffe6b55a109dfacf1d",
+    "scripts/run_joint_path77_development11_v3.py": "0ef33625271cd125dd3a85d18e523372f7003b7e4b3c4c2ef29e9c9d2160de7f",
+    "scripts/run_joint_path77_development9_v4.py": "3c857d3aa3654caae4cad4f23ea998be90d3f693b522dd6e9b6ab152a1ba7d84",
+    "scripts/run_joint_path77_smoke_v3.py": "05ce3fc236a21c37e74516f8e541e31328fbe2928033f18839dfb0f48859994e",
+    "scripts/run_joint_route80_development9_v5.py": "f7711debacab087513ffd34bc8424e45497fe70d9b41652340dcb4bd21694e0b",
+    "scripts/run_joint_training_pair_v2.py": "c731c1d2013838f504fc6dad83302aeee379f6abe7121f3c205f1b074b6b54fc",
+    "scripts/train_joint_geometry_v2.py": "ebb4cd2f95b5432e71c9c3b26a411f304b74c5de144061df364e70cf3441bd0b",
+    "show_joint_metric16.cmd": "f733f0b850106337cb1c9f5feb8650c1b23191696e01a41f9e53a4ba75a40017",
+    "show_joint_metric16.ps1": "fa03a19677bc28880d5e2b92c765382a6e5c7db1acdd780375616b77a706baf3",
+    "sim/analyze_system_id.py": "aa6353dd2f949830822715388e64c863da564b874e2e254a19c34a6321b82f66",
+    "sim/audit_fdm_destinations.py": "3d33fa62bf36a1e9ba8206c83eaebfc86bc809a362074e5e946d3f062bd92183",
+    "sim/check_port_guard.py": "c86c69f33e014c0f8be9366837f4b2dbbf0362abc05067f9ba530285e2c103b9",
+    "sim/finalize_metrics.py": "140fde10e8dc67de88f78b2f0dd2767f90eacccbf56a13b494c4fdb843dbf046",
+    "sim/finish_native_tuning.py": "e4752d0c36b47de2565f4b55843bd6c227e6d18f7f255f70753fa8789e03bc8d",
+    "sim/force_plugin/ForceSystem.cc": "e39ef7693758701eb538fabd29e3e7ea519a624fd819f9f89cff62ca0c1b6bf0",
+    "sim/force_plugin/build/libVkrForceSystem.so": "c6e0dd81b76b8d823631c493b7bda730bacf40a74bfacc48d65969ad9937b547",
+    "sim/gazebo_worker.py": "1698ea8ca4a70834bb240eb5e1130eb40c43fb28a431e0949dbc9b8289878968",
+    "sim/identify_translation.py": "ce24774a15b3904e4b95db38bb69b862b71e59f09b95a6fac4c1c31aa75a5b9a",
+    "sim/inspect_rate_shaping.py": "4ef6599fe44619421b79a7b960daca589311a80e59e52187b102a5d66e5c51bf",
+    "sim/metrics.py": "4298cf11b2b2f2a4df3c5851ba86e5ee90d680e5ae2163dca3776b6a756c7ad1",
+    "sim/model_spec.py": "4504ef09326e151ff75d38d7e46edf8674eb21610d7002062be6ebfd4eb65caa",
+    "sim/network_capture.py": "d7cd91c72f74d5dcb18af46178f83b59119625c80da382ad77db50842df818b1",
+    "sim/pcap_clock.py": "bd78d669787eedfd08db40d2cb1645ad2932e6ed2bc404f95c9fc822d7ddb220",
+    "sim/plot_identification.py": "c8950effca8c7776c80c2de26bab0f9cfe7b35026114cae48883f4ca811d659e",
+    "sim/run_experiment.py": "179bb675208419224e176f541ef178c06a734048c65962563a1002a69f9a71b7",
+    "sim/run_frozen_campaign.py": "a05c3445ced6a9f2cfe7a651ff58fea6f665ebca248c4d6123d4c03fdae1425a",
+    "sim/system_id_run.py": "6c7b0cce9ba357dee0c2cae586183283d55f49d7118ba4ca73ce03994d40fd69",
+    "sim/tune_native_pid.py": "98e32fd6971f2978cacbb8111d205ce7bdb8c62972c3af7b61ba0c09bbc6aa0b",
+    "sim_joint/__init__.py": "f79c78d8ceed8e1d124c6d4d9363cf1c1d9be1c74e420837d79af2fd26c22a0a",
+    "sim_joint/run_experiment_v2_1.py": "d1d102170e763a2c53b7dfa00e3a7cd8f5b3a5fb631370eed1be3f8ca1db72bb",
+    "sim_joint/run_experiment_v3.py": "9bd1ce1c2a67f98ae2cd230376a4095d00179ecf69fc511fa64e849c412387dc",
+    "sim_joint/run_experiment_v4.py": "75302a356022501143e71b1be7f24d6cd6eeb58e0b39aa98e4f05b085852f904",
+    "sim_joint/thrust_adapter.py": "a0e571075163443f987f6ca0c2a3e1068183a09f4a12827f0dc3c144f916ef72"
+  }
+}

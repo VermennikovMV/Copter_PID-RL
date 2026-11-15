@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "source_sha256": "62f4ce9a92d3365fbcbdff49cf2cf7e339d16a6a1886a9fa0324ab10bfcf9f48",
+  "created_utc": "2026-11-11T21:13:51.419654+00:00",
+  "valid_gazebo_cases": 252,
+  "total_gazebo_attempts": 261,
+  "infrastructure_attempts": 9,
+  "controller_failures": 1,
+  "controller_execution_failures": 1,
+  "reviewed_utc": "2026-11-11T21:21:09.6534515Z"
+}

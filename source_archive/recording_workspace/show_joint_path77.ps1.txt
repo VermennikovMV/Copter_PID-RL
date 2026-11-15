@@ -1,0 +1,88 @@
+param(
+    [ValidateSet('rl', 'pid')][string]$Controller = 'rl',
+    [ValidateSet('nominal', 'force_mild', 'force_strong', 'gust')][string]$Scenario = 'force_strong',
+    [ValidateSet('hover', 'route')][string]$Mission = 'route',
+    [int]$Seed = 83301,
+    [ValidateRange(0, 2)][int]$Instance = 0,
+    [switch]$NoGui,
+    [switch]$VerifyOnly,
+    [switch]$PlanOnly,
+    [Alias('h', '?')][switch]$Help
+)
+$ErrorActionPreference = 'Stop'
+Set-StrictMode -Version Latest
+if ($Help) {
+    Write-Host @'
+Запуск Gazebo для самостоятельной видеозаписи:
+  .\show_joint_path77.cmd
+  .\show_joint_path77.cmd -Controller pid
+  .\show_joint_path77.cmd -Scenario gust -Mission hover
+  .\show_joint_path77.cmd -Scenario force_mild -Mission route
+  .\show_joint_path77.cmd -Scenario nominal -Mission route
+
+По умолчанию: RL, постоянный сильный ветер, маршрут, среда83301.
+Полный полёт: маршрут40с, удержание30с. Запись окна вы делаете сами.
+Модель экспериментальная; в штиле и при попутном ветре точность маршрута
+пока не проходит все допуски. Проверенная основная среда:83301.
+
+-VerifyOnly: только локальные проверки файлов, без запуска WSL/Gazebo.
+-PlanOnly: показать точные команды будущего запуска, без симуляции.
+-NoGui: тот же полёт без окна. -Instance0|1|2: свободная полоса симулятора.
+Таблица для презентации: reports/joint_path77_fullcontrol_v5/presentation.png
+'@
+    exit 0
+}
+if ($Seed -lt 0 -or $Seed -in @(93001,93002,93003)) {
+    throw 'Требуется неотрицательный разработочный seed;93001..93003 зарезервированы.'
+}
+function Resolve-Path77Input([string]$Relative) {
+    if ([IO.Path]::IsPathRooted($Relative)) { throw 'Ожидается путь относительно проекта.' }
+    $path = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot $Relative))
+    $prefix = [IO.Path]::GetFullPath($PSScriptRoot).TrimEnd('\') + '\'
+    if (-not $path.StartsWith($prefix,[StringComparison]::OrdinalIgnoreCase) -or -not (Test-Path -LiteralPath $path -PathType Leaf)) {
+        throw "Отсутствует проверенный файл проекта: $Relative"
+    }
+    return $path
+}
+function Convert-Path77Linux([string]$Path) {
+    if ($Path -notmatch '^([A-Za-z]):\\(.*)$') { throw "Неподдерживаемый путь: $Path" }
+    return "/mnt/$($Matches[1].ToLowerInvariant())/$($Matches[2].Replace('\','/'))"
+}
+$registryPath = Resolve-Path77Input 'development_models_v3.json'
+$registry = Get-Content -LiteralPath $registryPath -Encoding UTF8 -Raw | ConvertFrom-Json
+if ($registry.schema -ne 'joint-path77-presentation-v3.0' -or $registry.status -ne 'DEVELOPMENT_MEASURED_EXPERIMENTAL' -or $registry.final_applicability_confirmed -ne $false) {
+    throw 'Ожидается отдельная проверенная экспериментальная модель77.'
+}
+$anchors = @{
+    'sim_joint/run_experiment_v3.py'='9bd1ce1c2a67f98ae2cd230376a4095d00179ecf69fc511fa64e849c412387dc'
+    'audit/verify_joint_hybrid_v3.py'='34db4b49b6c786512b4950e18018773f63afed6587a30cf2d4d6163cb08e4332'
+    'artifacts/refinement/joint_v2/corner_pilot111/w8_control/best_policy.npz'='e0aa635603d5ec299cd526347891ef1b090e2f8ebd3879d5aa34f207a41fa781'
+    'artifacts/gazebo/native_pid_tuning_v1/frozen_native_pid.json'='086eeea17bf39436246f4638aa0d8bbb81cabfb2e873413488ce58b741fb29bd'
+}
+foreach ($name in $anchors.Keys) {
+    if ($registry.files_sha256.$name -ne $anchors[$name]) { throw "Изменилась привязка модели: $name" }
+}
+foreach ($entry in $registry.files_sha256.PSObject.Properties) {
+    if ($entry.Value -notmatch '^[a-f0-9]{64}$') { throw 'Некорректная контрольная сумма.' }
+    $actual = (Get-FileHash -LiteralPath (Resolve-Path77Input $entry.Name) -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($actual -ne $entry.Value) { throw "Изменился проверенный файл: $($entry.Name)" }
+}
+Write-Host 'Проверка модели, таблицы и сохранённых экспериментов: PASS.'
+if ($VerifyOnly) { exit 0 }
+$linuxRoot = Convert-Path77Linux $PSScriptRoot
+$stamp = Get-Date -Format 'yyyyMMdd_HHmmss_fff'
+$suffix = [Guid]::NewGuid().ToString('N').Substring(0,8)
+$relative = "artifacts/user_runs/${stamp}_${suffix}_path77_${Controller}_${Scenario}_${Mission}"
+$output = Convert-Path77Linux (Join-Path $PSScriptRoot $relative)
+$mode = if ($PlanOnly) { '--plan-only' } else { '--run' }
+$cli = @($mode,'--controller',$Controller,'--scenario',$Scenario,'--mission',$Mission,
+         '--seed',"$Seed",'--instance',"$Instance",'--output',$output)
+if ($NoGui) { $cli += '--no-gui' }
+Write-Host "Контроллер: $Controller; условие: $Scenario; задача: $Mission. Полёт: $($registry.horizon_s.$Mission)с."
+Write-Host $registry.audience_note
+if ($Seed -ne 83301) { Write-Host 'Это новая демонстрационная среда; её результат не наследует выводы таблицы83301.' }
+if (-not $PlanOnly) { Write-Host 'Запишите открывшееся окно Gazebo. Проверка полёта сохранится автоматически.' }
+& wsl.exe -d Ubuntu-24.04 -u misha --cd $linuxRoot -- /opt/vkr/vkr_sim/venv-cu128/bin/python -B scripts/joint_path77_presentation_v3.py @cli
+$code = $LASTEXITCODE
+if (-not $PlanOnly) { Write-Host "Файлы полёта: $relative" }
+exit $code

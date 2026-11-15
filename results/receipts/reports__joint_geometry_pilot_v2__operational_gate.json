@@ -1,0 +1,2817 @@
+{
+  "status": "DEVELOPMENT_ONLY",
+  "source_campaign": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32",
+  "episodes": 32,
+  "gate": {
+    "BC111_body_collective": {
+      "development_primary_six_cells_pass": false,
+      "failed_cells": [
+        "nominal/route:restricted_time;finite3d_rmse;corner_peak",
+        "force_strong/route:restricted_time;finite3d_rmse",
+        "gust/route:restricted_time;finite3d_rmse",
+        "force_strong/hover:specialist_retention",
+        "gust/hover:specialist_retention"
+      ],
+      "episodes": 6,
+      "environment_count": 1,
+      "training_models": 1,
+      "final_applicability_confirmed": false,
+      "original_wind_macro": "NOT_COVERED_MILD_MISSING"
+    },
+    "wind111_body_collective": {
+      "development_primary_six_cells_pass": false,
+      "failed_cells": [
+        "nominal/route:finite3d_rmse;corner_peak"
+      ],
+      "episodes": 6,
+      "environment_count": 1,
+      "training_models": 1,
+      "final_applicability_confirmed": false,
+      "original_wind_macro": "NOT_COVERED_MILD_MISSING"
+    },
+    "controlPPO111_body_collective": {
+      "development_primary_six_cells_pass": false,
+      "failed_cells": [
+        "nominal/route:finite3d_rmse;corner_peak",
+        "force_strong/route:finite3d_rmse",
+        "gust/route:finite3d_rmse"
+      ],
+      "episodes": 6,
+      "environment_count": 1,
+      "training_models": 1,
+      "final_applicability_confirmed": false,
+      "original_wind_macro": "NOT_COVERED_MILD_MISSING"
+    },
+    "geometryPPO111_body_collective": {
+      "development_primary_six_cells_pass": false,
+      "failed_cells": [
+        "nominal/route:finite3d_rmse;corner_peak"
+      ],
+      "episodes": 6,
+      "environment_count": 1,
+      "training_models": 1,
+      "final_applicability_confirmed": false,
+      "original_wind_macro": "NOT_COVERED_MILD_MISSING"
+    }
+  },
+  "final_applicability_confirmed": false,
+  "original_wind_macro": "NOT_COVERED_MILD_MISSING",
+  "reserved_results_opened": false,
+  "case_evidence": [
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_hover_nominal_env83301",
+      "name": "pid_hover_nominal_env83301",
+      "stage": "PID",
+      "scenario": "nominal",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": null,
+      "policy_sha256": null,
+      "interface": "native_position_target",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.0027928453452863784,
+        "penalized_rmse_position_m": 0.0027928453452863784,
+        "altitude_drop_m": 0.009999990463256836,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.009354691495837064,
+        "heading_peak_deg": 0.01737506993487683,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "9466af4adfe6851a85f01213ecb69d57b23698d293ba59e73b46fa572356c8a2",
+        "telemetry.csv": "715e3b19e15d0644950e5d893c0723e948ddd23ad077b1abdf61eea4d517f1fb",
+        "groundtruth_independent.jsonl": "606e28cfcd3f7b49f29a3c6f479f4477213985bbbd645e44e82f7e3a6b7955e7"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_hover_nominal_env83301_physical.json",
+          "sha256": "04f23ca5a8a15ef399e63a20726008f161caa6fec94f1683b7d7f5786e64188c"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_hover_nominal_env83301_metric.json",
+          "sha256": "3c4151c23951c88fea6b86906bd19c81d77d4153eafc2255d6c76a432d27aabd"
+        }
+      },
+      "actor_audit_pass": null,
+      "evidence_label": "PHYSICAL_METRICS_PASS_ACTOR_NA"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/bc111_body_collective_route_force_strong_env83301",
+      "name": "bc111_body_collective_route_force_strong_env83301",
+      "stage": "BC111_body_collective",
+      "scenario": "force_strong",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "c0dd739eaf711895d5f5f5dc235abcf1309c3f0eba0706a6c397ad84421d4adb",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.597517712652987,
+        "penalized_rmse_position_m": 0.597517712652987,
+        "altitude_drop_m": 0.48000001907348633,
+        "pre_force_altitude_m": 3.569999933242798,
+        "altitude_drop_from_preforce_m": 0.6099998950958252,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 12.059999999999995,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.645226298098232,
+        "heading_peak_deg": 3.0832347630702577,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.146634315871995,
+        "rmse_during_force_m": 0.7119635736176003,
+        "rmse_after_force_m": 0.0536708288276878,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.519999999999996,
+        "transit_end_s": 12.059999999999995,
+        "transit_duration_s": 11.54,
+        "observed_transit_coverage_s": 11.54,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.23018000561979077,
+        "cross_track_rmse_m": 0.1978121697997895,
+        "cross_track_3d_rmse_m": 0.1978121697997895,
+        "cross_track_xy_rmse_m": 0.184908942877937,
+        "finite_segment_xy_rmse_m": 0.21854070720531568,
+        "active_segment_peak_m": 0.3920785025282641,
+        "observed_transit_segment_rmse_m": 0.23018000561979077,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.2257091451863513,
+        "max_corner_post_peak_m": 0.28471625354575153,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.3999999999999986,
+            "window_end_s": 3.3999999999999986,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.28471625354575153,
+            "post_outgoing_mean_deviation_m": 0.22829024581606536,
+            "post_incoming_overshoot_m": 0.26043248176574707
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 7.979999999999997,
+            "window_end_s": 8.979999999999997,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2456901284474449,
+            "post_outgoing_mean_deviation_m": 0.21491783577718826,
+            "post_incoming_overshoot_m": 0.1788452627996798
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 10.019999999999996,
+            "window_end_s": 11.019999999999996,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1467210535658574,
+            "post_outgoing_mean_deviation_m": 0.12588389138490336,
+            "post_incoming_overshoot_m": 0.12814864046138982
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "a40bed79ab652c38fc36f740b0e215bc571752bd24e31f066bb21046fc95e0d0",
+        "telemetry.csv": "b7c854ec9e2ca7dca647158c85f68b0a85562bad670fdc455f5939e162c4bae8",
+        "groundtruth_independent.jsonl": "e6ccca4b555b852a3b7a4b02d53416672e96f11261498f915e8384e1721a969a"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_force_strong_env83301_physical.json",
+          "sha256": "ac43263581e336f7ef9937a02cbf84712065ef0ced2db84aa5cdf83c5a34c274"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_force_strong_env83301_metric.json",
+          "sha256": "b31883115e8c7c185d43f507fedef97847624fad8e5b709fa151bca8b06ac91e"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_force_strong_env83301_actor.json",
+          "sha256": "d1fe93978ad5351fc87011ecd924df53e50adf79b309c1c6fd2d00858a76ae19"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_gust_env83301",
+      "name": "pid_route_gust_env83301",
+      "stage": "PID",
+      "scenario": "gust",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": null,
+      "policy_sha256": null,
+      "interface": "native_position_target",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.6631097030146983,
+        "penalized_rmse_position_m": 0.6631097030146983,
+        "altitude_drop_m": 0.49000000953674316,
+        "pre_force_altitude_m": 3.5399999618530273,
+        "altitude_drop_from_preforce_m": 0.5799999237060547,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 9.54,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.2920047740049639,
+        "heading_peak_deg": 2.121708775345346,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.3092643845457448,
+        "rmse_during_force_m": 0.8792631696438278,
+        "rmse_after_force_m": 0.04765618524138029,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.519999999999996,
+        "transit_end_s": 9.54,
+        "transit_duration_s": 9.020000000000003,
+        "observed_transit_coverage_s": 9.020000000000003,
+        "max_sample_gap_s": 0.03999999999999915,
+        "segment_rmse_m": 0.14457125288395606,
+        "cross_track_rmse_m": 0.14438916970778423,
+        "cross_track_3d_rmse_m": 0.14438916970778423,
+        "cross_track_xy_rmse_m": 0.10886517761485516,
+        "finite_segment_xy_rmse_m": 0.10927781058736893,
+        "active_segment_peak_m": 0.34226142485085653,
+        "observed_transit_segment_rmse_m": 0.14457125288395606,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.2491154103064792,
+        "max_corner_post_peak_m": 0.34224198543506834,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.6799999999999997,
+            "window_end_s": 3.6799999999999997,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20513712271469411,
+            "post_outgoing_mean_deviation_m": 0.11667758576340465,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.8799999999999955,
+            "window_end_s": 5.8799999999999955,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.34224198543506834,
+            "post_outgoing_mean_deviation_m": 0.1796741767111474,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 7.279999999999994,
+            "window_end_s": 8.279999999999994,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19996712276967518,
+            "post_outgoing_mean_deviation_m": 0.1699674676620445,
+            "post_incoming_overshoot_m": 0.0
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "7c364e7651b330fb39f375a0156fcbceb84507cc5f13fe0e91cc3aae5f3ad129",
+        "telemetry.csv": "c3984802781ae0e85970d46ec5261a0134106999d02fa586849093ddf7b24583",
+        "groundtruth_independent.jsonl": "e12d542b6bb33f8caccfc2698cae6dd32e1b914d25f3ba6539a515c66ec2ed40"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_route_gust_env83301_physical.json",
+          "sha256": "08ca25f118c5f80dcab00b80bfd60571203c54f2e3051c1e7a1fd76e8ed88b3e"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_route_gust_env83301_metric.json",
+          "sha256": "755cde53be8ca1d529e81191886b0f0cea85277296a2d1bdb5d21fe30c14f0d6"
+        }
+      },
+      "actor_audit_pass": null,
+      "evidence_label": "PHYSICAL_METRICS_PASS_ACTOR_NA"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/geometryppo111_body_collective_hover_force_strong_env83301",
+      "name": "geometryppo111_body_collective_hover_force_strong_env83301",
+      "stage": "geometryPPO111_body_collective",
+      "scenario": "force_strong",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "653f108879b43449454fffdebdd87b1a0f6968e1f4bb1f68a57fc793fba13034",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.032969466119252444,
+        "penalized_rmse_position_m": 0.032969466119252444,
+        "altitude_drop_m": 0.009999990463256836,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.46247363376607376,
+        "heading_peak_deg": 1.727102365888299,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.0085095345101537,
+        "rmse_during_force_m": 0.030628542839219283,
+        "rmse_after_force_m": 0.0427819125129282,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "9ad58b45f8b297b4dc0c691516ed5ed9f703b29246cbd7be0f205fc2ca187279",
+        "telemetry.csv": "e6f9362e648662bb4ec087f11de23ac2e20edb4d5aefdc98d75ff4e85a9ad07f",
+        "groundtruth_independent.jsonl": "69dfbf1c3106d08b9347d39bbfc9ad25365eddb49534b5696cb7f1f50be60aa2"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_force_strong_env83301_physical.json",
+          "sha256": "ef2b041b5c44adc3413795f6a6b78f006deead28c1e165eca2f302dd53c65a12"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_force_strong_env83301_metric.json",
+          "sha256": "0a34cc2ee160d6212b312502dff92becd447177a5581e479405f867a9bed0dbd"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_force_strong_env83301_actor.json",
+          "sha256": "4f569cb7119cca030cec1983f31ed794ac1a72d1f2d4542ab55caa9ac60e028b"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/controlppo111_body_collective_route_force_strong_env83301",
+      "name": "controlppo111_body_collective_route_force_strong_env83301",
+      "stage": "controlPPO111_body_collective",
+      "scenario": "force_strong",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "933a894a8dc71c33275877974f8ebe0a5f60c18d95ed329d7a0ed7c71de5ee6a",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5796021353871413,
+        "penalized_rmse_position_m": 0.5796021353871413,
+        "altitude_drop_m": 0.4500000476837158,
+        "pre_force_altitude_m": 3.4800000190734863,
+        "altitude_drop_from_preforce_m": 0.48000001907348633,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 8.339999999999996,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.7151015991863745,
+        "heading_peak_deg": 4.464619684875401,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.2878370775018138,
+        "rmse_during_force_m": 0.5861827639965941,
+        "rmse_after_force_m": 0.03209023235097363,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 8.339999999999996,
+        "transit_duration_s": 7.799999999999997,
+        "observed_transit_coverage_s": 7.799999999999997,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.1655238158772992,
+        "cross_track_rmse_m": 0.1549054581063645,
+        "cross_track_3d_rmse_m": 0.1549054581063645,
+        "cross_track_xy_rmse_m": 0.12409729841637787,
+        "finite_segment_xy_rmse_m": 0.13860202050707032,
+        "active_segment_peak_m": 0.2823848760025228,
+        "observed_transit_segment_rmse_m": 0.1655238158772992,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.21367019309808097,
+        "max_corner_post_peak_m": 0.2823848760025228,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.240000000000002,
+            "window_end_s": 3.240000000000002,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2823848760025228,
+            "post_outgoing_mean_deviation_m": 0.24579598008995945,
+            "post_incoming_overshoot_m": 0.24227619171142578
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.520000000000003,
+            "window_end_s": 5.520000000000003,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.21070877934320162,
+            "post_outgoing_mean_deviation_m": 0.19008730819761277,
+            "post_incoming_overshoot_m": 0.09839785189806247
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.359999999999999,
+            "window_end_s": 7.359999999999999,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.14791692394851835,
+            "post_outgoing_mean_deviation_m": 0.09098169201856549,
+            "post_incoming_overshoot_m": 0.09202623812506214
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "831a52fa3bcb809e053653da4e4c5f636e139ce275fc6e401bc55dc6af79c48f",
+        "telemetry.csv": "6c15e5bba4657235fbf111ac0db5aa4c714cccb11c533f23630c0ad1aab3ddab",
+        "groundtruth_independent.jsonl": "0efc2aae6d0dd1a8553584bd198f11c6be37c3af46e38abd23cb905084eacc14"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_force_strong_env83301_physical.json",
+          "sha256": "321cf3a1e73dfafd4201a8ab7021d40ca424a663f9dee0b915b34e9432354aa2"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_force_strong_env83301_metric.json",
+          "sha256": "33c0977a2ad1e70f102bf54a88465dc51044724a0940e88d746322d0f3570794"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_force_strong_env83301_actor.json",
+          "sha256": "db08554bd47999c7e1f3e341dacadca8d86bdc989132f8310b2de7976fd73e5a"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/wind111_legacy_preboost_hover_gust_env83301",
+      "name": "wind111_legacy_preboost_hover_gust_env83301",
+      "stage": "wind111_legacy_preboost",
+      "scenario": "gust",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "ddd0a84c3cb3d7416bb7bf3238d130957238e96290726f6e8a7bfed12a58ef09",
+      "interface": "legacy_preboost",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.06263633229529388,
+        "penalized_rmse_position_m": 0.06263633229529388,
+        "altitude_drop_m": 0.009999990463256836,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.4511269470364165,
+        "heading_peak_deg": 1.9253419647892607,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.01357462748891711,
+        "rmse_during_force_m": 0.08187914267987591,
+        "rmse_after_force_m": 0.044463593994887037,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "4e61897a518e51a1dee255fe5acb257a629465900fbb54a05d9e1860244bd02e",
+        "telemetry.csv": "4a88ffe331c9bfe20afd2fff051c9141e9f90a24805eb986ecc74b1e7afb1824",
+        "groundtruth_independent.jsonl": "44d64d8ab1dec727eeb1b5baf42cb6e8e19eb585c28a394eb3099a4d5a949b8e"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_legacy_preboost_hover_gust_env83301_physical.json",
+          "sha256": "fb08f18519fe0b80ed41b434ceba4ecd6161e7348ba2147a8c639d1900a57b0d"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_legacy_preboost_hover_gust_env83301_metric.json",
+          "sha256": "2dc1b74017f102529f8d64b4419d117b3066c6b59ac6dc2696f0e58eba59623e"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_legacy_preboost_hover_gust_env83301_actor.json",
+          "sha256": "7d1bdae9714929e79d2446e20e271f75051c81a49d9ab18e6bb8abb01ac59f7c"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/controlppo111_body_collective_hover_force_strong_env83301",
+      "name": "controlppo111_body_collective_hover_force_strong_env83301",
+      "stage": "controlPPO111_body_collective",
+      "scenario": "force_strong",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "933a894a8dc71c33275877974f8ebe0a5f60c18d95ed329d7a0ed7c71de5ee6a",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.04065253361370027,
+        "penalized_rmse_position_m": 0.04065253361370027,
+        "altitude_drop_m": 0.0,
+        "pre_force_altitude_m": 3.009999990463257,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.38703738932391346,
+        "heading_peak_deg": 1.6113651476596984,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.025656526444884017,
+        "rmse_during_force_m": 0.04269205324692476,
+        "rmse_after_force_m": 0.043438923507784014,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "8ed06df55a3ddbd9818a8ebfd01dbf28a7e380a9ad2658573f0495fd4a0bebc9",
+        "telemetry.csv": "54a28e4030c40bfa64e1bd1da1de424503e5940e01b8721080b185b3885144b9",
+        "groundtruth_independent.jsonl": "00799c5d3c11cd5f74188b49fef173d153ce6536263f184f7282b8227c695dc4"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_force_strong_env83301_physical.json",
+          "sha256": "92b07adb24a7fba5a5b20de90e66db09447f44ba14336283c31ce059c6486851"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_force_strong_env83301_metric.json",
+          "sha256": "537eccd09a908bd4580576042d26a44d5a81d975c8d498da10307164f67b035a"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_force_strong_env83301_actor.json",
+          "sha256": "3e2e7dddffd1ec5c8cff2e2d740993f0ae578e9792bc75fcd4f0fe73a61471dd"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_nominal_env83301",
+      "name": "pid_route_nominal_env83301",
+      "stage": "PID",
+      "scenario": "nominal",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": null,
+      "policy_sha256": null,
+      "interface": "native_position_target",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.6425858496016278,
+        "penalized_rmse_position_m": 0.6425858496016278,
+        "altitude_drop_m": 0.49000000953674316,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 9.280000000000001,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.1352447317837948,
+        "heading_peak_deg": 0.8835400216998294,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 9.280000000000001,
+        "transit_duration_s": 8.740000000000002,
+        "observed_transit_coverage_s": 8.740000000000002,
+        "max_sample_gap_s": 0.03999999999999915,
+        "segment_rmse_m": 0.10454599624185394,
+        "cross_track_rmse_m": 0.10454435800655854,
+        "cross_track_3d_rmse_m": 0.10454435800655854,
+        "cross_track_xy_rmse_m": 0.07213554374524944,
+        "finite_segment_xy_rmse_m": 0.07213554374524944,
+        "active_segment_peak_m": 0.24199593952113554,
+        "observed_transit_segment_rmse_m": 0.10454599624185394,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.18180067257070054,
+        "max_corner_post_peak_m": 0.2218274327505935,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.700000000000003,
+            "window_end_s": 3.700000000000003,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20513712271469411,
+            "post_outgoing_mean_deviation_m": 0.1169190385918295,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.899999999999999,
+            "window_end_s": 5.899999999999999,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2218274327505935,
+            "post_outgoing_mean_deviation_m": 0.12280659183375287,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 7.100000000000001,
+            "window_end_s": 8.100000000000001,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.11843746224681401,
+            "post_outgoing_mean_deviation_m": 0.09128927188757585,
+            "post_incoming_overshoot_m": 0.0
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "64fe56257875e9bbe3f365e69a84dfa53afb54d1059088ef1ac1777db0dd63c9",
+        "telemetry.csv": "b5c688a0b8d51c57fe5538d0bdac5dc61437ff7dfe20f736364a120690eed81d",
+        "groundtruth_independent.jsonl": "ec381999126329ba2888bf8c5f6801414b645c66cd841289248a0d066868a7f9"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_route_nominal_env83301_physical.json",
+          "sha256": "5eb403a167b0bc7d209a9fb6e907cf556fb69c43482f25683afcc35c5bf3fce1"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_route_nominal_env83301_metric.json",
+          "sha256": "efff70883d51095d6b16eb7aa95d17a6b808d7fb1081cb5591d80714b1cbba95"
+        }
+      },
+      "actor_audit_pass": null,
+      "evidence_label": "PHYSICAL_METRICS_PASS_ACTOR_NA"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/geometryppo111_body_collective_hover_nominal_env83301",
+      "name": "geometryppo111_body_collective_hover_nominal_env83301",
+      "stage": "geometryPPO111_body_collective",
+      "scenario": "nominal",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "653f108879b43449454fffdebdd87b1a0f6968e1f4bb1f68a57fc793fba13034",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.00705451453032202,
+        "penalized_rmse_position_m": 0.00705451453032202,
+        "altitude_drop_m": 0.0,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.018993035241853137,
+        "heading_peak_deg": 0.027759957770626325,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "cea2b43153b0f5bf9c704c8153a9053b83ead84584d417d11dfb6347fb923bb2",
+        "telemetry.csv": "ff4b85d1762aa2db23d8baa023760a8a23024ec694f11ad822fd760dd058e5b8",
+        "groundtruth_independent.jsonl": "0f3d19ba5f2ea36eb118fb8e9abafb0ac5985d0237e3c6414235a319d4943296"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_nominal_env83301_physical.json",
+          "sha256": "3546f4a638eedbed6664a5609a4bcffa2bba9cbd2d186f64a3759215d97b48c6"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_nominal_env83301_metric.json",
+          "sha256": "2c4d7771fcdc739d36a975e63d12419fe65caa7b4b3bae995ab54c6b8f46c9ad"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_nominal_env83301_actor.json",
+          "sha256": "56de50675c2d9f895b0aa0f3eeb927f000e41a5e1a0122df38d765e59288450c"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/controlppo111_body_collective_hover_gust_env83301",
+      "name": "controlppo111_body_collective_hover_gust_env83301",
+      "stage": "controlPPO111_body_collective",
+      "scenario": "gust",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "933a894a8dc71c33275877974f8ebe0a5f60c18d95ed329d7a0ed7c71de5ee6a",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.06323504617673384,
+        "penalized_rmse_position_m": 0.06323504617673384,
+        "altitude_drop_m": 0.0,
+        "pre_force_altitude_m": 3.009999990463257,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.4645287402771217,
+        "heading_peak_deg": 2.05329144744515,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.02562481875171509,
+        "rmse_during_force_m": 0.0827649203881512,
+        "rmse_after_force_m": 0.04297920297408606,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "b6dba44b01f2c3d479613ad880d2b4ac405d2fcc299a00e2c758e1ae6139f8d3",
+        "telemetry.csv": "6e8ef1eed33b241869ec892c15ec13073437902188a117ecd8a997ab45a437bd",
+        "groundtruth_independent.jsonl": "22a80affd6e3a8d0e64555b3a418ab694978e06c003bbbf3a60cd57ede897255"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_gust_env83301_physical.json",
+          "sha256": "6ba7025c6a2b50f025296b6074a1a0f08611006e9167e633449e5f8cbab37976"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_gust_env83301_metric.json",
+          "sha256": "1c1d43913d6dd6636cbd6e08af7a80aa42f74d95f21bc894226e65e871bb2a6c"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_gust_env83301_actor.json",
+          "sha256": "710fa3d4192a0ea590a26aa0828d340eb80e1d3e9ee9db15ee31db567a499d8f"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/wind111_body_collective_hover_nominal_env83301",
+      "name": "wind111_body_collective_hover_nominal_env83301",
+      "stage": "wind111_body_collective",
+      "scenario": "nominal",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "ddd0a84c3cb3d7416bb7bf3238d130957238e96290726f6e8a7bfed12a58ef09",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.010852940928048902,
+        "penalized_rmse_position_m": 0.010852940928048902,
+        "altitude_drop_m": 0.0,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.08007763754718006,
+        "heading_peak_deg": 0.09185844541771453,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "4f34eeb464c757a2ccacabe8e5a46d7488d53f0b3e92bc868ae19a29046b8db3",
+        "telemetry.csv": "b9fd759ba241c3de6c704d57a87eb5a930453801b20342acbfc0a8cd057d916e",
+        "groundtruth_independent.jsonl": "f4a4e0d66f96b1ce7c88c900ead8eb951e5ddc9ccbf578403a96e17c54cb96d0"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_nominal_env83301_physical.json",
+          "sha256": "b2e4e59a4b194a8bcfcd71c081adb553f0e033909560de051c34ec3c4ba54b8c"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_nominal_env83301_metric.json",
+          "sha256": "e390175d662f7ec866ce29fcd694a13abaca310f7479a5a5bbdca8f526045954"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_nominal_env83301_actor.json",
+          "sha256": "423921721dc0976ed160e7de0e2a04a52583ef094675da36b3640867a7e8adad"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/bc111_body_collective_hover_nominal_env83301",
+      "name": "bc111_body_collective_hover_nominal_env83301",
+      "stage": "BC111_body_collective",
+      "scenario": "nominal",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "c0dd739eaf711895d5f5f5dc235abcf1309c3f0eba0706a6c397ad84421d4adb",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.0074002020466782635,
+        "penalized_rmse_position_m": 0.0074002020466782635,
+        "altitude_drop_m": 0.0,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.012758532374078712,
+        "heading_peak_deg": 0.02020094564463056,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "5eb976d036f39622689dbd73dbfe61816912361c3e0896c03be445ab6446b1b5",
+        "telemetry.csv": "face0112ef1bd26bd536a3c52bed7fed9ba8472d3924ba012e7c11237789efde",
+        "groundtruth_independent.jsonl": "3284f9af8894c6977603c5739a475669e7772f78695435e5044e90dfa121518c"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_nominal_env83301_physical.json",
+          "sha256": "f785864a0cb38bb9e1330e98a8eb25ffd616b1c69691f49725c2046261d85bac"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_nominal_env83301_metric.json",
+          "sha256": "5316bf788b3319273579de611e96dd13e6133e054a186b7fb8b8097a371a51be"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_nominal_env83301_actor.json",
+          "sha256": "548eb2d023cb158aca5c83c5ad1c9bf3e2f3fd865c1a5f5f1588cfc052d8699a"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/wind111_body_collective_route_nominal_env83301",
+      "name": "wind111_body_collective_route_nominal_env83301",
+      "stage": "wind111_body_collective",
+      "scenario": "nominal",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "ddd0a84c3cb3d7416bb7bf3238d130957238e96290726f6e8a7bfed12a58ef09",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5796204592009154,
+        "penalized_rmse_position_m": 0.5796204592009154,
+        "altitude_drop_m": 0.4700000286102295,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 8.0,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.36182175702396996,
+        "heading_peak_deg": 2.1257125368542837,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5200000000000031,
+        "transit_end_s": 8.0,
+        "transit_duration_s": 7.479999999999997,
+        "observed_transit_coverage_s": 7.479999999999997,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.1645489611008247,
+        "cross_track_rmse_m": 0.1513120616055904,
+        "cross_track_3d_rmse_m": 0.1513120616055904,
+        "cross_track_xy_rmse_m": 0.12443367807449963,
+        "finite_segment_xy_rmse_m": 0.1421569070275758,
+        "active_segment_peak_m": 0.2584703166014771,
+        "observed_transit_segment_rmse_m": 0.1645489611008247,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.22864506856444614,
+        "max_corner_post_peak_m": 0.2584703166014771,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.240000000000002,
+            "window_end_s": 3.240000000000002,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2584703166014771,
+            "post_outgoing_mean_deviation_m": 0.22599974175212464,
+            "post_incoming_overshoot_m": 0.2150421142578125
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.240000000000002,
+            "window_end_s": 5.240000000000002,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.23928984861881666,
+            "post_outgoing_mean_deviation_m": 0.2136983849512486,
+            "post_incoming_overshoot_m": 0.10192118691838736
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.020000000000003,
+            "window_end_s": 7.020000000000003,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.18817504047304467,
+            "post_outgoing_mean_deviation_m": 0.09977919400315925,
+            "post_incoming_overshoot_m": 0.12814864046138982
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "74c50ffaba836286a057e505b9c70624f5446a0d5916924171e04339be4a2f3b",
+        "telemetry.csv": "236c842a71a8b56f47dadf21fdd14925fc2dfb07b338f731d31296207a8c4c18",
+        "groundtruth_independent.jsonl": "e466a1d0bde0baf4e1b00c3970264cc6249183383852dd6b67b9d5c8d12ad0ad"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_nominal_env83301_physical.json",
+          "sha256": "979b589cc5459e09dd818e52e2606969cc82276600b07adec4304f142103af68"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_nominal_env83301_metric.json",
+          "sha256": "4103564cb83d7131303f6a1ebe8c42a4dab9bfe48d95d080c0d9be5eea355bf8"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_nominal_env83301_actor.json",
+          "sha256": "b7f45ae3dff426b95bd73cb9ac20a140b94f4ac9d277b56eb13a153ca85fa321"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/wind111_body_collective_hover_gust_env83301",
+      "name": "wind111_body_collective_hover_gust_env83301",
+      "stage": "wind111_body_collective",
+      "scenario": "gust",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "ddd0a84c3cb3d7416bb7bf3238d130957238e96290726f6e8a7bfed12a58ef09",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.0631769365140367,
+        "penalized_rmse_position_m": 0.0631769365140367,
+        "altitude_drop_m": 0.009999990463256836,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.455163436026375,
+        "heading_peak_deg": 1.9355574365027806,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.013600966368474314,
+        "rmse_during_force_m": 0.0828255985609528,
+        "rmse_after_force_m": 0.04322840389301961,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "c65d7ffa6264dfff753076eeb0661e4d074783e78c30e560993b862cc6582ff8",
+        "telemetry.csv": "f7aaa550e5919795ffe494735add6e34a9f82a812b9b364779827eed8bb3c78a",
+        "groundtruth_independent.jsonl": "c2219b636e96265b8956052c97a317997c5e9e5bed60186ecdb37db7168913a2"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_gust_env83301_physical.json",
+          "sha256": "128d0ecf3a6f420fdbd304ad26f5645392dbc30c9a7ecd0164167414f755ba62"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_gust_env83301_metric.json",
+          "sha256": "02755d19966398fb93920345c2c3fd24fa426b83c068874030f80bc2267e3b4b"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_gust_env83301_actor.json",
+          "sha256": "4b416f3c43313c6c0c91671534f617ef7c1d61efc6ffa54d7c5c9e1784e33e0d"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/wind111_legacy_preboost_hover_force_strong_env83301",
+      "name": "wind111_legacy_preboost_hover_force_strong_env83301",
+      "stage": "wind111_legacy_preboost",
+      "scenario": "force_strong",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "ddd0a84c3cb3d7416bb7bf3238d130957238e96290726f6e8a7bfed12a58ef09",
+      "interface": "legacy_preboost",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.03762476564151981,
+        "penalized_rmse_position_m": 0.03762476564151981,
+        "altitude_drop_m": 0.009999990463256836,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.43283828717755135,
+        "heading_peak_deg": 1.7537753785101624,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.013604540346599593,
+        "rmse_during_force_m": 0.03924697794908229,
+        "rmse_after_force_m": 0.04289033672006449,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "f91102d04b817084879d15e1269b3c8951517e3cab2d53e4ef58f098e4a9c4e3",
+        "telemetry.csv": "37ce30c389ccdd92dc68f9836cb5e4f4e81a3225ceba113c3dbd2c37e4596133",
+        "groundtruth_independent.jsonl": "21b2dcc5849373ba6b2f952cf999c22667fd81f99ba01c1c56bf08ee7345c3f6"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_legacy_preboost_hover_force_strong_env83301_physical.json",
+          "sha256": "6e33685f369468e70c66f78a88286a22077c3b180eb40168af774cc95d843ed0"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_legacy_preboost_hover_force_strong_env83301_metric.json",
+          "sha256": "74a9e3cd5572ce1972fcc0d7c2e4aa240ffbffb02b44e6b8f8b5758fcce138b9"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_legacy_preboost_hover_force_strong_env83301_actor.json",
+          "sha256": "bc4b9ee1d0df8fa7087e9e728fac580f176385d101230cc74993db26b1e4d60a"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/geometryppo111_body_collective_route_nominal_env83301",
+      "name": "geometryppo111_body_collective_route_nominal_env83301",
+      "stage": "geometryPPO111_body_collective",
+      "scenario": "nominal",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "653f108879b43449454fffdebdd87b1a0f6968e1f4bb1f68a57fc793fba13034",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5766784362377786,
+        "penalized_rmse_position_m": 0.5766784362377786,
+        "altitude_drop_m": 0.48000001907348633,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 7.920000000000002,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.34167895255830966,
+        "heading_peak_deg": 2.139013694726788,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5200000000000031,
+        "transit_end_s": 7.920000000000002,
+        "transit_duration_s": 7.399999999999999,
+        "observed_transit_coverage_s": 7.399999999999999,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.1542566740431004,
+        "cross_track_rmse_m": 0.14219544110743546,
+        "cross_track_3d_rmse_m": 0.14219544110743546,
+        "cross_track_xy_rmse_m": 0.11401376650605113,
+        "finite_segment_xy_rmse_m": 0.13047321410649543,
+        "active_segment_peak_m": 0.23855792704142845,
+        "observed_transit_segment_rmse_m": 0.1542566740431004,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.21734088667940585,
+        "max_corner_post_peak_m": 0.23855792704142845,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.240000000000002,
+            "window_end_s": 3.240000000000002,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.23855792704142845,
+            "post_outgoing_mean_deviation_m": 0.20629626578915178,
+            "post_incoming_overshoot_m": 0.2059640884399414
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.219999999999999,
+            "window_end_s": 5.219999999999999,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.22396580185637832,
+            "post_outgoing_mean_deviation_m": 0.19447134162821303,
+            "post_incoming_overshoot_m": 0.09112179008597236
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 5.979999999999997,
+            "window_end_s": 6.979999999999997,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.18949893114041075,
+            "post_outgoing_mean_deviation_m": 0.10364054934904837,
+            "post_incoming_overshoot_m": 0.1305739943987532
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "0952eb8c52fc45212fb11720d3eaa130c80033a7a92ad5784e11b5101d2cad01",
+        "telemetry.csv": "38d997f0f924ce973b48557cd9e05c942259b3455e835503a4b6d11826109b3b",
+        "groundtruth_independent.jsonl": "5d0d4d11f43cd6659c5be21f975a50386042bec43b8bbb419716f0a07d490a83"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_nominal_env83301_physical.json",
+          "sha256": "5a1efe4a5c1ba75d3c6ebbb700ff96d588295c3abc2ce2dfd61827ebd6f812ba"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_nominal_env83301_metric.json",
+          "sha256": "fc3a9dd9050243a162205d4f0457db4b4ff92e26f36835cf84dc1c74a53e4d9c"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_nominal_env83301_actor.json",
+          "sha256": "a0c5ee572689f1d753d9244c22ba49aa34c5646e4e6a45e89a99c4fc122cc7f2"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/wind111_body_collective_hover_force_strong_env83301",
+      "name": "wind111_body_collective_hover_force_strong_env83301",
+      "stage": "wind111_body_collective",
+      "scenario": "force_strong",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "ddd0a84c3cb3d7416bb7bf3238d130957238e96290726f6e8a7bfed12a58ef09",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.03770206204308743,
+        "penalized_rmse_position_m": 0.03770206204308743,
+        "altitude_drop_m": 0.0,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.0,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.43279943819116723,
+        "heading_peak_deg": 1.7553293057435368,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.013627463337343111,
+        "rmse_during_force_m": 0.039660174332664715,
+        "rmse_after_force_m": 0.0424984807314671,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "89347aade51cdce118384566ff54cd170b6d2f1c52559722d3b52eee8683ca90",
+        "telemetry.csv": "9342d32b7cfd5f5d9f886c832e01538891384b9c29173ca3e611a0b410d71168",
+        "groundtruth_independent.jsonl": "0c580e52472eca8a980d8aca5d11528a0933c62aa381a109e74289c213795d41"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_force_strong_env83301_physical.json",
+          "sha256": "f18521d1216c4fcdef25ea3f312722b1f86e3eebdf67cba639424b90e3d6f2de"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_force_strong_env83301_metric.json",
+          "sha256": "2670b826eb28b1220b3d7fd996e193327198c2485aece5302399f94bfd6e6b9e"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_hover_force_strong_env83301_actor.json",
+          "sha256": "1ea8da28c15a4c33aef454dd711c59d1151c7344bd235d5f748108020c087711"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_hover_force_strong_env83301",
+      "name": "pid_hover_force_strong_env83301",
+      "stage": "PID",
+      "scenario": "force_strong",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": null,
+      "policy_sha256": null,
+      "interface": "native_position_target",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.06751586046239824,
+        "penalized_rmse_position_m": 0.06751586046239824,
+        "altitude_drop_m": 0.009999990463256836,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.21074276602467718,
+        "heading_peak_deg": 0.7075925057506882,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.0021146007156568588,
+        "rmse_during_force_m": 0.06716192556119259,
+        "rmse_after_force_m": 0.08320992591084814,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "7d5944f0bca8ef3846af23e62e47348d7c7dd0a9c3ca123bb3b5ffc53dbe918b",
+        "telemetry.csv": "0ba6c196a75ea38a824e9686abaa8775df1506081bb8d819d640c2f807d85c83",
+        "groundtruth_independent.jsonl": "409ae0c575314693e2ff0d69a88498d4c207ad1ef0bdf9675fdf95288099c51d"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_hover_force_strong_env83301_physical.json",
+          "sha256": "93dbc93e690ac00230ff18eb5e0883815be4222d9ea8897ced071d5892935a81"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_hover_force_strong_env83301_metric.json",
+          "sha256": "1b214e81f781f5b9a7d7f51a84100d4e4b4984069a8bf1070b617d5b24e099b9"
+        }
+      },
+      "actor_audit_pass": null,
+      "evidence_label": "PHYSICAL_METRICS_PASS_ACTOR_NA"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/controlppo111_body_collective_route_nominal_env83301",
+      "name": "controlppo111_body_collective_route_nominal_env83301",
+      "stage": "controlPPO111_body_collective",
+      "scenario": "nominal",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "933a894a8dc71c33275877974f8ebe0a5f60c18d95ed329d7a0ed7c71de5ee6a",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5768321813616871,
+        "penalized_rmse_position_m": 0.5768321813616871,
+        "altitude_drop_m": 0.4500000476837158,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 8.240000000000002,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.3732220587502168,
+        "heading_peak_deg": 2.196984775855195,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5200000000000031,
+        "transit_end_s": 8.240000000000002,
+        "transit_duration_s": 7.719999999999999,
+        "observed_transit_coverage_s": 7.719999999999999,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.16991572568965813,
+        "cross_track_rmse_m": 0.15773635673548575,
+        "cross_track_3d_rmse_m": 0.15773635673548575,
+        "cross_track_xy_rmse_m": 0.1324925647296036,
+        "finite_segment_xy_rmse_m": 0.1481470848958074,
+        "active_segment_peak_m": 0.2823848760025228,
+        "observed_transit_segment_rmse_m": 0.16991572568965813,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.2246534340718793,
+        "max_corner_post_peak_m": 0.2823848760025228,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.219999999999999,
+            "window_end_s": 3.219999999999999,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2823848760025228,
+            "post_outgoing_mean_deviation_m": 0.24356406931450525,
+            "post_incoming_overshoot_m": 0.2241201400756836
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.520000000000003,
+            "window_end_s": 5.520000000000003,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2115470449391979,
+            "post_outgoing_mean_deviation_m": 0.18895327284120747,
+            "post_incoming_overshoot_m": 0.09839785189806247
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.280000000000001,
+            "window_end_s": 7.280000000000001,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.18002838127391713,
+            "post_outgoing_mean_deviation_m": 0.09679201697593327,
+            "post_incoming_overshoot_m": 0.10810929305673533
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "40f54b8a9435568fae4adb75b7b177acc26b0a09e4c900493f001d9a5ec4a1ec",
+        "telemetry.csv": "e5ff77d0dc3d518a1034393cfce753f3e4705adb8a3c2aeb4d4b62cd79857e25",
+        "groundtruth_independent.jsonl": "df2af5f49f0ab9f2e54a6f2a94522dcfde9c585313f9442ee8ca22983c36063c"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_nominal_env83301_physical.json",
+          "sha256": "91097faa4eb3c8207361cc5d7e42b7c8e351e992e9cd9a7b09952bfe450de560"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_nominal_env83301_metric.json",
+          "sha256": "ecffc7ad1a6cabce020492787dc8b2a7f2808f4890ac73cf4b8c3562d827583b"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_nominal_env83301_actor.json",
+          "sha256": "7248eb42a51553d627cb098f73a291327e9dd38bbcb82014ecc4634a5a68252f"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/geometryppo111_body_collective_hover_gust_env83301",
+      "name": "geometryppo111_body_collective_hover_gust_env83301",
+      "stage": "geometryPPO111_body_collective",
+      "scenario": "gust",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "653f108879b43449454fffdebdd87b1a0f6968e1f4bb1f68a57fc793fba13034",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.06052086473777174,
+        "penalized_rmse_position_m": 0.06052086473777174,
+        "altitude_drop_m": 0.009999990463256836,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.44495494428412335,
+        "heading_peak_deg": 1.8279819287271266,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.008580890830711296,
+        "rmse_during_force_m": 0.07749082492415807,
+        "rmse_after_force_m": 0.044548046987165774,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "425483fdf0be1c199aef49ad5542a394099636807beab9139a04677494833841",
+        "telemetry.csv": "20221b4f9168606a08a377ba77a88719cc1b51d8a657bda60009a8adb2e51df6",
+        "groundtruth_independent.jsonl": "543814d15687e3701e7f42a284a1276e556bbdb25d2af0824bf3dcfddc01850d"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_gust_env83301_physical.json",
+          "sha256": "6a25e7c7976cf8344590363e63f0c79de20e684097c948c4b439e2a316bf8f7e"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_gust_env83301_metric.json",
+          "sha256": "270fecead90c1d08685be182a31892394523b4d1f1bb8c57508dd4350e4b0c9f"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_hover_gust_env83301_actor.json",
+          "sha256": "9954579eb7b0d68f2d9f424e02ba04b189f1ae70580423ded379602926bae5ed"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/bc111_body_collective_route_gust_env83301",
+      "name": "bc111_body_collective_route_gust_env83301",
+      "stage": "BC111_body_collective",
+      "scenario": "gust",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "c0dd739eaf711895d5f5f5dc235abcf1309c3f0eba0706a6c397ad84421d4adb",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5876419999848761,
+        "penalized_rmse_position_m": 0.5876419999848761,
+        "altitude_drop_m": 0.48000001907348633,
+        "pre_force_altitude_m": 3.569999933242798,
+        "altitude_drop_from_preforce_m": 0.6099998950958252,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 13.32,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.40578040328150905,
+        "heading_peak_deg": 1.7734502299178654,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.1469196479791035,
+        "rmse_during_force_m": 0.30038477048765666,
+        "rmse_after_force_m": 0.055886188421790044,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5200000000000031,
+        "transit_end_s": 13.32,
+        "transit_duration_s": 12.799999999999997,
+        "observed_transit_coverage_s": 12.799999999999997,
+        "max_sample_gap_s": 0.03999999999999915,
+        "segment_rmse_m": 0.251446921736375,
+        "cross_track_rmse_m": 0.22034665179705937,
+        "cross_track_3d_rmse_m": 0.22034665179705937,
+        "cross_track_xy_rmse_m": 0.2133652986740093,
+        "finite_segment_xy_rmse_m": 0.2447379524033207,
+        "active_segment_peak_m": 0.3920785025282641,
+        "observed_transit_segment_rmse_m": 0.251446921736375,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.24045221614698042,
+        "max_corner_post_peak_m": 0.28471625354575153,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.4000000000000057,
+            "window_end_s": 3.4000000000000057,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.28471625354575153,
+            "post_outgoing_mean_deviation_m": 0.2287002419295468,
+            "post_incoming_overshoot_m": 0.26043248176574707
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 7.960000000000001,
+            "window_end_s": 8.96,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2615680790535188,
+            "post_outgoing_mean_deviation_m": 0.2356498953742113,
+            "post_incoming_overshoot_m": 0.19559357988977946
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 9.900000000000006,
+            "window_end_s": 10.900000000000006,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.1750723158416709,
+            "post_outgoing_mean_deviation_m": 0.1458565483474618,
+            "post_incoming_overshoot_m": 0.17460895999666873
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "6cf5adb1c9beba5a2bb4c702d7da339d33eb21d70cc504daa1d4765e3d6f33f2",
+        "telemetry.csv": "77e7773f7cc2d929516851e5dd3cad862d2436cafb61ea553a0e3af7b3f2f3b5",
+        "groundtruth_independent.jsonl": "431e2f1c8bd2e2e49ff5446cc411fd4c09440270c3118186e36cb4fdb261dbb8"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_gust_env83301_physical.json",
+          "sha256": "87d0f2062d58e56d5b58cc6ff402482d1506aaf97686a1aced5ff16593fd61f0"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_gust_env83301_metric.json",
+          "sha256": "11b0de3c31fac97cd7938fac33b67edc9ad8956b6ecfcfc79d663b77d1037762"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_gust_env83301_actor.json",
+          "sha256": "d195bea6eb7bedcad8b0dde885e4057b1159f1ab297eb81ad3432e437997eec2"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/wind111_body_collective_route_gust_env83301",
+      "name": "wind111_body_collective_route_gust_env83301",
+      "stage": "wind111_body_collective",
+      "scenario": "gust",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "ddd0a84c3cb3d7416bb7bf3238d130957238e96290726f6e8a7bfed12a58ef09",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5819516630151166,
+        "penalized_rmse_position_m": 0.5819516630151166,
+        "altitude_drop_m": 0.4700000286102295,
+        "pre_force_altitude_m": 3.369999885559082,
+        "altitude_drop_from_preforce_m": 0.37999987602233887,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 8.119999999999997,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.6991387573790859,
+        "heading_peak_deg": 4.119345939619084,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.3652932623682834,
+        "rmse_during_force_m": 0.6726458124617686,
+        "rmse_after_force_m": 0.03509377633628472,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 8.119999999999997,
+        "transit_duration_s": 7.579999999999998,
+        "observed_transit_coverage_s": 7.579999999999998,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.15691255835295667,
+        "cross_track_rmse_m": 0.14648825573914123,
+        "cross_track_3d_rmse_m": 0.14648825573914123,
+        "cross_track_xy_rmse_m": 0.11575794991112516,
+        "finite_segment_xy_rmse_m": 0.13057520961087682,
+        "active_segment_peak_m": 0.2617580219197418,
+        "observed_transit_segment_rmse_m": 0.15691255835295667,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.21095589414713953,
+        "max_corner_post_peak_m": 0.2617580219197418,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.259999999999998,
+            "window_end_s": 3.259999999999998,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2617580219197418,
+            "post_outgoing_mean_deviation_m": 0.22701547497488261,
+            "post_incoming_overshoot_m": 0.2241201400756836
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.259999999999998,
+            "window_end_s": 5.259999999999998,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.23928984861881666,
+            "post_outgoing_mean_deviation_m": 0.2140462459757911,
+            "post_incoming_overshoot_m": 0.10192118691838736
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.140000000000001,
+            "window_end_s": 7.140000000000001,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.13181981190286007,
+            "post_outgoing_mean_deviation_m": 0.08232769664456739,
+            "post_incoming_overshoot_m": 0.061648966293331546
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "da248c7c22851626552f91283ffbd27f48bafa6fe7f7b0746d014e9362203f10",
+        "telemetry.csv": "37d56165e88fc13b7fae44b46e09812e266ff56fb79880370b672c5c6d050027",
+        "groundtruth_independent.jsonl": "cc5401e509e32fbc77866e5735765dd6c3f2c725b116f07c5a39c41d213e49ed"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_gust_env83301_physical.json",
+          "sha256": "ac46bed8489ad6e42c6379bd830730a64743bb39656bbd216684da000a24538b"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_gust_env83301_metric.json",
+          "sha256": "8da000d3414dc91aa9e932b8d24a58d653f1a49ebc1e2042428dbde7bbed11c3"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_gust_env83301_actor.json",
+          "sha256": "da0abaaab2c33073f40e450020ed8fcc15a4f9405c193a24b780b03612ae2707"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/geometryppo111_body_collective_route_force_strong_env83301",
+      "name": "geometryppo111_body_collective_route_force_strong_env83301",
+      "stage": "geometryPPO111_body_collective",
+      "scenario": "force_strong",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "653f108879b43449454fffdebdd87b1a0f6968e1f4bb1f68a57fc793fba13034",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5751140053919697,
+        "penalized_rmse_position_m": 0.5751140053919697,
+        "altitude_drop_m": 0.48000001907348633,
+        "pre_force_altitude_m": 3.359999895095825,
+        "altitude_drop_from_preforce_m": 0.36999988555908203,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 8.060000000000002,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.6888660861750024,
+        "heading_peak_deg": 3.8407439457745,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.363214842307926,
+        "rmse_during_force_m": 0.5154916429342838,
+        "rmse_after_force_m": 0.0329272981774072,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 8.060000000000002,
+        "transit_duration_s": 7.520000000000003,
+        "observed_transit_coverage_s": 7.520000000000003,
+        "max_sample_gap_s": 0.03999999999999915,
+        "segment_rmse_m": 0.14635725895629342,
+        "cross_track_rmse_m": 0.13749070343618985,
+        "cross_track_3d_rmse_m": 0.13749070343618985,
+        "cross_track_xy_rmse_m": 0.1063873248110491,
+        "finite_segment_xy_rmse_m": 0.11921905086103309,
+        "active_segment_peak_m": 0.2376212485577712,
+        "observed_transit_segment_rmse_m": 0.14635725895629342,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.19741166579094874,
+        "max_corner_post_peak_m": 0.2376212485577712,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.259999999999998,
+            "window_end_s": 3.259999999999998,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2376212485577712,
+            "post_outgoing_mean_deviation_m": 0.2097088096241396,
+            "post_incoming_overshoot_m": 0.2059640884399414
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.240000000000002,
+            "window_end_s": 5.240000000000002,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.22479908780101393,
+            "post_outgoing_mean_deviation_m": 0.19552366447704572,
+            "post_incoming_overshoot_m": 0.09112179008597236
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.100000000000001,
+            "window_end_s": 7.100000000000001,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.12981466101406117,
+            "post_outgoing_mean_deviation_m": 0.08676589187595389,
+            "post_incoming_overshoot_m": 0.08806995288020576
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "b659a0f423b5f6fa5f2a1ed8a534a01da39b458b043bba697c70cc3b6621c80c",
+        "telemetry.csv": "3cc177aa3964f7d0978f72f1d8517756f28b7260c14c671181a495a1f9e7d84b",
+        "groundtruth_independent.jsonl": "7a765610fce798fc433e7c0181c53778b7de2bdea59e7a39355fdfb1473a3ef3"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_force_strong_env83301_physical.json",
+          "sha256": "6600ab8c2aeff5510b55b61dc98eb407d06a4d7939087c47df0e5bee693e7759"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_force_strong_env83301_metric.json",
+          "sha256": "6ee8836aeb308324ae72ce99520271faa056d9b53418c352135561f107ca87e7"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_force_strong_env83301_actor.json",
+          "sha256": "b88a9c9759a6673cc46d12da65f361f310e3c9de8ebc33836568fe06a41ae39a"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/bc111_body_collective_hover_gust_env83301",
+      "name": "bc111_body_collective_hover_gust_env83301",
+      "stage": "BC111_body_collective",
+      "scenario": "gust",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "c0dd739eaf711895d5f5f5dc235abcf1309c3f0eba0706a6c397ad84421d4adb",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.0736521605290685,
+        "penalized_rmse_position_m": 0.0736521605290685,
+        "altitude_drop_m": 0.019999980926513672,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.019999980926513672,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.4661942469302546,
+        "heading_peak_deg": 1.7822274065324621,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.011075440052954964,
+        "rmse_during_force_m": 0.0942517781630269,
+        "rmse_after_force_m": 0.055683717096237095,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "baf9124ab6e82df39a20b32b40761b3f3c74a228c01c5b5e6ae619391e5f19ec",
+        "telemetry.csv": "f091d7903ffc232af4369a7bd0a1904db1430723438c11f5de42a134241215a2",
+        "groundtruth_independent.jsonl": "69a1a34e55eda3539e212747a0c7c320bb167e60f9a80a28977863791d3f2372"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_gust_env83301_physical.json",
+          "sha256": "a0c22b133eda6600a59b94f40b91117d238e57c674656263fbc0dd98c8658ec6"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_gust_env83301_metric.json",
+          "sha256": "617868897b7f3468da5ea908e7df33dc4f4728869b66631700ef5bbbdb4f6d66"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_gust_env83301_actor.json",
+          "sha256": "44de9a1e360439524fc040984966005017a56e06fa5ab43be84f8c8b478eedd5"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/bc111_body_collective_hover_force_strong_env83301",
+      "name": "bc111_body_collective_hover_force_strong_env83301",
+      "stage": "BC111_body_collective",
+      "scenario": "force_strong",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "c0dd739eaf711895d5f5f5dc235abcf1309c3f0eba0706a6c397ad84421d4adb",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.04588527270084344,
+        "penalized_rmse_position_m": 0.04588527270084344,
+        "altitude_drop_m": 0.019999980926513672,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.019999980926513672,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.4837545488049899,
+        "heading_peak_deg": 1.8106130107149536,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.010175613816006259,
+        "rmse_during_force_m": 0.04863129111607981,
+        "rmse_after_force_m": 0.05202423683502062,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "6f5e8290eb11669ec68dd4efacfe0ae9ce158871992060f291a2350d5abc02ba",
+        "telemetry.csv": "24cd39a5335e9d2d050d56afdc37816407388265267e92570fedec1e71f0a549",
+        "groundtruth_independent.jsonl": "8b7fc2db00849ae2d4618ac1ac3f8370d96013a11d50579e04d27edb269cdb31"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_force_strong_env83301_physical.json",
+          "sha256": "5cd4f60851cdb31a5e7f7219f1c4792006373202e757c262f9d89cd08c824cb9"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_force_strong_env83301_metric.json",
+          "sha256": "0142a0604475af60a5631fa4813b9472177df1b63957a37afebdea34686c2e25"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_hover_force_strong_env83301_actor.json",
+          "sha256": "cf4cdee8c82764a9c4be6b20f27e141019ccc2f8faaec61c1c881093458e9e89"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/bc111_body_collective_route_nominal_env83301",
+      "name": "bc111_body_collective_route_nominal_env83301",
+      "stage": "BC111_body_collective",
+      "scenario": "nominal",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "c0dd739eaf711895d5f5f5dc235abcf1309c3f0eba0706a6c397ad84421d4adb",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.591668920408144,
+        "penalized_rmse_position_m": 0.591668920408144,
+        "altitude_drop_m": 0.48000001907348633,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 11.420000000000002,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.09958763265473813,
+        "heading_peak_deg": 0.7095576674640409,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 11.420000000000002,
+        "transit_duration_s": 10.880000000000003,
+        "observed_transit_coverage_s": 10.880000000000003,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.22062740043935547,
+        "cross_track_rmse_m": 0.18365718527751915,
+        "cross_track_3d_rmse_m": 0.18365718527751915,
+        "cross_track_xy_rmse_m": 0.17316756384905688,
+        "finite_segment_xy_rmse_m": 0.21104118815430653,
+        "active_segment_peak_m": 0.3523831880593568,
+        "observed_transit_segment_rmse_m": 0.22062740043935547,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.23042463994366047,
+        "max_corner_post_peak_m": 0.28471625354575153,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.4200000000000017,
+            "window_end_s": 3.4200000000000017,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.28471625354575153,
+            "post_outgoing_mean_deviation_m": 0.22870539049781477,
+            "post_incoming_overshoot_m": 0.26043248176574707
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 7.32,
+            "window_end_s": 8.32,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.24934209639904598,
+            "post_outgoing_mean_deviation_m": 0.2234150364902681,
+            "post_incoming_overshoot_m": 0.21366903853428454
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 9.339999999999996,
+            "window_end_s": 10.339999999999996,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.15721556988618396,
+            "post_outgoing_mean_deviation_m": 0.13823196203550037,
+            "post_incoming_overshoot_m": 0.15699497375750252
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "8d19dc463006531a5be4add9983403bf0a65af66b4e91a4586b836b37ab8b74f",
+        "telemetry.csv": "265cc08c24c483f97760dc11298fde4ef8c59e1c5ea2668fe422781d981aa850",
+        "groundtruth_independent.jsonl": "6ff43e8a3f1fb8dd7a34017d16c43803d6bf84720abb97423ee95bbd5ca2dbbd"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_nominal_env83301_physical.json",
+          "sha256": "d65157b3e33ac3a54368f0d9e3ff9217873f59a0033c462375606794e42cd019"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_nominal_env83301_metric.json",
+          "sha256": "95860f6c75e088c377181fbf1f54d1a2dd26002918bcbff3268b1c3a72210bd8"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/bc111_body_collective_route_nominal_env83301_actor.json",
+          "sha256": "fe3f60f3ca2461d888b88118ebc007f73ff6dea0717ac156c2305adc56a81c1c"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/controlppo111_body_collective_hover_nominal_env83301",
+      "name": "controlppo111_body_collective_hover_nominal_env83301",
+      "stage": "controlPPO111_body_collective",
+      "scenario": "nominal",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "933a894a8dc71c33275877974f8ebe0a5f60c18d95ed329d7a0ed7c71de5ee6a",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.017817150698183053,
+        "penalized_rmse_position_m": 0.017817150698183053,
+        "altitude_drop_m": 0.0,
+        "pre_force_altitude_m": null,
+        "altitude_drop_from_preforce_m": null,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.12533869150580051,
+        "heading_peak_deg": 0.13837644760855142,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "65f49f5221790463d1317fc4afe18429d7f33b1d2836f8d9344c57e3493faaa2",
+        "telemetry.csv": "83728ab1d89d81bfb20b4567f608d40880086c9220d6d6138662b0cca11b76c1",
+        "groundtruth_independent.jsonl": "bf241d7259a1ddc98781b33df10cf5429eef212481f6f5c3d3bc9168f4edeb53"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_nominal_env83301_physical.json",
+          "sha256": "754d7dc394bd155ffb9c85956d1838ee4a3140c0e7d40028e5e9eca500adc287"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_nominal_env83301_metric.json",
+          "sha256": "ca26014b327033c71982a18d7dc283f1a30839d5291e6d5d2a0cd2c316ca33ed"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_hover_nominal_env83301_actor.json",
+          "sha256": "65c7ceb8ce2e133360dac82757df35ff329ef3833eb861f87dc88cc3e1618f2f"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/wind111_body_collective_route_force_strong_env83301",
+      "name": "wind111_body_collective_route_force_strong_env83301",
+      "stage": "wind111_body_collective",
+      "scenario": "force_strong",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "ddd0a84c3cb3d7416bb7bf3238d130957238e96290726f6e8a7bfed12a58ef09",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.579634366021895,
+        "penalized_rmse_position_m": 0.579634366021895,
+        "altitude_drop_m": 0.4700000286102295,
+        "pre_force_altitude_m": 3.359999895095825,
+        "altitude_drop_from_preforce_m": 0.36999988555908203,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 8.119999999999997,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.6873919351543532,
+        "heading_peak_deg": 4.130731952093763,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.3650900578158662,
+        "rmse_during_force_m": 0.526856253532201,
+        "rmse_after_force_m": 0.03470760329202652,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 8.119999999999997,
+        "transit_duration_s": 7.579999999999998,
+        "observed_transit_coverage_s": 7.579999999999998,
+        "max_sample_gap_s": 0.04000000000000625,
+        "segment_rmse_m": 0.15681652997848705,
+        "cross_track_rmse_m": 0.14639471130122952,
+        "cross_track_3d_rmse_m": 0.14639471130122952,
+        "cross_track_xy_rmse_m": 0.11563933922904661,
+        "finite_segment_xy_rmse_m": 0.1304735119040333,
+        "active_segment_peak_m": 0.2584703166014771,
+        "observed_transit_segment_rmse_m": 0.15681652997848705,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.2098599923743846,
+        "max_corner_post_peak_m": 0.2584703166014771,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.259999999999998,
+            "window_end_s": 3.259999999999998,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2584703166014771,
+            "post_outgoing_mean_deviation_m": 0.22794306661032082,
+            "post_incoming_overshoot_m": 0.2150421142578125
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.259999999999998,
+            "window_end_s": 5.259999999999998,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.23928984861881666,
+            "post_outgoing_mean_deviation_m": 0.2160591682761236,
+            "post_incoming_overshoot_m": 0.10192118691838736
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.1399999999999935,
+            "window_end_s": 7.1399999999999935,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.13181981190286007,
+            "post_outgoing_mean_deviation_m": 0.08384626849097385,
+            "post_incoming_overshoot_m": 0.061648966293331546
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "97aaf2ff4a1d6387adcab99b21239aed9ae75ba28342d17c2a4623b590d0798d",
+        "telemetry.csv": "5073a3e6524a23d9c1a2b2176ee9523bfbeaf0e8a2cfff34a6ce48f4d3405e4f",
+        "groundtruth_independent.jsonl": "85a6902f0c65fa1f7bf71ae7c9d41c9ba8ff8fbfdf07cb171d62e69c2716396e"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_force_strong_env83301_physical.json",
+          "sha256": "8618b284d8e7c42da1e9289b78d23dc95028f4c2d9d092f9d4a80ca3585d4353"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_force_strong_env83301_metric.json",
+          "sha256": "5a3010fe97c8d34aa0f40ad8dff23cf2b3616ba87bde9202a542ecab413b2562"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/wind111_body_collective_route_force_strong_env83301_actor.json",
+          "sha256": "233fc85989421195e6e3346de8e2bd4d04cadf8a9455944d315facf6c16be76d"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_hover_gust_env83301",
+      "name": "pid_hover_gust_env83301",
+      "stage": "PID",
+      "scenario": "gust",
+      "mission": "hover",
+      "environment_seed": 83301,
+      "training_seed": null,
+      "policy_sha256": null,
+      "interface": "native_position_target",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.10614120268086255,
+        "penalized_rmse_position_m": 0.10614120268086255,
+        "altitude_drop_m": 0.009999990463256836,
+        "pre_force_altitude_m": 3.0,
+        "altitude_drop_from_preforce_m": 0.009999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": true,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": null,
+        "route_completion_time_s": null,
+        "route_completion_censored": null,
+        "heading_rmse_deg": 0.1910437193719971,
+        "heading_peak_deg": 0.7636722373992672,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 30.0,
+        "horizon_s": 30.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 0.002114600715656884,
+        "rmse_during_force_m": 0.1523832986911382,
+        "rmse_after_force_m": 0.06782517332639439,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": null,
+      "raw_sha256": {
+        "summary.json": "2e02463faae00245a427376dd99f5f0823b07ffdeefc0cd2b63304dc7205e691",
+        "telemetry.csv": "11e72de7f502e5bcd5acbdb89be8b13c2df31ced5c0acf0da56895ad2ff569f4",
+        "groundtruth_independent.jsonl": "28959687df8c670fd2d41cee76948fac0dda5ac037526e6e5ba1f164f889637f"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_hover_gust_env83301_physical.json",
+          "sha256": "61a97a38ce584afb28b3900fca02a30c76ac13832ae79300ace439d7fe6a30a0"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_hover_gust_env83301_metric.json",
+          "sha256": "a1bf4fd32eb9d63017757262d74df2d3b0df9c48a285ab040fa668ce9a90e4d9"
+        }
+      },
+      "actor_audit_pass": null,
+      "evidence_label": "PHYSICAL_METRICS_PASS_ACTOR_NA"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/geometryppo111_body_collective_route_gust_env83301",
+      "name": "geometryppo111_body_collective_route_gust_env83301",
+      "stage": "geometryPPO111_body_collective",
+      "scenario": "gust",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "653f108879b43449454fffdebdd87b1a0f6968e1f4bb1f68a57fc793fba13034",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5760895775832638,
+        "penalized_rmse_position_m": 0.5760895775832638,
+        "altitude_drop_m": 0.48000001907348633,
+        "pre_force_altitude_m": 3.3399999141693115,
+        "altitude_drop_from_preforce_m": 0.34999990463256836,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 8.04,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.6819196516536193,
+        "heading_peak_deg": 3.7904201796037857,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.365740770123739,
+        "rmse_during_force_m": 0.6511557571121498,
+        "rmse_after_force_m": 0.03467155817324839,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.519999999999996,
+        "transit_end_s": 8.04,
+        "transit_duration_s": 7.520000000000003,
+        "observed_transit_coverage_s": 7.520000000000003,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.14564888985855642,
+        "cross_track_rmse_m": 0.13707807795960053,
+        "cross_track_3d_rmse_m": 0.13707807795960053,
+        "cross_track_xy_rmse_m": 0.10625161801027204,
+        "finite_segment_xy_rmse_m": 0.11867526388905743,
+        "active_segment_peak_m": 0.2376212485577712,
+        "observed_transit_segment_rmse_m": 0.14564888985855642,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.19520917422345993,
+        "max_corner_post_peak_m": 0.2376212485577712,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.239999999999995,
+            "window_end_s": 3.239999999999995,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2376212485577712,
+            "post_outgoing_mean_deviation_m": 0.209711684929795,
+            "post_incoming_overshoot_m": 0.2059640884399414
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.219999999999999,
+            "window_end_s": 5.219999999999999,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.22396580185637832,
+            "post_outgoing_mean_deviation_m": 0.19440288257601074,
+            "post_incoming_overshoot_m": 0.09112179008597236
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.079999999999998,
+            "window_end_s": 7.079999999999998,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.12404047225623024,
+            "post_outgoing_mean_deviation_m": 0.08447377996250724,
+            "post_incoming_overshoot_m": 0.08168830646986112
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "b7ea94c28aec9b38b8a061ee7a41995869d5dbf36173fabe136b98cad3050b90",
+        "telemetry.csv": "73de711d9bb6c0c227dc6674dd47c1a0aaca526dac3443f3c806880c60d1a138",
+        "groundtruth_independent.jsonl": "8d45d24384ead621dd3fb08854e91efdf331aa7b1450735e42bd68b6f3d7e3a7"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_gust_env83301_physical.json",
+          "sha256": "2af136c049f0dda8277e470a4b363814a691cb7a777500995f3d856b2252d5de"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_gust_env83301_metric.json",
+          "sha256": "2e0dfd6cf2ba37d5dd7ad6df16f565a22b6f27644da651b41f477aa1d8fc256e"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/geometryppo111_body_collective_route_gust_env83301_actor.json",
+          "sha256": "60f3a82185c488f778207d8f66102591e6618dd2c09e91b383f28def3bbd91f0"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/controlppo111_body_collective_route_gust_env83301",
+      "name": "controlppo111_body_collective_route_gust_env83301",
+      "stage": "controlPPO111_body_collective",
+      "scenario": "gust",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": 111,
+      "policy_sha256": "933a894a8dc71c33275877974f8ebe0a5f60c18d95ed329d7a0ed7c71de5ee6a",
+      "interface": "body_collective",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.5809149156004934,
+        "penalized_rmse_position_m": 0.5809149156004934,
+        "altitude_drop_m": 0.4500000476837158,
+        "pre_force_altitude_m": 3.4800000190734863,
+        "altitude_drop_from_preforce_m": 0.48000001907348633,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 8.32,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.7387607388128633,
+        "heading_peak_deg": 4.427458548676475,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.29323015097354,
+        "rmse_during_force_m": 0.7397958684440125,
+        "rmse_after_force_m": 0.031597397986715715,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.519999999999996,
+        "transit_end_s": 8.32,
+        "transit_duration_s": 7.800000000000004,
+        "observed_transit_coverage_s": 7.800000000000004,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.16587914730263065,
+        "cross_track_rmse_m": 0.15528715057598488,
+        "cross_track_3d_rmse_m": 0.15528715057598488,
+        "cross_track_xy_rmse_m": 0.12502856269130247,
+        "finite_segment_xy_rmse_m": 0.13940766779251518,
+        "active_segment_peak_m": 0.2823848760025228,
+        "observed_transit_segment_rmse_m": 0.16587914730263065,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.21429987810139708,
+        "max_corner_post_peak_m": 0.2823848760025228,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.219999999999999,
+            "window_end_s": 3.219999999999999,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.2823848760025228,
+            "post_outgoing_mean_deviation_m": 0.24571976205809268,
+            "post_incoming_overshoot_m": 0.2241201400756836
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.5,
+            "window_end_s": 5.5,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.21259783435315008,
+            "post_outgoing_mean_deviation_m": 0.1897924513576921,
+            "post_incoming_overshoot_m": 0.09839785189806247
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 6.339999999999996,
+            "window_end_s": 7.339999999999996,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.14791692394851835,
+            "post_outgoing_mean_deviation_m": 0.09092391173779751,
+            "post_incoming_overshoot_m": 0.0856445989428424
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "4df2a92fff1a2310db191afd047ba423d2411328ce0fb50066627526e9e7d7f5",
+        "telemetry.csv": "83bbb3953bca396d9f24df401eda8a8808f586e32895797ba72c9af84816d42b",
+        "groundtruth_independent.jsonl": "e1078eace09fa6b327cdbde8b7b637665ba195463a81fad3ceebdd822344a075"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_gust_env83301_physical.json",
+          "sha256": "c6f9e4bb3733ff0961bf28e0d4e2f72a56d4cb1aafef856c6c5c43591c983682"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_gust_env83301_metric.json",
+          "sha256": "b2d20edc56860183d51238c65eb13d70767efcc796ac1da9176614a1fedecaad"
+        },
+        "actor": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/controlppo111_body_collective_route_gust_env83301_actor.json",
+          "sha256": "ccfd5d89ef943894609154a7a02fe1c4b2f0a3a61744307241a5cb00c57476df"
+        }
+      },
+      "actor_audit_pass": true,
+      "evidence_label": "PHYSICAL_ACTOR_METRICS_PASS"
+    },
+    {
+      "run": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/runs/pid_route_force_strong_env83301",
+      "name": "pid_route_force_strong_env83301",
+      "stage": "PID",
+      "scenario": "force_strong",
+      "mission": "route",
+      "environment_seed": 83301,
+      "training_seed": null,
+      "policy_sha256": null,
+      "interface": "native_position_target",
+      "metrics": {
+        "survived": true,
+        "rmse_position_m": 0.6571987474720183,
+        "penalized_rmse_position_m": 0.6571987474720183,
+        "altitude_drop_m": 0.49000000953674316,
+        "pre_force_altitude_m": 3.5399999618530273,
+        "altitude_drop_from_preforce_m": 0.5799999237060547,
+        "preforce_height_window_s": 0.5,
+        "recovery_time_s": null,
+        "recovery_dwell_confirmed_at_s": null,
+        "recovery_applicable": false,
+        "recovery_censored": null,
+        "recovery_time_verified": false,
+        "force_off_time_s": null,
+        "force_time_source": "unverified",
+        "route_completed": true,
+        "route_completion_time_s": 9.46,
+        "route_completion_censored": false,
+        "heading_rmse_deg": 0.3833440557132982,
+        "heading_peak_deg": 2.118131290761663,
+        "heading_guard_pass": true,
+        "heading_full_flight_eligible": true,
+        "duration_s": 40.0,
+        "horizon_s": 40.0,
+        "failure": null,
+        "metric_time_weighting": "preceding control interval; failed/incomplete remainder4m; surviving final<=40ms filled last error",
+        "rmse_before_force_m": 1.3094306530041644,
+        "rmse_during_force_m": 0.7572886250032517,
+        "rmse_after_force_m": 0.05785014328365666,
+        "phase_force_time_source": "unverified"
+      },
+      "geometry": {
+        "route_completed": true,
+        "geometry_eligible": true,
+        "transit_start_s": 0.5399999999999991,
+        "transit_end_s": 9.46,
+        "transit_duration_s": 8.920000000000002,
+        "observed_transit_coverage_s": 8.920000000000002,
+        "max_sample_gap_s": 0.03900000000000148,
+        "segment_rmse_m": 0.14507539182429993,
+        "cross_track_rmse_m": 0.1449476951642977,
+        "cross_track_3d_rmse_m": 0.1449476951642977,
+        "cross_track_xy_rmse_m": 0.10954972238781734,
+        "finite_segment_xy_rmse_m": 0.10986307306872825,
+        "active_segment_peak_m": 0.34290476349077914,
+        "observed_transit_segment_rmse_m": 0.14507539182429993,
+        "expected_corners": 3,
+        "observed_corners": 3,
+        "unreached_corners": 0,
+        "complete_corner_windows": 3,
+        "mean_corner_post_peak_m": 0.2491154103064792,
+        "max_corner_post_peak_m": 0.34224198543506834,
+        "corners": [
+          {
+            "corner_index": 1,
+            "transition_s": 2.6799999999999997,
+            "window_end_s": 3.6799999999999997,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.20513712271469411,
+            "post_outgoing_mean_deviation_m": 0.11572097904447176,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 2,
+            "transition_s": 4.880000000000003,
+            "window_end_s": 5.880000000000003,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.34224198543506834,
+            "post_outgoing_mean_deviation_m": 0.17886266834649006,
+            "post_incoming_overshoot_m": 0.0
+          },
+          {
+            "corner_index": 3,
+            "transition_s": 7.280000000000001,
+            "window_end_s": 8.280000000000001,
+            "full_post_window": true,
+            "post_outgoing_max_deviation_m": 0.19996712276967518,
+            "post_outgoing_mean_deviation_m": 0.18268173174090602,
+            "post_incoming_overshoot_m": 0.0
+          }
+        ],
+        "interpretation": "segment_rmse_m and peaks use 3D finite segments; cross_track_rmse_m is the preserved 3D infinite-line alias; explicit XY fields exclude commanded altitude components. Target error and physical altitude drop remain separate original metrics"
+      },
+      "raw_sha256": {
+        "summary.json": "8a59214a1dfcf7eb4d6c12a40680355fb5d24a24e927b21097931f88ded4ebb6",
+        "telemetry.csv": "80459ce127625cd31356b26ad982a638cc62331c6510a1381a542c425bf3dc24",
+        "groundtruth_independent.jsonl": "12930536680bca88f08bfaa575122634f6e342ec0d1d25a959e07f7975b0dec0"
+      },
+      "audit_receipts": {
+        "physical": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_route_force_strong_env83301_physical.json",
+          "sha256": "82a3d337fa11155079b8a52d420c9a8f0d29497bde676f244f8c684a9f5dcaf7"
+        },
+        "metrics": {
+          "path": "artifacts/refinement/joint_v2/gazebo_geometry_pilot32/audits/pid_route_force_strong_env83301_metric.json",
+          "sha256": "d95e923e1c2ac9acf1c36a1ef3fdc9f647404e1414bd135186b89036ae87c1e2"
+        }
+      },
+      "actor_audit_pass": null,
+      "evidence_label": "PHYSICAL_METRICS_PASS_ACTOR_NA"
+    }
+  ],
+  "source_sha256": "c31b7732c6c104bc37b4dc668a34314b62f63a8362d006f9cdb8102a5fe16b5c",
+  "case_audit_helper_sha256": "b2cefb889a42deb070543ea91cc1e574bd326cfd1bc9c56f1bed7bef835d0ea4",
+  "contract_sha256": "b461900b9b2d0e733afb6c8717a20999e7d48117afda2f85387baff06efeb652",
+  "campaign_complete_sha256": "89835dacbff03ad280b11877080235d32cfc4e6d942da400c901f1ead4900b76",
+  "campaign_plan_sha256": "683e25951a37122b574c439ad38c523dd8fe4f69c37429239a6273e01a0bedad",
+  "utc": "2026-11-13T16:30:42.904562+00:00"
+}

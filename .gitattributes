@@ -1,0 +1,6 @@
+# Preserve exact archived source and checkpoint bytes across platforms.
+* -text
+*.npz binary
+*.zip binary
+*.png binary
+*.pdf binary

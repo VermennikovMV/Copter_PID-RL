@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ROOT_ACTUAL_LIVE_NATIVE_GUI_V18",
+  "checked_utc": "2026-11-15T03:12:47.2195373Z",
+  "source_sha256": "91d79dc57cbe07e26811055c295bba1aadac791c81bc99b90cb66dfac67def84",
+  "image_sha256": "d33320939a810fd225de7004224862a2a6bec118b6cd791cb05be91a94fd0f1f",
+  "root_visually_inspected": true,
+  "actual_GUI_exit_code": 0,
+  "live_seconds": 10,
+  "both_arms_counter_movement_observed": true,
+  "actual_PPO_steps_observed": [
+    196608,
+    189104
+  ],
+  "actual_Adam_PPO_updates_observed": [
+    1489,
+    1472
+  ],
+  "actual_critic_steps_each": 131072,
+  "actual_critic_Adam_updates_each": 1024,
+  "complete_first_evaluations_displayed": 2,
+  "first_evaluations_hard_FAIL_visible": true,
+  "capture_scope": "Owned Form.DrawToBitmap only; no desktop/video",
+  "new_physical_or_optimizer_steps_by_viewer": 0,
+  "HTTP_calls": 0,
+  "main_training_subsequently_completed_exit0": true
+}

@@ -1,0 +1,1000 @@
+{
+  "scientific_quality_status": "FAIL",
+  "primary_passed_cells": 8,
+  "primary_cells": 8,
+  "tail_passed": false,
+  "passed_checks": 88,
+  "total_checks": 90,
+  "checks": [
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": 0.004548399880729526,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": 0.012689616443272616,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "nominal_hover_precision",
+      "case": [
+        83301,
+        "nominal",
+        "hover"
+      ],
+      "value": 0.012004216442655376,
+      "limit": 0.02279284534528638,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.44346461334021814,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 3.77014488019635,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 8.299999999999997,
+      "limit": 9.744000000000002,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.5630423174207817,
+      "limit": 0.6747151420817092,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.09979341355035988,
+      "limit": 0.11500059586603935,
+      "pass_": true
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.1692036791964601,
+      "limit": 0.20180067257070064,
+      "pass_": true
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        83301,
+        "nominal",
+        "route"
+      ],
+      "value": 0.21046611068226426,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": 0.14626379510351298,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "force_mild",
+        "hover"
+      ],
+      "value": 0.4854322915220837,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.44189166194074664,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 3.676702782215148,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 8.339999999999996,
+      "limit": 9.786000000000001,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.5620126600868467,
+      "limit": 0.6813163825979773,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.0975932473351847,
+      "limit": 0.13378882109578497,
+      "pass_": true
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.16778971989187394,
+      "limit": 0.22843301334380084,
+      "pass_": true
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        83301,
+        "force_mild",
+        "route"
+      ],
+      "value": 0.2172948913812235,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": 0.4998465056340624,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": 1.812297233895282,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "wind_hover_gain_vs_PID",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": 0.03073129862693366,
+      "limit": 0.0573884813930385,
+      "pass_": true
+    },
+    {
+      "check": "wind_hover_retention",
+      "case": [
+        83301,
+        "force_strong",
+        "hover"
+      ],
+      "value": 0.03073129862693366,
+      "limit": 0.04138724220567179,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.6686513871924386,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 4.094288808682092,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 8.46,
+      "limit": 9.933000000000002,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.5634190848382914,
+      "limit": 0.6900586848456193,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.09616460992205014,
+      "limit": 0.15958293100672993,
+      "pass_": true
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.16631768248455137,
+      "limit": 0.2740269513371273,
+      "pass_": true
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        83301,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.2202691533133596,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": 0.45483921944757666,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": 1.9291342163837888,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "wind_hover_gain_vs_PID",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": 0.05578178897631948,
+      "limit": 0.09022002227873317,
+      "pass_": true
+    },
+    {
+      "check": "wind_hover_retention",
+      "case": [
+        83301,
+        "gust",
+        "hover"
+      ],
+      "value": 0.05578178897631948,
+      "limit": 0.06889996552482328,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.6391127580085928,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 3.9441865387669015,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 9.100000000000001,
+      "limit": 10.017,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.5651963601354888,
+      "limit": 0.6962651881654333,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.10650493554052538,
+      "limit": 0.1590283781723517,
+      "pass_": true
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.16499968490106345,
+      "limit": 0.2740269513371273,
+      "pass_": true
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        83301,
+        "gust",
+        "route"
+      ],
+      "value": 0.21722727477380704,
+      "limit": 0.5,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_reference_full_flight",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "all_valid_joint_flights_survived",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "full_flight_heading_guard",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "heading_RMS_deg",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.7624706690473289,
+      "limit": 5.0,
+      "pass_": true
+    },
+    {
+      "check": "heading_peak_deg",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 5.476972618690454,
+      "limit": 15.0,
+      "pass_": true
+    },
+    {
+      "check": "paired_PID_complete_route_geometry",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "route_completed",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "restricted_route_time_s",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 9.100000000000001,
+      "limit": 9.575999999999997,
+      "pass_": true
+    },
+    {
+      "check": "penalized_goal_RMSE_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.5632760976875504,
+      "limit": 0.6622997326604854,
+      "pass_": true
+    },
+    {
+      "check": "complete_route_geometry",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": true,
+      "limit": true,
+      "pass_": true
+    },
+    {
+      "check": "finite_segment_RMSE_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.1663302111428861,
+      "limit": 0.10273799592768003,
+      "pass_": false
+    },
+    {
+      "check": "mean_corner_peak_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.20761917141417097,
+      "limit": 0.17282128929045582,
+      "pass_": false
+    },
+    {
+      "check": "absolute_active_segment_peak_m",
+      "case": [
+        84001,
+        "force_strong",
+        "route"
+      ],
+      "value": 0.4415912266971143,
+      "limit": 0.5,
+      "pass_": true
+    }
+  ]
+}

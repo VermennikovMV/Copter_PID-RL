@@ -1,1 +1,0 @@
-WORKSPACE_ONLY original source review. The metadata-corrected v21p1 and v23 actual pilots completed and failed scientific admission. V24 main subsequently completed with all three research/matched/engineering admissions FAIL; current v25 is pending. Source/evidence/WSL closure is not claimed by this source archive.

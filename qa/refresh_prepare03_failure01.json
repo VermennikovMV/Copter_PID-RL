@@ -1,6 +1,0 @@
-{
-  "status": "PACKAGING_READ_FAILURE_NOT_SIMULATION",
-  "cause": "Optional audit/native_training_viewer_v19_root01.json exists but is empty. Preserve original; exclude from proof, include actual nonempty root02 receipt.",
-  "builder_sha256": "f590d86469b1c9d022bbc9b28d0516ac55a7c934d66a62c517ffe8a0daa96bfa",
-  "new_physics_or_optimizer_steps": 0
-}

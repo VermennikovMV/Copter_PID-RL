@@ -1,1 +1,0 @@
-WORKSPACE_ONLY original current research runtime/auditor review source. The strict original v29 Gazebo contract requires the original private FINAL ZIP and complete original runtime/data installation. Public inference v1 is a separate numeric export, not a wire-compatible replacement; its ZIP digest is lineage only. No private ZIP is included here.

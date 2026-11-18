@@ -1,7 +1,0 @@
-{
-  "returncode": 0,
-  "stdout": "{\n  \"status\": \"PASS_OFFLINE_ARCHIVED_CAUSAL_CONTROLLER_REPLAY\",\n  \"cases\": [\n    {\n      \"controller\": \"direct\",\n      \"archived_rows\": 1500,\n      \"max_errors\": {\n        \"action\": 0.0,\n        \"observation\": 0.0,\n        \"previous_action\": 0.0\n      },\n      \"selected_expert_counts\": null,\n      \"backend_of_archived_data\": \"Historical Direct Fast physical rotor model\",\n      \"example_sha256\": \"3c6ee023e7f622cacbc0711d95de1265521fce1bda380d3ba2261b27f0d6f740\",\n      \"full_causal_prefix\": true,\n      \"original_ZIP_verified_locally\": null\n    },\n    {\n      \"controller\": \"hybrid\",\n      \"archived_rows\": 2000,\n      \"max_errors\": {\n        \"action\": 0.0,\n        \"observation\": 0.0,\n        \"previous_action\": 0.0\n      },\n      \"selected_expert_counts\": [\n        43,\n        1957\n      ],\n      \"backend_of_archived_data\": \"v29 native/PyBullet actual29 evaluation\",\n      \"example_sha256\": \"9dc9d420a63389b5518a8c265d2fd6ac6dc2fd9b4c5b1218834a76cb6a536973\",\n      \"full_causal_prefix\": true,\n      \"original_ZIP_verified_locally\": false\n    }\n  ],\n  \"actual_NN_forwards\": 3500,\n  \"new_environment_steps\": 0,\n  \"new_physics_substeps\": 0,\n  \"optimizer_steps\": 0,\n  \"Torch_or_PyBullet_imported\": false,\n  \"independent_quality_replication\": false\n}\n",
-  "stderr": "",
-  "new_environment_steps": 0,
-  "optimizer_steps": 0
-}

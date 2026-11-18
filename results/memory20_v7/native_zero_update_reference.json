@@ -1,8 +1,0 @@
-{
-  "path": "artifacts/refinement/joint_v2/route_memory_baseline_v20_root01/zero_route_integral/evaluation.json",
-  "sha256": "f0f6930a58d690f1c474c4ff954575c0af84e9e9c7f7d5cb66a266b0b82cbb9e",
-  "training_transitions": 0,
-  "optimizer_steps": 0,
-  "native_guards_pass": true,
-  "source_policy_sha256": "68dafd9809c10c55dd82835a4464973017be2d3516aebae919f16f5a4676bcb5"
-}

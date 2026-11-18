@@ -28,7 +28,7 @@ import numpy as np
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from disturbances import build_world  # noqa: E402  (also puts the repository on sys.path)
+from disturbances import build_world, gazebo_prefix  # noqa: E402  (also puts the repository on sys.path)
 from experiments.scenarios import force_events  # noqa: E402
 from simulation.launch import Session  # noqa: E402
 from sitl import read_params, wait_state  # noqa: E402
@@ -64,7 +64,7 @@ def arm_schedule(session, v, goal, log_file, lines):
     """Publish the schedule until the plugin reports it armed (resend only after 3 s)."""
     text = '\\n'.join(lines)
     for _ in range(5):
-        session.world._run(['topic', '-t', '/copter/disturbance', '-m', 'gz.msgs.StringMsg', '-p', f'data: "{text}"'])
+        session.world.publish('/copter/disturbance', text)
         end = time.monotonic() + 3.
         while time.monotonic() < end:
             if 'schedule_armed' in Path(log_file).read_text():
@@ -84,8 +84,8 @@ def fly(case, seed, controller, args, out):
     lines, drop, forces = schedule(case, seed)
     out.mkdir(parents=True, exist_ok=False)
     log_file = str((out / 'plugin.jsonl').resolve())
-    world = build_world(out, 'payload_drop' if drop is not None else 'force', log_file)
-    prefix = ('/mnt/c/Windows/System32/wsl.exe', '-d', args.gazebo_distro, '--')
+    prefix = gazebo_prefix(args.gazebo_distro)
+    world = build_world(out, 'payload_drop' if drop is not None else 'force', log_file, prefix)
     rows = []
     with Session(out / 'simulation', gazebo_prefix=prefix, vehicle_ids=('drone1',), ardupilot=args.ardupilot,
                  world=world) as session:
@@ -186,7 +186,7 @@ def main():
     ap.add_argument('--cases', default='all', help='comma list, e.g. hover/gust,route/joint')
     ap.add_argument('--seeds', default='90000-90007')
     ap.add_argument('--route-timeout', type=float, default=60., help='simulated seconds per route flight')
-    ap.add_argument('--ardupilot', type=Path, default=Path.home() / 'ardupilot-ROSMeetUp')
+    ap.add_argument('--ardupilot', type=Path, default=Path(os.environ.get('ARDUPILOT_PATH', Path.home() / 'ardupilot-ROSMeetUp')))
     ap.add_argument('--gazebo-distro', default='Ubuntu')
     ap.add_argument('--wp-spd', type=float, default=None, help='override WP_SPD (m/s) for both controllers')
     ap.add_argument('--out', type=Path, required=True)

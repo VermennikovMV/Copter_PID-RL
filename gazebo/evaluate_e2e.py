@@ -9,6 +9,7 @@ drives the motors directly in synchronous 20 ms steps (20 x 1 ms physics per act
 import argparse
 import json
 import math
+import os
 import sys
 import time
 from pathlib import Path
@@ -17,7 +18,7 @@ import numpy as np
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from disturbances import build_world  # noqa: E402  (also puts the repository on sys.path)
+from disturbances import build_world, gazebo_prefix  # noqa: E402  (also puts the repository on sys.path)
 from evaluate_ardupilot import CASES, HOVER_S, STAND, arm_schedule, metrics, parse_seeds, schedule  # noqa: E402
 from simulation.launch import Session  # noqa: E402
 from sitl import wait_state  # noqa: E402
@@ -37,8 +38,8 @@ def fly(case, seed, actor, cfg, args, out):
     lines, drop, forces = schedule(case, seed)
     out.mkdir(parents=True, exist_ok=False)
     log_file = str((out / 'plugin.jsonl').resolve())
-    world = build_world(out, 'payload_drop' if drop is not None else 'force', log_file)
-    prefix = ('/mnt/c/Windows/System32/wsl.exe', '-d', args.gazebo_distro, '--')
+    prefix = gazebo_prefix(args.gazebo_distro)
+    world = build_world(out, 'payload_drop' if drop is not None else 'force', log_file, prefix)
     motors = DirectMotorModel()
     yaw_ref = math.pi / 2
     length = float(np.linalg.norm(np.diff(points, axis=0), axis=1).sum())
@@ -120,7 +121,7 @@ def main():
     ap.add_argument('--cases', default='all')
     ap.add_argument('--seeds', default='90000-90007')
     ap.add_argument('--route-timeout', type=float, default=60.)
-    ap.add_argument('--ardupilot', type=Path, default=Path.home() / 'ardupilot-ROSMeetUp')
+    ap.add_argument('--ardupilot', type=Path, default=Path(os.environ.get('ARDUPILOT_PATH', Path.home() / 'ardupilot-ROSMeetUp')))
     ap.add_argument('--gazebo-distro', default='Ubuntu')
     ap.add_argument('--out', type=Path, required=True)
     args = ap.parse_args()

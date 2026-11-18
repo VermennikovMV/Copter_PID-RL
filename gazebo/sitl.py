@@ -25,7 +25,7 @@ REPO = HERE.parent
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(HERE))
 from simulation.interface import StateUnavailable  # noqa: E402
-from simulation.launch import Session  # noqa: E402
+from simulation.launch import Session, wsl_prefix  # noqa: E402
 from track_metrics import evaluate, load_track, write_trace  # noqa: E402
 
 LOCATION_SCALING_FACTOR_INV = 89.83204953368922   # 1e7 deg per metre (ArduPilot Location)
@@ -61,7 +61,7 @@ def set_mode(v, mode, timeout=10.):
         hb = v.latest.get('HEARTBEAT')
         if hb is not None and hb.custom_mode == mode:
             return
-        v.connection.mav.set_mode_send(v.system_id, mavutil.mavlink.MAV_MODE_FLAG_CUSTOM_MODE_ENABLED, mode)
+        v.set_mode(mode)
         time.sleep(.1)
     raise TimeoutError(f'mode {mode} not accepted')
 
@@ -125,7 +125,7 @@ def read_params(v):
 
 def fly(index, args, points, dwell, radii):
     out = args.out / f'flight_{index:02d}'
-    prefix = ('/mnt/c/Windows/System32/wsl.exe', '-d', args.gazebo_distro, '--')
+    prefix = wsl_prefix(args.gazebo_distro)
     with Session(out / 'simulation', gazebo_prefix=prefix, vehicle_ids=('drone1',),
                  ardupilot=args.ardupilot) as session:
         v = session.clients['drone1']
@@ -225,7 +225,7 @@ def main():
     ap.add_argument('--timeout', type=float, default=90., help='wall seconds per AUTO flight')
     ap.add_argument('--guided', action='store_true',
                     help='fly the track in GUIDED, one point at a time (reference for the replica GUIDED)')
-    ap.add_argument('--ardupilot', type=Path, default=Path.home() / 'ardupilot-ROSMeetUp')
+    ap.add_argument('--ardupilot', type=Path, default=Path(os.environ.get('ARDUPILOT_PATH', Path.home() / 'ardupilot-ROSMeetUp')))
     ap.add_argument('--gazebo-distro', default='Ubuntu')
     ap.add_argument('--out', type=Path, required=True)
     args = ap.parse_args()

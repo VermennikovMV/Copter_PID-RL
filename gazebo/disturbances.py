@@ -28,13 +28,28 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(HERE))
-from simulation.launch import Session  # noqa: E402
+from simulation.interface import run_command  # noqa: E402
+from simulation.launch import Session, wsl_prefix  # noqa: E402
 from track_metrics import write_trace  # noqa: E402
 from sitl import wait_state  # noqa: E402
 from experiments.scenarios import force_events  # noqa: E402
 
 # Built from gazebo/disturbance_plugin inside the Gazebo distribution (see docs/setup.md).
-PLUGIN = os.environ.get('COPTER_DISTURBANCE_PLUGIN', os.path.expanduser('~/copter_disturbance_build/libCopterDisturbanceSystem.so'))
+PLUGIN_ENV = 'COPTER_DISTURBANCE_PLUGIN'
+
+
+def plugin_path(prefix=()):
+    """Disturbance plugin library as seen by Gazebo: $COPTER_DISTURBANCE_PLUGIN or
+    ~/copter_disturbance_build/libCopterDisturbanceSystem.so of the user running Gazebo (`prefix`)."""
+    if os.environ.get(PLUGIN_ENV):
+        return os.environ[PLUGIN_ENV]
+    home = run_command([*prefix, 'printenv', 'HOME'], timeout=15, capture_output=True, text=True).stdout.strip()
+    return f'{home}/copter_disturbance_build/libCopterDisturbanceSystem.so'
+
+
+def gazebo_prefix(distro):
+    """Run `gz` in another WSL distribution (empty: same system)."""
+    return wsl_prefix(distro)
 MASS, G = 1.75, 9.80665
 BASE_INERTIA = (0.008, 0.015, 0.017)   # iris base_link (simulation/models/iris/model.sdf)
 DETACH_TOPIC = '/copter/payload/detach'
@@ -54,11 +69,11 @@ def schedule_for(experiment, seed):
     raise ValueError(experiment)
 
 
-def build_world(out, experiment, log_file):
+def build_world(out, experiment, log_file, prefix=()):
     source = REPO / 'simulation' / 'world.sdf'
     tree = ET.parse(source)
     world = tree.getroot().find('world')
-    plugin = ET.SubElement(world, 'plugin', filename=PLUGIN, name='copter_disturbance::DisturbanceSystem')
+    plugin = ET.SubElement(world, 'plugin', filename=plugin_path(prefix), name='copter_disturbance::DisturbanceSystem')
     for tag, value in (('model_name', 'drone1'), ('link_name', 'base_link'), ('topic', '/copter/disturbance'),
                        ('detach_topic', DETACH_TOPIC), ('log_file', log_file)):
         ET.SubElement(plugin, tag).text = value
@@ -90,14 +105,14 @@ def main():
     ap.add_argument('--experiment', required=True, choices=('force3n', 'gust', 'payload_force', 'payload_drop'))
     ap.add_argument('--seed', type=int, default=90000)
     ap.add_argument('--gazebo-distro', default='Ubuntu')
-    ap.add_argument('--ardupilot', type=Path, default=Path.home() / 'ardupilot-ROSMeetUp')
+    ap.add_argument('--ardupilot', type=Path, default=Path(os.environ.get('ARDUPILOT_PATH', Path.home() / 'ardupilot-ROSMeetUp')))
     ap.add_argument('--out', type=Path, required=True)
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     forces, detach, duration = schedule_for(a.experiment, a.seed)
     log_file = str((a.out / 'plugin.jsonl').resolve())
-    world = build_world(a.out, a.experiment, log_file)
-    prefix = ('/mnt/c/Windows/System32/wsl.exe', '-d', a.gazebo_distro, '--')
+    prefix = gazebo_prefix(a.gazebo_distro)
+    world = build_world(a.out, a.experiment, log_file, prefix)
     rows = []
     with Session(a.out / 'simulation', gazebo_prefix=prefix, vehicle_ids=('drone1',),
                  ardupilot=a.ardupilot, world=world) as session:
@@ -126,8 +141,7 @@ def main():
         # plugin logs that the schedule is armed (resend only after 3 s, so it is never re-armed)
         for _ in range(5):
             published = wait_state(v).time_s
-            session.world._run(['topic', '-t', '/copter/disturbance', '-m', 'gz.msgs.StringMsg',
-                                '-p', f'data: "{text}"'])
+            session.world.publish('/copter/disturbance', text)
             wait_end = time.monotonic() + 3.
             while time.monotonic() < wait_end and 'schedule_armed' not in Path(log_file).read_text():
                 wait_state(v)

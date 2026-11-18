@@ -1,0 +1,33 @@
+{
+  "source": "ArduPilot SITL stand (Gazebo Iris), parameters read back from the vehicle",
+  "wpnav_params": {
+    "wp_speed_ms": 3,
+    "wp_speed_up_ms": 2.5,
+    "wp_speed_down_ms": 1.5,
+    "wp_accel_mss": 2.5,
+    "wp_accel_z_mss": 1,
+    "wp_accel_c_mss": 0,
+    "wp_jerk_msss": 1,
+    "wp_radius_m": 0.4000000059604645,
+    "pos_ne_p": 1.5,
+    "ang_vel_roll_max_degs": 0,
+    "ang_vel_pitch_max_degs": 0,
+    "accel_roll_max_degss": 1100,
+    "accel_pitch_max_degss": 1100,
+    "input_tc": 0.10000000149011612
+  },
+  "other_params": {
+    "PSC_NE_VEL_P": 4,
+    "PSC_NE_VEL_I": 2,
+    "PSC_NE_VEL_D": 0.5,
+    "PSC_D_POS_P": 1,
+    "PSC_D_VEL_P": 5,
+    "PSC_D_ACC_P": 0.05000000074505806,
+    "PSC_D_ACC_I": 0.10000000149011612,
+    "ATC_ANG_RLL_P": 4.5,
+    "ATC_ANG_PIT_P": 4.5,
+    "ATC_ANGLE_MAX": 30,
+    "WP_YAW_BEHAVIOR": 0,
+    "AHRS_EKF_TYPE": 10
+  }
+}

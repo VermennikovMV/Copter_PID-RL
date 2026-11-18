@@ -1,5 +1,8 @@
-# CPU inference and independent auditor imports; observed Python 3.12 environment.
+# Tested with Python 3.12
 numpy==2.5.4
+scipy==1.18.1
 gymnasium==1.4.0
 pybullet==3.2.7
+torch==2.14.1
+stable-baselines3==2.9.0
 pymavlink==2.4.50

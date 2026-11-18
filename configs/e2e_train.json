@@ -1,0 +1,148 @@
+{
+  "schema": "quadrotor-training-config-v1",
+  "control_dt_s": 0.02,
+  "observation_schema": "quadrotor-heading-observation-v2-clock",
+  "command_schemas": {
+    "direct": "motor-thrust-gazebo-order-v1",
+    "residual": "native-pid-plus-motor-pwm-v1"
+  },
+  "observation": {
+    "history": true,
+    "integral_limit": 6,
+    "acceleration_tau_s": 0.08,
+    "position_scale": 3,
+    "velocity_scale": 3,
+    "rate_scale": 3,
+    "acceleration_scale": 5,
+    "history_times_s": [
+      0.1,
+      0.2
+    ],
+    "goal_clip_m": 2,
+    "include_task_context": false
+  },
+  "horizon_s": {
+    "hover": 30,
+    "route": 40
+  },
+  "training_distribution": {
+    "route_probability": 0.6,
+    "nominal_probability": 0.2,
+    "constant_probability": 0.4,
+    "pulse_probability": 0.4,
+    "force_min_N": 0.3,
+    "force_max_N": 4,
+    "on_min_s": 0,
+    "on_max_s": 18,
+    "pulse_duration_min_s": 0.8,
+    "pulse_duration_max_s": 5,
+    "route_on_max_s": 25,
+    "extra_pulses_max": 3,
+    "extra_pulse_min_s": 0.5,
+    "extra_pulse_max_s": 5
+  },
+  "initial": {
+    "position_spread_m": 0.2,
+    "velocity_spread_mps": 0.03,
+    "roll_pitch_spread_rad": 0.035,
+    "yaw_error_spread_rad": 0.25
+  },
+  "plant": {
+    "body_drag_N_per_mps": [
+      1.52,
+      1.52,
+      1.55
+    ]
+  },
+  "randomization": {
+    "mass_scale_range": [
+      0.85,
+      1.3
+    ],
+    "payload_fraction_range": [
+      0,
+      0.2
+    ],
+    "payload_probability": 0.5,
+    "payload_drop_time_fraction_range": [
+      0.25,
+      0.65
+    ],
+    "motor_scale_range": [
+      0.85,
+      1.15
+    ],
+    "torque_scale_range": [
+      0.85,
+      1.15
+    ],
+    "delay_steps_range": [
+      0,
+      2
+    ],
+    "noise_position_range": [
+      0,
+      0.02
+    ],
+    "noise_velocity_range": [
+      0,
+      0.04
+    ],
+    "noise_orientation_range": [
+      0,
+      0.006
+    ],
+    "noise_rates_range": [
+      0,
+      0.02
+    ],
+    "pid_scale_range": [
+      0.85,
+      1.15
+    ]
+  },
+  "pid": {
+    "accel_z_p": 1,
+    "accel_z_i": 2,
+    "velocity_xy_limit": 3,
+    "acceleration_xy_limit": 5.66,
+    "velocity_z_p": 5,
+    "velocity_z_i": 0,
+    "derivative_tau_s": 0.032,
+    "accel_z_filter_tau_s": 0.008,
+    "accel_z_imax": 15.7,
+    "command_tau_s": 0.01,
+    "attitude_command_model": true,
+    "attitude_input_tc_s": 0.1,
+    "attitude_accel_max_degss": [
+      1100,
+      1100,
+      270
+    ]
+  },
+  "track": {
+    "random": {
+      "legs": [
+        2,
+        5
+      ],
+      "leg_m": [
+        3,
+        40
+      ],
+      "max_turn_deg": 150,
+      "altitude_m": [
+        2.5,
+        5
+      ],
+      "stop_probability": 0.3,
+      "stop_dwell_s": [
+        1,
+        3
+      ],
+      "final_dwell_s": 0.5,
+      "pass_radius_m": 0.5,
+      "stop_radius_m": 0.4
+    }
+  }
+}

@@ -1,11 +1,12 @@
 """PPO training of the end-to-end policy (four motor commands) in PyBullet.
 
-  python -m training.ppo --out runs/e2e --steps 30000000
-  python -m training.ppo --out runs/e2e_more --steps 10000000 --resume runs/e2e/ckpt_030000000 --lr 1e-4
+  python -m training.ppo --out runs/e2e
+  python -m training.ppo --out runs/e2e_more --resume runs/e2e/ckpt_050176000 --steps 60000000
 
-The task reward is training.wrappers.TaskReward (speed mode on routes by default: progress
-towards the waypoint, a time penalty and an inaccuracy penalty; crash -100). Route episodes
-start at random points of random tracks (training.wrappers.RandomTrackStart).
+Training follows the stages of configs/e2e_curriculum.json (track length, random-start speed,
+reward weights, learning rate); `--curriculum none` trains with the command-line settings only.
+The task reward is training.wrappers.TaskReward; route episodes start at random points of random
+tracks (training.wrappers.RandomTrackStart). The result is exported to <out>/policy.npz.
 """
 import argparse
 import json
@@ -28,7 +29,8 @@ def make_env(rank, seed, config, reward, random_start):
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument('--out', required=True)
-    p.add_argument('--steps', type=int, required=True)
+    p.add_argument('--steps', type=int, help='total steps (default: end of the last curriculum stage)')
+    p.add_argument('--curriculum', default=str(ROOT / 'configs/e2e_curriculum.json'), help="stages JSON or 'none'")
     p.add_argument('--config', default=str(ROOT / 'configs/e2e_train.json'))
     p.add_argument('--reward', default=json.dumps(DEFAULT_REWARD), help='JSON overrides of RewardConfig')
     p.add_argument('--start-vmax', type=float, default=8.0, help='random-start speed limit, m/s')
@@ -58,6 +60,11 @@ def main():
     out.mkdir(parents=True, exist_ok=False)
     reward = json.loads(a.reward)
     random_start = dict(vmax=a.start_vmax, max_off_m=a.max_offtrack)
+    stages = json.loads(Path(a.curriculum).read_text())['stages'] if a.curriculum != 'none' else []
+    if a.steps is None:
+        if not stages:
+            p.error('--steps is required without a curriculum')
+        a.steps = stages[-1]['until_steps']
     venv = VecMonitor(SubprocVecEnv([make_env(i, a.seed, a.config, reward, random_start) for i in range(a.envs)],
                                     start_method='forkserver'))
     if a.resume:
@@ -81,10 +88,41 @@ def main():
             model.policy.action_net.bias.zero_()
     (out / 'args.json').write_text(json.dumps(vars(a), indent=2))
     (out / 'config.json').write_bytes(Path(a.config).read_bytes())
+    if stages:
+        (out / 'curriculum.json').write_bytes(Path(a.curriculum).read_bytes())
     log = (out / 'progress.csv').open('a')
     t0, start = time.time(), int(model.num_timesteps)
 
+    def stage_at(steps):
+        for i, st in enumerate(stages):
+            if steps < st['until_steps']:
+                return i
+        return len(stages) - 1 if stages else None
+
+    def apply_stage(i):
+        st = stages[i]
+        venv.env_method('set_stage', st)
+        lr = st.get('learning_rate', a.lr)
+        model.learning_rate = lr
+        model._setup_lr_schedule()
+        for group in model.policy.optimizer.param_groups:
+            group['lr'] = lr
+        if 'reset_log_std' in st:
+            with torch.no_grad():
+                model.policy.log_std.fill_(st['reset_log_std'])
+        print(f"stage {i + 1}/{len(stages)} '{st['name']}' from {model.num_timesteps} steps", flush=True)
+
     class Progress(BaseCallback):
+        stage = stage_at(start) if stages else None
+
+        def _on_training_start(self):
+            if self.stage is not None:
+                st = stages[self.stage]
+                venv.env_method('set_stage', st)   # resume: environment settings of the current stage
+                print(f"stage {self.stage + 1}/{len(stages)} '{st['name']}' at {start} steps", flush=True)
+                if not a.resume:
+                    apply_stage(self.stage)
+
         def _on_rollout_end(self):
             buf = self.model.ep_info_buffer
             r = sum(e['r'] for e in buf) / max(len(buf), 1)
@@ -94,6 +132,9 @@ def main():
             log.flush()
 
         def _on_rollout_start(self):
+            if self.stage is not None and stage_at(self.model.num_timesteps) != self.stage:
+                self.stage = stage_at(self.model.num_timesteps)
+                apply_stage(self.stage)
             done = int(self.model.num_timesteps) - start
             if a.ckpt_every and done > 0 and done % a.ckpt_every == 0:
                 d = out / f'ckpt_{self.model.num_timesteps:09d}'

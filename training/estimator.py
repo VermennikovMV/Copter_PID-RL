@@ -1,14 +1,19 @@
 """Disturbance estimator: data collection and supervised training.
 
-  python -m training.estimator collect --out data/estimator.npz --steps 200000 --procs 24
-  python -m training.estimator train data/estimator.npz models/estimator.npz
+  # round 1: the ArduPilot cascade flies, with and without smooth random corrections
+  python -m training.estimator collect --out runs/estimator/round1.npz
+  python -m training.estimator train runs/estimator/round1.npz --out runs/estimator/round1_model.npz
+  # round 2: the compensator of round 1 flies (the closed loop the estimator works in)
+  python -m training.estimator collect --out runs/estimator/round2.npz --estimator runs/estimator/round1_model.npz       --perturbation 0.3 --steps 100000 --seed 8000
+  python -m training.estimator train runs/estimator/round1.npz runs/estimator/round2.npz --out models/estimator.npz
 
 Inputs (83): the 80 inputs of training.stacks.ardupilot (vehicle state, history, position-controller
 targets) + the collective thrust command of the cascade (raw, 0.3 s and 1.5 s low-pass).
 Labels (4), known exactly in simulation: disturbance acceleration in the heading frame (x, y),
 vertical imbalance and the effective mass ratio m / (m_nominal * motor efficiency) - a heavier
 airframe and weaker motors are indistinguishable and need the same correction.
-Data are collected on the randomised training distribution with the cascade flying, with and
+Data are collected on the randomised training distribution (configs/compensator_train.json):
+round 1 with the cascade alone, round 2 with the round-1 compensator in the loop, both with and
 without smooth random corrections through the residual input (to cover off-nominal states).
 """
 import argparse
@@ -36,32 +41,38 @@ def label(base):
 
 
 def collect_worker(job):
-    n, seed, config, stand, perturbation = job
+    n, seed, config, stand, perturbation, estimator, amplitude = job
     from training import stacks
     from training.wrappers import ThrustHistory
-    env = stacks.ardupilot(config, stand, training=True)
+    if estimator:   # the compensator flies; the correction below is added to its output
+        env = stacks.compensator(estimator, config, stand, training=True)
+        thrust = env.thrust                     # updated by the wrapper after every step
+    else:
+        env = stacks.ardupilot(config, stand, training=True)
+        thrust = ThrustHistory()
     base = env.unwrapped
     rng = np.random.default_rng(seed)
     obs, _ = env.reset(seed=seed)
-    thrust = ThrustHistory()
     x, y = [], []
     noise, active = np.zeros(4), rng.random() < perturbation
     while len(x) < n:
         if active:   # smooth random correction (Ornstein-Uhlenbeck, ~0.5 s correlation)
-            noise += .04 * -noise + .25 * rng.normal(size=4)
+            noise += .04 * -noise + .25 * amplitude * rng.normal(size=4)
         obs, _, term, trunc, _ = env.step(np.clip(noise, -1, 1) if active else np.zeros(4))
-        thrust.push(base.pid)
+        if not estimator:
+            thrust.push(base.pid)
         x.append(np.r_[obs, thrust.features()].astype(np.float32))
         y.append(label(base))
         if term or trunc:
             obs, _ = env.reset()
-            thrust.reset()
+            if not estimator:
+                thrust.reset()
             noise, active = np.zeros(4), rng.random() < perturbation
     return np.asarray(x), np.asarray(y)
 
 
 def collect(a):
-    jobs = [(a.steps, 7000 + i, a.config, a.stand, a.perturbation) for i in range(a.procs)]
+    jobs = [(a.steps, a.seed + i, a.config, a.stand, a.perturbation, a.estimator, a.amplitude) for i in range(a.procs)]
     with Pool(a.procs) as pool:
         parts = pool.map(collect_worker, jobs)
     x, y = np.concatenate([p[0] for p in parts]), np.concatenate([p[1] for p in parts])
@@ -74,14 +85,18 @@ def train(a):
     import torch
     from torch import nn
     torch.set_num_threads(4)
-    d = np.load(a.data)
-    x, y = d['X'].astype(np.float32), d['Y'].astype(np.float32)
+    parts = [np.load(f) for f in a.data]
+    x = np.concatenate([d['X'] for d in parts]).astype(np.float32)
+    y = np.concatenate([d['Y'] for d in parts]).astype(np.float32)
     rng = np.random.default_rng(0)
     idx = rng.permutation(len(x))
     val, tr = idx[:len(x) // 10], idx[len(x) // 10:]
     y_mean, y_std = y[tr].mean(0), y[tr].std(0) + 1e-6
     xt, yt = torch.from_numpy(x), torch.from_numpy((y - y_mean) / y_std)
-    net = nn.Sequential(nn.Linear(x.shape[1], 128), nn.Tanh(), nn.Linear(128, 128), nn.Tanh(), nn.Linear(128, 4))
+    sizes, layers = [x.shape[1], *a.hidden], []
+    for n_in, n_out in zip(sizes[:-1], sizes[1:]):
+        layers += [nn.Linear(n_in, n_out), nn.Tanh()]
+    net = nn.Sequential(*layers, nn.Linear(sizes[-1], y.shape[1]))
     opt = torch.optim.Adam(net.parameters(), lr=1e-3)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, a.epochs)
     for epoch in range(a.epochs):
@@ -101,9 +116,10 @@ def train(a):
             print(f'epoch {epoch + 1}: validation RMSE {err.round(4)}, '
                   f'explained variance {np.round(1 - (err / y[val].std(0)) ** 2, 3)}')
     lin = [m for m in net if isinstance(m, nn.Linear)]
-    np.savez(a.model, **{f'W{i}': m.weight.detach().numpy() for i, m in enumerate(lin)},
+    Path(a.out).parent.mkdir(parents=True, exist_ok=True)
+    np.savez(a.out, **{f'W{i}': m.weight.detach().numpy() for i, m in enumerate(lin)},
              **{f'b{i}': m.bias.detach().numpy() for i, m in enumerate(lin)}, y_mean=y_mean, y_std=y_std)
-    print('saved', a.model)
+    print('saved', a.out)
 
 
 def main():
@@ -114,12 +130,16 @@ def main():
     c.add_argument('--steps', type=int, default=200000, help='samples per process')
     c.add_argument('--procs', type=int, default=24)
     c.add_argument('--perturbation', type=float, default=0.7, help='share of episodes with random corrections')
+    c.add_argument('--amplitude', type=float, default=1.0, help='scale of the random corrections (1: std ~0.9 of the limit)')
+    c.add_argument('--estimator', help='fly the compensator with this estimator (round 2)')
+    c.add_argument('--seed', type=int, default=7000, help='seed of the first process')
     c.add_argument('--config', default=str(ROOT / 'configs/compensator_train.json'))
     c.add_argument('--stand', default=str(ROOT / 'configs/stand_params.json'))
     t = sub.add_parser('train')
-    t.add_argument('data')
-    t.add_argument('model')
+    t.add_argument('data', nargs='+')
+    t.add_argument('--out', required=True)
     t.add_argument('--epochs', type=int, default=30)
+    t.add_argument('--hidden', type=int, nargs='+', default=[128, 128], help='hidden layer sizes (onboard: 128 128)')
     a = ap.parse_args()
     collect(a) if a.cmd == 'collect' else train(a)
 

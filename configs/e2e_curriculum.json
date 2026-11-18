@@ -1,0 +1,40 @@
+{
+  "description": "End-to-end training stages (training/ppo.py). Each stage applies from the previous stage's end to until_steps.",
+  "stages": [
+    {
+      "name": "learn to fly",
+      "until_steps": 10035200,
+      "legs_m": [3, 10],
+      "max_turn_deg": 90,
+      "random_start": 0.5,
+      "start_vmax": 2.0,
+      "max_offtrack": 2.0,
+      "learning_rate": 3e-4,
+      "reward": {"route_speed_mode": false, "action_size": 0.05}
+    },
+    {
+      "name": "longer tracks, moving starts",
+      "until_steps": 25088000,
+      "legs_m": [3, 25],
+      "max_turn_deg": 150,
+      "random_start": 0.5,
+      "start_vmax": 4.0,
+      "max_offtrack": 2.0,
+      "learning_rate": 1e-4,
+      "reset_log_std": -1.427,
+      "reward": {"route_speed_mode": false, "action_size": 0.0}
+    },
+    {
+      "name": "speed",
+      "until_steps": 50176000,
+      "legs_m": [3, 40],
+      "max_turn_deg": 150,
+      "random_start": 0.5,
+      "start_vmax": 8.0,
+      "max_offtrack": 3.0,
+      "learning_rate": 1e-4,
+      "reset_log_std": -1.427,
+      "reward": {"route_speed_mode": true, "route_time": 0.4, "action_size": 0.0}
+    }
+  ]
+}

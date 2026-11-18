@@ -67,24 +67,66 @@ models/       обученные модели
 ```bash
 python -m pip install -r requirements.txt
 
-# сравнение в PyBullet: ArduPilot, компенсатор, end-to-end
+# сравнение в PyBullet на одинаковых сценариях и seed: ArduPilot (копия), компенсатор, end-to-end
 python -m training.evaluate --estimator models/estimator.npz --policy models/e2e_policy.npz \
     --seeds 8 --out runs/pybullet.json
-
-# обучение
-python -m training.estimator collect --out runs/estimator_data.npz
-python -m training.estimator train runs/estimator_data.npz runs/estimator.npz
-python -m training.ppo --out runs/e2e --steps 30000000
-
-
-# Gazebo + SITL (нужны Gazebo Harmonic и собранный ardupilot-ROSMeetUp)
-python gazebo/evaluate_ardupilot.py --controller stock   --out runs/gazebo/stock
-python gazebo/evaluate_ardupilot.py --controller network --out runs/gazebo/network
-python gazebo/evaluate_e2e.py --policy models/e2e_policy.npz --out runs/gazebo/e2e
-python gazebo/compare.py stock network
 ```
 
-Установка стенда: [docs/setup.md](docs/setup.md).
+Gazebo + SITL (нужны Gazebo Harmonic, ardupilot_gazebo и собранный
+[ardupilot-ROSMeetUp](https://github.com/VermennikovMV/ardupilot-ROSMeetUp), см. [docs/setup.md](docs/setup.md)):
+
+```bash
+python gazebo/evaluate_ardupilot.py --controller stock   --out runs/gazebo/stock     # RESID_ENABLE=0
+python gazebo/evaluate_ardupilot.py --controller network --out runs/gazebo/network   # компенсатор в прошивке
+python gazebo/evaluate_e2e.py --policy models/e2e_policy.npz --out runs/gazebo/e2e
+python gazebo/compare.py runs/gazebo/stock runs/gazebo/network runs/gazebo/e2e
+```
+
+Отдельный случай: `--cases hover/gust --seeds 90000`. Окно Gazebo для показа:
+`python -m simulation.launch --vehicle drone1 --gui`.
+
+## Воспроизведение обучения
+
+Модели в `models/` получены ровно этими командами (время — на 32 потоках).
+
+**Оценщик возмущений** (~40 мин). Два круга: сначала летает каскад ArduPilot, затем — компенсатор
+первого круга, чтобы оценщик учился на том замкнутом контуре, в котором работает.
+
+```bash
+python -m training.estimator collect --out runs/estimator/round1.npz
+python -m training.estimator train runs/estimator/round1.npz --out runs/estimator/round1_model.npz
+python -m training.estimator collect --out runs/estimator/round2.npz --estimator runs/estimator/round1_model.npz \
+    --perturbation 0.3 --steps 100000 --seed 8000
+python -m training.estimator train runs/estimator/round1.npz runs/estimator/round2.npz --out models/estimator.npz
+```
+
+**End-to-end** (~5 ч, 50 млн шагов). Одна команда; этапы обучения заданы в
+[configs/e2e_curriculum.json](configs/e2e_curriculum.json): сначала короткие отрезки и обычная
+награда (научиться летать), затем длинные трассы и старты в движении, затем награда за скорость.
+
+```bash
+python -m training.ppo --out runs/e2e          # контрольные точки: runs/e2e/ckpt_*, итог: runs/e2e/policy.npz
+python -m training.tools export-actor runs/e2e/ckpt_050176000 runs/e2e/policy.npz   # любая контрольная точка
+```
+
+Награда, входы и рандомизация описаны в [docs/method.md](docs/method.md).
+
+## Свои модели
+
+Все скрипты принимают путь к модели, поэтому новую модель можно проверить теми же командами.
+
+| Модель | Формат `.npz` | Проверка |
+|---|---|---|
+| Оценщик | `W0, b0, W1, b1, …` (tanh между слоями), `y_mean`, `y_std`; вход 83, выход 4 | `training.evaluate --estimator`; в прошивке — 83 → 128 → 128 → 4 |
+| End-to-end | `w0, b0, w1, b1, …` (tanh между слоями, выход ограничен ±1); вход 83, выход 4 мотора | `training.evaluate --policy`, `gazebo/evaluate_e2e.py --policy` |
+
+- Другой размер сети: `training.estimator train … --hidden 256 256`, `training.ppo … --net 256 256`.
+- Другие награда, этапы или рандомизация: `training.ppo --reward '{"route_time": 0.6}'`,
+  `--curriculum my_stages.json`, `--config my_config.json` (формат — как в `configs/`).
+- Продолжить обучение: `training.ppo --out runs/e2e_more --resume runs/e2e/ckpt_050176000 --steps 60000000`.
+- Добавить входы без потери обучения: `python -m training.tools widen` (новые входы получают нулевые веса).
+- Веса оценщика встраиваются в прошивку генерацией `estimator_weights.h` в
+  [ardupilot-ROSMeetUp](https://github.com/VermennikovMV/ardupilot-ROSMeetUp) (`libraries/AC_ResidualPolicy`).
 
 ## Ограничения
 
@@ -95,5 +137,7 @@ python gazebo/compare.py stock network
   обеспечивают ограничение поправки и штатный каскад.
 - Проверка — в симуляторах (PyBullet → Gazebo + SITL); на реальном аппарате не проверялось.
 
-Лицензия: [LICENSE_STATUS.md](LICENSE_STATUS.md), сторонние компоненты:
+## Лицензия
+
+[MIT](LICENSE). Модель Iris в `simulation/models/iris` и внешние компоненты — см.
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

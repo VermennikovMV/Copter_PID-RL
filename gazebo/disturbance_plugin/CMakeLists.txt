@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(CopterDisturbanceSystem)
+find_package(gz-sim8 REQUIRED)
+find_package(gz-plugin2 REQUIRED COMPONENTS register)
+find_package(gz-transport13 REQUIRED)
+add_library(CopterDisturbanceSystem SHARED DisturbanceSystem.cc)
+target_compile_features(CopterDisturbanceSystem PRIVATE cxx_std_17)
+target_link_libraries(CopterDisturbanceSystem PRIVATE gz-sim8::gz-sim8 gz-plugin2::register gz-transport13::gz-transport13)

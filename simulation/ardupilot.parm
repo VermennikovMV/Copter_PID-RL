@@ -1,0 +1,34 @@
+# Iris frame and direct motor channel limits.
+FRAME_CLASS 1
+FRAME_TYPE 1
+MOT_PWM_MIN 1100
+MOT_PWM_MAX 1900
+MOT_THST_HOVER 0.5
+MOT_HOVER_LEARN 0
+
+# Explicit simulator-state backend. This is idealized state, not EKF3 output.
+AHRS_EKF_TYPE 10
+EK3_ENABLE 1
+
+# GUIDED thrust means collective thrust, not climb speed.
+GUID_OPTIONS 8
+ATC_ANGLE_BOOST 1
+
+# Position controller settings used by the existing baseline.
+PSC_NE_POS_P 1.5
+PSC_NE_VEL_P 4
+PSC_NE_VEL_I 2
+PSC_NE_VEL_D 0.5
+
+# Standalone local simulation: no RC/GCS loss or fence intervention.
+FS_THR_ENABLE 0
+FS_GCS_ENABLE 0
+FENCE_ENABLE 0
+SIM_SPEEDUP 1
+
+# No flight-data recording or unrelated landing peripherals by default.
+LOG_DISARMED 0
+LOG_BITMASK 0
+PLND_ENABLED 0
+RNGFND1_TYPE 0
+RC8_OPTION 0

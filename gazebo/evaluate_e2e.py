@@ -71,7 +71,6 @@ def fly(case, seed, actor, cfg, args, out):
         mission = Mission(mission_kind, .4, points=points, dwell_s=dwell, radii_m=radii)
         encoder = ObservationEncoder(EncoderConfig(**cfg['observation']))
         encoder.reset(yaw_ref)
-        encoder.set_task(horizon, mission_kind)
         v.pause_control()
         s = wait_state(v)
         prev = np.zeros(4)

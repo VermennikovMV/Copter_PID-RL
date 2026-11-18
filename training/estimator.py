@@ -1,10 +1,11 @@
 """Disturbance estimator: data collection and supervised training.
 
-  # round 1: the ArduPilot cascade flies, with and without smooth random corrections
+  # round 1: the ArduPilot cascade flies; 70 % of episodes with large smooth random corrections
   python -m training.estimator collect --out runs/estimator/round1.npz
   python -m training.estimator train runs/estimator/round1.npz --out runs/estimator/round1_model.npz
-  # round 2: the compensator of round 1 flies (the closed loop the estimator works in)
-  python -m training.estimator collect --out runs/estimator/round2.npz --estimator runs/estimator/round1_model.npz       --perturbation 0.3 --steps 100000 --seed 8000
+  # round 2: the round-1 compensator flies (the closed loop the estimator works in), small corrections
+  python -m training.estimator collect --out runs/estimator/round2.npz --estimator runs/estimator/round1_model.npz
+      --perturbation 0.7 --amplitude 0.3 --seed 9000
   python -m training.estimator train runs/estimator/round1.npz runs/estimator/round2.npz --out models/estimator.npz
 
 Inputs (83): the 80 inputs of training.stacks.ardupilot (vehicle state, history, position-controller
@@ -85,10 +86,11 @@ def train(a):
     import torch
     from torch import nn
     torch.set_num_threads(4)
+    torch.manual_seed(a.seed)
     parts = [np.load(f) for f in a.data]
     x = np.concatenate([d['X'] for d in parts]).astype(np.float32)
     y = np.concatenate([d['Y'] for d in parts]).astype(np.float32)
-    rng = np.random.default_rng(0)
+    rng = np.random.default_rng(a.seed)
     idx = rng.permutation(len(x))
     val, tr = idx[:len(x) // 10], idx[len(x) // 10:]
     y_mean, y_std = y[tr].mean(0), y[tr].std(0) + 1e-6
@@ -128,7 +130,7 @@ def main():
     c = sub.add_parser('collect')
     c.add_argument('--out', required=True)
     c.add_argument('--steps', type=int, default=200000, help='samples per process')
-    c.add_argument('--procs', type=int, default=24)
+    c.add_argument('--procs', type=int, default=20)
     c.add_argument('--perturbation', type=float, default=0.7, help='share of episodes with random corrections')
     c.add_argument('--amplitude', type=float, default=1.0, help='scale of the random corrections (1: std ~0.9 of the limit)')
     c.add_argument('--estimator', help='fly the compensator with this estimator (round 2)')
@@ -139,6 +141,7 @@ def main():
     t.add_argument('data', nargs='+')
     t.add_argument('--out', required=True)
     t.add_argument('--epochs', type=int, default=30)
+    t.add_argument('--seed', type=int, default=0, help='weight initialisation seed')
     t.add_argument('--hidden', type=int, nargs='+', default=[128, 128], help='hidden layer sizes (onboard: 128 128)')
     a = ap.parse_args()
     collect(a) if a.cmd == 'collect' else train(a)

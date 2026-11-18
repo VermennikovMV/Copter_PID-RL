@@ -300,8 +300,6 @@ class RandomTrackStart(gym.Wrapper):
         rng = np.random.default_rng(b.episode_seed + 7717)
         m = b.mission
         b.max_steps = min(b.max_steps, int(round(self.seconds / b.control_dt)))
-        if callable(getattr(b.encoder, 'set_task', None)):
-            b.encoder.set_task(b.max_steps * b.control_dt, m.kind)
         if rng.random() >= self.p_random:
             return obs, info
         i = int(rng.integers(1, m.last_index + 1))
@@ -318,8 +316,6 @@ class RandomTrackStart(gym.Wrapper):
         m.index, m.inside_since = i, None
         b.target, b.previous_target = m.target.copy(), a.copy()
         b.encoder.reset(b.yaw_reference)
-        if callable(getattr(b.encoder, 'set_task', None)):
-            b.encoder.set_task(b.max_steps * b.control_dt, m.kind)
         obs = b.observation()
         info = dict(info, position=pos.tolist(), random_start_leg=i)
         return obs, info

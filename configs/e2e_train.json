@@ -4,7 +4,7 @@
   "observation_schema": "quadrotor-heading-observation-v2-clock",
   "command_schemas": {
     "direct": "motor-thrust-gazebo-order-v1",
-    "residual": "native-pid-plus-motor-pwm-v1"
+    "residual": "ardupilot-cascade-residual-v1"
   },
   "observation": {
     "history": true,
@@ -18,8 +18,7 @@
       0.1,
       0.2
     ],
-    "goal_clip_m": 2,
-    "include_task_context": false
+    "goal_clip_m": 2
   },
   "horizon_s": {
     "hover": 30,
@@ -103,25 +102,6 @@
     "pid_scale_range": [
       0.85,
       1.15
-    ]
-  },
-  "pid": {
-    "accel_z_p": 1,
-    "accel_z_i": 2,
-    "velocity_xy_limit": 3,
-    "acceleration_xy_limit": 5.66,
-    "velocity_z_p": 5,
-    "velocity_z_i": 0,
-    "derivative_tau_s": 0.032,
-    "accel_z_filter_tau_s": 0.008,
-    "accel_z_imax": 15.7,
-    "command_tau_s": 0.01,
-    "attitude_command_model": true,
-    "attitude_input_tc_s": 0.1,
-    "attitude_accel_max_degss": [
-      1100,
-      1100,
-      270
     ]
   },
   "track": {

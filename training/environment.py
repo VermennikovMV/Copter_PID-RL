@@ -263,7 +263,6 @@ class QuadrotorEnv(gym.Env):
                                for _ in range(self.parameters.get('delay_steps', 0)))
         self.applied_pwm = np.asarray(self.motor_config.nominal_hover_pwm, float)
         self.encoder.reset(self.yaw_reference)
-        self.encoder.set_task(self.max_steps * self.control_dt, self.mission.kind)
         self.mission.update(0., position)
         observation = self.observation()
         info = self._info(self.state(), self.target, None, 0, None, np.zeros(3), False, 0.)

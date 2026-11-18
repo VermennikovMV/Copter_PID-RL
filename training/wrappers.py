@@ -62,10 +62,28 @@ class TaskReward(gym.Wrapper):
         self.prev_pos = np.asarray(info['position'], float)
         return obs, info
 
+    def set_stage(self, stage):
+        """Training curriculum (training/ppo.py): reward weights, random-start settings and the
+        random-track geometry of this environment; takes effect from the next episode."""
+        for k, v in stage.get('reward', {}).items():
+            setattr(self.cfg, k, v)
+        env = self.env
+        while isinstance(env, gym.Wrapper):
+            if isinstance(env, RandomTrackStart):
+                env.p_random = stage.get('random_start', env.p_random)
+                env.vmax = stage.get('start_vmax', env.vmax)
+                env.max_off_m = stage.get('max_offtrack', env.max_off_m)
+            env = env.env
+        track = self.env.unwrapped.config.get('track', {}).get('random')
+        if track is not None:
+            track['leg_m'] = stage.get('legs_m', track['leg_m'])
+            track['max_turn_deg'] = stage.get('max_turn_deg', track['max_turn_deg'])
+        return True
+
     def terms(self, info):
         c = self.cfg
         p = np.asarray(info['position'], float)
-        tgt = np.asarray(info['target_before'], float)
+        tgt = np.asarray(info['target'], float)
         v = np.asarray(info['velocity'], float)
         w = np.asarray(info['body_rates'], float)
         pwm = np.asarray(info['applied_pwm'], float) if info.get('applied_pwm') is not None else None
@@ -82,7 +100,7 @@ class TaskReward(gym.Wrapper):
                 da = self.action - self.prev_action
                 cost['action_rate'] = c.action_rate * float(da @ da)
         t = {}
-        if info['active_pre_leg']:
+        if info['on_leg']:
             d = float(info['finite_distance'])
             cost['segment'] = c.seg_lin * d + c.seg_quad * d * d
             t['progress'] = c.progress * (float(np.linalg.norm(self.prev_pos - tgt)) - e)
@@ -121,8 +139,7 @@ class TaskReward(gym.Wrapper):
 class AttitudeResidual(gym.Wrapper):
     """Action in [-1, 1]^4 -> tilt offset (roll, pitch, yaw; +-ANGLE_MAX_RAD) added to the attitude
     error before the angle P controller, and collective thrust fraction (+-THRUST_MAX).
-    Same semantics as AC_Residual in the firmware. Use QuadrotorEnv(controller='residual',
-    residual_limit_pwm=0.001) so that the motor-level residual is zero."""
+    Same semantics as AC_Residual in the firmware (training.environment.QuadrotorEnv(controller='residual'))."""
     def __init__(self, env, delay_probability=0.05):
         super().__init__(env)
         self.delay_probability = delay_probability
@@ -316,7 +333,7 @@ class RandomTrackStart(gym.Wrapper):
             self.events += 1
             if self.events >= self.waypoints and not term:
                 trunc = True
-        if info.get('active_pre_leg') and info.get('finite_distance', 0.) > self.max_off_m and not term:
+        if info.get('on_leg') and info.get('finite_distance', 0.) > self.max_off_m and not term:
             info['failed'], term = True, True
         return obs, r, term, trunc, info
 
@@ -347,19 +364,21 @@ class ThrustHistory:
 
 
 class DisturbanceEstimator:
-    """MLP 83 -> 128 -> 128 -> 4 (tanh) trained with supervision (training/estimator.py).
-    Input: 80 vehicle/cascade inputs + 3 thrust inputs. Output: disturbance acceleration in the
+    """Dense tanh MLP trained with supervision (training/estimator.py; keys W0, b0, W1, ..., y_mean, y_std).
+    Input (83): 80 vehicle/cascade inputs + 3 thrust inputs. Output: disturbance acceleration in the
     heading frame (x, y), vertical imbalance (m/s^2), effective mass ratio."""
     def __init__(self, path):
         z = np.load(path)
-        self.W = [z[f'W{i}'] for i in range(3)]
-        self.b = [z[f'b{i}'] for i in range(3)]
+        n = sum(1 for k in z.files if k.startswith('W'))
+        self.layers = [(z[f'W{i}'], z[f'b{i}']) for i in range(n)]
         self.y_mean, self.y_std = z['y_mean'], z['y_std']
 
     def __call__(self, x):
-        h = np.tanh(self.W[0] @ x + self.b[0])
-        h = np.tanh(self.W[1] @ h + self.b[1])
-        return (self.W[2] @ h + self.b[2]) * self.y_std + self.y_mean
+        for i, (w, b) in enumerate(self.layers):
+            x = w @ x + b
+            if i < len(self.layers) - 1:
+                x = np.tanh(x)
+        return x * self.y_std + self.y_mean
 
 
 def compensation(estimate, kxy=1.0, kz=0.5):

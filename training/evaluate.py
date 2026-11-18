@@ -60,12 +60,12 @@ def fly(job):
     drop_t, z0, zpeak, failed = None, None, 0., False
     while True:
         obs, _, term, trunc, info = env.step(np.zeros(4) if policy is None else policy(obs))
-        p, tgt = np.asarray(info['position']), np.asarray(info['target_before'])
+        p, tgt = np.asarray(info['position']), np.asarray(info['target'])
         errs.append(float(np.linalg.norm(p - tgt)))
         yaws.append(abs(info['yaw_error']))
         tilts.append(math.degrees(math.acos(min(1., info['tilt_cos']))))
-        if info['active_pre_leg']:
-            i = int(info['pre_goal_index'])
+        if info['on_leg']:
+            i = int(info['goal_index'])
             segs.append(segment_distance(p, base.mission.points[i - 1], base.mission.points[i]))
         if info.get('payload_drop_event') and drop_t is None:
             drop_t, z0 = info['payload_drop_event']['time_s'], float(tgt[2])

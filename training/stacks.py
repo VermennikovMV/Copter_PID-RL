@@ -19,7 +19,7 @@ def ardupilot(config=CONFIGS / 'compensator_eval.json', stand=CONFIGS / 'stand_p
     """GUIDED cascade copy with the bounded attitude/thrust residual input and the 80 inputs
     (vehicle state + position-controller targets) used by the estimator."""
     env = QuadrotorEnv(controller='residual', training=training, mission=mission, scenario=scenario,
-                       residual_limit_pwm=0.001, config_path=str(config), seconds=seconds)
+                       config_path=str(config), seconds=seconds)
     env = GuidedShaping(env, stand, randomize=training, overrides=shaping_overrides)
     env = AttitudeResidual(env, delay_probability=0.05 if training else 0.)
     return PidTargetObservation(env)

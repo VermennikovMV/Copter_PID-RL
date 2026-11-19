@@ -10,9 +10,9 @@ exactly in simulation, so the estimator is trained with supervision.
 
 Inputs (83): the 80 inputs of training.stacks.ardupilot (vehicle state, history, position-controller
 targets) + the collective thrust command of the cascade (raw, 0.3 s and 1.5 s low-pass).
-Labels (4): disturbance acceleration in the heading frame (x, y), vertical imbalance and the
-effective mass ratio m / (m_nominal * motor efficiency) - a heavier airframe and weaker motors are
-indistinguishable and need the same correction.
+Labels (3): disturbance acceleration in the heading frame (x, y) and the vertical imbalance: the
+vertical acceleration the vehicle gets at its usual hover thrust (external vertical force, extra mass,
+weaker motors - a heavier airframe and weaker motors need the same correction).
 """
 import argparse
 import sys
@@ -35,7 +35,7 @@ def label(base):
     horizontal = h @ force / base.mass
     effective = base.mass / (MASS * float(base.parameters.get('motor_scale', 1.)))
     vertical = force[2] / base.mass - G * (1. - 1. / effective)
-    return np.array([horizontal[0], horizontal[1], vertical, effective], np.float32)
+    return np.array([horizontal[0], horizontal[1], vertical], np.float32)
 
 
 def collect_worker(job):

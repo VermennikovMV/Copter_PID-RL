@@ -362,7 +362,7 @@ class ThrustHistory:
 class DisturbanceEstimator:
     """Dense tanh MLP trained with supervision (training/estimator.py; keys W0, b0, W1, ..., y_mean, y_std).
     Input (83): 80 vehicle/cascade inputs + 3 thrust inputs. Output: disturbance acceleration in the
-    heading frame (x, y), vertical imbalance (m/s^2), effective mass ratio."""
+    heading frame (x, y) and the vertical imbalance (m/s^2)."""
     def __init__(self, path):
         z = np.load(path)
         n = sum(1 for k in z.files if k.startswith('W'))
@@ -383,7 +383,7 @@ def compensation(estimate, kxy=1.0, kz=0.5):
     c = np.zeros(4)
     c[:2] = kxy * np.array([estimate[1], -estimate[0]]) / G / ANGLE_MAX_RAD
     c[3] = -kz * estimate[2] / G / THRUST_MAX
-    return np.clip(c, -1, 1)
+    return np.clip(c, -2, 2)   # up to 30 deg / 30 %; the residual input clips to its own limit
 
 
 class DisturbanceCompensation(gym.Wrapper):
@@ -395,7 +395,7 @@ class DisturbanceCompensation(gym.Wrapper):
         self.est = DisturbanceEstimator(estimator_path)
         self.thrust = ThrustHistory()
         self.kxy, self.kz = kxy, kz
-        self.comp, self.estimate = np.zeros(4), np.zeros(4)
+        self.comp, self.estimate = np.zeros(4), np.zeros(3)
 
     def _update(self, obs):
         self.thrust.push(self.env.unwrapped.pid)

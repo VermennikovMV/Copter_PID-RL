@@ -377,7 +377,7 @@ class DisturbanceEstimator:
         return x * self.y_std + self.y_mean
 
 
-def compensation(estimate, kxy=1.0, kz=0.5):
+def compensation(estimate, kxy=1.0, kz=1.0):
     """Physics compensation in normalised residual units: tilt towards the disturbance
     (a / g, small angle) and a thrust fraction for the vertical imbalance."""
     c = np.zeros(4)
@@ -390,7 +390,7 @@ class DisturbanceCompensation(gym.Wrapper):
     """On top of PidTargetObservation (80 inputs). Every step the estimator infers the disturbance,
     the physics compensation is applied through AttitudeResidual; an optional action is added to it.
     The observation is passed through unchanged."""
-    def __init__(self, env, estimator_path, kxy=1.0, kz=0.5):
+    def __init__(self, env, estimator_path, kxy=1.0, kz=1.0):
         super().__init__(env)
         self.est = DisturbanceEstimator(estimator_path)
         self.thrust = ThrustHistory()

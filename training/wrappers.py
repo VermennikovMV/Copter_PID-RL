@@ -337,7 +337,7 @@ class RandomTrackStart(gym.Wrapper):
 # ------------------------------------------------------- disturbance compensation
 class ThrustHistory:
     """Collective thrust command of the cascade relative to hover thrust: raw and low-pass filtered
-    (0.3 s, 1.5 s). Its average equals the effective mass. Onboard: throttle / RESID_THR_HOVR."""
+    (0.3 s, 1.5 s). Its average equals the effective mass. Onboard: throttle / MOT_THST_HOVER."""
     TAUS = (0.3, 1.5)
 
     def __init__(self, dt=0.02):

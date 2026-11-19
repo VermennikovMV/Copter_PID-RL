@@ -34,8 +34,8 @@ python -m pip install -r requirements.txt
 
 Стенд в `simulation/`: модель Iris, мир, параметры SITL (`ardupilot.parm`,
 `AHRS_EKF_TYPE=10` — состояние из симулятора). Параметры, которые выставляют скрипты
-испытаний: `WP_SPD=3`, `WP_RADIUS_M=0.4`, `WP_YAW_BEHAVIOR=0`, `RESID_MODES=16` (GUIDED),
-`RESID_THR_HOVR=0.303` (тяга висения стенда).
+испытаний: `WP_SPD=3`, `WP_RADIUS_M=0.4`, `WP_YAW_BEHAVIOR=0`. Тяга висения стенда
+`MOT_THST_HOVER=0.303` (измерена) задана в `ardupilot.parm`.
 
 ### WSL2 с двумя дистрибутивами
 
@@ -49,10 +49,8 @@ Gazebo поднимается через `wsl.exe`. Для окна Gazebo по�
 | Параметр | По умолчанию | Назначение |
 |---|---|---|
 | `RESID_ENABLE` | 0 | включить компенсатор (0 — штатный ArduPilot) |
-| `RESID_MODES` | 16 | битовая маска режимов, где поправка разрешена (16 = GUIDED) |
+| `RESID_MODES` | 120 | битовая маска номеров режимов, где поправка разрешена (AUTO 3, GUIDED 4, LOITER 5, RTL 6) |
 | `RESID_ANG_MAX` | 15 | предел поправки наклона и курса, градусы |
 | `RESID_THR_MAX` | 0,15 | предел поправки тяги, доля |
-| `RESID_THR_HOVR` | 0 | тяга висения для входа оценщика (0 — `MOT_THST_HOVER`) |
-| `RESID_TST_R/P/T` | 0 | постоянная тестовая поправка (крен, тангаж в градусах; тяга) |
 
 Журнал `RESD`: поправка (R, P, Y, T), оценка (AX, AY, AZ, M) и вход тяги (TR).

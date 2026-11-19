@@ -1,21 +1,18 @@
 """Disturbance estimator: data collection and supervised training.
 
-  # round 1: the ArduPilot cascade flies; 70 % of episodes with large smooth random corrections
-  python -m training.estimator collect --out runs/estimator/round1.npz
-  python -m training.estimator train runs/estimator/round1.npz --out runs/estimator/round1_model.npz
-  # round 2: the round-1 compensator flies (the closed loop the estimator works in), small corrections
-  python -m training.estimator collect --out runs/estimator/round2.npz --estimator runs/estimator/round1_model.npz
-      --perturbation 0.7 --amplitude 0.3 --seed 9000
-  python -m training.estimator train runs/estimator/round1.npz runs/estimator/round2.npz --out models/estimator.npz
+  python -m training.estimator collect --out runs/estimator/data.npz
+  python -m training.estimator train runs/estimator/data.npz --out models/estimator.npz
+
+The ArduPilot cascade copy flies on the randomised training distribution
+(configs/compensator_train.json); in 70 % of the episodes smooth random corrections are added through
+the residual input, so that the data also cover off-nominal states. The disturbance is known
+exactly in simulation, so the estimator is trained with supervision.
 
 Inputs (83): the 80 inputs of training.stacks.ardupilot (vehicle state, history, position-controller
 targets) + the collective thrust command of the cascade (raw, 0.3 s and 1.5 s low-pass).
-Labels (4), known exactly in simulation: disturbance acceleration in the heading frame (x, y),
-vertical imbalance and the effective mass ratio m / (m_nominal * motor efficiency) - a heavier
-airframe and weaker motors are indistinguishable and need the same correction.
-Data are collected on the randomised training distribution (configs/compensator_train.json):
-round 1 with the cascade alone, round 2 with the round-1 compensator in the loop, both with and
-without smooth random corrections through the residual input (to cover off-nominal states).
+Labels (4): disturbance acceleration in the heading frame (x, y), vertical imbalance and the
+effective mass ratio m / (m_nominal * motor efficiency) - a heavier airframe and weaker motors are
+indistinguishable and need the same correction.
 """
 import argparse
 import sys
@@ -42,15 +39,11 @@ def label(base):
 
 
 def collect_worker(job):
-    n, seed, config, stand, perturbation, estimator, amplitude = job
+    n, seed, config, stand, perturbation = job
     from training import stacks
     from training.wrappers import ThrustHistory
-    if estimator:   # the compensator flies; the correction below is added to its output
-        env = stacks.compensator(estimator, config, stand, training=True)
-        thrust = env.thrust                     # updated by the wrapper after every step
-    else:
-        env = stacks.ardupilot(config, stand, training=True)
-        thrust = ThrustHistory()
+    env = stacks.ardupilot(config, stand, training=True)
+    thrust = ThrustHistory()
     base = env.unwrapped
     rng = np.random.default_rng(seed)
     obs, _ = env.reset(seed=seed)
@@ -58,22 +51,20 @@ def collect_worker(job):
     noise, active = np.zeros(4), rng.random() < perturbation
     while len(x) < n:
         if active:   # smooth random correction (Ornstein-Uhlenbeck, ~0.5 s correlation)
-            noise += .04 * -noise + .25 * amplitude * rng.normal(size=4)
+            noise += .04 * -noise + .25 * rng.normal(size=4)
         obs, _, term, trunc, _ = env.step(np.clip(noise, -1, 1) if active else np.zeros(4))
-        if not estimator:
-            thrust.push(base.pid)
+        thrust.push(base.pid)
         x.append(np.r_[obs, thrust.features()].astype(np.float32))
         y.append(label(base))
         if term or trunc:
             obs, _ = env.reset()
-            if not estimator:
-                thrust.reset()
+            thrust.reset()
             noise, active = np.zeros(4), rng.random() < perturbation
     return np.asarray(x), np.asarray(y)
 
 
 def collect(a):
-    jobs = [(a.steps, a.seed + i, a.config, a.stand, a.perturbation, a.estimator, a.amplitude) for i in range(a.procs)]
+    jobs = [(a.steps, a.seed + i, a.config, a.stand, a.perturbation) for i in range(a.procs)]
     with Pool(a.procs) as pool:
         parts = pool.map(collect_worker, jobs)
     x, y = np.concatenate([p[0] for p in parts]), np.concatenate([p[1] for p in parts])
@@ -87,9 +78,8 @@ def train(a):
     from torch import nn
     torch.set_num_threads(4)
     torch.manual_seed(a.seed)
-    parts = [np.load(f) for f in a.data]
-    x = np.concatenate([d['X'] for d in parts]).astype(np.float32)
-    y = np.concatenate([d['Y'] for d in parts]).astype(np.float32)
+    d = np.load(a.data)
+    x, y = d['X'].astype(np.float32), d['Y'].astype(np.float32)
     rng = np.random.default_rng(a.seed)
     idx = rng.permutation(len(x))
     val, tr = idx[:len(x) // 10], idx[len(x) // 10:]
@@ -132,13 +122,11 @@ def main():
     c.add_argument('--steps', type=int, default=200000, help='samples per process')
     c.add_argument('--procs', type=int, default=20)
     c.add_argument('--perturbation', type=float, default=0.7, help='share of episodes with random corrections')
-    c.add_argument('--amplitude', type=float, default=1.0, help='scale of the random corrections (1: std ~0.9 of the limit)')
-    c.add_argument('--estimator', help='fly the compensator with this estimator (round 2)')
     c.add_argument('--seed', type=int, default=7000, help='seed of the first process')
     c.add_argument('--config', default=str(ROOT / 'configs/compensator_train.json'))
     c.add_argument('--stand', default=str(ROOT / 'configs/stand_params.json'))
     t = sub.add_parser('train')
-    t.add_argument('data', nargs='+')
+    t.add_argument('data')
     t.add_argument('--out', required=True)
     t.add_argument('--epochs', type=int, default=30)
     t.add_argument('--seed', type=int, default=0, help='weight initialisation seed')

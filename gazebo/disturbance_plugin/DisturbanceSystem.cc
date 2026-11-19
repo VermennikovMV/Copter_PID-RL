@@ -6,6 +6,10 @@
 // Times are simulation seconds counted from the first physics update after the schedule
 // was received, so the profile follows Gazebo time exactly, independent of wall-clock delays.
 // Every change of the applied force and the release are written to <log_file> as JSON lines.
+//
+// Optional wind visualisation (<wind_streaks> on one instance): the models <prefix>0..N-1 (thin
+// visual-only streaks) drift with the wind velocity = applied horizontal force / <drag_N_per_mps>
+// inside the box <area_min>..<area_max>; without wind they are parked below the ground.
 #include <gz/msgs/empty.pb.h>
 #include <gz/msgs/stringmsg.pb.h>
 #include <gz/plugin/Register.hh>
@@ -25,6 +29,7 @@
 #include <iomanip>
 #include <mutex>
 #include <optional>
+#include <random>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -55,6 +60,13 @@ class DisturbanceSystem : public gz::sim::System,
   gz::sim::Entity link = gz::sim::kNullEntity;
   gz::math::Vector3d lastForce{0, 0, 0};
   std::ofstream log;
+  // wind visualisation
+  std::string streakPrefix;
+  std::vector<gz::sim::Entity> streakModels;
+  std::vector<gz::math::Vector3d> streakPos;
+  gz::math::Vector3d areaMin, areaMax;
+  double dragCoefficient = 1.52, lastStreakUpdate = -1.;
+  bool streaksParked = false;
 
  public:
   void Configure(const gz::sim::Entity &, const std::shared_ptr<const sdf::Element> &sdf,
@@ -68,6 +80,22 @@ class DisturbanceSystem : public gz::sim::System,
       log << std::setprecision(10);
     }
     detachPub = node.Advertise<gz::msgs::Empty>(detachTopic);
+    if (sdf->HasElement("wind_streaks")) {
+      auto w = sdf->FindElement("wind_streaks");
+      streakPrefix = w->Get<std::string>("prefix", "wind_streak_").first;
+      const int count = w->Get<int>("count", 0).first;
+      areaMin = w->Get<gz::math::Vector3d>("area_min", gz::math::Vector3d(-10, -10, 1)).first;
+      areaMax = w->Get<gz::math::Vector3d>("area_max", gz::math::Vector3d(10, 10, 5)).first;
+      dragCoefficient = w->Get<double>("drag_N_per_mps", 1.52).first;
+      std::mt19937 rng(7);
+      std::uniform_real_distribution<double> u(0., 1.);
+      for (int k = 0; k < count; ++k) {
+        streakPos.emplace_back(areaMin.X() + u(rng) * (areaMax.X() - areaMin.X()),
+                               areaMin.Y() + u(rng) * (areaMax.Y() - areaMin.Y()),
+                               areaMin.Z() + u(rng) * (areaMax.Z() - areaMin.Z()));
+        streakModels.push_back(gz::sim::kNullEntity);
+      }
+    }
     node.Subscribe(topic, &DisturbanceSystem::Receive, this);
     Write("{\"event\":\"configured\",\"topic\":\"" + topic + "\",\"detach_topic\":\"" + detachTopic + "\"}");
   }
@@ -136,6 +164,7 @@ class DisturbanceSystem : public gz::sim::System,
     for (const auto &e : active.forces)
       if (t >= e.on - 1e-9 && t < e.off - 1e-9) force += e.force;
     if (force != gz::math::Vector3d::Zero) gz::sim::Link(link).AddWorldForce(ecm, force);
+    MoveStreaks(ecm, now, force);
     if (force != lastForce) {
       std::ostringstream s;
       s << "{\"event\":\"force\",\"t\":" << t << ",\"sim_time\":" << now << ",\"force_enu_N\":["
@@ -153,6 +182,33 @@ class DisturbanceSystem : public gz::sim::System,
   }
 
  private:
+  void MoveStreaks(gz::sim::EntityComponentManager &ecm, double now, const gz::math::Vector3d &force) {
+    if (streakModels.empty() || now - lastStreakUpdate < .02) return;
+    const double dt = lastStreakUpdate < 0 ? 0. : now - lastStreakUpdate;
+    lastStreakUpdate = now;
+    const gz::math::Vector3d wind(force.X() / dragCoefficient, force.Y() / dragCoefficient, 0.);
+    const bool blowing = wind.Length() > .3;
+    if (!blowing && streaksParked) return;
+    const double yaw = std::atan2(wind.Y(), wind.X());
+    const gz::math::Vector3d size = areaMax - areaMin;
+    for (size_t k = 0; k < streakModels.size(); ++k) {
+      if (streakModels[k] == gz::sim::kNullEntity) {
+        streakModels[k] = ecm.EntityByComponents(gz::sim::components::Name(streakPrefix + std::to_string(k)),
+                                                 gz::sim::components::Model());
+        if (streakModels[k] == gz::sim::kNullEntity) continue;
+      }
+      auto &p = streakPos[k];
+      p += wind * dt;
+      p.X(areaMin.X() + std::fmod(std::fmod(p.X() - areaMin.X(), size.X()) + size.X(), size.X()));
+      p.Y(areaMin.Y() + std::fmod(std::fmod(p.Y() - areaMin.Y(), size.Y()) + size.Y(), size.Y()));
+      // the streak is a cylinder along its z axis: pitch 90 deg lays it along the wind
+      const gz::math::Pose3d pose = blowing ? gz::math::Pose3d(p.X(), p.Y(), p.Z(), 0., GZ_PI / 2, yaw)
+                                            : gz::math::Pose3d(p.X(), p.Y(), -20., 0., GZ_PI / 2, 0.);
+      gz::sim::Model(streakModels[k]).SetWorldPoseCmd(ecm, pose);
+    }
+    streaksParked = !blowing;
+  }
+
   void Write(const std::string &line) {
     if (log.is_open()) {
       log << line << "\n";

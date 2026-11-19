@@ -1,21 +1,24 @@
 """Demonstrations: three vehicles in one Gazebo scene, flying at the same time in the same wind.
 
-  drone1 (blue, left)      stock ArduPilot, GUIDED
-  drone2 (orange, middle)  ArduPilot + disturbance compensator (RESID_ENABLE=1)
-  drone3 (purple, right)   end-to-end policy (motor commands; ArduPilot only takes off)
+  drone1 (blue)    stock ArduPilot, GUIDED
+  drone2 (orange)  ArduPilot + disturbance compensator (RESID_ENABLE=1)
+  drone3 (purple)  end-to-end policy (motor commands; ArduPilot only takes off)
 
-  python demo/run.py race       the test track (10 x 10 m, stop in the middle), lanes 3.5 m apart: who is first
-  python demo/run.py payload    hover, a 0.35 kg box under every vehicle is released at the same moment
-  python demo/run.py wind       hover in strong gusty wind: from the front, then veering to the right
-  python demo/run.py final      the track with a stop, payload release in flight and wind gusts
+  python demo/run.py race       track with 8 fly-through points, a stop near the end and the finish
+  python demo/run.py payload    hover, a box of 50 % of the vehicle mass is released at the same moment
+  python demo/run.py wind       hover in strong gusty wind: from the front, calm, from the right, calm
+  python demo/run.py final      the track in side wind gusts with a 30 % payload released in flight
 
-Options: the Gazebo window opens by default; --record video.mp4 (camera in the scene, real-time video with
-captions, no window needed), --headless, --policy, --ardupilot.
+Hover: the vehicles stand side by side. Track: all fly the same track one above the other, 2 m apart.
+
+Options: the Gazebo window opens by default; --record video.mp4 (camera in the scene, video in
+simulation time with captions, no window needed), --headless, --policy, --ardupilot.
 
 Wind: the Gazebo Iris already has air drag ~1.52 N/(m/s) relative to the ground, so an extra force
-1.52 * w(t) gives the drag relative to air moving with the wind w(t). w(t) = mean wind + turbulence
-(random, ~2 s correlation, ~20 % of the mean) + "1 - cos" gusts, with a 2 s ramp; streaks in the
-scene move with the wind. All vehicles get the same wind, armed in the same simulation step.
+1.52 * w(t) gives the drag relative to air moving with the wind w(t). Each blow: mean wind + turbulence
+(random, ~2 s correlation, ~20 % of the mean, direction within a few degrees) + a "1 - cos" gust, with
+smooth ramps; streaks in the scene move with the wind. All vehicles get the same wind, armed in the
+same simulation step.
 """
 import argparse
 import json
@@ -55,47 +58,59 @@ FPS = 25
 
 # ------------------------------------------------------------------ wind
 def wind(t_on, t_off, mean, heading, gusts=(), rng=None, ramp=2., step=.1):
-    """Wind velocity pieces [(on, off, wx, wy)]. heading(t): direction the air moves to, rad;
-    gusts: [(t_peak, extra m/s, duration s)]."""
+    """Wind velocity pieces [(on, off, wx, wy)]: one blow of wind. heading: direction the air moves to,
+    rad (it wanders by a few degrees); gusts: [(t_peak, extra m/s, duration s)]."""
     rng = rng or np.random.default_rng(0)
     u, d, out = 0., 0., []
     for t in np.arange(t_on, t_off - 1e-9, step):
         u += step / 2. * -u + .22 * mean * math.sqrt(2 * step / 2.) * rng.normal()     # turbulence, 2 s
-        d += step / 3. * -d + math.radians(8) * math.sqrt(2 * step / 3.) * rng.normal()  # direction, 3 s
+        d += step / 4. * -d + math.radians(5) * math.sqrt(2 * step / 4.) * rng.normal()  # direction, 4 s
         envelope = min(1., (t - t_on) / ramp, (t_off - t) / ramp)
         envelope = .5 - .5 * math.cos(math.pi * max(0., envelope))
         speed = envelope * (mean + u)
         for t_peak, extra, duration in gusts:
             if abs(t - t_peak) < duration / 2:
                 speed += extra * (.5 + .5 * math.cos(2 * math.pi * (t - t_peak) / duration))
-        a = heading(t) + d
+        a = heading + d
         out.append((round(t, 2), round(t + step, 2), speed * math.cos(a), speed * math.sin(a)))
     return out
 
 
 FROM_FRONT, FROM_RIGHT = -math.pi / 2, math.pi        # air moving to -y / to -x (vehicles face +y)
 
+# Demo track: 8 fly-through points, a 2 s stop near the end, finish at the start (x, y, z in m)
+TRACK = dict(points=[(0, 0, 3), (7, -2, 3), (14, 1, 3.5), (20, -1, 4), (19, 7, 4), (12, 11, 3.5), (5, 8, 3),
+                     (-2, 11, 3.5), (-3, 4, 3), (0, 0, 3)],
+             dwell=[.5, 0, 0, 0, 0, 0, 0, 2., 0, .5],
+             radii=[.4, .5, .5, .5, .5, .5, .5, .4, .5, .4])
+HEAVY = .5                                           # payload, fraction of the vehicle mass
+
 
 def scene(name):
     rng = np.random.default_rng(2026)
     if name == 'race':
-        return dict(kind='route', wind=[], drop=None, seconds=45., title='Трасса без помех')
+        return dict(kind='route', wind=[], drop=None, seconds=80., title='Трасса: 8 пролётных точек, остановка, финиш')
     if name == 'payload':
-        return dict(kind='hover', spacing=4., wind=[], drop=6., seconds=16., title='Сброс груза 0,35 кг (20 % массы)')
+        return dict(kind='hover', spacing=4., wind=[], drop=6., payload=HEAVY, seconds=18.,
+                    title=f'Сброс груза {HEAVY * MASS:.2f} кг ({HEAVY:.0%} массы)'.replace('.', ',').replace('%', ' %'))
     if name == 'wind':
-        def heading(t):        # from the front, veering to the right between 17 and 20 s
-            f = min(1., max(0., (t - 17.) / 3.))
-            return FROM_FRONT + (FROM_RIGHT - FROM_FRONT) * (.5 - .5 * math.cos(math.pi * f))
-        return dict(kind='hover', spacing=4., drop=None, seconds=37., title='Сильный порывистый ветер',
-                    wind=wind(3., 34., 3.5, heading, gusts=((10., 2., 3.), (26., 2., 3.)), rng=rng))
+        w = (wind(3., 15., 4., FROM_FRONT, gusts=((10., 2.5, 3.),), rng=rng)         # from the front, calm,
+             + wind(20., 32., 4., FROM_RIGHT, gusts=((27., 2.5, 3.),), rng=rng))     # from the right, calm
+        return dict(kind='hover', spacing=4., drop=None, seconds=38., wind=w, title='Сильный ветер: спереди, затем справа')
     if name == 'final':
-        side = lambda t: FROM_RIGHT  # noqa: E731
         w = []
-        for t_peak in (8., 15., 22.):
-            w += wind(t_peak - 2.5, t_peak + 2.5, 3.5, side, gusts=((t_peak, 1.5, 3.),), rng=rng, ramp=1.5)
-        return dict(kind='route', drop=4., seconds=45., wind=w,
-                    title='Трасса: остановка, сброс груза, порывы ветра')
+        for t_on in (5., 17., 29.):
+            w += wind(t_on, t_on + 7., 4.5, FROM_RIGHT, gusts=((t_on + 3.5, 2.5, 3.),), rng=rng, ramp=1.5)
+        return dict(kind='route', drop=5., payload=.3, seconds=90., wind=w,
+                    title='Трасса: ветер, груз 30 %, остановка')
     raise ValueError(name)
+
+
+def track(sc):
+    """Points, dwell times and acceptance radii of the scene (hover: the start point of the test track)."""
+    if sc['kind'] == 'route':
+        return np.array(TRACK['points'], float), np.array(TRACK['dwell']), np.array(TRACK['radii'])
+    return load_track()
 
 
 ROUTE_LEVEL = {'drone1': 4., 'drone2': 2., 'drone3': 0.}   # m above the track
@@ -118,9 +133,10 @@ def build_world(out, sc, prefix, record):
         if m.attrib['name'].startswith('target'):
             world.remove(m)
     plugin = plugin_path(prefix)
-    points = load_track()[0]
+    points, dwell = track(sc)[:2]
+    stops = [k for k, s in enumerate(dwell) if s > 1.] if sc['kind'] == 'route' else []
     route = sc['kind'] == 'route'
-    area = ((-4, -4, 1.5), (14, 14, 9.)) if route else ((-8, -6, 1.5), (8, 6, 5.))
+    area = ((-7, -5, 1.5), (24, 15, 9.)) if route else ((-8, -6, 1.5), (8, 6, 5.))
     for i, name in enumerate(DRONES):
         x0, shift = lane(sc, i, name)
         drone = next(m for m in world.findall('model') if m.attrib['name'] == name)
@@ -141,17 +157,25 @@ def build_world(out, sc, prefix, record):
             for tag, value in (('parent_link', 'base_link'), ('child_model', f'payload_{name}'), ('child_link', 'box'),
                                ('detach_topic', f'/demo/{name}/detach')):
                 ET.SubElement(joint, tag).text = value
-            world.append(box_model(f'payload_{name}', (x0, 0., .095)))
+            world.append(box_model(f'payload_{name}', (x0, 0., .095), sc['payload']))
+        if route:                            # a coloured ball over the vehicle: visible from far away
+            joint = ET.SubElement(drone.find('include'), 'plugin', filename='gz-sim-detachable-joint-system',
+                                  name='gz::sim::systems::DetachableJoint')
+            for tag, value in (('parent_link', 'base_link'), ('child_model', f'marker_{name}'), ('child_link', 'ball'),
+                               ('detach_topic', f'/demo/{name}/keep_marker')):
+                ET.SubElement(joint, tag).text = value
+            world.append(marker_model(f'marker_{name}', (x0, 0., .42), COLORS[name]))
         marks = points if route else points[:1]
         world.append(points_model(f'points_{name}', [(x0 + shift[0] + q[0], shift[1] + q[1], shift[2] + q[2])
-                                                     for q in marks], COLORS[name]))
+                                                     for q in marks], COLORS[name], stops,
+                                  *(() if route else (.1, .7))))
     for k in range(70 if route else 45):
         world.append(streak_model(f'wind_streak_{k}', 1.4 if route else .8))
     if record:
         world.append(ET.fromstring('<plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">'
                                    '<render_engine>ogre2</render_engine></plugin>'))
-        pose = '-9 -11 11 0 .34 .85' if route else '0 -11 4.6 0 .12 1.5708'
-        world.append(camera_model(pose, 1.1 if route else 1.0, record))
+        pose = '9 -17 15 0 .47 1.5708' if route else '0 -11 4.6 0 .12 1.5708'
+        world.append(camera_model(pose, 1.25 if route else 1.0, record))
     path = out / 'world_demo.sdf'
     tree.write(path, encoding='utf-8', xml_declaration=True)
     return path
@@ -163,20 +187,40 @@ def material(color, alpha=1., emissive=0.):
     return f'<material><ambient>{c} {alpha}</ambient><diffuse>{c} {alpha}</diffuse><emissive>{e} 1</emissive></material>'
 
 
-def box_model(name, xyz):
-    i = ''.join(f'<{k}>{.2 * v!r}</{k}>' for k, v in zip(('ixx', 'iyy', 'izz'), BASE_INERTIA))
-    geometry = '<geometry><box><size>.12 .12 .06</size></box></geometry>'
+def box_model(name, xyz, fraction):
+    """Payload of `fraction` of the vehicle mass. The visible box grows with the mass; the collision box
+    stays small so that it fits between the landing legs."""
+    i = ''.join(f'<{k}>{fraction * v!r}</{k}>' for k, v in zip(('ixx', 'iyy', 'izz'), BASE_INERTIA))
+    side = .12 * (fraction / .2) ** (1 / 3) * 1.4
+    shape = f'<geometry><box><size>{side:.3f} {side:.3f} {side / 2:.3f}</size></box></geometry>'
     return ET.fromstring(
         f'<model name="{name}"><pose>{xyz[0]} {xyz[1]} {xyz[2]} 0 0 0</pose><link name="box">'
-        f'<inertial><mass>{.2 * MASS!r}</mass><inertia>{i}<ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>'
-        f'<collision name="c">{geometry}</collision><visual name="v">{geometry}{material((.95, .78, .1))}</visual>'
-        f'</link></model>')
+        f'<inertial><mass>{fraction * MASS!r}</mass><inertia>{i}<ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>'
+        f'<collision name="c"><geometry><box><size>.12 .12 .06</size></box></geometry></collision>'
+        f'<visual name="v">{shape}{material((.95, .78, .1))}</visual></link></model>')
 
 
-def points_model(name, positions, color):
+def marker_model(name, xyz, color):
+    """A 5 g ball fixed above the vehicle (no collision): colour mark for the camera."""
+    return ET.fromstring(
+        f'<model name="{name}"><pose>{xyz[0]} {xyz[1]} {xyz[2]} 0 0 0</pose><link name="ball">'
+        f'<inertial><mass>.005</mass><inertia><ixx>1e-6</ixx><iyy>1e-6</iyy><izz>1e-6</izz></inertia></inertial>'
+        f'<visual name="v"><geometry><sphere><radius>.16</radius></sphere></geometry>{material(color, 1., .8)}'
+        f'</visual></link></model>')
+
+
+def points_model(name, positions, color, stops=(), size=.17, transparency=.25):
+    """Track points (stops are bigger) joined by thin lines."""
     links = ''.join(f'<link name="p{k}"><pose>{x} {y} {z} 0 0 0</pose><visual name="v"><geometry><sphere>'
-                    f'<radius>.14</radius></sphere></geometry>{material(color, .5)}<transparency>.5</transparency>'
-                    f'</visual></link>' for k, (x, y, z) in enumerate(positions))
+                    f'<radius>{.3 if k in stops else size}</radius></sphere></geometry>{material(color, 1., .5)}'
+                    f'<transparency>{transparency}</transparency></visual></link>' for k, (x, y, z) in enumerate(positions))
+    for k, (a, b) in enumerate(zip(positions[:-1], positions[1:])):
+        d = np.subtract(b, a)
+        mid, length = np.add(a, b) / 2, float(np.linalg.norm(d))
+        pitch, yaw = math.atan2(math.hypot(d[0], d[1]), d[2]), math.atan2(d[1], d[0])
+        links += (f'<link name="s{k}"><pose>{mid[0]} {mid[1]} {mid[2]} 0 {pitch} {yaw}</pose><visual name="v">'
+                  f'<geometry><cylinder><radius>.025</radius><length>{length}</length></cylinder></geometry>'
+                  f'{material(color, 1., .5)}<transparency>.45</transparency></visual></link>')
     return ET.fromstring(f'<model name="{name}"><static>true</static>{links}</model>')
 
 
@@ -207,13 +251,13 @@ def run(name, a):
     tag = f'/tmp/copter_demo_{name}_{int(time.time())}'
     record = dict(raw=tag + '.mp4', stamps=tag + '.txt', stop=tag + '.stop') if a.record else None
     world = build_world(out, sc, prefix, record)
-    points, dwell, radii = load_track()
+    points, dwell, radii = track(sc)
     cfg = json.loads((REPO / 'configs/e2e_eval.json').read_text())
     policy, motors = Policy(a.policy), DirectMotorModel()
     lines = [f'force {on} {off} {DRAG * wx:.3f} {DRAG * wy:.3f} 0' for on, off, wx, wy in sc['wind']]
     if sc['drop'] is not None:
         lines.append(f'detach {sc["drop"]}')
-    log = dict(scene=name, title=sc['title'], wind=sc['wind'], drop=sc['drop'], finish={}, samples=[],
+    log = dict(scene=name, title=sc['title'], wind=sc['wind'], drop=sc['drop'], finish={}, crash={}, samples=[],
                hover_point=[float(x) for x in points[0]] if sc['kind'] == 'hover' else None)
     with Session(out / 'simulation', gazebo_prefix=prefix, ardupilot=a.ardupilot, world=world,
                  gui=not a.record and not a.headless, software_rendering=True, offscreen_rendering=bool(a.record)) as session:
@@ -267,8 +311,12 @@ def run(name, a):
                 if missions[n].completion_time is not None and NAMES[n] not in log['finish']:
                     log['finish'][NAMES[n]] = round(missions[n].completion_time, 2)
                     print(f'  {NAMES[n]}: finish {missions[n].completion_time:.2f} s', flush=True)
-            if t >= sc['seconds'] or (sc['kind'] == 'route' and len(log['finish']) == 3
-                                      and t > max(log['finish'].values()) + 2.):
+                height = states[n].position[2] - origin[n][2] + lane(sc, DRONES.index(n), n)[1][2]
+                if t > 2. and height < .4 and NAMES[n] not in log['finish'] and NAMES[n] not in log['crash']:
+                    log['crash'][NAMES[n]] = round(t, 2)       # on the ground away from the finish
+                    print(f'  {NAMES[n]}: lost control at {t:.2f} s', flush=True)
+            ended = {**log['finish'], **log['crash']}
+            if t >= sc['seconds'] or (sc['kind'] == 'route' and len(ended) == 3 and t > max(ended.values()) + 2.):
                 break
         e2e.set_position(origin['drone3'] + missions['drone3'].target, YAW)
         e2e.resume_control()
@@ -354,7 +402,7 @@ def captions(log, lead):
         if w and math.hypot(*w) > .3:
             arrow = '→↗↑↖←↙↓↘'[int(round(math.atan2(w[1], w[0]) / (math.pi / 4))) % 8]
             ev.append(f'Dialogue: 0,{ass_time(k + lead)},{ass_time(k + lead + .5)},Wind,,0,0,0,,'
-                      f'Ветер {math.hypot(*w):.1f} м/с {arrow}')
+                      'Ветер ' + f'{math.hypot(*w):.1f}'.replace('.', ',') + f' м/с {arrow}')
     if log.get('hover_point') is not None:       # hover: distance to the point under every vehicle
         s = np.array(log['samples'])
         for i, n in enumerate(DRONES):
@@ -380,6 +428,11 @@ def captions(log, lead):
             x = (250, 640, 1030)[i]
             ev.append(f'Dialogue: 1,{ass_time(f + lead)},{ass_time(end + lead)},Label,,0,0,0,,'
                       f'{{\\pos({x},640)\\c{bgr(COLORS[n])}}}финиш ' + f'{f:.1f} с'.replace('.', ','))
+        f = log.get('crash', {}).get(NAMES[n])
+        if f is not None:
+            x = (250, 640, 1030)[i]
+            ev.append(f'Dialogue: 1,{ass_time(f + lead)},{ass_time(end + lead)},Label,,0,0,0,,'
+                      f'{{\\pos({x},640)\\c{bgr(COLORS[n])}}}потеря управления')
     head = ('[Script Info]\nScriptType: v4.00+\nPlayResX: 1280\nPlayResY: 720\n\n[V4+ Styles]\n'
             'Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, BorderStyle, '
             'Outline, Shadow, Alignment, MarginL, MarginR, MarginV\n'

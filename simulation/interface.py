@@ -335,9 +335,10 @@ class Vehicle:
         raise TimeoutError(f'{self.vehicle_id}: timeout waiting for {description}: '
                            f'{status.text if status is not None else "no status message"}')
 
-    def state(self, *, require_new=True):
+    def state(self, *, require_new=True, max_age_s=.25):
         """Latest position/attitude pair not more than max_pair_skew apart. require_new: the pair must be
-        newer than the one returned last time (raises StateUnavailable otherwise)."""
+        newer than the one returned last time (raises StateUnavailable otherwise). max_age_s: wall-clock
+        age limit (None when another vehicle holds the simulation)."""
         self.drain()
         positions, attitudes = self._history['LOCAL_POSITION_NED'], self._history['ATTITUDE']
         if not positions or not attitudes:
@@ -360,7 +361,8 @@ class Vehicle:
         p, a = pair
         now = time.monotonic()
         # while the relay holds the simulation, wall-clock age does not matter
-        if (not self.relay.held and max(now - p[2], now - a[2]) > .25) or self._latest_time_ms - min(p[0], a[0]) > 60:
+        too_old = max_age_s is not None and not self.relay.held and max(now - p[2], now - a[2]) > max_age_s
+        if too_old or self._latest_time_ms - min(p[0], a[0]) > 60:
             raise StateUnavailable('observation is stale')
         if require_new:
             self._last_pair = (p[0], a[0])
@@ -408,7 +410,7 @@ class Vehicle:
         target = ENU_FROM_NED @ np.asarray(position_enu, float)
         mask = 3576 if yaw_enu is None else 2552
         yaw = 0. if yaw_enu is None else math.pi / 2 - float(yaw_enu)
-        stamp = round(self.state(require_new=False).time_s * 1000) & 0xffffffff
+        stamp = round(self.state(require_new=False, max_age_s=None).time_s * 1000) & 0xffffffff
         self.release_motors()
         self.connection.mav.set_position_target_local_ned_send(stamp, self.system_id, 1, mavutil.mavlink.MAV_FRAME_LOCAL_NED,
                                                                mask, *target, 0., 0., 0., 0., 0., 0., yaw, 0.)

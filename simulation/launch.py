@@ -92,9 +92,11 @@ class Session:
     """Gazebo + SITL instances + their clients (`clients[vehicle_id]`, `world`); a context manager."""
 
     def __init__(self, output, *, gui=False, ardupilot=None, gazebo_prefix=(), speedup=1., world=None,
-                 gazebo_plugin_dir=None, partition=None, software_rendering=False, vehicle_ids=None):
+                 gazebo_plugin_dir=None, partition=None, software_rendering=False, vehicle_ids=None,
+                 offscreen_rendering=False):
         self.output = Path(output).expanduser().resolve()
         self.gui, self.software_rendering = bool(gui), bool(software_rendering)
+        self.offscreen_rendering = bool(offscreen_rendering)   # camera sensors without a window (software GL)
         self.ardupilot = Path(ardupilot or os.environ.get('ARDUPILOT_PATH', Path.home() / 'ardupilot-ROSMeetUp')).expanduser()
         self.gazebo_prefix = tuple(gazebo_prefix)
         self.speedup = float(speedup)
@@ -144,6 +146,8 @@ class Session:
             for port, kind in ((spec.tcp_port, socket.SOCK_STREAM), (spec.relay_port, socket.SOCK_DGRAM),
                                (spec.physics_port, socket.SOCK_DGRAM)):
                 with socket.socket(socket.AF_INET, kind) as sock:
+                    if kind == socket.SOCK_STREAM:     # a just-closed connection (TIME_WAIT) does not count
+                        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                     try:
                         sock.bind(('127.0.0.1', port))
                     except OSError as exc:
@@ -157,7 +161,7 @@ class Session:
             resources = ':'.join(filter(None, [str(HERE / 'models'), os.environ.get('GZ_SIM_RESOURCE_PATH', '')]))
             gazebo_env = ['env', 'GZ_PARTITION=' + self.partition, 'GZ_SIM_RESOURCE_PATH=' + resources,
                           'GZ_SIM_SYSTEM_PLUGIN_PATH=' + self.gazebo_plugin_dir]
-            if self.gui and self.software_rendering:
+            if (self.gui and self.software_rendering) or self.offscreen_rendering:
                 gazebo_env += ['LIBGL_ALWAYS_SOFTWARE=1', 'GALLIUM_DRIVER=llvmpipe', 'QT_QPA_PLATFORM=xcb',
                                'QT_OPENGL=software']
             self.world = World(self.world_name, self.partition, (*self.gazebo_prefix, *gazebo_env))
@@ -181,6 +185,14 @@ class Session:
             else:
                 command = [*gazebo_env, *gz]
             self._gazebo = self._start('gazebo', command, self.output)
+            if self.gazebo_prefix:
+                # the other WSL distribution may need a cold start: wait until Gazebo really runs,
+                # otherwise SITL starts without physics and cannot arm
+                deadline = time.monotonic() + 180
+                while not (self.output / 'gazebo.pid').is_file():
+                    if self._gazebo.poll() is not None or time.monotonic() > deadline:
+                        raise RuntimeError(f'Gazebo did not start, see {self.output / "gazebo.log"}')
+                    time.sleep(.2)
 
             for spec in self.vehicles:
                 work = self.output / spec.vehicle_id

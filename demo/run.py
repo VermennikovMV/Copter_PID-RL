@@ -1,18 +1,19 @@
 """Demonstrations: three vehicles in one Gazebo scene, flying at the same time in the same wind.
 
-  drone1 (blue)    stock ArduPilot, GUIDED
-  drone2 (orange)  ArduPilot + disturbance compensator (RESID_ENABLE=1)
+  drone1 (blue)    stock ArduPilot: GUIDED in hover, the track as an AUTO mission
+  drone2 (orange)  the same + disturbance compensator (RESID_ENABLE=1)
   drone3 (purple)  end-to-end policy (motor commands; ArduPilot only takes off)
 
   python demo/run.py race       track with 8 fly-through points, a stop near the end and the finish
-  python demo/run.py payload    hover, a box of 50 % of the vehicle mass is released at the same moment
+  python demo/run.py payload    hover, a box of 65 % of the vehicle mass is released at the same moment
   python demo/run.py wind       hover in strong gusty wind: from the front, calm, from the right, calm
   python demo/run.py final      the track in side wind gusts with a 30 % payload released in flight
 
 Hover: the vehicles stand side by side. Track: all fly the same track one above the other, 2 m apart.
 
 Options: the Gazebo window opens by default; --record video.mp4 (camera in the scene, video in
-simulation time with captions, no window needed), --headless, --policy, --ardupilot.
+simulation time with captions, no window needed), --headless, --policy, --ardupilot,
+--waypoint-limits sport|default (ArduPilot AUTO limits on the track).
 
 Wind: the Gazebo Iris already has air drag ~1.52 N/(m/s) relative to the ground, so an extra force
 1.52 * w(t) gives the drag relative to air moving with the wind w(t). Each blow: mean wind + turbulence
@@ -36,7 +37,7 @@ REPO = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(REPO / 'gazebo'), str(REPO)]
 from disturbances import plugin_path  # noqa: E402
 from evaluate_ardupilot import STAND  # noqa: E402
-from sitl import wait_state  # noqa: E402
+from sitl import mission_items, upload_mission, wait_state  # noqa: E402
 from track_metrics import load_track  # noqa: E402
 from simulation.interface import StateUnavailable, run_command  # noqa: E402
 from simulation.launch import Session, spawn, wsl_prefix  # noqa: E402
@@ -82,8 +83,12 @@ FROM_FRONT, FROM_RIGHT = -math.pi / 2, math.pi        # air moving to -y / to -x
 TRACK = dict(points=[(0, 0, 3), (7, -2, 3), (14, 1, 3.5), (20, -1, 4), (19, 7, 4), (12, 11, 3.5), (5, 8, 3),
                      (-2, 11, 3.5), (-3, 4, 3), (0, 0, 3)],
              dwell=[.5, 0, 0, 0, 0, 0, 0, 2., 0, .5],
-             radii=[.4, .5, .5, .5, .5, .5, .5, .4, .5, .4])
-HEAVY = .5                                           # payload, fraction of the vehicle mass
+             radii=[.4, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, .4, 2.5, .4])   # fly-through 2.5 m; the stop 0.4 m: a real stop
+HEAVY = .65                                          # payload, fraction of the vehicle mass
+# ArduPilot AUTO on the track: "sport" waypoint limits instead of the smooth defaults (3 m/s, 2.5 m/s^2,
+# jerk 1 m/s^3), within the limits the estimator was trained with
+SPORT = dict(WP_SPD=5.0, WP_ACC=4.0, WP_JERK=5.0)
+AUTO_STOP_TOLERANCE_S = .1
 
 
 def scene(name):
@@ -94,22 +99,26 @@ def scene(name):
         return dict(kind='hover', spacing=4., wind=[], drop=6., payload=HEAVY, seconds=18.,
                     title=f'Сброс груза {HEAVY * MASS:.2f} кг ({HEAVY:.0%} массы)'.replace('.', ',').replace('%', ' %'))
     if name == 'wind':
-        w = (wind(3., 15., 4., FROM_FRONT, gusts=((10., 2.5, 3.),), rng=rng)         # from the front, calm,
-             + wind(20., 32., 4., FROM_RIGHT, gusts=((27., 2.5, 3.),), rng=rng))     # from the right, calm
+        w = (wind(3., 15., 3.5, FROM_FRONT, gusts=((10., 1.5, 3.),), rng=rng)         # from the front, calm,
+             + wind(20., 32., 3.5, FROM_RIGHT, gusts=((27., 1.5, 3.),), rng=rng))     # from the right, calm
         return dict(kind='hover', spacing=4., drop=None, seconds=38., wind=w, title='Сильный ветер: спереди, затем справа')
     if name == 'final':
         w = []
-        for t_on in (5., 17., 29.):
-            w += wind(t_on, t_on + 7., 4.5, FROM_RIGHT, gusts=((t_on + 3.5, 2.5, 3.),), rng=rng, ramp=1.5)
-        return dict(kind='route', drop=5., payload=.3, seconds=90., wind=w,
-                    title='Трасса: ветер, груз 30 %, остановка')
+        for t_on in (2., 8.):        # side gusts on the first legs, all vehicles still flying; calm at the stop
+            w += wind(t_on, t_on + 5.5, 3.5, FROM_RIGHT, gusts=((t_on + 2.75, 1.5, 2.5),), rng=rng, ramp=1.5)
+        return dict(kind='route', drop=5., payload=HEAVY, seconds=90., wind=w,
+                    title='Общий тест: ветер, груз 65 %, остановка')
     raise ValueError(name)
 
 
 def track(sc):
-    """Points, dwell times and acceptance radii of the scene (hover: the start point of the test track)."""
+    """Points, dwell times and acceptance radii of the scene (hover: the start point of the test track).
+    sc['pass_radius'] overrides the radius of the fly-through points."""
     if sc['kind'] == 'route':
-        return np.array(TRACK['points'], float), np.array(TRACK['dwell']), np.array(TRACK['radii'])
+        dwell, radii = np.array(TRACK['dwell']), np.array(TRACK['radii'], float)
+        if sc.get('pass_radius'):
+            radii[1:-1][dwell[1:-1] == 0] = sc['pass_radius']
+        return np.array(TRACK['points'], float), dwell, radii
     return load_track()
 
 
@@ -136,7 +145,7 @@ def build_world(out, sc, prefix, record):
     points, dwell = track(sc)[:2]
     stops = [k for k, s in enumerate(dwell) if s > 1.] if sc['kind'] == 'route' else []
     route = sc['kind'] == 'route'
-    area = ((-7, -5, 1.5), (24, 15, 9.)) if route else ((-8, -6, 1.5), (8, 6, 5.))
+    area = ((-7, -5, 1.5), (24, 15, 9.)) if route else ((-8, -4, 1.5), (8, 6, 5.))
     for i, name in enumerate(DRONES):
         x0, shift = lane(sc, i, name)
         drone = next(m for m in world.findall('model') if m.attrib['name'] == name)
@@ -174,8 +183,8 @@ def build_world(out, sc, prefix, record):
     if record:
         world.append(ET.fromstring('<plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">'
                                    '<render_engine>ogre2</render_engine></plugin>'))
-        pose = '9 -17 15 0 .47 1.5708' if route else '0 -11 4.6 0 .12 1.5708'
-        world.append(camera_model(pose, 1.25 if route else 1.0, record))
+        pose = '9 -17 15 0 .47 1.5708' if route else '0 -7.5 3.7 0 .07 1.5708'
+        world.append(camera_model(pose, 1.25 if route else 1.15, record))
     path = out / 'world_demo.sdf'
     tree.write(path, encoding='utf-8', xml_declaration=True)
     return path
@@ -189,14 +198,16 @@ def material(color, alpha=1., emissive=0.):
 
 def box_model(name, xyz, fraction):
     """Payload of `fraction` of the vehicle mass. The visible box grows with the mass; the collision box
-    stays small so that it fits between the landing legs."""
+    stays small and touches only the ground (collide_bitmask: vehicles use bits 0-7), so a released box
+    never hits a vehicle flying below."""
     i = ''.join(f'<{k}>{fraction * v!r}</{k}>' for k, v in zip(('ixx', 'iyy', 'izz'), BASE_INERTIA))
     side = .12 * (fraction / .2) ** (1 / 3) * 1.4
     shape = f'<geometry><box><size>{side:.3f} {side:.3f} {side / 2:.3f}</size></box></geometry>'
     return ET.fromstring(
         f'<model name="{name}"><pose>{xyz[0]} {xyz[1]} {xyz[2]} 0 0 0</pose><link name="box">'
         f'<inertial><mass>{fraction * MASS!r}</mass><inertia>{i}<ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>'
-        f'<collision name="c"><geometry><box><size>.12 .12 .06</size></box></geometry></collision>'
+        f'<collision name="c"><geometry><box><size>.12 .12 .06</size></box></geometry>'
+        f'<surface><contact><collide_bitmask>0x0100</collide_bitmask></contact></surface></collision>'
         f'<visual name="v">{shape}{material((.95, .78, .1))}</visual></link></model>')
 
 
@@ -244,6 +255,12 @@ def camera_model(pose, fov, record):
 # ------------------------------------------------------------------ flight
 def run(name, a):
     sc = scene(name)
+    if a.pass_radius:
+        sc['pass_radius'] = a.pass_radius
+        sc['title'] = f'Трасса: пролётные точки с радиусом {a.pass_radius:g} м'.replace('.', ',')
+    if a.payload is not None and sc['drop'] is not None:
+        sc['payload'] = a.payload
+        sc['title'] = sc['title'].replace('65 %', f'{a.payload:.0%}'.replace('%', ' %'))
     out = Path(a.out or REPO / 'runs/demo' / f'{name}_{time.strftime("%m%d_%H%M%S")}').resolve()
     shutil.rmtree(out, ignore_errors=True)
     out.mkdir(parents=True)
@@ -268,6 +285,13 @@ def run(name, a):
             for p, value in STAND.items():
                 v[n].set_parameter(p, value)
             v[n].set_parameter('RESID_ENABLE', 1. if n == 'drone2' else 0.)
+            if sc['kind'] == 'route':
+                # the same acceptance radius for everybody: ArduPilot switches AUTO waypoints with it,
+                # the end-to-end policy and the finish check use the track radii
+                v[n].set_parameter('WP_RADIUS_M', float(max(radii[1:-1])))
+                if a.waypoint_limits == 'sport':
+                    for p, value in SPORT.items():
+                        v[n].set_parameter(p, value)
             shift = lane(sc, i, n)[1]
             origin[n] = wait_state(v[n]).position - np.array([0., 0., .195]) + shift
             start[n] = origin[n] + points[0]
@@ -276,8 +300,16 @@ def run(name, a):
             v[n].arm_and_takeoff(3.)
         settle(v, climb)                     # first climb, then move: the paths to the start never cross
         settle(v, start)
+        auto = sc['kind'] == 'route'          # ArduPilot flies a known track as an AUTO mission
+        if auto:
+            for n in ('drone1', 'drone2'):
+                upload_mission(v[n], mission_items(v[n], origin[n], points, dwell))
+            settle(v, start)
 
-        missions = {n: Mission(sc['kind'], .4, points=points, dwell_s=dwell, radii_m=radii) for n in DRONES}
+        # ArduPilot times an AUTO stop itself (exactly the hold time); 0.1 s tolerance for the 50 Hz check
+        auto_dwell = np.where(dwell > 1., dwell - AUTO_STOP_TOLERANCE_S, dwell)
+        missions = {n: Mission(sc['kind'], .4, points=points, dwell_s=auto_dwell if auto and n != 'drone3' else dwell,
+                               radii_m=radii) for n in DRONES}
         encoder = ObservationEncoder(EncoderConfig(**cfg['observation']))
         encoder.reset(YAW)
         e2e = v['drone3']
@@ -286,6 +318,9 @@ def run(name, a):
         for _ in range(2):                   # resent while held: all three are armed in the same step
             for n in DRONES:
                 session.world.publish(f'/demo/{n}/disturbance', text)
+            if auto:
+                for n in ('drone1', 'drone2'):
+                    v[n].set_mode(3)          # AUTO, taken in the same step as the disturbances
         states = {n: v[n].state(require_new=False, max_age_s=None) for n in DRONES}   # the world is held
         t0 = states['drone3'].time_s
         for n in DRONES:
@@ -294,8 +329,9 @@ def run(name, a):
         prev = np.zeros(4)
         while True:
             t = states['drone3'].time_s - t0
-            for n in ('drone1', 'drone2'):
-                v[n].set_position(origin[n] + missions[n].target, YAW)
+            if not auto:
+                for n in ('drone1', 'drone2'):
+                    v[n].set_position(origin[n] + missions[n].target, YAW)
             s = states['drone3']
             p = s.position - origin['drone3']
             obs = encoder.observe(p, s.velocity, s.rotation, s.body_rates, missions['drone3'].target, prev, DT)
@@ -464,8 +500,11 @@ def make_video(log, record, target, prefix, out, lead=1.):
     last = first + int(round((log['samples'][-1][0] + 1. + lead) * FPS))
     (out / 'frame_stamps.txt').write_text('\n'.join(stamps))
     script = (f'set -e; cp "{ass}" {work}.ass; '
-              f'ffmpeg -y -loglevel error -i {record["raw"]} -vf "trim=start_frame={first}:end_frame={last},'
-              f'setpts=PTS-STARTPTS,subtitles={work}.ass" -c:v libx264 -pix_fmt yuv420p -crf 20 {work}_final.mp4; '
+              # a silent audio track: messengers send video without sound as an animation (GIF)
+              f'ffmpeg -y -loglevel error -i {record["raw"]} -f lavfi -i anullsrc=r=44100:cl=stereo '
+              f'-vf "trim=start_frame={first}:end_frame={last},setpts=PTS-STARTPTS,subtitles={work}.ass" '
+              f'-map 0:v -map 1:a -c:v libx264 -pix_fmt yuv420p -crf 20 -c:a aac -b:a 32k -shortest '
+              f'-movflags +faststart {work}_final.mp4; '
               f'cp {work}_final.mp4 "{target}"; rm -f {work}*')
     target.parent.mkdir(parents=True, exist_ok=True)
     run_command([*prefix, 'bash', '-c', script], check=True)
@@ -481,6 +520,10 @@ def main():
     ap.add_argument('--ardupilot', type=Path, default=None)
     ap.add_argument('--gazebo-distro', default='Ubuntu')
     ap.add_argument('--hold', type=float, default=5., help='seconds the window stays after the run')
+    ap.add_argument('--waypoint-limits', choices=('sport', 'default'), default='sport',
+                    help='ArduPilot AUTO limits on the track: sport (5 m/s, 4 m/s^2, jerk 5) or the smooth defaults')
+    ap.add_argument('--payload', type=float, help='payload, fraction of the vehicle mass (payload and final scenes)')
+    ap.add_argument('--pass-radius', type=float, help='acceptance radius of the fly-through points, m (default 2.5)')
     ap.add_argument('--out')
     a = ap.parse_args()
     run(a.scene, a)

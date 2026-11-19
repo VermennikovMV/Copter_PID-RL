@@ -26,7 +26,7 @@
     },
     {
       "name": "speed",
-      "until_steps": 50176000,
+      "until_steps": 35840000,
       "legs_m": [3, 40],
       "max_turn_deg": 150,
       "random_start": 0.5,

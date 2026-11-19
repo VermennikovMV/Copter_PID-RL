@@ -1,7 +1,7 @@
 """PPO training of the end-to-end policy (four motor commands) in PyBullet.
 
   python -m training.ppo --out runs/e2e
-  python -m training.ppo --out runs/e2e_more --resume runs/e2e/ckpt_050176000 --steps 60000000
+  python -m training.ppo --out runs/e2e_more --resume runs/e2e/ckpt_035840000 --steps 45000000
 
 Training follows the stages of configs/e2e_curriculum.json (track length, random-start speed,
 reward weights, learning rate); `--curriculum none` trains with the command-line settings only.

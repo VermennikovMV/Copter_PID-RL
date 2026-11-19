@@ -12,6 +12,20 @@
 Прошивка с компенсатором: [VermennikovMV/ardupilot-ROSMeetUp](https://github.com/VermennikovMV/ardupilot-ROSMeetUp)
 (ArduPilot 4.7.2 + библиотека `AC_ResidualPolicy`, параметры `RESID_*`).
 
+```mermaid
+flowchart LR
+    T([точка GUIDED]) --> S[формирователь<br/>траектории]
+    S --> P[P позиции] --> V[PID скорости] --> A[ускорение<br/>→ наклон, тяга]
+    A --> ANG[P угла] --> R[PID угловой<br/>скорости] --> M[микшер] --> MOT([моторы])
+    X([состояние дрона]) --> E[оценщик помехи<br/>нейросеть 83→128→128→4]
+    E -->|ускорение помехи,<br/>эффективная масса| F[физическая модель<br/>наклон a/g, тяга]
+    F -->|"поправка наклона ≤ 15°"| ANG
+    F -->|"поправка тяги ≤ 15 %"| M
+    X --> N[end-to-end<br/>нейросеть 83→128→128→4] -.->|вместо каскада| MOT
+    classDef net fill:#dbeafe,stroke:#2563eb
+    class E,N net
+```
+
 ## Результаты (Gazebo + SITL, штатный ArduPilot 4.7.2)
 
 Одинаковые возмущения во всех сериях: порывы — внешняя сила на корпус по расписанию
@@ -22,21 +36,21 @@
 
 | Сценарий | ArduPilot | Компенсатор | End-to-end |
 |---|---|---|---|
-| Висение, порывы: RMSE / пик | 11,2 / 23,7 см | **3,2 / 10,3 см** (−72 % / −57 %) | 3,4 / 10,6 см (−70 % / −55 %) |
-| Порывы + груз: RMSE | 10,5 см | **3,2 см** (−70 %) | 3,4 см (−68 %) |
+| Висение, порывы: RMSE / пик | 11,2 / 23,7 см | **3,6 / 10,5 см** (−68 % / −56 %) | 5,5 / 15,7 см (−51 % / −34 %) |
+| Порывы + груз: RMSE | 10,5 см | **3,6 см** (−66 %) | 5,4 см (−49 %) |
 | Сброс груза: скачок высоты | 6,5 см | 4,5 см (−31 %) | **3,5 см** (−46 %) |
-| Трасса: время | 21,4–21,5 с | 21,4 с | **17,2–17,3 с** (−20 %) |
-| Трасса с порывами: уход с линии RMS / пик | 14 / 47 см | **12 / 48 см** (−18 % по RMS) | 41 / 80 см |
-| Пиковый наклон на трассе | 29° | 31° | 42° |
-| Висение без возмущений | 0,5 см | 0,5 см | 1,3 см |
+| Трасса: время | 21,4–21,5 с | 21,4 с | **18,3–18,5 с** (−15 %) |
+| Трасса с порывами: уход с линии RMS / пик | 14 / 47 см | **12 / 47 см** (−18 % по RMS) | 52 / 102 см |
+| Пиковый наклон на трассе | 29° | 31° | 46° |
+| Висение без возмущений | 0,5 см | 0,5 см | 1,4 см |
 | Потеря управления | 0 | 0 | 0 |
 
 - **Компенсатор** сохраняет траекторию и безопасность ArduPilot (поправка ограничена
   ±15° и ±15 % тяги, все контуры штатные) и в 3 раза лучше держит точку при ветре.
   Скорость трассы задаёт планировщик ArduPilot, компенсатор её не меняет.
-- **End-to-end** быстрее на трассе и так же устойчив к ветру, но менее точен на линии,
-  наклоняется сильнее и не имеет гарантий каскада.
-- Оба переносятся из PyBullet (где обучены) в Gazebo + SITL почти без потерь.
+- **End-to-end** на 15 % быстрее на трассе и в 2 раза лучше ArduPilot держит точку при ветре,
+  но менее точен на линии, наклоняется сильнее и не имеет гарантий каскада.
+- Оба переносятся из PyBullet (где обучены) в Gazebo + SITL без потери устойчивости.
 
 Подробно: [docs/results.md](docs/results.md), метод: [docs/method.md](docs/method.md).
 
@@ -58,6 +72,7 @@ training/     PyBullet: модель Iris, копия каскада ArduPilot, 
 controllers/  кодировщик наблюдений (общий для Python и прошивки)
 experiments/  трасса, правила прохождения точек, расписания возмущений
 gazebo/       испытания в Gazebo + SITL, плагин возмущений
+demo/         демонстрации: три дрона в одной сцене (трасса, груз, ветер)
 simulation/   запуск Gazebo + SITL, модель Iris, параметры стенда
 models/       обученные модели
 ```
@@ -82,32 +97,34 @@ python gazebo/evaluate_e2e.py --policy models/e2e_policy.npz --out runs/gazebo/e
 python gazebo/compare.py runs/gazebo/stock runs/gazebo/network runs/gazebo/e2e
 ```
 
-Отдельный случай: `--cases hover/gust --seeds 90000`. Окно Gazebo для показа:
-`python -m simulation.launch --vehicle drone1 --gui`.
+Отдельный случай: `--cases hover/gust --seeds 90000`.
+
+Демонстрации (три дрона одновременно): `python demo/run.py race|payload|wind|final`, см. [demo/](demo/README.md).
 
 ## Воспроизведение обучения
 
 Модели в `models/` получены ровно этими командами (время — на 32 потоках).
 
-**Оценщик возмущений** (~40 мин). Два круга: сначала летает каскад ArduPilot, затем — компенсатор
-первого круга, чтобы оценщик учился на том замкнутом контуре, в котором работает.
+**Оценщик возмущений** (~20 мин). Летает штатный каскад ArduPilot (копия), в части полётов к его
+командам добавлены случайные поправки; помеха в симуляторе известна точно — оценщик учится с учителем.
 
 ```bash
-python -m training.estimator collect --out runs/estimator/round1.npz
-python -m training.estimator train runs/estimator/round1.npz --out runs/estimator/round1_model.npz
-python -m training.estimator collect --out runs/estimator/round2.npz --estimator runs/estimator/round1_model.npz \
-    --perturbation 0.3 --steps 100000 --seed 8000
-python -m training.estimator train runs/estimator/round1.npz runs/estimator/round2.npz --out models/estimator.npz
+python -m training.estimator collect --out runs/estimator/data.npz
+python -m training.estimator train runs/estimator/data.npz --out models/estimator.npz
 ```
 
-**End-to-end** (~5 ч, 50 млн шагов). Одна команда; этапы обучения заданы в
+**End-to-end** (~3,5 ч, 36 млн шагов). Одна команда; этапы обучения заданы в
 [configs/e2e_curriculum.json](configs/e2e_curriculum.json): сначала короткие отрезки и обычная
 награда (научиться летать), затем длинные трассы и старты в движении, затем награда за скорость.
+Обучение детерминировано: та же команда даёт те же веса.
 
 ```bash
 python -m training.ppo --out runs/e2e          # контрольные точки: runs/e2e/ckpt_*, итог: runs/e2e/policy.npz
-python -m training.tools export-actor runs/e2e/ckpt_050176000 runs/e2e/policy.npz   # любая контрольная точка
+python -m training.tools export-actor runs/e2e/ckpt_030464000 runs/e2e/policy_30m.npz   # любая контрольная точка
 ```
+
+Этап «скорость» остановлен на 36 млн шагов: при дальнейшем обучении сеть летает агрессивнее
+(наклон до 60°) и к 50 млн шагов начинает падать на трассе (3 аварии из 24 полётов).
 
 Награда, входы и рандомизация описаны в [docs/method.md](docs/method.md).
 
@@ -123,7 +140,7 @@ python -m training.tools export-actor runs/e2e/ckpt_050176000 runs/e2e/policy.np
 - Другой размер сети: `training.estimator train … --hidden 256 256`, `training.ppo … --net 256 256`.
 - Другие награда, этапы или рандомизация: `training.ppo --reward '{"route_time": 0.6}'`,
   `--curriculum my_stages.json`, `--config my_config.json` (формат — как в `configs/`).
-- Продолжить обучение: `training.ppo --out runs/e2e_more --resume runs/e2e/ckpt_050176000 --steps 60000000`.
+- Продолжить обучение: `training.ppo --out runs/e2e_more --resume runs/e2e/ckpt_035840000 --steps 45000000`.
 - Добавить входы без потери обучения: `python -m training.tools widen` (новые входы получают нулевые веса).
 - Веса оценщика встраиваются в прошивку генерацией `estimator_weights.h` в
   [ardupilot-ROSMeetUp](https://github.com/VermennikovMV/ardupilot-ROSMeetUp) (`libraries/AC_ResidualPolicy`).

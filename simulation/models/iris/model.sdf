@@ -28,6 +28,7 @@
         </geometry>
         <surface>
           <contact>
+            <collide_bitmask>0x00ff</collide_bitmask>
             <ode>
               <max_vel>100.0</max_vel>
               <min_depth>0.001</min_depth>
@@ -51,6 +52,7 @@
         </geometry>
         <surface>
           <contact>
+            <collide_bitmask>0x00ff</collide_bitmask>
             <ode>
               <max_vel>100.0</max_vel>
               <min_depth>0.001</min_depth>
@@ -74,6 +76,7 @@
         </geometry>
         <surface>
           <contact>
+            <collide_bitmask>0x00ff</collide_bitmask>
             <ode>
               <max_vel>100.0</max_vel>
               <min_depth>0.001</min_depth>
@@ -97,6 +100,7 @@
         </geometry>
         <surface>
           <contact>
+            <collide_bitmask>0x00ff</collide_bitmask>
             <ode>
               <max_vel>100.0</max_vel>
               <min_depth>0.001</min_depth>
@@ -120,6 +124,7 @@
         </geometry>
         <surface>
           <contact>
+            <collide_bitmask>0x00ff</collide_bitmask>
             <ode>
               <max_vel>100.0</max_vel>
               <min_depth>0.001</min_depth>
@@ -304,6 +309,7 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <surface><contact><collide_bitmask>0x00ff</collide_bitmask></contact></surface>
       </collision>
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
@@ -363,6 +369,7 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <surface><contact><collide_bitmask>0x00ff</collide_bitmask></contact></surface>
       </collision>
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
@@ -422,6 +429,7 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <surface><contact><collide_bitmask>0x00ff</collide_bitmask></contact></surface>
       </collision>
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>
@@ -481,6 +489,7 @@
             <radius>0.1</radius>
           </cylinder>
         </geometry>
+        <surface><contact><collide_bitmask>0x00ff</collide_bitmask></contact></surface>
       </collision>
       <visual name="visual">
         <pose>0 0 0 0 0 0</pose>

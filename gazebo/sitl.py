@@ -110,6 +110,22 @@ def upload_mission(v, items, timeout=20.):
     raise TimeoutError('mission upload timed out')
 
 
+def mission_items(v, origin, points, dwell):
+    """AUTO mission for a track given relative to `origin` (ENU): NAV_WAYPOINT for every point after the
+    start, delay = dwell at the stops (none at the finish)."""
+    home = home_position(v)
+    home_enu = np.array([home.y, home.x, -home.z])
+    items = []
+    for i in range(1, len(points)):
+        enu = origin + points[i] - home_enu
+        lat = home.latitude + enu[1] * LOCATION_SCALING_FACTOR_INV
+        scale = max(math.cos(math.radians((home.latitude + lat) * .5e-7)), .01)
+        lon = home.longitude + enu[0] * LOCATION_SCALING_FACTOR_INV / scale
+        delay = math.ceil(dwell[i]) if i < len(points) - 1 else 0
+        items.append((round(lat), round(lon), float(enu[2]), float(delay)))
+    return items
+
+
 def read_params(v):
     values = {}
     for key, name in READ.items():
@@ -135,8 +151,6 @@ def fly(index, args, points, dwell, radii):
         initial = wait_state(v)
         origin = initial.position - np.array([0., 0., session.vehicles[0].position_enu[2]])
         v.arm_and_takeoff(3.)
-        home = home_position(v)
-        home_enu = np.array([home.y, home.x, -home.z])
         start = origin + points[0]
         # settle at the start point in GUIDED
         deadline, stable = time.monotonic() + 60., None
@@ -151,14 +165,7 @@ def fly(index, args, points, dwell, radii):
                 stable = None
         else:
             raise TimeoutError('start point not settled')
-        items = []
-        for i in range(1, len(points)):
-            enu = origin + points[i] - home_enu
-            lat = home.latitude + enu[1] * LOCATION_SCALING_FACTOR_INV
-            scale = max(math.cos(math.radians((home.latitude + lat) * .5e-7)), .01)
-            lon = home.longitude + enu[0] * LOCATION_SCALING_FACTOR_INV / scale
-            delay = math.ceil(dwell[i]) if i < len(points) - 1 else 0
-            items.append((round(lat), round(lon), float(enu[2]), float(delay)))
+        items = mission_items(v, origin, points, dwell)
         if not args.guided:
             upload_mission(v, items)
         if args.wind is not None:

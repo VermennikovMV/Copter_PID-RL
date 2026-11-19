@@ -265,6 +265,7 @@ class Vehicle:
         self.relay = MotorRelay(relay_port, physics_port)
         self.connection = None
         self.latest = {}                 # last message of every type
+        self.received = {}               # name -> wall-clock time it last arrived
         self.readback = {}               # parameters read or set in this session
         self._parameters = {}            # name -> (value, message counter)
         self._message_count = 0
@@ -308,6 +309,7 @@ class Vehicle:
                 continue
             self._message_count += 1
             self.latest[name] = message
+            self.received[name] = time.monotonic()
             if name in self._history:
                 stamp, history = int(message.time_boot_ms), self._history[name]
                 if history and stamp < history[-1][0]:

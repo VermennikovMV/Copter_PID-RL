@@ -7,12 +7,13 @@ Cases mirror the replica evaluation (same cases and metrics as the PyBullet eval
   payload = real 0.35 kg mass (0.2*m, inertia 0.2*I) on a DetachableJoint, released at 12 s (hover)
             or 4 s (route); joint = gust + payload
 Time zero = the moment the disturbance schedule is armed in Gazebo, with the vehicle settled at the
-start point [0,0,3]. The route is the evaluation track, GUIDED point by point (next point once the
-shared acceptance rule reports the current one). ArduPilot shapes each position target itself.
+start point [0,0,3]. The route is the evaluation track: GUIDED point by point (next point once the
+shared acceptance rule reports the current one; ArduPilot shapes each position target itself) or,
+with --mode auto, the whole track uploaded as an AUTO mission (ArduPilot plans through the points).
 
 Controllers (same firmware build, the network runs inside it):
   stock    RESID_ENABLE=0 (plain ArduPilot)
-  network  RESID_ENABLE=1 (the onboard compensator's bounded correction is active in GUIDED)
+  network  RESID_ENABLE=1 (the onboard compensator's bounded correction is active)
 
   python gazebo/evaluate_ardupilot.py --controller stock --cases hover/gust --seeds 90000-90007 --out runs/gazebo/stock
 """
@@ -31,15 +32,14 @@ sys.path.insert(0, str(HERE))
 from disturbances import build_world, gazebo_prefix  # noqa: E402  (also puts the repository on sys.path)
 from experiments.scenarios import force_events  # noqa: E402
 from simulation.launch import Session  # noqa: E402
-from sitl import read_params, wait_state  # noqa: E402
+from sitl import mission_items, read_params, set_mode, upload_mission, wait_state  # noqa: E402
 from track_metrics import evaluate, load_track, segment_distance, write_trace  # noqa: E402
 
 CASES = ('hover/nominal', 'hover/gust', 'hover/payload', 'hover/joint',
          'route/nominal', 'route/gust', 'route/joint')
 HOVER_S = 30.
 DROP_S = {'hover': 12., 'route': 4.}
-STAND = dict(WP_SPD=3.0, WP_RADIUS_M=0.4, WP_YAW_BEHAVIOR=0, RESID_MODES=16,
-             RESID_THR_HOVR=0.303)  # measured steady hover throttle of the stand (MOT_THST_HOVER stays 0.5)
+STAND = dict(WP_SPD=3.0, WP_RADIUS_M=0.4, WP_YAW_BEHAVIOR=0)
 
 
 def parse_seeds(text):
@@ -112,7 +112,14 @@ def fly(case, seed, controller, args, out):
                 stable = None
         else:
             raise TimeoutError('start point not settled')
+        auto = mission == 'route' and args.mode == 'auto'
+        if auto:
+            upload_mission(v, mission_items(v, origin, points, dwell))
+            # ArduPilot times the stop itself (exactly the hold time): 0.1 s tolerance for the 50 Hz check
+            dwell = np.where(dwell > 1., dwell - .1, dwell)
         t_arm = arm_schedule(session, v, start, log_file, lines)
+        if auto:
+            set_mode(v, 3)   # AUTO: ArduPilot flies the uploaded track
         index, last, horizon = 0, None, (HOVER_S if mission == 'hover' else args.route_timeout)
         end = time.monotonic() + horizon * 4 + 30.
         while time.monotonic() < end:
@@ -128,8 +135,8 @@ def fly(case, seed, controller, args, out):
                 if len(tt) > 1:
                     index = min(evaluate(tt, pp, np.zeros_like(pp), points, dwell, radii)['reached_goals'],
                                 len(points) - 1)
-            target = origin + (points[index] if mission == 'route' else points[0])
-            v.set_position(target, math.pi / 2)
+            if not auto:
+                v.set_position(origin + (points[index] if mission == 'route' else points[0]), math.pi / 2)
             att = v.latest['ATTITUDE']
             rows.append(dict(t=round(t, 4), x=p[0], y=p[1], z=p[2], vx=s.velocity[0], vy=s.velocity[1],
                              vz=s.velocity[2], roll_deg=math.degrees(att.roll), pitch_deg=math.degrees(att.pitch),
@@ -145,7 +152,7 @@ def fly(case, seed, controller, args, out):
         v.land()
     write_trace(out / 'trace.csv', rows)
     result = metrics(mission, rows, points, dwell, radii, drop)
-    result.update(case=case, seed=seed, controller=controller, forces=forces, drop_s=drop,
+    result.update(case=case, seed=seed, controller=controller, mode=args.mode, forces=forces, drop_s=drop,
                   wpnav_params=params, other_params=extra, armed_gz_sim_time_s=t_arm)
     (out / 'summary.json').write_text(json.dumps(result, indent=1))
     return result
@@ -189,6 +196,8 @@ def main():
     ap.add_argument('--ardupilot', type=Path, default=Path(os.environ.get('ARDUPILOT_PATH', Path.home() / 'ardupilot-ROSMeetUp')))
     ap.add_argument('--gazebo-distro', default='Ubuntu')
     ap.add_argument('--wp-spd', type=float, default=None, help='override WP_SPD (m/s) for both controllers')
+    ap.add_argument('--mode', choices=('guided', 'auto'), default='guided',
+                    help='route: GUIDED point by point, or the whole track as an AUTO mission')
     ap.add_argument('--out', type=Path, required=True)
     args = ap.parse_args()
     if args.wp_spd is not None:

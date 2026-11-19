@@ -3,7 +3,9 @@ FRAME_CLASS 1
 FRAME_TYPE 1
 MOT_PWM_MIN 1100
 MOT_PWM_MAX 1900
-MOT_THST_HOVER 0.5
+# Hover throttle measured in this Gazebo model (a real vehicle learns it: MOT_HOVER_LEARN 2);
+# fixed here so that every test starts from the same calibrated value.
+MOT_THST_HOVER 0.303
 MOT_HOVER_LEARN 0
 
 # Explicit simulator-state backend. This is idealized state, not EKF3 output.

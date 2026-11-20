@@ -92,6 +92,9 @@ def fly(case, seed, controller, args, out):
         v = session.clients['drone1']
         for name, value in STAND.items():
             v.set_parameter(name, value)
+        for item in args.set:
+            name, value = item.split('=')
+            v.set_parameter(name, float(value))
         v.set_parameter('RESID_ENABLE', 1. if controller == 'network' else 0.)
         params, extra = read_params(v)
         extra.update(RESID_ENABLE=v.get_parameter('RESID_ENABLE'), RESID_MODES=v.get_parameter('RESID_MODES'),
@@ -198,6 +201,8 @@ def main():
     ap.add_argument('--wp-spd', type=float, default=None, help='override WP_SPD (m/s) for both controllers')
     ap.add_argument('--mode', choices=('guided', 'auto'), default='guided',
                     help='route: GUIDED point by point, or the whole track as an AUTO mission')
+    ap.add_argument('--set', action='append', default=[], metavar='NAME=VALUE',
+                    help='extra parameter for both controllers, e.g. --set PSC_NE_VEL_P=2 (repeatable)')
     ap.add_argument('--out', type=Path, required=True)
     args = ap.parse_args()
     if args.wp_spd is not None:

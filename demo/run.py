@@ -284,6 +284,9 @@ def run(name, a):
         for i, n in enumerate(DRONES):
             for p, value in STAND.items():
                 v[n].set_parameter(p, value)
+            for item in a.set:
+                name, value = item.split('=')
+                v[n].set_parameter(name, float(value))
             v[n].set_parameter('RESID_ENABLE', 1. if n == 'drone2' else 0.)
             if sc['kind'] == 'route':
                 # the same acceptance radius for everybody: ArduPilot switches AUTO waypoints with it,
@@ -524,6 +527,8 @@ def main():
                     help='ArduPilot AUTO limits on the track: sport (5 m/s, 4 m/s^2, jerk 5) or the smooth defaults')
     ap.add_argument('--payload', type=float, help='payload, fraction of the vehicle mass (payload and final scenes)')
     ap.add_argument('--pass-radius', type=float, help='acceptance radius of the fly-through points, m (default 2.5)')
+    ap.add_argument('--set', action='append', default=[], metavar='NAME=VALUE',
+                    help='extra parameter for every vehicle, e.g. --set RESID_THR_MAX=0.4 (repeatable)')
     ap.add_argument('--out')
     a = ap.parse_args()
     run(a.scene, a)

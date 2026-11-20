@@ -45,7 +45,8 @@ ArduPilot оценивает состояние, а команды мотора�
 ## Результаты
 
 Gazebo + ArduPilot SITL, 8 полётов на сценарий с ветром. Порывы — сила 3 Н на корпус по
-расписанию, груз — 20 % массы, трасса — миссия AUTO со штатными ограничениями.
+расписанию, груз — 20 % массы, трасса — миссия AUTO со штатными ограничениями. Пределы
+поправки — по умолчанию (`RESID_ANG_MAX` = 15°, `RESID_THR_MAX` = 15 %).
 
 | Сценарий | ArduPilot | Компенсатор | End-to-end |
 |---|---|---|---|
@@ -76,10 +77,10 @@ Gazebo + ArduPilot SITL, 8 полётов на сценарий с ветром.
 <table>
   <tr>
     <td align="center"><img src="docs/media/wind.gif" width="400" alt="Ветер"><br><sub>Ветер спереди, затем справа (×3)</sub></td>
-    <td align="center"><img src="docs/media/payload.gif" width="400" alt="Сброс груза"><br><sub>Сброс груза 65 % массы</sub></td>
+    <td align="center"><img src="docs/media/payload.gif" width="400" alt="Сброс груза"><br><sub>Сброс груза 65 % массы (предел поправки тяги 30 %)</sub></td>
   </tr>
   <tr>
-    <td align="center" colspan="2"><img src="docs/media/final.gif" width="560" alt="Общий тест"><br><sub>Общий тест: трасса, порывы, сброс груза, остановка (×2)</sub></td>
+    <td align="center" colspan="2"><img src="docs/media/final.gif" width="560" alt="Общий тест"><br><sub>Общий тест: трасса, порывы, сброс груза 65 %, остановка (×2; предел поправки тяги 30 %)</sub></td>
   </tr>
 </table>
 

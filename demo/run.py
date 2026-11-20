@@ -285,8 +285,8 @@ def run(name, a):
             for p, value in STAND.items():
                 v[n].set_parameter(p, value)
             for item in a.set:
-                name, value = item.split('=')
-                v[n].set_parameter(name, float(value))
+                param, value = item.split('=')
+                v[n].set_parameter(param, float(value))
             v[n].set_parameter('RESID_ENABLE', 1. if n == 'drone2' else 0.)
             if sc['kind'] == 'route':
                 # the same acceptance radius for everybody: ArduPilot switches AUTO waypoints with it,
